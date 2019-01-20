@@ -17,3 +17,5 @@ vector<vector<long long>> Permutation(long long N, long long mod) {
     for (long long i = 1; i <= N; ++i) for (long long j = 1; j <= i; ++j) res[i][j] = (fac[i] * inv[i - j]) % mod;
     return res;
 }
+
+//verify https://atcoder.jp/contests/arc067/tasks/arc067_c

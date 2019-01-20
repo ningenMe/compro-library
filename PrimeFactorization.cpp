@@ -12,3 +12,5 @@ vector<long long> PrimeFact(long long N) {
     if (N != 1) ret.push_back(N);
     return ret;
 }
+
+//verify https://atcoder.jp/contests/abc110/tasks/abc110_d

@@ -12,3 +12,5 @@ set<long long> Divisor(long long N) {
     }
     return ret;
 }
+
+//verify https://atcoder.jp/contests/abc112/tasks/abc112_d
