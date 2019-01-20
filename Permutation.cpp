@@ -7,7 +7,7 @@ long long RSM(long long x, long long n, long long MOD) {
     return y;
 }
 
-//Permutation
+//Permutation O(N^2)
 vector<vector<long long>> Permutation(long long N, long long mod) {
     vector<long long> fac(N + 1, 1);
     for (long long i = 1; i <= N; ++i) fac[i] = (fac[i - 1] * i) % mod;

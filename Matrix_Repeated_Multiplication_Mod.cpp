@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//MatrixRepeatedMultiplicationMod
-vector<vector<long long>> MatrixRepeatedMultiplicationMod(vector<vector<long long>> mat, long long K, long long mod) {
+//Matrix_Repeated_Multiplication_Mod O((N^3)(logK))
+vector<vector<long long>> Matrix_Repeated_Multiplication_Mod(vector<vector<long long>> mat, long long K, long long mod) {
     int N = mat.size();
     vector<vector<long long>> res(N, vector<long long>(N)), tmp(N, vector<long long>(N));
 

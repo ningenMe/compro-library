@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//LineIntersectionJudge
-template<class T> bool LineIntersectionJudge(T ax, T ay, T bx, T by, T cx, T cy, T dx, T dy) {
+//Line Intersection Judge
+template<class T> bool Line_Intersection_Judge(T ax, T ay, T bx, T by, T cx, T cy, T dx, T dy) {
     T ta = (cx - dx) * (ay - cy) + (cy - dy) * (cx - ax);
     T tb = (cx - dx) * (by - cy) + (cy - dy) * (cx - bx);
     T tc = (ax - bx) * (cy - ay) + (ay - by) * (ax - cx);

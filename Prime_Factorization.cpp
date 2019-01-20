@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//Prime Factorization
-vector<long long> PrimeFact(long long N) {
+//Prime Factorization O(sqrt(N))
+vector<long long> Prime_Factorization(long long N) {
     vector<long long> ret;
     if (N == 1) ret.push_back(1);
     for (long long i = 2,M = N; i*i <= M; ++i) {
