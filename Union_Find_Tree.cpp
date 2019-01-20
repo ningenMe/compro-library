@@ -15,8 +15,8 @@ public:
 		return (parent[n] == n ? n : parent[n] = root(parent[n]));
 	}
 
-    bool same(int x, int y) {
-		return root(x) == root(y);
+    bool same(int n, int m) {
+		return root(n) == root(m);
 	}
  
 	void unite(int n, int m) {
