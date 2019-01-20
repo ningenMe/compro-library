@@ -24,19 +24,6 @@ long long extGCD(long long a, long long b, long long &x, long long &y) {
     long long d = extGCD(b, a%b, y, x);
     return y -= a / b * x, d;
 }	
-	
-
-//divisor O(sqrt(N))
-set<long long> Divisor(long long N) {
-    set<long long> ret;
-    for (long long i = 1; i*i <= N; ++i) {
-        if (N%i == 0) {
-            ret.insert(i);
-            ret.insert(N / i);
-        }
-    }
-    return ret;
-}
 
 //Prime Factorization O(sqrt(N))
 vector<long long> PrimeFact(long long N) {
