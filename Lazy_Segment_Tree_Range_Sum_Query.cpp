@@ -55,7 +55,7 @@ public:
 
 	void print(){
 		cout << "{ " << getvar(0,1);
-		for(int i = 1; i < M; ++i) cout << ", " << getvar(i,i+1);
+		for(int i = 0; i < M; ++i) cout << ", " << getvar(i,i+1);
 		cout << " }" << endl;
 	}
 };
