@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 
 template<class T> class Segment_Tree_Range_Sum_Query {
 public:
