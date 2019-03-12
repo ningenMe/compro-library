@@ -62,8 +62,8 @@ public:
 		return max(vl, vr);
 	}
 
-	T operator[](size_t i) {
-		return getvar(i, i + 1);
+	T operator[](size_t idx) {
+		return getvar(idx, idx + 1);
 	}
 
 	T operator[](pair<size_t, size_t> p) {
