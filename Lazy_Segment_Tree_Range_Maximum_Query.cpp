@@ -2,12 +2,12 @@
 using namespace std;
 
 template<class T> class Lazy_Segment_Tree_Range_Maximum_Query {
-public:
-	int N, M;
+	size_t N, M;
 	T ini;
 	vector<T> node, lazy;
 	vector<bool> lazyflag;
 
+public:
 	Lazy_Segment_Tree_Range_Maximum_Query(const vector<T>& ar, const T ini) : M(ar.size()), ini(ini) {
 		for (N = 1; N < M; N *= 2);
 		node.resize(2 * N - 1);
@@ -17,7 +17,7 @@ public:
 		for (int i = N - 2; i >= 0; --i) node[i] = max(node[i * 2 + 1], node[i * 2 + 2]);
 	}
 
-	Lazy_Segment_Tree_Range_Maximum_Query(const int M, const T ini) : M(M), ini(ini) {
+	Lazy_Segment_Tree_Range_Maximum_Query(const size_t M, const T ini) : M(M), ini(ini) {
 		for (N = 1; N < M; N *= 2);
 		node.resize(2 * N - 1, ini);
 		lazy.resize(2 * N - 1, ini);
@@ -60,6 +60,14 @@ public:
 		T vl = getvar(a, b, 2 * k + 1, l, (l + r) / 2);
 		T vr = getvar(a, b, 2 * k + 2, (l + r) / 2, r);
 		return max(vl, vr);
+	}
+
+	T operator[](size_t i) {
+		return getvar(i, i + 1);
+	}
+
+	T operator[](pair<size_t, size_t> p) {
+		return getvar(p.first, p.second);
 	}
 
 	void print() {
