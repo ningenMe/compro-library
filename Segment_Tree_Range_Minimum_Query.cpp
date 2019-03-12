@@ -3,15 +3,20 @@ using namespace std;
 
 template<class T> class Segment_Tree_Range_Minimum_Query {
 public:
-	int N;
+	int N,M;
 	T ini;
 	vector<T> node;
 
-	Segment_Tree_Range_Minimum_Query(const vector<T> & ar, const T ini) : ini(ini) {
-		for (N = 1; N < ar.size(); N *= 2);
+	Segment_Tree_Range_Minimum_Query(const vector<T> & ar, const T ini) : M(ar.size()), ini(ini) {
+		for (N = 1; N < M; N *= 2);
 		node.resize(2 * N - 1, ini);
-		for (int i = 0; i<ar.size(); ++i) node[i + N - 1] = ar[i];
+		for (int i = 0; i<M; ++i) node[i + N - 1] = ar[i];
 		for (int i = N - 2; i >= 0; --i) node[i] = min(node[2 * i + 1], node[2 * i + 2]);
+	}
+
+	Segment_Tree_Range_Minimum_Query(const int M, const T ini) : M(M), ini(ini) {
+		for (N = 1; N < M; N *= 2);
+		node.resize(2 * N - 1, ini);
 	}
 
 	void update(int idx, const T var) {
@@ -30,6 +35,12 @@ public:
 		T vl = getvar(a, b, 2 * k + 1, l, (l + r) / 2);
 		T vr = getvar(a, b, 2 * k + 2, (l + r) / 2, r);
 		return min(vl, vr);
+	}
+	
+	void print() {
+		cout << "{ " << getvar(0, 1);
+		for (int i = 1; i < M; ++i) cout << ", " << getvar(i, i + 1);
+		cout << " }" << endl;
 	}
 };
 
