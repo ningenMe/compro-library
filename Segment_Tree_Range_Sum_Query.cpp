@@ -38,7 +38,7 @@ public:
 	}
 	
 	T operator[](size_t idx) {
-		return getvar(idx, idx + 1);
+		return node[idx + N - 1];
 	}
 
 	T operator[](pair<size_t, size_t> p) {
