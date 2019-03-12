@@ -7,8 +7,8 @@ public:
 	T ini;
 	vector<T> node,lazy;
 
-    Lazy_Segment_Tree_Range_Sum_Query(const vector<T> & ar, const T ini) : ini(ini){
-        for (N = 1, M = ar.size(); N < M; N *= 2);
+    Lazy_Segment_Tree_Range_Sum_Query(const vector<T> & ar, const T ini) : M(ar.size()),ini(ini){
+        for (N = 1; N < M; N *= 2);
         node.resize(2 * N - 1, ini);
         lazy.resize(2 * N - 1, ini);
 		for (int i = 0; i<M; ++i) node[i + N - 1] = ar[i];
