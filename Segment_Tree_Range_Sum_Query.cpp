@@ -2,11 +2,11 @@
 using namespace std;
 
 template<class T> class Segment_Tree_Range_Sum_Query {
-public:
-	int N,M;
+	size_t N,M;
 	T ini;
 	vector<T> node;
- 
+
+public:
 	Segment_Tree_Range_Sum_Query(const vector<T> & ar, const T ini) : M(ar.size()), ini(ini) {
 		for (N = 1; N < M; N *= 2);
 		node.resize(2 * N - 1, ini);
@@ -14,12 +14,12 @@ public:
 		for (int i = N - 2; i >= 0; --i) node[i] = node[2 * i + 1]+node[2 * i + 2];
 	}
  
-	Segment_Tree_Range_Sum_Query(const int M, const T ini) : M(M), ini(ini) {
+	Segment_Tree_Range_Sum_Query(const size_t M, const T ini) : M(M), ini(ini) {
 		for (N = 1; N < M; N *= 2);
 		node.resize(2 * N - 1, ini);
 	}
 	
-	void update(int idx, const T var) {
+	void update(size_t idx, const T var) {
 		idx += (N - 1);
 		node[idx] += var;
 		while (idx > 0) {
@@ -36,6 +36,15 @@ public:
 		T vr = getvar(a, b, 2 * k + 2, (l + r) / 2, r);
 		return vl+vr;
 	}
+	
+	T operator[](size_t idx) {
+		return getvar(idx, idx + 1);
+	}
+
+	T operator[](pair<size_t, size_t> p) {
+		return getvar(p.first, p.second);
+	}
+
  
 	void print(){
 		cout << "{ " << getvar(0,1);
