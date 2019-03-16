@@ -2,6 +2,7 @@
 using namespace std;
 
 //O(F|E|)
+
 template <class T> class Ford_Fulkerson {
 public:
 	struct info {
@@ -16,7 +17,7 @@ public:
 		// do nothing
 	}
 
-	void make_edge(int from, int to, int cap) {
+	void make_edge(int from, int to, T cap) {
 		edge[from].push_back({ to, (int)edge[to].size(), cap });
 		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
 	}
@@ -47,4 +48,6 @@ public:
 		}
 	}
 };
+
+//verify https://atcoder.jp/contests/arc085/tasks/arc085_c
 
