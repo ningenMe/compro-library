@@ -69,3 +69,5 @@ public:
 	}
 
 };
+
+//verify https://atcoder.jp/contests/ddcc2019-qual/tasks/ddcc2018_qual_d
