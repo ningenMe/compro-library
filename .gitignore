@@ -1,1 +1,3 @@
 ZZZtemplate.cpp
+*.bin
+*.ipch
