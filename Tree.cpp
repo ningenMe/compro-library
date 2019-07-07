@@ -68,6 +68,7 @@ public:
 		if (depth[l] < depth[r]) swap(l, r);
 		int diff = depth[l] - depth[r];
 		for (int bit = 0; bit < MAX_bit; ++bit) if (diff & (1 << bit)) l = parent[l][bit];
+		
 		int ok = (1 << MAX_bit), ng = -1, md;
 		while (ok - ng>1) {
 			md = (ok + ng) / 2;
