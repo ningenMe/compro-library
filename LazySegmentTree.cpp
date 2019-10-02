@@ -85,17 +85,17 @@ public:
 	}
 
 	void print(){
-		cout << "height" << " " << height << endl;
-		cout << "node" << endl;
-		for(int i = 1,j = 1; i < 2*length; ++i) {
-			cout << node[i] << " ";
-			if(i==((1<<j)-1) && ++j) cout << endl;
-		}
-		cout << "lazy" << endl;
-		for(int i = 1,j = 1; i < 2*length; ++i) {
-			cout << lazy[i] << " ";
-			if(i==((1<<j)-1) && ++j) cout << endl;
-		}
+		// cout << "height" << " " << height << endl;
+		// cout << "node" << endl;
+		// for(int i = 1,j = 1; i < 2*length; ++i) {
+		// 	cout << node[i] << " ";
+		// 	if(i==((1<<j)-1) && ++j) cout << endl;
+		// }
+		// cout << "lazy" << endl;
+		// for(int i = 1,j = 1; i < 2*length; ++i) {
+		// 	cout << lazy[i] << " ";
+		// 	if(i==((1<<j)-1) && ++j) cout << endl;
+		// }
 		// cout << "width" << endl;
 		// for(int i = 1,j = 1; i < 2*length; ++i) {
 		// 	cout << width[i] << " ";
@@ -139,4 +139,10 @@ public:
 // function<ll(ll,ll)> funcLazy  = [&](ll l,ll r){return r;};
 // function<ll(ll,ll,int)> funcMerge = [&](ll l,ll r,int c){return r!=0?r:l;};
 // LazySegmentTree<ll> Seg(N+2,0,0,funcNode,funcLazy,funcMerge);
+
+	// 区間加算　区間総和 mod
+	// function<ll(ll,ll)> funcNode  = [&](ll l,ll r){return (l+r) % MOD;};
+	// function<ll(ll,ll)> funcLazy  = [&](ll l,ll r){return (l+r) % MOD;};
+	// function<ll(ll,ll,int)> funcMerge = [&](ll l,ll r,int c){return (l+(r*c) % MOD) % MOD;};
+	// LazySegmentTree<ll> dp(N+3,0,0,funcNode,funcLazy,funcMerge);
 
