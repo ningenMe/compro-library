@@ -1,3 +1,4 @@
+
 template<class T = int> class Tree {
 public:
 	int nodeNum;
@@ -21,8 +22,12 @@ public:
 	
 	vector<int> eulerTour;
     vector<T> eulerTourDist;
-	vector<int> idxL;
-	vector<int> idxR;
+	vector<int> eulerTourIdxL;
+	vector<int> eulerTourIdxR;
+    vector<int> eulerTourDive,eulerTourFloat;
+    vector<T> eulerTourDiveDist,eulerTourFloatDist;
+	vector<int> eulerTourDiveIdxL,eulerTourFloatIdxL;
+	vector<int> eulerTourDiveIdxR,eulerTourFloatIdxR;
  
 	Tree(const int nodeNum, const int isWeighted = 0, const int maxBit = 20) : 
 	nodeNum(nodeNum),
@@ -122,10 +127,10 @@ public:
 	//O(N) after makeChild and makeParent
 	void makeEulerTour(void){
         dfs2(order[nodeNum-1]);
-		idxL.resize(nodeNum);
-		idxR.resize(nodeNum);
-		for(int i = 0; i < eulerTour.size(); ++i) idxR[eulerTour[i]] = i;
-		for(int i = eulerTour.size()-1; 0 <= i; --i) idxL[eulerTour[i]] = i;
+		eulerTourIdxL.resize(nodeNum);
+		eulerTourIdxR.resize(nodeNum);
+		for(int i = 0; i < eulerTour.size(); ++i) eulerTourIdxR[eulerTour[i]] = i;
+		for(int i = eulerTour.size()-1; 0 <= i; --i) eulerTourIdxL[eulerTour[i]] = i;
 		return;
 	}
  
@@ -141,6 +146,48 @@ public:
             if(isWeighted) eulerTourDist.push_back(-childDist[from][i]);
         }
 	}
+
+	//O(NlogN) after makeEulerTour
+	void makeEulerTourEdge(void) {
+		eulerTourDive.push_back(order[nodeNum-1]);
+		if(isWeighted) eulerTourDiveDist.push_back(0);
+		for(int i = 1; i < eulerTour.size(); ++i) {
+			int l = eulerTour[i-1];
+			int r = eulerTour[i];
+			if(depth[l] < depth[r]) {
+				eulerTourDive.push_back(i);
+				if(isWeighted) eulerTourDiveDist.push_back(eulerTourDist[i]);
+			}
+			else {
+				eulerTourFloat.push_back(i);
+				if(isWeighted) eulerTourFloatDist.push_back(eulerTourDist[i]);
+			}
+		}
+		eulerTourDiveIdxL.resize(nodeNum);
+		eulerTourDiveIdxR.resize(nodeNum);
+		eulerTourFloatIdxL.resize(nodeNum);
+		eulerTourFloatIdxR.resize(nodeNum);
+		for(int i = 0; i < nodeNum; ++i) {
+			int l = eulerTourIdxL[i];
+			int r = eulerTourIdxR[i];
+			eulerTourDiveIdxL[i]  =  upper_bound(eulerTourDive.begin() ,eulerTourDive.end() ,l) - eulerTourDive.begin()     ;
+			eulerTourDiveIdxR[i]  = (upper_bound(eulerTourDive.begin() ,eulerTourDive.end() ,r) - eulerTourDive.begin())  -1;
+			eulerTourFloatIdxL[i] =  upper_bound(eulerTourFloat.begin(),eulerTourFloat.end(),l) - eulerTourFloat.begin()    ;
+			eulerTourFloatIdxR[i] = (upper_bound(eulerTourFloat.begin(),eulerTourFloat.end(),r) - eulerTourFloat.begin()) -1;
+			eulerTourDiveIdxR[i]  = max(eulerTourDiveIdxL[i]-1 ,eulerTourDiveIdxR[i]);
+			eulerTourFloatIdxR[i] = max(eulerTourFloatIdxL[i]-1,eulerTourFloatIdxR[i]);
+		}
+	}
+		// iの部分木の頂点に加算するとき
+		// [ eulerTourIdxL[i]  ,eulerTourIdxR[i]  ]に　+val
+		// [i]の頂点クエリ
+		// [eulerTourIdxL[i],eulerTourIdxL[i]]
+
+		// iの部分木の辺に加算するとき
+		// [ eulerTourDiveIdxL[i]  ,eulerTourDiveIdxR[i]  ]に　+val
+		// [ eulerTourFloatIdxL[i] ,eulerTourFloatIdxR[i] ]に　-val
+		// [0,i]のパスクエリ
+		// [ 0, eulerTourDiveIdxL[i] ) + [0, eulerTourFloatIdxL[i])
  
 };
  
@@ -152,6 +199,9 @@ public:
  
 //child
 //https://atcoder.jp/contests/abc133/tasks/abc133_e
+
+//diameter
+//https://atcoder.jp/contests/agc033/tasks/agc033_c
 
 //eulerTour
 //https://yukicoder.me/problems/no/900
