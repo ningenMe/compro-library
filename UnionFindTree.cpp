@@ -1,13 +1,12 @@
-#include <bits/stdc++.h>
-using namespace std;
+
 
 //Union Find Tree
-class Union_Find_Tree {
+class UnionFindTree {
 public:
 	vector<int> parent;
     vector<int> rank;
 
-    Union_Find_Tree(int N = 1) : parent(N), rank(N,0){
+    UnionFindTree(int N) : parent(N), rank(N,0){
 		for (int i = 0; i < N; ++i) parent[i] = i;
 	}
  
@@ -15,7 +14,7 @@ public:
 		return (parent[n] == n ? n : parent[n] = root(parent[n]));
 	}
 
-    bool same(int n, int m) {
+    int same(int n, int m) {
 		return root(n) == root(m);
 	}
  
