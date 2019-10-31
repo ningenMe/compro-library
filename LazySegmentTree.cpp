@@ -1,20 +1,19 @@
-
-
-template<class T> class LazySegmentTree {
-	size_t length;                  //セグメント木の最下段の要素の数(vectorの要素の数を超える2べきの数)
-	size_t height;                  //セグメント木の高さ 
-	T unitNode;                     //nodeの単位元
-	T unitLazy;                     //lazyの単位元
-	vector<T> node;                 //node
-	vector<T> lazy;                 //lazy
-	vector<int> width;              //width
-	function<T(T,T)> funcNode;      //node同士の演算
-	function<T(T,T)> funcLazy;      //lazy同士の演算
-	function<T(T,T,int)> funcMerge; //nodeとlazyの演算
+template<class typeNode, class typeLazy> class LazySegmentTree {
+	size_t length;                                       //セグメント木の最下段の要素の数(vectorの要素の数を超える2べきの数)
+	size_t height;                                       //セグメント木の高さ 
+	typeNode unitNode;                                   //nodeの単位元
+	typeLazy unitLazy;                                   //lazyの単位元
+	vector<typeNode> node;                               //node
+	vector<typeLazy> lazy;                               //lazy
+	vector<int> width;                                   //width
+	function<typeNode(typeNode,typeNode)> funcNode;      //node同士の演算
+	function<typeLazy(typeLazy,typeLazy)> funcLazy;      //lazy同士の演算
+	function<typeNode(typeNode,typeLazy,int)> funcMerge; //nodeとlazyの演算
 
 public:
+
 	//vectorで初期化
-	LazySegmentTree(const vector<T> & vec, const T unitNode, const T unitLazy, function<T(T,T)> funcNode, function<T(T,T)> funcLazy,function<T(T,T,int)> funcMerge)
+	LazySegmentTree(const vector<typeNode> & vec, const typeNode unitNode, const typeLazy unitLazy, function<typeNode(typeNode,typeNode)> funcNode, function<typeLazy(typeLazy,typeLazy)> funcLazy,function<typeNode(typeNode,typeLazy,int)> funcMerge)
 	 : unitNode(unitNode), unitLazy(unitLazy), funcNode(funcNode),funcLazy(funcLazy),funcMerge(funcMerge) {
 		for (length = 1,height = 0; length < vec.size(); length *= 2, height++);
 		node.resize(2 * length, unitNode);
@@ -26,7 +25,7 @@ public:
 	}
 
 	//同じinitで初期化
-	LazySegmentTree(const size_t num, const T unitNode, const T unitLazy, const T init, function<T(T,T)> funcNode, function<T(T,T)> funcLazy,function<T(T,T,int)> funcMerge)
+	LazySegmentTree(const size_t num, const typeNode unitNode, const typeLazy unitLazy, const typeNode init, function<typeNode(typeNode,typeNode)> funcNode, function<typeLazy(typeLazy,typeLazy)> funcLazy,function<typeNode(typeNode,typeLazy,int)> funcMerge)
 	 : unitNode(unitNode), unitLazy(unitLazy), funcNode(funcNode),funcLazy(funcLazy),funcMerge(funcMerge) {
 		for (length = 1,height = 0; length < num; length *= 2, height++);
 		node.resize(2 * length, unitNode);
@@ -36,10 +35,10 @@ public:
 		width.resize(2 * length, 0);
 		for(int i = length; i < 2*length; ++i) for(int j = i, k = 1; j && !width[j] ; j >>= 1,k <<= 1) width[j] = k;
 	}
- 
-	//unitだけで初期化
-	LazySegmentTree(const size_t num, const T unitNode, const T unitLazy, function<T(T,T)> funcNode, function<T(T,T)> funcLazy,function<T(T,T,int)> funcMerge)
-	: unitNode(unitNode), unitLazy(unitLazy), funcNode(funcNode),funcLazy(funcLazy),funcMerge(funcMerge) {
+
+    //unitで初期化
+	LazySegmentTree(const size_t num, const typeNode unitNode, const typeLazy unitLazy, function<typeNode(typeNode,typeNode)> funcNode, function<typeLazy(typeLazy,typeLazy)> funcLazy,function<typeNode(typeNode,typeLazy,int)> funcMerge)
+	 : unitNode(unitNode), unitLazy(unitLazy), funcNode(funcNode),funcLazy(funcLazy),funcMerge(funcMerge) {
 		for (length = 1,height = 0; length < num; length *= 2, height++);
 		node.resize(2 * length, unitNode);
 		lazy.resize(2 * length, unitLazy);
@@ -58,7 +57,7 @@ public:
 
 
 	//idx : 0-indexed
-    void update(int a, int b, T x) {
+    void update(int a, int b, typeLazy x) {
 		int l = a + length, r = b + length - 1;
 		for (int i = height; 0 < i; --i) propagate(l >> i), propagate(r >> i);
 		for(r++; l < r; l >>=1, r >>=1) {
@@ -73,13 +72,13 @@ public:
     }
 
 	//[l,r)
-	T get(int a, int b) {
+	typeNode get(int a, int b) {
 		int l = a + length, r = b + length - 1;
 		for (int i = height; 0 < i; --i) propagate(l >> i), propagate(r >> i);
-		T vl = unitNode, vr = unitNode;
+		typeNode vl = unitNode, vr = unitNode;
 		for(r++; l < r; l >>=1, r >>=1) {
 			if(l&1) vl = funcNode(vl,funcMerge(node[l],lazy[l],width[l])),l++;
-			if(r&1) r--,vr = funcNode(vr,funcMerge(node[r],lazy[r],width[r]));
+			if(r&1) r--,vr = funcNode(funcMerge(node[r],lazy[r],width[r]),vr);
 		}
 		return funcNode(vl,vr);
 	}
@@ -109,40 +108,50 @@ public:
 
 };
 
-//RUQ + RMQ
-//verify https://atcoder.jp/contests/nikkei2019-final/tasks/nikkei2019_final_d
-//verify https://atcoder.jp/contests/code-festival-2018-final/tasks/code_festival_2018_final_e
+    // 区間加算 + 区間最小
+	// function<ll(ll,ll)> funcNode  = [&](ll l,ll r){return min(l,r);};
+	// function<ll(ll,ll)> funcLazy  = [&](ll l,ll r){return l+r;};
+	// function<ll(ll,ll,int)> funcMerge = [&](ll l,ll r,int c){return l+r;};
+	// LazySegmentTree<ll,ll> Seg(N,inf,0,0,funcNode,funcLazy,funcMerge);
+    // verify https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_H
 
-//RUQ + RMQ
-//verify https://atcoder.jp/contests/nikkei2019-final/tasks/nikkei2019_final_d
+    // 区間更新 + 区間GCD
+    // verify https://atcoder.jp/contests/abc125/tasks/abc125_c
 
-// 区間加算 + 区間最小
-// function<ll(ll,ll)> funcNode  = [&](ll l,ll r){return min(l,r);};
-// function<ll(ll,ll)> funcLazy  = [&](ll l,ll r){return l+r;};
-// function<ll(ll,ll,int)> funcMerge = [&](ll l,ll r,int c){return l+r;};
-// LazySegmentTree<ll> Seg(N,inf,0,0,funcNode,funcLazy,funcMerge);
 
-// 区間加算 + 区間総和
-// function<ll(ll,ll)> funcNode  = [&](ll l,ll r){return l+r;};
-// function<ll(ll,ll)> funcLazy  = [&](ll l,ll r){return l+r;};
-// function<ll(ll,ll,int)> funcMerge = [&](ll l,ll r,int c){return l+r*c;};
-// LazySegmentTree<ll> Seg(N,0,0,funcNode,funcLazy,funcMerge);
+    // 区間加算 + 区間総和
+	// function<ll(ll,ll)> funcNode  = [&](ll l,ll r){return l+r;};
+	// function<ll(ll,ll)> funcLazy  = [&](ll l,ll r){return r;};
+	// function<ll(ll,ll,int)> funcMerge = [&](ll l,ll r,int c){return r!=-2000?r*c:l;};
+	// LazySegmentTree<ll,ll> Seg(N,0,-2000,0,funcNode,funcLazy,funcMerge);
+    // verify https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_I
 
-// 区間更新 + 区間総和
-// function<ll(ll,ll)> funcNode  = [&](ll l,ll r){return l+r;};
-// function<ll(ll,ll)> funcLazy  = [&](ll l,ll r){return r;};
-// function<ll(ll,ll,int)> funcMerge = [&](ll l,ll r,int c){return r!=-2000?r*c:l;};
-// LazySegmentTree<ll> Seg(N,0,-2000,0,funcNode,funcLazy,funcMerge);
+    // 区間更新 + 区間総和
+    // function<ll(ll,ll)> funcNode  = [&](ll l,ll r){return l+r;};
+    // function<ll(ll,ll)> funcLazy  = [&](ll l,ll r){return r;};
+    // function<ll(ll,ll,int)> funcMerge = [&](ll l,ll r,int c){return r!=-2000?r*c:l;};
+    // LazySegmentTree<ll,ll> Seg(N,0,-2000,0,funcNode,funcLazy,funcMerge);
 
-// 区間更新 + 区間最大
-// function<ll(ll,ll)> funcNode  = [&](ll l,ll r){return max(l,r);};
-// function<ll(ll,ll)> funcLazy  = [&](ll l,ll r){return r;};
-// function<ll(ll,ll,int)> funcMerge = [&](ll l,ll r,int c){return r!=0?r:l;};
-// LazySegmentTree<ll> Seg(N+2,0,0,funcNode,funcLazy,funcMerge);
+    // 区間更新 + 区間最大
+	// function<ll(ll,ll)> funcNode  = [&](ll l,ll r){return max(l,r);};
+	// function<ll(ll,ll)> funcLazy  = [&](ll l,ll r){return r;};
+	// function<ll(ll,ll,int)> funcMerge = [&](ll l,ll r,int c){return r!=0?r:l;};
+	// LazySegmentTree<ll,ll> Seg(N+2,0,0,funcNode,funcLazy,funcMerge);
+    //verify https://atcoder.jp/contests/nikkei2019-final/tasks/nikkei2019_final_d
+
+    // 区間更新 + 区間最小
+	// function<ll(ll,ll)> funcNode  = [&](ll l,ll r){return min(l,r);};
+	// function<ll(ll,ll)> funcLazy  = [&](ll l,ll r){return r;};
+	// function<ll(ll,ll,int)> funcMerge = [&](ll l,ll r,int c){return r!=0?r:l;};
+	// LazySegmentTree<ll,ll> Seg(N,HIGHINF,0,funcNode,funcLazy,funcMerge);
+    //verify https://atcoder.jp/contests/code-festival-2018-final/tasks/code_festival_2018_final_e
 
 	// 区間加算　区間総和 mod
 	// function<ll(ll,ll)> funcNode  = [&](ll l,ll r){return (l+r) % MOD;};
 	// function<ll(ll,ll)> funcLazy  = [&](ll l,ll r){return (l+r) % MOD;};
 	// function<ll(ll,ll,int)> funcMerge = [&](ll l,ll r,int c){return (l+(r*c) % MOD) % MOD;};
-	// LazySegmentTree<ll> dp(N+3,0,0,funcNode,funcLazy,funcMerge);
+	// LazySegmentTree<ll,ll> dp(N+3,0,0,funcNode,funcLazy,funcMerge);
+    //verify https://atcoder.jp/contests/code-festival-2018-quala/tasks/code_festival_2018_quala_d
 
+    //matrix
+    //verify https://codeforces.com/problemset/problem/1252/K
