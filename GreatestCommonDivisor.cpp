@@ -1,5 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
 
 //Greatest Common Divisor
 long long GCD(long long a, long long b) {

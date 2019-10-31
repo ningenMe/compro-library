@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 //Seat Pressure O(NlogN)
 template<class T> vector<int> Zarts(const vector<T> & ar, int cnt = 0) {
     vector<int> res;
