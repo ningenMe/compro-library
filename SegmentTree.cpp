@@ -34,7 +34,7 @@ public:
 		T vl = init, vr = init;
 		for(l += length, r += length; l < r; l >>=1, r >>=1) {
 			if(l&1) vl = funcNode(vl,node[l++]);
-			if(r&1) vr = funcNode(vr,node[--r]);
+			if(r&1) vr = funcNode(node[--r],vr);
 		}
 		return funcNode(vl,vr);
 	}
@@ -75,3 +75,4 @@ public:
 	// //一点更新 + 区間最小
 	// function<ll(ll,ll)> funcNode =  [&](ll a,ll b){return min(a,b);};
 	// function<ll(ll,ll)> funcMerge = [&](ll a,ll b){return b;};
+
