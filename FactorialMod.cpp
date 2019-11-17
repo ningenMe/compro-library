@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 //Factorial Mod
 vector<long long> FactorialMod(long long N, long long mod) {
     vector<long long> res(N + 1, 1);

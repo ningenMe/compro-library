@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 //Dijkstra
 template<class T> class Dijkstra {
 public:
