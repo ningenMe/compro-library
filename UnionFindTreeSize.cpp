@@ -1,12 +1,9 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 //Union Find Tree
-class Union_Find_Tree_Size {
+class UnionFindTreeSize {
 public:
 	vector<int> parent;
 
-    Union_Find_Tree_Size(int N = 1) : parent(N,-1){
+    UnionFindTreeSize(int N = 1) : parent(N,-1){
 	}
  
 	int root(int n) {
