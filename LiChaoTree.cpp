@@ -1,4 +1,3 @@
-
 template<class Operator> class LiChaoTree{
 	Operator Op;                                         //Operator 演算子、型、単位元を持つ
 	using typeValue = decltype(Op.unitValue);            //valueの型
@@ -29,6 +28,7 @@ public:
 		return line.first*t + line.second;
 	}
 
+	//直線追加　ax + b  O(logN)
 	void update(pair<typeValue,typeValue> line,int i = 1) {
 		while(i < 2*length){
 			typeValue& xl = range[i].l;
@@ -45,7 +45,17 @@ public:
 		}
 	}
 
-	// t is in {x}
+	//線分追加　y = ax + b [l,r) O((logN)^2)
+	void update(pair<typeValue,typeValue> line, typeValue L, typeValue R) {
+		int l = (lower_bound(x.begin(),x.end(),L) - x.begin()) + length;
+		int r = (lower_bound(x.begin(),x.end(),R) - x.begin()) + length - 1;
+		for(r++; l < r; l >>=1, r >>=1) {
+			if(l&1) update(line,l),l++;
+			if(r&1) --r,update(line,r);
+		}
+	}
+
+	//値を取得 t is in {x}
 	typeValue get(typeValue t) {
 		int i = (lower_bound(x.begin(),x.end(),t) - x.begin()) + length;
 		typeValue res = Op.unitValue;
@@ -70,9 +80,10 @@ public:
 
 //最小値クエリ
 template<class typeValue> struct valueMin {
-	typeValue unitValue = 1000;
+	typeValue unitValue = 3e18;
 	bool funcCompare(typeValue l,typeValue r){return l<r;}
 };
 
 // verify https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
+// verify https://atcoder.jp/contests/code-festival-2018-final-open/tasks/code_festival_2018_final_c
 
