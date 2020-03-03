@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 //divisor O(sqrt(N))
 set<long long> Divisor(long long N) {
     set<long long> ret;
