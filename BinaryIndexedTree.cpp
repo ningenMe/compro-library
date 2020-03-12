@@ -58,7 +58,7 @@ template<class typeNode> struct nodeAddPrefixSum {
 template<class typeNode> struct nodeUpdatePrefixGCD {
 	typeNode unitNode = 0;
 	typeNode funcNode(typeNode l,typeNode r){return ((r == 0) ? l : funcNode(r, l % r));}
-	// Binary Search for first index where funcCheck is true
+	// Binary Search for first index at where funcCheck is true
 	bool funcCheck(typeNode nodeVal,typeNode var){return var == nodeVal;}
 };
 
