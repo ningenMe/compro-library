@@ -142,6 +142,7 @@ template<class typeNode, class typeLazy> struct nodeSumLazyAdd {
 	typeNode funcNode(typeNode l,typeNode r){return l+r;}
 	typeLazy funcLazy(typeLazy l,typeLazy r){return l+r;}
 	typeNode funcMerge(typeNode l,typeLazy r,int len){return l+r*len;}
+	bool funcCheck(typeNode nodeVal,typeNode var){return var <= nodeVal;}
     // LazySegmentTree<nodeSumLazyPlus<ll,ll>> Seg(N,0);
 };
 
@@ -207,6 +208,7 @@ template<class typeNode, class typeLazy> struct nodeSumLazyUpdate {
 	typeNode funcNode(typeNode l,typeNode r){return l+r;}
 	typeLazy funcLazy(typeLazy l,typeLazy r){return r;}
 	typeNode funcMerge(typeNode l,typeLazy r,int len){return r!=-2000?r*len:l;}
+	bool funcCheck(typeNode nodeVal,typeNode var){return var <= nodeVal;}
 	// LazySegmentTree<nodeSumLazyUpdate<ll,ll>> Seg(N,0,-2000,0);
     //verify https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_I
 };
