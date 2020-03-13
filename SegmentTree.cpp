@@ -1,20 +1,20 @@
-
 template<class Operator> class SegmentTree {
-	Operator Op;                            //Operator 演算子、型、単位元を持つ
-	using typeNode = decltype(Op.unitNode); //nodeの型
-	size_t length;                          //セグメント木の最下段の要素の数(vectorの要素の数を超える2べきの数)
-	vector<typeNode> node;                  //ノード
+	Operator Op;                            
+	using typeNode = decltype(Op.unitNode); 
+	size_t length;
+	size_t num;
+	vector<typeNode> node;                
 
 public:
 
 	//unitで初期化
-	SegmentTree(const size_t num){
+	SegmentTree(const size_t num): num(num) {
 		for (length = 1; length < num; length *= 2);
 		node.resize(2 * length, Op.unitNode);
 	}
 
 	//vectorで初期化
-	SegmentTree(const vector<typeNode> & vec){
+	SegmentTree(const vector<typeNode> & vec) : num(vec.size()) {
 		for (length = 1; length < vec.size(); length *= 2);
 		node.resize(2 * length, Op.unitNode);
 		for (int i = 0; i < vec.size(); ++i) node[i + length] = vec[i];
@@ -22,12 +22,12 @@ public:
 	}
  
 	//同じinitで初期化
-	SegmentTree(const size_t num, const typeNode init) {
+	SegmentTree(const size_t num, const typeNode init) : num(num) {
 		for (length = 1; length < num; length *= 2);
 		node.resize(2 * length, init);
 	}
 	
-	//idx : 0-indexed
+	//[idx,idx+1)
 	void update(size_t idx, const typeNode var) {
 		if(idx < 0 || length <= idx) return;
 		idx += length;
@@ -45,39 +45,62 @@ public:
 		}
 		return Op.funcNode(vl,vr);
 	}
+
+	//return [0,length]
+	int PrefixBinarySearch(typeNode var) {
+		if(!Op.funcCheck(node[1],var)) return num;
+		typeNode ret = Op.unitNode;
+		size_t idx = 2;
+		for(; idx < 2*length; idx<<=1){
+			if(!Op.funcCheck(Op.funcNode(ret,node[idx]),var)) {
+				ret = Op.funcNode(ret,node[idx]);
+				idx++;
+			}
+		}
+		return min((idx>>1) - length,num);
+	}
  
 	void print(){
 		cout << "{ " << get(0,1);
 		for(int i = 1; i < length; ++i) cout << ", " << get(i,i+1);
 		cout << " }" << endl;
 
-		for(int i = 1,j = 1; i < 2*length; ++i) {
-			cout << node[i] << " ";
-			if(i==((1<<j)-1) && ++j) cout << endl;
-		}
+		// for(int i = 1,j = 1; i < 2*length; ++i) {
+		// 	cout << node[i] << " ";
+		// 	if(i==((1<<j)-1) && ++j) cout << endl;
+		// }
 	}
 
 };
 
 //一点加算 区間最大
-template<class typeNode> struct nodeSumRangeMax {
+template<class typeNode> struct nodeMaxPointAdd {
 	typeNode unitNode = 0;
 	typeNode funcNode(typeNode l,typeNode r){return max(l,r);}
 	typeNode funcMerge(typeNode l,typeNode r){return l+r;}
 };
 
 //一点加算 区間総和
-template<class typeNode> struct nodeSumRangeSum {
+template<class typeNode> struct nodeSumPointAdd {
 	typeNode unitNode = 0;
 	typeNode funcNode(typeNode l,typeNode r){return l+r;}
 	typeNode funcMerge(typeNode l,typeNode r){return l+r;}
+	// Binary Search for first index at where funcCheck is true
+	bool funcCheck(typeNode nodeVal,typeNode var){return var <= nodeVal;}
 };
 
 //一点更新 区間最小
-template<class typeNode> struct nodeUpdateRangeMin {
+template<class typeNode> struct nodeMinPointUpdate {
 	typeNode unitNode = (1LL<<31)-1;
 	typeNode funcNode(typeNode l,typeNode r){return min(l,r);}
 	typeNode funcMerge(typeNode l,typeNode r){return r;}
 };
 
-
+//一点更新 区間GCD
+template<class typeNode> struct nodeUpdatePointGCD {
+	typeNode unitNode = 0;
+	typeNode funcNode(typeNode l,typeNode r){return ((r == 0) ? l : funcNode(r, l % r));}
+	typeNode funcMerge(typeNode l,typeNode r){return r;}
+	// Binary Search for first index at where funcCheck is true
+	bool funcCheck(typeNode nodeVal,typeNode var){return var == nodeVal;}
+};
