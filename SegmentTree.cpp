@@ -3,14 +3,17 @@ template<class Operator> class SegmentTree {
 	using typeNode = decltype(Op.unitNode); 
 	size_t length;
 	size_t num;
-	vector<typeNode> node;                
-
+	vector<typeNode> node;
+	vector<pair<size_t,size_t>> range;
 public:
 
 	//unitで初期化
 	SegmentTree(const size_t num): num(num) {
 		for (length = 1; length < num; length *= 2);
 		node.resize(2 * length, Op.unitNode);
+		range.resize(2 * length);
+		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
+		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
 	}
 
 	//vectorで初期化
@@ -19,12 +22,18 @@ public:
 		node.resize(2 * length, Op.unitNode);
 		for (int i = 0; i < vec.size(); ++i) node[i + length] = vec[i];
 		for (int i = length - 1; i >= 0; --i) node[i] = Op.funcNode(node[(i<<1)+0],node[(i<<1)+1]);
+		range.resize(2 * length);
+		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
+		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
 	}
  
 	//同じinitで初期化
 	SegmentTree(const size_t num, const typeNode init) : num(num) {
 		for (length = 1; length < num; length *= 2);
 		node.resize(2 * length, init);
+		range.resize(2 * length);
+		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
+		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
 	}
 	
 	//[idx,idx+1)
@@ -59,7 +68,25 @@ public:
 		}
 		return min((idx>>1) - length,num);
 	}
- 
+
+	//range[l,r) return [l,r]
+	int BinarySearch(size_t l, size_t r, typeNode var) {
+		if (l < 0 || length <= l || r < 0 || length < r) return -1;
+		typeNode ret = Op.unitNode;
+		size_t off = l;
+		for(size_t idx = l+length; idx < 2*length && off < r; ){
+			if(range[idx].second<=r && !Op.funcCheck(Op.funcNode(ret,node[idx]),var)) {
+				ret = Op.funcNode(ret,node[idx]);
+				off = range[idx++].second;
+				if(!(idx&1)) idx >>= 1;			
+			}
+			else{
+				idx <<=1;
+			}
+		}
+		return off;
+	}
+
 	void print(){
 		cout << "{ " << get(0,1);
 		for(int i = 1; i < length; ++i) cout << ", " << get(i,i+1);
