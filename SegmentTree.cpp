@@ -124,7 +124,7 @@ template<class typeNode> struct nodeMinPointUpdate {
 };
 
 //一点更新 区間GCD
-template<class typeNode> struct nodeUpdatePointGCD {
+template<class typeNode> struct nodeGCDPointUpdate {
 	typeNode unitNode = 0;
 	typeNode funcNode(typeNode l,typeNode r){return ((r == 0) ? l : funcNode(r, l % r));}
 	typeNode funcMerge(typeNode l,typeNode r){return r;}
