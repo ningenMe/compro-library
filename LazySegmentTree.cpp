@@ -1,12 +1,12 @@
 template<class Operator> class LazySegmentTree {
-    Operator Op;                                         //Operator 演算子、型、単位元を持つ
-	using typeNode = decltype(Op.unitNode);              //nodeの型
-	using typeLazy = decltype(Op.unitLazy);              //lazyの型
-	size_t length;                                       //セグメント木の最下段の要素の数(vectorの要素の数を超える2べきの数)
-	size_t height;                                       //セグメント木の高さ 
-	vector<typeNode> node;                               //node
-	vector<typeLazy> lazy;                               //lazy
-	vector<int> width;                                   //width
+    Operator Op;                                       
+	using typeNode = decltype(Op.unitNode);          
+	using typeLazy = decltype(Op.unitLazy);          
+	size_t length;                                   
+	size_t height;                                   
+	vector<typeNode> node;                           
+	vector<typeLazy> lazy;                           
+	vector<pair<size_t,size_t>> range;
 public:
 
 	//unitで初期化
@@ -14,10 +14,11 @@ public:
 		for (length = 1,height = 0; length < num; length *= 2, height++);
 		node.resize(2 * length, Op.unitNode);
 		lazy.resize(2 * length, Op.unitLazy);
-		width.resize(2 * length, 0);
 		for (int i = 0; i < num; ++i) node[i + length] = Op.unitNode;
 		for (int i = length - 1; i >= 0; --i) node[i] = Op.funcNode(node[(i<<1)+0],node[(i<<1)+1]);
-		for(int i = length; i < 2*length; ++i) for(int j = i, k = 1; j && !width[j] ; j >>= 1,k <<= 1) width[j] = k;
+		range.resize(2 * length);
+		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
+		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
 	}
 
 	// //同じinitで初期化
@@ -27,8 +28,9 @@ public:
 		lazy.resize(2 * length, Op.unitLazy);
 		for (int i = 0; i < num; ++i) node[i + length] = init;
 		for (int i = length - 1; i >= 0; --i) node[i] = Op.funcNode(node[(i<<1)+0],node[(i<<1)+1]);
-		width.resize(2 * length, 0);
-		for(int i = length; i < 2*length; ++i) for(int j = i, k = 1; j && !width[j] ; j >>= 1,k <<= 1) width[j] = k;
+		range.resize(2 * length);
+		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
+		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
 	}
 
 	//vectorで初期化
@@ -38,14 +40,15 @@ public:
 		lazy.resize(2 * length, Op.unitLazy);
 		for (int i = 0; i < vec.size(); ++i) node[i + length] = vec[i];
 		for (int i = length - 1; i >= 0; --i) node[i] = Op.funcNode(node[(i<<1)+0],node[(i<<1)+1]);
-		width.resize(2 * length, 0);
-		for(int i = length; i < 2*length; ++i) for(int j = i, k = 1; j && !width[j] ; j >>= 1,k <<= 1) width[j] = k;
+		range.resize(2 * length);
+		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
+		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
 	}
 
 
 	void propagate(int k) {
 		if(lazy[k] == Op.unitLazy) return;
-		node[k] = Op.funcMerge(node[k],lazy[k],width[k]);
+		node[k] = Op.funcMerge(node[k],lazy[k],range[k].second-range[k].first);
 		if(k < length) lazy[2*k+0] = Op.funcLazy(lazy[2*k+0],lazy[k]);
 		if(k < length) lazy[2*k+1] = Op.funcLazy(lazy[2*k+1],lazy[k]);
 		lazy[k] = Op.unitLazy;
@@ -62,8 +65,8 @@ public:
 		}
 		l = a + length, r = b + length - 1;
 		while ((l>>=1),(r>>=1),l) {
-			if(lazy[l] == Op.unitLazy) node[l] = Op.funcNode(Op.funcMerge(node[(l<<1)+0],lazy[(l<<1)+0],width[(l<<1)+0]),Op.funcMerge(node[(l<<1)+1],lazy[(l<<1)+1],width[(l<<1)+1]));
-			if(lazy[r] == Op.unitLazy) node[r] = Op.funcNode(Op.funcMerge(node[(r<<1)+0],lazy[(r<<1)+0],width[(r<<1)+0]),Op.funcMerge(node[(r<<1)+1],lazy[(r<<1)+1],width[(r<<1)+1]));
+			if(lazy[l] == Op.unitLazy) node[l] = Op.funcNode(Op.funcMerge(node[(l<<1)+0],lazy[(l<<1)+0],range[(l<<1)+0].second-range[(l<<1)+0].first),Op.funcMerge(node[(l<<1)+1],lazy[(l<<1)+1],range[(l<<1)+1].second-range[(l<<1)+1].first));
+			if(lazy[r] == Op.unitLazy) node[r] = Op.funcNode(Op.funcMerge(node[(r<<1)+0],lazy[(r<<1)+0],range[(l<<1)+0].second-range[(l<<1)+0].first),Op.funcMerge(node[(r<<1)+1],lazy[(r<<1)+1],range[(l<<1)+1].second-range[(l<<1)+1].first));
 		}
     }
 
@@ -73,8 +76,8 @@ public:
 		for (int i = height; 0 < i; --i) propagate(l >> i), propagate(r >> i);
 		typeNode vl = Op.unitNode, vr = Op.unitNode;
 		for(r++; l < r; l >>=1, r >>=1) {
-			if(l&1) vl = Op.funcNode(vl,Op.funcMerge(node[l],lazy[l],width[l])),l++;
-			if(r&1) r--,vr = Op.funcNode(Op.funcMerge(node[r],lazy[r],width[r]),vr);
+			if(l&1) vl = Op.funcNode(vl,Op.funcMerge(node[l],lazy[l],range[l].second-range[l].first)),l++;
+			if(r&1) r--,vr = Op.funcNode(Op.funcMerge(node[r],lazy[r],range[r].second-range[r].first),vr);
 		}
 		return Op.funcNode(vl,vr);
 	}
@@ -90,17 +93,11 @@ public:
 		// 	cout << lazy[i] << " ";
 		// 	if(i==((1<<j)-1) && ++j) cout << endl;
 		// }
-		// cout << "width" << endl;
-		// for(int i = 1,j = 1; i < 2*length; ++i) {
-		// 	cout << width[i] << " ";
-		// 	if(i==((1<<j)-1) && ++j) cout << endl;
-		// }
 		cout << "vector" << endl;
 		cout << "{ " << get(0,1);
 		for(int i = 1; i < length; ++i) cout << ", " << get(i,i+1);
 		cout << " }" << endl;
 	}
-
 };
 
 //node:総和　lazy:加算
