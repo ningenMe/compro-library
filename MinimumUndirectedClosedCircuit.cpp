@@ -42,26 +42,26 @@ public:
 			queue<int> l;
 			stack<int> r;
 			int curr;
-            curr = last.first;
-            while(curr != root){
+			curr = last.first;
+			while(curr != root){
 				l.push(curr);
-                for(int next:edge[curr]){
-                    if(dist[next]+1==dist[curr]) {
+				for(int next:edge[curr]){
+					if(dist[next]+1==dist[curr]) {
 						curr = next;
-                        break;
-                    }
-                }
-            }
-            curr = last.second;
-            while(curr != root){
+						break;
+					}
+				}
+			}
+			curr = last.second;
+			while(curr != root){
 				r.push(curr);
-                for(int next:edge[curr]){
-                    if(dist[next]+1==dist[curr]) {
+				for(int next:edge[curr]){
+					if(dist[next]+1==dist[curr]) {
 						curr = next;
-                        break;
-                    }
-                }
-            }
+						break;
+					}
+				}
+			}
 			while (l.size()) {
 				res.push_back(l.front());
 				l.pop();
