@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 //Eratosthenes O(N)
 vector<int> Eratosthenes(int N) {
     vector<int> res(N + 1, 1);
