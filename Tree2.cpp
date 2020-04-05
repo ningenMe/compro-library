@@ -1,4 +1,3 @@
-
 template<class Operator> class Tree {
 	Operator Op;
 	using typeDist = decltype(Op.unitDist);
@@ -17,6 +16,8 @@ public:
 	vector<vector<size_t>> descendant;
 	vector<size_t> head;
 	vector<size_t> hldorder;
+    vector<size_t> eulertour;
+    vector<pair<size_t,size_t>> eulertourrange;
 	Tree(const int num):num(num),edge(num),depth(num,-1),order(num),dist(num){}
 	//O(1) anytime
 	void makeEdge(const int& from, const int& to, const typeDist w = 1) {
@@ -194,6 +195,23 @@ public:
 			if(head[u]==head[v]) return u;
 			v=parent[head[v]].first;
 		}
+	}
+    //O(N) after makeChild and makeParent
+	void makeEulerTour(void){
+        dfs2(reorder.front());
+        eulertourrange.resize(num);
+        for(int i = 0; i < eulertour.size(); ++i) eulertourrange[eulertour[i]].second = i;
+        for(int i = eulertour.size()-1; 0 <= i; --i) eulertourrange[eulertour[i]].first = i;
+		return;
+	}
+    //for makeEulerTour
+	void dfs2(int from, int prev = -1){
+		eulertour.push_back(from);
+        for(auto& e:child[from]){
+            int to = e.first;            
+            dfs2(to,from);        
+    		eulertour.push_back(from);
+        }
 	}
 };
 //depth,dist
