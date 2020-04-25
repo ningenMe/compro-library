@@ -1,0 +1,1 @@
+[![Actions Status](https://github.com/ningenMe/compro-library/workflows/verify/badge.svg)](https://github.com/ningenMe/compro-library/actions)
