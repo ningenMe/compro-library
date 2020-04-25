@@ -124,11 +124,12 @@ layout: default
 
 ### segment-tree
 
-* :warning: <a href="library/segment-tree/SegmentTree.cpp.html">セグメント木</a>
+* :heavy_check_mark: <a href="library/segment-tree/SegmentTree.cpp.html">segment-tree/SegmentTree.cpp</a>
 
 
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment-tree/SegmentTree-rmq.test.cpp.html">test/segment-tree/SegmentTree-rmq.test.cpp</a>
 
 
