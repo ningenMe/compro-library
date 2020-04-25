@@ -109,6 +109,7 @@ layout: default
 
 ### lib/segment-tree
 
+* :heavy_check_mark: <a href="library/lib/segment-tree/LiChaoTree.cpp.html">lib/segment-tree/LiChaoTree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment-tree/SegmentTree.cpp.html">lib/segment-tree/SegmentTree.cpp</a>
 
 
@@ -136,6 +137,7 @@ layout: default
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment-tree/LiChaoTree-line.test.cpp.html">test/segment-tree/LiChaoTree-line.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment-tree/SegmentTree-binary-search.test.cpp.html">test/segment-tree/SegmentTree-binary-search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment-tree/SegmentTree-rmq.test.cpp.html">test/segment-tree/SegmentTree-rmq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment-tree/SegmentTree-rsq.test.cpp.html">test/segment-tree/SegmentTree-rsq.test.cpp</a>
