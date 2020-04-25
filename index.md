@@ -82,12 +82,13 @@ layout: default
 * :warning: <a href="library/Rarts.cpp.html">Rarts.cpp</a>
 * :warning: <a href="library/RollingHash.cpp.html">RollingHash.cpp</a>
 * :warning: <a href="library/SegmentTree.cpp.html">SegmentTree.cpp</a>
+* :warning: <a href="library/SegmentTree2.cpp.html">SegmentTree2.cpp</a>
 * :warning: <a href="library/SlideMost.cpp.html">SlideMost.cpp</a>
 * :warning: <a href="library/SmallestEnclosingDisc.cpp.html">SmallestEnclosingDisc.cpp</a>
 * :warning: <a href="library/SparseTable.cpp.html">SparseTable.cpp</a>
 * :warning: <a href="library/StronglyConnectedComponents.cpp.html">StronglyConnectedComponents.cpp</a>
+* :warning: <a href="library/Swag.cpp.html">Swag.cpp</a>
 * :warning: <a href="library/Tree.cpp.html">Tree.cpp</a>
-* :warning: <a href="library/Tree2.cpp.html">Tree2.cpp</a>
 * :warning: <a href="library/UnionFindTree.cpp.html">UnionFindTree.cpp</a>
 * :warning: <a href="library/UnionFindTreeMerge.cpp.html">UnionFindTreeMerge.cpp</a>
 * :warning: <a href="library/UnionFindTreeSize.cpp.html">UnionFindTreeSize.cpp</a>
@@ -114,7 +115,13 @@ layout: default
 * :warning: <a href="library/old/Segment_Tree_Range_Minimum_Query.cpp.html">old/Segment_Tree_Range_Minimum_Query.cpp</a>
 * :warning: <a href="library/old/Segment_Tree_Range_Sum_Query.cpp.html">old/Segment_Tree_Range_Sum_Query.cpp</a>
 * :warning: <a href="library/old/Solver.cpp.html">old/Solver.cpp</a>
+* :warning: <a href="library/old/Tree.cpp.html">old/Tree.cpp</a>
 * :warning: <a href="library/old/Tree2.cpp.html">old/Tree2.cpp</a>
 * :warning: <a href="library/old/Weighted_Tree.cpp.html">old/Weighted_Tree.cpp</a>
+
+
+## Verify Files
+
+* :heavy_check_mark: <a href="verify/example.test.cpp.html">example.test.cpp</a>
 
 
