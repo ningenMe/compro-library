@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../segment-tree/SegmentTree.cpp"
+#include "../../lib/segment-tree/SegmentTree.cpp"
 
 int main(void){
 	int N,Q; cin >> N >> Q;
