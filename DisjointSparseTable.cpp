@@ -4,7 +4,7 @@ public:
 	using typeNode = decltype(Op.unitNode);
 	size_t depth;
 	size_t length;
-	vector<vector<typeNode>> node;
+	vector<typeNode> node;
 	vector<size_t> msb;
 
 	DisjointSparseTable(const vector<typeNode>& vec) {
@@ -16,18 +16,18 @@ public:
 		for(int i = 0; i < length; ++i) for(int j = 0; j < depth; ++j) if(i>>j) msb[i] = j;
 
 		//init value
-		node.resize(depth,vector<typeNode>(length,Op.unitNode));
-		for(int i = 0; i < vec.size(); ++i) node[0][i] = vec[i];
+		node.resize(depth*length,Op.unitNode);
+		for(int i = 0; i < vec.size(); ++i) node[i] = vec[i];
 
 		for(int i = 1; i < depth; ++i) {
 			for(int r = (1<<i),l = r-1; r < length; r += (2<<i),l = r-1){
 				//init accumulate
-				node[i][l] = node[0][l];
-				node[i][r] = node[0][r];
+				node[i*length+l] = node[l];
+				node[i*length+r] = node[r];
 				//accumulate
 				for(int k = 1; k < (1<<i); ++k) {
-					node[i][l-k] = Op.funcNode(node[i][l-k+1],node[0][l-k]);
-					node[i][r+k] = Op.funcNode(node[i][r+k-1],node[0][r+k]);
+					node[i*length+l-k] = Op.funcNode(node[i*length+l-k+1],node[l-k]);
+					node[i*length+r+k] = Op.funcNode(node[i*length+r+k-1],node[r+k]);
 				}
 			}
 		}
@@ -36,7 +36,7 @@ public:
 	//[l,r)
 	typeNode get(int l,int r) {
 		r--;
-		return (l>r||l<0||length<=r) ? Op.unitNode: (l==r ? node[0][l] : Op.funcNode(node[msb[l^r]][l],node[msb[l^r]][r]));
+		return (l>r||l<0||length<=r) ? Op.unitNode: (l==r ? node[l] : Op.funcNode(node[msb[l^r]*length+l],node[msb[l^r]*length+r]));
 	}
 };
 
