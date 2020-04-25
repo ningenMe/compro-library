@@ -123,5 +123,6 @@ layout: default
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/example.test.cpp.html">example.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
 
 
