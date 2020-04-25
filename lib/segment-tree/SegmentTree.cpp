@@ -97,3 +97,11 @@ template<class T> struct nodeMinPointUpdate {
 	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
 
+//一点更新 区間最小
+template<class T> struct nodeSumPointAdd {
+	using TypeNode = T;
+	inline static constexpr TypeNode unit_node = 0;
+	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
+};
