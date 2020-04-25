@@ -120,9 +120,15 @@ layout: default
 * :warning: <a href="library/old/Weighted_Tree.cpp.html">old/Weighted_Tree.cpp</a>
 
 
+<div id="cf992883f659a62542b674f4570b728a"></div>
+
+### segment-tree
+
+* :warning: <a href="library/segment-tree/SegmentTree.cpp.html">セグメント木</a>
+
+
 ## Verify Files
 
-* :x: <a href="verify/example.test.cpp.html">example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
 
 
