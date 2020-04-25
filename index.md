@@ -57,7 +57,6 @@ layout: default
 * :warning: <a href="library/FactorialMod.cpp.html">FactorialMod.cpp</a>
 * :warning: <a href="library/Ford_Fulkerson.cpp.html">Ford_Fulkerson.cpp</a>
 * :warning: <a href="library/Garner.cpp.html">Garner.cpp</a>
-* :warning: <a href="library/GreatestCommonDivisor.cpp.html">GreatestCommonDivisor.cpp</a>
 * :warning: <a href="library/LazySegmentTree.cpp.html">LazySegmentTree.cpp</a>
 * :warning: <a href="library/LiChaoTree.cpp.html">LiChaoTree.cpp</a>
 * :warning: <a href="library/Line_Intersection_Judge.cpp.html">Line_Intersection_Judge.cpp</a>
@@ -99,6 +98,20 @@ layout: default
 * :warning: <a href="library/Zarts.cpp.html">Zarts.cpp</a>
 
 
+<div id="b524a7b47b8ed72180f0e5150ab6d934"></div>
+
+### lib/math
+
+* :x: <a href="library/lib/math/GreatestCommonDivisor.cpp.html">lib/math/GreatestCommonDivisor.cpp</a>
+
+
+<div id="b1a869a4b6792d330ab2bf903e1c2325"></div>
+
+### lib/segment-tree
+
+* :question: <a href="library/lib/segment-tree/SegmentTree.cpp.html">lib/segment-tree/SegmentTree.cpp</a>
+
+
 <div id="149603e6c03516362a8da23f624db945"></div>
 
 ### old
@@ -120,16 +133,10 @@ layout: default
 * :warning: <a href="library/old/Weighted_Tree.cpp.html">old/Weighted_Tree.cpp</a>
 
 
-<div id="cf992883f659a62542b674f4570b728a"></div>
-
-### segment-tree
-
-* :heavy_check_mark: <a href="library/segment-tree/SegmentTree.cpp.html">segment-tree/SegmentTree.cpp</a>
-
-
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
+* :x: <a href="verify/test/segment-tree/SegmentTree-binary-search.test.cpp.html">test/segment-tree/SegmentTree-binary-search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment-tree/SegmentTree-rmq.test.cpp.html">test/segment-tree/SegmentTree-rmq.test.cpp</a>
 
 

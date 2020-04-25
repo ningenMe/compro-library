@@ -21,24 +21,25 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: segment-tree/SegmentTree.cpp
+# :question: lib/segment-tree/SegmentTree.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#cf992883f659a62542b674f4570b728a">segment-tree</a>
-* <a href="{{ site.github.repository_url }}/blob/master/segment-tree/SegmentTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 05:49:07+09:00
+* category: <a href="../../../index.html#b1a869a4b6792d330ab2bf903e1c2325">lib/segment-tree</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/segment-tree/SegmentTree.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-26 06:06:47+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/segment-tree/SegmentTree-rmq.test.cpp.html">test/segment-tree/SegmentTree-rmq.test.cpp</a>
+* :x: <a href="../../../verify/test/segment-tree/SegmentTree-binary-search.test.cpp.html">test/segment-tree/SegmentTree-binary-search.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/segment-tree/SegmentTree-rmq.test.cpp.html">test/segment-tree/SegmentTree-rmq.test.cpp</a>
 
 
 ## Code
@@ -136,15 +137,6 @@ public:
 	}
 };
 
-//一点更新　区間gcd
-template<class T> struct nodeGcdPointUpdate {
-	using TypeNode = T;
-	inline static constexpr TypeNode unit_node = 0;
-	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return ((r == 0) ? l : funcNode(r, l % r));}
-	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return r;}
-	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
-};
-
 //一点更新 区間最小
 template<class T> struct nodeMinPointUpdate {
 	using TypeNode = T;
@@ -161,7 +153,7 @@ template<class T> struct nodeMinPointUpdate {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "segment-tree/SegmentTree.cpp"
+#line 1 "lib/segment-tree/SegmentTree.cpp"
 template<class Operator> class SegmentTree {
 	using TypeNode = typename Operator::TypeNode; 
 	size_t length;
@@ -252,15 +244,6 @@ public:
 	}
 };
 
-//一点更新　区間gcd
-template<class T> struct nodeGcdPointUpdate {
-	using TypeNode = T;
-	inline static constexpr TypeNode unit_node = 0;
-	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return ((r == 0) ? l : funcNode(r, l % r));}
-	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return r;}
-	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
-};
-
 //一点更新 区間最小
 template<class T> struct nodeMinPointUpdate {
 	using TypeNode = T;
@@ -274,5 +257,5 @@ template<class T> struct nodeMinPointUpdate {
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
