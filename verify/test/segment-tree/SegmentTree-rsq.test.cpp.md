@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/segment-tree/SegmentTree-rsq.test.cpp
+# :heavy_check_mark: test/segment-tree/SegmentTree-rsq.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#154f484dac0eb1f2e1b822e326933d6a">test/segment-tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment-tree/SegmentTree-rsq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 06:27:21+09:00
+    - Last commit date: 2020-04-26 06:33:07+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B">https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B</a>
 
 
 ## Depends on
 
-* :question: <a href="../../../library/lib/segment-tree/SegmentTree.cpp.html">lib/segment-tree/SegmentTree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/segment-tree/SegmentTree.cpp.html">lib/segment-tree/SegmentTree.cpp</a>
 
 
 ## Code
@@ -47,7 +47,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
 
 #include <vector>
 #include <iostream>
@@ -56,7 +56,7 @@ using namespace std;
 
 int main(void){
 	int N,Q; cin >> N >> Q;
-	SegmentTree<nodeSumPointAdd<ll>> Seg(N,0);
+	SegmentTree<nodeSumPointAdd<long long>> Seg(N,0);
 	while(Q--){
 		int q; cin >> q;
 		if(q==0){
@@ -78,7 +78,7 @@ int main(void){
 {% raw %}
 ```cpp
 #line 1 "test/segment-tree/SegmentTree-rsq.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_B"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
 
 #include <vector>
 #include <iostream>
@@ -195,7 +195,7 @@ template<class T> struct nodeSumPointAdd {
 
 int main(void){
 	int N,Q; cin >> N >> Q;
-	SegmentTree<nodeSumPointAdd<ll>> Seg(N,0);
+	SegmentTree<nodeSumPointAdd<long long>> Seg(N,0);
 	while(Q--){
 		int q; cin >> q;
 		if(q==0){

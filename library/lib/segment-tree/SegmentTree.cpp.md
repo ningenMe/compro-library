@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :question: lib/segment-tree/SegmentTree.cpp
+# :heavy_check_mark: lib/segment-tree/SegmentTree.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -40,7 +40,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../verify/test/segment-tree/SegmentTree-binary-search.test.cpp.html">test/segment-tree/SegmentTree-binary-search.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/segment-tree/SegmentTree-rmq.test.cpp.html">test/segment-tree/SegmentTree-rmq.test.cpp</a>
-* :x: <a href="../../../verify/test/segment-tree/SegmentTree-rsq.test.cpp.html">test/segment-tree/SegmentTree-rsq.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/segment-tree/SegmentTree-rsq.test.cpp.html">test/segment-tree/SegmentTree-rsq.test.cpp</a>
 
 
 ## Code

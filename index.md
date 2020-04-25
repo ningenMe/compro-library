@@ -109,7 +109,7 @@ layout: default
 
 ### lib/segment-tree
 
-* :question: <a href="library/lib/segment-tree/SegmentTree.cpp.html">lib/segment-tree/SegmentTree.cpp</a>
+* :heavy_check_mark: <a href="library/lib/segment-tree/SegmentTree.cpp.html">lib/segment-tree/SegmentTree.cpp</a>
 
 
 <div id="149603e6c03516362a8da23f624db945"></div>
@@ -138,6 +138,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment-tree/SegmentTree-binary-search.test.cpp.html">test/segment-tree/SegmentTree-binary-search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment-tree/SegmentTree-rmq.test.cpp.html">test/segment-tree/SegmentTree-rmq.test.cpp</a>
-* :x: <a href="verify/test/segment-tree/SegmentTree-rsq.test.cpp.html">test/segment-tree/SegmentTree-rsq.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment-tree/SegmentTree-rsq.test.cpp.html">test/segment-tree/SegmentTree-rsq.test.cpp</a>
 
 
