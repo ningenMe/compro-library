@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: segment-tree/SegmentTree.cpp
+# :heavy_check_mark: segment-tree/SegmentTree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#cf992883f659a62542b674f4570b728a">segment-tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/segment-tree/SegmentTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 05:45:39+09:00
+    - Last commit date: 2020-04-26 05:49:07+09:00
 
 
 
 
 ## Verified with
 
-* :x: <a href="../../verify/test/segment-tree/SegmentTree-rmq.test.cpp.html">test/segment-tree/SegmentTree-rmq.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/segment-tree/SegmentTree-rmq.test.cpp.html">test/segment-tree/SegmentTree-rmq.test.cpp</a>
 
 
 ## Code
@@ -148,7 +148,7 @@ template<class T> struct nodeGcdPointUpdate {
 //一点更新 区間最小
 template<class T> struct nodeMinPointUpdate {
 	using TypeNode = T;
-	inline static constexpr TypeNode unit_node = 1LL<<40;
+	inline static constexpr TypeNode unit_node = (1LL<<31)-1;
 	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return min(l,r);}
 	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return r;}
 	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
@@ -264,7 +264,7 @@ template<class T> struct nodeGcdPointUpdate {
 //一点更新 区間最小
 template<class T> struct nodeMinPointUpdate {
 	using TypeNode = T;
-	inline static constexpr TypeNode unit_node = 1LL<<40;
+	inline static constexpr TypeNode unit_node = (1LL<<31)-1;
 	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return min(l,r);}
 	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return r;}
 	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}

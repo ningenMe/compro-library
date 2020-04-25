@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/segment-tree/SegmentTree-rmq.test.cpp
+# :heavy_check_mark: test/segment-tree/SegmentTree-rmq.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#154f484dac0eb1f2e1b822e326933d6a">test/segment-tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment-tree/SegmentTree-rmq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 05:45:39+09:00
+    - Last commit date: 2020-04-26 05:49:07+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/segment-tree/SegmentTree.cpp.html">segment-tree/SegmentTree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/segment-tree/SegmentTree.cpp.html">segment-tree/SegmentTree.cpp</a>
 
 
 ## Code
@@ -180,7 +180,7 @@ template<class T> struct nodeGcdPointUpdate {
 //一点更新 区間最小
 template<class T> struct nodeMinPointUpdate {
 	using TypeNode = T;
-	inline static constexpr TypeNode unit_node = 1LL<<40;
+	inline static constexpr TypeNode unit_node = (1LL<<31)-1;
 	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return min(l,r);}
 	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return r;}
 	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
