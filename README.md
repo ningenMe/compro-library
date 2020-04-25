@@ -1,1 +1,2 @@
 [![Actions Status](https://github.com/ningenMe/compro-library/workflows/verify/badge.svg)](https://github.com/ningenMe/compro-library/actions)
+[![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://ningenMe.github.io/compro-library/) 
