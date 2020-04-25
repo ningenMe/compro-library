@@ -4,7 +4,7 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-#include "../../lib/segment-tree/LichaoTree.cpp"
+#include "../../lib/segment-tree/LiChaoTree.cpp"
 
 int main(void){
 	int N,Q; cin >> N >> Q;
