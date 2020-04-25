@@ -1,208 +1,261 @@
 
-template<class T = int> class Tree {
+template<class Operator> class Tree {
+	Operator Op;
+	using typeDist = decltype(Op.unitDist);
+	size_t num;
+	size_t ord;
 public:
-	int nodeNum;
-	int isWeighted;
-	int maxBit;
-	int idx;
-	vector<vector<int>> edge;
-	vector<vector<T>> weight;
-	vector<int> depth;
-	vector<int> order;
-	vector<T> dist;
-	
-	vector<int> parent;
-	vector<T> parentDist;
-	
-	vector<vector<int>> child;
-	vector<vector<T>> childDist;
- 
-	vector<vector<int>> ancestor;
-	vector<vector<int>> descendant;
-	
-	vector<int> eulerTour;
-    vector<T> eulerTourDist;
-	vector<int> eulerTourIdxL;
-	vector<int> eulerTourIdxR;
-    vector<int> eulerTourDive,eulerTourFloat;
-    vector<T> eulerTourDiveDist,eulerTourFloatDist;
-	vector<int> eulerTourDiveIdxL,eulerTourFloatIdxL;
-	vector<int> eulerTourDiveIdxR,eulerTourFloatIdxR;
- 
-	Tree(const int nodeNum, const int isWeighted = 0, const int maxBit = 20) : 
-	nodeNum(nodeNum),
-	isWeighted(isWeighted),
-	maxBit(maxBit),
-	edge(nodeNum),
-	depth(nodeNum),
-	order(nodeNum)
-	{
-		if(isWeighted) weight.resize(nodeNum);
-		if(isWeighted) dist.resize(nodeNum);
-	}
- 
+	vector<vector<pair<size_t,typeDist>>> edge;
+	vector<size_t> depth;
+	vector<size_t> order;
+	vector<size_t> reorder;
+	vector<typeDist> dist;
+	vector<pair<size_t,typeDist>> parent;
+	vector<vector<pair<size_t,typeDist>>> child;
+	vector<array<pair<size_t,typeDist>,Operator::bit>> ancestor;
+	vector<size_t> size;
+	vector<vector<size_t>> descendant;
+	vector<size_t> head;
+	vector<size_t> hldorder;
+    vector<size_t> eulertour;
+    vector<pair<size_t,size_t>> eulertourrange;
+	Tree(const int num):num(num),edge(num),depth(num,-1),order(num),dist(num){}
 	//O(1) anytime
-	void makeEdge(const int& from, const int& to, const T& w = 0) {
-		edge[from].push_back(to);
-		if(isWeighted)	weight[from].push_back(w);
+	void makeEdge(const int& from, const int& to, const typeDist w = 1) {
+		edge[from].push_back({to,w});
 	}
- 
 	//O(N) anytime
 	void makeDepth(const int root) {
 		depth[root] = 0;
-		if(isWeighted) dist[root] = 0;
-		idx = 0;
+		dist[root] = Op.unitDist;
+		ord = 0;
 		dfs1(root);
-		order[idx++] = root;
+		order[ord++] = root;
+		reverse_copy(order.begin(),order.end(),back_inserter(reorder));
 	}
- 
-    //for makeDepth
-	void dfs1(int from, int prev = -1){
-		for(int i = 0; i < edge[from].size(); ++i){
-			int to = edge[from][i];
-			if(to==prev) continue;
-			depth[to] = depth[from] + 1;
-			if(isWeighted) dist[to] = dist[from] + weight[from][i];
-			dfs1(to,from);
-			order[idx++] = to;
+	//O(N) anytime
+	void makeDepth(void) {
+		ord = 0;
+		for(size_t root = 0; root < num; ++root) {
+			if(depth[root] != -1) continue;
+			depth[root] = 0;
+			dist[root] = Op.unitDist;
+			dfs1(root);
+			order[ord++] = root;
+		}
+		reverse_copy(order.begin(),order.end(),back_inserter(reorder));
+	}
+	//for makeDepth
+	void dfs1(int curr, int prev = -1){
+		for(auto& e:edge[curr]){
+			int next = e.first;
+			if(next==prev) continue;
+			depth[next] = depth[curr] + 1;
+			dist[next]  = Op.funcDist(dist[curr],e.second);
+			dfs1(next,curr);
+			order[ord++] = next;
 		}
 	}
- 
-    //O(N) anytime
+	//O(N) after makeDepth
+	void makeParent(void) {
+		parent.resize(num,make_pair(num,Op.unitDist));
+		for (size_t i = 0; i < num; ++i) for (auto& e : edge[i]) if (depth[i] > depth[e.first]) parent[i] = e;
+	}
+	//O(N) after makeDepth
+	void makeChild(void) {
+		child.resize(num);
+		for (size_t i = 0; i < num; ++i) for (auto& e : edge[i]) if (depth[i] < depth[e.first]) child[i].push_back(e);
+	}
+	//O(NlogN) after makeDepth and makeParent
+	void makeAncestor(void) {
+		ancestor.resize(num);
+		for (size_t i = 0; i < num; ++i) ancestor[i][0] = (parent[i].first!=num?parent[i]:make_pair(i,Op.unitLca));
+		for (size_t j = 1; j < Operator::bit; ++j) {
+			for (size_t i = 0; i < num; ++i) {
+				size_t k = ancestor[i][j - 1].first;
+				ancestor[i][j] = Op.funcLca(ancestor[k][j - 1],ancestor[i][j - 1]);
+			}
+		}
+	}
+	//O(logN) after makeAncestor
+	//return {lca,lca_dist} l and r must be connected
+	pair<size_t,typeDist> lca(size_t l, size_t r) {
+		if (depth[l] < depth[r]) swap(l, r);
+		int diff = depth[l] - depth[r];
+		auto ancl = make_pair(l,Op.unitLca);
+		auto ancr = make_pair(r,Op.unitLca);
+		for (int j = 0; j < Operator::bit; ++j) {
+			if (diff & (1 << j)) {
+				ancl = Op.funcLca(ancestor[ancl.first][j],ancl);
+			}
+		}
+		if(ancl.first==ancr.first) return ancl;
+		for (int j = Operator::bit - 1; 0 <= j; --j) {
+			if(ancestor[ancl.first][j].first!=ancestor[ancr.first][j].first) {
+				ancl = Op.funcLca(ancestor[ancl.first][j],ancl);
+				ancr = Op.funcLca(ancestor[ancr.first][j],ancr);
+			}
+		}
+		ancl = Op.funcLca(ancestor[ancl.first][0],ancl);
+		ancr = Op.funcLca(ancestor[ancr.first][0],ancr);
+		return Op.funcLca(ancl,ancr);
+	}
+	//O(N) anytime
 	int diameter(void){
 		makeDepth(0);
 		int tmp = max_element(depth.begin(), depth.end()) - depth.begin();
 		makeDepth(tmp);
 		return *max_element(depth.begin(), depth.end());
 	}
- 
-	//O(N) after makeDepth
-	void makeParent(void) {
-		parent.resize(nodeNum);
-		iota(parent.begin(),parent.end(),0);
-		for (int i = 0; i < nodeNum; ++i) for (auto j : edge[i]) if (depth[i] > depth[j]) parent[i] = j;
- 
-		if(isWeighted) {
-			parentDist.resize(nodeNum);
-			for (int i = 0; i < nodeNum; ++i) for (int j = 0; j < edge[i].size(); ++j) if (depth[i] > depth[edge[i][j]]) parentDist[i] = weight[i][j];
-		}
-	}
- 
-	//O(N) after makeDepth
-	void makeChild(void) {
-		child.resize(nodeNum);
-		for (int i = 0; i < nodeNum; ++i) for (auto j : edge[i]) if (depth[i] < depth[j]) child[i].push_back(j);
- 
-		if(isWeighted) {
-			childDist.resize(nodeNum);
-			for (int i = 0; i < nodeNum; ++i) for (int j = 0; j < edge[i].size(); ++j) if (depth[i] < depth[edge[i][j]]) childDist[i].push_back(weight[i][j]);
-		}
-	}
- 
-	//O(NlogN) after makeDepth
-	void makeAncestor(void) {
-		ancestor.resize(nodeNum,vector<int>(maxBit));
-		for (int i = 0; i < nodeNum; ++i) ancestor[i][0] = i;
-		for (int i = 0; i < nodeNum; ++i) for (auto j : edge[i]) if (depth[i] > depth[j]) ancestor[i][0] = j;
-		for (int bit = 1; bit < maxBit; ++bit) for (int i = 0; i < nodeNum; ++i) ancestor[i][bit] = ancestor[ancestor[i][bit - 1]][bit - 1];
-	}
- 
-	//O(N^2) after makeDepth
+	//O(N^2) after makeDepth (include self)
 	void makeDescendant(void) {
-		descendant.resize(nodeNum);
-		for (int i = 0; i < nodeNum; ++i) descendant[i].push_back(i);
-		for (int i = 0; i < nodeNum; ++i) for (auto j : edge[order[i]]) if (depth[order[i]] < depth[j]) for(auto k: descendant[j]) descendant[order[i]].push_back(k);
+		descendant.resize(num);
+		for (size_t i = 0; i < num; ++i) descendant[i].push_back(i);
+		for (size_t i = 0; i < num; ++i) for (auto& e : edge[order[i]]) if (depth[order[i]] < depth[e.first]) for(auto k: descendant[e.first]) descendant[order[i]].push_back(k);
 	}
- 
-	//O(logN) after makeAncestor
-	int lca(int l, int r) {
-		if (depth[l] < depth[r]) swap(l, r);
-		int diff = depth[l] - depth[r];
-		for (int bit = 0; bit < maxBit; ++bit) if (diff & (1 << bit)) l = ancestor[l][bit];
-		if(l==r) return l;
-		for (int bit = maxBit - 1; 0 <= bit; --bit) if(ancestor[l][bit]!=ancestor[r][bit]) l = ancestor[l][bit], r = ancestor[r][bit];
-		return ancestor[l][0];
+	//O(N) after makeChild
+	void makeSize(void) {
+		size.resize(num,1);
+		for (size_t i:order) for (auto e : child[i]) size[i] += size[e.first];
 	}
- 
-	//O(N) after makeChild and makeParent
-	void makeEulerTour(void){
-        dfs2(order[nodeNum-1]);
-		eulerTourIdxL.resize(nodeNum);
-		eulerTourIdxR.resize(nodeNum);
-		for(int i = 0; i < eulerTour.size(); ++i) eulerTourIdxR[eulerTour[i]] = i;
-		for(int i = eulerTour.size()-1; 0 <= i; --i) eulerTourIdxL[eulerTour[i]] = i;
-		return;
+	//(N) after makeDepth and makeChild
+	template<class typeReroot> vector<typeReroot> rerooting(vector<typeReroot> rerootdp,vector<typeReroot> rerootparent) {
+		for(size_t pa:order) for(auto& e:child[pa]) rerootdp[pa] = Op.funcReroot(rerootdp[pa],rerootdp[e.first]);
+		for(size_t pa:reorder) {
+			if(depth[pa]) rerootdp[pa] = Op.funcReroot(rerootdp[pa],rerootparent[pa]);
+			size_t m = child[pa].size();
+			for(int j = 0; j < m && depth[pa]; ++j){
+				size_t ch = child[pa][j].first;
+				rerootparent[ch] = Op.funcReroot(rerootparent[ch],rerootparent[pa]);
+			}
+			if(m <= 1) continue;
+			vector<typeReroot> l(m),r(m);
+			for(int j = 0; j < m; ++j) {
+				size_t ch = child[pa][j].first;
+				l[j] = rerootdp[ch];
+				r[j] = rerootdp[ch];
+			}
+			for(int j = 1; j+1 < m; ++j) l[j] = Op.funcRerootMerge(l[j],l[j-1]);
+			for(int j = m-2; 0 <=j; --j) r[j] = Op.funcRerootMerge(r[j],r[j+1]);
+			size_t chl = child[pa].front().first;
+			size_t chr = child[pa].back().first;
+			rerootparent[chl] = Op.funcReroot(rerootparent[chl],r[1]);
+			rerootparent[chr] = Op.funcReroot(rerootparent[chr],l[m-2]);
+			for(int j = 1; j+1 < m; ++j) {
+				size_t ch = child[pa][j].first;
+				rerootparent[ch] = Op.funcReroot(rerootparent[ch],l[j-1]);
+				rerootparent[ch] = Op.funcReroot(rerootparent[ch],r[j+1]);
+			}
+		}
+		return rerootdp;
+    }
+	//O(N) after makeDepth,makeParent,makeChild
+	void heavyLightDecomposition(){
+		head.resize(num);
+		hldorder.resize(num);
+		iota(head.begin(),head.end(),0);
+		for(size_t& pa:reorder) {
+			pair<size_t,size_t> maxi = {0,num};
+			for(auto& e:child[pa]) maxi = max(maxi,{size[e.first],e.first});
+			if(maxi.first) head[maxi.second] = head[pa];
+		}
+		stack<size_t> st_head,st_sub;
+		size_t cnt = 0;
+		for(size_t& root:reorder){
+			if(depth[root]) continue;
+			st_head.push(root);
+			while(st_head.size()){
+				size_t h = st_head.top();
+				st_head.pop();
+				st_sub.push(h);
+				while (st_sub.size()){
+					size_t pa = st_sub.top();
+					st_sub.pop();
+					hldorder[pa] = cnt++;
+					for(auto& e:child[pa]) {
+						if(head[e.first]==head[pa]) st_sub.push(e.first);
+						else st_head.push(e.first);
+					}
+				}				
+			}
+		}
 	}
- 
-    //for makeEulerTour
-	void dfs2(int from, int prev = -1){
-		eulerTour.push_back(from);
-        if(isWeighted) eulerTourDist.push_back(parentDist[from]);
- 
-        for(int i = 0; i < child[from].size(); ++i){
-            int to = child[from][i];            
-            dfs2(to,from);            
-    		eulerTour.push_back(from);
-            if(isWeighted) eulerTourDist.push_back(-childDist[from][i]);
-        }
-	}
-
-	//O(NlogN) after makeEulerTour
-	void makeEulerTourEdge(void) {
-		eulerTourDive.push_back(order[nodeNum-1]);
-		if(isWeighted) eulerTourDiveDist.push_back(0);
-		for(int i = 1; i < eulerTour.size(); ++i) {
-			int l = eulerTour[i-1];
-			int r = eulerTour[i];
-			if(depth[l] < depth[r]) {
-				eulerTourDive.push_back(i);
-				if(isWeighted) eulerTourDiveDist.push_back(eulerTourDist[i]);
+	//after hld type 0: vertex, 1: edge
+	vector<pair<size_t,size_t>> path(size_t u,size_t v,int type = 0) {
+		vector<pair<size_t,size_t>> path;
+		while(1){
+			if(hldorder[u]>hldorder[v]) swap(u,v);
+			if(head[u]!=head[v]) {
+				path.push_back({hldorder[head[v]],hldorder[v]});
+				v=parent[head[v]].first;
 			}
 			else {
-				eulerTourFloat.push_back(i);
-				if(isWeighted) eulerTourFloatDist.push_back(eulerTourDist[i]);
+				path.push_back({hldorder[u],hldorder[v]});
+				break;
 			}
 		}
-		eulerTourDiveIdxL.resize(nodeNum);
-		eulerTourDiveIdxR.resize(nodeNum);
-		eulerTourFloatIdxL.resize(nodeNum);
-		eulerTourFloatIdxR.resize(nodeNum);
-		for(int i = 0; i < nodeNum; ++i) {
-			int l = eulerTourIdxL[i];
-			int r = eulerTourIdxR[i];
-			eulerTourDiveIdxL[i]  =  upper_bound(eulerTourDive.begin() ,eulerTourDive.end() ,l) - eulerTourDive.begin()     ;
-			eulerTourDiveIdxR[i]  = (upper_bound(eulerTourDive.begin() ,eulerTourDive.end() ,r) - eulerTourDive.begin())  -1;
-			eulerTourFloatIdxL[i] =  upper_bound(eulerTourFloat.begin(),eulerTourFloat.end(),l) - eulerTourFloat.begin()    ;
-			eulerTourFloatIdxR[i] = (upper_bound(eulerTourFloat.begin(),eulerTourFloat.end(),r) - eulerTourFloat.begin()) -1;
-			eulerTourDiveIdxR[i]  = max(eulerTourDiveIdxL[i]-1 ,eulerTourDiveIdxR[i]);
-			eulerTourFloatIdxR[i] = max(eulerTourFloatIdxL[i]-1,eulerTourFloatIdxR[i]);
+        reverse(path.begin(),path.end());
+        if(type) path.front().first++;
+		return path;
+	}
+	size_t hldLca(size_t u,size_t v){
+		while(1){
+			if(hldorder[u]>hldorder[v]) swap(u,v);
+			if(head[u]==head[v]) return u;
+			v=parent[head[v]].first;
 		}
 	}
-		// iの部分木の頂点に加算するとき
-		// [ eulerTourIdxL[i]  ,eulerTourIdxR[i]  ]に　+val
-		// [i]の頂点クエリ
-		// [eulerTourIdxL[i],eulerTourIdxL[i]]
-
-		// iの部分木の辺に加算するとき
-		// [ eulerTourDiveIdxL[i]  ,eulerTourDiveIdxR[i]  ]に　+val
-		// [ eulerTourFloatIdxL[i] ,eulerTourFloatIdxR[i] ]に　-val
-		// [0,i]のパスクエリ
-		// [ 0, eulerTourDiveIdxL[i] ) + [0, eulerTourFloatIdxL[i])
- 
+    //O(N) after makeChild and makeParent
+	void makeEulerTour(void){
+        dfs2(reorder.front());
+        eulertourrange.resize(num);
+        for(int i = 0; i < eulertour.size(); ++i) eulertourrange[eulertour[i]].second = i;
+        for(int i = eulertour.size()-1; 0 <= i; --i) eulertourrange[eulertour[i]].first = i;
+		return;
+	}
+    //for makeEulerTour
+	void dfs2(int from, int prev = -1){
+		eulertour.push_back(from);
+        for(auto& e:child[from]){
+            int to = e.first;            
+            dfs2(to,from);        
+    		eulertour.push_back(from);
+        }
+	}
 };
- 
 //depth,dist
 //https://atcoder.jp/contests/abc126/tasks/abc126_d
- 
-//lca
-//https://atcoder.jp/contests/abc014/tasks/abc014_4
- 
 //child
 //https://atcoder.jp/contests/abc133/tasks/abc133_e
-
+//lca
+//https://atcoder.jp/contests/abc014/tasks/abc014_4
+//weighted lca
+//https://atcoder.jp/contests/code-thanks-festival-2017-open/tasks/code_thanks_festival_2017_h
+//https://atcoder.jp/contests/cf16-tournament-round1-open/tasks/asaporo_c
 //diameter
 //https://atcoder.jp/contests/agc033/tasks/agc033_c
-
+//descendant
+//https://atcoder.jp/contests/code-thanks-festival-2018/tasks/code_thanks_festival_2018_f
+//rerooting
+//https://yukicoder.me/problems/no/922
+//size
+//https://yukicoder.me/problems/no/872
 //eulerTour
 //https://yukicoder.me/problems/no/900
-
+//hld
+//https://yukicoder.me/problems/no/399
+//https://yukicoder.me/problems/no/650
+template<class typeDist> struct treeOperator{
+	static const size_t bit = 20;
+	typeDist unitDist = 0;
+	typeDist unitLca = 0;
+	typeDist funcDist(const typeDist& parent,const typeDist& w){return parent+w;}
+	pair<size_t,typeDist> funcLca(const pair<size_t,typeDist>& l,const pair<size_t,typeDist>& r){return make_pair(l.first,l.second+r.second);}
+	template<class typeReroot> typeReroot funcReroot(const typeReroot& l,const typeReroot& r) {
+		return {l.first+r.first+r.second,l.second+r.second};
+	}
+	template<class typeReroot> typeReroot funcRerootMerge(const typeReroot& l,const typeReroot& r) {
+		return {l.first+r.first,l.second+r.second};
+	}
+};
+//Tree<treeOperator<ll>> tree(N);
