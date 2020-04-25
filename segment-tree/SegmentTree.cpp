@@ -1,11 +1,3 @@
-#include <vector>
-#include <iostream>
-using namespace std;
-
-/**
-* @title セグメント木
-* @brief 非再帰+抽象化+モノイドクラス+staticメソッド+二分探索
-*/
 template<class Operator> class SegmentTree {
 	Operator Op;                            
 	using typeNode = decltype(Op.unitNode); 
@@ -139,7 +131,3 @@ template<class typeNode> struct nodeGCDPointUpdate {
 	// Binary Search for first index at where funcCheck is true
 	bool funcCheck(typeNode nodeVal,typeNode var){return var == nodeVal;}
 };
-
-int main(void){
-	return 0;
-}
