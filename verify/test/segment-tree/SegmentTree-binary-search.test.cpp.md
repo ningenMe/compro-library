@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/segment-tree/SegmentTree-binary-search.test.cpp
+# :heavy_check_mark: test/segment-tree/SegmentTree-binary-search.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#154f484dac0eb1f2e1b822e326933d6a">test/segment-tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment-tree/SegmentTree-binary-search.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 06:08:31+09:00
+    - Last commit date: 2020-04-26 06:27:21+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/4072">https://yukicoder.me/problems/4072</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/math/GreatestCommonDivisor.cpp.html">lib/math/GreatestCommonDivisor.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/math/GreatestCommonDivisor.cpp.html">lib/math/GreatestCommonDivisor.cpp</a>
 * :question: <a href="../../../library/lib/segment-tree/SegmentTree.cpp.html">lib/segment-tree/SegmentTree.cpp</a>
 
 
@@ -188,6 +188,14 @@ template<class T> struct nodeMinPointUpdate {
 	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
 
+//一点更新 区間最小
+template<class T> struct nodeSumPointAdd {
+	using TypeNode = T;
+	inline static constexpr TypeNode unit_node = 0;
+	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
+};
 #line 1 "lib/math/GreatestCommonDivisor.cpp"
 class Gcd{
 public:

@@ -102,7 +102,7 @@ layout: default
 
 ### lib/math
 
-* :x: <a href="library/lib/math/GreatestCommonDivisor.cpp.html">lib/math/GreatestCommonDivisor.cpp</a>
+* :heavy_check_mark: <a href="library/lib/math/GreatestCommonDivisor.cpp.html">lib/math/GreatestCommonDivisor.cpp</a>
 
 
 <div id="b1a869a4b6792d330ab2bf903e1c2325"></div>
@@ -136,7 +136,8 @@ layout: default
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
-* :x: <a href="verify/test/segment-tree/SegmentTree-binary-search.test.cpp.html">test/segment-tree/SegmentTree-binary-search.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment-tree/SegmentTree-binary-search.test.cpp.html">test/segment-tree/SegmentTree-binary-search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment-tree/SegmentTree-rmq.test.cpp.html">test/segment-tree/SegmentTree-rmq.test.cpp</a>
+* :x: <a href="verify/test/segment-tree/SegmentTree-rsq.test.cpp.html">test/segment-tree/SegmentTree-rsq.test.cpp</a>
 
 

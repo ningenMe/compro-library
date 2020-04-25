@@ -31,15 +31,16 @@ layout: default
 
 * category: <a href="../../../index.html#b1a869a4b6792d330ab2bf903e1c2325">lib/segment-tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/segment-tree/SegmentTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 06:06:47+09:00
+    - Last commit date: 2020-04-26 06:27:21+09:00
 
 
 
 
 ## Verified with
 
-* :x: <a href="../../../verify/test/segment-tree/SegmentTree-binary-search.test.cpp.html">test/segment-tree/SegmentTree-binary-search.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/segment-tree/SegmentTree-binary-search.test.cpp.html">test/segment-tree/SegmentTree-binary-search.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/segment-tree/SegmentTree-rmq.test.cpp.html">test/segment-tree/SegmentTree-rmq.test.cpp</a>
+* :x: <a href="../../../verify/test/segment-tree/SegmentTree-rsq.test.cpp.html">test/segment-tree/SegmentTree-rsq.test.cpp</a>
 
 
 ## Code
@@ -146,6 +147,14 @@ template<class T> struct nodeMinPointUpdate {
 	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
 
+//一点更新 区間最小
+template<class T> struct nodeSumPointAdd {
+	using TypeNode = T;
+	inline static constexpr TypeNode unit_node = 0;
+	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
+};
 
 ```
 {% endraw %}
@@ -253,6 +262,14 @@ template<class T> struct nodeMinPointUpdate {
 	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
 
+//一点更新 区間最小
+template<class T> struct nodeSumPointAdd {
+	using TypeNode = T;
+	inline static constexpr TypeNode unit_node = 0;
+	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
+};
 
 ```
 {% endraw %}
