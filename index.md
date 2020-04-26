@@ -34,6 +34,13 @@ layout: default
 
 ## Library Files
 
+<div id="9d4770b6051a64e71c3ca0eb1d2879e1"></div>
+
+### lib/heap
+
+* :warning: <a href="library/lib/heap/RadixHeapInt.cpp.html">lib/heap/RadixHeapInt.cpp</a>
+
+
 <div id="b524a7b47b8ed72180f0e5150ab6d934"></div>
 
 ### lib/math
