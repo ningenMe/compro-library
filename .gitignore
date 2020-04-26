@@ -3,3 +3,4 @@ ZZZ*
 *.ipch
 *.exe
 *.test
+.vscode/*

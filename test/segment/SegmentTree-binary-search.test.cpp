@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../lib/segment-tree/SegmentTree.cpp"
+#include "../../lib/segment/SegmentTree.cpp"
 #include "../../lib/math/GreatestCommonDivisor.cpp"
 
 template<class T> struct nodeGcdPointUpdate {
