@@ -34,6 +34,68 @@ layout: default
 
 ## Library Files
 
+<div id="155a5098a95a6467136de23a79cf53bd"></div>
+
+### lib-unverified
+
+* :warning: <a href="library/lib-unverified/BinaryColumnEchelonFormalize.cpp.html">lib-unverified/BinaryColumnEchelonFormalize.cpp</a>
+* :warning: <a href="library/lib-unverified/BinaryIndexedTree.cpp.html">lib-unverified/BinaryIndexedTree.cpp</a>
+* :warning: <a href="library/lib-unverified/BinaryIndexedTree2D.cpp.html">lib-unverified/BinaryIndexedTree2D.cpp</a>
+* :warning: <a href="library/lib-unverified/BipartiteMatching.cpp.html">lib-unverified/BipartiteMatching.cpp</a>
+* :warning: <a href="library/lib-unverified/Chinese_Remainder_Theorem.cpp.html">lib-unverified/Chinese_Remainder_Theorem.cpp</a>
+* :warning: <a href="library/lib-unverified/CircleIntersection.cpp.html">lib-unverified/CircleIntersection.cpp</a>
+* :warning: <a href="library/lib-unverified/Combination.cpp.html">lib-unverified/Combination.cpp</a>
+* :warning: <a href="library/lib-unverified/CombinationMod.cpp.html">lib-unverified/CombinationMod.cpp</a>
+* :warning: <a href="library/lib-unverified/ConvexHullTrick.cpp.html">lib-unverified/ConvexHullTrick.cpp</a>
+* :warning: <a href="library/lib-unverified/DigitSum.cpp.html">lib-unverified/DigitSum.cpp</a>
+* :warning: <a href="library/lib-unverified/Dijkstra.cpp.html">lib-unverified/Dijkstra.cpp</a>
+* :warning: <a href="library/lib-unverified/Dinic.cpp.html">lib-unverified/Dinic.cpp</a>
+* :warning: <a href="library/lib-unverified/DisjointSparseTable.cpp.html">lib-unverified/DisjointSparseTable.cpp</a>
+* :warning: <a href="library/lib-unverified/Distance.cpp.html">lib-unverified/Distance.cpp</a>
+* :warning: <a href="library/lib-unverified/Divisor.cpp.html">lib-unverified/Divisor.cpp</a>
+* :warning: <a href="library/lib-unverified/Eratosthenes.cpp.html">lib-unverified/Eratosthenes.cpp</a>
+* :warning: <a href="library/lib-unverified/FactorialMod.cpp.html">lib-unverified/FactorialMod.cpp</a>
+* :warning: <a href="library/lib-unverified/Ford_Fulkerson.cpp.html">lib-unverified/Ford_Fulkerson.cpp</a>
+* :warning: <a href="library/lib-unverified/Garner.cpp.html">lib-unverified/Garner.cpp</a>
+* :warning: <a href="library/lib-unverified/LazySegmentTree.cpp.html">lib-unverified/LazySegmentTree.cpp</a>
+* :warning: <a href="library/lib-unverified/Line_Intersection_Judge.cpp.html">lib-unverified/Line_Intersection_Judge.cpp</a>
+* :warning: <a href="library/lib-unverified/LongestIncreasingSubsequence.cpp.html">lib-unverified/LongestIncreasingSubsequence.cpp</a>
+* :warning: <a href="library/lib-unverified/Longest_Common_Subsequence.cpp.html">lib-unverified/Longest_Common_Subsequence.cpp</a>
+* :warning: <a href="library/lib-unverified/Longest_Common_Subsequence_Size.cpp.html">lib-unverified/Longest_Common_Subsequence_Size.cpp</a>
+* :warning: <a href="library/lib-unverified/LowLink.cpp.html">lib-unverified/LowLink.cpp</a>
+* :warning: <a href="library/lib-unverified/Matrix_Repeated_Multiplication_Mod.cpp.html">lib-unverified/Matrix_Repeated_Multiplication_Mod.cpp</a>
+* :warning: <a href="library/lib-unverified/Maximum_Rectangle.cpp.html">lib-unverified/Maximum_Rectangle.cpp</a>
+* :warning: <a href="library/lib-unverified/Maximum_Segment_Sum.cpp.html">lib-unverified/Maximum_Segment_Sum.cpp</a>
+* :warning: <a href="library/lib-unverified/Median.cpp.html">lib-unverified/Median.cpp</a>
+* :warning: <a href="library/lib-unverified/MinimumDirectedClosedCircuit.cpp.html">lib-unverified/MinimumDirectedClosedCircuit.cpp</a>
+* :warning: <a href="library/lib-unverified/MinimumUndirectedClosedCircuit.cpp.html">lib-unverified/MinimumUndirectedClosedCircuit.cpp</a>
+* :warning: <a href="library/lib-unverified/Mo.cpp.html">lib-unverified/Mo.cpp</a>
+* :warning: <a href="library/lib-unverified/ModInt.cpp.html">lib-unverified/ModInt.cpp</a>
+* :warning: <a href="library/lib-unverified/NBase.cpp.html">lib-unverified/NBase.cpp</a>
+* :warning: <a href="library/lib-unverified/Parser.cpp.html">lib-unverified/Parser.cpp</a>
+* :warning: <a href="library/lib-unverified/Partition_Number.cpp.html">lib-unverified/Partition_Number.cpp</a>
+* :warning: <a href="library/lib-unverified/Permutation_Mod.cpp.html">lib-unverified/Permutation_Mod.cpp</a>
+* :warning: <a href="library/lib-unverified/PowMod.cpp.html">lib-unverified/PowMod.cpp</a>
+* :warning: <a href="library/lib-unverified/PrimeFactorization.cpp.html">lib-unverified/PrimeFactorization.cpp</a>
+* :warning: <a href="library/lib-unverified/Rarts.cpp.html">lib-unverified/Rarts.cpp</a>
+* :warning: <a href="library/lib-unverified/RollingHash.cpp.html">lib-unverified/RollingHash.cpp</a>
+* :warning: <a href="library/lib-unverified/SegmentTree.cpp.html">lib-unverified/SegmentTree.cpp</a>
+* :warning: <a href="library/lib-unverified/SegmentTree2.cpp.html">lib-unverified/SegmentTree2.cpp</a>
+* :warning: <a href="library/lib-unverified/SlideMost.cpp.html">lib-unverified/SlideMost.cpp</a>
+* :warning: <a href="library/lib-unverified/SmallestEnclosingDisc.cpp.html">lib-unverified/SmallestEnclosingDisc.cpp</a>
+* :warning: <a href="library/lib-unverified/SparseTable.cpp.html">lib-unverified/SparseTable.cpp</a>
+* :warning: <a href="library/lib-unverified/StronglyConnectedComponents.cpp.html">lib-unverified/StronglyConnectedComponents.cpp</a>
+* :warning: <a href="library/lib-unverified/Tree.cpp.html">lib-unverified/Tree.cpp</a>
+* :warning: <a href="library/lib-unverified/UnionFindTree.cpp.html">lib-unverified/UnionFindTree.cpp</a>
+* :warning: <a href="library/lib-unverified/UnionFindTreeMerge.cpp.html">lib-unverified/UnionFindTreeMerge.cpp</a>
+* :warning: <a href="library/lib-unverified/UnionFindTreeSize.cpp.html">lib-unverified/UnionFindTreeSize.cpp</a>
+* :warning: <a href="library/lib-unverified/Union_Find_Tree_Persistence.cpp.html">lib-unverified/Union_Find_Tree_Persistence.cpp</a>
+* :warning: <a href="library/lib-unverified/Union_Find_Tree_With_Potential.cpp.html">lib-unverified/Union_Find_Tree_With_Potential.cpp</a>
+* :warning: <a href="library/lib-unverified/ZAlgorithm.cpp.html">lib-unverified/ZAlgorithm.cpp</a>
+* :warning: <a href="library/lib-unverified/ZArray.cpp.html">lib-unverified/ZArray.cpp</a>
+* :warning: <a href="library/lib-unverified/Zarts.cpp.html">lib-unverified/Zarts.cpp</a>
+
+
 <div id="b524a7b47b8ed72180f0e5150ab6d934"></div>
 
 ### lib/math
@@ -47,6 +109,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/lib/segment/LiChaoTree.cpp.html">lib/segment/LiChaoTree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment/SegmentTree.cpp.html">lib/segment/SegmentTree.cpp</a>
+* :heavy_check_mark: <a href="library/lib/segment/Swag.cpp.html">lib/segment/Swag.cpp</a>
 
 
 <div id="149603e6c03516362a8da23f624db945"></div>
@@ -59,6 +122,7 @@ layout: default
 * :warning: <a href="library/old/Lazy_Segment_Tree_Range_Maximum_Query.cpp.html">old/Lazy_Segment_Tree_Range_Maximum_Query.cpp</a>
 * :warning: <a href="library/old/Lazy_Segment_Tree_Range_Minimum_Query.cpp.html">old/Lazy_Segment_Tree_Range_Minimum_Query.cpp</a>
 * :warning: <a href="library/old/Lazy_Segment_Tree_Range_Sum_Query.cpp.html">old/Lazy_Segment_Tree_Range_Sum_Query.cpp</a>
+* :warning: <a href="library/old/LiChaoTree.cpp.html">old/LiChaoTree.cpp</a>
 * :warning: <a href="library/old/Lowest_Common_Ancestor.cpp.html">old/Lowest_Common_Ancestor.cpp</a>
 * :warning: <a href="library/old/Segment_Tree_Range_Gcd_Query.cpp.html">old/Segment_Tree_Range_Gcd_Query.cpp</a>
 * :warning: <a href="library/old/Segment_Tree_Range_Maximum_Query.cpp.html">old/Segment_Tree_Range_Maximum_Query.cpp</a>
@@ -70,70 +134,6 @@ layout: default
 * :warning: <a href="library/old/Weighted_Tree.cpp.html">old/Weighted_Tree.cpp</a>
 
 
-<div id="77abbaef317832d0cd0f51a55cb5a0a2"></div>
-
-### unverified
-
-* :warning: <a href="library/unverified/BinaryColumnEchelonFormalize.cpp.html">unverified/BinaryColumnEchelonFormalize.cpp</a>
-* :warning: <a href="library/unverified/BinaryIndexedTree.cpp.html">unverified/BinaryIndexedTree.cpp</a>
-* :warning: <a href="library/unverified/BinaryIndexedTree2D.cpp.html">unverified/BinaryIndexedTree2D.cpp</a>
-* :warning: <a href="library/unverified/BipartiteMatching.cpp.html">unverified/BipartiteMatching.cpp</a>
-* :warning: <a href="library/unverified/Chinese_Remainder_Theorem.cpp.html">unverified/Chinese_Remainder_Theorem.cpp</a>
-* :warning: <a href="library/unverified/CircleIntersection.cpp.html">unverified/CircleIntersection.cpp</a>
-* :warning: <a href="library/unverified/Combination.cpp.html">unverified/Combination.cpp</a>
-* :warning: <a href="library/unverified/CombinationMod.cpp.html">unverified/CombinationMod.cpp</a>
-* :warning: <a href="library/unverified/ConvexHullTrick.cpp.html">unverified/ConvexHullTrick.cpp</a>
-* :warning: <a href="library/unverified/DigitSum.cpp.html">unverified/DigitSum.cpp</a>
-* :warning: <a href="library/unverified/Dijkstra.cpp.html">unverified/Dijkstra.cpp</a>
-* :warning: <a href="library/unverified/Dinic.cpp.html">unverified/Dinic.cpp</a>
-* :warning: <a href="library/unverified/DisjointSparseTable.cpp.html">unverified/DisjointSparseTable.cpp</a>
-* :warning: <a href="library/unverified/Distance.cpp.html">unverified/Distance.cpp</a>
-* :warning: <a href="library/unverified/Divisor.cpp.html">unverified/Divisor.cpp</a>
-* :warning: <a href="library/unverified/Eratosthenes.cpp.html">unverified/Eratosthenes.cpp</a>
-* :warning: <a href="library/unverified/FactorialMod.cpp.html">unverified/FactorialMod.cpp</a>
-* :warning: <a href="library/unverified/Ford_Fulkerson.cpp.html">unverified/Ford_Fulkerson.cpp</a>
-* :warning: <a href="library/unverified/Garner.cpp.html">unverified/Garner.cpp</a>
-* :warning: <a href="library/unverified/LazySegmentTree.cpp.html">unverified/LazySegmentTree.cpp</a>
-* :warning: <a href="library/unverified/LiChaoTree.cpp.html">unverified/LiChaoTree.cpp</a>
-* :warning: <a href="library/unverified/Line_Intersection_Judge.cpp.html">unverified/Line_Intersection_Judge.cpp</a>
-* :warning: <a href="library/unverified/LongestIncreasingSubsequence.cpp.html">unverified/LongestIncreasingSubsequence.cpp</a>
-* :warning: <a href="library/unverified/Longest_Common_Subsequence.cpp.html">unverified/Longest_Common_Subsequence.cpp</a>
-* :warning: <a href="library/unverified/Longest_Common_Subsequence_Size.cpp.html">unverified/Longest_Common_Subsequence_Size.cpp</a>
-* :warning: <a href="library/unverified/LowLink.cpp.html">unverified/LowLink.cpp</a>
-* :warning: <a href="library/unverified/Matrix_Repeated_Multiplication_Mod.cpp.html">unverified/Matrix_Repeated_Multiplication_Mod.cpp</a>
-* :warning: <a href="library/unverified/Maximum_Rectangle.cpp.html">unverified/Maximum_Rectangle.cpp</a>
-* :warning: <a href="library/unverified/Maximum_Segment_Sum.cpp.html">unverified/Maximum_Segment_Sum.cpp</a>
-* :warning: <a href="library/unverified/Median.cpp.html">unverified/Median.cpp</a>
-* :warning: <a href="library/unverified/MinimumDirectedClosedCircuit.cpp.html">unverified/MinimumDirectedClosedCircuit.cpp</a>
-* :warning: <a href="library/unverified/MinimumUndirectedClosedCircuit.cpp.html">unverified/MinimumUndirectedClosedCircuit.cpp</a>
-* :warning: <a href="library/unverified/Mo.cpp.html">unverified/Mo.cpp</a>
-* :warning: <a href="library/unverified/ModInt.cpp.html">unverified/ModInt.cpp</a>
-* :warning: <a href="library/unverified/NBase.cpp.html">unverified/NBase.cpp</a>
-* :warning: <a href="library/unverified/Parser.cpp.html">unverified/Parser.cpp</a>
-* :warning: <a href="library/unverified/Partition_Number.cpp.html">unverified/Partition_Number.cpp</a>
-* :warning: <a href="library/unverified/Permutation_Mod.cpp.html">unverified/Permutation_Mod.cpp</a>
-* :warning: <a href="library/unverified/PowMod.cpp.html">unverified/PowMod.cpp</a>
-* :warning: <a href="library/unverified/PrimeFactorization.cpp.html">unverified/PrimeFactorization.cpp</a>
-* :warning: <a href="library/unverified/Rarts.cpp.html">unverified/Rarts.cpp</a>
-* :warning: <a href="library/unverified/RollingHash.cpp.html">unverified/RollingHash.cpp</a>
-* :warning: <a href="library/unverified/SegmentTree.cpp.html">unverified/SegmentTree.cpp</a>
-* :warning: <a href="library/unverified/SegmentTree2.cpp.html">unverified/SegmentTree2.cpp</a>
-* :warning: <a href="library/unverified/SlideMost.cpp.html">unverified/SlideMost.cpp</a>
-* :warning: <a href="library/unverified/SmallestEnclosingDisc.cpp.html">unverified/SmallestEnclosingDisc.cpp</a>
-* :warning: <a href="library/unverified/SparseTable.cpp.html">unverified/SparseTable.cpp</a>
-* :warning: <a href="library/unverified/StronglyConnectedComponents.cpp.html">unverified/StronglyConnectedComponents.cpp</a>
-* :warning: <a href="library/unverified/Swag.cpp.html">unverified/Swag.cpp</a>
-* :warning: <a href="library/unverified/Tree.cpp.html">unverified/Tree.cpp</a>
-* :warning: <a href="library/unverified/UnionFindTree.cpp.html">unverified/UnionFindTree.cpp</a>
-* :warning: <a href="library/unverified/UnionFindTreeMerge.cpp.html">unverified/UnionFindTreeMerge.cpp</a>
-* :warning: <a href="library/unverified/UnionFindTreeSize.cpp.html">unverified/UnionFindTreeSize.cpp</a>
-* :warning: <a href="library/unverified/Union_Find_Tree_Persistence.cpp.html">unverified/Union_Find_Tree_Persistence.cpp</a>
-* :warning: <a href="library/unverified/Union_Find_Tree_With_Potential.cpp.html">unverified/Union_Find_Tree_With_Potential.cpp</a>
-* :warning: <a href="library/unverified/ZAlgorithm.cpp.html">unverified/ZAlgorithm.cpp</a>
-* :warning: <a href="library/unverified/ZArray.cpp.html">unverified/ZArray.cpp</a>
-* :warning: <a href="library/unverified/Zarts.cpp.html">unverified/Zarts.cpp</a>
-
-
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
@@ -142,5 +142,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-binary-search.test.cpp.html">test/segment/SegmentTree-binary-search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rmq.test.cpp.html">test/segment/SegmentTree-rmq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rsq.test.cpp.html">test/segment/SegmentTree-rsq.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/Swag.test.cpp.html">test/segment/Swag.test.cpp</a>
 
 

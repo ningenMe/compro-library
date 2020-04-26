@@ -21,26 +21,19 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/segment/SegmentTree.cpp
+# :warning: lib-unverified/SegmentTree2.cpp
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#c993b235c21a7035904945a028efa0ef">lib/segment</a>
-* <a href="{{ site.github.repository_url }}/blob/master/lib/segment/SegmentTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:20:36+09:00
-
-
+* category: <a href="../../index.html#155a5098a95a6467136de23a79cf53bd">lib-unverified</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib-unverified/SegmentTree2.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-26 16:21:26+09:00
 
 
-## Verified with
-
-* :heavy_check_mark: <a href="../../../verify/test/segment/SegmentTree-binary-search.test.cpp.html">test/segment/SegmentTree-binary-search.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/segment/SegmentTree-rmq.test.cpp.html">test/segment/SegmentTree-rmq.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/segment/SegmentTree-rsq.test.cpp.html">test/segment/SegmentTree-rsq.test.cpp</a>
 
 
 ## Code
@@ -70,7 +63,7 @@ public:
 		for (length = 1; length < vec.size(); length *= 2);
 		node.resize(2 * length, Operator::unit_node);
 		for (int i = 0; i < vec.size(); ++i) node[i + length] = vec[i];
-		for (int i = length - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);
+		for (int i = length - 1; i >= 0; --i) node[i] = Operator::funcNode(node[(i<<1)+0],node[(i<<1)+1]);
 		range.resize(2 * length);
 		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
 		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
@@ -90,8 +83,8 @@ public:
 	void update(size_t idx, const TypeNode var) {
 		if(idx < 0 || length <= idx) return;
 		idx += length;
-		node[idx] = Operator::func_merge(node[idx],var);
-		while(idx >>= 1) node[idx] = Operator::func_node(node[(idx<<1)+0],node[(idx<<1)+1]);
+		node[idx] = Operator::funcMerge(node[idx],var);
+		while(idx >>= 1) node[idx] = Operator::funcNode(node[(idx<<1)+0],node[(idx<<1)+1]);
 	}
 
 	//[l,r)
@@ -99,20 +92,20 @@ public:
 		if (l < 0 || length <= l || r < 0 || length < r) return Operator::unit_node;
 		TypeNode vl = Operator::unit_node, vr = Operator::unit_node;
 		for(l += length, r += length; l < r; l >>=1, r >>=1) {
-			if(l&1) vl = Operator::func_node(vl,node[l++]);
-			if(r&1) vr = Operator::func_node(node[--r],vr);
+			if(l&1) vl = Operator::funcNode(vl,node[l++]);
+			if(r&1) vr = Operator::funcNode(node[--r],vr);
 		}
-		return Operator::func_node(vl,vr);
+		return Operator::funcNode(vl,vr);
 	}
 
 	//return [0,length]
-	int prefix_binary_search(TypeNode var) {
-		if(!Operator::func_check(node[1],var)) return num;
+	int prefixBinarySearch(TypeNode var) {
+		if(!Operator::funcCheck(node[1],var)) return num;
 		TypeNode ret = Operator::unit_node;
 		size_t idx = 2;
 		for(; idx < 2*length; idx<<=1){
-			if(!Operator::func_check(Operator::func_node(ret,node[idx]),var)) {
-				ret = Operator::func_node(ret,node[idx]);
+			if(!Operator::funcCheck(Operator::funcNode(ret,node[idx]),var)) {
+				ret = Operator::funcNode(ret,node[idx]);
 				idx++;
 			}
 		}
@@ -120,13 +113,13 @@ public:
 	}
 
 	//range[l,r) return [l,r]
-	int binary_search(size_t l, size_t r, TypeNode var) {
+	int binarySearch(size_t l, size_t r, TypeNode var) {
 		if (l < 0 || length <= l || r < 0 || length < r) return -1;
 		TypeNode ret = Operator::unit_node;
 		size_t off = l;
 		for(size_t idx = l+length; idx < 2*length && off < r; ){
-			if(range[idx].second<=r && !Operator::func_check(Operator::func_node(ret,node[idx]),var)) {
-				ret = Operator::func_node(ret,node[idx]);
+			if(range[idx].second<=r && !Operator::funcCheck(Operator::funcNode(ret,node[idx]),var)) {
+				ret = Operator::funcNode(ret,node[idx]);
 				off = range[idx++].second;
 				if(!(idx&1)) idx >>= 1;			
 			}
@@ -138,31 +131,20 @@ public:
 	}
 };
 
-//一点更新 区間最小
-template<class T> struct NodeMinPointUpdate {
-	using TypeNode = T;
-	inline static constexpr TypeNode unit_node = (1LL<<31)-1;
-	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return min(l,r);}
-	inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}
-	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
-};
-
-//一点更新 区間最小
-template<class T> struct NodeSumPointAdd {
+template<class T> struct nodeGcdPointUpdate {
 	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
-	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
-	inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}
-	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
+	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return Gcd::gcd(l,r);}
+	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return r;}
+	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "lib/segment/SegmentTree.cpp"
+#line 1 "lib-unverified/SegmentTree2.cpp"
 template<class Operator> class SegmentTree {
 	using TypeNode = typename Operator::TypeNode; 
 	size_t length;
@@ -185,7 +167,7 @@ public:
 		for (length = 1; length < vec.size(); length *= 2);
 		node.resize(2 * length, Operator::unit_node);
 		for (int i = 0; i < vec.size(); ++i) node[i + length] = vec[i];
-		for (int i = length - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);
+		for (int i = length - 1; i >= 0; --i) node[i] = Operator::funcNode(node[(i<<1)+0],node[(i<<1)+1]);
 		range.resize(2 * length);
 		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
 		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
@@ -205,8 +187,8 @@ public:
 	void update(size_t idx, const TypeNode var) {
 		if(idx < 0 || length <= idx) return;
 		idx += length;
-		node[idx] = Operator::func_merge(node[idx],var);
-		while(idx >>= 1) node[idx] = Operator::func_node(node[(idx<<1)+0],node[(idx<<1)+1]);
+		node[idx] = Operator::funcMerge(node[idx],var);
+		while(idx >>= 1) node[idx] = Operator::funcNode(node[(idx<<1)+0],node[(idx<<1)+1]);
 	}
 
 	//[l,r)
@@ -214,20 +196,20 @@ public:
 		if (l < 0 || length <= l || r < 0 || length < r) return Operator::unit_node;
 		TypeNode vl = Operator::unit_node, vr = Operator::unit_node;
 		for(l += length, r += length; l < r; l >>=1, r >>=1) {
-			if(l&1) vl = Operator::func_node(vl,node[l++]);
-			if(r&1) vr = Operator::func_node(node[--r],vr);
+			if(l&1) vl = Operator::funcNode(vl,node[l++]);
+			if(r&1) vr = Operator::funcNode(node[--r],vr);
 		}
-		return Operator::func_node(vl,vr);
+		return Operator::funcNode(vl,vr);
 	}
 
 	//return [0,length]
-	int prefix_binary_search(TypeNode var) {
-		if(!Operator::func_check(node[1],var)) return num;
+	int prefixBinarySearch(TypeNode var) {
+		if(!Operator::funcCheck(node[1],var)) return num;
 		TypeNode ret = Operator::unit_node;
 		size_t idx = 2;
 		for(; idx < 2*length; idx<<=1){
-			if(!Operator::func_check(Operator::func_node(ret,node[idx]),var)) {
-				ret = Operator::func_node(ret,node[idx]);
+			if(!Operator::funcCheck(Operator::funcNode(ret,node[idx]),var)) {
+				ret = Operator::funcNode(ret,node[idx]);
 				idx++;
 			}
 		}
@@ -235,13 +217,13 @@ public:
 	}
 
 	//range[l,r) return [l,r]
-	int binary_search(size_t l, size_t r, TypeNode var) {
+	int binarySearch(size_t l, size_t r, TypeNode var) {
 		if (l < 0 || length <= l || r < 0 || length < r) return -1;
 		TypeNode ret = Operator::unit_node;
 		size_t off = l;
 		for(size_t idx = l+length; idx < 2*length && off < r; ){
-			if(range[idx].second<=r && !Operator::func_check(Operator::func_node(ret,node[idx]),var)) {
-				ret = Operator::func_node(ret,node[idx]);
+			if(range[idx].second<=r && !Operator::funcCheck(Operator::funcNode(ret,node[idx]),var)) {
+				ret = Operator::funcNode(ret,node[idx]);
 				off = range[idx++].second;
 				if(!(idx&1)) idx >>= 1;			
 			}
@@ -253,26 +235,16 @@ public:
 	}
 };
 
-//一点更新 区間最小
-template<class T> struct NodeMinPointUpdate {
-	using TypeNode = T;
-	inline static constexpr TypeNode unit_node = (1LL<<31)-1;
-	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return min(l,r);}
-	inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}
-	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
-};
-
-//一点更新 区間最小
-template<class T> struct NodeSumPointAdd {
+template<class T> struct nodeGcdPointUpdate {
 	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
-	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
-	inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}
-	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
+	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return Gcd::gcd(l,r);}
+	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return r;}
+	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
 
 ```
 {% endraw %}
 
-<a href="../../../index.html">Back to top page</a>
+<a href="../../index.html">Back to top page</a>
 
