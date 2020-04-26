@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/test/segment-tree/SegmentTree-binary-search.test.cpp.html">test/segment-tree/SegmentTree-binary-search.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/segment/SegmentTree-binary-search.test.cpp.html">test/segment/SegmentTree-binary-search.test.cpp</a>
 
 
 ## Code

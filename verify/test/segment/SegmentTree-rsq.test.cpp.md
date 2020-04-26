@@ -25,22 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/segment-tree/SegmentTree-binary-search.test.cpp
+# :heavy_check_mark: test/segment/SegmentTree-rsq.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#154f484dac0eb1f2e1b822e326933d6a">test/segment-tree</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/segment-tree/SegmentTree-binary-search.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 06:27:21+09:00
+* category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/segment/SegmentTree-rsq.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-26 12:01:43+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/4072">https://yukicoder.me/problems/4072</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/math/GreatestCommonDivisor.cpp.html">lib/math/GreatestCommonDivisor.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/segment-tree/SegmentTree.cpp.html">lib/segment-tree/SegmentTree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/segment/SegmentTree.cpp.html">lib/segment/SegmentTree.cpp</a>
 
 
 ## Code
@@ -48,33 +47,29 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://yukicoder.me/problems/4072"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
 
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../lib/segment-tree/SegmentTree.cpp"
-#include "../../lib/math/GreatestCommonDivisor.cpp"
+#include "../../lib/segment/SegmentTree.cpp"
 
-template<class T> struct nodeGcdPointUpdate {
-	using TypeNode = T;
-	inline static constexpr TypeNode unit_node = 0;
-	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return Gcd::gcd(l,r);}
-	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return r;}
-	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
-};
-
-// solution by binary search in prefix range on segment tree 
-int main() {
-	long long N; cin >> N;
-	vector<long long> A(N);
-	for(int i = 0; i < N; ++i) cin >> A[i];
-	SegmentTree<nodeGcdPointUpdate<long long>> seg(A);
-	long long ans = 0;
-	for(int i = 0; i < N; ++i) {
-		ans += N - seg.binarySearch(i,N,1);
+int main(void){
+	int N,Q; cin >> N >> Q;
+	SegmentTree<nodeSumPointAdd<long long>> Seg(N,0);
+	while(Q--){
+		int q; cin >> q;
+		if(q==0){
+			int x,y; cin >> x >> y;
+			x--;
+			Seg.update(x,y);
+		}
+		else{
+			int x,y; cin >> x >> y;
+			x--;
+			cout << Seg.get(x,y) << endl;
+		}
 	}
-	cout << ans << endl;
 }
 ```
 {% endraw %}
@@ -82,13 +77,13 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/segment-tree/SegmentTree-binary-search.test.cpp"
-#define PROBLEM "https://yukicoder.me/problems/4072"
+#line 1 "test/segment/SegmentTree-rsq.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
 
 #include <vector>
 #include <iostream>
 using namespace std;
-#line 1 "lib/segment-tree/SegmentTree.cpp"
+#line 1 "lib/segment/SegmentTree.cpp"
 template<class Operator> class SegmentTree {
 	using TypeNode = typename Operator::TypeNode; 
 	size_t length;
@@ -196,69 +191,24 @@ template<class T> struct nodeSumPointAdd {
 	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return l+r;}
 	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
-#line 1 "lib/math/GreatestCommonDivisor.cpp"
-class Gcd{
-public:
-	inline static long long impl(long long n, long long m) {
-		static constexpr long long K = 5;
-		long long t,s;
-		for(int i = 0; t = n - m, s = n - m * K, i < 80; ++i) {
-			if(t<m){
-				if(!t) return m;
-				n = m, m = t;
-			}
-			else{
-				if(!m) return t;
-				n=t;
-				if(t >= m * K) n = s;
-			}
-		}
-		return impl(m, n % m);
-	}
-	inline static long long pre(long long n, long long m) {
-		long long t;
-		for(int i = 0; t = n - m, i < 4; ++i) {
-			(t < m ? n=m,m=t : n=t);
-			if(!m) return n;
-		}
-		return impl(n, m);
-	}
-	inline static long long gcd(long long n, long long m) {
-		return (n>m ? pre(n,m) : pre(m,n));
-	}
-	inline static constexpr long long pureGcd(long long a, long long b) {
-		return (b ? pureGcd(b, a % b):a);
-	}
-	inline static constexpr long long lcm(long long a, long long b) {
-		return (a*b ? (a / gcd(a, b)*b): 0);
-	}
-	inline static constexpr long long extGcd(long long a, long long b, long long &x, long long &y) {
-		if (b == 0) return x = 1, y = 0, a;
-		long long d = extGcd(b, a%b, y, x);
-		return y -= a / b * x, d;
-	}
-};
-#line 8 "test/segment-tree/SegmentTree-binary-search.test.cpp"
+#line 7 "test/segment/SegmentTree-rsq.test.cpp"
 
-template<class T> struct nodeGcdPointUpdate {
-	using TypeNode = T;
-	inline static constexpr TypeNode unit_node = 0;
-	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return Gcd::gcd(l,r);}
-	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return r;}
-	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
-};
-
-// solution by binary search in prefix range on segment tree 
-int main() {
-	long long N; cin >> N;
-	vector<long long> A(N);
-	for(int i = 0; i < N; ++i) cin >> A[i];
-	SegmentTree<nodeGcdPointUpdate<long long>> seg(A);
-	long long ans = 0;
-	for(int i = 0; i < N; ++i) {
-		ans += N - seg.binarySearch(i,N,1);
+int main(void){
+	int N,Q; cin >> N >> Q;
+	SegmentTree<nodeSumPointAdd<long long>> Seg(N,0);
+	while(Q--){
+		int q; cin >> q;
+		if(q==0){
+			int x,y; cin >> x >> y;
+			x--;
+			Seg.update(x,y);
+		}
+		else{
+			int x,y; cin >> x >> y;
+			x--;
+			cout << Seg.get(x,y) << endl;
+		}
 	}
-	cout << ans << endl;
 }
 
 ```

@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/segment-tree/LiChaoTree.cpp
+# :heavy_check_mark: lib/segment/LiChaoTree.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#b1a869a4b6792d330ab2bf903e1c2325">lib/segment-tree</a>
-* <a href="{{ site.github.repository_url }}/blob/master/lib/segment-tree/LiChaoTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 07:04:52+09:00
+* category: <a href="../../../index.html#c993b235c21a7035904945a028efa0ef">lib/segment</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/segment/LiChaoTree.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-26 12:01:43+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/test/segment-tree/LiChaoTree-line.test.cpp.html">test/segment-tree/LiChaoTree-line.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/segment/LiChaoTree-line.test.cpp.html">test/segment/LiChaoTree-line.test.cpp</a>
 
 
 ## Code
@@ -137,7 +137,7 @@ template<class T> struct valueMin {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "lib/segment-tree/LiChaoTree.cpp"
+#line 1 "lib/segment/LiChaoTree.cpp"
 template<class Operator> class LiChaoTree{
 	using TypeValue = typename Operator::TypeValue;
 	struct domain{TypeValue l,c,r;};

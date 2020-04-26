@@ -41,12 +41,12 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/math/GreatestCommonDivisor.cpp.html">lib/math/GreatestCommonDivisor.cpp</a>
 
 
-<div id="b1a869a4b6792d330ab2bf903e1c2325"></div>
+<div id="c993b235c21a7035904945a028efa0ef"></div>
 
-### lib/segment-tree
+### lib/segment
 
-* :heavy_check_mark: <a href="library/lib/segment-tree/LiChaoTree.cpp.html">lib/segment-tree/LiChaoTree.cpp</a>
-* :heavy_check_mark: <a href="library/lib/segment-tree/SegmentTree.cpp.html">lib/segment-tree/SegmentTree.cpp</a>
+* :heavy_check_mark: <a href="library/lib/segment/LiChaoTree.cpp.html">lib/segment/LiChaoTree.cpp</a>
+* :heavy_check_mark: <a href="library/lib/segment/SegmentTree.cpp.html">lib/segment/SegmentTree.cpp</a>
 
 
 <div id="149603e6c03516362a8da23f624db945"></div>
@@ -137,9 +137,9 @@ layout: default
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment-tree/LiChaoTree-line.test.cpp.html">test/segment-tree/LiChaoTree-line.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment-tree/SegmentTree-binary-search.test.cpp.html">test/segment-tree/SegmentTree-binary-search.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment-tree/SegmentTree-rmq.test.cpp.html">test/segment-tree/SegmentTree-rmq.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment-tree/SegmentTree-rsq.test.cpp.html">test/segment-tree/SegmentTree-rsq.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-line.test.cpp.html">test/segment/LiChaoTree-line.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/SegmentTree-binary-search.test.cpp.html">test/segment/SegmentTree-binary-search.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rmq.test.cpp.html">test/segment/SegmentTree-rmq.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rsq.test.cpp.html">test/segment/SegmentTree-rsq.test.cpp</a>
 
 

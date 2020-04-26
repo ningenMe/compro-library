@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/segment-tree/LiChaoTree-line.test.cpp
+# :heavy_check_mark: test/segment/LiChaoTree-line.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#154f484dac0eb1f2e1b822e326933d6a">test/segment-tree</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/segment-tree/LiChaoTree-line.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 07:08:05+09:00
+* category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/segment/LiChaoTree-line.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-26 12:01:43+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/line_add_get_min">https://judge.yosupo.jp/problem/line_add_get_min</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/segment-tree/LiChaoTree.cpp.html">lib/segment-tree/LiChaoTree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/segment/LiChaoTree.cpp.html">lib/segment/LiChaoTree.cpp</a>
 
 
 ## Code
@@ -53,7 +53,7 @@ layout: default
 #include <iostream>
 #include <algorithm>
 using namespace std;
-#include "../../lib/segment-tree/LiChaoTree.cpp"
+#include "../../lib/segment/LiChaoTree.cpp"
 
 int main(void){
 	int N,Q; cin >> N >> Q;
@@ -88,14 +88,14 @@ int main(void){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/segment-tree/LiChaoTree-line.test.cpp"
+#line 1 "test/segment/LiChaoTree-line.test.cpp"
 #define PROBLEM "https://judge.yosupo.jp/problem/line_add_get_min"
 
 #include <vector>
 #include <iostream>
 #include <algorithm>
 using namespace std;
-#line 1 "lib/segment-tree/LiChaoTree.cpp"
+#line 1 "lib/segment/LiChaoTree.cpp"
 template<class Operator> class LiChaoTree{
 	using TypeValue = typename Operator::TypeValue;
 	struct domain{TypeValue l,c,r;};
@@ -181,7 +181,7 @@ template<class T> struct valueMin {
 	inline static constexpr TypeValue unit_value = 3e18;
 	inline static constexpr bool funcCompare(TypeValue l,TypeValue r){return l<r;}
 };
-#line 8 "test/segment-tree/LiChaoTree-line.test.cpp"
+#line 8 "test/segment/LiChaoTree-line.test.cpp"
 
 int main(void){
 	int N,Q; cin >> N >> Q;

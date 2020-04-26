@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/segment-tree/SegmentTree-rsq.test.cpp
+# :heavy_check_mark: test/segment/SegmentTree-rmq.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#154f484dac0eb1f2e1b822e326933d6a">test/segment-tree</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/segment-tree/SegmentTree-rsq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 06:33:07+09:00
+* category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/segment/SegmentTree-rmq.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-26 12:01:43+09:00
 
 
-* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B</a>
+* see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/segment-tree/SegmentTree.cpp.html">lib/segment-tree/SegmentTree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/segment/SegmentTree.cpp.html">lib/segment/SegmentTree.cpp</a>
 
 
 ## Code
@@ -47,29 +47,23 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A"
 
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../lib/segment-tree/SegmentTree.cpp"
+#include "../../lib/segment/SegmentTree.cpp"
 
 int main(void){
 	int N,Q; cin >> N >> Q;
-	SegmentTree<nodeSumPointAdd<long long>> Seg(N,0);
+	SegmentTree<nodeMinPointUpdate<long long>> Seg(N);
 	while(Q--){
-		int q; cin >> q;
-		if(q==0){
-			int x,y; cin >> x >> y;
-			x--;
-			Seg.update(x,y);
-		}
-		else{
-			int x,y; cin >> x >> y;
-			x--;
-			cout << Seg.get(x,y) << endl;
-		}
+		long long q,a,b;
+		cin >> q >> a >> b;
+		if(q) cout << Seg.get(a,b+1) << endl;
+		else Seg.update(a,b);
 	}
+	return 0;
 }
 ```
 {% endraw %}
@@ -77,13 +71,13 @@ int main(void){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/segment-tree/SegmentTree-rsq.test.cpp"
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
+#line 1 "test/segment/SegmentTree-rmq.test.cpp"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A"
 
 #include <vector>
 #include <iostream>
 using namespace std;
-#line 1 "lib/segment-tree/SegmentTree.cpp"
+#line 1 "lib/segment/SegmentTree.cpp"
 template<class Operator> class SegmentTree {
 	using TypeNode = typename Operator::TypeNode; 
 	size_t length;
@@ -191,24 +185,18 @@ template<class T> struct nodeSumPointAdd {
 	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return l+r;}
 	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
-#line 7 "test/segment-tree/SegmentTree-rsq.test.cpp"
+#line 7 "test/segment/SegmentTree-rmq.test.cpp"
 
 int main(void){
 	int N,Q; cin >> N >> Q;
-	SegmentTree<nodeSumPointAdd<long long>> Seg(N,0);
+	SegmentTree<nodeMinPointUpdate<long long>> Seg(N);
 	while(Q--){
-		int q; cin >> q;
-		if(q==0){
-			int x,y; cin >> x >> y;
-			x--;
-			Seg.update(x,y);
-		}
-		else{
-			int x,y; cin >> x >> y;
-			x--;
-			cout << Seg.get(x,y) << endl;
-		}
+		long long q,a,b;
+		cin >> q >> a >> b;
+		if(q) cout << Seg.get(a,b+1) << endl;
+		else Seg.update(a,b);
 	}
+	return 0;
 }
 
 ```

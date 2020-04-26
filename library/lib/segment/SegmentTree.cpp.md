@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/segment-tree/SegmentTree.cpp
+# :heavy_check_mark: lib/segment/SegmentTree.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../../index.html#b1a869a4b6792d330ab2bf903e1c2325">lib/segment-tree</a>
-* <a href="{{ site.github.repository_url }}/blob/master/lib/segment-tree/SegmentTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 06:27:21+09:00
+* category: <a href="../../../index.html#c993b235c21a7035904945a028efa0ef">lib/segment</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/segment/SegmentTree.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-26 12:01:43+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/test/segment-tree/SegmentTree-binary-search.test.cpp.html">test/segment-tree/SegmentTree-binary-search.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/segment-tree/SegmentTree-rmq.test.cpp.html">test/segment-tree/SegmentTree-rmq.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/segment-tree/SegmentTree-rsq.test.cpp.html">test/segment-tree/SegmentTree-rsq.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/segment/SegmentTree-binary-search.test.cpp.html">test/segment/SegmentTree-binary-search.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/segment/SegmentTree-rmq.test.cpp.html">test/segment/SegmentTree-rmq.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/segment/SegmentTree-rsq.test.cpp.html">test/segment/SegmentTree-rsq.test.cpp</a>
 
 
 ## Code
@@ -162,7 +162,7 @@ template<class T> struct nodeSumPointAdd {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "lib/segment-tree/SegmentTree.cpp"
+#line 1 "lib/segment/SegmentTree.cpp"
 template<class Operator> class SegmentTree {
 	using TypeNode = typename Operator::TypeNode; 
 	size_t length;
