@@ -144,3 +144,16 @@ template<class T, class U> struct NodeMinRangeAdd {
 	inline static constexpr TypeNode func_merge(TypeNode l,TypeLazy r,int len){return l+r;}
 	// LazySegmentTree<NodeMinRangeAdd<ll,ll>> Seg(N,0);
 };
+
+//node:総和　lazy:更新
+template<class T, class U> struct NodeSumRangeUpdate {
+	using TypeNode = T;
+	using TypeLazy = U;
+	inline static constexpr TypeNode unit_node = 0;
+	inline static constexpr TypeLazy unit_lazy = -2000;
+	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return r;}
+	inline static constexpr TypeNode func_merge(TypeNode l,TypeLazy r,int len){return r!=-2000?r*len:l;}
+	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
+	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
+};
