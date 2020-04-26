@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/SegmentTree-binary-search.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 12:01:43+09:00
+    - Last commit date: 2020-04-26 16:03:36+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/4072">https://yukicoder.me/problems/4072</a>
@@ -66,6 +66,7 @@ template<class T> struct nodeGcdPointUpdate {
 
 // solution by binary search in prefix range on segment tree 
 int main() {
+	cin.tie(0);ios::sync_with_stdio(false);
 	long long N; cin >> N;
 	vector<long long> A(N);
 	for(int i = 0; i < N; ++i) cin >> A[i];
@@ -250,6 +251,7 @@ template<class T> struct nodeGcdPointUpdate {
 
 // solution by binary search in prefix range on segment tree 
 int main() {
+	cin.tie(0);ios::sync_with_stdio(false);
 	long long N; cin >> N;
 	vector<long long> A(N);
 	for(int i = 0; i < N; ++i) cin >> A[i];

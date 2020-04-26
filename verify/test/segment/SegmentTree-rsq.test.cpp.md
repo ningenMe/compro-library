@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/SegmentTree-rsq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 12:01:43+09:00
+    - Last commit date: 2020-04-26 16:03:36+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B</a>
@@ -55,6 +55,7 @@ using namespace std;
 #include "../../lib/segment/SegmentTree.cpp"
 
 int main(void){
+	cin.tie(0);ios::sync_with_stdio(false);
 	int N,Q; cin >> N >> Q;
 	SegmentTree<nodeSumPointAdd<long long>> Seg(N,0);
 	while(Q--){
@@ -194,6 +195,7 @@ template<class T> struct nodeSumPointAdd {
 #line 7 "test/segment/SegmentTree-rsq.test.cpp"
 
 int main(void){
+	cin.tie(0);ios::sync_with_stdio(false);
 	int N,Q; cin >> N >> Q;
 	SegmentTree<nodeSumPointAdd<long long>> Seg(N,0);
 	while(Q--){
