@@ -45,6 +45,7 @@ layout: default
 
 ### lib/segment
 
+* :heavy_check_mark: <a href="library/lib/segment/LazySegmentTree.cpp.html">lib/segment/LazySegmentTree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment/LiChaoTree.cpp.html">lib/segment/LiChaoTree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment/SegmentTree.cpp.html">lib/segment/SegmentTree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment/Swag.cpp.html">lib/segment/Swag.cpp</a>
@@ -137,6 +138,7 @@ layout: default
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rmqraq.test.cpp.html">test/segment/LazySegmentTree-rmqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-line.test.cpp.html">test/segment/LiChaoTree-line.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-segment.test.cpp.html">test/segment/LiChaoTree-segment.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-binary-search.test.cpp.html">test/segment/SegmentTree-binary-search.test.cpp</a>
