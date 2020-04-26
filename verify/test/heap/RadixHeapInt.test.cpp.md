@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/heap/RadixHeapInt.test.cpp
+# :heavy_check_mark: test/heap/RadixHeapInt.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#a2bf5cb1737b82034660168b413e4164">test/heap</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/heap/RadixHeapInt.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-27 04:14:05+09:00
+    - Last commit date: 2020-04-27 04:16:57+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0596">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0596</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/heap/RadixHeapInt.cpp.html">lib/heap/RadixHeapInt.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/heap/RadixHeapInt.cpp.html">lib/heap/RadixHeapInt.cpp</a>
 
 
 ## Code
@@ -52,6 +52,7 @@ layout: default
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <array>
 using namespace std;
 #include "../../lib/heap/RadixHeapInt.cpp"
 
@@ -103,6 +104,7 @@ int main(void){
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <array>
 using namespace std;
 #line 1 "lib/heap/RadixHeapInt.cpp"
 template<class T> class RadixHeapInt{
@@ -145,7 +147,7 @@ public:
 		return res;
 	}
 };
-#line 8 "test/heap/RadixHeapInt.test.cpp"
+#line 9 "test/heap/RadixHeapInt.test.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);
