@@ -38,7 +38,7 @@ layout: default
 
 ### lib/heap
 
-* :warning: <a href="library/lib/heap/RadixHeapInt.cpp.html">lib/heap/RadixHeapInt.cpp</a>
+* :x: <a href="library/lib/heap/RadixHeapInt.cpp.html">lib/heap/RadixHeapInt.cpp</a>
 
 
 <div id="b524a7b47b8ed72180f0e5150ab6d934"></div>
@@ -145,6 +145,7 @@ layout: default
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
+* :x: <a href="verify/test/heap/RadixHeapInt.test.cpp.html">test/heap/RadixHeapInt.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rmqraq.test.cpp.html">test/segment/LazySegmentTree-rmqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rsqruq.test.cpp.html">test/segment/LazySegmentTree-rsqruq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-line.test.cpp.html">test/segment/LiChaoTree-line.test.cpp</a>

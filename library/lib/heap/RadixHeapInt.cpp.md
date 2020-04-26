@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: lib/heap/RadixHeapInt.cpp
+# :x: lib/heap/RadixHeapInt.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2020-04-26 20:55:15+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../../verify/test/heap/RadixHeapInt.test.cpp.html">test/heap/RadixHeapInt.test.cpp</a>
 
 
 ## Code
