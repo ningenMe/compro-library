@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/segment/LazySegmentTree-rmqraq.test.cpp
+# :x: test/segment/LazySegmentTree-rsqruq.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/segment/LazySegmentTree-rmqraq.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/segment/LazySegmentTree-rsqruq.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-04-26 18:33:51+09:00
 
 
@@ -56,8 +56,7 @@ using namespace std;
 
 int main(void){
 	int N,Q; cin >> N >> Q;
-	long inf = 1234567890LL;
-	LazySegmentTree<NodeMinRangeAdd<long long,long long>> Seg(N,0LL);
+	LazySegmentTree<NodeSumRangeUpdate<long long,long long>> Seg(N,0);
 	while(Q--) {
 		int q,s,t,x;
 		cin >> q >> s >> t;
@@ -78,7 +77,7 @@ int main(void){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/segment/LazySegmentTree-rmqraq.test.cpp"
+#line 1 "test/segment/LazySegmentTree-rsqruq.test.cpp"
 #define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H"
 
 #include <vector>
@@ -244,12 +243,11 @@ template<class T, class U> struct NodeSumRangeUpdate {
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
 };
-#line 7 "test/segment/LazySegmentTree-rmqraq.test.cpp"
+#line 7 "test/segment/LazySegmentTree-rsqruq.test.cpp"
 
 int main(void){
 	int N,Q; cin >> N >> Q;
-	long inf = 1234567890LL;
-	LazySegmentTree<NodeMinRangeAdd<long long,long long>> Seg(N,0LL);
+	LazySegmentTree<NodeSumRangeUpdate<long long,long long>> Seg(N,0);
 	while(Q--) {
 		int q,s,t,x;
 		cin >> q >> s >> t;
