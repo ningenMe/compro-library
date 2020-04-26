@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <array>
 using namespace std;
 #include "../../lib/heap/RadixHeapInt.cpp"
 
