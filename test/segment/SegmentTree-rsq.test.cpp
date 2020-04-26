@@ -8,7 +8,7 @@ using namespace std;
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);
 	int N,Q; cin >> N >> Q;
-	SegmentTree<nodeSumPointAdd<long long>> Seg(N,0);
+	SegmentTree<NodeSumPointAdd<long long>> Seg(N,0);
 	while(Q--){
 		int q; cin >> q;
 		if(q==0){

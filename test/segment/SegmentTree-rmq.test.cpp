@@ -8,7 +8,7 @@ using namespace std;
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);
 	int N,Q; cin >> N >> Q;
-	SegmentTree<nodeMinPointUpdate<long long>> Seg(N);
+	SegmentTree<NodeMinPointUpdate<long long>> Seg(N);
 	while(Q--){
 		long long q,a,b;
 		cin >> q >> a >> b;

@@ -6,12 +6,12 @@ using namespace std;
 #include "../../lib/segment/SegmentTree.cpp"
 #include "../../lib/math/GreatestCommonDivisor.cpp"
 
-template<class T> struct nodeGcdPointUpdate {
+template<class T> struct NodeGcdPointUpdate {
 	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
-	inline static constexpr TypeNode funcNode(TypeNode l,TypeNode r){return Gcd::gcd(l,r);}
-	inline static constexpr TypeNode funcMerge(TypeNode l,TypeNode r){return r;}
-	inline static constexpr bool funcCheck(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
+	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return Gcd::gcd(l,r);}
+	inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}
+	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
 
 // solution by binary search in prefix range on segment tree 
@@ -20,10 +20,10 @@ int main() {
 	long long N; cin >> N;
 	vector<long long> A(N);
 	for(int i = 0; i < N; ++i) cin >> A[i];
-	SegmentTree<nodeGcdPointUpdate<long long>> seg(A);
+	SegmentTree<NodeGcdPointUpdate<long long>> seg(A);
 	long long ans = 0;
 	for(int i = 0; i < N; ++i) {
-		ans += N - seg.binarySearch(i,N,1);
+		ans += N - seg.binary_search(i,N,1);
 	}
 	cout << ans << endl;
 }
