@@ -6,6 +6,7 @@ using namespace std;
 #include "../../lib/segment/SegmentTree.cpp"
 
 int main(void){
+	cin.tie(0);ios::sync_with_stdio(false);
 	int N,Q; cin >> N >> Q;
 	SegmentTree<nodeMinPointUpdate<long long>> Seg(N);
 	while(Q--){

@@ -16,6 +16,7 @@ template<class T> struct nodeGcdPointUpdate {
 
 // solution by binary search in prefix range on segment tree 
 int main() {
+	cin.tie(0);ios::sync_with_stdio(false);
 	long long N; cin >> N;
 	vector<long long> A(N);
 	for(int i = 0; i < N; ++i) cin >> A[i];
