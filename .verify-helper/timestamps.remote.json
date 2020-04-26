@@ -2,7 +2,8 @@
 "test/example.test.cpp": "2020-04-26 04:14:56 +0900",
 "test/segment/LiChaoTree-line.test.cpp": "2020-04-26 16:04:31 +0900",
 "test/segment/LiChaoTree-segment.test.cpp": "2020-04-26 16:04:31 +0900",
-"test/segment/SegmentTree-binary-search.test.cpp": "2020-04-26 16:03:36 +0900",
-"test/segment/SegmentTree-rmq.test.cpp": "2020-04-26 16:03:36 +0900",
-"test/segment/SegmentTree-rsq.test.cpp": "2020-04-26 16:03:36 +0900"
+"test/segment/SegmentTree-binary-search.test.cpp": "2020-04-26 16:20:36 +0900",
+"test/segment/SegmentTree-rmq.test.cpp": "2020-04-26 16:20:36 +0900",
+"test/segment/SegmentTree-rsq.test.cpp": "2020-04-26 16:20:36 +0900",
+"test/segment/Swag.test.cpp": "2020-04-26 16:21:16 +0900"
 }
