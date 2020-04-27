@@ -38,7 +38,8 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/test/math/CombinationMod.test.cpp.html">test/math/CombinationMod.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/CombinationMod-binom.test.cpp.html">test/math/CombinationMod-binom.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/CombinationMod-factorial.test.cpp.html">test/math/CombinationMod-factorial.test.cpp</a>
 
 
 ## Code

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/math/CombinationMod.test.cpp
+# :heavy_check_mark: test/math/CombinationMod-binom.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/math/CombinationMod.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-28 06:45:59+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/math/CombinationMod-binom.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-28 06:54:04+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/741">https://yukicoder.me/problems/no/741</a>
@@ -67,7 +67,7 @@ int main(void){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/math/CombinationMod.test.cpp"
+#line 1 "test/math/CombinationMod-binom.test.cpp"
 #define PROBLEM "https://yukicoder.me/problems/no/741"
 
 #include <vector>
@@ -100,7 +100,7 @@ public:
 };
 
 //verify https://atcoder.jp/contests/abc021/tasks/abc021_d
-#line 7 "test/math/CombinationMod.test.cpp"
+#line 7 "test/math/CombinationMod-binom.test.cpp"
 constexpr long long MOD = 1000'000'007;
 
 int main(void){

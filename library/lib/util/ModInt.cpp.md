@@ -21,19 +21,24 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: non-verified/ModInt.cpp
+# :heavy_check_mark: lib/util/ModInt.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f62ece6ccc2c02f6163dc5f3da3d641d">non-verified</a>
-* <a href="{{ site.github.repository_url }}/blob/master/non-verified/ModInt.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:29:01+09:00
+* category: <a href="../../../index.html#76d75a8065c92efe3b83e817563c11ef">lib/util</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/util/ModInt.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-28 06:54:04+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/test/math/CombinationMod-factorial.test.cpp.html">test/math/CombinationMod-factorial.test.cpp</a>
 
 
 ## Code
@@ -162,14 +167,14 @@ public:
 		return (is);
 	}
 };
-using modint = ModInt<MOD>;
+//using modint = ModInt<MOD>;
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "non-verified/ModInt.cpp"
+#line 1 "lib/util/ModInt.cpp"
 
 template<long long mod> class ModInt {
 public:
@@ -291,10 +296,10 @@ public:
 		return (is);
 	}
 };
-using modint = ModInt<MOD>;
+//using modint = ModInt<MOD>;
 
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
