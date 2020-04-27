@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: non-verified/BinaryIndexedTree.cpp
+# :warning: old/BinaryIndexedTree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f62ece6ccc2c02f6163dc5f3da3d641d">non-verified</a>
-* <a href="{{ site.github.repository_url }}/blob/master/non-verified/BinaryIndexedTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:29:01+09:00
+* category: <a href="../../index.html#149603e6c03516362a8da23f624db945">old</a>
+* <a href="{{ site.github.repository_url }}/blob/master/old/BinaryIndexedTree.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-28 05:55:20+09:00
 
 
 
@@ -113,7 +113,7 @@ template<class typeNode> struct nodeUpdatePrefixGCD {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "non-verified/BinaryIndexedTree.cpp"
+#line 1 "old/BinaryIndexedTree.cpp"
 
 //Binary Indexed Tree
 template<class Operator> class BinaryIndexedTree {

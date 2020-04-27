@@ -38,7 +38,7 @@ layout: default
 
 ### lib/heap
 
-* :x: <a href="library/lib/heap/RadixHeap.cpp.html">lib/heap/RadixHeap.cpp</a>
+* :heavy_check_mark: <a href="library/lib/heap/RadixHeap.cpp.html">lib/heap/RadixHeap.cpp</a>
 * :heavy_check_mark: <a href="library/lib/heap/RadixHeapInt.cpp.html">lib/heap/RadixHeapInt.cpp</a>
 
 
@@ -53,6 +53,7 @@ layout: default
 
 ### lib/segment
 
+* :heavy_check_mark: <a href="library/lib/segment/BinaryIndexedTree.cpp.html">lib/segment/BinaryIndexedTree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment/LazySegmentTree.cpp.html">lib/segment/LazySegmentTree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment/LiChaoTree.cpp.html">lib/segment/LiChaoTree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment/SegmentTree.cpp.html">lib/segment/SegmentTree.cpp</a>
@@ -64,7 +65,6 @@ layout: default
 ### non-verified
 
 * :warning: <a href="library/non-verified/BinaryColumnEchelonFormalize.cpp.html">non-verified/BinaryColumnEchelonFormalize.cpp</a>
-* :warning: <a href="library/non-verified/BinaryIndexedTree.cpp.html">non-verified/BinaryIndexedTree.cpp</a>
 * :warning: <a href="library/non-verified/BinaryIndexedTree2D.cpp.html">non-verified/BinaryIndexedTree2D.cpp</a>
 * :warning: <a href="library/non-verified/BipartiteMatching.cpp.html">non-verified/BipartiteMatching.cpp</a>
 * :warning: <a href="library/non-verified/Chinese_Remainder_Theorem.cpp.html">non-verified/Chinese_Remainder_Theorem.cpp</a>
@@ -125,6 +125,7 @@ layout: default
 
 ### old
 
+* :warning: <a href="library/old/BinaryIndexedTree.cpp.html">old/BinaryIndexedTree.cpp</a>
 * :warning: <a href="library/old/BinaryIndexedTree2DRangeModSumQuery.cpp.html">old/BinaryIndexedTree2DRangeModSumQuery.cpp</a>
 * :warning: <a href="library/old/Grid_Breadth_First_Search.cpp.html">old/Grid_Breadth_First_Search.cpp</a>
 * :warning: <a href="library/old/Grid_Translation.cpp.html">old/Grid_Translation.cpp</a>
@@ -146,8 +147,9 @@ layout: default
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
-* :x: <a href="verify/test/heap/RadixHeap.test.cpp.html">test/heap/RadixHeap.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/heap/RadixHeap.test.cpp.html">test/heap/RadixHeap.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/heap/RadixHeapInt.test.cpp.html">test/heap/RadixHeapInt.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/BinaryIndexedTree-rsqraq.test.cpp.html">test/segment/BinaryIndexedTree-rsqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rmqraq.test.cpp.html">test/segment/LazySegmentTree-rmqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rsqruq.test.cpp.html">test/segment/LazySegmentTree-rsqruq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-line.test.cpp.html">test/segment/LiChaoTree-line.test.cpp</a>
