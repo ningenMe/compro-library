@@ -119,4 +119,4 @@ public:
 		return (is);
 	}
 };
-using modint = ModInt<MOD>;
+//using modint = ModInt<MOD>;
