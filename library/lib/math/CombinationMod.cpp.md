@@ -21,19 +21,24 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: non-verified/CombinationMod.cpp
+# :x: lib/math/CombinationMod.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f62ece6ccc2c02f6163dc5f3da3d641d">non-verified</a>
-* <a href="{{ site.github.repository_url }}/blob/master/non-verified/CombinationMod.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:29:01+09:00
+* category: <a href="../../../index.html#b524a7b47b8ed72180f0e5150ab6d934">lib/math</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/math/CombinationMod.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-28 06:42:13+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../../verify/test/math/CombinationMod.test.cpp.html">test/math/CombinationMod.test.cpp</a>
 
 
 ## Code
@@ -41,14 +46,11 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-
 //Combination Mod
-class CombinationMod {
-public:
+template<long long mod> class CombinationMod {
 	vector<long long> fac,finv,inv;
-	long long mod;
-
-	CombinationMod(int N,long long mod) : fac(N + 1), finv(N + 1), inv(N + 1), mod(mod) {
+public:
+	CombinationMod(int N) : fac(N + 1), finv(N + 1), inv(N + 1) {
 		fac[0] = fac[1] = finv[0] = finv[1] = inv[1] = 1;
 		for (int i = 2; i <= N; ++i) {
 			fac[i] = fac[i - 1] * i % mod;
@@ -56,29 +58,32 @@ public:
 			finv[i] = finv[i - 1] * inv[i] % mod;
 		}
 	}
-	
-	long long num(int n, int k) {
+	inline long long binom(int n, int k) {
 		return ((n < 0 || k < 0 || n < k) ? 0 : fac[n] * (finv[k] * finv[n - k] % mod) % mod);
 	}
+    inline long long factorial(int n) {
+        return fac[n];
+    }
+    inline static constexpr vector<long long> pow2(int n) {
+        vector<long long> pow2(n+1,1);
+        for (int i = 2; i <= n; ++i) pow2[i] = (pow2[i - 1] * 2) % mod;
+        return pow2;
+    }
 };
 
 //verify https://atcoder.jp/contests/abc021/tasks/abc021_d
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "non-verified/CombinationMod.cpp"
-
+#line 1 "lib/math/CombinationMod.cpp"
 //Combination Mod
-class CombinationMod {
-public:
+template<long long mod> class CombinationMod {
 	vector<long long> fac,finv,inv;
-	long long mod;
-
-	CombinationMod(int N,long long mod) : fac(N + 1), finv(N + 1), inv(N + 1), mod(mod) {
+public:
+	CombinationMod(int N) : fac(N + 1), finv(N + 1), inv(N + 1) {
 		fac[0] = fac[1] = finv[0] = finv[1] = inv[1] = 1;
 		for (int i = 2; i <= N; ++i) {
 			fac[i] = fac[i - 1] * i % mod;
@@ -86,10 +91,17 @@ public:
 			finv[i] = finv[i - 1] * inv[i] % mod;
 		}
 	}
-	
-	long long num(int n, int k) {
+	inline long long binom(int n, int k) {
 		return ((n < 0 || k < 0 || n < k) ? 0 : fac[n] * (finv[k] * finv[n - k] % mod) % mod);
 	}
+    inline long long factorial(int n) {
+        return fac[n];
+    }
+    inline static constexpr vector<long long> pow2(int n) {
+        vector<long long> pow2(n+1,1);
+        for (int i = 2; i <= n; ++i) pow2[i] = (pow2[i - 1] * 2) % mod;
+        return pow2;
+    }
 };
 
 //verify https://atcoder.jp/contests/abc021/tasks/abc021_d
@@ -97,5 +109,5 @@ public:
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
