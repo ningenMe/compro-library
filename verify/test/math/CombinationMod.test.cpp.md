@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/math/CombinationMod.test.cpp
+# :heavy_check_mark: test/math/CombinationMod.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/CombinationMod.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-28 06:42:13+09:00
+    - Last commit date: 2020-04-28 06:45:59+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/741">https://yukicoder.me/problems/no/741</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/math/CombinationMod.cpp.html">lib/math/CombinationMod.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/math/CombinationMod.cpp.html">lib/math/CombinationMod.cpp</a>
 
 
 ## Code
@@ -92,7 +92,7 @@ public:
     inline long long factorial(int n) {
         return fac[n];
     }
-    inline static constexpr vector<long long> pow2(int n) {
+    inline static vector<long long> pow2(int n) {
         vector<long long> pow2(n+1,1);
         for (int i = 2; i <= n; ++i) pow2[i] = (pow2[i - 1] * 2) % mod;
         return pow2;

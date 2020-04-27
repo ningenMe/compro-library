@@ -46,7 +46,7 @@ layout: default
 
 ### lib/math
 
-* :x: <a href="library/lib/math/CombinationMod.cpp.html">lib/math/CombinationMod.cpp</a>
+* :heavy_check_mark: <a href="library/lib/math/CombinationMod.cpp.html">lib/math/CombinationMod.cpp</a>
 * :heavy_check_mark: <a href="library/lib/math/GreatestCommonDivisor.cpp.html">lib/math/GreatestCommonDivisor.cpp</a>
 
 
@@ -149,7 +149,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/heap/RadixHeap.test.cpp.html">test/heap/RadixHeap.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/heap/RadixHeapInt.test.cpp.html">test/heap/RadixHeapInt.test.cpp</a>
-* :x: <a href="verify/test/math/CombinationMod.test.cpp.html">test/math/CombinationMod.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/CombinationMod.test.cpp.html">test/math/CombinationMod.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/BinaryIndexedTree-rsqraq.test.cpp.html">test/segment/BinaryIndexedTree-rsqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rmqraq.test.cpp.html">test/segment/LazySegmentTree-rmqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rsqruq.test.cpp.html">test/segment/LazySegmentTree-rsqruq.test.cpp</a>

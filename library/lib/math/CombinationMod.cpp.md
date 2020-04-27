@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: lib/math/CombinationMod.cpp
+# :heavy_check_mark: lib/math/CombinationMod.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#b524a7b47b8ed72180f0e5150ab6d934">lib/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/math/CombinationMod.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-28 06:42:13+09:00
+    - Last commit date: 2020-04-28 06:45:59+09:00
 
 
 
 
 ## Verified with
 
-* :x: <a href="../../../verify/test/math/CombinationMod.test.cpp.html">test/math/CombinationMod.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/CombinationMod.test.cpp.html">test/math/CombinationMod.test.cpp</a>
 
 
 ## Code
@@ -64,7 +64,7 @@ public:
     inline long long factorial(int n) {
         return fac[n];
     }
-    inline static constexpr vector<long long> pow2(int n) {
+    inline static vector<long long> pow2(int n) {
         vector<long long> pow2(n+1,1);
         for (int i = 2; i <= n; ++i) pow2[i] = (pow2[i - 1] * 2) % mod;
         return pow2;
@@ -97,7 +97,7 @@ public:
     inline long long factorial(int n) {
         return fac[n];
     }
-    inline static constexpr vector<long long> pow2(int n) {
+    inline static vector<long long> pow2(int n) {
         vector<long long> pow2(n+1,1);
         for (int i = 2; i <= n; ++i) pow2[i] = (pow2[i - 1] * 2) % mod;
         return pow2;
