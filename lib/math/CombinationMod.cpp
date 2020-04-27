@@ -16,7 +16,7 @@ public:
     inline long long factorial(int n) {
         return fac[n];
     }
-    inline static constexpr vector<long long> pow2(int n) {
+    inline static vector<long long> pow2(int n) {
         vector<long long> pow2(n+1,1);
         for (int i = 2; i <= n; ++i) pow2[i] = (pow2[i - 1] * 2) % mod;
         return pow2;
