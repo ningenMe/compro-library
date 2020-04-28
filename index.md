@@ -48,6 +48,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/lib/math/CombinationMod.cpp.html">lib/math/CombinationMod.cpp</a>
 * :heavy_check_mark: <a href="library/lib/math/GreatestCommonDivisor.cpp.html">lib/math/GreatestCommonDivisor.cpp</a>
+* :heavy_check_mark: <a href="library/lib/math/Matrix.cpp.html">lib/math/Matrix.cpp</a>
 
 
 <div id="c993b235c21a7035904945a028efa0ef"></div>
@@ -95,7 +96,6 @@ layout: default
 * :warning: <a href="library/non-verified/Longest_Common_Subsequence.cpp.html">non-verified/Longest_Common_Subsequence.cpp</a>
 * :warning: <a href="library/non-verified/Longest_Common_Subsequence_Size.cpp.html">non-verified/Longest_Common_Subsequence_Size.cpp</a>
 * :warning: <a href="library/non-verified/LowLink.cpp.html">non-verified/LowLink.cpp</a>
-* :warning: <a href="library/non-verified/Matrix_Repeated_Multiplication_Mod.cpp.html">non-verified/Matrix_Repeated_Multiplication_Mod.cpp</a>
 * :warning: <a href="library/non-verified/Maximum_Rectangle.cpp.html">non-verified/Maximum_Rectangle.cpp</a>
 * :warning: <a href="library/non-verified/Maximum_Segment_Sum.cpp.html">non-verified/Maximum_Segment_Sum.cpp</a>
 * :warning: <a href="library/non-verified/Median.cpp.html">non-verified/Median.cpp</a>
@@ -157,6 +157,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/heap/RadixHeapInt.test.cpp.html">test/heap/RadixHeapInt.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/CombinationMod-binom.test.cpp.html">test/math/CombinationMod-binom.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/CombinationMod-factorial.test.cpp.html">test/math/CombinationMod-factorial.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/Matrix.test.cpp.html">test/math/Matrix.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/BinaryIndexedTree-rsqraq.test.cpp.html">test/segment/BinaryIndexedTree-rsqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rmqraq.test.cpp.html">test/segment/LazySegmentTree-rmqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rsqruq.test.cpp.html">test/segment/LazySegmentTree-rsqruq.test.cpp</a>
