@@ -67,6 +67,7 @@ layout: default
 ### lib/util
 
 * :heavy_check_mark: <a href="library/lib/util/ModInt.cpp.html">lib/util/ModInt.cpp</a>
+* :heavy_check_mark: <a href="library/lib/util/NBase.cpp.html">lib/util/NBase.cpp</a>
 
 
 <div id="f62ece6ccc2c02f6163dc5f3da3d641d"></div>
@@ -167,5 +168,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rmq.test.cpp.html">test/segment/SegmentTree-rmq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rsq.test.cpp.html">test/segment/SegmentTree-rsq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/Swag.test.cpp.html">test/segment/Swag.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/util/NBase.test.cpp.html">test/util/NBase.test.cpp</a>
 
 
