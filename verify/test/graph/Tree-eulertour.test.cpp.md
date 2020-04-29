@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/Tree-eulertour.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 06:05:18+09:00
+    - Last commit date: 2020-04-30 06:29:57+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/900">https://yukicoder.me/problems/no/900</a>
@@ -315,7 +315,7 @@ public:
 	//O(N) after make_depth,make_parent,make_child
 	void make_heavy_light_decomposition(const int root = 0){
 		if(executed_flag[MAKE_HEAVY_LIGHT_DECOMPOSITION]++) return;
-		if(!executed_flag[MAKE_CHILD]) make_child(root);
+		if(!executed_flag[MAKE_SIZE]) make_size(root);
 		if(!executed_flag[MAKE_PARENT]) make_parent(root);
 		head.resize(num);
 		hldorder.resize(num);
@@ -578,6 +578,19 @@ template<class T, class U> struct NodeSumRangeUpdate {
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
 	inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return r;}
 	inline static constexpr TypeNode func_merge(TypeNode l,TypeLazy r,int len){return r!=-2000?r*len:l;}
+	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
+	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
+};
+
+//node:総和　lazy:更新
+template<class T, class U> struct NodeSumRangeAdd {
+	using TypeNode = T;
+	using TypeLazy = U;
+	inline static constexpr TypeNode unit_node = 0;
+	inline static constexpr TypeLazy unit_lazy = 0;
+	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return l+r;}
+	inline static constexpr TypeNode func_merge(TypeNode l,TypeLazy r,int len){return l+r*len;}
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
 };

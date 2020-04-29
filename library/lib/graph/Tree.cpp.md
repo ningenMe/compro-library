@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/Tree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 05:59:53+09:00
+    - Last commit date: 2020-04-30 06:29:57+09:00
 
 
 
@@ -39,6 +39,8 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../../verify/test/graph/Tree-eulertour.test.cpp.html">test/graph/Tree-eulertour.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/graph/Tree-hld-vertex.test.cpp.html">test/graph/Tree-hld-vertex.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/graph/Tree-rerooting.test.cpp.html">test/graph/Tree-rerooting.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/graph/Tree-size.test.cpp.html">test/graph/Tree-size.test.cpp</a>
 
 
@@ -234,7 +236,7 @@ public:
 	//O(N) after make_depth,make_parent,make_child
 	void make_heavy_light_decomposition(const int root = 0){
 		if(executed_flag[MAKE_HEAVY_LIGHT_DECOMPOSITION]++) return;
-		if(!executed_flag[MAKE_CHILD]) make_child(root);
+		if(!executed_flag[MAKE_SIZE]) make_size(root);
 		if(!executed_flag[MAKE_PARENT]) make_parent(root);
 		head.resize(num);
 		hldorder.resize(num);
@@ -534,7 +536,7 @@ public:
 	//O(N) after make_depth,make_parent,make_child
 	void make_heavy_light_decomposition(const int root = 0){
 		if(executed_flag[MAKE_HEAVY_LIGHT_DECOMPOSITION]++) return;
-		if(!executed_flag[MAKE_CHILD]) make_child(root);
+		if(!executed_flag[MAKE_SIZE]) make_size(root);
 		if(!executed_flag[MAKE_PARENT]) make_parent(root);
 		head.resize(num);
 		hldorder.resize(num);
