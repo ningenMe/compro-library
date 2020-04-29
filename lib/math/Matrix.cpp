@@ -1,7 +1,7 @@
 //Matrix_Repeated_Multiplication_Mod O((N^3)(logK))
 template <class T,int N> class Matrix {
 public:
-    inline static constexpr array<array<T,N>,N> pow(array<array<T,N>,N> matrix, long long K){
+    inline static array<array<T,N>,N> pow(array<array<T,N>,N> matrix, long long K){
         array<array<T,N>,N> res,tmp;
         for (int i = 0; i < N; ++i) for (int j = 0; j < N; ++j) res[i][j] = (i == j);
         for (; K > 0; K /= 2) {
