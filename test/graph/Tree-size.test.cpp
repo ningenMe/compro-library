@@ -3,13 +3,16 @@
 #include <vector>
 #include <iostream>
 #include <cassert>
+#include <algorithm>
+#include <stack>
+#include <numeric>
 using namespace std;
-#include "../../lib/tree/Tree.cpp"
+#include "../../lib/graph/Tree.cpp"
 
 int main(void){
     int N;
 	cin >> N;
-	Tree<TreeOperator<ll>> tree(N);
+	Tree<TreeOperator<long long>> tree(N);
 	for(int i = 0; i < N-1; ++i){
 		int u,v,w;
 		cin >> u >> v >> w;
@@ -18,7 +21,7 @@ int main(void){
 		tree.make_edge(v,u,w);
 	}
 	tree.make_size();
-	ll ans = 0;
+	long long ans = 0;
 	for(int pa:tree.order) for(auto e:tree.child[pa]) ans += e.second*tree.size[e.first]*(N-tree.size[e.first])*2LL;
 	cout << ans << endl;
 	return 0;
