@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :question: lib/graph/Tree.cpp
+# :heavy_check_mark: lib/graph/Tree.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -39,7 +39,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../../verify/test/graph/Tree-eulertour.test.cpp.html">test/graph/Tree-eulertour.test.cpp</a>
-* :x: <a href="../../../verify/test/graph/Tree-size.test.cpp.html">test/graph/Tree-size.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/graph/Tree-size.test.cpp.html">test/graph/Tree-size.test.cpp</a>
 
 
 ## Code

@@ -38,7 +38,7 @@ layout: default
 
 ### lib/graph
 
-* :question: <a href="library/lib/graph/Tree.cpp.html">lib/graph/Tree.cpp</a>
+* :heavy_check_mark: <a href="library/lib/graph/Tree.cpp.html">lib/graph/Tree.cpp</a>
 
 
 <div id="9d4770b6051a64e71c3ca0eb1d2879e1"></div>
@@ -159,7 +159,7 @@ layout: default
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-eulertour.test.cpp.html">test/graph/Tree-eulertour.test.cpp</a>
-* :x: <a href="verify/test/graph/Tree-size.test.cpp.html">test/graph/Tree-size.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graph/Tree-size.test.cpp.html">test/graph/Tree-size.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/heap/RadixHeap.test.cpp.html">test/heap/RadixHeap.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/heap/RadixHeapInt.test.cpp.html">test/heap/RadixHeapInt.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/CombinationMod-binom.test.cpp.html">test/math/CombinationMod-binom.test.cpp</a>

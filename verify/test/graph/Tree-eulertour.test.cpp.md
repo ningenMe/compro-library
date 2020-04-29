@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/Tree-eulertour.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 05:59:53+09:00
+    - Last commit date: 2020-04-30 06:05:18+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/900">https://yukicoder.me/problems/no/900</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/lib/graph/Tree.cpp.html">lib/graph/Tree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/Tree.cpp.html">lib/graph/Tree.cpp</a>
 * :heavy_check_mark: <a href="../../../library/lib/segment/LazySegmentTree.cpp.html">lib/segment/LazySegmentTree.cpp</a>
 
 
@@ -57,6 +57,7 @@ layout: default
 #include <algorithm>
 #include <stack>
 #include <numeric>
+#include <array>
 using namespace std;
 #include "../../lib/graph/Tree.cpp"
 #include "../../lib/segment/LazySegmentTree.cpp"
@@ -124,6 +125,7 @@ int main(void){
 #include <algorithm>
 #include <stack>
 #include <numeric>
+#include <array>
 using namespace std;
 #line 1 "lib/graph/Tree.cpp"
 template<class Operator> class Tree {
@@ -579,7 +581,7 @@ template<class T, class U> struct NodeSumRangeUpdate {
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
 };
-#line 13 "test/graph/Tree-eulertour.test.cpp"
+#line 14 "test/graph/Tree-eulertour.test.cpp"
 
 //node:総和　lazy:更新
 template<class T, class U> struct NodeSumRangeEoulerTourAdd {

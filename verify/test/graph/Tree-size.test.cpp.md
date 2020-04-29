@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/graph/Tree-size.test.cpp
+# :heavy_check_mark: test/graph/Tree-size.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/Tree-size.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 05:59:53+09:00
+    - Last commit date: 2020-04-30 06:05:18+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/872">https://yukicoder.me/problems/no/872</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/lib/graph/Tree.cpp.html">lib/graph/Tree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/Tree.cpp.html">lib/graph/Tree.cpp</a>
 
 
 ## Code
@@ -55,6 +55,7 @@ layout: default
 #include <algorithm>
 #include <stack>
 #include <numeric>
+#include <array>
 using namespace std;
 #include "../../lib/graph/Tree.cpp"
 
@@ -90,6 +91,7 @@ int main(void){
 #include <algorithm>
 #include <stack>
 #include <numeric>
+#include <array>
 using namespace std;
 #line 1 "lib/graph/Tree.cpp"
 template<class Operator> class Tree {
@@ -385,7 +387,7 @@ template<class T> struct TreeOperator{
 	}
 };
 //Tree<treeOperator<ll>> tree(N);
-#line 11 "test/graph/Tree-size.test.cpp"
+#line 12 "test/graph/Tree-size.test.cpp"
 
 int main(void){
     int N;
