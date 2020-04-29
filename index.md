@@ -81,7 +81,6 @@ layout: default
 * :warning: <a href="library/non-verified/CircleIntersection.cpp.html">non-verified/CircleIntersection.cpp</a>
 * :warning: <a href="library/non-verified/Combination.cpp.html">non-verified/Combination.cpp</a>
 * :warning: <a href="library/non-verified/ConvexHullTrick.cpp.html">non-verified/ConvexHullTrick.cpp</a>
-* :warning: <a href="library/non-verified/DigitSum.cpp.html">non-verified/DigitSum.cpp</a>
 * :warning: <a href="library/non-verified/Dijkstra.cpp.html">non-verified/Dijkstra.cpp</a>
 * :warning: <a href="library/non-verified/Dinic.cpp.html">non-verified/Dinic.cpp</a>
 * :warning: <a href="library/non-verified/DisjointSparseTable.cpp.html">non-verified/DisjointSparseTable.cpp</a>
@@ -103,7 +102,6 @@ layout: default
 * :warning: <a href="library/non-verified/MinimumDirectedClosedCircuit.cpp.html">non-verified/MinimumDirectedClosedCircuit.cpp</a>
 * :warning: <a href="library/non-verified/MinimumUndirectedClosedCircuit.cpp.html">non-verified/MinimumUndirectedClosedCircuit.cpp</a>
 * :warning: <a href="library/non-verified/Mo.cpp.html">non-verified/Mo.cpp</a>
-* :warning: <a href="library/non-verified/NBase.cpp.html">non-verified/NBase.cpp</a>
 * :warning: <a href="library/non-verified/Parser.cpp.html">non-verified/Parser.cpp</a>
 * :warning: <a href="library/non-verified/Partition_Number.cpp.html">non-verified/Partition_Number.cpp</a>
 * :warning: <a href="library/non-verified/Permutation_Mod.cpp.html">non-verified/Permutation_Mod.cpp</a>
