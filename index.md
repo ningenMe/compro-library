@@ -159,6 +159,7 @@ layout: default
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-eulertour.test.cpp.html">test/graph/Tree-eulertour.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graph/Tree-hld-path.test.cpp.html">test/graph/Tree-hld-path.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-hld-vertex.test.cpp.html">test/graph/Tree-hld-vertex.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-rerooting.test.cpp.html">test/graph/Tree-rerooting.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-size.test.cpp.html">test/graph/Tree-size.test.cpp</a>

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/Matrix.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 05:27:17+09:00
+    - Last commit date: 2020-04-30 07:04:13+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/718">https://yukicoder.me/problems/no/718</a>
@@ -96,10 +96,10 @@ using namespace std;
 template<long long mod> class ModInt {
 public:
 	long long x;
-	ModInt():x(0) {
+	constexpr ModInt():x(0) {
 		// do nothing
 	}
-	ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {
+	constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {
 		// do nothing
 	}
 	ModInt &operator+=(const ModInt &p) {

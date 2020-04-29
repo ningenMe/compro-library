@@ -31,13 +31,14 @@ layout: default
 
 * category: <a href="../../../index.html#76d75a8065c92efe3b83e817563c11ef">lib/util</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/util/ModInt.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-28 06:54:04+09:00
+    - Last commit date: 2020-04-30 07:04:13+09:00
 
 
 
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../../verify/test/graph/Tree-hld-path.test.cpp.html">test/graph/Tree-hld-path.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/math/CombinationMod-factorial.test.cpp.html">test/math/CombinationMod-factorial.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/math/Matrix.test.cpp.html">test/math/Matrix.test.cpp</a>
 
@@ -51,10 +52,10 @@ layout: default
 template<long long mod> class ModInt {
 public:
 	long long x;
-	ModInt():x(0) {
+	constexpr ModInt():x(0) {
 		// do nothing
 	}
-	ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {
+	constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {
 		// do nothing
 	}
 	ModInt &operator+=(const ModInt &p) {
@@ -180,10 +181,10 @@ public:
 template<long long mod> class ModInt {
 public:
 	long long x;
-	ModInt():x(0) {
+	constexpr ModInt():x(0) {
 		// do nothing
 	}
-	ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {
+	constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {
 		// do nothing
 	}
 	ModInt &operator+=(const ModInt &p) {
