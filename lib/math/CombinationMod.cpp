@@ -13,14 +13,14 @@ public:
 	inline long long binom(int n, int k) {
 		return ((n < 0 || k < 0 || n < k) ? 0 : fac[n] * (finv[k] * finv[n - k] % mod) % mod);
 	}
-    inline long long factorial(int n) {
-        return fac[n];
-    }
-    inline static vector<long long> pow2(int n) {
-        vector<long long> pow2(n+1,1);
-        for (int i = 2; i <= n; ++i) pow2[i] = (pow2[i - 1] * 2) % mod;
-        return pow2;
-    }
+	inline long long factorial(int n) {
+		return fac[n];
+	}
+	inline static vector<long long> pow2(int n) {
+		vector<long long> pow2(n+1,1);
+		for (int i = 2; i <= n; ++i) pow2[i] = (pow2[i - 1] * 2) % mod;
+		return pow2;
+	}
 };
 
 //verify https://atcoder.jp/contests/abc021/tasks/abc021_d

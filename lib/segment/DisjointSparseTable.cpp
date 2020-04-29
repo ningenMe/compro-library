@@ -41,7 +41,7 @@ public:
 
 //sum
 template<class T> struct NodeSum {
-    using TypeNode = T;
+	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
 };
