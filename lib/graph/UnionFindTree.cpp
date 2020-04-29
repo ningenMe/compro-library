@@ -1,5 +1,3 @@
-
-
 //Union Find Tree
 class UnionFindTree {
 public:
@@ -7,22 +5,19 @@ public:
     vector<int> rank;
 
     UnionFindTree(int N) : parent(N), rank(N,0){
-		for (int i = 0; i < N; ++i) parent[i] = i;
-	}
- 
+		iota(parent.begin(),parent.end(),0);
+	} 
 	int root(int n) {
 		return (parent[n] == n ? n : parent[n] = root(parent[n]));
 	}
-
-    int same(int n, int m) {
+    inline int same(int n, int m) {
 		return root(n) == root(m);
 	}
- 
-	void unite(int n, int m) {
+	inline void unite(int n, int m) {
 		n = root(n);
 		m = root(m);
 		if (n == m) return;
-		if(rank[n]<rank[m]) {
+		if (rank[n]<rank[m]) {
             parent[n] = m;
         }
         else{
@@ -31,5 +26,3 @@ public:
         }
 	}
 };
-
-//verify https://atcoder.jp/contests/abc097/tasks/arc097_b
