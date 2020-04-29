@@ -39,6 +39,7 @@ layout: default
 ### lib/graph
 
 * :heavy_check_mark: <a href="library/lib/graph/Tree.cpp.html">lib/graph/Tree.cpp</a>
+* :heavy_check_mark: <a href="library/lib/graph/UnionFindTree.cpp.html">lib/graph/UnionFindTree.cpp</a>
 
 
 <div id="9d4770b6051a64e71c3ca0eb1d2879e1"></div>
@@ -116,13 +117,10 @@ layout: default
 * :warning: <a href="library/non-verified/PrimeFactorization.cpp.html">non-verified/PrimeFactorization.cpp</a>
 * :warning: <a href="library/non-verified/Rarts.cpp.html">non-verified/Rarts.cpp</a>
 * :warning: <a href="library/non-verified/RollingHash.cpp.html">non-verified/RollingHash.cpp</a>
-* :warning: <a href="library/non-verified/SegmentTree.cpp.html">non-verified/SegmentTree.cpp</a>
-* :warning: <a href="library/non-verified/SegmentTree2.cpp.html">non-verified/SegmentTree2.cpp</a>
 * :warning: <a href="library/non-verified/SlideMost.cpp.html">non-verified/SlideMost.cpp</a>
 * :warning: <a href="library/non-verified/SmallestEnclosingDisc.cpp.html">non-verified/SmallestEnclosingDisc.cpp</a>
 * :warning: <a href="library/non-verified/SparseTable.cpp.html">non-verified/SparseTable.cpp</a>
 * :warning: <a href="library/non-verified/StronglyConnectedComponents.cpp.html">non-verified/StronglyConnectedComponents.cpp</a>
-* :warning: <a href="library/non-verified/UnionFindTree.cpp.html">non-verified/UnionFindTree.cpp</a>
 * :warning: <a href="library/non-verified/UnionFindTreeMerge.cpp.html">non-verified/UnionFindTreeMerge.cpp</a>
 * :warning: <a href="library/non-verified/UnionFindTreeSize.cpp.html">non-verified/UnionFindTreeSize.cpp</a>
 * :warning: <a href="library/non-verified/Union_Find_Tree_Persistence.cpp.html">non-verified/Union_Find_Tree_Persistence.cpp</a>
@@ -145,6 +143,8 @@ layout: default
 * :warning: <a href="library/old/Lazy_Segment_Tree_Range_Sum_Query.cpp.html">old/Lazy_Segment_Tree_Range_Sum_Query.cpp</a>
 * :warning: <a href="library/old/LiChaoTree.cpp.html">old/LiChaoTree.cpp</a>
 * :warning: <a href="library/old/Lowest_Common_Ancestor.cpp.html">old/Lowest_Common_Ancestor.cpp</a>
+* :warning: <a href="library/old/SegmentTree.cpp.html">old/SegmentTree.cpp</a>
+* :warning: <a href="library/old/SegmentTree2.cpp.html">old/SegmentTree2.cpp</a>
 * :warning: <a href="library/old/Segment_Tree_Range_Gcd_Query.cpp.html">old/Segment_Tree_Range_Gcd_Query.cpp</a>
 * :warning: <a href="library/old/Segment_Tree_Range_Maximum_Query.cpp.html">old/Segment_Tree_Range_Maximum_Query.cpp</a>
 * :warning: <a href="library/old/Segment_Tree_Range_Minimum_Query.cpp.html">old/Segment_Tree_Range_Minimum_Query.cpp</a>
@@ -163,6 +163,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/graph/Tree-hld-vertex.test.cpp.html">test/graph/Tree-hld-vertex.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-rerooting.test.cpp.html">test/graph/Tree-rerooting.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-size.test.cpp.html">test/graph/Tree-size.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graph/UnionFindTree.test.cpp.html">test/graph/UnionFindTree.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/heap/RadixHeap.test.cpp.html">test/heap/RadixHeap.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/heap/RadixHeapInt.test.cpp.html">test/heap/RadixHeapInt.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/CombinationMod-binom.test.cpp.html">test/math/CombinationMod-binom.test.cpp</a>

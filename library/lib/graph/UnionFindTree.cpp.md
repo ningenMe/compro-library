@@ -21,19 +21,24 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: non-verified/UnionFindTree.cpp
+# :heavy_check_mark: lib/graph/UnionFindTree.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f62ece6ccc2c02f6163dc5f3da3d641d">non-verified</a>
-* <a href="{{ site.github.repository_url }}/blob/master/non-verified/UnionFindTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:29:01+09:00
+* category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/graph/UnionFindTree.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-30 07:30:44+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/test/graph/UnionFindTree.test.cpp.html">test/graph/UnionFindTree.test.cpp</a>
 
 
 ## Code
@@ -41,8 +46,6 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-
-
 //Union Find Tree
 class UnionFindTree {
 public:
@@ -50,22 +53,19 @@ public:
     vector<int> rank;
 
     UnionFindTree(int N) : parent(N), rank(N,0){
-		for (int i = 0; i < N; ++i) parent[i] = i;
-	}
- 
+		iota(parent.begin(),parent.end(),0);
+	} 
 	int root(int n) {
 		return (parent[n] == n ? n : parent[n] = root(parent[n]));
 	}
-
-    int same(int n, int m) {
+    inline int same(int n, int m) {
 		return root(n) == root(m);
 	}
- 
-	void unite(int n, int m) {
+	inline void unite(int n, int m) {
 		n = root(n);
 		m = root(m);
 		if (n == m) return;
-		if(rank[n]<rank[m]) {
+		if (rank[n]<rank[m]) {
             parent[n] = m;
         }
         else{
@@ -74,17 +74,13 @@ public:
         }
 	}
 };
-
-//verify https://atcoder.jp/contests/abc097/tasks/arc097_b
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "non-verified/UnionFindTree.cpp"
-
-
+#line 1 "lib/graph/UnionFindTree.cpp"
 //Union Find Tree
 class UnionFindTree {
 public:
@@ -92,22 +88,19 @@ public:
     vector<int> rank;
 
     UnionFindTree(int N) : parent(N), rank(N,0){
-		for (int i = 0; i < N; ++i) parent[i] = i;
-	}
- 
+		iota(parent.begin(),parent.end(),0);
+	} 
 	int root(int n) {
 		return (parent[n] == n ? n : parent[n] = root(parent[n]));
 	}
-
-    int same(int n, int m) {
+    inline int same(int n, int m) {
 		return root(n) == root(m);
 	}
- 
-	void unite(int n, int m) {
+	inline void unite(int n, int m) {
 		n = root(n);
 		m = root(m);
 		if (n == m) return;
-		if(rank[n]<rank[m]) {
+		if (rank[n]<rank[m]) {
             parent[n] = m;
         }
         else{
@@ -117,10 +110,8 @@ public:
 	}
 };
 
-//verify https://atcoder.jp/contests/abc097/tasks/arc097_b
-
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: non-verified/SegmentTree.cpp
+# :warning: old/SegmentTree.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f62ece6ccc2c02f6163dc5f3da3d641d">non-verified</a>
-* <a href="{{ site.github.repository_url }}/blob/master/non-verified/SegmentTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:29:01+09:00
+* category: <a href="../../index.html#149603e6c03516362a8da23f624db945">old</a>
+* <a href="{{ site.github.repository_url }}/blob/master/old/SegmentTree.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-04-30 07:30:44+09:00
 
 
 
@@ -181,7 +181,7 @@ template<class typeNode> struct nodeGCDPointUpdate {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "non-verified/SegmentTree.cpp"
+#line 1 "old/SegmentTree.cpp"
 template<class Operator> class SegmentTree {
 	Operator Op;                            
 	using typeNode = decltype(Op.unitNode); 
