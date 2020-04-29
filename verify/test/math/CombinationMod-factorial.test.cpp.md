@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/CombinationMod-factorial.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 07:04:13+09:00
+    - Last commit date: 2020-04-30 08:12:39+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/916">https://yukicoder.me/problems/no/916</a>
@@ -117,14 +117,14 @@ public:
 	inline long long binom(int n, int k) {
 		return ((n < 0 || k < 0 || n < k) ? 0 : fac[n] * (finv[k] * finv[n - k] % mod) % mod);
 	}
-    inline long long factorial(int n) {
-        return fac[n];
-    }
-    inline static vector<long long> pow2(int n) {
-        vector<long long> pow2(n+1,1);
-        for (int i = 2; i <= n; ++i) pow2[i] = (pow2[i - 1] * 2) % mod;
-        return pow2;
-    }
+	inline long long factorial(int n) {
+		return fac[n];
+	}
+	inline static vector<long long> pow2(int n) {
+		vector<long long> pow2(n+1,1);
+		for (int i = 2; i <= n; ++i) pow2[i] = (pow2[i - 1] * 2) % mod;
+		return pow2;
+	}
 };
 
 //verify https://atcoder.jp/contests/abc021/tasks/abc021_d

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/UnionFindTree.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 07:30:44+09:00
+    - Last commit date: 2020-04-30 08:12:39+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/unionfind">https://judge.yosupo.jp/problem/unionfind</a>
@@ -83,15 +83,15 @@ using namespace std;
 class UnionFindTree {
 public:
 	vector<int> parent;
-    vector<int> rank;
+	vector<int> rank;
 
-    UnionFindTree(int N) : parent(N), rank(N,0){
+	UnionFindTree(int N) : parent(N), rank(N,0){
 		iota(parent.begin(),parent.end(),0);
 	} 
 	int root(int n) {
 		return (parent[n] == n ? n : parent[n] = root(parent[n]));
 	}
-    inline int same(int n, int m) {
+	inline int same(int n, int m) {
 		return root(n) == root(m);
 	}
 	inline void unite(int n, int m) {
@@ -99,12 +99,12 @@ public:
 		m = root(m);
 		if (n == m) return;
 		if (rank[n]<rank[m]) {
-            parent[n] = m;
-        }
-        else{
-            parent[m] = n;
-            if(rank[n] == rank[m]) rank[n]++;
-        }
+			parent[n] = m;
+		}
+		else{
+			parent[m] = n;
+			if(rank[n] == rank[m]) rank[n]++;
+		}
 	}
 };
 #line 8 "test/graph/UnionFindTree.test.cpp"

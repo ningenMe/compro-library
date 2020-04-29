@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#c993b235c21a7035904945a028efa0ef">lib/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/segment/LiChaoTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:04:31+09:00
+    - Last commit date: 2020-04-30 08:12:39+09:00
 
 
 
@@ -48,36 +48,36 @@ layout: default
 {% raw %}
 ```cpp
 template <typename Operator> class LiChaoTree{
-    using TypeValue = typename Operator::TypeValue;
-    using Line = pair<TypeValue,TypeValue>;
+	using TypeValue = typename Operator::TypeValue;
+	using Line = pair<TypeValue,TypeValue>;
 	vector<TypeValue> x;
-    vector<Line> node;
-    vector<int> clz;
+	vector<Line> node;
+	vector<int> clz;
 	size_t length;
-    const size_t bit;
+	const size_t bit;
 public:	
 	LiChaoTree(const size_t bit=30):bit(bit){
-        //do nothing
-    }
+		//do nothing
+	}
 	inline void build(){
 		sort(x.begin(),x.end());
 		x.erase(unique(x.begin(),x.end()),x.end());
 		TypeValue maxi = x.back() + 1;
 		for (length = 1; length < x.size(); length *= 2);
 		x.resize(length, maxi);
-        node.resize(2*length,make_pair(0,Operator::unit_value));
-        clz.resize(2*length,32);
-        for(size_t i = 1; i < 2*length; ++i) {
-            // for(int j = 0; j < bit; ++j) if(i&(1<<j)) clz[i] = 31-j;
-            clz[i] = __builtin_clz(i);
-        }
+		node.resize(2*length,make_pair(0,Operator::unit_value));
+		clz.resize(2*length,32);
+		for(size_t i = 1; i < 2*length; ++i) {
+			// for(int j = 0; j < bit; ++j) if(i&(1<<j)) clz[i] = 31-j;
+			clz[i] = __builtin_clz(i);
+		}
 	}
 
-    void x_push_back(TypeValue argx){
-        x.push_back(argx);
-    }
+	void x_push_back(TypeValue argx){
+		x.push_back(argx);
+	}
 
-    //return y = ax+b
+	//return y = ax+b
 	inline static constexpr TypeValue f(Line& line,TypeValue& t)	{
 		return line.first*t + line.second;
 	}
@@ -129,36 +129,36 @@ template<class T> struct ValueMin {
 ```cpp
 #line 1 "lib/segment/LiChaoTree.cpp"
 template <typename Operator> class LiChaoTree{
-    using TypeValue = typename Operator::TypeValue;
-    using Line = pair<TypeValue,TypeValue>;
+	using TypeValue = typename Operator::TypeValue;
+	using Line = pair<TypeValue,TypeValue>;
 	vector<TypeValue> x;
-    vector<Line> node;
-    vector<int> clz;
+	vector<Line> node;
+	vector<int> clz;
 	size_t length;
-    const size_t bit;
+	const size_t bit;
 public:	
 	LiChaoTree(const size_t bit=30):bit(bit){
-        //do nothing
-    }
+		//do nothing
+	}
 	inline void build(){
 		sort(x.begin(),x.end());
 		x.erase(unique(x.begin(),x.end()),x.end());
 		TypeValue maxi = x.back() + 1;
 		for (length = 1; length < x.size(); length *= 2);
 		x.resize(length, maxi);
-        node.resize(2*length,make_pair(0,Operator::unit_value));
-        clz.resize(2*length,32);
-        for(size_t i = 1; i < 2*length; ++i) {
-            // for(int j = 0; j < bit; ++j) if(i&(1<<j)) clz[i] = 31-j;
-            clz[i] = __builtin_clz(i);
-        }
+		node.resize(2*length,make_pair(0,Operator::unit_value));
+		clz.resize(2*length,32);
+		for(size_t i = 1; i < 2*length; ++i) {
+			// for(int j = 0; j < bit; ++j) if(i&(1<<j)) clz[i] = 31-j;
+			clz[i] = __builtin_clz(i);
+		}
 	}
 
-    void x_push_back(TypeValue argx){
-        x.push_back(argx);
-    }
+	void x_push_back(TypeValue argx){
+		x.push_back(argx);
+	}
 
-    //return y = ax+b
+	//return y = ax+b
 	inline static constexpr TypeValue f(Line& line,TypeValue& t)	{
 		return line.first*t + line.second;
 	}

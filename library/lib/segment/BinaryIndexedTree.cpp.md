@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#c993b235c21a7035904945a028efa0ef">lib/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/segment/BinaryIndexedTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-28 05:55:20+09:00
+    - Last commit date: 2020-04-30 08:12:39+09:00
 
 
 
@@ -94,7 +94,7 @@ public:
 };
 
 template<class T> struct NodePrefixSumPointAdd {
-    using TypeNode = T;
+	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
 	// Binary Search for first index where func_check is true
@@ -166,7 +166,7 @@ public:
 };
 
 template<class T> struct NodePrefixSumPointAdd {
-    using TypeNode = T;
+	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
 	// Binary Search for first index where func_check is true

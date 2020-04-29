@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/BinaryIndexedTree-rsqraq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-28 05:55:20+09:00
+    - Last commit date: 2020-04-30 08:12:39+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/742">https://yukicoder.me/problems/no/742</a>
@@ -132,7 +132,7 @@ public:
 };
 
 template<class T> struct NodePrefixSumPointAdd {
-    using TypeNode = T;
+	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
 	// Binary Search for first index where func_check is true

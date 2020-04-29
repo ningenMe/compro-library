@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/Matrix.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 07:04:13+09:00
+    - Last commit date: 2020-04-30 08:12:39+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/718">https://yukicoder.me/problems/no/718</a>
@@ -218,21 +218,21 @@ public:
 //Matrix_Repeated_Multiplication_Mod O((N^3)(logK))
 template <class T,int N> class Matrix {
 public:
-    inline static array<array<T,N>,N> pow(array<array<T,N>,N> matrix, long long K){
-        array<array<T,N>,N> res,tmp;
-        for (int i = 0; i < N; ++i) for (int j = 0; j < N; ++j) res[i][j] = (i == j);
-        for (; K > 0; K /= 2) {
-            if (K & 1) {
-                for (int i = 0; i < N; ++i) for (int j = 0; j < N; ++j) tmp[i][j] = 0;
-                for (int i = 0; i < N; ++i) for (int j = 0; j < N; ++j) for (int k = 0; k < N; ++k) tmp[i][j] += matrix[i][k] * res[k][j];
-                res = tmp;
-            }
-            for (int i = 0; i < N; ++i) for (int j = 0; j < N; ++j) tmp[i][j] = 0;
-            for (int i = 0; i < N; ++i) for (int j = 0; j < N; ++j) for (int k = 0; k < N; ++k) tmp[i][j] += matrix[i][k] * matrix[k][j];
-            matrix = tmp;
-        }
-        return res;
-    }
+	inline static array<array<T,N>,N> pow(array<array<T,N>,N> matrix, long long K){
+		array<array<T,N>,N> res,tmp;
+		for (int i = 0; i < N; ++i) for (int j = 0; j < N; ++j) res[i][j] = (i == j);
+		for (; K > 0; K /= 2) {
+			if (K & 1) {
+				for (int i = 0; i < N; ++i) for (int j = 0; j < N; ++j) tmp[i][j] = 0;
+				for (int i = 0; i < N; ++i) for (int j = 0; j < N; ++j) for (int k = 0; k < N; ++k) tmp[i][j] += matrix[i][k] * res[k][j];
+				res = tmp;
+			}
+			for (int i = 0; i < N; ++i) for (int j = 0; j < N; ++j) tmp[i][j] = 0;
+			for (int i = 0; i < N; ++i) for (int j = 0; j < N; ++j) for (int k = 0; k < N; ++k) tmp[i][j] += matrix[i][k] * matrix[k][j];
+			matrix = tmp;
+		}
+		return res;
+	}
 };
 
 //verify  https://atcoder.jp/contests/dp/tasks/dp_r
