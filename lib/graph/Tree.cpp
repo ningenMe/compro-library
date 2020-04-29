@@ -185,7 +185,7 @@ public:
 	//O(N) after make_depth,make_parent,make_child
 	void make_heavy_light_decomposition(const int root = 0){
 		if(executed_flag[MAKE_HEAVY_LIGHT_DECOMPOSITION]++) return;
-		if(!executed_flag[MAKE_CHILD]) make_child(root);
+		if(!executed_flag[MAKE_SIZE]) make_size(root);
 		if(!executed_flag[MAKE_PARENT]) make_parent(root);
 		head.resize(num);
 		hldorder.resize(num);
