@@ -12,6 +12,7 @@
 "test/math/CombinationMod-factorial.test.cpp": "2020-04-30 07:04:13 +0900",
 "test/math/Matrix.test.cpp": "2020-04-30 07:04:13 +0900",
 "test/segment/BinaryIndexedTree-rsqraq.test.cpp": "2020-04-28 05:55:20 +0900",
+"test/segment/DisjointSparseTable.test.cpp": "2020-04-30 07:55:12 +0900",
 "test/segment/LazySegmentTree-rmqraq.test.cpp": "2020-04-30 06:29:57 +0900",
 "test/segment/LazySegmentTree-rsqruq.test.cpp": "2020-04-30 06:29:57 +0900",
 "test/segment/LiChaoTree-line.test.cpp": "2020-04-26 16:04:31 +0900",
