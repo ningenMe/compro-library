@@ -64,6 +64,7 @@ layout: default
 ### lib/segment
 
 * :heavy_check_mark: <a href="library/lib/segment/BinaryIndexedTree.cpp.html">lib/segment/BinaryIndexedTree.cpp</a>
+* :heavy_check_mark: <a href="library/lib/segment/DisjointSparseTable.cpp.html">lib/segment/DisjointSparseTable.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment/LazySegmentTree.cpp.html">lib/segment/LazySegmentTree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment/LiChaoTree.cpp.html">lib/segment/LiChaoTree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment/SegmentTree.cpp.html">lib/segment/SegmentTree.cpp</a>
@@ -91,7 +92,6 @@ layout: default
 * :warning: <a href="library/non-verified/ConvexHullTrick.cpp.html">non-verified/ConvexHullTrick.cpp</a>
 * :warning: <a href="library/non-verified/Dijkstra.cpp.html">non-verified/Dijkstra.cpp</a>
 * :warning: <a href="library/non-verified/Dinic.cpp.html">non-verified/Dinic.cpp</a>
-* :warning: <a href="library/non-verified/DisjointSparseTable.cpp.html">non-verified/DisjointSparseTable.cpp</a>
 * :warning: <a href="library/non-verified/Distance.cpp.html">non-verified/Distance.cpp</a>
 * :warning: <a href="library/non-verified/Divisor.cpp.html">non-verified/Divisor.cpp</a>
 * :warning: <a href="library/non-verified/Eratosthenes.cpp.html">non-verified/Eratosthenes.cpp</a>
@@ -170,6 +170,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/math/CombinationMod-factorial.test.cpp.html">test/math/CombinationMod-factorial.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Matrix.test.cpp.html">test/math/Matrix.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/BinaryIndexedTree-rsqraq.test.cpp.html">test/segment/BinaryIndexedTree-rsqraq.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/DisjointSparseTable.test.cpp.html">test/segment/DisjointSparseTable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rmqraq.test.cpp.html">test/segment/LazySegmentTree-rmqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rsqruq.test.cpp.html">test/segment/LazySegmentTree-rsqruq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-line.test.cpp.html">test/segment/LiChaoTree-line.test.cpp</a>
