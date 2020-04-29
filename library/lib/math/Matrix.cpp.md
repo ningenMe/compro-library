@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#b524a7b47b8ed72180f0e5150ab6d934">lib/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/math/Matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-28 09:04:34+09:00
+    - Last commit date: 2020-04-30 05:27:17+09:00
 
 
 
@@ -49,7 +49,7 @@ layout: default
 //Matrix_Repeated_Multiplication_Mod O((N^3)(logK))
 template <class T,int N> class Matrix {
 public:
-    inline static constexpr array<array<T,N>,N> pow(array<array<T,N>,N> matrix, long long K){
+    inline static array<array<T,N>,N> pow(array<array<T,N>,N> matrix, long long K){
         array<array<T,N>,N> res,tmp;
         for (int i = 0; i < N; ++i) for (int j = 0; j < N; ++j) res[i][j] = (i == j);
         for (; K > 0; K /= 2) {
@@ -78,7 +78,7 @@ public:
 //Matrix_Repeated_Multiplication_Mod O((N^3)(logK))
 template <class T,int N> class Matrix {
 public:
-    inline static constexpr array<array<T,N>,N> pow(array<array<T,N>,N> matrix, long long K){
+    inline static array<array<T,N>,N> pow(array<array<T,N>,N> matrix, long long K){
         array<array<T,N>,N> res,tmp;
         for (int i = 0; i < N; ++i) for (int j = 0; j < N; ++j) res[i][j] = (i == j);
         for (; K > 0; K /= 2) {

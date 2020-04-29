@@ -62,6 +62,13 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/segment/Swag.cpp.html">lib/segment/Swag.cpp</a>
 
 
+<div id="208ddb70230bd881aee710e79075dce4"></div>
+
+### lib/tree
+
+* :heavy_check_mark: <a href="library/lib/tree/Tree.cpp.html">lib/tree/Tree.cpp</a>
+
+
 <div id="76d75a8065c92efe3b83e817563c11ef"></div>
 
 ### lib/util
@@ -115,7 +122,6 @@ layout: default
 * :warning: <a href="library/non-verified/SmallestEnclosingDisc.cpp.html">non-verified/SmallestEnclosingDisc.cpp</a>
 * :warning: <a href="library/non-verified/SparseTable.cpp.html">non-verified/SparseTable.cpp</a>
 * :warning: <a href="library/non-verified/StronglyConnectedComponents.cpp.html">non-verified/StronglyConnectedComponents.cpp</a>
-* :warning: <a href="library/non-verified/Tree.cpp.html">non-verified/Tree.cpp</a>
 * :warning: <a href="library/non-verified/UnionFindTree.cpp.html">non-verified/UnionFindTree.cpp</a>
 * :warning: <a href="library/non-verified/UnionFindTreeMerge.cpp.html">non-verified/UnionFindTreeMerge.cpp</a>
 * :warning: <a href="library/non-verified/UnionFindTreeSize.cpp.html">non-verified/UnionFindTreeSize.cpp</a>
@@ -166,6 +172,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rmq.test.cpp.html">test/segment/SegmentTree-rmq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rsq.test.cpp.html">test/segment/SegmentTree-rsq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/Swag.test.cpp.html">test/segment/Swag.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/tree/Tree-size.test.cpp.html">test/tree/Tree-size.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/util/NBase.test.cpp.html">test/util/NBase.test.cpp</a>
 
 
