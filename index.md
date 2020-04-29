@@ -68,6 +68,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/segment/LazySegmentTree.cpp.html">lib/segment/LazySegmentTree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment/LiChaoTree.cpp.html">lib/segment/LiChaoTree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment/SegmentTree.cpp.html">lib/segment/SegmentTree.cpp</a>
+* :heavy_check_mark: <a href="library/lib/segment/SparseTable.cpp.html">lib/segment/SparseTable.cpp</a>
 * :heavy_check_mark: <a href="library/lib/segment/Swag.cpp.html">lib/segment/Swag.cpp</a>
 
 
@@ -119,7 +120,6 @@ layout: default
 * :warning: <a href="library/non-verified/RollingHash.cpp.html">non-verified/RollingHash.cpp</a>
 * :warning: <a href="library/non-verified/SlideMost.cpp.html">non-verified/SlideMost.cpp</a>
 * :warning: <a href="library/non-verified/SmallestEnclosingDisc.cpp.html">non-verified/SmallestEnclosingDisc.cpp</a>
-* :warning: <a href="library/non-verified/SparseTable.cpp.html">non-verified/SparseTable.cpp</a>
 * :warning: <a href="library/non-verified/StronglyConnectedComponents.cpp.html">non-verified/StronglyConnectedComponents.cpp</a>
 * :warning: <a href="library/non-verified/UnionFindTreeMerge.cpp.html">non-verified/UnionFindTreeMerge.cpp</a>
 * :warning: <a href="library/non-verified/UnionFindTreeSize.cpp.html">non-verified/UnionFindTreeSize.cpp</a>
@@ -178,6 +178,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-binary-search.test.cpp.html">test/segment/SegmentTree-binary-search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rmq.test.cpp.html">test/segment/SegmentTree-rmq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rsq.test.cpp.html">test/segment/SegmentTree-rsq.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/SparseTable.test.cpp.html">test/segment/SparseTable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/Swag.test.cpp.html">test/segment/Swag.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/util/NBase.test.cpp.html">test/util/NBase.test.cpp</a>
 
