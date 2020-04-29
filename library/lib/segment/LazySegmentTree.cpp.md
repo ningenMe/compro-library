@@ -31,13 +31,14 @@ layout: default
 
 * category: <a href="../../../index.html#c993b235c21a7035904945a028efa0ef">lib/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/segment/LazySegmentTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 18:33:51+09:00
+    - Last commit date: 2020-04-30 05:59:53+09:00
 
 
 
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../../verify/test/graph/Tree-eulertour.test.cpp.html">test/graph/Tree-eulertour.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/segment/LazySegmentTree-rmqraq.test.cpp.html">test/segment/LazySegmentTree-rmqraq.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/segment/LazySegmentTree-rsqruq.test.cpp.html">test/segment/LazySegmentTree-rsqruq.test.cpp</a>
 
@@ -206,7 +207,6 @@ template<class T, class U> struct NodeSumRangeUpdate {
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
 };
-
 ```
 {% endraw %}
 
