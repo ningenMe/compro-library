@@ -2,10 +2,10 @@
 template<long long mod> class ModInt {
 public:
 	long long x;
-	ModInt():x(0) {
+	constexpr ModInt():x(0) {
 		// do nothing
 	}
-	ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {
+	constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {
 		// do nothing
 	}
 	ModInt &operator+=(const ModInt &p) {
