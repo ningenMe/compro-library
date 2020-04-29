@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <stack>
 #include <numeric>
+#include <array>
 using namespace std;
 #include "../../lib/graph/Tree.cpp"
 #include "../../lib/segment/LazySegmentTree.cpp"
