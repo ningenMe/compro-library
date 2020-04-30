@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#76d75a8065c92efe3b83e817563c11ef">lib/util</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/util/ModInt.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 07:04:13+09:00
+    - Last commit date: 2020-05-01 02:19:16+09:00
 
 
 
@@ -63,12 +63,12 @@ public:
 		return *this;
 	}
 	ModInt &operator+=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		if((x += p.x) >= mod) x -= mod;
 		return *this;
 	}
 	ModInt &operator+=(const int y) {
-        ModInt p(y);
+		ModInt p(y);
 		if((x += p.x) >= mod) x -= mod;
 		return *this;
 	}
@@ -77,12 +77,12 @@ public:
 		return *this;
 	}
 	ModInt &operator-=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		if((x += mod - p.x) >= mod) x -= mod;
 		return *this;
 	}
 	ModInt &operator-=(const int y) {
-        ModInt p(y);
+		ModInt p(y);
 		if((x += mod - p.x) >= mod) x -= mod;
 		return *this;
 	}
@@ -91,12 +91,12 @@ public:
 		return *this;
 	}
 	ModInt &operator*=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		x = (x * p.x % mod);
 		return *this;
 	}
 	ModInt &operator*=(const int y) {
-        ModInt p(y);
+		ModInt p(y);
 		x = (x * p.x % mod);
 		return *this;
 	}
@@ -105,36 +105,36 @@ public:
 		return *this;
 	}
 	ModInt &operator/=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		*this *= p.inv();
 		return *this;
 	}
 	ModInt &operator/=(const int y) {
-        ModInt p(y);
+		ModInt p(y);
 		*this *= p.inv();
 		return *this;
 	}
 	ModInt operator=(const int y) {
-        ModInt p(y);
-        *this = p;
-        return *this;
-    }
-    ModInt operator=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		*this = p;
-        return *this;
-    }
+		return *this;
+	}
+	ModInt operator=(const long long y) {
+		ModInt p(y);
+		*this = p;
+		return *this;
+	}
 	ModInt operator-() const { return ModInt(-x); }
 	ModInt operator++() { 
-        x++;
-        if(x>=mod) x-=mod;
-        return *this; 
-    }
+		x++;
+		if(x>=mod) x-=mod;
+		return *this; 
+	}
 	ModInt operator--() { 
-        x--;
-        if(x<0) x+=mod;
-        return *this; 
-    }
+		x--;
+		if(x<0) x+=mod;
+		return *this; 
+	}
 	ModInt operator+(const ModInt &p) const { return ModInt(*this) += p; }
 	ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }
 	ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }
@@ -192,12 +192,12 @@ public:
 		return *this;
 	}
 	ModInt &operator+=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		if((x += p.x) >= mod) x -= mod;
 		return *this;
 	}
 	ModInt &operator+=(const int y) {
-        ModInt p(y);
+		ModInt p(y);
 		if((x += p.x) >= mod) x -= mod;
 		return *this;
 	}
@@ -206,12 +206,12 @@ public:
 		return *this;
 	}
 	ModInt &operator-=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		if((x += mod - p.x) >= mod) x -= mod;
 		return *this;
 	}
 	ModInt &operator-=(const int y) {
-        ModInt p(y);
+		ModInt p(y);
 		if((x += mod - p.x) >= mod) x -= mod;
 		return *this;
 	}
@@ -220,12 +220,12 @@ public:
 		return *this;
 	}
 	ModInt &operator*=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		x = (x * p.x % mod);
 		return *this;
 	}
 	ModInt &operator*=(const int y) {
-        ModInt p(y);
+		ModInt p(y);
 		x = (x * p.x % mod);
 		return *this;
 	}
@@ -234,36 +234,36 @@ public:
 		return *this;
 	}
 	ModInt &operator/=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		*this *= p.inv();
 		return *this;
 	}
 	ModInt &operator/=(const int y) {
-        ModInt p(y);
+		ModInt p(y);
 		*this *= p.inv();
 		return *this;
 	}
 	ModInt operator=(const int y) {
-        ModInt p(y);
-        *this = p;
-        return *this;
-    }
-    ModInt operator=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		*this = p;
-        return *this;
-    }
+		return *this;
+	}
+	ModInt operator=(const long long y) {
+		ModInt p(y);
+		*this = p;
+		return *this;
+	}
 	ModInt operator-() const { return ModInt(-x); }
 	ModInt operator++() { 
-        x++;
-        if(x>=mod) x-=mod;
-        return *this; 
-    }
+		x++;
+		if(x>=mod) x-=mod;
+		return *this; 
+	}
 	ModInt operator--() { 
-        x--;
-        if(x<0) x+=mod;
-        return *this; 
-    }
+		x--;
+		if(x<0) x+=mod;
+		return *this; 
+	}
 	ModInt operator+(const ModInt &p) const { return ModInt(*this) += p; }
 	ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }
 	ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }

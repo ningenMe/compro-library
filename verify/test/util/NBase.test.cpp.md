@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#b474f495c8582ac5f92778a42ae814fa">test/util</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/util/NBase.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-28 19:16:20+09:00
+    - Last commit date: 2020-05-01 02:19:16+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/699">https://yukicoder.me/problems/no/699</a>
@@ -99,23 +99,23 @@ using namespace std;
 #line 1 "lib/util/NBase.cpp"
 class NBase{
 public:
-    inline static vector<long long> translate(long long X,long long N) {
-        assert(abs(N)>1);
-        vector<long long> res;
-        while(1) {
-            long long b = (X%abs(N)+abs(N)) % abs(N);
-            res.push_back(b);
-            (X -= b) /= N;
-            if(X==0) break;
-        }
-        return res;
-    }
-    //Digit Sum
-    inline static constexpr long long digit_sum(long long N, long long K) {
-        long long sum = 0;
-        for (; N > 0; N /= K) sum += N % K;
-        return sum;
-    }
+	inline static vector<long long> translate(long long X,long long N) {
+		assert(abs(N)>1);
+		vector<long long> res;
+		while(1) {
+			long long b = (X%abs(N)+abs(N)) % abs(N);
+			res.push_back(b);
+			(X -= b) /= N;
+			if(X==0) break;
+		}
+		return res;
+	}
+	//Digit Sum
+	inline static constexpr long long digit_sum(long long N, long long K) {
+		long long sum = 0;
+		for (; N > 0; N /= K) sum += N % K;
+		return sum;
+	}
 };
 #line 9 "test/util/NBase.test.cpp"
 
