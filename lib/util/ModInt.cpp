@@ -13,12 +13,12 @@ public:
 		return *this;
 	}
 	ModInt &operator+=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		if((x += p.x) >= mod) x -= mod;
 		return *this;
 	}
 	ModInt &operator+=(const int y) {
-        ModInt p(y);
+		ModInt p(y);
 		if((x += p.x) >= mod) x -= mod;
 		return *this;
 	}
@@ -27,12 +27,12 @@ public:
 		return *this;
 	}
 	ModInt &operator-=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		if((x += mod - p.x) >= mod) x -= mod;
 		return *this;
 	}
 	ModInt &operator-=(const int y) {
-        ModInt p(y);
+		ModInt p(y);
 		if((x += mod - p.x) >= mod) x -= mod;
 		return *this;
 	}
@@ -41,12 +41,12 @@ public:
 		return *this;
 	}
 	ModInt &operator*=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		x = (x * p.x % mod);
 		return *this;
 	}
 	ModInt &operator*=(const int y) {
-        ModInt p(y);
+		ModInt p(y);
 		x = (x * p.x % mod);
 		return *this;
 	}
@@ -55,36 +55,36 @@ public:
 		return *this;
 	}
 	ModInt &operator/=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		*this *= p.inv();
 		return *this;
 	}
 	ModInt &operator/=(const int y) {
-        ModInt p(y);
+		ModInt p(y);
 		*this *= p.inv();
 		return *this;
 	}
 	ModInt operator=(const int y) {
-        ModInt p(y);
-        *this = p;
-        return *this;
-    }
-    ModInt operator=(const long long y) {
-        ModInt p(y);
+		ModInt p(y);
 		*this = p;
-        return *this;
-    }
+		return *this;
+	}
+	ModInt operator=(const long long y) {
+		ModInt p(y);
+		*this = p;
+		return *this;
+	}
 	ModInt operator-() const { return ModInt(-x); }
 	ModInt operator++() { 
-        x++;
-        if(x>=mod) x-=mod;
-        return *this; 
-    }
+		x++;
+		if(x>=mod) x-=mod;
+		return *this; 
+	}
 	ModInt operator--() { 
-        x--;
-        if(x<0) x+=mod;
-        return *this; 
-    }
+		x--;
+		if(x<0) x+=mod;
+		return *this; 
+	}
 	ModInt operator+(const ModInt &p) const { return ModInt(*this) += p; }
 	ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }
 	ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }
