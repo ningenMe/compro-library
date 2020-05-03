@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+#define PROBLEM "https://yukicoder.me/problems/no/1023"
 
 #include <vector>
 #include <iostream>
