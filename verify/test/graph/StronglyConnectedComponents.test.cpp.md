@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/graph/StronglyConnectedComponents.test.cpp
+# :heavy_check_mark: test/graph/StronglyConnectedComponents.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/StronglyConnectedComponents.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-04 01:17:52+09:00
+    - Last commit date: 2020-05-04 01:22:21+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1023">https://yukicoder.me/problems/no/1023</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/graph/StronglyConnectedComponents.cpp.html">lib/graph/StronglyConnectedComponents.cpp</a>
-* :question: <a href="../../../library/lib/graph/UnionFindTree.cpp.html">lib/graph/UnionFindTree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/StronglyConnectedComponents.cpp.html">lib/graph/StronglyConnectedComponents.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/UnionFindTree.cpp.html">lib/graph/UnionFindTree.cpp</a>
 
 
 ## Code
@@ -78,7 +78,8 @@ int main(){
         int a = e.first,b = e.second;
         if(uf.same(a,b)){
             cout << "Yes" << endl;
-        };
+            return 0;
+        }
         uf.unite(a,b);
     }
     StronglyConnectedComponents scc(N);
@@ -87,7 +88,7 @@ int main(){
         if(uf.same(a,b)){
             cout << "Yes" << endl;
             return 0;
-        };
+        }
         scc.makeEdge(uf.root(a),uf.root(b));
     }
     scc.solve();
@@ -98,7 +99,8 @@ int main(){
         return 0;
     }
     cout << "No" << endl; 
-    return 0;}
+    return 0;
+}
 
 ```
 {% endraw %}
@@ -216,7 +218,8 @@ int main(){
         int a = e.first,b = e.second;
         if(uf.same(a,b)){
             cout << "Yes" << endl;
-        };
+            return 0;
+        }
         uf.unite(a,b);
     }
     StronglyConnectedComponents scc(N);
@@ -225,7 +228,7 @@ int main(){
         if(uf.same(a,b)){
             cout << "Yes" << endl;
             return 0;
-        };
+        }
         scc.makeEdge(uf.root(a),uf.root(b));
     }
     scc.solve();
@@ -236,7 +239,8 @@ int main(){
         return 0;
     }
     cout << "No" << endl; 
-    return 0;}
+    return 0;
+}
 
 ```
 {% endraw %}
