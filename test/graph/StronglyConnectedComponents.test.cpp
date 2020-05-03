@@ -28,7 +28,8 @@ int main(){
         int a = e.first,b = e.second;
         if(uf.same(a,b)){
             cout << "Yes" << endl;
-        };
+            return 0;
+        }
         uf.unite(a,b);
     }
     StronglyConnectedComponents scc(N);
@@ -37,7 +38,7 @@ int main(){
         if(uf.same(a,b)){
             cout << "Yes" << endl;
             return 0;
-        };
+        }
         scc.makeEdge(uf.root(a),uf.root(b));
     }
     scc.solve();
@@ -48,4 +49,5 @@ int main(){
         return 0;
     }
     cout << "No" << endl; 
-    return 0;}
+    return 0;
+}
