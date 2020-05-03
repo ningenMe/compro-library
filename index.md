@@ -100,13 +100,11 @@ layout: default
 * :warning: <a href="library/non-verified/ConvexHullTrick.cpp.html">non-verified/ConvexHullTrick.cpp</a>
 * :warning: <a href="library/non-verified/Dijkstra.cpp.html">non-verified/Dijkstra.cpp</a>
 * :warning: <a href="library/non-verified/Dinic.cpp.html">non-verified/Dinic.cpp</a>
-* :warning: <a href="library/non-verified/Distance.cpp.html">non-verified/Distance.cpp</a>
 * :warning: <a href="library/non-verified/Divisor.cpp.html">non-verified/Divisor.cpp</a>
 * :warning: <a href="library/non-verified/Eratosthenes.cpp.html">non-verified/Eratosthenes.cpp</a>
 * :warning: <a href="library/non-verified/FactorialMod.cpp.html">non-verified/FactorialMod.cpp</a>
 * :warning: <a href="library/non-verified/Ford_Fulkerson.cpp.html">non-verified/Ford_Fulkerson.cpp</a>
 * :warning: <a href="library/non-verified/Garner.cpp.html">non-verified/Garner.cpp</a>
-* :warning: <a href="library/non-verified/LazySegmentTree.cpp.html">non-verified/LazySegmentTree.cpp</a>
 * :warning: <a href="library/non-verified/Line_Intersection_Judge.cpp.html">non-verified/Line_Intersection_Judge.cpp</a>
 * :warning: <a href="library/non-verified/LongestIncreasingSubsequence.cpp.html">non-verified/LongestIncreasingSubsequence.cpp</a>
 * :warning: <a href="library/non-verified/Longest_Common_Subsequence.cpp.html">non-verified/Longest_Common_Subsequence.cpp</a>
