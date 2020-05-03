@@ -45,8 +45,9 @@ layout: default
 
 ### lib/graph
 
+* :x: <a href="library/lib/graph/StronglyConnectedComponents.cpp.html">lib/graph/StronglyConnectedComponents.cpp</a>
 * :heavy_check_mark: <a href="library/lib/graph/Tree.cpp.html">lib/graph/Tree.cpp</a>
-* :heavy_check_mark: <a href="library/lib/graph/UnionFindTree.cpp.html">lib/graph/UnionFindTree.cpp</a>
+* :question: <a href="library/lib/graph/UnionFindTree.cpp.html">lib/graph/UnionFindTree.cpp</a>
 
 
 <div id="9d4770b6051a64e71c3ca0eb1d2879e1"></div>
@@ -125,7 +126,6 @@ layout: default
 * :warning: <a href="library/non-verified/RollingHash.cpp.html">non-verified/RollingHash.cpp</a>
 * :warning: <a href="library/non-verified/SlideMost.cpp.html">non-verified/SlideMost.cpp</a>
 * :warning: <a href="library/non-verified/SmallestEnclosingDisc.cpp.html">non-verified/SmallestEnclosingDisc.cpp</a>
-* :warning: <a href="library/non-verified/StronglyConnectedComponents.cpp.html">non-verified/StronglyConnectedComponents.cpp</a>
 * :warning: <a href="library/non-verified/UnionFindTreeMerge.cpp.html">non-verified/UnionFindTreeMerge.cpp</a>
 * :warning: <a href="library/non-verified/UnionFindTreeSize.cpp.html">non-verified/UnionFindTreeSize.cpp</a>
 * :warning: <a href="library/non-verified/Union_Find_Tree_Persistence.cpp.html">non-verified/Union_Find_Tree_Persistence.cpp</a>
@@ -164,6 +164,7 @@ layout: default
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/Distance-line.test.cpp.html">test/geometory/Distance-line.test.cpp</a>
+* :x: <a href="verify/test/graph/StronglyConnectedComponents.test.cpp.html">test/graph/StronglyConnectedComponents.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-eulertour.test.cpp.html">test/graph/Tree-eulertour.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-hld-path.test.cpp.html">test/graph/Tree-hld-path.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-hld-vertex.test.cpp.html">test/graph/Tree-hld-vertex.test.cpp</a>

@@ -21,19 +21,24 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: non-verified/StronglyConnectedComponents.cpp
+# :x: lib/graph/StronglyConnectedComponents.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f62ece6ccc2c02f6163dc5f3da3d641d">non-verified</a>
-* <a href="{{ site.github.repository_url }}/blob/master/non-verified/StronglyConnectedComponents.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:29:01+09:00
+* category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/graph/StronglyConnectedComponents.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-05-04 01:17:23+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../../verify/test/graph/StronglyConnectedComponents.test.cpp.html">test/graph/StronglyConnectedComponents.test.cpp</a>
 
 
 ## Code
@@ -43,8 +48,8 @@ layout: default
 ```cpp
 
 class StronglyConnectedComponents{
-    int nodeNum;
-    vector<vector<int>> edge,revEdge;
+    int num;
+    vector<vector<int>> edge,redge;
 
     vector<int> label,visited,order;
     
@@ -54,16 +59,16 @@ class StronglyConnectedComponents{
         order.push_back(curr);
     }
 
-    void revDfs(int curr,int labelId){
+    void revDfs(int curr,int label_id){
         visited[curr] = 1;
-        label[curr] = labelId;
-        for(int next:revEdge[curr]) if(!visited[next]) revDfs(next,labelId);
+        label[curr] = label_id;
+        for(int next:redge[curr]) if(!visited[next]) revDfs(next,label_id);
     }
 
 public:
 
-	StronglyConnectedComponents(const int& nodeNum) : 
-    nodeNum(nodeNum), edge(nodeNum), revEdge(nodeNum), label(nodeNum), visited(nodeNum) {
+	StronglyConnectedComponents(const int& num) : 
+    num(num), edge(num), redge(num), label(num), visited(num) {
         // do nothing        
     }
 
@@ -73,20 +78,20 @@ public:
 
     void makeEdge(const int from,const int to) {
         edge[from].push_back(to);
-        revEdge[to].push_back(from);
+        redge[to].push_back(from);
     }
 
     void solve(void) {
-        for(int i = 0; i < nodeNum; ++i) visited[i] = 0;
-        for(int i = 0; i < nodeNum; ++i) if(!visited[i]) dfs(i);
-        for(int i = 0; i < nodeNum; ++i) visited[i] = 0;
+        for(int i = 0; i < num; ++i) visited[i] = 0;
+        for(int i = 0; i < num; ++i) if(!visited[i]) dfs(i);
+        for(int i = 0; i < num; ++i) visited[i] = 0;
         reverse(order.begin(),order.end());
-        int labelId = 0;
-        for(int i:order) if(!visited[i]) revDfs(i,labelId++);
+        int label_id = 0;
+        for(int i:order) if(!visited[i]) revDfs(i,label_id++);
     }
 
     void print(void) {
-        for(auto labelId:label) cout << labelId << " ";
+        for(auto label_id:label) cout << label_id << " ";
         cout << endl;
     }
 
@@ -98,11 +103,11 @@ public:
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "non-verified/StronglyConnectedComponents.cpp"
+#line 1 "lib/graph/StronglyConnectedComponents.cpp"
 
 class StronglyConnectedComponents{
-    int nodeNum;
-    vector<vector<int>> edge,revEdge;
+    int num;
+    vector<vector<int>> edge,redge;
 
     vector<int> label,visited,order;
     
@@ -112,16 +117,16 @@ class StronglyConnectedComponents{
         order.push_back(curr);
     }
 
-    void revDfs(int curr,int labelId){
+    void revDfs(int curr,int label_id){
         visited[curr] = 1;
-        label[curr] = labelId;
-        for(int next:revEdge[curr]) if(!visited[next]) revDfs(next,labelId);
+        label[curr] = label_id;
+        for(int next:redge[curr]) if(!visited[next]) revDfs(next,label_id);
     }
 
 public:
 
-	StronglyConnectedComponents(const int& nodeNum) : 
-    nodeNum(nodeNum), edge(nodeNum), revEdge(nodeNum), label(nodeNum), visited(nodeNum) {
+	StronglyConnectedComponents(const int& num) : 
+    num(num), edge(num), redge(num), label(num), visited(num) {
         // do nothing        
     }
 
@@ -131,20 +136,20 @@ public:
 
     void makeEdge(const int from,const int to) {
         edge[from].push_back(to);
-        revEdge[to].push_back(from);
+        redge[to].push_back(from);
     }
 
     void solve(void) {
-        for(int i = 0; i < nodeNum; ++i) visited[i] = 0;
-        for(int i = 0; i < nodeNum; ++i) if(!visited[i]) dfs(i);
-        for(int i = 0; i < nodeNum; ++i) visited[i] = 0;
+        for(int i = 0; i < num; ++i) visited[i] = 0;
+        for(int i = 0; i < num; ++i) if(!visited[i]) dfs(i);
+        for(int i = 0; i < num; ++i) visited[i] = 0;
         reverse(order.begin(),order.end());
-        int labelId = 0;
-        for(int i:order) if(!visited[i]) revDfs(i,labelId++);
+        int label_id = 0;
+        for(int i:order) if(!visited[i]) revDfs(i,label_id++);
     }
 
     void print(void) {
-        for(auto labelId:label) cout << labelId << " ";
+        for(auto label_id:label) cout << label_id << " ";
         cout << endl;
     }
 
@@ -153,5 +158,5 @@ public:
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 

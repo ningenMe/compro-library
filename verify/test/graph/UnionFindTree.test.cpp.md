@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/graph/UnionFindTree.cpp.html">lib/graph/UnionFindTree.cpp</a>
+* :question: <a href="../../../library/lib/graph/UnionFindTree.cpp.html">lib/graph/UnionFindTree.cpp</a>
 
 
 ## Code
