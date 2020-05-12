@@ -1,6 +1,6 @@
 /*
  * @title Dinic
- * @docs Dinic.md
+ * @docs md/graph/Dinic.md
  */
 template <class T> class Dinic {
 	struct info {
