@@ -1,5 +1,5 @@
-
 template <class T> class Dinic {
+public:
 	struct info {
 		int to, rev;
 		T cap;
@@ -8,7 +8,16 @@ template <class T> class Dinic {
 	vector<vector<info>> edge;
 	vector<int> level, iter;
 
-	void bfs(int start) {
+	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
+		// do nothing
+	}
+
+	inline void make_edge(int from, int to, T cap) {
+		edge[from].push_back({ to, (int)edge[to].size(), cap });
+		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
+	}
+
+	inline void bfs(int start) {
 		for (int i = 0; i < level.size(); ++i) level[i] = -1;
 		queue<int> q;
 		level[start] = 0;
@@ -25,7 +34,7 @@ template <class T> class Dinic {
 		}
 	}
 
-	T dfs(int from, int goal, T flow) {
+	inline T dfs(int from, int goal, T flow) {
 		if (from == goal) return flow;
 		for (int& i = iter[from]; i < edge[from].size(); ++i) {
 			auto& e = edge[from][i];
@@ -39,18 +48,7 @@ template <class T> class Dinic {
 		return ini;
 	}
 
-public:
-
-	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
-		// do nothing
-	}
-
-	void makeEdge(int from, int to, T cap) {
-		edge[from].push_back({ to, (int)edge[to].size(), cap });
-		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
-	}
-
-	T maxFlow(int start, int goal) {
+	inline T maxflow(int start, int goal) {
 		T maxflow = ini;
 		while (1) {
 			bfs(start);
@@ -63,3 +61,4 @@ public:
 };
 
 //verify https://atcoder.jp/contests/arc085/tasks/arc085_c
+
