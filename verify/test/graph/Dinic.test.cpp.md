@@ -31,10 +31,9 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/Dinic.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:18:43+09:00
+    - Last commit date: 2020-05-13 02:24:02+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/957">https://yukicoder.me/problems/no/957</a>
 
 
 ## Depends on
@@ -48,6 +47,7 @@ layout: default
 {% raw %}
 ```cpp
 #define PROBLEM "https://yukicoder.me/problems/no/957"
+#define IGNORE
 
 #include <vector>
 #include <iostream>
@@ -106,6 +106,7 @@ int main() {
 ```cpp
 #line 1 "test/graph/Dinic.test.cpp"
 #define PROBLEM "https://yukicoder.me/problems/no/957"
+#define IGNORE
 
 #include <vector>
 #include <iostream>
@@ -180,7 +181,7 @@ public:
 
 //verify https://atcoder.jp/contests/arc085/tasks/arc085_c
 
-#line 8 "test/graph/Dinic.test.cpp"
+#line 9 "test/graph/Dinic.test.cpp"
 
 int main() {
     int H,W;
