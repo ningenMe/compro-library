@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/graph/Dinic.test.cpp
+# :heavy_check_mark: test/graph/Dinic.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/Dinic.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:30:59+09:00
+    - Last commit date: 2020-05-13 02:32:42+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/957">https://yukicoder.me/problems/no/957</a>
+* see: <a href="https://yukicoder.me/problems/no/904">https://yukicoder.me/problems/no/904</a>
 
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/graph/Dinic.cpp.html">Dinic</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/Dinic.cpp.html">Dinic</a>
 
 
 ## Code
@@ -47,7 +47,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://yukicoder.me/problems/no/957"
+#define PROBLEM "https://yukicoder.me/problems/no/904"
 
 #include <vector>
 #include <iostream>
@@ -78,7 +78,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "test/graph/Dinic.test.cpp"
-#define PROBLEM "https://yukicoder.me/problems/no/957"
+#define PROBLEM "https://yukicoder.me/problems/no/904"
 
 #include <vector>
 #include <iostream>

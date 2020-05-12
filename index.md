@@ -45,7 +45,7 @@ layout: default
 
 ### lib/graph
 
-* :x: <a href="library/lib/graph/Dinic.cpp.html">Dinic</a>
+* :heavy_check_mark: <a href="library/lib/graph/Dinic.cpp.html">Dinic</a>
 * :heavy_check_mark: <a href="library/lib/graph/StronglyConnectedComponents.cpp.html">lib/graph/StronglyConnectedComponents.cpp</a>
 * :heavy_check_mark: <a href="library/lib/graph/Tree.cpp.html">lib/graph/Tree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/graph/UnionFindTree.cpp.html">lib/graph/UnionFindTree.cpp</a>
@@ -164,7 +164,7 @@ layout: default
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/Distance-line.test.cpp.html">test/geometory/Distance-line.test.cpp</a>
-* :x: <a href="verify/test/graph/Dinic.test.cpp.html">test/graph/Dinic.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graph/Dinic.test.cpp.html">test/graph/Dinic.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/StronglyConnectedComponents.test.cpp.html">test/graph/StronglyConnectedComponents.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-eulertour.test.cpp.html">test/graph/Tree-eulertour.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-hld-path.test.cpp.html">test/graph/Tree-hld-path.test.cpp</a>
