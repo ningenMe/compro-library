@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/Tree-size.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 06:29:57+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/872">https://yukicoder.me/problems/no/872</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/graph/Tree.cpp.html">lib/graph/Tree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/Tree.cpp.html">Tree</a>
 
 
 ## Code
@@ -94,6 +94,10 @@ int main(void){
 #include <array>
 using namespace std;
 #line 1 "lib/graph/Tree.cpp"
+/*
+ * @title Tree
+ * @docs md/graph/Tree.md
+ */
 template<class Operator> class Tree {
 	using TypeDist = typename Operator::TypeDist;
 	size_t num;

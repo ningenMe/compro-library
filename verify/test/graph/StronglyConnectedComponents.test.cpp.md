@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/StronglyConnectedComponents.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-04 01:22:21+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1023">https://yukicoder.me/problems/no/1023</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/graph/StronglyConnectedComponents.cpp.html">lib/graph/StronglyConnectedComponents.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/graph/UnionFindTree.cpp.html">lib/graph/UnionFindTree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/StronglyConnectedComponents.cpp.html">StronglyConnectedComponents</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/UnionFindTree.cpp.html">UnionFindTree</a>
 
 
 ## Code
@@ -117,7 +117,9 @@ int main(){
 #include <algorithm>
 using namespace std;
 #line 1 "lib/graph/UnionFindTree.cpp"
-//Union Find Tree
+/*
+ * @title UnionFindTree
+ */
 class UnionFindTree {
 public:
 	vector<int> parent;
@@ -146,7 +148,9 @@ public:
 	}
 };
 #line 1 "lib/graph/StronglyConnectedComponents.cpp"
-
+/*
+ * @title StronglyConnectedComponents
+ */
 class StronglyConnectedComponents{
     int num;
     vector<vector<int>> edge,redge;

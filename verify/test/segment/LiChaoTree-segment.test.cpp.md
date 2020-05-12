@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/LiChaoTree-segment.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 08:12:39+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/segment_add_get_min">https://judge.yosupo.jp/problem/segment_add_get_min</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/segment/LiChaoTree.cpp.html">lib/segment/LiChaoTree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/segment/LiChaoTree.cpp.html">LiChaoTree</a>
 
 
 ## Code
@@ -104,6 +104,9 @@ int main(void){
 #include <algorithm>
 using namespace std;
 #line 1 "lib/segment/LiChaoTree.cpp"
+/*
+ * @title LiChaoTree
+ */
 template <typename Operator> class LiChaoTree{
 	using TypeValue = typename Operator::TypeValue;
 	using Line = pair<TypeValue,TypeValue>;

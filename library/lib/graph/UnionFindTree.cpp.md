@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/graph/UnionFindTree.cpp
+# :heavy_check_mark: UnionFindTree
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/UnionFindTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 08:12:39+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 
@@ -47,7 +47,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-//Union Find Tree
+/*
+ * @title UnionFindTree
+ */
 class UnionFindTree {
 public:
 	vector<int> parent;
@@ -82,7 +84,9 @@ public:
 {% raw %}
 ```cpp
 #line 1 "lib/graph/UnionFindTree.cpp"
-//Union Find Tree
+/*
+ * @title UnionFindTree
+ */
 class UnionFindTree {
 public:
 	vector<int> parent;

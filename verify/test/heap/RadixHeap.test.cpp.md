@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#a2bf5cb1737b82034660168b413e4164">test/heap</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/heap/RadixHeap.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-27 05:02:59+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/807">https://yukicoder.me/problems/no/807</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/heap/RadixHeap.cpp.html">lib/heap/RadixHeap.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/heap/RadixHeap.cpp.html">RadixHeap</a>
 
 
 ## Code
@@ -134,6 +134,9 @@ int main() {
 #include <array>
 using namespace std;
 #line 1 "lib/heap/RadixHeap.cpp"
+/*
+ * @title RadixHeap
+ */
 template<class T> class RadixHeap{
 	using TypeNode = pair<unsigned long long, T>;
 	array<vector<TypeNode>,65> vq;

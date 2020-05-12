@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/heap/RadixHeap.cpp
+# :heavy_check_mark: RadixHeap
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#9d4770b6051a64e71c3ca0eb1d2879e1">lib/heap</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/heap/RadixHeap.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-27 05:02:59+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 
@@ -46,6 +46,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+ * @title RadixHeap
+ */
 template<class T> class RadixHeap{
 	using TypeNode = pair<unsigned long long, T>;
 	array<vector<TypeNode>,65> vq;
@@ -94,6 +97,9 @@ public:
 {% raw %}
 ```cpp
 #line 1 "lib/heap/RadixHeap.cpp"
+/*
+ * @title RadixHeap
+ */
 template<class T> class RadixHeap{
 	using TypeNode = pair<unsigned long long, T>;
 	array<vector<TypeNode>,65> vq;

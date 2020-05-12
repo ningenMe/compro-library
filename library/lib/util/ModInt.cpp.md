@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/util/ModInt.cpp
+# :heavy_check_mark: ModInt
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#76d75a8065c92efe3b83e817563c11ef">lib/util</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/util/ModInt.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-01 02:19:16+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 
@@ -48,7 +48,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-
+/*
+ * @title ModInt
+ */
 template<long long mod> class ModInt {
 public:
 	long long x;
@@ -177,7 +179,9 @@ public:
 {% raw %}
 ```cpp
 #line 1 "lib/util/ModInt.cpp"
-
+/*
+ * @title ModInt
+ */
 template<long long mod> class ModInt {
 public:
 	long long x;

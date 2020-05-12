@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#b474f495c8582ac5f92778a42ae814fa">test/util</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/util/NBase.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-01 02:19:16+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/699">https://yukicoder.me/problems/no/699</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/util/NBase.cpp.html">lib/util/NBase.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/util/NBase.cpp.html">NBase</a>
 
 
 ## Code
@@ -97,6 +97,9 @@ int main(void){
 #include <cassert>
 using namespace std;
 #line 1 "lib/util/NBase.cpp"
+/*
+ * @title NBase
+ */
 class NBase{
 public:
 	inline static vector<long long> translate(long long X,long long N) {

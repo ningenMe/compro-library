@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#1559848aad74dc56829252d458066b03">test/geometory</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/geometory/Distance-line.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-04 00:50:06+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1041">https://yukicoder.me/problems/no/1041</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/geometory/Distance.cpp.html">lib/geometory/Distance.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/geometory/Distance.cpp.html">Distance</a>
 
 
 ## Code
@@ -89,7 +89,9 @@ int main(void){
 #include <cmath>
 using namespace std;
 #line 1 "lib/geometory/Distance.cpp"
-
+/*
+ * @title Distance
+ */
 template<class T> class Distance{
 public:
     //Euclidean distance

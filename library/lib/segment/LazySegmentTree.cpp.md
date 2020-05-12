@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/segment/LazySegmentTree.cpp
+# :heavy_check_mark: LazySegmentTree
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#c993b235c21a7035904945a028efa0ef">lib/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/segment/LazySegmentTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 06:29:57+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 
@@ -50,6 +50,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+ * @title LazySegmentTree
+ */
 template<class Operator> class LazySegmentTree {
 	using TypeNode = typename Operator::TypeNode;          
 	using TypeLazy = typename Operator::TypeLazy;
@@ -229,6 +232,9 @@ template<class T, class U> struct NodeSumRangeAdd {
 {% raw %}
 ```cpp
 #line 1 "lib/segment/LazySegmentTree.cpp"
+/*
+ * @title LazySegmentTree
+ */
 template<class Operator> class LazySegmentTree {
 	using TypeNode = typename Operator::TypeNode;          
 	using TypeLazy = typename Operator::TypeLazy;

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/BinaryIndexedTree-rsqraq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 08:12:39+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/742">https://yukicoder.me/problems/no/742</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/segment/BinaryIndexedTree.cpp.html">lib/segment/BinaryIndexedTree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/segment/BinaryIndexedTree.cpp.html">BinaryIndexedTree</a>
 
 
 ## Code
@@ -84,7 +84,9 @@ int main(void){
 #include <cassert>
 using namespace std;
 #line 1 "lib/segment/BinaryIndexedTree.cpp"
-//Binary Indexed Tree
+/*
+ * @title BinaryIndexedTree
+ */
 template<class Operator> class BinaryIndexedTree {
 	using TypeNode = typename Operator::TypeNode;
 	size_t depth;         

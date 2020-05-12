@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#a2bf5cb1737b82034660168b413e4164">test/heap</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/heap/RadixHeapInt.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-27 04:16:57+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0596">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0596</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/heap/RadixHeapInt.cpp.html">lib/heap/RadixHeapInt.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/heap/RadixHeapInt.cpp.html">RadixHeapInt</a>
 
 
 ## Code
@@ -107,6 +107,9 @@ int main(void){
 #include <array>
 using namespace std;
 #line 1 "lib/heap/RadixHeapInt.cpp"
+/*
+ * @title RadixHeapInt
+ */
 template<class T> class RadixHeapInt{
 	using TypeNode = pair<unsigned int, T>;
 	array<vector<TypeNode>,33> vq;

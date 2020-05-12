@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/LazySegmentTree-rmqraq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 06:29:57+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/segment/LazySegmentTree.cpp.html">lib/segment/LazySegmentTree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/segment/LazySegmentTree.cpp.html">LazySegmentTree</a>
 
 
 ## Code
@@ -85,6 +85,9 @@ int main(void){
 #include <iostream>
 using namespace std;
 #line 1 "lib/segment/LazySegmentTree.cpp"
+/*
+ * @title LazySegmentTree
+ */
 template<class Operator> class LazySegmentTree {
 	using TypeNode = typename Operator::TypeNode;          
 	using TypeLazy = typename Operator::TypeLazy;

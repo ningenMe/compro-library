@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/math/Matrix.cpp
+# :heavy_check_mark: Matrix
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#b524a7b47b8ed72180f0e5150ab6d934">lib/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/math/Matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 08:12:39+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 
@@ -46,7 +46,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-//Matrix_Repeated_Multiplication_Mod O((N^3)(logK))
+/*
+ * @title Matrix
+ */
 template <class T,int N> class Matrix {
 public:
 	inline static array<array<T,N>,N> pow(array<array<T,N>,N> matrix, long long K){
@@ -75,7 +77,9 @@ public:
 {% raw %}
 ```cpp
 #line 1 "lib/math/Matrix.cpp"
-//Matrix_Repeated_Multiplication_Mod O((N^3)(logK))
+/*
+ * @title Matrix
+ */
 template <class T,int N> class Matrix {
 public:
 	inline static array<array<T,N>,N> pow(array<array<T,N>,N> matrix, long long K){

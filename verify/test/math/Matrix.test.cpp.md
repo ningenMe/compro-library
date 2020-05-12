@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/Matrix.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-01 02:19:16+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/718">https://yukicoder.me/problems/no/718</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/math/Matrix.cpp.html">lib/math/Matrix.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/util/ModInt.cpp.html">lib/util/ModInt.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/math/Matrix.cpp.html">Matrix</a>
+* :heavy_check_mark: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
 
 
 ## Code
@@ -92,7 +92,9 @@ int main(void){
 #include <array>
 using namespace std;
 #line 1 "lib/util/ModInt.cpp"
-
+/*
+ * @title ModInt
+ */
 template<long long mod> class ModInt {
 public:
 	long long x;
@@ -215,7 +217,9 @@ public:
 };
 //using modint = ModInt<MOD>;
 #line 1 "lib/math/Matrix.cpp"
-//Matrix_Repeated_Multiplication_Mod O((N^3)(logK))
+/*
+ * @title Matrix
+ */
 template <class T,int N> class Matrix {
 public:
 	inline static array<array<T,N>,N> pow(array<array<T,N>,N> matrix, long long K){

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/graph/StronglyConnectedComponents.cpp
+# :heavy_check_mark: StronglyConnectedComponents
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/StronglyConnectedComponents.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-04 01:17:23+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 
@@ -46,7 +46,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-
+/*
+ * @title StronglyConnectedComponents
+ */
 class StronglyConnectedComponents{
     int num;
     vector<vector<int>> edge,redge;
@@ -104,7 +106,9 @@ public:
 {% raw %}
 ```cpp
 #line 1 "lib/graph/StronglyConnectedComponents.cpp"
-
+/*
+ * @title StronglyConnectedComponents
+ */
 class StronglyConnectedComponents{
     int num;
     vector<vector<int>> edge,redge;

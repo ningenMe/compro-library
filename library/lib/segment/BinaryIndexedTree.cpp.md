@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/segment/BinaryIndexedTree.cpp
+# :heavy_check_mark: BinaryIndexedTree
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#c993b235c21a7035904945a028efa0ef">lib/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/segment/BinaryIndexedTree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 08:12:39+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 
@@ -46,7 +46,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-//Binary Indexed Tree
+/*
+ * @title BinaryIndexedTree
+ */
 template<class Operator> class BinaryIndexedTree {
 	using TypeNode = typename Operator::TypeNode;
 	size_t depth;         
@@ -118,7 +120,9 @@ template<class TypeNode> struct nodeUpdatePrefixGCD {
 {% raw %}
 ```cpp
 #line 1 "lib/segment/BinaryIndexedTree.cpp"
-//Binary Indexed Tree
+/*
+ * @title BinaryIndexedTree
+ */
 template<class Operator> class BinaryIndexedTree {
 	using TypeNode = typename Operator::TypeNode;
 	size_t depth;         

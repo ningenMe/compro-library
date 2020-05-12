@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/CombinationMod-factorial.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-01 02:19:16+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/916">https://yukicoder.me/problems/no/916</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/math/CombinationMod.cpp.html">lib/math/CombinationMod.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/util/ModInt.cpp.html">lib/util/ModInt.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/math/CombinationMod.cpp.html">CombinationMod</a>
+* :heavy_check_mark: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
 
 
 ## Code
@@ -102,7 +102,9 @@ int main(void){
 #include <iostream>
 using namespace std;
 #line 1 "lib/math/CombinationMod.cpp"
-//Combination Mod
+/*
+ * @title CombinationMod
+ */
 template<long long mod> class CombinationMod {
 	vector<long long> fac,finv,inv;
 public:
@@ -129,7 +131,9 @@ public:
 
 //verify https://atcoder.jp/contests/abc021/tasks/abc021_d
 #line 1 "lib/util/ModInt.cpp"
-
+/*
+ * @title ModInt
+ */
 template<long long mod> class ModInt {
 public:
 	long long x;

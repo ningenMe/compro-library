@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/SparseTable.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-30 08:09:03+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/staticrmq">https://judge.yosupo.jp/problem/staticrmq</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/segment/SparseTable.cpp.html">lib/segment/SparseTable.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/segment/SparseTable.cpp.html">SparseTable</a>
 
 
 ## Code
@@ -80,6 +80,9 @@ int main(void){
 #include <iostream>
 using namespace std;
 #line 1 "lib/segment/SparseTable.cpp"
+/*
+ * @title SparseTable
+ */
 template<class Operator> class SparseTable{
 public:
 	using TypeNode = typename Operator::TypeNode;

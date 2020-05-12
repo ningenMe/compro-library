@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/geometory/Distance.cpp
+# :heavy_check_mark: Distance
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#3ee383e089bb750d0bba9be448690113">lib/geometory</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/geometory/Distance.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-04 00:50:06+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 
@@ -46,7 +46,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-
+/*
+ * @title Distance
+ */
 template<class T> class Distance{
 public:
     //Euclidean distance
@@ -72,7 +74,9 @@ public:
 {% raw %}
 ```cpp
 #line 1 "lib/geometory/Distance.cpp"
-
+/*
+ * @title Distance
+ */
 template<class T> class Distance{
 public:
     //Euclidean distance

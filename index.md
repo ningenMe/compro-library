@@ -38,7 +38,7 @@ layout: default
 
 ### lib/geometory
 
-* :heavy_check_mark: <a href="library/lib/geometory/Distance.cpp.html">lib/geometory/Distance.cpp</a>
+* :heavy_check_mark: <a href="library/lib/geometory/Distance.cpp.html">Distance</a>
 
 
 <div id="6e267a37887a7dcb68cbf7008d6c7e48"></div>
@@ -46,47 +46,47 @@ layout: default
 ### lib/graph
 
 * :heavy_check_mark: <a href="library/lib/graph/Dinic.cpp.html">Dinic</a>
-* :heavy_check_mark: <a href="library/lib/graph/StronglyConnectedComponents.cpp.html">lib/graph/StronglyConnectedComponents.cpp</a>
-* :heavy_check_mark: <a href="library/lib/graph/Tree.cpp.html">lib/graph/Tree.cpp</a>
-* :heavy_check_mark: <a href="library/lib/graph/UnionFindTree.cpp.html">lib/graph/UnionFindTree.cpp</a>
+* :heavy_check_mark: <a href="library/lib/graph/StronglyConnectedComponents.cpp.html">StronglyConnectedComponents</a>
+* :heavy_check_mark: <a href="library/lib/graph/Tree.cpp.html">Tree</a>
+* :heavy_check_mark: <a href="library/lib/graph/UnionFindTree.cpp.html">UnionFindTree</a>
 
 
 <div id="9d4770b6051a64e71c3ca0eb1d2879e1"></div>
 
 ### lib/heap
 
-* :heavy_check_mark: <a href="library/lib/heap/RadixHeap.cpp.html">lib/heap/RadixHeap.cpp</a>
-* :heavy_check_mark: <a href="library/lib/heap/RadixHeapInt.cpp.html">lib/heap/RadixHeapInt.cpp</a>
+* :heavy_check_mark: <a href="library/lib/heap/RadixHeap.cpp.html">RadixHeap</a>
+* :heavy_check_mark: <a href="library/lib/heap/RadixHeapInt.cpp.html">RadixHeapInt</a>
 
 
 <div id="b524a7b47b8ed72180f0e5150ab6d934"></div>
 
 ### lib/math
 
-* :heavy_check_mark: <a href="library/lib/math/CombinationMod.cpp.html">lib/math/CombinationMod.cpp</a>
-* :heavy_check_mark: <a href="library/lib/math/GreatestCommonDivisor.cpp.html">lib/math/GreatestCommonDivisor.cpp</a>
-* :heavy_check_mark: <a href="library/lib/math/Matrix.cpp.html">lib/math/Matrix.cpp</a>
+* :heavy_check_mark: <a href="library/lib/math/CombinationMod.cpp.html">CombinationMod</a>
+* :heavy_check_mark: <a href="library/lib/math/GreatestCommonDivisor.cpp.html">Gcd</a>
+* :heavy_check_mark: <a href="library/lib/math/Matrix.cpp.html">Matrix</a>
 
 
 <div id="c993b235c21a7035904945a028efa0ef"></div>
 
 ### lib/segment
 
-* :heavy_check_mark: <a href="library/lib/segment/BinaryIndexedTree.cpp.html">lib/segment/BinaryIndexedTree.cpp</a>
-* :heavy_check_mark: <a href="library/lib/segment/DisjointSparseTable.cpp.html">lib/segment/DisjointSparseTable.cpp</a>
-* :heavy_check_mark: <a href="library/lib/segment/LazySegmentTree.cpp.html">lib/segment/LazySegmentTree.cpp</a>
-* :heavy_check_mark: <a href="library/lib/segment/LiChaoTree.cpp.html">lib/segment/LiChaoTree.cpp</a>
-* :heavy_check_mark: <a href="library/lib/segment/SegmentTree.cpp.html">lib/segment/SegmentTree.cpp</a>
-* :heavy_check_mark: <a href="library/lib/segment/SparseTable.cpp.html">lib/segment/SparseTable.cpp</a>
-* :heavy_check_mark: <a href="library/lib/segment/Swag.cpp.html">lib/segment/Swag.cpp</a>
+* :heavy_check_mark: <a href="library/lib/segment/BinaryIndexedTree.cpp.html">BinaryIndexedTree</a>
+* :heavy_check_mark: <a href="library/lib/segment/DisjointSparseTable.cpp.html">DisjointSparseTable</a>
+* :heavy_check_mark: <a href="library/lib/segment/LazySegmentTree.cpp.html">LazySegmentTree</a>
+* :heavy_check_mark: <a href="library/lib/segment/LiChaoTree.cpp.html">LiChaoTree</a>
+* :heavy_check_mark: <a href="library/lib/segment/SegmentTree.cpp.html">SegmentTree</a>
+* :heavy_check_mark: <a href="library/lib/segment/SparseTable.cpp.html">SparseTable</a>
+* :heavy_check_mark: <a href="library/lib/segment/Swag.cpp.html">Swag</a>
 
 
 <div id="76d75a8065c92efe3b83e817563c11ef"></div>
 
 ### lib/util
 
-* :heavy_check_mark: <a href="library/lib/util/ModInt.cpp.html">lib/util/ModInt.cpp</a>
-* :heavy_check_mark: <a href="library/lib/util/NBase.cpp.html">lib/util/NBase.cpp</a>
+* :heavy_check_mark: <a href="library/lib/util/ModInt.cpp.html">ModInt</a>
+* :heavy_check_mark: <a href="library/lib/util/NBase.cpp.html">NBase</a>
 
 
 <div id="f62ece6ccc2c02f6163dc5f3da3d641d"></div>

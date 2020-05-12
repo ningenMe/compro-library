@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/math/GreatestCommonDivisor.cpp
+# :heavy_check_mark: Gcd
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#b524a7b47b8ed72180f0e5150ab6d934">lib/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/math/GreatestCommonDivisor.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 06:06:47+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 
@@ -46,6 +46,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+ * @title Gcd
+ */
 class Gcd{
 public:
 	inline static long long impl(long long n, long long m) {
@@ -95,6 +98,9 @@ public:
 {% raw %}
 ```cpp
 #line 1 "lib/math/GreatestCommonDivisor.cpp"
+/*
+ * @title Gcd
+ */
 class Gcd{
 public:
 	inline static long long impl(long long n, long long m) {

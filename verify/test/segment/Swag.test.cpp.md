@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/Swag.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:21:16+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1036">https://yukicoder.me/problems/no/1036</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/segment/Swag.cpp.html">lib/segment/Swag.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/segment/Swag.cpp.html">Swag</a>
 
 
 ## Code
@@ -93,6 +93,9 @@ int main(void){
 #include <stack>
 using namespace std;
 #line 1 "lib/segment/Swag.cpp"
+/*
+ * @title Swag
+ */
 template<class Operator> class Swag{
 public:
 	using TypeNode = typename Operator::TypeNode;

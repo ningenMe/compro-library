@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/SegmentTree-binary-search.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:20:36+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/4072">https://yukicoder.me/problems/4072</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/math/GreatestCommonDivisor.cpp.html">lib/math/GreatestCommonDivisor.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib/segment/SegmentTree.cpp.html">lib/segment/SegmentTree.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib/math/GreatestCommonDivisor.cpp.html">Gcd</a>
+* :heavy_check_mark: <a href="../../../library/lib/segment/SegmentTree.cpp.html">SegmentTree</a>
 
 
 ## Code
@@ -90,6 +90,9 @@ int main() {
 #include <iostream>
 using namespace std;
 #line 1 "lib/segment/SegmentTree.cpp"
+/*
+ * @title SegmentTree
+ */
 template<class Operator> class SegmentTree {
 	using TypeNode = typename Operator::TypeNode; 
 	size_t length;
@@ -198,6 +201,9 @@ template<class T> struct NodeSumPointAdd {
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
 #line 1 "lib/math/GreatestCommonDivisor.cpp"
+/*
+ * @title Gcd
+ */
 class Gcd{
 public:
 	inline static long long impl(long long n, long long m) {

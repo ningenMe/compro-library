@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/heap/RadixHeapInt.cpp
+# :heavy_check_mark: RadixHeapInt
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#9d4770b6051a64e71c3ca0eb1d2879e1">lib/heap</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/heap/RadixHeapInt.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 20:55:15+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 
@@ -46,6 +46,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+ * @title RadixHeapInt
+ */
 template<class T> class RadixHeapInt{
 	using TypeNode = pair<unsigned int, T>;
 	array<vector<TypeNode>,33> vq;
@@ -94,6 +97,9 @@ public:
 {% raw %}
 ```cpp
 #line 1 "lib/heap/RadixHeapInt.cpp"
+/*
+ * @title RadixHeapInt
+ */
 template<class T> class RadixHeapInt{
 	using TypeNode = pair<unsigned int, T>;
 	array<vector<TypeNode>,33> vq;

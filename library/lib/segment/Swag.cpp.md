@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib/segment/Swag.cpp
+# :heavy_check_mark: Swag
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#c993b235c21a7035904945a028efa0ef">lib/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/segment/Swag.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:21:16+09:00
+    - Last commit date: 2020-05-13 02:48:46+09:00
 
 
 
@@ -46,6 +46,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+ * @title Swag
+ */
 template<class Operator> class Swag{
 public:
 	using TypeNode = typename Operator::TypeNode;
@@ -94,6 +97,9 @@ template<class T> struct NodeGcd {
 {% raw %}
 ```cpp
 #line 1 "lib/segment/Swag.cpp"
+/*
+ * @title Swag
+ */
 template<class Operator> class Swag{
 public:
 	using TypeNode = typename Operator::TypeNode;
