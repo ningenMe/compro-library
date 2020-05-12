@@ -184,6 +184,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-line.test.cpp.html">test/segment/LiChaoTree-line.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-segment.test.cpp.html">test/segment/LiChaoTree-segment.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-binary-search.test.cpp.html">test/segment/SegmentTree-binary-search.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rcq.test.cpp.html">test/segment/SegmentTree-rcq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rmq.test.cpp.html">test/segment/SegmentTree-rmq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rsq.test.cpp.html">test/segment/SegmentTree-rsq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SparseTable.test.cpp.html">test/segment/SparseTable.test.cpp</a>

@@ -41,6 +41,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../verify/test/graph/Tree-hld-path.test.cpp.html">test/graph/Tree-hld-path.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/math/CombinationMod-factorial.test.cpp.html">test/math/CombinationMod-factorial.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/math/Matrix.test.cpp.html">test/math/Matrix.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/segment/SegmentTree-rcq.test.cpp.html">test/segment/SegmentTree-rcq.test.cpp</a>
 
 
 ## Code

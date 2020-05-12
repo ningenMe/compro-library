@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/SegmentTree-binary-search.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:48:46+09:00
+    - Last commit date: 2020-05-13 03:18:45+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/4072">https://yukicoder.me/problems/4072</a>
@@ -192,12 +192,21 @@ template<class T> struct NodeMinPointUpdate {
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
 
-//一点更新 区間最小
+//一点加算 区間最大
 template<class T> struct NodeSumPointAdd {
 	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
 	inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
+};
+
+//一次関数
+template<class T> struct NodeCompositePointUpdate {
+	using TypeNode = T;
+	inline static constexpr TypeNode unit_node = make_pair(1,0);
+	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return {r.first*l.first,r.first*l.second+r.second};}
+	inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
 #line 1 "lib/math/GreatestCommonDivisor.cpp"
