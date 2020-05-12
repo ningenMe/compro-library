@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/Dinic.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:13:16+09:00
+    - Last commit date: 2020-05-13 02:18:43+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/957">https://yukicoder.me/problems/no/957</a>
@@ -114,7 +114,7 @@ using namespace std;
 #line 1 "lib/graph/Dinic.cpp"
 /*
  * @title Dinic
- * @docs Dinic.md
+ * @docs md/graph/Dinic.md
  */
 template <class T> class Dinic {
 	struct info {

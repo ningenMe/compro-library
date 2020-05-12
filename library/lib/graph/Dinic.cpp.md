@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/Dinic.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:13:16+09:00
+    - Last commit date: 2020-05-13 02:18:43+09:00
 
 
 
@@ -58,7 +58,7 @@ layout: default
 ```cpp
 /*
  * @title Dinic
- * @docs Dinic.md
+ * @docs md/graph/Dinic.md
  */
 template <class T> class Dinic {
 	struct info {
@@ -134,7 +134,7 @@ public:
 #line 1 "lib/graph/Dinic.cpp"
 /*
  * @title Dinic
- * @docs Dinic.md
+ * @docs md/graph/Dinic.md
  */
 template <class T> class Dinic {
 	struct info {
