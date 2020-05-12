@@ -21,19 +21,24 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: non-verified/Dinic.cpp
+# :x: lib/graph/Dinic.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f62ece6ccc2c02f6163dc5f3da3d641d">non-verified</a>
-* <a href="{{ site.github.repository_url }}/blob/master/non-verified/Dinic.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:29:01+09:00
+* category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/graph/Dinic.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-05-13 01:59:58+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../../verify/test/graph/Dinic.test.cpp.html">test/graph/Dinic.test.cpp</a>
 
 
 ## Code
@@ -41,8 +46,8 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-
 template <class T> class Dinic {
+public:
 	struct info {
 		int to, rev;
 		T cap;
@@ -51,7 +56,16 @@ template <class T> class Dinic {
 	vector<vector<info>> edge;
 	vector<int> level, iter;
 
-	void bfs(int start) {
+	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
+		// do nothing
+	}
+
+	inline void make_edge(int from, int to, T cap) {
+		edge[from].push_back({ to, (int)edge[to].size(), cap });
+		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
+	}
+
+	inline void bfs(int start) {
 		for (int i = 0; i < level.size(); ++i) level[i] = -1;
 		queue<int> q;
 		level[start] = 0;
@@ -68,7 +82,7 @@ template <class T> class Dinic {
 		}
 	}
 
-	T dfs(int from, int goal, T flow) {
+	inline T dfs(int from, int goal, T flow) {
 		if (from == goal) return flow;
 		for (int& i = iter[from]; i < edge[from].size(); ++i) {
 			auto& e = edge[from][i];
@@ -82,18 +96,7 @@ template <class T> class Dinic {
 		return ini;
 	}
 
-public:
-
-	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
-		// do nothing
-	}
-
-	void makeEdge(int from, int to, T cap) {
-		edge[from].push_back({ to, (int)edge[to].size(), cap });
-		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
-	}
-
-	T maxFlow(int start, int goal) {
+	inline T maxflow(int start, int goal) {
 		T maxflow = ini;
 		while (1) {
 			bfs(start);
@@ -106,6 +109,7 @@ public:
 };
 
 //verify https://atcoder.jp/contests/arc085/tasks/arc085_c
+
 
 ```
 {% endraw %}
@@ -113,9 +117,9 @@ public:
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "non-verified/Dinic.cpp"
-
+#line 1 "lib/graph/Dinic.cpp"
 template <class T> class Dinic {
+public:
 	struct info {
 		int to, rev;
 		T cap;
@@ -124,7 +128,16 @@ template <class T> class Dinic {
 	vector<vector<info>> edge;
 	vector<int> level, iter;
 
-	void bfs(int start) {
+	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
+		// do nothing
+	}
+
+	inline void make_edge(int from, int to, T cap) {
+		edge[from].push_back({ to, (int)edge[to].size(), cap });
+		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
+	}
+
+	inline void bfs(int start) {
 		for (int i = 0; i < level.size(); ++i) level[i] = -1;
 		queue<int> q;
 		level[start] = 0;
@@ -141,7 +154,7 @@ template <class T> class Dinic {
 		}
 	}
 
-	T dfs(int from, int goal, T flow) {
+	inline T dfs(int from, int goal, T flow) {
 		if (from == goal) return flow;
 		for (int& i = iter[from]; i < edge[from].size(); ++i) {
 			auto& e = edge[from][i];
@@ -155,18 +168,7 @@ template <class T> class Dinic {
 		return ini;
 	}
 
-public:
-
-	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
-		// do nothing
-	}
-
-	void makeEdge(int from, int to, T cap) {
-		edge[from].push_back({ to, (int)edge[to].size(), cap });
-		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
-	}
-
-	T maxFlow(int start, int goal) {
+	inline T maxflow(int start, int goal) {
 		T maxflow = ini;
 		while (1) {
 			bfs(start);
@@ -180,8 +182,9 @@ public:
 
 //verify https://atcoder.jp/contests/arc085/tasks/arc085_c
 
+
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
