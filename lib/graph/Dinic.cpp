@@ -1,5 +1,8 @@
+/*
+ * @title Dinic
+ * @docs Dinic.md
+ */
 template <class T> class Dinic {
-public:
 	struct info {
 		int to, rev;
 		T cap;
@@ -7,15 +10,6 @@ public:
 	T ini, inf;
 	vector<vector<info>> edge;
 	vector<int> level, iter;
-
-	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
-		// do nothing
-	}
-
-	inline void make_edge(int from, int to, T cap) {
-		edge[from].push_back({ to, (int)edge[to].size(), cap });
-		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
-	}
 
 	inline void bfs(int start) {
 		for (int i = 0; i < level.size(); ++i) level[i] = -1;
@@ -46,6 +40,16 @@ public:
 			return dflow;
 		}
 		return ini;
+	}
+
+public:
+	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
+		// do nothing
+	}
+
+	inline void make_edge(int from, int to, T cap) {
+		edge[from].push_back({ to, (int)edge[to].size(), cap });
+		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
 	}
 
 	inline T maxflow(int start, int goal) {
