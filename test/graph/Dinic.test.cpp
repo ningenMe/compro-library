@@ -1,5 +1,4 @@
 #define PROBLEM "https://yukicoder.me/problems/no/957"
-#define IGNORE
 
 #include <vector>
 #include <iostream>
@@ -8,45 +7,18 @@ using namespace std;
 #include "../../lib/graph/Dinic.cpp"
 
 int main() {
-    int H,W;
-    cin >> H >> W;
-    vector<long long> R(H),C(W),G(H*W);
-    for(int i = 0; i < H; ++i) for(int j = 0; j < W; ++j) cin >> G[i*W+j];
-    for(int i = 0; i < H; ++i) cin >> R[i];
-    for(int j = 0; j < W; ++j) cin >> C[j];
-    
-	long long ans = 0;
-    Dinic<long long> dinic(H+W+2,0,1e15);
-    int S = H+W,T = S + 1;
-	//i:Sと接続:使う
-	//i:Tと接続:使わない
-    for(int i = 0; i < H; ++i) {
-		long long sum = 0;
-		for(int j = 0; j < W; ++j) sum += G[i*W+j];
-		ans += R[i];
-		if(R[i]>=sum){
-			ans -= sum;
+	int N; cin >> N;
+	vector<int> A(N),B(N);
+	for(int i = 1; i < N; ++i) cin >> A[i] >> B[i];
+	Dinic<int>  dinic(2*N,0,1234567);
+	for(int i = 1; i < N; ++i) {
+		for(int j = 1; j < N; ++j) {
+			if(i==j) continue;
+			dinic.make_edge(i,j+N,1234567);
 		}
-		else{
-			dinic.make_edge(S,i,sum-R[i]);
-			ans -= R[i];
-		}
-    }
-	//j:Sと接続:使う
-	//j:Tと接続:使わない
-    for(int j = 0; j < W; ++j) {
-		ans += C[j];
-		dinic.make_edge(H+j,T,C[j]);
-    }
-	//この供給は常にある
-    for(int i = 0; i < H; ++i) {
-        for(int j = 0; j < W; ++j) {
-			dinic.make_edge(i,H+j,G[i*W+j]);
-		}
-    }
-
-    ans -= dinic.maxflow(S,T);
-    cout << ans << endl;
-
+	}
+	for(int i = 1; i < N; ++i) dinic.make_edge(0,i,A[i]);
+	for(int i = 1; i < N; ++i) dinic.make_edge(i+N,N,B[i]);
+	cout << dinic.maxflow(0,N)+1 << endl;
     return 0;
 }
