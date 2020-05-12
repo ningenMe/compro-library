@@ -1,4 +1,6 @@
-
+/*
+ * @title ModInt
+ */
 template<long long mod> class ModInt {
 public:
 	long long x;

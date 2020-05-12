@@ -1,3 +1,7 @@
+/*
+ * @title Tree
+ * @docs md/graph/Tree.md
+ */
 template<class Operator> class Tree {
 	using TypeDist = typename Operator::TypeDist;
 	size_t num;

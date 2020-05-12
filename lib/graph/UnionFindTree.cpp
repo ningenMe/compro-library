@@ -1,4 +1,6 @@
-//Union Find Tree
+/*
+ * @title UnionFindTree
+ */
 class UnionFindTree {
 public:
 	vector<int> parent;

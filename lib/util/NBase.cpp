@@ -1,3 +1,6 @@
+/*
+ * @title NBase
+ */
 class NBase{
 public:
 	inline static vector<long long> translate(long long X,long long N) {

@@ -1,4 +1,6 @@
-
+/*
+ * @title Distance
+ */
 template<class T> class Distance{
 public:
     //Euclidean distance

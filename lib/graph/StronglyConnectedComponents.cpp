@@ -1,4 +1,6 @@
-
+/*
+ * @title StronglyConnectedComponents
+ */
 class StronglyConnectedComponents{
     int num;
     vector<vector<int>> edge,redge;

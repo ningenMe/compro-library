@@ -1,3 +1,6 @@
+/*
+ * @title Swag
+ */
 template<class Operator> class Swag{
 public:
 	using TypeNode = typename Operator::TypeNode;

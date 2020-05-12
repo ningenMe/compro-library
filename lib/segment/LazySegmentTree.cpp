@@ -1,3 +1,6 @@
+/*
+ * @title LazySegmentTree
+ */
 template<class Operator> class LazySegmentTree {
 	using TypeNode = typename Operator::TypeNode;          
 	using TypeLazy = typename Operator::TypeLazy;

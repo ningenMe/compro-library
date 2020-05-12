@@ -1,3 +1,6 @@
+/*
+ * @title LiChaoTree
+ */
 template <typename Operator> class LiChaoTree{
 	using TypeValue = typename Operator::TypeValue;
 	using Line = pair<TypeValue,TypeValue>;

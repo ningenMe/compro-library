@@ -1,4 +1,6 @@
-//Combination Mod
+/*
+ * @title CombinationMod
+ */
 template<long long mod> class CombinationMod {
 	vector<long long> fac,finv,inv;
 public:

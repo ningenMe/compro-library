@@ -1,3 +1,6 @@
+/*
+ * @title DisjointSparseTable
+ */
 template<class Operator> class DisjointSparseTable{
 public:
 	using TypeNode = typename Operator::TypeNode;

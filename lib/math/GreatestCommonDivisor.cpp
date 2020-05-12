@@ -1,3 +1,6 @@
+/*
+ * @title Gcd
+ */
 class Gcd{
 public:
 	inline static long long impl(long long n, long long m) {

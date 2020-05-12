@@ -1,4 +1,6 @@
-//Binary Indexed Tree
+/*
+ * @title BinaryIndexedTree
+ */
 template<class Operator> class BinaryIndexedTree {
 	using TypeNode = typename Operator::TypeNode;
 	size_t depth;         

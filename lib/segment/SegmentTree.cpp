@@ -1,3 +1,6 @@
+/*
+ * @title SegmentTree
+ */
 template<class Operator> class SegmentTree {
 	using TypeNode = typename Operator::TypeNode; 
 	size_t length;

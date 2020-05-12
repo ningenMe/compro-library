@@ -1,4 +1,6 @@
-//Matrix_Repeated_Multiplication_Mod O((N^3)(logK))
+/*
+ * @title Matrix
+ */
 template <class T,int N> class Matrix {
 public:
 	inline static array<array<T,N>,N> pow(array<array<T,N>,N> matrix, long long K){

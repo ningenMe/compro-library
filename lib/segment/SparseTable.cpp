@@ -1,3 +1,6 @@
+/*
+ * @title SparseTable
+ */
 template<class Operator> class SparseTable{
 public:
 	using TypeNode = typename Operator::TypeNode;
