@@ -45,7 +45,7 @@ layout: default
 
 ### lib/graph
 
-* :x: <a href="library/lib/graph/Dinic.cpp.html">lib/graph/Dinic.cpp</a>
+* :x: <a href="library/lib/graph/Dinic.cpp.html">Dinic</a>
 * :heavy_check_mark: <a href="library/lib/graph/StronglyConnectedComponents.cpp.html">lib/graph/StronglyConnectedComponents.cpp</a>
 * :heavy_check_mark: <a href="library/lib/graph/Tree.cpp.html">lib/graph/Tree.cpp</a>
 * :heavy_check_mark: <a href="library/lib/graph/UnionFindTree.cpp.html">lib/graph/UnionFindTree.cpp</a>

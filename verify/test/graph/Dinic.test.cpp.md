@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/Dinic.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 01:59:58+09:00
+    - Last commit date: 2020-05-13 02:13:16+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/957">https://yukicoder.me/problems/no/957</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/graph/Dinic.cpp.html">lib/graph/Dinic.cpp</a>
+* :x: <a href="../../../library/lib/graph/Dinic.cpp.html">Dinic</a>
 
 
 ## Code
@@ -112,8 +112,11 @@ int main() {
 #include <queue>
 using namespace std;
 #line 1 "lib/graph/Dinic.cpp"
+/*
+ * @title Dinic
+ * @docs Dinic.md
+ */
 template <class T> class Dinic {
-public:
 	struct info {
 		int to, rev;
 		T cap;
@@ -121,15 +124,6 @@ public:
 	T ini, inf;
 	vector<vector<info>> edge;
 	vector<int> level, iter;
-
-	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
-		// do nothing
-	}
-
-	inline void make_edge(int from, int to, T cap) {
-		edge[from].push_back({ to, (int)edge[to].size(), cap });
-		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
-	}
 
 	inline void bfs(int start) {
 		for (int i = 0; i < level.size(); ++i) level[i] = -1;
@@ -160,6 +154,16 @@ public:
 			return dflow;
 		}
 		return ini;
+	}
+
+public:
+	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
+		// do nothing
+	}
+
+	inline void make_edge(int from, int to, T cap) {
+		edge[from].push_back({ to, (int)edge[to].size(), cap });
+		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
 	}
 
 	inline T maxflow(int start, int goal) {

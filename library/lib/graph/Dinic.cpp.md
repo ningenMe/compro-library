@@ -25,16 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: lib/graph/Dinic.cpp
+# :x: Dinic
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/Dinic.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 01:59:58+09:00
+    - Last commit date: 2020-05-13 02:13:16+09:00
 
 
 
+
+## Dinic
+
+#### api
+##### Dinic(int N, T ini, T inf)
+- コンストラクタ 
+##### inline void make_edge(int from, int to, T cap)
+- from から to に容量 cap の辺を張る
+##### inline T maxflow(int start, int goal)
+- start から goal への最大流
 
 ## Verified with
 
@@ -46,8 +56,11 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+ * @title Dinic
+ * @docs Dinic.md
+ */
 template <class T> class Dinic {
-public:
 	struct info {
 		int to, rev;
 		T cap;
@@ -55,15 +68,6 @@ public:
 	T ini, inf;
 	vector<vector<info>> edge;
 	vector<int> level, iter;
-
-	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
-		// do nothing
-	}
-
-	inline void make_edge(int from, int to, T cap) {
-		edge[from].push_back({ to, (int)edge[to].size(), cap });
-		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
-	}
 
 	inline void bfs(int start) {
 		for (int i = 0; i < level.size(); ++i) level[i] = -1;
@@ -94,6 +98,16 @@ public:
 			return dflow;
 		}
 		return ini;
+	}
+
+public:
+	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
+		// do nothing
+	}
+
+	inline void make_edge(int from, int to, T cap) {
+		edge[from].push_back({ to, (int)edge[to].size(), cap });
+		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
 	}
 
 	inline T maxflow(int start, int goal) {
@@ -118,8 +132,11 @@ public:
 {% raw %}
 ```cpp
 #line 1 "lib/graph/Dinic.cpp"
+/*
+ * @title Dinic
+ * @docs Dinic.md
+ */
 template <class T> class Dinic {
-public:
 	struct info {
 		int to, rev;
 		T cap;
@@ -127,15 +144,6 @@ public:
 	T ini, inf;
 	vector<vector<info>> edge;
 	vector<int> level, iter;
-
-	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
-		// do nothing
-	}
-
-	inline void make_edge(int from, int to, T cap) {
-		edge[from].push_back({ to, (int)edge[to].size(), cap });
-		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
-	}
 
 	inline void bfs(int start) {
 		for (int i = 0; i < level.size(); ++i) level[i] = -1;
@@ -166,6 +174,16 @@ public:
 			return dflow;
 		}
 		return ini;
+	}
+
+public:
+	Dinic(int N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {
+		// do nothing
+	}
+
+	inline void make_edge(int from, int to, T cap) {
+		edge[from].push_back({ to, (int)edge[to].size(), cap });
+		edge[to].push_back({ from, (int)edge[from].size() - 1, ini });
 	}
 
 	inline T maxflow(int start, int goal) {
