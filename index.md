@@ -104,7 +104,6 @@ layout: default
 * :warning: <a href="library/non-verified/ConvexHullTrick.cpp.html">non-verified/ConvexHullTrick.cpp</a>
 * :warning: <a href="library/non-verified/Dijkstra.cpp.html">non-verified/Dijkstra.cpp</a>
 * :warning: <a href="library/non-verified/Divisor.cpp.html">non-verified/Divisor.cpp</a>
-* :warning: <a href="library/non-verified/FactorialMod.cpp.html">non-verified/FactorialMod.cpp</a>
 * :warning: <a href="library/non-verified/Ford_Fulkerson.cpp.html">non-verified/Ford_Fulkerson.cpp</a>
 * :warning: <a href="library/non-verified/Garner.cpp.html">non-verified/Garner.cpp</a>
 * :warning: <a href="library/non-verified/Line_Intersection_Judge.cpp.html">non-verified/Line_Intersection_Judge.cpp</a>

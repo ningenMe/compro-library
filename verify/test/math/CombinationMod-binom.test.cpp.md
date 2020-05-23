@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/CombinationMod-binom.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:48:46+09:00
+    - Last commit date: 2020-05-24 03:14:51+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/741">https://yukicoder.me/problems/no/741</a>
@@ -93,11 +93,6 @@ public:
 	}
 	inline long long factorial(int n) {
 		return fac[n];
-	}
-	inline static vector<long long> pow2(int n) {
-		vector<long long> pow2(n+1,1);
-		for (int i = 2; i <= n; ++i) pow2[i] = (pow2[i - 1] * 2) % mod;
-		return pow2;
 	}
 };
 

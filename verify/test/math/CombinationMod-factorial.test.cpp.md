@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/CombinationMod-factorial.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:48:46+09:00
+    - Last commit date: 2020-05-24 03:14:51+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/916">https://yukicoder.me/problems/no/916</a>
@@ -64,7 +64,8 @@ int main(void){
 	cin >> d >> l >> r >> k;
     CombinationMod<MOD> CM((1<<MAX_d));
     vector<int> sum(MAX_d + 1, 0);
-    auto pow2 = CombinationMod<MOD>::pow2(MAX_d + 1);
+	vector<long long> pow2(MAX_d + 1,1);
+	for (int i = 2; i <= MAX_d; ++i) pow2[i] = (pow2[i - 1] * 2) % MOD;
 	for (int i = 1; i < MAX_d + 1; ++i) sum[i] = sum[i - 1] + pow2[i];
 	l = lower_bound(sum.begin(), sum.end(), l) - sum.begin();
 	r = lower_bound(sum.begin(), sum.end(), r) - sum.begin();
@@ -121,11 +122,6 @@ public:
 	}
 	inline long long factorial(int n) {
 		return fac[n];
-	}
-	inline static vector<long long> pow2(int n) {
-		vector<long long> pow2(n+1,1);
-		for (int i = 2; i <= n; ++i) pow2[i] = (pow2[i - 1] * 2) % mod;
-		return pow2;
 	}
 };
 
@@ -265,7 +261,8 @@ int main(void){
 	cin >> d >> l >> r >> k;
     CombinationMod<MOD> CM((1<<MAX_d));
     vector<int> sum(MAX_d + 1, 0);
-    auto pow2 = CombinationMod<MOD>::pow2(MAX_d + 1);
+	vector<long long> pow2(MAX_d + 1,1);
+	for (int i = 2; i <= MAX_d; ++i) pow2[i] = (pow2[i - 1] * 2) % MOD;
 	for (int i = 1; i < MAX_d + 1; ++i) sum[i] = sum[i - 1] + pow2[i];
 	l = lower_bound(sum.begin(), sum.end(), l) - sum.begin();
 	r = lower_bound(sum.begin(), sum.end(), r) - sum.begin();
