@@ -65,6 +65,7 @@ layout: default
 ### lib/math
 
 * :heavy_check_mark: <a href="library/lib/math/CombinationMod.cpp.html">CombinationMod</a>
+* :heavy_check_mark: <a href="library/lib/math/Eratosthenes.cpp.html">Eratosthenes</a>
 * :heavy_check_mark: <a href="library/lib/math/GreatestCommonDivisor.cpp.html">Gcd</a>
 * :heavy_check_mark: <a href="library/lib/math/Matrix.cpp.html">Matrix</a>
 
@@ -103,7 +104,6 @@ layout: default
 * :warning: <a href="library/non-verified/ConvexHullTrick.cpp.html">non-verified/ConvexHullTrick.cpp</a>
 * :warning: <a href="library/non-verified/Dijkstra.cpp.html">non-verified/Dijkstra.cpp</a>
 * :warning: <a href="library/non-verified/Divisor.cpp.html">non-verified/Divisor.cpp</a>
-* :warning: <a href="library/non-verified/Eratosthenes.cpp.html">non-verified/Eratosthenes.cpp</a>
 * :warning: <a href="library/non-verified/FactorialMod.cpp.html">non-verified/FactorialMod.cpp</a>
 * :warning: <a href="library/non-verified/Ford_Fulkerson.cpp.html">non-verified/Ford_Fulkerson.cpp</a>
 * :warning: <a href="library/non-verified/Garner.cpp.html">non-verified/Garner.cpp</a>
@@ -178,6 +178,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/heap/RadixHeapInt.test.cpp.html">test/heap/RadixHeapInt.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/CombinationMod-binom.test.cpp.html">test/math/CombinationMod-binom.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/CombinationMod-factorial.test.cpp.html">test/math/CombinationMod-factorial.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/Eratosthenes.test.cpp.html">test/math/Eratosthenes.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Matrix.test.cpp.html">test/math/Matrix.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/BinaryIndexedTree-rsqraq.test.cpp.html">test/segment/BinaryIndexedTree-rsqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/DisjointSparseTable.test.cpp.html">test/segment/DisjointSparseTable.test.cpp</a>
