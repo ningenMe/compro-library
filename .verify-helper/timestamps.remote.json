@@ -14,6 +14,7 @@
 "test/heap/RadixHeapInt.test.cpp": "2020-05-13 02:48:46 +0900",
 "test/math/CombinationMod-binom.test.cpp": "2020-05-13 02:48:46 +0900",
 "test/math/CombinationMod-factorial.test.cpp": "2020-05-13 02:48:46 +0900",
+"test/math/Eratosthenes.test.cpp": "2020-05-24 02:56:21 +0900",
 "test/math/Matrix.test.cpp": "2020-05-13 02:48:46 +0900",
 "test/segment/BinaryIndexedTree-rsqraq.test.cpp": "2020-05-13 02:48:46 +0900",
 "test/segment/DisjointSparseTable.test.cpp": "2020-05-13 02:48:46 +0900",
