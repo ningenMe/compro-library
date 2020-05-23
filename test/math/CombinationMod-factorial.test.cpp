@@ -14,7 +14,8 @@ int main(void){
 	cin >> d >> l >> r >> k;
     CombinationMod<MOD> CM((1<<MAX_d));
     vector<int> sum(MAX_d + 1, 0);
-    auto pow2 = CombinationMod<MOD>::pow2(MAX_d + 1);
+	vector<long long> pow2(MAX_d + 1,1);
+	for (int i = 2; i <= MAX_d; ++i) pow2[i] = (pow2[i - 1] * 2) % MOD;
 	for (int i = 1; i < MAX_d + 1; ++i) sum[i] = sum[i - 1] + pow2[i];
 	l = lower_bound(sum.begin(), sum.end(), l) - sum.begin();
 	r = lower_bound(sum.begin(), sum.end(), r) - sum.begin();
