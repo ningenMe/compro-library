@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/Tree-hld-path.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 03:18:45+09:00
+    - Last commit date: 2020-05-30 17:16:02+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/650">https://yukicoder.me/problems/no/650</a>
@@ -615,6 +615,20 @@ public:
 		x = (x * p.x % mod);
 		return *this;
 	}
+	ModInt &operator^=(const ModInt &p) {
+		x = (x ^ p.x) % mod;
+		return *this;
+	}
+	ModInt &operator^=(const long long y) {
+		ModInt p(y);
+		x = (x ^ p.x) % mod;
+		return *this;
+	}
+	ModInt &operator^=(const int y) {
+		ModInt p(y);
+		x = (x ^ p.x) % mod;
+		return *this;
+	}
 	ModInt &operator/=(const ModInt &p) {
 		*this *= p.inv();
 		return *this;
@@ -654,6 +668,7 @@ public:
 	ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }
 	ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }
 	ModInt operator/(const ModInt &p) const { return ModInt(*this) /= p; }
+	ModInt operator^(const ModInt &p) const { return ModInt(*this) ^= p; }
 	bool operator==(const ModInt &p) const { return x == p.x; }
 	bool operator!=(const ModInt &p) const { return x != p.x; }
 	ModInt inv() const {

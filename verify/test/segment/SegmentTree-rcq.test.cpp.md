@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/SegmentTree-rcq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 03:18:45+09:00
+    - Last commit date: 2020-05-30 17:16:02+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/point_set_range_composite">https://judge.yosupo.jp/problem/point_set_range_composite</a>
@@ -263,6 +263,20 @@ public:
 		x = (x * p.x % mod);
 		return *this;
 	}
+	ModInt &operator^=(const ModInt &p) {
+		x = (x ^ p.x) % mod;
+		return *this;
+	}
+	ModInt &operator^=(const long long y) {
+		ModInt p(y);
+		x = (x ^ p.x) % mod;
+		return *this;
+	}
+	ModInt &operator^=(const int y) {
+		ModInt p(y);
+		x = (x ^ p.x) % mod;
+		return *this;
+	}
 	ModInt &operator/=(const ModInt &p) {
 		*this *= p.inv();
 		return *this;
@@ -302,6 +316,7 @@ public:
 	ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }
 	ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }
 	ModInt operator/(const ModInt &p) const { return ModInt(*this) /= p; }
+	ModInt operator^(const ModInt &p) const { return ModInt(*this) ^= p; }
 	bool operator==(const ModInt &p) const { return x == p.x; }
 	bool operator!=(const ModInt &p) const { return x != p.x; }
 	ModInt inv() const {

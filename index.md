@@ -196,6 +196,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rsq.test.cpp.html">test/segment/SegmentTree-rsq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SparseTable.test.cpp.html">test/segment/SparseTable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/Swag.test.cpp.html">test/segment/Swag.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/util/ModInt.test.cpp.html">test/util/ModInt.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/util/NBase.test.cpp.html">test/util/NBase.test.cpp</a>
 
 

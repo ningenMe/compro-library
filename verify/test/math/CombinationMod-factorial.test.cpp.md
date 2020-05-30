@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/CombinationMod-factorial.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-24 03:14:51+09:00
+    - Last commit date: 2020-05-30 17:16:02+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/916">https://yukicoder.me/problems/no/916</a>
@@ -181,6 +181,20 @@ public:
 		x = (x * p.x % mod);
 		return *this;
 	}
+	ModInt &operator^=(const ModInt &p) {
+		x = (x ^ p.x) % mod;
+		return *this;
+	}
+	ModInt &operator^=(const long long y) {
+		ModInt p(y);
+		x = (x ^ p.x) % mod;
+		return *this;
+	}
+	ModInt &operator^=(const int y) {
+		ModInt p(y);
+		x = (x ^ p.x) % mod;
+		return *this;
+	}
 	ModInt &operator/=(const ModInt &p) {
 		*this *= p.inv();
 		return *this;
@@ -220,6 +234,7 @@ public:
 	ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }
 	ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }
 	ModInt operator/(const ModInt &p) const { return ModInt(*this) /= p; }
+	ModInt operator^(const ModInt &p) const { return ModInt(*this) ^= p; }
 	bool operator==(const ModInt &p) const { return x == p.x; }
 	bool operator!=(const ModInt &p) const { return x != p.x; }
 	ModInt inv() const {
