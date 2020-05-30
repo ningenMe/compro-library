@@ -24,6 +24,6 @@ int main() {
         dij.make_edge(v,u,cost);
     }
     dij.solve(s);
-    printf("%.10f",dij.get(t));    
+    printf("%.10f\n",dij.get(t));    
     return 0;
 }
