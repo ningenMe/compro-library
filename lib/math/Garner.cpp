@@ -1,7 +1,7 @@
 /*
  * @title Garner
  */
-template<long long mod> class Garner{
+class Garner{
 	inline static constexpr long long gcd(long long a, long long b) {
 		return (b ? gcd(b, a % b):a);
 	}
@@ -18,10 +18,10 @@ template<long long mod> class Garner{
 	}
 public:
 	// O(N^2) x mod m_i = b_i なる x を返却　, b_iがすべて0のときは0ではなくm_iのlcmを返す
-    // return x
-	inline static long long garner(vector<long long> b, vector<long long> m){
-        int N=b.size();
-        vector<long long> coe(N+1,1),val(N+1,0);
+	// return x
+	inline static long long garner(vector<long long> b, vector<long long> m, long long mod){
+		int N=b.size();
+		vector<long long> coe(N+1,1),val(N+1,0);
 		long long g,gl,gr,sum=accumulate(b.begin(),b.end(),0LL);
 		//互いに素になるように処理
 		for (int l = 0; l < N; ++l) {
@@ -52,6 +52,6 @@ public:
 				(coe[j] *= m[i]) %= m[j];
 			}
 		}
-        return val.back();
+		return val.back();
 	}
 };
