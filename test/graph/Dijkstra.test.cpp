@@ -1,5 +1,5 @@
 #define PROBLEM "https://yukicoder.me/problems/no/1065"
-
+#define ERROR 0.0001
 #include <vector>
 #include <iostream>
 #include <queue>
