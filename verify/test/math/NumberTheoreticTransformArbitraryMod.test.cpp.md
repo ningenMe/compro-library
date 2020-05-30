@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/math/NumberTheoreticTransform.test.cpp
+# :heavy_check_mark: test/math/NumberTheoreticTransformArbitraryMod.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/math/NumberTheoreticTransform.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/math/NumberTheoreticTransformArbitraryMod.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-05-30 17:04:43+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/1068">https://yukicoder.me/problems/no/1068</a>
+* see: <a href="https://yukicoder.me/problems/no/754">https://yukicoder.me/problems/no/754</a>
 
 
 ## Depends on
@@ -47,46 +47,34 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://yukicoder.me/problems/no/1068"
+#define PROBLEM "https://yukicoder.me/problems/no/754"
 
 #include <vector>
 #include <iostream>
 #include <numeric>
 using namespace std;
 #include "../../lib/math/NumberTheoreticTransform.cpp"
-constexpr long long MOD = 998244353;
+constexpr long long MOD = 1000'000'007;
 
-vector<vector<long long>> v;
-vector<long long> rec(int l, int r) {
-    if(r-l==1) return v[l];
-    if(r-l==2) return NumberTheoreticTransform<MOD>::convolution(v[l],v[l+1]);
-    auto vl=rec(l,(l+r)/2);
-    auto vr=rec((l+r)/2,r);
-    return NumberTheoreticTransform<MOD>::convolution(vl,vr);
+int main(void){
+    int N; cin >> N;
+    vector<long long> A(N+1),B(N+1);
+    for(int i = 0; i < N+1; ++i) cin >> A[i];
+    for(int i = 0; i < N+1; ++i) cin >> B[i];
+    auto C = NumberTheoreticTransform<MOD>::convolution_arbitrarymod(A,B);
+    long long ans = 0;
+    for(int i = 0; i <= N; ++i) (ans += C[i]) %= MOD;
+    cout << ans << endl;
+	return 0;
 }
-
-int main() {
-    int N,Q; cin >> N >> Q;
-    vector<long long> A(N),B(Q);
-    for(int i = 0; i < N; ++i) cin >> A[i],A[i] %= MOD;
-    for(int i = 0; i < Q; ++i) cin >> B[i];
-    v.resize(N);
-    for(int i = 0; i < N; ++i) v[i].push_back(A[i]-1),v[i].push_back(1);
-    auto c = rec(0,N);
-    for(int i = 0; i < Q; ++i) {
-        cout << c[B[i]] << endl;
-    }
-    return 0;
-}
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/math/NumberTheoreticTransform.test.cpp"
-#define PROBLEM "https://yukicoder.me/problems/no/1068"
+#line 1 "test/math/NumberTheoreticTransformArbitraryMod.test.cpp"
+#define PROBLEM "https://yukicoder.me/problems/no/754"
 
 #include <vector>
 #include <iostream>
@@ -205,30 +193,19 @@ public:
 		return res;
 	}
 };
-#line 8 "test/math/NumberTheoreticTransform.test.cpp"
-constexpr long long MOD = 998244353;
+#line 8 "test/math/NumberTheoreticTransformArbitraryMod.test.cpp"
+constexpr long long MOD = 1000'000'007;
 
-vector<vector<long long>> v;
-vector<long long> rec(int l, int r) {
-    if(r-l==1) return v[l];
-    if(r-l==2) return NumberTheoreticTransform<MOD>::convolution(v[l],v[l+1]);
-    auto vl=rec(l,(l+r)/2);
-    auto vr=rec((l+r)/2,r);
-    return NumberTheoreticTransform<MOD>::convolution(vl,vr);
-}
-
-int main() {
-    int N,Q; cin >> N >> Q;
-    vector<long long> A(N),B(Q);
-    for(int i = 0; i < N; ++i) cin >> A[i],A[i] %= MOD;
-    for(int i = 0; i < Q; ++i) cin >> B[i];
-    v.resize(N);
-    for(int i = 0; i < N; ++i) v[i].push_back(A[i]-1),v[i].push_back(1);
-    auto c = rec(0,N);
-    for(int i = 0; i < Q; ++i) {
-        cout << c[B[i]] << endl;
-    }
-    return 0;
+int main(void){
+    int N; cin >> N;
+    vector<long long> A(N+1),B(N+1);
+    for(int i = 0; i < N+1; ++i) cin >> A[i];
+    for(int i = 0; i < N+1; ++i) cin >> B[i];
+    auto C = NumberTheoreticTransform<MOD>::convolution_arbitrarymod(A,B);
+    long long ans = 0;
+    for(int i = 0; i <= N; ++i) (ans += C[i]) %= MOD;
+    cout << ans << endl;
+	return 0;
 }
 
 ```
