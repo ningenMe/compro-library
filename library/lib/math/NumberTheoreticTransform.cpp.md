@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: NumberTheoreticTransform
+# :heavy_check_mark: NumberTheoreticTransform
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../../verify/test/math/NumberTheoreticTransform.test.cpp.html">test/math/NumberTheoreticTransform.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/NumberTheoreticTransform.test.cpp.html">test/math/NumberTheoreticTransform.test.cpp</a>
 
 
 ## Code

@@ -69,7 +69,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/math/Garner.cpp.html">Garner</a>
 * :heavy_check_mark: <a href="library/lib/math/GreatestCommonDivisor.cpp.html">Gcd</a>
 * :heavy_check_mark: <a href="library/lib/math/Matrix.cpp.html">Matrix</a>
-* :x: <a href="library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
+* :heavy_check_mark: <a href="library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
 
 
 <div id="c993b235c21a7035904945a028efa0ef"></div>
@@ -182,7 +182,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/math/Eratosthenes.test.cpp.html">test/math/Eratosthenes.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Garner.test.cpp.html">test/math/Garner.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Matrix.test.cpp.html">test/math/Matrix.test.cpp</a>
-* :x: <a href="verify/test/math/NumberTheoreticTransform.test.cpp.html">test/math/NumberTheoreticTransform.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransform.test.cpp.html">test/math/NumberTheoreticTransform.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/BinaryIndexedTree-rsqraq.test.cpp.html">test/segment/BinaryIndexedTree-rsqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/DisjointSparseTable.test.cpp.html">test/segment/DisjointSparseTable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rmqraq.test.cpp.html">test/segment/LazySegmentTree-rmqraq.test.cpp</a>

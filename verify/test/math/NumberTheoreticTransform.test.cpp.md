@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/math/NumberTheoreticTransform.test.cpp
+# :heavy_check_mark: test/math/NumberTheoreticTransform.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/NumberTheoreticTransform.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-30 16:23:22+09:00
+    - Last commit date: 2020-05-30 16:25:57+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/718">https://yukicoder.me/problems/no/718</a>
+* see: <a href="https://yukicoder.me/problems/no/754">https://yukicoder.me/problems/no/754</a>
 
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
+* :heavy_check_mark: <a href="../../../library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
 
 
 ## Code
@@ -47,7 +47,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://yukicoder.me/problems/no/718"
+#define PROBLEM "https://yukicoder.me/problems/no/754"
 
 #include <vector>
 #include <iostream>
@@ -74,7 +74,7 @@ int main(void){
 {% raw %}
 ```cpp
 #line 1 "test/math/NumberTheoreticTransform.test.cpp"
-#define PROBLEM "https://yukicoder.me/problems/no/718"
+#define PROBLEM "https://yukicoder.me/problems/no/754"
 
 #include <vector>
 #include <iostream>
