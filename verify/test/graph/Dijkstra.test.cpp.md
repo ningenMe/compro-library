@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/graph/Dijkstra.test.cpp
+# :heavy_check_mark: test/graph/Dijkstra.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/Dijkstra.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-30 17:36:12+09:00
+    - Last commit date: 2020-05-30 17:40:29+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1065">https://yukicoder.me/problems/no/1065</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/lib/geometory/Distance.cpp.html">Distance</a>
-* :x: <a href="../../../library/lib/graph/Dijkstra.cpp.html">Dijkstra</a>
+* :heavy_check_mark: <a href="../../../library/lib/geometory/Distance.cpp.html">Distance</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/Dijkstra.cpp.html">Dijkstra</a>
 
 
 ## Code
@@ -49,7 +49,7 @@ layout: default
 {% raw %}
 ```cpp
 #define PROBLEM "https://yukicoder.me/problems/no/1065"
-
+#define ERROR 0.0001
 #include <vector>
 #include <iostream>
 #include <queue>
@@ -85,7 +85,7 @@ int main() {
 ```cpp
 #line 1 "test/graph/Dijkstra.test.cpp"
 #define PROBLEM "https://yukicoder.me/problems/no/1065"
-
+#define ERROR 0.0001
 #include <vector>
 #include <iostream>
 #include <queue>
