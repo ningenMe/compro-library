@@ -39,13 +39,14 @@ layout: default
 ### lib/geometory
 
 * :heavy_check_mark: <a href="library/lib/geometory/Argument.cpp.html">Argument</a>
-* :heavy_check_mark: <a href="library/lib/geometory/Distance.cpp.html">Distance</a>
+* :question: <a href="library/lib/geometory/Distance.cpp.html">Distance</a>
 
 
 <div id="6e267a37887a7dcb68cbf7008d6c7e48"></div>
 
 ### lib/graph
 
+* :x: <a href="library/lib/graph/Dijkstra.cpp.html">Dijkstra</a>
 * :heavy_check_mark: <a href="library/lib/graph/Dinic.cpp.html">Dinic</a>
 * :heavy_check_mark: <a href="library/lib/graph/StronglyConnectedComponents.cpp.html">StronglyConnectedComponents</a>
 * :heavy_check_mark: <a href="library/lib/graph/Tree.cpp.html">Tree</a>
@@ -104,7 +105,6 @@ layout: default
 * :warning: <a href="library/non-verified/CircleIntersection.cpp.html">non-verified/CircleIntersection.cpp</a>
 * :warning: <a href="library/non-verified/Combination.cpp.html">non-verified/Combination.cpp</a>
 * :warning: <a href="library/non-verified/ConvexHullTrick.cpp.html">non-verified/ConvexHullTrick.cpp</a>
-* :warning: <a href="library/non-verified/Dijkstra.cpp.html">non-verified/Dijkstra.cpp</a>
 * :warning: <a href="library/non-verified/Divisor.cpp.html">non-verified/Divisor.cpp</a>
 * :warning: <a href="library/non-verified/FastFourierTransform.cpp.html">non-verified/FastFourierTransform.cpp</a>
 * :warning: <a href="library/non-verified/Ford_Fulkerson.cpp.html">non-verified/Ford_Fulkerson.cpp</a>
@@ -167,6 +167,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/Argument-sort-by-atan2l.test.cpp.html">test/geometory/Argument-sort-by-atan2l.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/Distance-line.test.cpp.html">test/geometory/Distance-line.test.cpp</a>
+* :x: <a href="verify/test/graph/Dijkstra.test.cpp.html">test/graph/Dijkstra.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Dinic.test.cpp.html">test/graph/Dinic.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/StronglyConnectedComponents.test.cpp.html">test/graph/StronglyConnectedComponents.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-eulertour.test.cpp.html">test/graph/Tree-eulertour.test.cpp</a>
