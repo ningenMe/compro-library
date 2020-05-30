@@ -52,6 +52,20 @@ public:
 		x = (x * p.x % mod);
 		return *this;
 	}
+	ModInt &operator^=(const ModInt &p) {
+		x = (x ^ p.x) % mod;
+		return *this;
+	}
+	ModInt &operator^=(const long long y) {
+		ModInt p(y);
+		x = (x ^ p.x) % mod;
+		return *this;
+	}
+	ModInt &operator^=(const int y) {
+		ModInt p(y);
+		x = (x ^ p.x) % mod;
+		return *this;
+	}
 	ModInt &operator/=(const ModInt &p) {
 		*this *= p.inv();
 		return *this;
@@ -91,6 +105,7 @@ public:
 	ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }
 	ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }
 	ModInt operator/(const ModInt &p) const { return ModInt(*this) /= p; }
+	ModInt operator^(const ModInt &p) const { return ModInt(*this) ^= p; }
 	bool operator==(const ModInt &p) const { return x == p.x; }
 	bool operator!=(const ModInt &p) const { return x != p.x; }
 	ModInt inv() const {
