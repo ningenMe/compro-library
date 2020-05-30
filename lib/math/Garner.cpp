@@ -17,20 +17,17 @@ template<long long mod> class Garner{
 		return (x%b+b)%b;
 	}
 public:
-	// O(N^2) a mod m_i = b_i, lcm = LCM(m_i)
-    // return {a,lcm} 
-	inline static pair<long long,long long> garner(vector<long long> b, vector<long long> m){
-        long long lcm=1;
-        int flg=1,N=b.size();
+	// O(N^2) x mod m_i = b_i なる x を返却　, b_iがすべて0のときは0ではなくm_iのlcmを返す
+    // return x
+	inline static long long garner(vector<long long> b, vector<long long> m){
+        int N=b.size();
         vector<long long> coe(N+1,1),val(N+1,0);
-		long long g,gl,gr;
-		for (int l = 0; l < N && flg; ++l) {
-			for (int r = l+1; r < N && flg; ++r) {
+		long long g,gl,gr,sum=accumulate(b.begin(),b.end(),0LL);
+		//互いに素になるように処理
+		for (int l = 0; l < N; ++l) {
+			for (int r = l+1; r < N; ++r) {
 				g = gcd(m[l], m[r]);
-				if ((b[l] - b[r]) % g != 0) {
-					flg = 0;
-					break;
-				}
+				if (sum && (b[l] - b[r]) % g != 0) return -1;
 				m[l] /= g, m[r] /= g;
 				gl = gcd(m[l], g), gr = g/gl;
 				do {
@@ -41,17 +38,20 @@ public:
 				b[l] %= m[l], b[r] %= m[r];
 			}
 		}
-		for (int i = 0; i < N; ++i) (lcm *= m[i]) %= mod;
-		if(!flg) return make_pair(-1,lcm);
+		if(!sum) {
+			long long lcm = 1;
+			for(auto& e:m) (lcm*=e)%=mod;
+			return lcm;
+		}
 		m.push_back(mod);
 		for(int i = 0; i < N; ++i) {
 			long long t = (b[i] - val[i]) * inv_mod(coe[i], m[i]);
 			((t %= m[i]) += m[i]) %= m[i];
-			for (int j = i+1; j < N + (mod > 0); ++j) {
+			for (int j = i+1; j <= N; ++j) {
 				(val[j] += t * coe[j]) %= m[j];
 				(coe[j] *= m[i]) %= m[j];
 			}
 		}
-        return make_pair(val[N-1 + (mod > 0)],lcm);
+        return val.back();
 	}
 };
