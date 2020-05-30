@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/math/Garner.test.cpp
+# :heavy_check_mark: test/math/Garner.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/Garner.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-30 13:41:57+09:00
+    - Last commit date: 2020-05-30 13:47:40+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/448">https://yukicoder.me/problems/448</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/math/Garner.cpp.html">Garner</a>
+* :heavy_check_mark: <a href="../../../library/lib/math/Garner.cpp.html">Garner</a>
 
 
 ## Code
@@ -51,6 +51,7 @@ layout: default
 
 #include <vector>
 #include <iostream>
+#include <numeric>
 using namespace std;
 #include "../../lib/math/Garner.cpp"
 constexpr long long MOD = 1000'000'007;
@@ -58,15 +59,10 @@ constexpr long long MOD = 1000'000'007;
 int main(void){
     int N; cin >> N;
 	vector<long long> b(N), m(N);
-	int flg = 1;
 	for(int i = 0; i < N; ++i){
 		cin >> b[i] >> m[i];
-		if(b[i]) flg = 0;
 	}
-	auto [r,lcm]=Garner<MOD>::garner(b,m);
-	long long ans = r;
-	if(flg) ans = lcm;
-	cout << ans << endl;
+	cout << Garner<MOD>::garner(b,m) << endl;
 	return 0;
 }
 ```
@@ -80,6 +76,7 @@ int main(void){
 
 #include <vector>
 #include <iostream>
+#include <numeric>
 using namespace std;
 #line 1 "lib/math/Garner.cpp"
 /*
@@ -139,21 +136,16 @@ public:
         return val.back();
 	}
 };
-#line 7 "test/math/Garner.test.cpp"
+#line 8 "test/math/Garner.test.cpp"
 constexpr long long MOD = 1000'000'007;
 
 int main(void){
     int N; cin >> N;
 	vector<long long> b(N), m(N);
-	int flg = 1;
 	for(int i = 0; i < N; ++i){
 		cin >> b[i] >> m[i];
-		if(b[i]) flg = 0;
 	}
-	auto [r,lcm]=Garner<MOD>::garner(b,m);
-	long long ans = r;
-	if(flg) ans = lcm;
-	cout << ans << endl;
+	cout << Garner<MOD>::garner(b,m) << endl;
 	return 0;
 }
 

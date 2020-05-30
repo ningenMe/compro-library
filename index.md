@@ -66,7 +66,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/lib/math/CombinationMod.cpp.html">CombinationMod</a>
 * :heavy_check_mark: <a href="library/lib/math/Eratosthenes.cpp.html">Eratosthenes</a>
-* :x: <a href="library/lib/math/Garner.cpp.html">Garner</a>
+* :heavy_check_mark: <a href="library/lib/math/Garner.cpp.html">Garner</a>
 * :heavy_check_mark: <a href="library/lib/math/GreatestCommonDivisor.cpp.html">Gcd</a>
 * :heavy_check_mark: <a href="library/lib/math/Matrix.cpp.html">Matrix</a>
 
@@ -180,7 +180,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/math/CombinationMod-binom.test.cpp.html">test/math/CombinationMod-binom.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/CombinationMod-factorial.test.cpp.html">test/math/CombinationMod-factorial.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Eratosthenes.test.cpp.html">test/math/Eratosthenes.test.cpp</a>
-* :x: <a href="verify/test/math/Garner.test.cpp.html">test/math/Garner.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/Garner.test.cpp.html">test/math/Garner.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Matrix.test.cpp.html">test/math/Matrix.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/BinaryIndexedTree-rsqraq.test.cpp.html">test/segment/BinaryIndexedTree-rsqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/DisjointSparseTable.test.cpp.html">test/segment/DisjointSparseTable.test.cpp</a>
