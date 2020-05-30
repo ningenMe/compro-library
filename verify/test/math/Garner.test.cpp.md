@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/Garner.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-30 13:47:40+09:00
+    - Last commit date: 2020-05-30 13:58:38+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/448">https://yukicoder.me/problems/448</a>
@@ -62,7 +62,7 @@ int main(void){
 	for(int i = 0; i < N; ++i){
 		cin >> b[i] >> m[i];
 	}
-	cout << Garner<MOD>::garner(b,m) << endl;
+	cout << Garner::garner(b,m,MOD) << endl;
 	return 0;
 }
 ```
@@ -82,7 +82,7 @@ using namespace std;
 /*
  * @title Garner
  */
-template<long long mod> class Garner{
+class Garner{
 	inline static constexpr long long gcd(long long a, long long b) {
 		return (b ? gcd(b, a % b):a);
 	}
@@ -99,10 +99,10 @@ template<long long mod> class Garner{
 	}
 public:
 	// O(N^2) x mod m_i = b_i なる x を返却　, b_iがすべて0のときは0ではなくm_iのlcmを返す
-    // return x
-	inline static long long garner(vector<long long> b, vector<long long> m){
-        int N=b.size();
-        vector<long long> coe(N+1,1),val(N+1,0);
+	// return x
+	inline static long long garner(vector<long long> b, vector<long long> m, long long mod){
+		int N=b.size();
+		vector<long long> coe(N+1,1),val(N+1,0);
 		long long g,gl,gr,sum=accumulate(b.begin(),b.end(),0LL);
 		//互いに素になるように処理
 		for (int l = 0; l < N; ++l) {
@@ -133,7 +133,7 @@ public:
 				(coe[j] *= m[i]) %= m[j];
 			}
 		}
-        return val.back();
+		return val.back();
 	}
 };
 #line 8 "test/math/Garner.test.cpp"
@@ -145,7 +145,7 @@ int main(void){
 	for(int i = 0; i < N; ++i){
 		cin >> b[i] >> m[i];
 	}
-	cout << Garner<MOD>::garner(b,m) << endl;
+	cout << Garner::garner(b,m,MOD) << endl;
 	return 0;
 }
 
