@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/StronglyConnectedComponents.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-13 00:24:44+09:00
+    - Last commit date: 2020-06-13 00:33:57+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1023">https://yukicoder.me/problems/no/1023</a>
@@ -168,16 +168,16 @@ class StronglyConnectedComponents{
 		label[curr] = id;
 		for(int next:redge[curr]) if(!visited[next]) rdfs(next,id);
 	}
-    inline int rev(int i) { return i < half ? i + half : i - half; }
+	inline int rev(int i) { return i < half ? i + half : i - half; }
 public:
 
 	StronglyConnectedComponents(const int n, bool is_2sat=0):num(n),is_2sat(is_2sat){
-        if(is_2sat) num*=2;
-        edge.resize(num);
-        redge.resize(num);
-        label.resize(num);
-        visited.resize(num);
-        half=num/2;
+		if(is_2sat) num*=2;
+		edge.resize(num);
+		redge.resize(num);
+		label.resize(num);
+		visited.resize(num);
+		half=num/2;
 	}
 	inline int operator[](int idx) {
 		return label[idx];
@@ -186,12 +186,12 @@ public:
 		edge[from].push_back(to);
 		redge[to].push_back(from);
 	}
-    inline void make_condition(int x, bool flg_x, int y, bool flg_y) {
-        if (!flg_x) x = rev(x);
-        if (!flg_y) y = rev(y);
-        make_edge(x, y);
-        make_edge(rev(y), rev(x));
-    }
+	inline void make_condition(int x, bool flg_x, int y, bool flg_y) {
+		if (!flg_x) x = rev(x);
+		if (!flg_y) y = rev(y);
+		make_edge(x, y);
+		make_edge(rev(y), rev(x));
+	}
 	inline int solve(void) {
 		for(int i = 0; i < num; ++i) visited[i] = 0;
 		for(int i = 0; i < num; ++i) if(!visited[i]) dfs(i);
@@ -199,13 +199,13 @@ public:
 		reverse(order.begin(),order.end());
 		int id = 0;
 		for(int i:order) if(!visited[i]) rdfs(i,id++);
-        if(!is_2sat) return true;
-        for (int i = 0; i < num; ++i) if (label[i] == label[rev(i)]) return false;
-        return true;
+		if(!is_2sat) return true;
+		for (int i = 0; i < num; ++i) if (label[i] == label[rev(i)]) return false;
+		return true;
 	}
-    int is_true(int i) {
-        return label[i] > label[rev(i)];
-    }
+	int is_true(int i) {
+		return label[i] > label[rev(i)];
+	}
 	void print(void) {
 		for(auto id:label) cout << id << " ";
 		cout << endl;
