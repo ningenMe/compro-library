@@ -39,7 +39,7 @@ int main(){
             cout << "Yes" << endl;
             return 0;
         }
-        scc.makeEdge(uf.root(a),uf.root(b));
+        scc.make_edge(uf.root(a),uf.root(b));
     }
     scc.solve();
     vector<int> cnt(N,0);
