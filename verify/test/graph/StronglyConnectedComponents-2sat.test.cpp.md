@@ -25,22 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/graph/StronglyConnectedComponents.test.cpp
+# :x: test/graph/StronglyConnectedComponents-2sat.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/graph/StronglyConnectedComponents.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/graph/StronglyConnectedComponents-2sat.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-06-13 00:24:44+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/1023">https://yukicoder.me/problems/no/1023</a>
+* see: <a href="https://yukicoder.me/problems/no/1078">https://yukicoder.me/problems/no/1078</a>
 
 
 ## Depends on
 
 * :question: <a href="../../../library/lib/graph/StronglyConnectedComponents.cpp.html">StronglyConnectedComponents</a>
-* :heavy_check_mark: <a href="../../../library/lib/graph/UnionFindTree.cpp.html">UnionFindTree</a>
 
 
 ## Code
@@ -48,57 +47,58 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://yukicoder.me/problems/no/1023"
+#define PROBLEM "https://yukicoder.me/problems/no/1078"
 
 #include <vector>
 #include <iostream>
 #include <numeric>
 #include <algorithm>
 using namespace std;
-#include "../../lib/graph/UnionFindTree.cpp"
 #include "../../lib/graph/StronglyConnectedComponents.cpp"
 
 int main(){
-    int N,M; cin >> N >> M;
-    vector<pair<int,int>> edge;
-    vector<pair<int,int>> bedge;
-    for(int i = 0; i < M; ++i) {
-        int a,b; cin >> a >> b;
-        a--,b--;
-        int c; cin >> c;
-        if(c==1){
-            bedge.push_back({a,b});
-        }
-        else{
-            edge.push_back({a,b});
+	int N; cin >> N;
+	//[0,N*N)       i番目は0
+	//[N*N,2*N*N)   i番目は1
+	StronglyConnectedComponents scc(N*N,1);
+    vector<int> S(N),T(N),U(N);
+	for(int i = 0; i < N; ++i) cin >> S[i],S[i]--;
+	for(int i = 0; i < N; ++i) cin >> T[i],T[i]--;
+	for(int i = 0; i < N; ++i) cin >> U[i];
+    for(int i = 0; i < N; ++i) {
+        for(int j = 0; j < N; ++j) {
+            int a=S[i],b=j,c=j,d=T[i];
+            int s=a*N+b,t=c*N+d;
+            if(U[i]==0) {
+                //ab=0&&cd=0がだめ
+                scc.make_condition(s,0,t,1);
+            }
+            if(U[i]==1) {
+                //ab=1&&cd=0がだめ
+                scc.make_condition(s,1,t,1);
+            }
+            if(U[i]==2) {
+                //ab=0&&cd=1がだめ
+                scc.make_condition(s,0,t,0);
+            }
+            if(U[i]==3) {
+                //ab=1&&cd=1がだめ
+                scc.make_condition(s,1,t,0);
+            }
         }
     }
-    UnionFindTree uf(N);
-    for(auto& e:bedge){
-        int a = e.first,b = e.second;
-        if(uf.same(a,b)){
-            cout << "Yes" << endl;
-            return 0;
-        }
-        uf.unite(a,b);
-    }
-    StronglyConnectedComponents scc(N);
-    for(auto& e:edge){
-        int a = e.first,b = e.second;
-        if(uf.same(a,b)){
-            cout << "Yes" << endl;
-            return 0;
-        }
-        scc.make_edge(uf.root(a),uf.root(b));
-    }
-    scc.solve();
-    vector<int> cnt(N,0);
-    for(int i = 0; i < N; ++i) cnt[scc[i]]++;
-    for(int i = 0; i < N; ++i) if(cnt[i] > 1){
-        cout << "Yes" << endl;
+	int flg = scc.solve();
+    if(!flg){
+        cout << -1 << endl;
         return 0;
     }
-    cout << "No" << endl; 
+    for(int i = 0; i < N; ++i) {
+        for(int j = 0; j < N; ++j) {
+            cout << scc.is_true(i*N+j) << " ";
+        }
+        cout << endl;
+    }
+
     return 0;
 }
 
@@ -108,45 +108,14 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/graph/StronglyConnectedComponents.test.cpp"
-#define PROBLEM "https://yukicoder.me/problems/no/1023"
+#line 1 "test/graph/StronglyConnectedComponents-2sat.test.cpp"
+#define PROBLEM "https://yukicoder.me/problems/no/1078"
 
 #include <vector>
 #include <iostream>
 #include <numeric>
 #include <algorithm>
 using namespace std;
-#line 1 "lib/graph/UnionFindTree.cpp"
-/*
- * @title UnionFindTree
- */
-class UnionFindTree {
-public:
-	vector<int> parent;
-	vector<int> rank;
-
-	UnionFindTree(int N) : parent(N), rank(N,0){
-		iota(parent.begin(),parent.end(),0);
-	} 
-	int root(int n) {
-		return (parent[n] == n ? n : parent[n] = root(parent[n]));
-	}
-	inline int same(int n, int m) {
-		return root(n) == root(m);
-	}
-	inline void unite(int n, int m) {
-		n = root(n);
-		m = root(m);
-		if (n == m) return;
-		if (rank[n]<rank[m]) {
-			parent[n] = m;
-		}
-		else{
-			parent[m] = n;
-			if(rank[n] == rank[m]) rank[n]++;
-		}
-	}
-};
 #line 1 "lib/graph/StronglyConnectedComponents.cpp"
 /*
  * @title StronglyConnectedComponents
@@ -212,49 +181,51 @@ public:
 	}
 
 };
-#line 10 "test/graph/StronglyConnectedComponents.test.cpp"
+#line 9 "test/graph/StronglyConnectedComponents-2sat.test.cpp"
 
 int main(){
-    int N,M; cin >> N >> M;
-    vector<pair<int,int>> edge;
-    vector<pair<int,int>> bedge;
-    for(int i = 0; i < M; ++i) {
-        int a,b; cin >> a >> b;
-        a--,b--;
-        int c; cin >> c;
-        if(c==1){
-            bedge.push_back({a,b});
-        }
-        else{
-            edge.push_back({a,b});
+	int N; cin >> N;
+	//[0,N*N)       i番目は0
+	//[N*N,2*N*N)   i番目は1
+	StronglyConnectedComponents scc(N*N,1);
+    vector<int> S(N),T(N),U(N);
+	for(int i = 0; i < N; ++i) cin >> S[i],S[i]--;
+	for(int i = 0; i < N; ++i) cin >> T[i],T[i]--;
+	for(int i = 0; i < N; ++i) cin >> U[i];
+    for(int i = 0; i < N; ++i) {
+        for(int j = 0; j < N; ++j) {
+            int a=S[i],b=j,c=j,d=T[i];
+            int s=a*N+b,t=c*N+d;
+            if(U[i]==0) {
+                //ab=0&&cd=0がだめ
+                scc.make_condition(s,0,t,1);
+            }
+            if(U[i]==1) {
+                //ab=1&&cd=0がだめ
+                scc.make_condition(s,1,t,1);
+            }
+            if(U[i]==2) {
+                //ab=0&&cd=1がだめ
+                scc.make_condition(s,0,t,0);
+            }
+            if(U[i]==3) {
+                //ab=1&&cd=1がだめ
+                scc.make_condition(s,1,t,0);
+            }
         }
     }
-    UnionFindTree uf(N);
-    for(auto& e:bedge){
-        int a = e.first,b = e.second;
-        if(uf.same(a,b)){
-            cout << "Yes" << endl;
-            return 0;
-        }
-        uf.unite(a,b);
-    }
-    StronglyConnectedComponents scc(N);
-    for(auto& e:edge){
-        int a = e.first,b = e.second;
-        if(uf.same(a,b)){
-            cout << "Yes" << endl;
-            return 0;
-        }
-        scc.make_edge(uf.root(a),uf.root(b));
-    }
-    scc.solve();
-    vector<int> cnt(N,0);
-    for(int i = 0; i < N; ++i) cnt[scc[i]]++;
-    for(int i = 0; i < N; ++i) if(cnt[i] > 1){
-        cout << "Yes" << endl;
+	int flg = scc.solve();
+    if(!flg){
+        cout << -1 << endl;
         return 0;
     }
-    cout << "No" << endl; 
+    for(int i = 0; i < N; ++i) {
+        for(int j = 0; j < N; ++j) {
+            cout << scc.is_true(i*N+j) << " ";
+        }
+        cout << endl;
+    }
+
     return 0;
 }
 
