@@ -103,7 +103,7 @@ template<class T> class SegmentTreeBeats {
 public:
 	SegmentTreeBeats(const int num,const T inf = (1LL<<60)) {
 		vector<T> a(num,0);
-		SegmentTreeBeats(a,inf);
+		*this = SegmentTreeBeats(a,inf);
 	}
 	SegmentTreeBeats(const vector<T>& a,const T inf = (1LL<<60)) : inf(inf){
 		int num = a.size();
@@ -136,8 +136,7 @@ public:
 		}
 		for(int i=length-1; i; --i) merge(i);
 	}
-
-	void range_chmin(int a, int b, long long x,int k = 1) {
+	inline void range_chmin(int a, int b, long long x,int k = 1) {
 		if(b <= range[k].first || range[k].second <= a || node_max_first[k] <= x) return;
 		if(a <= range[k].first && range[k].second <= b && node_max_second[k] < x) {
 			internal_chmax(k, x);
@@ -148,7 +147,7 @@ public:
 		range_chmin(a, b, x, 2*k+1);
 		merge(k);
 	}
-	void range_chmax(int a, int b, long long x,int k = 1) {
+	inline void range_chmax(int a, int b, long long x,int k = 1) {
 		if(b <= range[k].first || range[k].second <= a || x <= node_min_first[k]) return;
 		if(a <= range[k].first && range[k].second <= b && x < node_min_second[k]) {
 			internal_chmin(k, x);
@@ -181,7 +180,6 @@ public:
 		range_update(a, b, x, 2*k+1);
 		merge(k);
 	}
-
 	inline T get_max(int a, int b, int k = 1) {
 		if(b <= range[k].first || range[k].second <= a) return -inf;
 		if(a <= range[k].first && range[k].second <= b) return node_max_first[k];
@@ -190,7 +188,6 @@ public:
 		T vr = get_max(a, b, 2*k+1);
 		return max(vl, vr);
 	}
-
 	inline T get_min(int a, int b, int k = 1) {
 		if(b <= range[k].first || range[k].second <= a) return inf;
 		if(a <= range[k].first && range[k].second <= b) return node_min_first[k];
@@ -199,7 +196,6 @@ public:
 		T vr = get_min(a, b, 2*k+1);
 		return min(vl, vr);
 	}
-
 	inline T get_sum(int a, int b, int k=1) {
 		if(b <= range[k].first || range[k].second <= a) return 0;
 		if(a <= range[k].first && range[k].second <= b) return node_sum[k];
