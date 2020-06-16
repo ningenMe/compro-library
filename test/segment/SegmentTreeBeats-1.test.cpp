@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <iostream>
+#include <stack>
 using namespace std;
 #include "../../lib/segment/SegmentTreeBeats.cpp"
 
