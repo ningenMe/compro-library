@@ -31,6 +31,7 @@
 "test/segment/SegmentTree-rmq.test.cpp": "2020-05-13 03:18:45 +0900",
 "test/segment/SegmentTree-rsq.test.cpp": "2020-05-13 03:18:45 +0900",
 "test/segment/SegmentTreeBeats-1.test.cpp": "2020-06-15 00:33:13 +0900",
+"test/segment/SegmentTreeBeats-2.test.cpp": "2020-06-15 00:58:33 +0900",
 "test/segment/SparseTable.test.cpp": "2020-05-13 02:48:46 +0900",
 "test/segment/Swag.test.cpp": "2020-05-13 02:48:46 +0900",
 "test/util/ModInt.test.cpp": "2020-05-30 17:16:02 +0900",
