@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/segment/SegmentTreeBeats-1.test.cpp
+# :x: test/segment/SegmentTreeBeats-1.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/SegmentTreeBeats-1.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-15 00:33:13+09:00
+    - Last commit date: 2020-06-16 22:35:36+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum">https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/segment/SegmentTreeBeats.cpp.html">SegmentTreeBeats</a>
+* :x: <a href="../../../library/lib/segment/SegmentTreeBeats.cpp.html">SegmentTreeBeats</a>
 
 
 ## Code
@@ -99,13 +99,12 @@ using namespace std;
 template<class T> class SegmentTreeBeats {
 	T inf;
 	size_t length;
-	size_t height;
 	vector<T>
 	node_max_first,node_max_second,count_max_first,
 	node_min_first,node_min_second,count_min_first,
 	node_sum,lazy_add,lazy_update;
 	vector<pair<int,int>> range;
-
+	stack<int> down,up;
 	inline void internal_chmax(int k, long long x) {
 		node_sum[k] += (x - node_max_first[k]) * count_max_first[k];
 		if(node_max_first[k] == node_min_first[k]) node_max_first[k] = node_min_first[k] = x;
@@ -195,6 +194,17 @@ template<class T> class SegmentTreeBeats {
 			node_min_second[k] = min(node_min_second[2*k+0], node_min_second[2*k+1]);
 		}
 	}
+	inline void up_merge(void){
+		while(up.size()) {
+			merge(up.top());
+			up.pop();
+		}
+	}
+	inline void down_propagate(const int& k) {
+		propagate(k);
+		down.push(2*k+0);
+		down.push(2*k+1);
+	}
 public:
 	SegmentTreeBeats(const int num,const T inf = (1LL<<60)) {
 		vector<T> a(num,0);
@@ -202,7 +212,7 @@ public:
 	}
 	SegmentTreeBeats(const vector<T>& a,const T inf = (1LL<<60)) : inf(inf){
 		int num = a.size();
-		for (length = 1,height = 0; length <= num; length *= 2, height++);
+		for (length = 1; length <= num; length *= 2);
 		node_max_first.resize(2*length);
 		node_max_second.resize(2*length);
 		count_max_first.resize(2*length);
@@ -231,73 +241,110 @@ public:
 		}
 		for(int i=length-1; i; --i) merge(i);
 	}
-	inline void range_chmin(int a, int b, long long x,int k = 1) {
-		if(b <= range[k].first || range[k].second <= a || node_max_first[k] <= x) return;
-		if(a <= range[k].first && range[k].second <= b && node_max_second[k] < x) {
-			internal_chmax(k, x);
-			return;
+	inline void range_chmin(int a, int b, long long x) {
+		down.push(1);
+		while(down.size()) {
+			int k = down.top();
+			down.pop();
+			if(b <= range[k].first || range[k].second <= a || node_max_first[k] <= x) continue;
+			if(a <= range[k].first && range[k].second <= b && node_max_second[k] < x) {
+				internal_chmax(k, x);
+				continue;
+			}
+			down_propagate(k);
+			up.push(k);
 		}
-		propagate(k);
-		range_chmin(a, b, x, 2*k+0);
-		range_chmin(a, b, x, 2*k+1);
-		merge(k);
+		up_merge();
 	}
 	inline void range_chmax(int a, int b, long long x,int k = 1) {
-		if(b <= range[k].first || range[k].second <= a || x <= node_min_first[k]) return;
-		if(a <= range[k].first && range[k].second <= b && x < node_min_second[k]) {
-			internal_chmin(k, x);
-			return;
+		down.push(1);
+		while(down.size()) {
+			int k = down.top();
+			down.pop();
+			if(b <= range[k].first || range[k].second <= a || x <= node_min_first[k]) continue;
+			if(a <= range[k].first && range[k].second <= b && x < node_min_second[k]) {
+				internal_chmin(k, x);
+				continue;
+			}
+			down_propagate(k);
+			up.push(k);
 		}
-		propagate(k);
-		range_chmax(a, b, x, 2*k+0);
-		range_chmax(a, b, x, 2*k+1);
-		merge(k);
+		up_merge();
 	}
 	inline void range_add(int a, int b, long long x,int k = 1) {
-		if(b <= range[k].first || range[k].second <= a) return;
-		if(a <= range[k].first && range[k].second <= b) {
-			internal_add(k, x);
-			return;
+		down.push(1);
+		while(down.size()) {
+			int k = down.top();
+			down.pop();
+			if(b <= range[k].first || range[k].second <= a) continue;
+			if(a <= range[k].first && range[k].second <= b) {
+				internal_add(k, x);
+				continue;
+			}
+			down_propagate(k);
+			up.push(k);
 		}
-		propagate(k);
-		range_add(a, b, x, 2*k+0);
-		range_add(a, b, x, 2*k+1);
-		merge(k);
+		up_merge();
 	}
 	inline void range_update(int a, int b, long long x,int k = 1) {
-		if(b <= range[k].first || range[k].second <= a) return;
-		if(a <= range[k].first && range[k].second <= b) {
-			internal_update(k, x);
-			return;
+		down.push(1);
+		while(down.size()) {
+			int k = down.top();
+			down.pop();
+			if(b <= range[k].first || range[k].second <= a) continue;
+			if(a <= range[k].first && range[k].second <= b) {
+				internal_update(k, x);
+				continue;
+			}
+			down_propagate(k);
+			up.push(k);
 		}
-		propagate(k);
-		range_update(a, b, x, 2*k+0);
-		range_update(a, b, x, 2*k+1);
-		merge(k);
+		up_merge();
 	}
 	inline T get_max(int a, int b, int k = 1) {
-		if(b <= range[k].first || range[k].second <= a) return -inf;
-		if(a <= range[k].first && range[k].second <= b) return node_max_first[k];
-		propagate(k);
-		T vl = get_max(a, b, 2*k+0);
-		T vr = get_max(a, b, 2*k+1);
-		return max(vl, vr);
+		down.push(1);
+		long long v = inf;
+		while(down.size()) {
+			int k = down.top();
+			down.pop();
+			if(b <= range[k].first || range[k].second <= a) continue;
+			if(a <= range[k].first && range[k].second <= b) {
+				v = max(v,node_max_first[k]);
+				continue;
+			}
+			down_propagate(k);
+		}
+		return v;
 	}
 	inline T get_min(int a, int b, int k = 1) {
-		if(b <= range[k].first || range[k].second <= a) return inf;
-		if(a <= range[k].first && range[k].second <= b) return node_min_first[k];
-		propagate(k);
-		T vl = get_min(a, b, 2*k+0);
-		T vr = get_min(a, b, 2*k+1);
-		return min(vl, vr);
+		down.push(1);
+		long long v = inf;
+		while(down.size()) {
+			int k = down.top();
+			down.pop();
+			if(b <= range[k].first || range[k].second <= a) continue;
+			if(a <= range[k].first && range[k].second <= b) {
+				v = min(v,node_min_first[k]);
+				continue;
+			}
+			down_propagate(k);
+		}
+		return v;
 	}
 	inline T get_sum(int a, int b, int k=1) {
-		if(b <= range[k].first || range[k].second <= a) return 0;
-		if(a <= range[k].first && range[k].second <= b) return node_sum[k];
-		propagate(k);
-		T vl = get_sum(a, b, 2*k+0);
-		T vr = get_sum(a, b, 2*k+1);
-		return vl + vr;
+		down.push(1);
+		long long v = 0;
+		while(down.size()) {
+			int k = down.top();
+			down.pop();
+			if(b <= range[k].first || range[k].second <= a) continue;
+			if(a <= range[k].first && range[k].second <= b) {
+				v += node_sum[k];
+				continue;
+			}
+			down_propagate(k);
+		}
+		return v;
 	}
 };
 #line 7 "test/segment/SegmentTreeBeats-1.test.cpp"

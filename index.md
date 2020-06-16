@@ -82,7 +82,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/segment/LazySegmentTree.cpp.html">LazySegmentTree</a>
 * :heavy_check_mark: <a href="library/lib/segment/LiChaoTree.cpp.html">LiChaoTree</a>
 * :heavy_check_mark: <a href="library/lib/segment/SegmentTree.cpp.html">SegmentTree</a>
-* :heavy_check_mark: <a href="library/lib/segment/SegmentTreeBeats.cpp.html">SegmentTreeBeats</a>
+* :x: <a href="library/lib/segment/SegmentTreeBeats.cpp.html">SegmentTreeBeats</a>
 * :heavy_check_mark: <a href="library/lib/segment/SparseTable.cpp.html">SparseTable</a>
 * :heavy_check_mark: <a href="library/lib/segment/Swag.cpp.html">Swag</a>
 
@@ -197,8 +197,8 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rcq.test.cpp.html">test/segment/SegmentTree-rcq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rmq.test.cpp.html">test/segment/SegmentTree-rmq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rsq.test.cpp.html">test/segment/SegmentTree-rsq.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/SegmentTreeBeats-1.test.cpp.html">test/segment/SegmentTreeBeats-1.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/SegmentTreeBeats-2.test.cpp.html">test/segment/SegmentTreeBeats-2.test.cpp</a>
+* :x: <a href="verify/test/segment/SegmentTreeBeats-1.test.cpp.html">test/segment/SegmentTreeBeats-1.test.cpp</a>
+* :x: <a href="verify/test/segment/SegmentTreeBeats-2.test.cpp.html">test/segment/SegmentTreeBeats-2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SparseTable.test.cpp.html">test/segment/SparseTable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/Swag.test.cpp.html">test/segment/Swag.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/util/ModInt.test.cpp.html">test/util/ModInt.test.cpp</a>
