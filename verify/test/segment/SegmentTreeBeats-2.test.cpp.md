@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/segment/SegmentTreeBeats-2.test.cpp
+# :heavy_check_mark: test/segment/SegmentTreeBeats-2.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/SegmentTreeBeats-2.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-16 22:35:36+09:00
+    - Last commit date: 2020-06-16 22:38:57+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1074">https://yukicoder.me/problems/no/1074</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/segment/SegmentTreeBeats.cpp.html">SegmentTreeBeats</a>
+* :heavy_check_mark: <a href="../../../library/lib/segment/SegmentTreeBeats.cpp.html">SegmentTreeBeats</a>
 
 
 ## Code
@@ -51,6 +51,7 @@ layout: default
 
 #include <vector>
 #include <iostream>
+#include <stack>
 using namespace std;
 #include "../../lib/segment/SegmentTreeBeats.cpp"
 
@@ -82,6 +83,7 @@ int main(void){
 
 #include <vector>
 #include <iostream>
+#include <stack>
 using namespace std;
 #line 1 "lib/segment/SegmentTreeBeats.cpp"
 /*
@@ -338,7 +340,7 @@ public:
 		return v;
 	}
 };
-#line 7 "test/segment/SegmentTreeBeats-2.test.cpp"
+#line 8 "test/segment/SegmentTreeBeats-2.test.cpp"
 
 int main(void){
     int N,M=20000; cin >> N;
