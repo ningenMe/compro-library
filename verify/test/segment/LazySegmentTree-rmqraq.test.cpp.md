@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/LazySegmentTree-rmqraq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:48:46+09:00
+    - Last commit date: 2020-07-06 22:48:03+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H</a>
@@ -109,7 +109,7 @@ public:
 
 	//unitで初期化
 	LazySegmentTree(const size_t num) : num(num) {
-		for (length = 1,height = 0; length < num; length *= 2, height++);
+		for (length = 1,height = 0; length <= num; length *= 2, height++);
 		node.resize(2 * length, Operator::unit_node);
 		lazy.resize(2 * length, Operator::unit_lazy);
 		for (int i = 0; i < num; ++i) node[i + length] = Operator::unit_node;
@@ -121,7 +121,7 @@ public:
 
 	// //同じinitで初期化
 	LazySegmentTree(const size_t num, const TypeNode init) : num(num) {
-		for (length = 1,height = 0; length < num; length *= 2, height++);
+		for (length = 1,height = 0; length <= num; length *= 2, height++);
 		node.resize(2 * length, Operator::unit_node);
 		lazy.resize(2 * length, Operator::unit_lazy);
 		for (int i = 0; i < num; ++i) node[i + length] = init;
@@ -133,7 +133,7 @@ public:
 
 	//vectorで初期化
 	LazySegmentTree(const vector<TypeNode>& vec) : num(vec.size()) {
-		for (length = 1,height = 0; length < vec.size(); length *= 2, height++);
+		for (length = 1,height = 0; length <= vec.size(); length *= 2, height++);
 		node.resize(2 * length, Operator::unit_node);
 		lazy.resize(2 * length, Operator::unit_lazy);
 		for (int i = 0; i < vec.size(); ++i) node[i + length] = vec[i];

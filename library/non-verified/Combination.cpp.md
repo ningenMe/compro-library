@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#f62ece6ccc2c02f6163dc5f3da3d641d">non-verified</a>
 * <a href="{{ site.github.repository_url }}/blob/master/non-verified/Combination.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:29:01+09:00
+    - Last commit date: 2020-07-06 22:48:03+09:00
 
 
 
@@ -41,21 +41,23 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-//Combination
-class Combination {
-public:
-	vector<vector<long long>> num;
-	
-	Combination(int N):num (vector<vector<long long>>(N+1,vector<long long>(N+1,0))) {
+template<class T> class Combination{
+	vector<vector<T>> num;
+public:    
+    //O(N^2)
+    Combination(int N):num(N+1,vector<T>(N+1,(T)0)){
 		num[0][0] = 1;
-		for (int i = 1; i <= N; ++i) for (int j = 0; j <= i; ++j) num[i][j] = ((j == 0) ? 0 : num[i - 1][j - 1]) + num[i - 1][j];		
+		for (int n = 1; n <= N; n++) {
+			for (int k = 0; k <= n; k++) {
+				num[n][k] = (num[n - 1][k]+(k?num[n - 1][k - 1]:0)) / 3;
+			}
+		}
+    } 
+	inline T binom(int n, int k) {
+		return ((n < 0 || k < 0 || n < k) ? 0 : num[n][k]);
 	}
 };
-
-//verify 
+//https://atcoder.jp/contests/dwango2015-prelims/tasks/dwango2015_prelims_3
 ```
 {% endraw %}
 
@@ -63,21 +65,23 @@ public:
 {% raw %}
 ```cpp
 #line 1 "non-verified/Combination.cpp"
-#include <bits/stdc++.h>
-using namespace std;
-
-//Combination
-class Combination {
-public:
-	vector<vector<long long>> num;
-	
-	Combination(int N):num (vector<vector<long long>>(N+1,vector<long long>(N+1,0))) {
+template<class T> class Combination{
+	vector<vector<T>> num;
+public:    
+    //O(N^2)
+    Combination(int N):num(N+1,vector<T>(N+1,(T)0)){
 		num[0][0] = 1;
-		for (int i = 1; i <= N; ++i) for (int j = 0; j <= i; ++j) num[i][j] = ((j == 0) ? 0 : num[i - 1][j - 1]) + num[i - 1][j];		
+		for (int n = 1; n <= N; n++) {
+			for (int k = 0; k <= n; k++) {
+				num[n][k] = (num[n - 1][k]+(k?num[n - 1][k - 1]:0)) / 3;
+			}
+		}
+    } 
+	inline T binom(int n, int k) {
+		return ((n < 0 || k < 0 || n < k) ? 0 : num[n][k]);
 	}
 };
-
-//verify 
+//https://atcoder.jp/contests/dwango2015-prelims/tasks/dwango2015_prelims_3
 
 ```
 {% endraw %}
