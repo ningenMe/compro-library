@@ -22,7 +22,7 @@ public:
 
 	//unitで初期化
 	LazySegmentTree(const size_t num) : num(num) {
-		for (length = 1,height = 0; length < num; length *= 2, height++);
+		for (length = 1,height = 0; length <= num; length *= 2, height++);
 		node.resize(2 * length, Operator::unit_node);
 		lazy.resize(2 * length, Operator::unit_lazy);
 		for (int i = 0; i < num; ++i) node[i + length] = Operator::unit_node;
@@ -34,7 +34,7 @@ public:
 
 	// //同じinitで初期化
 	LazySegmentTree(const size_t num, const TypeNode init) : num(num) {
-		for (length = 1,height = 0; length < num; length *= 2, height++);
+		for (length = 1,height = 0; length <= num; length *= 2, height++);
 		node.resize(2 * length, Operator::unit_node);
 		lazy.resize(2 * length, Operator::unit_lazy);
 		for (int i = 0; i < num; ++i) node[i + length] = init;
@@ -46,7 +46,7 @@ public:
 
 	//vectorで初期化
 	LazySegmentTree(const vector<TypeNode>& vec) : num(vec.size()) {
-		for (length = 1,height = 0; length < vec.size(); length *= 2, height++);
+		for (length = 1,height = 0; length <= vec.size(); length *= 2, height++);
 		node.resize(2 * length, Operator::unit_node);
 		lazy.resize(2 * length, Operator::unit_lazy);
 		for (int i = 0; i < vec.size(); ++i) node[i + length] = vec[i];
