@@ -1,5 +1,4 @@
-#define PROBLEM "https://yukicoder.me/problems/no/1078"
-#define IGNORE
+#define PROBLEM "https://judge.yosupo.jp/problem/cycle_detection"
 
 #include <vector>
 #include <iostream>
