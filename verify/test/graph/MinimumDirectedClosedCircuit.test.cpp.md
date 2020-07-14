@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/MinimumDirectedClosedCircuit.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 23:51:12+09:00
+    - Last commit date: 2020-07-14 23:55:11+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/cycle_detection">https://judge.yosupo.jp/problem/cycle_detection</a>
@@ -75,7 +75,8 @@ int main(){
     vector<int> cnt(N,0);
     for(int i = 0; i < N; ++i) cnt[scc[i]]++;
     if(*max_element(cnt.begin(),cnt.end())==1){
-        return -1;
+		cout << -1 << endl;
+        return 0;
     };
     int label=max_element(cnt.begin(),cnt.end())-cnt.begin();
     int root;
@@ -238,7 +239,8 @@ int main(){
     vector<int> cnt(N,0);
     for(int i = 0; i < N; ++i) cnt[scc[i]]++;
     if(*max_element(cnt.begin(),cnt.end())==1){
-        return -1;
+		cout << -1 << endl;
+        return 0;
     };
     int label=max_element(cnt.begin(),cnt.end())-cnt.begin();
     int root;
