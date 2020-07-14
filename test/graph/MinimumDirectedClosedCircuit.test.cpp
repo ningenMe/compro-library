@@ -25,7 +25,8 @@ int main(){
     vector<int> cnt(N,0);
     for(int i = 0; i < N; ++i) cnt[scc[i]]++;
     if(*max_element(cnt.begin(),cnt.end())==1){
-        return -1;
+		cout << -1 << endl;
+        return 0;
     };
     int label=max_element(cnt.begin(),cnt.end())-cnt.begin();
     int root;
