@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/math/Matrix.test.cpp
+# :heavy_check_mark: test/math/Matrix-det.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/math/Matrix.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-21 07:20:52+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/math/Matrix-det.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-07-21 07:40:12+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/718">https://yukicoder.me/problems/no/718</a>
+* see: <a href="https://judge.yosupo.jp/problem/matrix_det">https://judge.yosupo.jp/problem/matrix_det</a>
 
 
 ## Depends on
@@ -48,7 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://yukicoder.me/problems/no/718"
+#define PROBLEM "https://judge.yosupo.jp/problem/matrix_det"
 
 #include <vector>
 #include <iostream>
@@ -57,27 +57,18 @@ layout: default
 using namespace std;
 #include "../../lib/util/ModInt.cpp"
 #include "../../lib/math/Matrix.cpp"
-constexpr long long MOD = 1000'000'007;
+constexpr long long MOD = 998'244'353;
 
 int main(void){
     using modint = ModInt<MOD>;
-    vector<vector<modint>> a(4,vector<modint>(4));
-    a[0] = {1,2,2,-1};
-    a[1] = {0,2,2,-1};
-    a[2] = {0,1,0,0};
-    a[3] = {0,0,1,0};
-    long long N; cin >> N;
-    if(N==1){
-        cout << 1 << endl;
-        return 0;
+    Matrix<modint,500> m=Matrix<modint,500>::E();
+    int N; cin >> N;
+    for(int i = 0; i < N; ++i) {
+        for(int j = 0; j < N; ++j) {
+            cin >> m[i][j];
+        }
     }
-    if(N==2){
-        cout << 2 << endl;
-        return 0;
-    }
-    Matrix<modint,4> b(a);
-    auto s = b.pow(N-2);
-    cout << s.a[0][0]*2+s.a[0][1]+s.a[0][2] << endl;
+    cout << m.determinant() << endl;
 	return 0;
 }
 ```
@@ -86,8 +77,8 @@ int main(void){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/math/Matrix.test.cpp"
-#define PROBLEM "https://yukicoder.me/problems/no/718"
+#line 1 "test/math/Matrix-det.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/matrix_det"
 
 #include <vector>
 #include <iostream>
@@ -240,114 +231,99 @@ public:
  */
 template <class T, int H, int W = H> class Matrix {
 public:
-    int h,w;
-    array<array<T,W>,H> a;
-    Matrix():h(H),w(W){
-        // do nothing
-    }
-    Matrix(const vector<vector<T>>& vec):h(H),w(W) {
-        assert(vec.size()==H && vec.front().size()==W);
-        for(int i = 0; i < H; ++i) for(int j = 0; j < W; ++j) a[i][j]=vec[i][j];
-    }
-    static Matrix E() {
-        assert(H==W);
-        Matrix res = Matrix();
-        for(int i = 0; i < H; ++i) res[i][i]=1;
-        return res;
-    }
-    Matrix &operator+=(const Matrix &r) {
-        assert(H==r.h&&W==r.w);
-        for(int i = 0; i < H; ++i) for(int j = 0; j < W; ++j) a[i][j]+=r[i][j];
+	int h,w;
+	array<array<T,W>,H> a;
+	Matrix():h(H),w(W){
+		// do nothing
+	}
+	Matrix(const vector<vector<T>>& vec):h(H),w(W) {
+		assert(vec.size()==H && vec.front().size()==W);
+		for(int i = 0; i < H; ++i) for(int j = 0; j < W; ++j) a[i][j]=vec[i][j];
+	}
+	static Matrix E() {
+		assert(H==W);
+		Matrix res = Matrix();
+		for(int i = 0; i < H; ++i) res[i][i]=1;
+		return res;
+	}
+	Matrix &operator+=(const Matrix &r) {
+		assert(H==r.h&&W==r.w);
+		for(int i = 0; i < H; ++i) for(int j = 0; j < W; ++j) a[i][j]+=r[i][j];
 		return *this;
 	}
-    Matrix &operator-=(const Matrix &r) {
-        assert(H==r.h&&W==r.w);
-        for(int i = 0; i < H; ++i) for(int j = 0; j < W; ++j) a[i][j]-=r[i][j];
+	Matrix &operator-=(const Matrix &r) {
+		assert(H==r.h&&W==r.w);
+		for(int i = 0; i < H; ++i) for(int j = 0; j < W; ++j) a[i][j]-=r[i][j];
 		return *this;
 	}
-    Matrix &operator*=(const Matrix &r) {
-        assert(W==r.h);
-        Matrix res = Matrix();
-        for(int i = 0; i < H; ++i) for(int j = 0; j < r.w; ++j) for(int k = 0; k < W; ++k) res[i][j]+=(a[i][k])*(r[k][j]);
-        a.swap(res.a);
+	Matrix &operator*=(const Matrix &r) {
+		assert(W==r.h);
+		Matrix res = Matrix();
+		for(int i = 0; i < H; ++i) for(int j = 0; j < r.w; ++j) for(int k = 0; k < W; ++k) res[i][j]+=(a[i][k])*(r[k][j]);
+		a.swap(res.a);
 		return *this;
 	}
-    Matrix operator+(const Matrix& r) const {
-        return Matrix(*this) += r;
-    }
-    Matrix operator-(const Matrix& r) const {
-        return Matrix(*this) -= r;
-    }
-    Matrix operator*(const Matrix& r) const {
-        return Matrix(*this) *= r;
-    }
+	Matrix operator+(const Matrix& r) const {
+		return Matrix(*this) += r;
+	}
+	Matrix operator-(const Matrix& r) const {
+		return Matrix(*this) -= r;
+	}
+	Matrix operator*(const Matrix& r) const {
+		return Matrix(*this) *= r;
+	}
 	inline array<T,W> &operator[](int i) { 
 		return a[i];
 	}
 	inline const array<T,W> &operator[](int i) const { 
 		return a[i];
 	}
-    Matrix pow(long long K) const {
-        assert(H == W);
+	Matrix pow(long long K) const {
+		assert(H == W);
 		Matrix x(*this);
-        Matrix res = this->E();
-        for (; K > 0; K /= 2) {
-            if (K & 1) res *= x;
-            x *= x;
-        }
-        return res;
-    }
-	// T determinant(void) const {
-	// 	assert(H==W);
-	// 	Matrix x(*this);
-	// 	T res = 1;
-	// 	for(int i = 0; i < W; i++) {
-	// 		int idx = -1;
-	// 		for(int j = i; j < W; j++) {
-	// 			if(B[j][i] != 0) idx = j;
-	// 		}
-	// 		if(idx == -1) return 0;
-	// 		if(i != idx) {
-	// 			res *= -1;
-	// 			swap(B[i], B[idx]);
-	// 		}
-	// 		res *= B[i][i];
-	// 		T vv = B[i][i];
-	// 		for(size_t j = 0; j < width(); j++) {
-	// 			B[i][j] /= vv;
-	// 		}
-	// 		for(size_t j = i + 1; j < width(); j++) {
-	// 			T a = B[j][i];
-	// 			for(int k = 0; k < width(); k++) {
-	// 			B[j][k] -= B[i][k] * a;
-	// 			}
-	// 		}
-	// 	}
-	// 	return ret;
-	// }
+		Matrix res = this->E();
+		for (; K > 0; K /= 2) {
+			if (K & 1) res *= x;
+			x *= x;
+		}
+		return res;
+	}
+	T determinant(void) const {
+		assert(H==W);
+		Matrix x(*this);
+		T res = 1;
+		for(int i = 0; i < H; i++) {
+			int idx = -1;
+			for(int j = i; j < W; j++) if(x[j][i] != 0) idx = j;
+			if(idx == -1) return 0;
+			if(i != idx) {
+				res *= -1;
+				swap(x[i], x[idx]);
+			}
+			res *= x[i][i];
+			T tmp = x[i][i];
+			for(int j = 0; j < W; ++j) x[i][j] /= tmp;
+			for(int j = i + 1; j < H; j++) {
+				tmp = x[j][i];
+				for(int k = 0; k < W; k++) x[j][k] -= x[i][k]*tmp;
+			}
+		}
+		return res;
+	}
 };
-#line 10 "test/math/Matrix.test.cpp"
-constexpr long long MOD = 1000'000'007;
+#line 10 "test/math/Matrix-det.test.cpp"
+constexpr long long MOD = 998'244'353;
 
 int main(void){
     using modint = ModInt<MOD>;
-    vector<vector<modint>> a(4,vector<modint>(4));
-    a[0] = {1,2,2,-1};
-    a[1] = {0,2,2,-1};
-    a[2] = {0,1,0,0};
-    a[3] = {0,0,1,0};
-    long long N; cin >> N;
-    if(N==1){
-        cout << 1 << endl;
-        return 0;
+    Matrix<modint,500> m=Matrix<modint,500>::E();
+    int N; cin >> N;
+    for(int i = 0; i < N; ++i) {
+        for(int j = 0; j < N; ++j) {
+            cin >> m[i][j];
+        }
     }
-    if(N==2){
-        cout << 2 << endl;
-        return 0;
-    }
-    Matrix<modint,4> b(a);
-    auto s = b.pow(N-2);
-    cout << s.a[0][0]*2+s.a[0][1]+s.a[0][2] << endl;
+    cout << m.determinant() << endl;
 	return 0;
 }
 
