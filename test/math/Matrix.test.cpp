@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <array>
+#include <cassert>
 using namespace std;
 #include "../../lib/util/ModInt.cpp"
 #include "../../lib/math/Matrix.cpp"
@@ -10,7 +11,7 @@ constexpr long long MOD = 1000'000'007;
 
 int main(void){
     using modint = ModInt<MOD>;
-    array<array<modint,4>,4> a;
+    vector<vector<modint>> a(4,vector<modint>(4));
     a[0] = {1,2,2,-1};
     a[1] = {0,2,2,-1};
     a[2] = {0,1,0,0};
@@ -24,7 +25,8 @@ int main(void){
         cout << 2 << endl;
         return 0;
     }
-    auto s = Matrix<modint,4>::pow(a,N-2);
-    cout << s[0][0]*2+s[0][1]+s[0][2] << endl;
+    Matrix<modint,4> b(a);
+    auto s = b.pow(N-2);
+    cout << s.a[0][0]*2+s.a[0][1]+s.a[0][2] << endl;
 	return 0;
 }
