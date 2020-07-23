@@ -21,19 +21,24 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: non-verified/ConvexHullTrick.cpp
+# :heavy_check_mark: ConvexHullTrick
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f62ece6ccc2c02f6163dc5f3da3d641d">non-verified</a>
-* <a href="{{ site.github.repository_url }}/blob/master/non-verified/ConvexHullTrick.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:29:01+09:00
+* category: <a href="../../../index.html#3ee383e089bb750d0bba9be448690113">lib/geometory</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/geometory/ConvexHullTrick.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-07-24 01:21:38+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/test/geometory/ConvexHullTrick.test.cpp.html">test/geometory/ConvexHullTrick.test.cpp</a>
 
 
 ## Code
@@ -41,29 +46,31 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-
-template<class T> class ConvexHullTrick {
+/*
+ * @title ConvexHullTrick
+ */
+template<class Operator> class ConvexHullTrick {
 private:
-    deque<pair<T,T>> lines;
-	function<int(T,T)> funcCompare;
+    using TypeValue = typename Operator::TypeValue;
+    deque<pair<TypeValue,TypeValue>> lines;
 
 	//cが必要かどうか判定する
-    inline int isRequired(const pair<T,T>& l, const pair<T,T>& c, const pair<T,T>& r) {
+    inline int isRequired(const pair<TypeValue,TypeValue>& l, const pair<TypeValue,TypeValue>& c, const pair<TypeValue,TypeValue>& r) {
         return (c.first - l.first) * (r.second - c.second) >= (c.second - l.second) * (r.first - c.first);
     }
     
 	//k番目のax+bの値
-    inline T value(int k, T x) {
+    inline TypeValue value(int k, TypeValue x) {
         return lines[k].first * x + lines[k].second;
     }
 
 public:
-	ConvexHullTrick(function<int(T,T)> funcCompare) : funcCompare(funcCompare) {
+	ConvexHullTrick() {
 		// do nothing
 	} 
 
 	//傾きの大きさが単調な順にax+bを追加
-	void insert(T a, T b) {
+	void insert(TypeValue a, TypeValue b) {
 		//insertの必要がないとき
         if(lines.size() && lines.back().first == a && lines.back().second <= b) return;
 		// 直前の直線の傾きが同じ　かつ　それが必要ないとき
@@ -73,64 +80,68 @@ public:
 		lines.push_back({a,b});
     }
     
-    T get(T x) {
+    TypeValue get(TypeValue x) {
         int ng = -1, ok = (int)lines.size()-1, md;
         while (ok - ng > 1) {
             md = (ok + ng) >> 1;
-            ( funcCompare(value(md, x),value(md + 1, x)) ?ok:ng)=md;
+            ( Operator::func_compare(value(md, x),value(md + 1, x)) ?ok:ng)=md;
         }
         return value(ok, x);
     }
     
     // クエリの単調性も成り立つ場合 (x が単調増加)
-    T getMonotone(T x) {
+    TypeValue getMonotone(TypeValue x) {
         while (lines.size() >= 2 && value(0, x) >= value(1, x)) lines.pop_front();
         return lines[0].first * x + lines[0].second;
     }
 
 };
 
-//最小値クエリの時
-//ConvexHullTrick<ll> cht([&](ll l, ll r){return l < r;});
+//最小値クエリ
+template<class T> struct ValueMin {
+	using TypeValue = T;
+	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l<r;}
+};
 //傾きがa1>=a2>=a3...となるようにinsertする
 
-//最大値クエリの時
-//ConvexHullTrick<ll> cht([&](ll l, ll r){return l > r;});
+//最大値クエリ
+template<class T> struct ValueMax {
+	using TypeValue = T;
+	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l>r;}
+};
 //傾きがa1<=a2<=a3...となるようにinsertする
-
-//verify
-//https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "non-verified/ConvexHullTrick.cpp"
-
-template<class T> class ConvexHullTrick {
+#line 1 "lib/geometory/ConvexHullTrick.cpp"
+/*
+ * @title ConvexHullTrick
+ */
+template<class Operator> class ConvexHullTrick {
 private:
-    deque<pair<T,T>> lines;
-	function<int(T,T)> funcCompare;
+    using TypeValue = typename Operator::TypeValue;
+    deque<pair<TypeValue,TypeValue>> lines;
 
 	//cが必要かどうか判定する
-    inline int isRequired(const pair<T,T>& l, const pair<T,T>& c, const pair<T,T>& r) {
+    inline int isRequired(const pair<TypeValue,TypeValue>& l, const pair<TypeValue,TypeValue>& c, const pair<TypeValue,TypeValue>& r) {
         return (c.first - l.first) * (r.second - c.second) >= (c.second - l.second) * (r.first - c.first);
     }
     
 	//k番目のax+bの値
-    inline T value(int k, T x) {
+    inline TypeValue value(int k, TypeValue x) {
         return lines[k].first * x + lines[k].second;
     }
 
 public:
-	ConvexHullTrick(function<int(T,T)> funcCompare) : funcCompare(funcCompare) {
+	ConvexHullTrick() {
 		// do nothing
 	} 
 
 	//傾きの大きさが単調な順にax+bを追加
-	void insert(T a, T b) {
+	void insert(TypeValue a, TypeValue b) {
 		//insertの必要がないとき
         if(lines.size() && lines.back().first == a && lines.back().second <= b) return;
 		// 直前の直線の傾きが同じ　かつ　それが必要ないとき
@@ -140,36 +151,39 @@ public:
 		lines.push_back({a,b});
     }
     
-    T get(T x) {
+    TypeValue get(TypeValue x) {
         int ng = -1, ok = (int)lines.size()-1, md;
         while (ok - ng > 1) {
             md = (ok + ng) >> 1;
-            ( funcCompare(value(md, x),value(md + 1, x)) ?ok:ng)=md;
+            ( Operator::func_compare(value(md, x),value(md + 1, x)) ?ok:ng)=md;
         }
         return value(ok, x);
     }
     
     // クエリの単調性も成り立つ場合 (x が単調増加)
-    T getMonotone(T x) {
+    TypeValue getMonotone(TypeValue x) {
         while (lines.size() >= 2 && value(0, x) >= value(1, x)) lines.pop_front();
         return lines[0].first * x + lines[0].second;
     }
 
 };
 
-//最小値クエリの時
-//ConvexHullTrick<ll> cht([&](ll l, ll r){return l < r;});
+//最小値クエリ
+template<class T> struct ValueMin {
+	using TypeValue = T;
+	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l<r;}
+};
 //傾きがa1>=a2>=a3...となるようにinsertする
 
-//最大値クエリの時
-//ConvexHullTrick<ll> cht([&](ll l, ll r){return l > r;});
+//最大値クエリ
+template<class T> struct ValueMax {
+	using TypeValue = T;
+	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l>r;}
+};
 //傾きがa1<=a2<=a3...となるようにinsertする
-
-//verify
-//https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c
 
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
