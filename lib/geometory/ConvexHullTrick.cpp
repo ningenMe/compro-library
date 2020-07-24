@@ -24,9 +24,9 @@ public:
 	//傾きの大きさが単調な順にax+bを追加
 	void insert(TypeValue a, TypeValue b) {
 		//insertの必要がないとき
-        if(lines.size() && lines.back().first == a && lines.back().second <= b) return;
+        if(lines.size() && lines.back().first == a && !Operator::func_compare(lines.back().second,b)) return;
 		// 直前の直線の傾きが同じ　かつ　それが必要ないとき
-		if(lines.size() && lines.back().first == a && lines.back().second > b ) lines.pop_back();
+		if(lines.size() && lines.back().first == a && Operator::func_compare(b,lines.back().second)) lines.pop_back();
 		//不必要な直線を取り除く
 		while (lines.size() > 1 && isRequired(lines[lines.size()-2], lines[lines.size()-1], {a,b})) lines.pop_back();
 		lines.push_back({a,b});
