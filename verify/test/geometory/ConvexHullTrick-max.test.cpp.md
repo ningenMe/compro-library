@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/geometory/ConvexHullTrick.test.cpp
+# :x: test/geometory/ConvexHullTrick-max.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#1559848aad74dc56829252d458066b03">test/geometory</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/geometory/ConvexHullTrick.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-24 01:21:38+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/geometory/ConvexHullTrick-max.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-07-24 12:36:50+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/409">https://yukicoder.me/problems/no/409</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/geometory/ConvexHullTrick.cpp.html">ConvexHullTrick</a>
+* :question: <a href="../../../library/lib/geometory/ConvexHullTrick.cpp.html">ConvexHullTrick</a>
 
 
 ## Code
@@ -66,11 +66,11 @@ int main(void){
 	//                   -> (-B*j)*i  +  dp[j]+B/2*(j*j+j)+A*j  +  B/2*(i*i-i)-A*(i-1)+D[i] 
 	vector<ll> dp(N+2,1e15);
 	dp[0]=W;
-	ConvexHullTrick<ValueMin<ll>> cht;
-	cht.insert(0,dp[0]);
+	ConvexHullTrick<ValueMax<ll>> cht;
+	cht.insert(0,-dp[0]);
 	for(ll i=1;i<=N+1;++i){
-		dp[i]=cht.getMonotone(i)+B*(i*i-i)/2-A*(i-1)+D[i];
-		cht.insert(-B*i,dp[i]+B*(i*i+i)/2+A*i);
+		dp[i]=-cht.get(i)+B*(i*i-i)/2-A*(i-1)+D[i];
+		cht.insert(B*i,-(dp[i]+B*(i*i+i)/2+A*i));
 	}
 	cout << dp[N+1] << endl;
 	return 0;
@@ -81,7 +81,7 @@ int main(void){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/geometory/ConvexHullTrick.test.cpp"
+#line 1 "test/geometory/ConvexHullTrick-max.test.cpp"
 #define PROBLEM "https://yukicoder.me/problems/no/409"
 
 #include <iostream>
@@ -153,7 +153,7 @@ template<class T> struct ValueMax {
 	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l>r;}
 };
 //傾きがa1<=a2<=a3...となるようにinsertする
-#line 8 "test/geometory/ConvexHullTrick.test.cpp"
+#line 8 "test/geometory/ConvexHullTrick-max.test.cpp"
 using ll = long long;
 
 int main(void){
@@ -166,11 +166,11 @@ int main(void){
 	//                   -> (-B*j)*i  +  dp[j]+B/2*(j*j+j)+A*j  +  B/2*(i*i-i)-A*(i-1)+D[i] 
 	vector<ll> dp(N+2,1e15);
 	dp[0]=W;
-	ConvexHullTrick<ValueMin<ll>> cht;
-	cht.insert(0,dp[0]);
+	ConvexHullTrick<ValueMax<ll>> cht;
+	cht.insert(0,-dp[0]);
 	for(ll i=1;i<=N+1;++i){
-		dp[i]=cht.getMonotone(i)+B*(i*i-i)/2-A*(i-1)+D[i];
-		cht.insert(-B*i,dp[i]+B*(i*i+i)/2+A*i);
+		dp[i]=-cht.get(i)+B*(i*i-i)/2-A*(i-1)+D[i];
+		cht.insert(B*i,-(dp[i]+B*(i*i+i)/2+A*i));
 	}
 	cout << dp[N+1] << endl;
 	return 0;
