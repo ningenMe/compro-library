@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/geometory/ConvexHullTrick-max.test.cpp
+# :heavy_check_mark: test/geometory/ConvexHullTrick-max.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#1559848aad74dc56829252d458066b03">test/geometory</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/geometory/ConvexHullTrick-max.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-24 12:36:50+09:00
+    - Last commit date: 2020-07-24 12:51:15+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/409">https://yukicoder.me/problems/no/409</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/lib/geometory/ConvexHullTrick.cpp.html">ConvexHullTrick</a>
+* :heavy_check_mark: <a href="../../../library/lib/geometory/ConvexHullTrick.cpp.html">ConvexHullTrick</a>
 
 
 ## Code
@@ -60,16 +60,18 @@ int main(void){
 	ll N,A,B,W; cin >> N >> A >> B >> W;
 	vector<ll> D(N+2,0);
 	for(int i = 1; i <= N; ++i) cin >> D[i];
-	// dp[i]=min{j:[0,i)}-> dp[j]+B*k*(k+1)/2-k*A+D[i] (k=i-j-1)
-	//                   -> dp[j]+B*(i-j-1)*(i-j)/2-(i-j-1)*A+D[i]
-	//                   -> dp[j]+B/2*(i*i-2*i*j+j*j-i+j)-A*(i-j-1)+D[i]
-	//                   -> (-B*j)*i  +  dp[j]+B/2*(j*j+j)+A*j  +  B/2*(i*i-i)-A*(i-1)+D[i] 
+	// dp[i]=min{j:[0,i)} -> dp[j]+B*k*(k+1)/2-k*A+D[i] (k=i-j-1)
+	//                    -> dp[j]+B*(i-j-1)*(i-j)/2-(i-j-1)*A+D[i]
+	//                    -> dp[j]+B/2*(i*i-2*i*j+j*j-i+j)-A*(i-j-1)+D[i]
+	//                    -> (-B*j)*i  +  dp[j]+B/2*(j*j+j)+A*j  +  B/2*(i*i-i)-A*(i-1)+D[i] 
+	// dp[i]=-max{j:[0,i)}-> (B*j)*i  +  -{dp[j]+B/2*(j*j+j)+A*j} 
+	//                    ->
 	vector<ll> dp(N+2,1e15);
 	dp[0]=W;
 	ConvexHullTrick<ValueMax<ll>> cht;
 	cht.insert(0,-dp[0]);
 	for(ll i=1;i<=N+1;++i){
-		dp[i]=-cht.get(i)+B*(i*i-i)/2-A*(i-1)+D[i];
+		dp[i]=-cht.get(i) + B*(i*i-i)/2-A*(i-1)+D[i];
 		cht.insert(B*i,-(dp[i]+B*(i*i+i)/2+A*i));
 	}
 	cout << dp[N+1] << endl;
@@ -115,9 +117,9 @@ public:
 	//傾きの大きさが単調な順にax+bを追加
 	void insert(TypeValue a, TypeValue b) {
 		//insertの必要がないとき
-        if(lines.size() && lines.back().first == a && lines.back().second <= b) return;
+        if(lines.size() && lines.back().first == a && !Operator::func_compare(lines.back().second,b)) return;
 		// 直前の直線の傾きが同じ　かつ　それが必要ないとき
-		if(lines.size() && lines.back().first == a && lines.back().second > b ) lines.pop_back();
+		if(lines.size() && lines.back().first == a && Operator::func_compare(b,lines.back().second)) lines.pop_back();
 		//不必要な直線を取り除く
 		while (lines.size() > 1 && isRequired(lines[lines.size()-2], lines[lines.size()-1], {a,b})) lines.pop_back();
 		lines.push_back({a,b});
@@ -160,16 +162,18 @@ int main(void){
 	ll N,A,B,W; cin >> N >> A >> B >> W;
 	vector<ll> D(N+2,0);
 	for(int i = 1; i <= N; ++i) cin >> D[i];
-	// dp[i]=min{j:[0,i)}-> dp[j]+B*k*(k+1)/2-k*A+D[i] (k=i-j-1)
-	//                   -> dp[j]+B*(i-j-1)*(i-j)/2-(i-j-1)*A+D[i]
-	//                   -> dp[j]+B/2*(i*i-2*i*j+j*j-i+j)-A*(i-j-1)+D[i]
-	//                   -> (-B*j)*i  +  dp[j]+B/2*(j*j+j)+A*j  +  B/2*(i*i-i)-A*(i-1)+D[i] 
+	// dp[i]=min{j:[0,i)} -> dp[j]+B*k*(k+1)/2-k*A+D[i] (k=i-j-1)
+	//                    -> dp[j]+B*(i-j-1)*(i-j)/2-(i-j-1)*A+D[i]
+	//                    -> dp[j]+B/2*(i*i-2*i*j+j*j-i+j)-A*(i-j-1)+D[i]
+	//                    -> (-B*j)*i  +  dp[j]+B/2*(j*j+j)+A*j  +  B/2*(i*i-i)-A*(i-1)+D[i] 
+	// dp[i]=-max{j:[0,i)}-> (B*j)*i  +  -{dp[j]+B/2*(j*j+j)+A*j} 
+	//                    ->
 	vector<ll> dp(N+2,1e15);
 	dp[0]=W;
 	ConvexHullTrick<ValueMax<ll>> cht;
 	cht.insert(0,-dp[0]);
 	for(ll i=1;i<=N+1;++i){
-		dp[i]=-cht.get(i)+B*(i*i-i)/2-A*(i-1)+D[i];
+		dp[i]=-cht.get(i) + B*(i*i-i)/2-A*(i-1)+D[i];
 		cht.insert(B*i,-(dp[i]+B*(i*i+i)/2+A*i));
 	}
 	cout << dp[N+1] << endl;

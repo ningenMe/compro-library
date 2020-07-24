@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :question: ConvexHullTrick
+# :heavy_check_mark: ConvexHullTrick
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#3ee383e089bb750d0bba9be448690113">lib/geometory</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/geometory/ConvexHullTrick.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-24 01:21:38+09:00
+    - Last commit date: 2020-07-24 12:51:15+09:00
 
 
 
 
 ## Verified with
 
-* :x: <a href="../../../verify/test/geometory/ConvexHullTrick-max.test.cpp.html">test/geometory/ConvexHullTrick-max.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/geometory/ConvexHullTrick-max.test.cpp.html">test/geometory/ConvexHullTrick-max.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/geometory/ConvexHullTrick-min.test.cpp.html">test/geometory/ConvexHullTrick-min.test.cpp</a>
 
 
@@ -73,9 +73,9 @@ public:
 	//傾きの大きさが単調な順にax+bを追加
 	void insert(TypeValue a, TypeValue b) {
 		//insertの必要がないとき
-        if(lines.size() && lines.back().first == a && lines.back().second <= b) return;
+        if(lines.size() && lines.back().first == a && !Operator::func_compare(lines.back().second,b)) return;
 		// 直前の直線の傾きが同じ　かつ　それが必要ないとき
-		if(lines.size() && lines.back().first == a && lines.back().second > b ) lines.pop_back();
+		if(lines.size() && lines.back().first == a && Operator::func_compare(b,lines.back().second)) lines.pop_back();
 		//不必要な直線を取り除く
 		while (lines.size() > 1 && isRequired(lines[lines.size()-2], lines[lines.size()-1], {a,b})) lines.pop_back();
 		lines.push_back({a,b});
@@ -144,9 +144,9 @@ public:
 	//傾きの大きさが単調な順にax+bを追加
 	void insert(TypeValue a, TypeValue b) {
 		//insertの必要がないとき
-        if(lines.size() && lines.back().first == a && lines.back().second <= b) return;
+        if(lines.size() && lines.back().first == a && !Operator::func_compare(lines.back().second,b)) return;
 		// 直前の直線の傾きが同じ　かつ　それが必要ないとき
-		if(lines.size() && lines.back().first == a && lines.back().second > b ) lines.pop_back();
+		if(lines.size() && lines.back().first == a && Operator::func_compare(b,lines.back().second)) lines.pop_back();
 		//不必要な直線を取り除く
 		while (lines.size() > 1 && isRequired(lines[lines.size()-2], lines[lines.size()-1], {a,b})) lines.pop_back();
 		lines.push_back({a,b});

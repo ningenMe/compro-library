@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#1559848aad74dc56829252d458066b03">test/geometory</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/geometory/ConvexHullTrick-min.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-24 12:36:50+09:00
+    - Last commit date: 2020-07-24 12:51:15+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/409">https://yukicoder.me/problems/no/409</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/lib/geometory/ConvexHullTrick.cpp.html">ConvexHullTrick</a>
+* :heavy_check_mark: <a href="../../../library/lib/geometory/ConvexHullTrick.cpp.html">ConvexHullTrick</a>
 
 
 ## Code
@@ -115,9 +115,9 @@ public:
 	//傾きの大きさが単調な順にax+bを追加
 	void insert(TypeValue a, TypeValue b) {
 		//insertの必要がないとき
-        if(lines.size() && lines.back().first == a && lines.back().second <= b) return;
+        if(lines.size() && lines.back().first == a && !Operator::func_compare(lines.back().second,b)) return;
 		// 直前の直線の傾きが同じ　かつ　それが必要ないとき
-		if(lines.size() && lines.back().first == a && lines.back().second > b ) lines.pop_back();
+		if(lines.size() && lines.back().first == a && Operator::func_compare(b,lines.back().second)) lines.pop_back();
 		//不必要な直線を取り除く
 		while (lines.size() > 1 && isRequired(lines[lines.size()-2], lines[lines.size()-1], {a,b})) lines.pop_back();
 		lines.push_back({a,b});
