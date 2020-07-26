@@ -117,9 +117,16 @@ public:
 //https://atcoder.jp/contests/arc033/tasks/arc033_3
 //https://atcoder.jp/contests/m-solutions2020/tasks/m_solutions2020_c
 //https://yukicoder.me/problems/no/919
+//https://yukicoder.me/problems/no/649
 
 template<class T> struct NodeSum {
 	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return l+c+r;}
+};
+
+template<class T> struct NodeSimple {
+	using TypeNode = T;
+	inline static constexpr TypeNode unit_node = 0;
+	inline static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return 0;}
 };
