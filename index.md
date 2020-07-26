@@ -83,7 +83,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/segment/DisjointSparseTable.cpp.html">DisjointSparseTable</a>
 * :heavy_check_mark: <a href="library/lib/segment/LazySegmentTree.cpp.html">LazySegmentTree</a>
 * :heavy_check_mark: <a href="library/lib/segment/LiChaoTree.cpp.html">LiChaoTree</a>
-* :warning: <a href="library/lib/segment/Rbst.cpp.html">Rbst</a>
+* :heavy_check_mark: <a href="library/lib/segment/Rbst.cpp.html">Rbst</a>
 * :heavy_check_mark: <a href="library/lib/segment/SegmentTree.cpp.html">SegmentTree</a>
 * :heavy_check_mark: <a href="library/lib/segment/SegmentTreeBeats.cpp.html">SegmentTreeBeats</a>
 * :heavy_check_mark: <a href="library/lib/segment/SparseTable.cpp.html">SparseTable</a>
@@ -200,6 +200,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rsqruq.test.cpp.html">test/segment/LazySegmentTree-rsqruq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-line.test.cpp.html">test/segment/LiChaoTree-line.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-segment.test.cpp.html">test/segment/LiChaoTree-segment.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/Rbst-med.test.cpp.html">test/segment/Rbst-med.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-binary-search.test.cpp.html">test/segment/SegmentTree-binary-search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rcq.test.cpp.html">test/segment/SegmentTree-rcq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rmq.test.cpp.html">test/segment/SegmentTree-rmq.test.cpp</a>

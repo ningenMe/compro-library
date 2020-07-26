@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: Rbst
+# :heavy_check_mark: Rbst
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#c993b235c21a7035904945a028efa0ef">lib/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/segment/Rbst.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 13:05:28+09:00
+    - Last commit date: 2020-07-26 13:26:40+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/test/segment/Rbst-med.test.cpp.html">test/segment/Rbst-med.test.cpp</a>
 
 
 ## Code
@@ -139,6 +144,10 @@ public:
     inline TypeNode get(int k) {
         return get(this->root, k);
     }
+    inline TypeNode get_median() {
+		//奇数の時N/2
+        return get(this->root, (size()-1)/2);
+    }
     void merge(Rbst another) {
         root = merge(this->root, another.root);
     }
@@ -155,12 +164,14 @@ public:
 //https://atcoder.jp/contests/abc154/tasks/abc154_c
 //https://atcoder.jp/contests/arc033/tasks/arc033_3
 //https://atcoder.jp/contests/m-solutions2020/tasks/m_solutions2020_c
+//https://yukicoder.me/problems/no/919
 
 template<class T> struct NodeSum {
 	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return l+c+r;}
 };
+
 ```
 {% endraw %}
 
@@ -266,6 +277,10 @@ public:
     inline TypeNode get(int k) {
         return get(this->root, k);
     }
+    inline TypeNode get_median() {
+		//奇数の時N/2
+        return get(this->root, (size()-1)/2);
+    }
     void merge(Rbst another) {
         root = merge(this->root, another.root);
     }
@@ -282,6 +297,7 @@ public:
 //https://atcoder.jp/contests/abc154/tasks/abc154_c
 //https://atcoder.jp/contests/arc033/tasks/arc033_3
 //https://atcoder.jp/contests/m-solutions2020/tasks/m_solutions2020_c
+//https://yukicoder.me/problems/no/919
 
 template<class T> struct NodeSum {
 	using TypeNode = T;
