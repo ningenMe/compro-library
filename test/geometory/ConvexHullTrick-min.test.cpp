@@ -4,7 +4,7 @@
 #include <vector>
 #include <queue>
 using namespace std;
-#include "../../lib/segment/rbst.cpp"
+#include "../../lib/segment/Rbst.cpp"
 #include "../../lib/geometory/ConvexHullTrick.cpp"
 using ll = long long;
 
