@@ -69,7 +69,7 @@ public:
 		int ng = -1, ok = (int)lines.size()-1, md;
 		while (ok - ng > 1) {
 			md = (ok + ng) >> 1;
-			( Operator::func_compare(y(lines[md],x),y(lines.get[md+1],x)) ?ok:ng)=md;
+			( Operator::func_compare(y(lines[md],x),y(lines[md+1],x)) ?ok:ng)=md;
 		}
 		return lines[ok];
 	}
