@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/Rbst-med.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 13:26:40+09:00
+    - Last commit date: 2020-07-26 13:37:03+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/919">https://yukicoder.me/problems/no/919</a>
@@ -311,11 +311,18 @@ public:
 //https://atcoder.jp/contests/arc033/tasks/arc033_3
 //https://atcoder.jp/contests/m-solutions2020/tasks/m_solutions2020_c
 //https://yukicoder.me/problems/no/919
+//https://yukicoder.me/problems/no/649
 
 template<class T> struct NodeSum {
 	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return l+c+r;}
+};
+
+template<class T> struct NodeSimple {
+	using TypeNode = T;
+	inline static constexpr TypeNode unit_node = 0;
+	inline static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return 0;}
 };
 #line 11 "test/segment/Rbst-med.test.cpp"
 

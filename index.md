@@ -200,6 +200,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rsqruq.test.cpp.html">test/segment/LazySegmentTree-rsqruq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-line.test.cpp.html">test/segment/LiChaoTree-line.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-segment.test.cpp.html">test/segment/LiChaoTree-segment.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/Rbst-get.test.cpp.html">test/segment/Rbst-get.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/Rbst-med.test.cpp.html">test/segment/Rbst-med.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-binary-search.test.cpp.html">test/segment/SegmentTree-binary-search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rcq.test.cpp.html">test/segment/SegmentTree-rcq.test.cpp</a>
