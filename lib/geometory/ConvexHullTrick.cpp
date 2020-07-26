@@ -11,9 +11,9 @@ private:
 	};
 	Rbst<NodePair> lines;
 
-	//cが不必要かどうか判定する
-	inline int is_not_required(const pair<TypeValue,TypeValue>& l, const pair<TypeValue,TypeValue>& c, const pair<TypeValue,TypeValue>& r) {
-		return (c.first - l.first) * (r.second - c.second) >= (c.second - l.second) * (r.first - c.first);
+	//3直線に関してline2が必要か確認 (このとき a1 < a2 < a3が必要=rbstの順そのまま)
+	inline int is_required(const pair<TypeValue,TypeValue>& line1, const pair<TypeValue,TypeValue>& line2, const pair<TypeValue,TypeValue>& line3) {
+		return Operator::func_compare((line2.second-line3.second)*(line2.first-line1.first),(line1.second-line2.second)*(line3.first-line2.first));
 	}
 	
 	//y=ax+bの値
@@ -30,6 +30,7 @@ public:
 	void insert(const TypeValue a, const TypeValue b) {
 		insert({a,b});
 	}
+	//ax+bを追加 armortized O(log(N))
 	void insert(const pair<TypeValue,TypeValue> line) {
 		int i;
 		i=lines.lower_bound(line);
@@ -51,12 +52,13 @@ public:
 			}	
 		}
 		//傾きが小さい側の不必要な直線を取り除く
-		for(i=lines.lower_bound(line);i>=2&&is_not_required(lines.get(i-2), lines.get(i-1), line);i=lines.lower_bound(line)) lines.erase(lines.get(i-1));
+		for(i=lines.lower_bound(line);i>=2&&!is_required(lines.get(i-2), lines.get(i-1), line);i=lines.lower_bound(line)) lines.erase(lines.get(i-1));
 		//傾きが大きい側の不必要な直線を取り除く
-		for(i=lines.lower_bound(line);i+1<lines.size()&&is_not_required(lines.get(i+1), lines.get(i), line);i=lines.lower_bound(line)) lines.erase(lines.get(i));
+		for(i=lines.lower_bound(line);i+1<lines.size()&&!is_required(line,lines.get(i),lines.get(i+1));i=lines.lower_bound(line)) lines.erase(lines.get(i));
 		lines.insert(line);
 	}
 	
+	//O(log(N)^2)
 	TypeValue get(TypeValue x) {
 		int ng = -1, ok = (int)lines.size()-1, md;
 		while (ok - ng > 1) {
