@@ -4,8 +4,7 @@
 #include <vector>
 #include <queue>
 using namespace std;
-#include "../../lib/segment/rbst.cpp"
-#include "../../lib/geometory/ConvexHullTrick.cpp"
+#include "../../lib/geometory/ConvexHullTrickMonotone.cpp"
 using ll = long long;
 
 int main(void){
@@ -16,14 +15,14 @@ int main(void){
 	//                   -> dp[j]+B*(i-j-1)*(i-j)/2-(i-j-1)*A+D[i]
 	//                   -> dp[j]+B/2*(i*i-2*i*j+j*j-i+j)-A*(i-j-1)+D[i]
 	//                   -> (-B*j)*i  +  dp[j]+B/2*(j*j+j)+A*j  +  B/2*(i*i-i)-A*(i-1)+D[i] 
-	ll dp=W;
-	ConvexHullTrick<ValueMin<ll>> cht;
-	cht.insert(0,dp);
+	vector<ll> dp(N+2,1e15);
+	dp[0]=W;
+	ConvexHullTrickMonotone<ValueMin<ll>> cht;
+	cht.insert(0,dp[0]);
 	for(ll i=1;i<=N+1;++i){
-		dp=cht.get(i)+B*(i*i-i)/2-A*(i-1)+D[i];
-		pair<ll,ll> line={-B*i,dp+B*(i*i+i)/2+A*i};
-		cht.insert(line);
+		dp[i]=cht.get_monotone(i)+B*(i*i-i)/2-A*(i-1)+D[i];
+		cht.insert(-B*i,dp[i]+B*(i*i+i)/2+A*i);
 	}
-	cout << dp << endl;
+	cout << dp[N+1] << endl;
 	return 0;
 }

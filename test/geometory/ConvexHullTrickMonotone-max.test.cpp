@@ -4,7 +4,7 @@
 #include <vector>
 #include <queue>
 using namespace std;
-#include "../../lib/geometory/ConvexHullTrick.cpp"
+#include "../../lib/geometory/ConvexHullTrickMonotone.cpp"
 using ll = long long;
 
 int main(void){
@@ -19,7 +19,7 @@ int main(void){
 	//                    ->
 	vector<ll> dp(N+2,1e15);
 	dp[0]=W;
-	ConvexHullTrick<ValueMax<ll>> cht;
+	ConvexHullTrickMonotone<ValueMax<ll>> cht;
 	cht.insert(0,-dp[0]);
 	for(ll i=1;i<=N+1;++i){
 		dp[i]=-cht.get(i) + B*(i*i-i)/2-A*(i-1)+D[i];
