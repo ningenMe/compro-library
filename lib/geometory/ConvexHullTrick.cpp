@@ -4,9 +4,10 @@
 template<class Operator> class ConvexHullTrick {
 private:
 	using TypeValue = typename Operator::TypeValue;
+	static constexpr TypeValue unit_value=1'000'000'000'000'000'001LL;
 	struct NodePair {
 		using TypeNode = pair<TypeValue,TypeValue>;
-		inline static constexpr TypeNode unit_node = {0,0};
+		inline static constexpr TypeNode unit_node = {unit_value,unit_value};
 		inline static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return {0,0};}
 	};
 	Rbst<NodePair> lines;
@@ -32,34 +33,22 @@ public:
 	}
 	//ax+bを追加 armortized O(log(N))
 	void insert(const pair<TypeValue,TypeValue> line) {
-		int i;
-		//左と傾き比較
+		int i,flg=1;
 		i=lines.lower_bound(line);
-		if(i) {
-			auto l=lines.get(i-1);
-			//傾きが同じものがあるとき、どちらかをerase
-			if(l.first==line.first) {
-				if(Operator::func_compare(l.second,line.second)) return;
-				else lines.erase(l);
-			}	
-		}
-		//右と傾き比較
-		i=lines.lower_bound(line);
-		if(i!=lines.size()) {
-			auto r=lines.get(i);
-			//傾きが同じものがあるとき、どちらかをerase
-			if(line.first==r.first) {
-				if(Operator::func_compare(r.second,line.second)) return;
-				else lines.erase(r);
-			}	
-		}
+		auto l=lines.get(i-1);
+		auto r=lines.get(i);
+		//lと傾きが同じなら、どちらかをerase
+		if(flg && l.first==line.first) {
+			if(Operator::func_compare(l.second,line.second)) return;
+			else lines.erase(l),flg=0;
+		}	
+		//rと傾きが同じなら、どちらかをerase
+		if(flg && line.first==r.first) {
+			if(Operator::func_compare(r.second,line.second)) return;
+			else lines.erase(r),flg=0;
+		}	
 		//自身が必要か判定
-		i=lines.lower_bound(line);
-		if(i && i!=lines.size()) {
-			auto l=lines.get(i-1);
-			auto r=lines.get(i);
-			if(!is_required(l,line,r)) return;
-		}
+		if(flg && l.first!=unit_value && r.first!=unit_value && !is_required(l,line,r)) return;
 		//傾きが小さい側の不必要な直線を取り除く
 		for(i=lines.lower_bound(line);i>=2&&!is_required(lines.get(i-2), lines.get(i-1), line);i=lines.lower_bound(line)) lines.erase(lines.get(i-1));
 		//傾きが大きい側の不必要な直線を取り除く
