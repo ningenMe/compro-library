@@ -34,7 +34,7 @@ template<class Operator> class Rbst {
 		return node;
 	}
 	inline TypeNode get(Node *node, int k) {
-		if (node==nullptr) return -1;
+		if (node==nullptr) return Operator::unit_node;
 		if (k == size(node->left)) return node->val;
 		if (k < size(node->left)) return get(node->left, k);
 		else return get(node->right, k-1 - size(node->left));
@@ -74,6 +74,12 @@ template<class Operator> class Rbst {
 			return make_pair(update(node), sub.second);
 		}
 	}
+	void print(Node *node) {
+		if (node==nullptr) return;
+		print(node->left);
+		cout << node->val << " ";
+		print(node->right);
+	}
 	Rbst(Node* node):root(node){}
 public:
 	Rbst() : root(nullptr) {}
@@ -86,9 +92,11 @@ public:
 	inline int lower_bound(TypeNode val) {
 		return lower_bound(this->root, val);
 	}
-
 	inline int upper_bound(TypeNode val) {
 		return upper_bound(this->root, val);
+	}
+	inline int empty(void) {
+		return bool(size()==0);
 	}
 	inline int count(TypeNode val) {
 		return upper_bound(val) - lower_bound(val);
@@ -112,12 +120,18 @@ public:
 		pair<Node*, Node*> sub = this->split(this->root, this->lower_bound(val));
 		this->root = this->merge(sub.first, this->split(sub.second, 1).second);
 	}
+	void print() {
+		cout << "{";
+		print(this->root);
+		cout << "}" << endl;
+	}
 };
 //https://atcoder.jp/contests/abc154/tasks/abc154_c
 //https://atcoder.jp/contests/arc033/tasks/arc033_3
 //https://atcoder.jp/contests/m-solutions2020/tasks/m_solutions2020_c
 //https://yukicoder.me/problems/no/919
 //https://yukicoder.me/problems/no/649
+//https://yukicoder.me/problems/no/822
 
 template<class T> struct NodeSum {
 	using TypeNode = T;
