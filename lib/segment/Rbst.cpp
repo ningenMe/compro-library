@@ -96,6 +96,10 @@ public:
     inline TypeNode get(int k) {
         return get(this->root, k);
     }
+    inline TypeNode get_median() {
+		//奇数の時N/2
+        return get(this->root, (size()-1)/2);
+    }
     void merge(Rbst another) {
         root = merge(this->root, another.root);
     }
@@ -112,6 +116,7 @@ public:
 //https://atcoder.jp/contests/abc154/tasks/abc154_c
 //https://atcoder.jp/contests/arc033/tasks/arc033_3
 //https://atcoder.jp/contests/m-solutions2020/tasks/m_solutions2020_c
+//https://yukicoder.me/problems/no/919
 
 template<class T> struct NodeSum {
 	using TypeNode = T;
