@@ -83,6 +83,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/segment/DisjointSparseTable.cpp.html">DisjointSparseTable</a>
 * :heavy_check_mark: <a href="library/lib/segment/LazySegmentTree.cpp.html">LazySegmentTree</a>
 * :heavy_check_mark: <a href="library/lib/segment/LiChaoTree.cpp.html">LiChaoTree</a>
+* :warning: <a href="library/lib/segment/Rbst.cpp.html">Rbst</a>
 * :heavy_check_mark: <a href="library/lib/segment/SegmentTree.cpp.html">SegmentTree</a>
 * :heavy_check_mark: <a href="library/lib/segment/SegmentTreeBeats.cpp.html">SegmentTreeBeats</a>
 * :heavy_check_mark: <a href="library/lib/segment/SparseTable.cpp.html">SparseTable</a>

@@ -31,10 +31,9 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/MinimumDirectedClosedCircuit.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 23:55:11+09:00
+    - Last commit date: 2020-07-26 13:05:23+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/cycle_detection">https://judge.yosupo.jp/problem/cycle_detection</a>
 
 
 ## Depends on
@@ -49,6 +48,7 @@ layout: default
 {% raw %}
 ```cpp
 #define PROBLEM "https://judge.yosupo.jp/problem/cycle_detection"
+#define IGNORE
 
 #include <vector>
 #include <iostream>
@@ -96,6 +96,7 @@ int main(){
 ```cpp
 #line 1 "test/graph/MinimumDirectedClosedCircuit.test.cpp"
 #define PROBLEM "https://judge.yosupo.jp/problem/cycle_detection"
+#define IGNORE
 
 #include <vector>
 #include <iostream>
@@ -222,7 +223,7 @@ public:
 		return res;
 	}
 };
-#line 12 "test/graph/MinimumDirectedClosedCircuit.test.cpp"
+#line 13 "test/graph/MinimumDirectedClosedCircuit.test.cpp"
 
 int main(){
     int N,M; cin >> N >> M;
