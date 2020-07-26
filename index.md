@@ -39,7 +39,7 @@ layout: default
 ### lib/geometory
 
 * :heavy_check_mark: <a href="library/lib/geometory/Argument.cpp.html">Argument</a>
-* :warning: <a href="library/lib/geometory/ConvexHullTrick.cpp.html">ConvexHullTrick</a>
+* :heavy_check_mark: <a href="library/lib/geometory/ConvexHullTrick.cpp.html">ConvexHullTrick</a>
 * :heavy_check_mark: <a href="library/lib/geometory/ConvexHullTrickMonotone.cpp.html">ConvexHullTrickMonotone</a>
 * :heavy_check_mark: <a href="library/lib/geometory/Distance.cpp.html">Distance</a>
 
@@ -171,6 +171,7 @@ layout: default
 
 * :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/Argument-sort-by-atan2l.test.cpp.html">test/geometory/Argument-sort-by-atan2l.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrick-max.test.cpp.html">test/geometory/ConvexHullTrick-max.test.cpp</a>
 * :x: <a href="verify/test/geometory/ConvexHullTrick-min.test.cpp.html">test/geometory/ConvexHullTrick-min.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrickMonotone-max.test.cpp.html">test/geometory/ConvexHullTrickMonotone-max.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrickMonotone-min.test.cpp.html">test/geometory/ConvexHullTrickMonotone-min.test.cpp</a>
