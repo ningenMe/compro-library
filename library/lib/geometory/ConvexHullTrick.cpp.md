@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#3ee383e089bb750d0bba9be448690113">lib/geometory</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/geometory/ConvexHullTrick.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 22:26:10+09:00
+    - Last commit date: 2020-07-26 22:40:42+09:00
 
 
 
@@ -113,6 +113,16 @@ public:
 			( Operator::func_compare(y(lines.get(md),x),y(lines.get(md+1),x)) ?ok:ng)=md;
 		}
 		return y(lines.get(ok),x);
+	}
+
+	//O(log(N)^2)
+	pair<TypeValue,TypeValue> get_line(TypeValue x) {
+		int ng = -1, ok = (int)lines.size()-1, md;
+		while (ok - ng > 1) {
+			md = (ok + ng) >> 1;
+			( Operator::func_compare(y(lines.get(md),x),y(lines.get(md+1),x)) ?ok:ng)=md;
+		}
+		return lines.get(ok);
 	}
 
 	void print() {
@@ -205,6 +215,16 @@ public:
 			( Operator::func_compare(y(lines.get(md),x),y(lines.get(md+1),x)) ?ok:ng)=md;
 		}
 		return y(lines.get(ok),x);
+	}
+
+	//O(log(N)^2)
+	pair<TypeValue,TypeValue> get_line(TypeValue x) {
+		int ng = -1, ok = (int)lines.size()-1, md;
+		while (ok - ng > 1) {
+			md = (ok + ng) >> 1;
+			( Operator::func_compare(y(lines.get(md),x),y(lines.get(md+1),x)) ?ok:ng)=md;
+		}
+		return lines.get(ok);
 	}
 
 	void print() {
