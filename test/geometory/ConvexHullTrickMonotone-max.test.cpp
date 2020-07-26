@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <cassert>
 using namespace std;
 #include "../../lib/geometory/ConvexHullTrickMonotone.cpp"
 using ll = long long;

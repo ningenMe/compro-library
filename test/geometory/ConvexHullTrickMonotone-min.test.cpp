@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <cassert>
 using namespace std;
 #include "../../lib/geometory/ConvexHullTrickMonotone.cpp"
 using ll = long long;
@@ -20,7 +21,7 @@ int main(void){
 	ConvexHullTrickMonotone<ValueMin<ll>> cht;
 	cht.insert(0,dp[0]);
 	for(ll i=1;i<=N+1;++i){
-		dp[i]=cht.get_monotone(i)+B*(i*i-i)/2-A*(i-1)+D[i];
+		dp[i]=cht.get(i)+B*(i*i-i)/2-A*(i-1)+D[i];
 		cht.insert(-B*i,dp[i]+B*(i*i+i)/2+A*i);
 	}
 	cout << dp[N+1] << endl;
