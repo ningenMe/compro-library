@@ -65,6 +65,16 @@ public:
 		return y(lines.get(ok),x);
 	}
 
+	//O(log(N)^2)
+	pair<TypeValue,TypeValue> get_line(TypeValue x) {
+		int ng = -1, ok = (int)lines.size()-1, md;
+		while (ok - ng > 1) {
+			md = (ok + ng) >> 1;
+			( Operator::func_compare(y(lines.get(md),x),y(lines.get(md+1),x)) ?ok:ng)=md;
+		}
+		return lines.get(ok);
+	}
+
 	void print() {
 		lines.print();
 	}
