@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#3ee383e089bb750d0bba9be448690113">lib/geometory</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/geometory/ConvexHullTrickMonotone.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-27 02:13:39+09:00
+    - Last commit date: 2020-07-27 02:35:27+09:00
 
 
 
@@ -93,17 +93,17 @@ public:
 	ConvexHullTrickMonotone() {
 		// do nothing
 	} 
-	void insert(const TypeValue a, const TypeValue b) {
+	inline void insert(const TypeValue a, const TypeValue b) {
 		insert({a,b});
 	}
 	//傾きの大きさが常に最大or最小になるようにinsertする
-	void insert(const pair<TypeValue,TypeValue> line) {
+	inline void insert(const pair<TypeValue,TypeValue> line) {
 		if(lines.empty() || line.first <= lines.front().first) insert_front(line);
 		else if(lines.back().first <= line.first) insert_back(line);
 		else assert(false);
 	}
 	//O(log(N))
-	TypeValue get(TypeValue x) {
+	inline TypeValue get(TypeValue x) {
 		if(lines.empty()) return Operator::unit_value;
 		int ng = -1, ok = (int)lines.size()-1, md;
 		while (ok - ng > 1) {
@@ -113,7 +113,7 @@ public:
 		return y(lines[ok],x);
 	}
 	//O(log(N))
-	pair<TypeValue,TypeValue> get_line(TypeValue x) {
+	inline pair<TypeValue,TypeValue> get_line(TypeValue x) {
 		if(lines.empty()) return {0,Operator::unit_value};
 		int ng = -1, ok = (int)lines.size()-1, md;
 		while (ok - ng > 1) {
@@ -121,6 +121,10 @@ public:
 			( Operator::func_compare(y(lines[md],x),y(lines.get[md+1],x)) ?ok:ng)=md;
 		}
 		return lines[ok];
+	}
+	//O(N)
+	inline void clear(void) {
+		lines.clear();
 	}
 };
 
@@ -130,7 +134,6 @@ template<class T> struct ValueMin {
 	inline static constexpr TypeValue unit_value = 3e18;
 	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l<r;}
 };
-//傾きの大きさが常に最大or最小になるようにinsertする
 
 //最大値クエリ
 template<class T> struct ValueMax {
@@ -138,7 +141,6 @@ template<class T> struct ValueMax {
 	inline static constexpr TypeValue unit_value = -3e18;
 	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l>r;}
 };
-//傾きの大きさが常に最大or最小になるようにinsertする
 ```
 {% endraw %}
 
@@ -192,17 +194,17 @@ public:
 	ConvexHullTrickMonotone() {
 		// do nothing
 	} 
-	void insert(const TypeValue a, const TypeValue b) {
+	inline void insert(const TypeValue a, const TypeValue b) {
 		insert({a,b});
 	}
 	//傾きの大きさが常に最大or最小になるようにinsertする
-	void insert(const pair<TypeValue,TypeValue> line) {
+	inline void insert(const pair<TypeValue,TypeValue> line) {
 		if(lines.empty() || line.first <= lines.front().first) insert_front(line);
 		else if(lines.back().first <= line.first) insert_back(line);
 		else assert(false);
 	}
 	//O(log(N))
-	TypeValue get(TypeValue x) {
+	inline TypeValue get(TypeValue x) {
 		if(lines.empty()) return Operator::unit_value;
 		int ng = -1, ok = (int)lines.size()-1, md;
 		while (ok - ng > 1) {
@@ -212,7 +214,7 @@ public:
 		return y(lines[ok],x);
 	}
 	//O(log(N))
-	pair<TypeValue,TypeValue> get_line(TypeValue x) {
+	inline pair<TypeValue,TypeValue> get_line(TypeValue x) {
 		if(lines.empty()) return {0,Operator::unit_value};
 		int ng = -1, ok = (int)lines.size()-1, md;
 		while (ok - ng > 1) {
@@ -220,6 +222,10 @@ public:
 			( Operator::func_compare(y(lines[md],x),y(lines.get[md+1],x)) ?ok:ng)=md;
 		}
 		return lines[ok];
+	}
+	//O(N)
+	inline void clear(void) {
+		lines.clear();
 	}
 };
 
@@ -229,7 +235,6 @@ template<class T> struct ValueMin {
 	inline static constexpr TypeValue unit_value = 3e18;
 	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l<r;}
 };
-//傾きの大きさが常に最大or最小になるようにinsertする
 
 //最大値クエリ
 template<class T> struct ValueMax {
@@ -237,7 +242,6 @@ template<class T> struct ValueMax {
 	inline static constexpr TypeValue unit_value = -3e18;
 	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l>r;}
 };
-//傾きの大きさが常に最大or最小になるようにinsertする
 
 ```
 {% endraw %}
