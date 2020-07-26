@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#c993b235c21a7035904945a028efa0ef">lib/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/segment/Rbst.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 13:46:40+09:00
+    - Last commit date: 2020-07-26 19:14:16+09:00
 
 
 
@@ -84,7 +84,7 @@ template<class Operator> class Rbst {
 		return node;
 	}
 	inline TypeNode get(Node *node, int k) {
-		if (node==nullptr) return -1;
+		if (node==nullptr) return Operator::unit_node;
 		if (k == size(node->left)) return node->val;
 		if (k < size(node->left)) return get(node->left, k);
 		else return get(node->right, k-1 - size(node->left));
@@ -124,6 +124,12 @@ template<class Operator> class Rbst {
 			return make_pair(update(node), sub.second);
 		}
 	}
+	void print(Node *node) {
+		if (node==nullptr) return;
+		print(node->left);
+		cout << node->val << " ";
+		print(node->right);
+	}
 	Rbst(Node* node):root(node){}
 public:
 	Rbst() : root(nullptr) {}
@@ -136,9 +142,11 @@ public:
 	inline int lower_bound(TypeNode val) {
 		return lower_bound(this->root, val);
 	}
-
 	inline int upper_bound(TypeNode val) {
 		return upper_bound(this->root, val);
+	}
+	inline int empty(void) {
+		return bool(size()==0);
 	}
 	inline int count(TypeNode val) {
 		return upper_bound(val) - lower_bound(val);
@@ -162,12 +170,18 @@ public:
 		pair<Node*, Node*> sub = this->split(this->root, this->lower_bound(val));
 		this->root = this->merge(sub.first, this->split(sub.second, 1).second);
 	}
+	void print() {
+		cout << "{";
+		print(this->root);
+		cout << "}" << endl;
+	}
 };
 //https://atcoder.jp/contests/abc154/tasks/abc154_c
 //https://atcoder.jp/contests/arc033/tasks/arc033_3
 //https://atcoder.jp/contests/m-solutions2020/tasks/m_solutions2020_c
 //https://yukicoder.me/problems/no/919
 //https://yukicoder.me/problems/no/649
+//https://yukicoder.me/problems/no/822
 
 template<class T> struct NodeSum {
 	using TypeNode = T;
@@ -180,7 +194,6 @@ template<class T> struct NodeSimple {
 	inline static constexpr TypeNode unit_node = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return 0;}
 };
-
 ```
 {% endraw %}
 
@@ -224,7 +237,7 @@ template<class Operator> class Rbst {
 		return node;
 	}
 	inline TypeNode get(Node *node, int k) {
-		if (node==nullptr) return -1;
+		if (node==nullptr) return Operator::unit_node;
 		if (k == size(node->left)) return node->val;
 		if (k < size(node->left)) return get(node->left, k);
 		else return get(node->right, k-1 - size(node->left));
@@ -264,6 +277,12 @@ template<class Operator> class Rbst {
 			return make_pair(update(node), sub.second);
 		}
 	}
+	void print(Node *node) {
+		if (node==nullptr) return;
+		print(node->left);
+		cout << node->val << " ";
+		print(node->right);
+	}
 	Rbst(Node* node):root(node){}
 public:
 	Rbst() : root(nullptr) {}
@@ -276,9 +295,11 @@ public:
 	inline int lower_bound(TypeNode val) {
 		return lower_bound(this->root, val);
 	}
-
 	inline int upper_bound(TypeNode val) {
 		return upper_bound(this->root, val);
+	}
+	inline int empty(void) {
+		return bool(size()==0);
 	}
 	inline int count(TypeNode val) {
 		return upper_bound(val) - lower_bound(val);
@@ -302,12 +323,18 @@ public:
 		pair<Node*, Node*> sub = this->split(this->root, this->lower_bound(val));
 		this->root = this->merge(sub.first, this->split(sub.second, 1).second);
 	}
+	void print() {
+		cout << "{";
+		print(this->root);
+		cout << "}" << endl;
+	}
 };
 //https://atcoder.jp/contests/abc154/tasks/abc154_c
 //https://atcoder.jp/contests/arc033/tasks/arc033_3
 //https://atcoder.jp/contests/m-solutions2020/tasks/m_solutions2020_c
 //https://yukicoder.me/problems/no/919
 //https://yukicoder.me/problems/no/649
+//https://yukicoder.me/problems/no/822
 
 template<class T> struct NodeSum {
 	using TypeNode = T;
