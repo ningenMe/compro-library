@@ -39,6 +39,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../../verify/test/geometory/ConvexHullTrick-max.test.cpp.html">test/geometory/ConvexHullTrick-max.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/geometory/ConvexHullTrick-min.test.cpp.html">test/geometory/ConvexHullTrick-min.test.cpp</a>
 
 
 ## Code
