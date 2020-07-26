@@ -33,6 +33,7 @@ public:
 	//ax+bを追加 armortized O(log(N))
 	void insert(const pair<TypeValue,TypeValue> line) {
 		int i;
+		//左と傾き比較
 		i=lines.lower_bound(line);
 		if(i) {
 			auto l=lines.get(i-1);
@@ -41,7 +42,8 @@ public:
 				if(Operator::func_compare(l.second,line.second)) return;
 				else lines.erase(l);
 			}	
-		}	
+		}
+		//右と傾き比較
 		i=lines.lower_bound(line);
 		if(i!=lines.size()) {
 			auto r=lines.get(i);
@@ -50,6 +52,13 @@ public:
 				if(Operator::func_compare(r.second,line.second)) return;
 				else lines.erase(r);
 			}	
+		}
+		//自身が必要か判定
+		i=lines.lower_bound(line);
+		if(i && i!=lines.size()) {
+			auto l=lines.get(i-1);
+			auto r=lines.get(i);
+			if(!is_required(l,line,r)) return;
 		}
 		//傾きが小さい側の不必要な直線を取り除く
 		for(i=lines.lower_bound(line);i>=2&&!is_required(lines.get(i-2), lines.get(i-1), line);i=lines.lower_bound(line)) lines.erase(lines.get(i-1));
