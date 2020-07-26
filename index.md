@@ -81,6 +81,7 @@ layout: default
 ### lib/segment
 
 * :heavy_check_mark: <a href="library/lib/segment/BinaryIndexedTree.cpp.html">BinaryIndexedTree</a>
+* :warning: <a href="library/lib/segment/ConvexHullTrickSegmentTree.cpp.html">ConvexHullTrickSegmentTree</a>
 * :heavy_check_mark: <a href="library/lib/segment/DisjointSparseTable.cpp.html">DisjointSparseTable</a>
 * :heavy_check_mark: <a href="library/lib/segment/LazySegmentTree.cpp.html">LazySegmentTree</a>
 * :heavy_check_mark: <a href="library/lib/segment/LiChaoTree.cpp.html">LiChaoTree</a>

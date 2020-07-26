@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#3ee383e089bb750d0bba9be448690113">lib/geometory</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/geometory/ConvexHullTrick.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 21:39:27+09:00
+    - Last commit date: 2020-07-26 22:26:10+09:00
 
 
 
@@ -123,7 +123,7 @@ public:
 //最小値クエリ
 template<class T> struct ValueMin {
 	using TypeValue = T;
-	inline static constexpr TypeValue unit_value = -3e18;
+	inline static constexpr TypeValue unit_value = 3e18;
 	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l<r;}
 };
 
@@ -215,7 +215,7 @@ public:
 //最小値クエリ
 template<class T> struct ValueMin {
 	using TypeValue = T;
-	inline static constexpr TypeValue unit_value = -3e18;
+	inline static constexpr TypeValue unit_value = 3e18;
 	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l<r;}
 };
 

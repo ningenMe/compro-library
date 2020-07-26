@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#1559848aad74dc56829252d458066b03">test/geometory</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/geometory/ConvexHullTrick-no-monotone.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 21:39:27+09:00
+    - Last commit date: 2020-07-26 22:26:10+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/line_add_get_min">https://judge.yosupo.jp/problem/line_add_get_min</a>
@@ -315,7 +315,7 @@ public:
 //最小値クエリ
 template<class T> struct ValueMin {
 	using TypeValue = T;
-	inline static constexpr TypeValue unit_value = -3e18;
+	inline static constexpr TypeValue unit_value = 3e18;
 	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l<r;}
 };
 
