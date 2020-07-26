@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#3ee383e089bb750d0bba9be448690113">lib/geometory</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/geometory/ConvexHullTrickMonotone.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-27 02:35:27+09:00
+    - Last commit date: 2020-07-27 03:11:39+09:00
 
 
 
@@ -118,7 +118,7 @@ public:
 		int ng = -1, ok = (int)lines.size()-1, md;
 		while (ok - ng > 1) {
 			md = (ok + ng) >> 1;
-			( Operator::func_compare(y(lines[md],x),y(lines.get[md+1],x)) ?ok:ng)=md;
+			( Operator::func_compare(y(lines[md],x),y(lines[md+1],x)) ?ok:ng)=md;
 		}
 		return lines[ok];
 	}
@@ -219,7 +219,7 @@ public:
 		int ng = -1, ok = (int)lines.size()-1, md;
 		while (ok - ng > 1) {
 			md = (ok + ng) >> 1;
-			( Operator::func_compare(y(lines[md],x),y(lines.get[md+1],x)) ?ok:ng)=md;
+			( Operator::func_compare(y(lines[md],x),y(lines[md+1],x)) ?ok:ng)=md;
 		}
 		return lines[ok];
 	}
