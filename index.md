@@ -173,6 +173,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/geometory/Argument-sort-by-atan2l.test.cpp.html">test/geometory/Argument-sort-by-atan2l.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrick-max.test.cpp.html">test/geometory/ConvexHullTrick-max.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrick-min.test.cpp.html">test/geometory/ConvexHullTrick-min.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrick-no-monotone.test.cpp.html">test/geometory/ConvexHullTrick-no-monotone.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrickMonotone-max.test.cpp.html">test/geometory/ConvexHullTrickMonotone-max.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrickMonotone-min.test.cpp.html">test/geometory/ConvexHullTrickMonotone-min.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/Distance-line.test.cpp.html">test/geometory/Distance-line.test.cpp</a>

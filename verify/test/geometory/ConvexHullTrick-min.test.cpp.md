@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#1559848aad74dc56829252d458066b03">test/geometory</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/geometory/ConvexHullTrick-min.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 20:10:25+09:00
+    - Last commit date: 2020-07-26 21:02:39+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/409">https://yukicoder.me/problems/no/409</a>
@@ -244,9 +244,10 @@ template<class T> struct NodeSimple {
 template<class Operator> class ConvexHullTrick {
 private:
 	using TypeValue = typename Operator::TypeValue;
+	static constexpr TypeValue unit_value=1'000'000'000'000'000'001LL;
 	struct NodePair {
 		using TypeNode = pair<TypeValue,TypeValue>;
-		inline static constexpr TypeNode unit_node = {0,0};
+		inline static constexpr TypeNode unit_node = {unit_value,unit_value};
 		inline static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return {0,0};}
 	};
 	Rbst<NodePair> lines;
@@ -272,25 +273,22 @@ public:
 	}
 	//ax+bを追加 armortized O(log(N))
 	void insert(const pair<TypeValue,TypeValue> line) {
-		int i;
+		int i,flg=1;
 		i=lines.lower_bound(line);
-		if(i) {
-			auto l=lines.get(i-1);
-			//傾きが同じものがあるとき、どちらかをerase
-			if(l.first==line.first) {
-				if(Operator::func_compare(l.second,line.second)) return;
-				else lines.erase(l);
-			}	
+		auto l=lines.get(i-1);
+		auto r=lines.get(i);
+		//lと傾きが同じなら、どちらかをerase
+		if(flg && l.first==line.first) {
+			if(Operator::func_compare(l.second,line.second)) return;
+			else lines.erase(l),flg=0;
 		}	
-		i=lines.lower_bound(line);
-		if(i!=lines.size()) {
-			auto r=lines.get(i);
-			//傾きが同じものがあるとき、どちらかをerase
-			if(line.first==r.first) {
-				if(Operator::func_compare(r.second,line.second)) return;
-				else lines.erase(r);
-			}	
-		}
+		//rと傾きが同じなら、どちらかをerase
+		if(flg && line.first==r.first) {
+			if(Operator::func_compare(r.second,line.second)) return;
+			else lines.erase(r),flg=0;
+		}	
+		//自身が必要か判定
+		if(flg && l.first!=unit_value && r.first!=unit_value && !is_required(l,line,r)) return;
 		//傾きが小さい側の不必要な直線を取り除く
 		for(i=lines.lower_bound(line);i>=2&&!is_required(lines.get(i-2), lines.get(i-1), line);i=lines.lower_bound(line)) lines.erase(lines.get(i-1));
 		//傾きが大きい側の不必要な直線を取り除く

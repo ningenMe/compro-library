@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/geometory/ConvexHullTrick-max.test.cpp
+# :heavy_check_mark: test/geometory/ConvexHullTrick-no-monotone.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#1559848aad74dc56829252d458066b03">test/geometory</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/geometory/ConvexHullTrick-max.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/geometory/ConvexHullTrick-no-monotone.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-07-26 21:02:39+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/409">https://yukicoder.me/problems/no/409</a>
+* see: <a href="https://judge.yosupo.jp/problem/line_add_get_min">https://judge.yosupo.jp/problem/line_add_get_min</a>
 
 
 ## Depends on
@@ -48,7 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://yukicoder.me/problems/no/409"
+#define PROBLEM "https://judge.yosupo.jp/problem/line_add_get_min"
 
 #include <iostream>
 #include <vector>
@@ -56,27 +56,27 @@ layout: default
 using namespace std;
 #include "../../lib/segment/Rbst.cpp"
 #include "../../lib/geometory/ConvexHullTrick.cpp"
-using ll = long long;
 
 int main(void){
-	ll N,A,B,W; cin >> N >> A >> B >> W;
-	vector<ll> D(N+2,0);
-	for(int i = 1; i <= N; ++i) cin >> D[i];
-	// dp[i]=min{j:[0,i)} -> dp[j]+B*k*(k+1)/2-k*A+D[i] (k=i-j-1)
-	//                    -> dp[j]+B*(i-j-1)*(i-j)/2-(i-j-1)*A+D[i]
-	//                    -> dp[j]+B/2*(i*i-2*i*j+j*j-i+j)-A*(i-j-1)+D[i]
-	//                    -> (-B*j)*i  +  dp[j]+B/2*(j*j+j)+A*j  +  B/2*(i*i-i)-A*(i-1)+D[i] 
-	// dp[i]=-max{j:[0,i)}-> (B*j)*i  +  -{dp[j]+B/2*(j*j+j)+A*j} 
-	//                    ->
-	vector<ll> dp(N+2,1e15);
-	dp[0]=W;
-	ConvexHullTrick<ValueMax<ll>> cht;
-	cht.insert(0,-dp[0]);
-	for(ll i=1;i<=N+1;++i){
-		dp[i]=-cht.get(i) + B*(i*i-i)/2-A*(i-1)+D[i];
-		cht.insert(B*i,-(dp[i]+B*(i*i+i)/2+A*i));
+	cin.tie(0);ios::sync_with_stdio(false);
+    int N,Q; cin >> N >> Q;
+	ConvexHullTrick<ValueMin<__int128_t>> cht;
+	while(N--){
+		long long a,b; cin >> a >> b;
+		cht.insert(a,b);
 	}
-	cout << dp[N+1] << endl;
+	while(Q--){
+		int q; cin >> q;
+		if(q){
+			long long p; cin >> p;
+			long long ans = cht.get(p);
+			cout << ans << endl;
+		}
+		else{
+			long long a,b; cin >> a >> b;
+			cht.insert(a,b);
+		}
+	}
 	return 0;
 }
 ```
@@ -85,8 +85,8 @@ int main(void){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/geometory/ConvexHullTrick-max.test.cpp"
-#define PROBLEM "https://yukicoder.me/problems/no/409"
+#line 1 "test/geometory/ConvexHullTrick-no-monotone.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/line_add_get_min"
 
 #include <iostream>
 #include <vector>
@@ -324,28 +324,28 @@ template<class T> struct ValueMax {
 	using TypeValue = T;
 	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l>r;}
 };
-#line 9 "test/geometory/ConvexHullTrick-max.test.cpp"
-using ll = long long;
+#line 9 "test/geometory/ConvexHullTrick-no-monotone.test.cpp"
 
 int main(void){
-	ll N,A,B,W; cin >> N >> A >> B >> W;
-	vector<ll> D(N+2,0);
-	for(int i = 1; i <= N; ++i) cin >> D[i];
-	// dp[i]=min{j:[0,i)} -> dp[j]+B*k*(k+1)/2-k*A+D[i] (k=i-j-1)
-	//                    -> dp[j]+B*(i-j-1)*(i-j)/2-(i-j-1)*A+D[i]
-	//                    -> dp[j]+B/2*(i*i-2*i*j+j*j-i+j)-A*(i-j-1)+D[i]
-	//                    -> (-B*j)*i  +  dp[j]+B/2*(j*j+j)+A*j  +  B/2*(i*i-i)-A*(i-1)+D[i] 
-	// dp[i]=-max{j:[0,i)}-> (B*j)*i  +  -{dp[j]+B/2*(j*j+j)+A*j} 
-	//                    ->
-	vector<ll> dp(N+2,1e15);
-	dp[0]=W;
-	ConvexHullTrick<ValueMax<ll>> cht;
-	cht.insert(0,-dp[0]);
-	for(ll i=1;i<=N+1;++i){
-		dp[i]=-cht.get(i) + B*(i*i-i)/2-A*(i-1)+D[i];
-		cht.insert(B*i,-(dp[i]+B*(i*i+i)/2+A*i));
+	cin.tie(0);ios::sync_with_stdio(false);
+    int N,Q; cin >> N >> Q;
+	ConvexHullTrick<ValueMin<__int128_t>> cht;
+	while(N--){
+		long long a,b; cin >> a >> b;
+		cht.insert(a,b);
 	}
-	cout << dp[N+1] << endl;
+	while(Q--){
+		int q; cin >> q;
+		if(q){
+			long long p; cin >> p;
+			long long ans = cht.get(p);
+			cout << ans << endl;
+		}
+		else{
+			long long a,b; cin >> a >> b;
+			cht.insert(a,b);
+		}
+	}
 	return 0;
 }
 
