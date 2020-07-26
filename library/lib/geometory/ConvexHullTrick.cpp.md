@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#3ee383e089bb750d0bba9be448690113">lib/geometory</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/geometory/ConvexHullTrick.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 21:26:33+09:00
+    - Last commit date: 2020-07-26 21:39:27+09:00
 
 
 
@@ -56,7 +56,7 @@ private:
 	using TypeValue = typename Operator::TypeValue;
 	struct NodePair {
 		using TypeNode = pair<TypeValue,TypeValue>;
-		inline static constexpr TypeNode unit_node = Operator::unit_value;
+		inline static constexpr TypeNode unit_node = {0,Operator::unit_value};
 		inline static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return {0,0};}
 	};
 	Rbst<NodePair> lines;
@@ -87,17 +87,17 @@ public:
 		auto l=lines.get(i-1);
 		auto r=lines.get(i);
 		//lと傾きが同じなら、どちらかをerase
-		if(flg && l!=Operator::unit_value && l.first==line.first) {
+		if(flg && l.second!=Operator::unit_value && l.first==line.first) {
 			if(Operator::func_compare(l.second,line.second)) return;
 			else lines.erase(l),flg=0;
 		}	
 		//rと傾きが同じなら、どちらかをerase
-		if(flg && r!=Operator::unit_value && line.first==r.first) {
+		if(flg && r.second!=Operator::unit_value && line.first==r.first) {
 			if(Operator::func_compare(r.second,line.second)) return;
 			else lines.erase(r),flg=0;
 		}	
 		//自身が必要か判定
-		if(flg && l!=Operator::unit_value && r!=Operator::unit_value && !is_required(l,line,r)) return;
+		if(flg && l.second!=Operator::unit_value && r.second!=Operator::unit_value && !is_required(l,line,r)) return;
 		//傾きが小さい側の不必要な直線を取り除く
 		for(i=lines.lower_bound(line);i>=2&&!is_required(lines.get(i-2), lines.get(i-1), line);i=lines.lower_bound(line)) lines.erase(lines.get(i-1));
 		//傾きが大きい側の不必要な直線を取り除く
@@ -123,14 +123,14 @@ public:
 //最小値クエリ
 template<class T> struct ValueMin {
 	using TypeValue = T;
-	inline static constexpr pair<TypeValue,TypeValue> unit_value = {0,-3e18};
+	inline static constexpr TypeValue unit_value = -3e18;
 	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l<r;}
 };
 
 //最大値クエリ
 template<class T> struct ValueMax {
 	using TypeValue = T;
-	inline static constexpr pair<TypeValue,TypeValue> unit_value = {0,-3e18};
+	inline static constexpr TypeValue unit_value = -3e18;
 	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l>r;}
 };
 ```
@@ -148,7 +148,7 @@ private:
 	using TypeValue = typename Operator::TypeValue;
 	struct NodePair {
 		using TypeNode = pair<TypeValue,TypeValue>;
-		inline static constexpr TypeNode unit_node = Operator::unit_value;
+		inline static constexpr TypeNode unit_node = {0,Operator::unit_value};
 		inline static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return {0,0};}
 	};
 	Rbst<NodePair> lines;
@@ -179,17 +179,17 @@ public:
 		auto l=lines.get(i-1);
 		auto r=lines.get(i);
 		//lと傾きが同じなら、どちらかをerase
-		if(flg && l!=Operator::unit_value && l.first==line.first) {
+		if(flg && l.second!=Operator::unit_value && l.first==line.first) {
 			if(Operator::func_compare(l.second,line.second)) return;
 			else lines.erase(l),flg=0;
 		}	
 		//rと傾きが同じなら、どちらかをerase
-		if(flg && r!=Operator::unit_value && line.first==r.first) {
+		if(flg && r.second!=Operator::unit_value && line.first==r.first) {
 			if(Operator::func_compare(r.second,line.second)) return;
 			else lines.erase(r),flg=0;
 		}	
 		//自身が必要か判定
-		if(flg && l!=Operator::unit_value && r!=Operator::unit_value && !is_required(l,line,r)) return;
+		if(flg && l.second!=Operator::unit_value && r.second!=Operator::unit_value && !is_required(l,line,r)) return;
 		//傾きが小さい側の不必要な直線を取り除く
 		for(i=lines.lower_bound(line);i>=2&&!is_required(lines.get(i-2), lines.get(i-1), line);i=lines.lower_bound(line)) lines.erase(lines.get(i-1));
 		//傾きが大きい側の不必要な直線を取り除く
@@ -215,14 +215,14 @@ public:
 //最小値クエリ
 template<class T> struct ValueMin {
 	using TypeValue = T;
-	inline static constexpr pair<TypeValue,TypeValue> unit_value = {0,-3e18};
+	inline static constexpr TypeValue unit_value = -3e18;
 	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l<r;}
 };
 
 //最大値クエリ
 template<class T> struct ValueMax {
 	using TypeValue = T;
-	inline static constexpr pair<TypeValue,TypeValue> unit_value = {0,-3e18};
+	inline static constexpr TypeValue unit_value = -3e18;
 	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l>r;}
 };
 
