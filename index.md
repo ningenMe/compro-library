@@ -81,6 +81,7 @@ layout: default
 ### lib/segment
 
 * :heavy_check_mark: <a href="library/lib/segment/BinaryIndexedTree.cpp.html">BinaryIndexedTree</a>
+* :heavy_check_mark: <a href="library/lib/segment/BinaryTrie.cpp.html">BinaryTrie</a>
 * :warning: <a href="library/lib/segment/ConvexHullTrickSegmentTree.cpp.html">ConvexHullTrickSegmentTree</a>
 * :heavy_check_mark: <a href="library/lib/segment/DisjointSparseTable.cpp.html">DisjointSparseTable</a>
 * :heavy_check_mark: <a href="library/lib/segment/LazySegmentTree.cpp.html">LazySegmentTree</a>
@@ -200,6 +201,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransform.test.cpp.html">test/math/NumberTheoreticTransform.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransformArbitraryMod.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/BinaryIndexedTree-rsqraq.test.cpp.html">test/segment/BinaryIndexedTree-rsqraq.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/BinaryTrie-set-xor-min.test.cpp.html">test/segment/BinaryTrie-set-xor-min.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/DisjointSparseTable.test.cpp.html">test/segment/DisjointSparseTable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rmqraq.test.cpp.html">test/segment/LazySegmentTree-rmqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rsqruq.test.cpp.html">test/segment/LazySegmentTree-rsqruq.test.cpp</a>
