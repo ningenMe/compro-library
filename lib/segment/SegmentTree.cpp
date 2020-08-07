@@ -11,7 +11,7 @@ public:
 
 	//unitで初期化
 	SegmentTree(const size_t num): num(num) {
-		for (length = 1; length < num; length *= 2);
+		for (length = 1; length <= num; length *= 2);
 		node.resize(2 * length, Operator::unit_node);
 		range.resize(2 * length);
 		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
@@ -20,7 +20,7 @@ public:
 
 	//vectorで初期化
 	SegmentTree(const vector<TypeNode> & vec) : num(vec.size()) {
-		for (length = 1; length < vec.size(); length *= 2);
+		for (length = 1; length <= vec.size(); length *= 2);
 		node.resize(2 * length, Operator::unit_node);
 		for (int i = 0; i < vec.size(); ++i) node[i + length] = vec[i];
 		for (int i = length - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);
@@ -31,7 +31,7 @@ public:
  
 	//同じinitで初期化
 	SegmentTree(const size_t num, const TypeNode init) : num(num) {
-		for (length = 1; length < num; length *= 2);
+		for (length = 1; length <= num; length *= 2);
 		node.resize(2 * length, Operator::unit_node);
 		range.resize(2 * length);
 		for (int i = 0; i < length; ++i) node[i+length] = init;
@@ -89,6 +89,19 @@ public:
 		}
 		return off;
 	}
+
+	
+	void print(){
+		// cout << "node" << endl;
+		// for(int i = 1,j = 1; i < 2*length; ++i) {
+		// 	cout << node[i] << " ";
+		// 	if(i==((1<<j)-1) && ++j) cout << endl;
+		// }
+		cout << "vector" << endl;
+		cout << "{ " << get(0,1);
+		for(int i = 1; i < length; ++i) cout << ", " << get(i,i+1);
+		cout << " }" << endl;
+	}
 };
 
 //一点更新 区間最小
@@ -100,7 +113,7 @@ template<class T> struct NodeMinPointUpdate {
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
 
-//一点加算 区間最大
+//一点加算 区間総和
 template<class T> struct NodeSumPointAdd {
 	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
