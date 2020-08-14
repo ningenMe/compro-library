@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: RangeIndex
+# :heavy_check_mark: Mod
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#76d75a8065c92efe3b83e817563c11ef">lib/util</a>
-* <a href="{{ site.github.repository_url }}/blob/master/lib/util/RangeIndex.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/util/Mod.cpp">View this file on GitHub</a>
     - Last commit date: 2020-08-15 06:33:25+09:00
 
 
@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/test/util/RangeIndex.test.cpp.html">test/util/RangeIndex.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/util/Mod.test.cpp.html">test/util/Mod.test.cpp</a>
 
 
 ## Code
@@ -47,61 +47,42 @@ layout: default
 {% raw %}
 ```cpp
 /*
- * @title RangeIndex
+ * @title Mod
  */
-class RangeIndex{
-	int length;
+class Mod{
 public:
-	RangeIndex(const int N) {
-		for (length = 1; length <= N; length *= 2);
-	}
-	//[l,r)
-	vector<int> range(int l,int r) {
-		vector<int> res;
-		for(l += length, r += length; l < r; l >>=1, r >>=1) {
-			if(l&1) res.push_back(l++);
-			if(r&1) res.push_back(--r);
-		}
+	//Pow_Mod O(log(n))
+	inline static long long pow(long long x, long long n, long long mod) {
+		long long res = 1;
+		for (x %= mod; n > 0; n >>= 1, (x *= x) %= mod) if (n & 1) (res *= x) %= mod;
 		return res;
 	}
-	inline int operator[](int idx) {
-		return idx+length;
-	}
-	inline size_t size(void){
-		return length;
+	//Inv_Mod O(log(mod))
+	inline static long long inv(long long x, long long mod){
+		return pow(x,mod-2,mod); 
 	}
 };
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "lib/util/RangeIndex.cpp"
+#line 1 "lib/util/Mod.cpp"
 /*
- * @title RangeIndex
+ * @title Mod
  */
-class RangeIndex{
-	int length;
+class Mod{
 public:
-	RangeIndex(const int N) {
-		for (length = 1; length <= N; length *= 2);
-	}
-	//[l,r)
-	vector<int> range(int l,int r) {
-		vector<int> res;
-		for(l += length, r += length; l < r; l >>=1, r >>=1) {
-			if(l&1) res.push_back(l++);
-			if(r&1) res.push_back(--r);
-		}
+	//Pow_Mod O(log(n))
+	inline static long long pow(long long x, long long n, long long mod) {
+		long long res = 1;
+		for (x %= mod; n > 0; n >>= 1, (x *= x) %= mod) if (n & 1) (res *= x) %= mod;
 		return res;
 	}
-	inline int operator[](int idx) {
-		return idx+length;
-	}
-	inline size_t size(void){
-		return length;
+	//Inv_Mod O(log(mod))
+	inline static long long inv(long long x, long long mod){
+		return pow(x,mod-2,mod); 
 	}
 };
 

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: non-verified/UnionFindTreeMerge.cpp
+# :warning: old/UnionFindTreeMerge.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f62ece6ccc2c02f6163dc5f3da3d641d">non-verified</a>
-* <a href="{{ site.github.repository_url }}/blob/master/non-verified/UnionFindTreeMerge.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:29:01+09:00
+* category: <a href="../../index.html#149603e6c03516362a8da23f624db945">old</a>
+* <a href="{{ site.github.repository_url }}/blob/master/old/UnionFindTreeMerge.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-08-15 06:33:25+09:00
 
 
 
@@ -94,7 +94,7 @@ public:
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "non-verified/UnionFindTreeMerge.cpp"
+#line 1 "old/UnionFindTreeMerge.cpp"
 
 
 //Union Find Tree
