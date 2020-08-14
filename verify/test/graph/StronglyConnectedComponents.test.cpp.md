@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :question: <a href="../../../library/lib/graph/StronglyConnectedComponents.cpp.html">StronglyConnectedComponents</a>
-* :question: <a href="../../../library/lib/graph/UnionFindTree.cpp.html">UnionFindTree</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/UnionFindTree.cpp.html">UnionFindTree</a>
 
 
 ## Code

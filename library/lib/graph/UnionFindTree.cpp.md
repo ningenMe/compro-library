@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :question: UnionFindTree
+# :heavy_check_mark: UnionFindTree
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -40,7 +40,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../verify/test/graph/StronglyConnectedComponents.test.cpp.html">test/graph/StronglyConnectedComponents.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/graph/UnionFindTree.test.cpp.html">test/graph/UnionFindTree.test.cpp</a>
-* :x: <a href="../../../verify/test/util/RangeIndex.test.cpp.html">test/util/RangeIndex.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/util/RangeIndex.test.cpp.html">test/util/RangeIndex.test.cpp</a>
 
 
 ## Code

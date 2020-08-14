@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/util/RangeIndex.test.cpp
+# :heavy_check_mark: test/util/RangeIndex.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#b474f495c8582ac5f92778a42ae814fa">test/util</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/util/RangeIndex.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-15 04:02:21+09:00
+    - Last commit date: 2020-08-15 04:04:43+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/699">https://yukicoder.me/problems/no/699</a>
+* see: <a href="https://yukicoder.me/problems/no/1170">https://yukicoder.me/problems/no/1170</a>
 
 
 ## Depends on
 
-* :question: <a href="../../../library/lib/graph/UnionFindTree.cpp.html">UnionFindTree</a>
-* :x: <a href="../../../library/lib/util/RangeIndex.cpp.html">RangeIndex</a>
+* :heavy_check_mark: <a href="../../../library/lib/graph/UnionFindTree.cpp.html">UnionFindTree</a>
+* :heavy_check_mark: <a href="../../../library/lib/util/RangeIndex.cpp.html">RangeIndex</a>
 
 
 ## Code
@@ -48,7 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://yukicoder.me/problems/no/699"
+#define PROBLEM "https://yukicoder.me/problems/no/1170"
 
 #include <vector>
 #include <iostream>
@@ -98,7 +98,7 @@ int main() {
 {% raw %}
 ```cpp
 #line 1 "test/util/RangeIndex.test.cpp"
-#define PROBLEM "https://yukicoder.me/problems/no/699"
+#define PROBLEM "https://yukicoder.me/problems/no/1170"
 
 #include <vector>
 #include <iostream>

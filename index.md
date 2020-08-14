@@ -53,7 +53,7 @@ layout: default
 * :x: <a href="library/lib/graph/MinimumDirectedClosedCircuit.cpp.html">MinimumDirectedClosedCircuit</a>
 * :question: <a href="library/lib/graph/StronglyConnectedComponents.cpp.html">StronglyConnectedComponents</a>
 * :heavy_check_mark: <a href="library/lib/graph/Tree.cpp.html">Tree</a>
-* :question: <a href="library/lib/graph/UnionFindTree.cpp.html">UnionFindTree</a>
+* :heavy_check_mark: <a href="library/lib/graph/UnionFindTree.cpp.html">UnionFindTree</a>
 
 
 <div id="9d4770b6051a64e71c3ca0eb1d2879e1"></div>
@@ -99,7 +99,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/lib/util/ModInt.cpp.html">ModInt</a>
 * :heavy_check_mark: <a href="library/lib/util/NBase.cpp.html">NBase</a>
-* :x: <a href="library/lib/util/RangeIndex.cpp.html">RangeIndex</a>
+* :heavy_check_mark: <a href="library/lib/util/RangeIndex.cpp.html">RangeIndex</a>
 
 
 <div id="f62ece6ccc2c02f6163dc5f3da3d641d"></div>
@@ -223,6 +223,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/segment/Swag.test.cpp.html">test/segment/Swag.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/util/ModInt.test.cpp.html">test/util/ModInt.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/util/NBase.test.cpp.html">test/util/NBase.test.cpp</a>
-* :x: <a href="verify/test/util/RangeIndex.test.cpp.html">test/util/RangeIndex.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/util/RangeIndex.test.cpp.html">test/util/RangeIndex.test.cpp</a>
 
 
