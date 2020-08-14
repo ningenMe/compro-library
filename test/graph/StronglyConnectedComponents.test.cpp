@@ -26,20 +26,20 @@ int main(){
     UnionFindTree uf(N);
     for(auto& e:bedge){
         int a = e.first,b = e.second;
-        if(uf.same(a,b)){
+        if(uf.connected(a,b)){
             cout << "Yes" << endl;
             return 0;
         }
-        uf.unite(a,b);
+        uf.merge(a,b);
     }
     StronglyConnectedComponents scc(N);
     for(auto& e:edge){
         int a = e.first,b = e.second;
-        if(uf.same(a,b)){
+        if(uf.connected(a,b)){
             cout << "Yes" << endl;
             return 0;
         }
-        scc.make_edge(uf.root(a),uf.root(b));
+        scc.make_edge(uf[a],uf[b]);
     }
     scc.solve();
     vector<int> cnt(N,0);

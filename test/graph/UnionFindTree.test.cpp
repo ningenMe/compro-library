@@ -11,7 +11,7 @@ int main(){
     UnionFindTree uf(N);
     while(Q--){
         int q,a,b; cin >> q >> a >> b;
-        if(q) cout << uf.same(a,b) << endl;
-        else uf.unite(a,b);
+        if(q) cout << uf.connected(a,b) << endl;
+        else uf.merge(a,b);
     }
 }
