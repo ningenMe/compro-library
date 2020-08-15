@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/SegmentTree-rsq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-08 06:00:46+09:00
+    - Last commit date: 2020-08-15 13:23:09+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B</a>
@@ -122,6 +122,7 @@ public:
 		node.resize(2 * length, Operator::unit_node);
 		range.resize(2 * length);
 		for (int i = 0; i < length; ++i) node[i+length] = init;
+		for (int i = length - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);
 		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
 		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
 	}
@@ -177,11 +178,15 @@ public:
 		return off;
 	}
 
-	
 	void print(){
 		// cout << "node" << endl;
 		// for(int i = 1,j = 1; i < 2*length; ++i) {
 		// 	cout << node[i] << " ";
+		// 	if(i==((1<<j)-1) && ++j) cout << endl;
+		// }
+		// cout << "lazy" << endl;
+		// for(int i = 1,j = 1; i < 2*length; ++i) {
+		// 	cout << lazy[i] << " ";
 		// 	if(i==((1<<j)-1) && ++j) cout << endl;
 		// }
 		cout << "vector" << endl;
