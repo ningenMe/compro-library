@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/Tree.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:48:46+09:00
+    - Last commit date: 2020-08-15 20:43:47+09:00
 
 
 
@@ -352,7 +352,7 @@ template<class T> struct TreeOperator{
 		return {l.first+r.first,l.second+r.second};
 	}
 };
-//Tree<treeOperator<ll>> tree(N);
+//Tree<TreeOperator<ll>> tree(N);
 ```
 {% endraw %}
 
@@ -656,7 +656,7 @@ template<class T> struct TreeOperator{
 		return {l.first+r.first,l.second+r.second};
 	}
 };
-//Tree<treeOperator<ll>> tree(N);
+//Tree<TreeOperator<ll>> tree(N);
 
 ```
 {% endraw %}
