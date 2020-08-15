@@ -1,4 +1,4 @@
-#define PROBLEM "https://yukicoder.me/problems/no/1065"
+#define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
 #define ERROR 0.0001
 #include <vector>
 #include <iostream>
