@@ -294,4 +294,4 @@ template<class T> struct TreeOperator{
 		return {l.first+r.first,l.second+r.second};
 	}
 };
-//Tree<treeOperator<ll>> tree(N);
+//Tree<TreeOperator<ll>> tree(N);
