@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: Distance
+# :question: Distance
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -39,7 +39,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../../verify/test/geometory/Distance-line.test.cpp.html">test/geometory/Distance-line.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/graph/Dijkstra.test.cpp.html">test/graph/Dijkstra.test.cpp</a>
+* :x: <a href="../../../verify/test/graph/Dijkstra.test.cpp.html">test/graph/Dijkstra.test.cpp</a>
 
 
 ## Code

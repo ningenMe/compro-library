@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/geometory/Distance.cpp.html">Distance</a>
+* :question: <a href="../../../library/lib/geometory/Distance.cpp.html">Distance</a>
 
 
 ## Code

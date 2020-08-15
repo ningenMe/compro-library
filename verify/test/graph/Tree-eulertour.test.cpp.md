@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/Tree-eulertour.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-15 20:43:47+09:00
+    - Last commit date: 2020-08-16 00:24:44+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/900">https://yukicoder.me/problems/no/900</a>
@@ -170,7 +170,7 @@ public:
 	}
 	//O(N) anytime
 	void make_depth(const int root) {
-		if(executed_flag[MAKE_DEPTH]++) return;
+		executed_flag[MAKE_DEPTH]++;
 		depth[root] = 0;
 		dist[root] = Operator::unit_dist;
 		ord = 0;
@@ -180,7 +180,7 @@ public:
 	}
 	//O(N) anytime for forest
 	void make_depth(void) {
-		if(executed_flag[MAKE_DEPTH]++) return;
+		executed_flag[MAKE_DEPTH]++;
 		ord = 0;
 		for(size_t root = 0; root < num; ++root) {
 			if(depth[root] != -1) continue;
@@ -263,11 +263,21 @@ public:
 		return Operator::func_lca(ancl,ancr);
 	}
 	//O(N) anytime
-	int diameter(void){
+	//pair<diameter,vertex_set>
+	pair<TypeDist,vector<int>> diameter(void){
 		make_depth(0);
-		int tmp = max_element(depth.begin(), depth.end()) - depth.begin();
-		make_depth(tmp);
-		return *max_element(depth.begin(), depth.end());
+		int root = max_element(dist.begin(), dist.end()) - dist.begin();
+		make_depth(root);
+		int leaf = max_element(dist.begin(), dist.end()) - dist.begin();
+		make_parent();
+		TypeDist d = dist[leaf];
+		vector<int> v;
+		while (leaf != root) {
+			v.push_back(leaf);
+			leaf = parent[leaf].first;
+		}
+		v.push_back(root);
+		return make_pair(d,v);
 	}
 	//O(N^2) after make_depth
 	void make_subtree(const int root = 0) {
@@ -424,7 +434,6 @@ template<class T> struct TreeOperator{
 		return {l.first+r.first,l.second+r.second};
 	}
 };
-//Tree<TreeOperator<ll>> tree(N);
 #line 1 "lib/segment/LazySegmentTree.cpp"
 /*
  * @title LazySegmentTree

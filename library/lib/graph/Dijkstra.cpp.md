@@ -25,20 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: Dijkstra
+# :x: Dijkstra
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#6e267a37887a7dcb68cbf7008d6c7e48">lib/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/graph/Dijkstra.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-30 17:30:34+09:00
+    - Last commit date: 2020-08-16 00:39:42+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/test/graph/Dijkstra.test.cpp.html">test/graph/Dijkstra.test.cpp</a>
+* :x: <a href="../../../verify/test/graph/Dijkstra-restore.test.cpp.html">test/graph/Dijkstra-restore.test.cpp</a>
+* :x: <a href="../../../verify/test/graph/Dijkstra.test.cpp.html">test/graph/Dijkstra.test.cpp</a>
 
 
 ## Code
@@ -57,10 +58,15 @@ template<class T> class Dijkstra {
 	T inf;
 	vector<vector<pair<T,int>>> edge;
 	vector<T> cost;
-public:
-	Dijkstra(int N,T inf):inf(inf),num_list(1,N),sum(1,1),N(N){
+	vector<int> dp;
+	void resize(const int N) {
 		edge.resize(N);
 		cost.resize(N);
+		dp.resize(N);
+	}
+public:
+	Dijkstra(int N,T inf):inf(inf),num_list(1,N),sum(1,1),N(N){
+		resize(N);
 	}
 	Dijkstra(initializer_list<long long> size_list,T inf):num_list(size_list),inf(inf),N(1){
 		for(long long& e:num_list) N *= e;
@@ -70,8 +76,7 @@ public:
 				sum[i] *= num_list[j];
 			}
 		}
-		edge.resize(N);
-		cost.resize(N);
+		resize(N);
 	}
 	void make_edge(int from, int to, T w) {
 		if(from < 0 || N <= from || to < 0 || N <= to) return;
@@ -99,7 +104,7 @@ public:
 		solve(start);
 	}
 	void solve(int start) {
-		for(int i = 0; i < N; ++i) cost[i] = inf;
+		for(int i = 0; i < N; ++i) cost[i] = inf, dp[i] = -1;
 		priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
 		cost[start] = 0;
 		pq.push({ 0,start });
@@ -111,6 +116,7 @@ public:
 				T w = v + u;
 				if (w < cost[to]) {
 					cost[to] = w;
+					dp[to] = from;
 					pq.push({ w,to });
 				}
 			}
@@ -128,6 +134,16 @@ public:
 			idx_itr++;
 		}
 		return get(idx);
+	}
+	//vertex [start->node1->node2->...->idx]
+	vector<int> restore(int idx) {
+		vector<int> res = {idx};
+		while(dp[idx] != -1) {
+			idx = dp[idx];
+			res.push_back(idx);
+		}
+		reverse(res.begin(),res.end());
+		return res;
 	}
 };
 ```
@@ -148,10 +164,15 @@ template<class T> class Dijkstra {
 	T inf;
 	vector<vector<pair<T,int>>> edge;
 	vector<T> cost;
-public:
-	Dijkstra(int N,T inf):inf(inf),num_list(1,N),sum(1,1),N(N){
+	vector<int> dp;
+	void resize(const int N) {
 		edge.resize(N);
 		cost.resize(N);
+		dp.resize(N);
+	}
+public:
+	Dijkstra(int N,T inf):inf(inf),num_list(1,N),sum(1,1),N(N){
+		resize(N);
 	}
 	Dijkstra(initializer_list<long long> size_list,T inf):num_list(size_list),inf(inf),N(1){
 		for(long long& e:num_list) N *= e;
@@ -161,8 +182,7 @@ public:
 				sum[i] *= num_list[j];
 			}
 		}
-		edge.resize(N);
-		cost.resize(N);
+		resize(N);
 	}
 	void make_edge(int from, int to, T w) {
 		if(from < 0 || N <= from || to < 0 || N <= to) return;
@@ -190,7 +210,7 @@ public:
 		solve(start);
 	}
 	void solve(int start) {
-		for(int i = 0; i < N; ++i) cost[i] = inf;
+		for(int i = 0; i < N; ++i) cost[i] = inf, dp[i] = -1;
 		priority_queue<pair<T, int>, vector<pair<T, int>>, greater<pair<T, int>>> pq;
 		cost[start] = 0;
 		pq.push({ 0,start });
@@ -202,6 +222,7 @@ public:
 				T w = v + u;
 				if (w < cost[to]) {
 					cost[to] = w;
+					dp[to] = from;
 					pq.push({ w,to });
 				}
 			}
@@ -219,6 +240,16 @@ public:
 			idx_itr++;
 		}
 		return get(idx);
+	}
+	//vertex [start->node1->node2->...->idx]
+	vector<int> restore(int idx) {
+		vector<int> res = {idx};
+		while(dp[idx] != -1) {
+			idx = dp[idx];
+			res.push_back(idx);
+		}
+		reverse(res.begin(),res.end());
+		return res;
 	}
 };
 

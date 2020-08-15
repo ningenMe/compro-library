@@ -25,21 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/graph/Dijkstra.test.cpp
+# :x: test/graph/Dijkstra-restore.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/graph/Dijkstra.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-16 00:39:42+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/graph/Dijkstra-restore.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-08-16 00:41:07+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/1065">https://yukicoder.me/problems/no/1065</a>
+* see: <a href="https://judge.yosupo.jp/problem/shortest_path">https://judge.yosupo.jp/problem/shortest_path</a>
 
 
 ## Depends on
 
-* :question: <a href="../../../library/lib/geometory/Distance.cpp.html">Distance</a>
 * :x: <a href="../../../library/lib/graph/Dijkstra.cpp.html">Dijkstra</a>
 
 
@@ -48,7 +47,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://yukicoder.me/problems/no/1065"
+#define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
 #define ERROR 0.0001
 #include <vector>
 #include <iostream>
@@ -56,25 +55,28 @@ layout: default
 #include <cmath>
 using namespace std;
 #include "../../lib/graph/Dijkstra.cpp"
-#include "../../lib/geometory/Distance.cpp"
 
 int main() {
-    int N,M; cin >> N >> M;
-    Dijkstra<double> dij(N,1e15);
-    int s,t; cin >> s >> t; s--,t--;
-    vector<double> p(N),q(N); 
-    for(int i = 0; i < N; ++i) {
-        cin >> p[i] >> q[i];
-    }
-    for(int i = 0; i < M; ++i) {
-        int u,v; cin >> u >> v;
-        u--,v--;
-        double cost = Distance<double>::euclid(p[u],q[u],p[v],q[v]);
-        dij.make_edge(u,v,cost);
-        dij.make_edge(v,u,cost);
-    }
-    dij.solve(s);
-    printf("%.10f\n",dij.get(t));    
+    cin.tie(0);ios::sync_with_stdio(false);
+	int N,M,s,t;
+	cin >> N >> M >> s >> t;
+	long long inf = 1e15;
+	Dijkstra<long long> dijk(N,inf);
+	while(M--) {
+		int u,v,w; cin >> u >> v >> w;
+		dijk.make_edge(u,v,w);
+	}
+	dijk.solve(s);
+	long long cost = dijk.get(t);
+	if(cost == inf) {
+		cout << -1 << endl;
+		return 0;
+	}
+	auto v = dijk.restore(t);
+	cout << cost << " " << (int)v.size()-1 << endl;
+	for(int i = 0; i+1 < v.size(); ++i) {
+		cout << v[i] << " " << v[i+1] << endl;
+	}
     return 0;
 }
 ```
@@ -83,8 +85,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/graph/Dijkstra.test.cpp"
-#define PROBLEM "https://yukicoder.me/problems/no/1065"
+#line 1 "test/graph/Dijkstra-restore.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
 #define ERROR 0.0001
 #include <vector>
 #include <iostream>
@@ -191,47 +193,29 @@ public:
 		return res;
 	}
 };
-#line 1 "lib/geometory/Distance.cpp"
-/*
- * @title Distance
- */
-template<class T> class Distance{
-public:
-    //Euclidean distance
-    inline static constexpr T euclid(const T& x1, const T& y1, const T& x2, const T& y2) {
-        return sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
-    }
-    //Chebyshev distance
-    inline static constexpr T chebyshev(T x1, T y1, T x2, T y2) {
-        return max(abs(x1 - x2),abs(y1 - y2));
-    }
-    //Manhattan distance
-    inline static constexpr T manhattan(T x1, T y1, T x2, T y2) {
-        return abs(x1 - x2)+abs(y1 - y2);
-    }
-    inline static constexpr T between_point_and_line(const T& x,const T& y,const T& x1,const T& y1,const T& x2,const T& y2){
-        return abs((y2 - y1)*x+(x1 - x2)*y-(y2-y1)*x1+(x2-x1)*y1)/sqrt((y2 - y1)*(y2 - y1)+(x1 - x2)*(x1 - x2));
-    }
-};
-#line 10 "test/graph/Dijkstra.test.cpp"
+#line 9 "test/graph/Dijkstra-restore.test.cpp"
 
 int main() {
-    int N,M; cin >> N >> M;
-    Dijkstra<double> dij(N,1e15);
-    int s,t; cin >> s >> t; s--,t--;
-    vector<double> p(N),q(N); 
-    for(int i = 0; i < N; ++i) {
-        cin >> p[i] >> q[i];
-    }
-    for(int i = 0; i < M; ++i) {
-        int u,v; cin >> u >> v;
-        u--,v--;
-        double cost = Distance<double>::euclid(p[u],q[u],p[v],q[v]);
-        dij.make_edge(u,v,cost);
-        dij.make_edge(v,u,cost);
-    }
-    dij.solve(s);
-    printf("%.10f\n",dij.get(t));    
+    cin.tie(0);ios::sync_with_stdio(false);
+	int N,M,s,t;
+	cin >> N >> M >> s >> t;
+	long long inf = 1e15;
+	Dijkstra<long long> dijk(N,inf);
+	while(M--) {
+		int u,v,w; cin >> u >> v >> w;
+		dijk.make_edge(u,v,w);
+	}
+	dijk.solve(s);
+	long long cost = dijk.get(t);
+	if(cost == inf) {
+		cout << -1 << endl;
+		return 0;
+	}
+	auto v = dijk.restore(t);
+	cout << cost << " " << (int)v.size()-1 << endl;
+	for(int i = 0; i+1 < v.size(); ++i) {
+		cout << v[i] << " " << v[i+1] << endl;
+	}
     return 0;
 }
 
