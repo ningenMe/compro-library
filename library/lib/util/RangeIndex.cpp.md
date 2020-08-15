@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#76d75a8065c92efe3b83e817563c11ef">lib/util</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/util/RangeIndex.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-15 06:33:25+09:00
+    - Last commit date: 2020-08-15 15:57:08+09:00
 
 
 
@@ -49,36 +49,6 @@ layout: default
 /*
  * @title RangeIndex
  */
-class RangeIndex{
-	int length;
-public:
-	RangeIndex(const int N) {
-		for (length = 1; length <= N; length *= 2);
-	}
-	//[l,r)
-	vector<int> range(int l,int r) {
-		vector<int> res;
-		for(l += length, r += length; l < r; l >>=1, r >>=1) {
-			if(l&1) res.push_back(l++);
-			if(r&1) res.push_back(--r);
-		}
-		return res;
-	}
-	inline int operator[](int idx) {
-		return idx+length;
-	}
-	inline size_t size(void){
-		return length;
-	}
-};
-
-```
-{% endraw %}
-
-<a id="bundled"></a>
-{% raw %}
-```cpp
-#line 1 "lib/util/RangeIndex.cpp"
 /*
  * @title RangeIndex
  */
@@ -97,11 +67,59 @@ public:
 		}
 		return res;
 	}
+	// ranges that include x
+	vector<int> include_range(int x) {
+		vector<int> res;
+        for(int i=x+length; i; i >>= 1) res.push_back(i);
+		return res;
+	}
 	inline int operator[](int idx) {
 		return idx+length;
 	}
 	inline size_t size(void){
-		return length;
+		return 2*length;
+	}
+};
+
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "lib/util/RangeIndex.cpp"
+/*
+ * @title RangeIndex
+ */
+/*
+ * @title RangeIndex
+ */
+class RangeIndex{
+	int length;
+public:
+	RangeIndex(const int N) {
+		for (length = 1; length <= N; length *= 2);
+	}
+	//[l,r)
+	vector<int> range(int l,int r) {
+		vector<int> res;
+		for(l += length, r += length; l < r; l >>=1, r >>=1) {
+			if(l&1) res.push_back(l++);
+			if(r&1) res.push_back(--r);
+		}
+		return res;
+	}
+	// ranges that include x
+	vector<int> include_range(int x) {
+		vector<int> res;
+        for(int i=x+length; i; i >>= 1) res.push_back(i);
+		return res;
+	}
+	inline int operator[](int idx) {
+		return idx+length;
+	}
+	inline size_t size(void){
+		return 2*length;
 	}
 };
 
