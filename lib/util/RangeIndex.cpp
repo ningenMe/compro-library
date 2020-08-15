@@ -1,6 +1,9 @@
 /*
  * @title RangeIndex
  */
+/*
+ * @title RangeIndex
+ */
 class RangeIndex{
 	int length;
 public:
@@ -16,10 +19,16 @@ public:
 		}
 		return res;
 	}
+	// ranges that include x
+	vector<int> include_range(int x) {
+		vector<int> res;
+        for(int i=x+length; i; i >>= 1) res.push_back(i);
+		return res;
+	}
 	inline int operator[](int idx) {
 		return idx+length;
 	}
 	inline size_t size(void){
-		return length;
+		return 2*length;
 	}
 };

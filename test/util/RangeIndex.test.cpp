@@ -16,8 +16,8 @@ int main() {
     for(int i = 0; i < N; ++i) cin >> X[i];
     X.push_back(1e10);
     RangeIndex ri(N);
-    UnionFindTree uf(2*ri.size());
-    vector<int> st(2*ri.size(),0);
+    UnionFindTree uf(ri.size());
+    vector<int> st(ri.size(),0);
     for(int i = 0; i < N; ++i) {
         int l = lower_bound(X.begin(),X.end(),X[i]+A)-X.begin();
         int r = upper_bound(X.begin(),X.end(),X[i]+B)-X.begin();
@@ -27,10 +27,9 @@ int main() {
         }
     }
     for(int i = 0; i < N; ++i) {
-        int j=i+ri.size();
-        while(j >>= 1) if(st[j]) uf.merge(ri[i],j);
+        for(auto& e:ri.include_range(i)) if(st[e]) uf.merge(ri[i],e);
     }
-    vector<int> cnt(2*ri.size(),0);
+    vector<int> cnt(ri.size(),0);
     for(int i = 0; i < N; ++i) {
         cnt[uf[ri[i]]]++;
     }
