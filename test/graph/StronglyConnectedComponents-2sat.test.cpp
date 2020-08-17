@@ -1,5 +1,4 @@
 #define PROBLEM "https://yukicoder.me/problems/no/1078"
-#define IGNORE
 
 #include <vector>
 #include <iostream>

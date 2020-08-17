@@ -1,4 +1,5 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/cycle_detection"
+#define IGNORE
 
 #include <vector>
 #include <iostream>
