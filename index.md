@@ -41,14 +41,14 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/geometory/Argument.cpp.html">Argument</a>
 * :heavy_check_mark: <a href="library/lib/geometory/ConvexHullTrick.cpp.html">ConvexHullTrick</a>
 * :heavy_check_mark: <a href="library/lib/geometory/ConvexHullTrickMonotone.cpp.html">ConvexHullTrickMonotone</a>
-* :question: <a href="library/lib/geometory/Distance.cpp.html">Distance</a>
+* :heavy_check_mark: <a href="library/lib/geometory/Distance.cpp.html">Distance</a>
 
 
 <div id="6e267a37887a7dcb68cbf7008d6c7e48"></div>
 
 ### lib/graph
 
-* :x: <a href="library/lib/graph/Dijkstra.cpp.html">Dijkstra</a>
+* :heavy_check_mark: <a href="library/lib/graph/Dijkstra.cpp.html">Dijkstra</a>
 * :heavy_check_mark: <a href="library/lib/graph/Dinic.cpp.html">Dinic</a>
 * :x: <a href="library/lib/graph/MinimumDirectedClosedCircuit.cpp.html">MinimumDirectedClosedCircuit</a>
 * :question: <a href="library/lib/graph/StronglyConnectedComponents.cpp.html">StronglyConnectedComponents</a>
@@ -183,8 +183,8 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrickMonotone-max.test.cpp.html">test/geometory/ConvexHullTrickMonotone-max.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrickMonotone-min.test.cpp.html">test/geometory/ConvexHullTrickMonotone-min.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/geometory/Distance-line.test.cpp.html">test/geometory/Distance-line.test.cpp</a>
-* :x: <a href="verify/test/graph/Dijkstra-restore.test.cpp.html">test/graph/Dijkstra-restore.test.cpp</a>
-* :x: <a href="verify/test/graph/Dijkstra.test.cpp.html">test/graph/Dijkstra.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graph/Dijkstra-restore.test.cpp.html">test/graph/Dijkstra-restore.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graph/Dijkstra.test.cpp.html">test/graph/Dijkstra.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Dinic.test.cpp.html">test/graph/Dinic.test.cpp</a>
 * :x: <a href="verify/test/graph/MinimumDirectedClosedCircuit.test.cpp.html">test/graph/MinimumDirectedClosedCircuit.test.cpp</a>
 * :x: <a href="verify/test/graph/StronglyConnectedComponents-2sat.test.cpp.html">test/graph/StronglyConnectedComponents-2sat.test.cpp</a>
