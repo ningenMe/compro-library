@@ -4,6 +4,7 @@
 #include <iostream>
 #include <queue>
 #include <cmath>
+#include <algorithm>
 using namespace std;
 #include "../../lib/graph/Dijkstra.cpp"
 #include "../../lib/geometory/Distance.cpp"

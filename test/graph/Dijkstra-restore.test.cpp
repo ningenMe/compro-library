@@ -1,9 +1,9 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/shortest_path"
-#define ERROR 0.0001
 #include <vector>
 #include <iostream>
 #include <queue>
 #include <cmath>
+#include <algorithm>
 using namespace std;
 #include "../../lib/graph/Dijkstra.cpp"
 
