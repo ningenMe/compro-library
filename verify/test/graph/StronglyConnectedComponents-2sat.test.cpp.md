@@ -31,9 +31,10 @@ layout: default
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/StronglyConnectedComponents-2sat.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-13 00:33:57+09:00
+    - Last commit date: 2020-08-18 01:37:07+09:00
 
 
+* see: <a href="https://yukicoder.me/problems/no/1078">https://yukicoder.me/problems/no/1078</a>
 
 
 ## Depends on
@@ -47,7 +48,6 @@ layout: default
 {% raw %}
 ```cpp
 #define PROBLEM "https://yukicoder.me/problems/no/1078"
-#define IGNORE
 
 #include <vector>
 #include <iostream>
@@ -110,7 +110,6 @@ int main(){
 ```cpp
 #line 1 "test/graph/StronglyConnectedComponents-2sat.test.cpp"
 #define PROBLEM "https://yukicoder.me/problems/no/1078"
-#define IGNORE
 
 #include <vector>
 #include <iostream>
@@ -182,7 +181,7 @@ public:
 	}
 
 };
-#line 10 "test/graph/StronglyConnectedComponents-2sat.test.cpp"
+#line 9 "test/graph/StronglyConnectedComponents-2sat.test.cpp"
 
 int main(){
 	int N; cin >> N;
