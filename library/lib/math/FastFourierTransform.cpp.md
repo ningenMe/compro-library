@@ -21,16 +21,16 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: non-verified/FastFourierTransform.cpp
+# :warning: FastFourierTransform
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f62ece6ccc2c02f6163dc5f3da3d641d">non-verified</a>
-* <a href="{{ site.github.repository_url }}/blob/master/non-verified/FastFourierTransform.cpp">View this file on GitHub</a>
+* category: <a href="../../../index.html#b524a7b47b8ed72180f0e5150ab6d934">lib/math</a>
+* <a href="{{ site.github.repository_url }}/blob/master/lib/math/FastFourierTransform.cpp">View this file on GitHub</a>
     - Last commit date: 2020-08-23 15:54:46+09:00
 
 
@@ -41,6 +41,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+ * @title FastFourierTransform
+ */
 class FastFourierTransform{
     inline static constexpr double pi2 = 2.0 * M_PI;
     inline static constexpr pair<double,double> mul(const pair<double,double>& l,const pair<double,double>& r) {
@@ -82,7 +85,10 @@ public:
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "non-verified/FastFourierTransform.cpp"
+#line 1 "lib/math/FastFourierTransform.cpp"
+/*
+ * @title FastFourierTransform
+ */
 class FastFourierTransform{
     inline static constexpr double pi2 = 2.0 * M_PI;
     inline static constexpr pair<double,double> mul(const pair<double,double>& l,const pair<double,double>& r) {
@@ -122,5 +128,5 @@ public:
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
