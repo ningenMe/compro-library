@@ -1,3 +1,6 @@
+/*
+ * @title FastFourierTransform
+ */
 class FastFourierTransform{
     inline static constexpr double pi2 = 2.0 * M_PI;
     inline static constexpr pair<double,double> mul(const pair<double,double>& l,const pair<double,double>& r) {
