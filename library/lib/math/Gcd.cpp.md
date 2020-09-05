@@ -30,14 +30,16 @@ layout: default
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#b524a7b47b8ed72180f0e5150ab6d934">lib/math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/lib/math/GreatestCommonDivisor.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-13 02:48:46+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/lib/math/Gcd.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-05 23:00:06+09:00
 
 
 
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../../verify/test/math/Prime-miller-rabin.test.cpp.html">test/math/Prime-miller-rabin.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/Prime-rho.test.cpp.html">test/math/Prime-rho.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/segment/SegmentTree-binary-search.test.cpp.html">test/segment/SegmentTree-binary-search.test.cpp</a>
 
 
@@ -97,7 +99,7 @@ public:
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "lib/math/GreatestCommonDivisor.cpp"
+#line 1 "lib/math/Gcd.cpp"
 /*
  * @title Gcd
  */

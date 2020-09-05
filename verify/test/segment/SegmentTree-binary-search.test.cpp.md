@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/SegmentTree-binary-search.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-15 13:23:09+09:00
+    - Last commit date: 2020-09-05 23:00:06+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/4072">https://yukicoder.me/problems/4072</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/math/GreatestCommonDivisor.cpp.html">Gcd</a>
+* :heavy_check_mark: <a href="../../../library/lib/math/Gcd.cpp.html">Gcd</a>
 * :heavy_check_mark: <a href="../../../library/lib/segment/SegmentTree.cpp.html">SegmentTree</a>
 
 
@@ -54,7 +54,7 @@ layout: default
 #include <iostream>
 using namespace std;
 #include "../../lib/segment/SegmentTree.cpp"
-#include "../../lib/math/GreatestCommonDivisor.cpp"
+#include "../../lib/math/Gcd.cpp"
 
 template<class T> struct NodeGcdPointUpdate {
 	using TypeNode = T;
@@ -227,7 +227,7 @@ template<class T> struct NodeCompositePointUpdate {
 	inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
-#line 1 "lib/math/GreatestCommonDivisor.cpp"
+#line 1 "lib/math/Gcd.cpp"
 /*
  * @title Gcd
  */

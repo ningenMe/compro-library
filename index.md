@@ -72,7 +72,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/math/Eratosthenes.cpp.html">Eratosthenes</a>
 * :warning: <a href="library/lib/math/FastFourierTransform.cpp.html">FastFourierTransform</a>
 * :heavy_check_mark: <a href="library/lib/math/Garner.cpp.html">Garner</a>
-* :heavy_check_mark: <a href="library/lib/math/GreatestCommonDivisor.cpp.html">Gcd</a>
+* :heavy_check_mark: <a href="library/lib/math/Gcd.cpp.html">Gcd</a>
 * :heavy_check_mark: <a href="library/lib/math/Matrix.cpp.html">Matrix</a>
 * :heavy_check_mark: <a href="library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
 * :heavy_check_mark: <a href="library/lib/math/Prime.cpp.html">Prime</a>
@@ -208,7 +208,8 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/math/Matrix-pow.test.cpp.html">test/math/Matrix-pow.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransform.test.cpp.html">test/math/NumberTheoreticTransform.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransformArbitraryMod.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/Prime-is-prime.test.cpp.html">test/math/Prime-is-prime.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/Prime-miller-rabin.test.cpp.html">test/math/Prime-miller-rabin.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/Prime-rho.test.cpp.html">test/math/Prime-rho.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/BinaryIndexedTree-rsqraq.test.cpp.html">test/segment/BinaryIndexedTree-rsqraq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/BinaryTrie-set-xor-min.test.cpp.html">test/segment/BinaryTrie-set-xor-min.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/DisjointSparseTable.test.cpp.html">test/segment/DisjointSparseTable.test.cpp</a>
