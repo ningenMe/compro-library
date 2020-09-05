@@ -95,6 +95,13 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/segment/Swag.cpp.html">Swag</a>
 
 
+<div id="9a48db5fb6f746df590a3d4604f6478b"></div>
+
+### lib/string
+
+* :heavy_check_mark: <a href="library/lib/string/Zalgorithm.cpp.html">Zalgorithm</a>
+
+
 <div id="76d75a8065c92efe3b83e817563c11ef"></div>
 
 ### lib/util
@@ -135,7 +142,6 @@ layout: default
 * :warning: <a href="library/non-verified/Parser.cpp.html">non-verified/Parser.cpp</a>
 * :warning: <a href="library/non-verified/Partition_Number.cpp.html">non-verified/Partition_Number.cpp</a>
 * :warning: <a href="library/non-verified/Permutation_Mod.cpp.html">non-verified/Permutation_Mod.cpp</a>
-* :warning: <a href="library/non-verified/PrimeFactorization.cpp.html">non-verified/PrimeFactorization.cpp</a>
 * :warning: <a href="library/non-verified/Rarts.cpp.html">non-verified/Rarts.cpp</a>
 * :warning: <a href="library/non-verified/RollingHash.cpp.html">non-verified/RollingHash.cpp</a>
 * :warning: <a href="library/non-verified/SlideMost.cpp.html">non-verified/SlideMost.cpp</a>
@@ -161,6 +167,7 @@ layout: default
 * :warning: <a href="library/old/LiChaoTree.cpp.html">old/LiChaoTree.cpp</a>
 * :warning: <a href="library/old/Lowest_Common_Ancestor.cpp.html">old/Lowest_Common_Ancestor.cpp</a>
 * :warning: <a href="library/old/PowMod.cpp.html">old/PowMod.cpp</a>
+* :warning: <a href="library/old/PrimeFactorization.cpp.html">old/PrimeFactorization.cpp</a>
 * :warning: <a href="library/old/SegmentTree.cpp.html">old/SegmentTree.cpp</a>
 * :warning: <a href="library/old/SegmentTree2.cpp.html">old/SegmentTree2.cpp</a>
 * :warning: <a href="library/old/Segment_Tree_Range_Gcd_Query.cpp.html">old/Segment_Tree_Range_Gcd_Query.cpp</a>
@@ -228,6 +235,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTreeBeats-2.test.cpp.html">test/segment/SegmentTreeBeats-2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SparseTable.test.cpp.html">test/segment/SparseTable.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/Swag.test.cpp.html">test/segment/Swag.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/string/Zalgorithm.test.cpp.html">test/string/Zalgorithm.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/util/Mod.test.cpp.html">test/util/Mod.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/util/ModInt.test.cpp.html">test/util/ModInt.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/util/NBase.test.cpp.html">test/util/NBase.test.cpp</a>

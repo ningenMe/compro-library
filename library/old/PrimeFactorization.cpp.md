@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: non-verified/PrimeFactorization.cpp
+# :warning: old/PrimeFactorization.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f62ece6ccc2c02f6163dc5f3da3d641d">non-verified</a>
-* <a href="{{ site.github.repository_url }}/blob/master/non-verified/PrimeFactorization.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:29:01+09:00
+* category: <a href="../../index.html#149603e6c03516362a8da23f624db945">old</a>
+* <a href="{{ site.github.repository_url }}/blob/master/old/PrimeFactorization.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-06 00:15:05+09:00
 
 
 
@@ -63,7 +63,7 @@ vector<pair<long long,long long>> PrimeFactorization(long long N) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "non-verified/PrimeFactorization.cpp"
+#line 1 "old/PrimeFactorization.cpp"
 
 //Prime Factorization O(sqrt(N))
 vector<pair<long long,long long>> PrimeFactorization(long long N) {
