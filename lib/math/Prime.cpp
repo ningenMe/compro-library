@@ -2,13 +2,13 @@
  * @title Prime
  */
 class Prime{
-	using int128 = __int128_t;
-	using int64  = long long;
-	long long pow(long long x, long long n, long long mod) {
-		long long res = 1;
-		for (x %= mod; n > 0; n >>= 1, x=(int128(x)*x)%mod) if (n & 1) res = (int128(res)*x)%mod;
-		return res;
-	}
+    using int128 = __int128_t;
+    using int64  = long long;
+    long long pow(long long x, long long n, long long mod) {
+        long long res = 1;
+        for (x %= mod; n > 0; n >>= 1, x=(int128(x)*x)%mod) if (n & 1) res = (int128(res)*x)%mod;
+        return res;
+    }
     int64 rho(int64 n){
         if(miller_rabin(n)) return n;
         if(n%2 == 0) return 2;
@@ -32,19 +32,19 @@ class Prime{
         return l;
     }
 public:
-	int miller_rabin(const int64 n) {
+    int miller_rabin(const int64 n) {
         if(n == 2) return 1;
         if(n < 2 || n%2 == 0) return 0;
-		int64 m = n - 1;
-		for (;!(m&1);m>>=1);
-		for (int64 a: {2,325,9375,28178,450775,9780504,1795265022}) {
-			if(a>=n) break;
+        int64 m = n - 1;
+        for (;!(m&1);m>>=1);
+        for (int64 a: {2,325,9375,28178,450775,9780504,1795265022}) {
+            if(a>=n) break;
             int64 x=m,r=pow(a,x,n);
             for(;x != n-1 && r != 1 && r != n-1;x <<= 1) r = (int128(r)*r)%n;
             if(r!=n-1 && x%2==0) return 0;
-		}
-		return 1;
-	}
+        }
+        return 1;
+    }
     vector<pair<int64,int64>> factorization(int64 n) {
         auto v = factor(n);
         vector<pair<int64,int64>> vp;
