@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/graph/StronglyConnectedComponents-2sat.test.cpp
+# :heavy_check_mark: test/graph/StronglyConnectedComponents-2sat.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/graph/StronglyConnectedComponents-2sat.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-18 01:37:07+09:00
+    - Last commit date: 2020-09-05 23:37:37+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/1078">https://yukicoder.me/problems/no/1078</a>
+* see: <a href="https://judge.yosupo.jp/problem/two_sat">https://judge.yosupo.jp/problem/two_sat</a>
 
 
 ## Depends on
@@ -47,7 +47,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://yukicoder.me/problems/no/1078"
+#define PROBLEM "https://judge.yosupo.jp/problem/two_sat"
 
 #include <vector>
 #include <iostream>
@@ -57,47 +57,29 @@ using namespace std;
 #include "../../lib/graph/StronglyConnectedComponents.cpp"
 
 int main(){
-	int N; cin >> N;
-	//[0,N*N)       i番目は0
-	//[N*N,2*N*N)   i番目は1
-	StronglyConnectedComponents scc(N*N,1);
-	vector<int> S(N),T(N),U(N);
-	for(int i = 0; i < N; ++i) cin >> S[i],S[i]--;
-	for(int i = 0; i < N; ++i) cin >> T[i],T[i]--;
-	for(int i = 0; i < N; ++i) cin >> U[i];
-	for(int i = 0; i < N; ++i) {
-		for(int j = 0; j < N; ++j) {
-			int a=S[i],b=j,c=j,d=T[i];
-			int s=a*N+b,t=c*N+d;
-			if(U[i]==0) {
-				//ab=0&&cd=0がだめ
-				scc.make_condition(s,0,t,1);
-			}
-			if(U[i]==1) {
-				//ab=1&&cd=0がだめ
-				scc.make_condition(s,1,t,1);
-			}
-			if(U[i]==2) {
-				//ab=0&&cd=1がだめ
-				scc.make_condition(s,0,t,0);
-			}
-			if(U[i]==3) {
-				//ab=1&&cd=1がだめ
-				scc.make_condition(s,1,t,0);
-			}
-		}
-	}
-	int flg = scc.solve();
-	if(!flg){
-		cout << -1 << endl;
-		return 0;
-	}
-	for(int i = 0; i < N; ++i) {
-		for(int j = 0; j < N; ++j) {
-			cout << scc.is_true(i*N+j) << " ";
-		}
-		cout << endl;
-	}
+    cin.tie(0);ios::sync_with_stdio(false);
+    string _; cin >> _ >> _;
+    int N,M; cin >> N >> M;
+    StronglyConnectedComponents scc(N,1);
+    while(M--) {
+        int u,v,t; cin >> u >> v >> t;
+        int fu=1,fv=1;
+        if(u<0) fu=0;
+        if(v<0) fv=0;
+        u = abs(u)-1;
+        v = abs(v)-1;
+        scc.make_condition(u,!fu,v,fv);
+    }
+    if(scc.solve()) {
+        cout << "s SATISFIABLE\nv";
+        for(int i = 0; i < N; ++i) {
+            cout << " " << (2*scc.is_true(i)-1)*(i+1);
+        }
+        cout << " 0\n";
+    }
+    else {
+        cout << "s UNSATISFIABLE\n";
+    }
 
 	return 0;
 }
@@ -109,7 +91,7 @@ int main(){
 {% raw %}
 ```cpp
 #line 1 "test/graph/StronglyConnectedComponents-2sat.test.cpp"
-#define PROBLEM "https://yukicoder.me/problems/no/1078"
+#define PROBLEM "https://judge.yosupo.jp/problem/two_sat"
 
 #include <vector>
 #include <iostream>
@@ -184,47 +166,29 @@ public:
 #line 9 "test/graph/StronglyConnectedComponents-2sat.test.cpp"
 
 int main(){
-	int N; cin >> N;
-	//[0,N*N)       i番目は0
-	//[N*N,2*N*N)   i番目は1
-	StronglyConnectedComponents scc(N*N,1);
-	vector<int> S(N),T(N),U(N);
-	for(int i = 0; i < N; ++i) cin >> S[i],S[i]--;
-	for(int i = 0; i < N; ++i) cin >> T[i],T[i]--;
-	for(int i = 0; i < N; ++i) cin >> U[i];
-	for(int i = 0; i < N; ++i) {
-		for(int j = 0; j < N; ++j) {
-			int a=S[i],b=j,c=j,d=T[i];
-			int s=a*N+b,t=c*N+d;
-			if(U[i]==0) {
-				//ab=0&&cd=0がだめ
-				scc.make_condition(s,0,t,1);
-			}
-			if(U[i]==1) {
-				//ab=1&&cd=0がだめ
-				scc.make_condition(s,1,t,1);
-			}
-			if(U[i]==2) {
-				//ab=0&&cd=1がだめ
-				scc.make_condition(s,0,t,0);
-			}
-			if(U[i]==3) {
-				//ab=1&&cd=1がだめ
-				scc.make_condition(s,1,t,0);
-			}
-		}
-	}
-	int flg = scc.solve();
-	if(!flg){
-		cout << -1 << endl;
-		return 0;
-	}
-	for(int i = 0; i < N; ++i) {
-		for(int j = 0; j < N; ++j) {
-			cout << scc.is_true(i*N+j) << " ";
-		}
-		cout << endl;
-	}
+    cin.tie(0);ios::sync_with_stdio(false);
+    string _; cin >> _ >> _;
+    int N,M; cin >> N >> M;
+    StronglyConnectedComponents scc(N,1);
+    while(M--) {
+        int u,v,t; cin >> u >> v >> t;
+        int fu=1,fv=1;
+        if(u<0) fu=0;
+        if(v<0) fv=0;
+        u = abs(u)-1;
+        v = abs(v)-1;
+        scc.make_condition(u,!fu,v,fv);
+    }
+    if(scc.solve()) {
+        cout << "s SATISFIABLE\nv";
+        for(int i = 0; i < N; ++i) {
+            cout << " " << (2*scc.is_true(i)-1)*(i+1);
+        }
+        cout << " 0\n";
+    }
+    else {
+        cout << "s UNSATISFIABLE\n";
+    }
 
 	return 0;
 }

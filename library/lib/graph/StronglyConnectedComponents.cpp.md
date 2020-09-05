@@ -39,7 +39,7 @@ layout: default
 ## Verified with
 
 * :x: <a href="../../../verify/test/graph/MinimumDirectedClosedCircuit.test.cpp.html">test/graph/MinimumDirectedClosedCircuit.test.cpp</a>
-* :x: <a href="../../../verify/test/graph/StronglyConnectedComponents-2sat.test.cpp.html">test/graph/StronglyConnectedComponents-2sat.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/graph/StronglyConnectedComponents-2sat.test.cpp.html">test/graph/StronglyConnectedComponents-2sat.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/graph/StronglyConnectedComponents.test.cpp.html">test/graph/StronglyConnectedComponents.test.cpp</a>
 
 
