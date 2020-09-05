@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 #include "../../lib/segment/SegmentTree.cpp"
-#include "../../lib/math/GreatestCommonDivisor.cpp"
+#include "../../lib/math/Gcd.cpp"
 
 template<class T> struct NodeGcdPointUpdate {
 	using TypeNode = T;
