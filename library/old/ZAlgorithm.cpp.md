@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: non-verified/ZArray.cpp
+# :warning: old/ZAlgorithm.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#f62ece6ccc2c02f6163dc5f3da3d641d">non-verified</a>
-* <a href="{{ site.github.repository_url }}/blob/master/non-verified/ZArray.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-04-26 16:29:01+09:00
+* category: <a href="../../index.html#149603e6c03516362a8da23f624db945">old</a>
+* <a href="{{ site.github.repository_url }}/blob/master/old/ZAlgorithm.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-06 00:20:54+09:00
 
 
 
@@ -41,10 +41,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-
 // O(N)
-template<class T> vector<int> ZArray(const vector<T> arr) {
-	int N = arr.size();
+vector<int> ZAlgorithm(const string str) {
+	int N = str.size();
 	vector<int> res(N);
 	for(int i = 1, j = 0; i < N; i++) {
 		if(i + res[i - j] < j + res[j]) {
@@ -52,25 +51,24 @@ template<class T> vector<int> ZArray(const vector<T> arr) {
 		} 
 		else {
 			int k = max(0, j + res[j] - i);
-			while(i + k < N && arr[k] == arr[i + k]) ++k;
+			while(i + k < N && str[k] == str[i + k]) ++k;
 			res[j = i] = k;
 		}
 	}
 	res[0] = N;
 	return res;
 }
-//verify https://atcoder.jp/contests/abc150/tasks/abc150_f
+//verify https://atcoder.jp/contests/abc135/tasks/abc135_f
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "non-verified/ZArray.cpp"
-
+#line 1 "old/ZAlgorithm.cpp"
 // O(N)
-template<class T> vector<int> ZArray(const vector<T> arr) {
-	int N = arr.size();
+vector<int> ZAlgorithm(const string str) {
+	int N = str.size();
 	vector<int> res(N);
 	for(int i = 1, j = 0; i < N; i++) {
 		if(i + res[i - j] < j + res[j]) {
@@ -78,14 +76,14 @@ template<class T> vector<int> ZArray(const vector<T> arr) {
 		} 
 		else {
 			int k = max(0, j + res[j] - i);
-			while(i + k < N && arr[k] == arr[i + k]) ++k;
+			while(i + k < N && str[k] == str[i + k]) ++k;
 			res[j = i] = k;
 		}
 	}
 	res[0] = N;
 	return res;
 }
-//verify https://atcoder.jp/contests/abc150/tasks/abc150_f
+//verify https://atcoder.jp/contests/abc135/tasks/abc135_f
 
 ```
 {% endraw %}

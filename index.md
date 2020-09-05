@@ -148,8 +148,6 @@ layout: default
 * :warning: <a href="library/non-verified/SmallestEnclosingDisc.cpp.html">non-verified/SmallestEnclosingDisc.cpp</a>
 * :warning: <a href="library/non-verified/Union_Find_Tree_Persistence.cpp.html">non-verified/Union_Find_Tree_Persistence.cpp</a>
 * :warning: <a href="library/non-verified/Union_Find_Tree_With_Potential.cpp.html">non-verified/Union_Find_Tree_With_Potential.cpp</a>
-* :warning: <a href="library/non-verified/ZAlgorithm.cpp.html">non-verified/ZAlgorithm.cpp</a>
-* :warning: <a href="library/non-verified/ZArray.cpp.html">non-verified/ZArray.cpp</a>
 * :warning: <a href="library/non-verified/Zarts.cpp.html">non-verified/Zarts.cpp</a>
 
 
@@ -180,6 +178,8 @@ layout: default
 * :warning: <a href="library/old/UnionFindTreeMerge.cpp.html">old/UnionFindTreeMerge.cpp</a>
 * :warning: <a href="library/old/UnionFindTreeSize.cpp.html">old/UnionFindTreeSize.cpp</a>
 * :warning: <a href="library/old/Weighted_Tree.cpp.html">old/Weighted_Tree.cpp</a>
+* :warning: <a href="library/old/ZAlgorithm.cpp.html">old/ZAlgorithm.cpp</a>
+* :warning: <a href="library/old/ZArray.cpp.html">old/ZArray.cpp</a>
 
 
 ## Verify Files
