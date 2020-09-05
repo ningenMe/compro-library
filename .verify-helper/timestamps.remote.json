@@ -49,6 +49,7 @@
 "test/segment/SegmentTreeBeats-2.test.cpp": "2020-06-16 22:38:57 +0900",
 "test/segment/SparseTable.test.cpp": "2020-05-13 02:48:46 +0900",
 "test/segment/Swag.test.cpp": "2020-08-15 20:43:47 +0900",
+"test/string/Zalgorithm.test.cpp": "2020-09-06 00:15:05 +0900",
 "test/util/Mod.test.cpp": "2020-08-15 06:33:25 +0900",
 "test/util/ModInt.test.cpp": "2020-05-30 17:16:02 +0900",
 "test/util/NBase.test.cpp": "2020-05-13 02:48:46 +0900",
