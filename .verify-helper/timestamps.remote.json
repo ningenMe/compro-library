@@ -28,6 +28,7 @@
 "test/math/Matrix-pow.test.cpp": "2020-07-21 07:40:12 +0900",
 "test/math/NumberTheoreticTransform.test.cpp": "2020-05-30 17:04:43 +0900",
 "test/math/NumberTheoreticTransformArbitraryMod.test.cpp": "2020-05-30 17:04:43 +0900",
+"test/math/Prime-is-prime.test.cpp": "2020-09-05 14:17:10 +0900",
 "test/segment/BinaryIndexedTree-rsqraq.test.cpp": "2020-05-13 02:48:46 +0900",
 "test/segment/BinaryTrie-set-xor-min.test.cpp": "2020-08-05 03:48:04 +0900",
 "test/segment/DisjointSparseTable.test.cpp": "2020-05-13 02:48:46 +0900",
