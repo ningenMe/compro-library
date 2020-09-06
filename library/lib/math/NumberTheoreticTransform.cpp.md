@@ -25,23 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: NumberTheoreticTransform
+# :heavy_check_mark: NumberTheoreticTransform
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#b524a7b47b8ed72180f0e5150ab6d934">lib/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/math/NumberTheoreticTransform.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-07 02:50:31+09:00
+    - Last commit date: 2020-09-07 03:05:15+09:00
 
 
 
 
 ## Verified with
 
-* :x: <a href="../../../verify/test/math/NumberTheoreticTransform1.test.cpp.html">test/math/NumberTheoreticTransform1.test.cpp</a>
-* :x: <a href="../../../verify/test/math/NumberTheoreticTransform2.test.cpp.html">test/math/NumberTheoreticTransform2.test.cpp</a>
-* :x: <a href="../../../verify/test/math/NumberTheoreticTransformArbitraryMod1.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod1.test.cpp</a>
-* :x: <a href="../../../verify/test/math/NumberTheoreticTransformArbitraryMod2.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod2.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/NumberTheoreticTransform1.test.cpp.html">test/math/NumberTheoreticTransform1.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/NumberTheoreticTransform2.test.cpp.html">test/math/NumberTheoreticTransform2.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/NumberTheoreticTransformArbitraryMod1.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod1.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/NumberTheoreticTransformArbitraryMod2.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod2.test.cpp</a>
 
 
 ## Code
@@ -121,7 +121,7 @@ template<int mod> class NumberTheoreticTransform {
 	}
 public:
 	inline vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>& mg,const vector<ModInt<998244353>>& mh){return convolution_friendrymod<998244353>(mg,mh);}
-	inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& mg,const vector<ModInt<1000000007>>& mh){return convolution_arbitrarymod<1000000007>(mg,mh);}
+	inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& mg,const vector<ModInt<1000000007>>& mh){return convolution_arbitrarymod(mg,mh);}
 };
 
 ```
@@ -203,7 +203,7 @@ template<int mod> class NumberTheoreticTransform {
 	}
 public:
 	inline vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>& mg,const vector<ModInt<998244353>>& mh){return convolution_friendrymod<998244353>(mg,mh);}
-	inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& mg,const vector<ModInt<1000000007>>& mh){return convolution_arbitrarymod<1000000007>(mg,mh);}
+	inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& mg,const vector<ModInt<1000000007>>& mh){return convolution_arbitrarymod(mg,mh);}
 };
 
 ```

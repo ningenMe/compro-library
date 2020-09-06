@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/math/NumberTheoreticTransformArbitraryMod1.test.cpp
+# :heavy_check_mark: test/math/NumberTheoreticTransformArbitraryMod1.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/NumberTheoreticTransformArbitraryMod1.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-07 02:50:31+09:00
+    - Last commit date: 2020-09-07 03:05:15+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/convolution_mod_1000000007">https://judge.yosupo.jp/problem/convolution_mod_1000000007</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
-* :question: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
+* :heavy_check_mark: <a href="../../../library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
+* :heavy_check_mark: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
 
 
 ## Code
@@ -198,7 +198,7 @@ template<int mod> class NumberTheoreticTransform {
 	}
 public:
 	inline vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>& mg,const vector<ModInt<998244353>>& mh){return convolution_friendrymod<998244353>(mg,mh);}
-	inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& mg,const vector<ModInt<1000000007>>& mh){return convolution_arbitrarymod<1000000007>(mg,mh);}
+	inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& mg,const vector<ModInt<1000000007>>& mh){return convolution_arbitrarymod(mg,mh);}
 };
 #line 9 "test/math/NumberTheoreticTransformArbitraryMod1.test.cpp"
 constexpr long long MOD = 1000'000'007;

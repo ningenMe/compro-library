@@ -75,7 +75,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/math/Garner.cpp.html">Garner</a>
 * :heavy_check_mark: <a href="library/lib/math/Gcd.cpp.html">Gcd</a>
 * :heavy_check_mark: <a href="library/lib/math/Matrix.cpp.html">Matrix</a>
-* :x: <a href="library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
+* :heavy_check_mark: <a href="library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
 * :heavy_check_mark: <a href="library/lib/math/Prime.cpp.html">Prime</a>
 
 
@@ -108,7 +108,7 @@ layout: default
 ### lib/util
 
 * :heavy_check_mark: <a href="library/lib/util/Mod.cpp.html">Mod</a>
-* :question: <a href="library/lib/util/ModInt.cpp.html">ModInt</a>
+* :heavy_check_mark: <a href="library/lib/util/ModInt.cpp.html">ModInt</a>
 * :heavy_check_mark: <a href="library/lib/util/NBase.cpp.html">NBase</a>
 * :heavy_check_mark: <a href="library/lib/util/RangeIndex.cpp.html">RangeIndex</a>
 
@@ -214,10 +214,10 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/math/Garner.test.cpp.html">test/math/Garner.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Matrix-det.test.cpp.html">test/math/Matrix-det.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Matrix-pow.test.cpp.html">test/math/Matrix-pow.test.cpp</a>
-* :x: <a href="verify/test/math/NumberTheoreticTransform1.test.cpp.html">test/math/NumberTheoreticTransform1.test.cpp</a>
-* :x: <a href="verify/test/math/NumberTheoreticTransform2.test.cpp.html">test/math/NumberTheoreticTransform2.test.cpp</a>
-* :x: <a href="verify/test/math/NumberTheoreticTransformArbitraryMod1.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod1.test.cpp</a>
-* :x: <a href="verify/test/math/NumberTheoreticTransformArbitraryMod2.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod2.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransform1.test.cpp.html">test/math/NumberTheoreticTransform1.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransform2.test.cpp.html">test/math/NumberTheoreticTransform2.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransformArbitraryMod1.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod1.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransformArbitraryMod2.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Prime-miller-rabin.test.cpp.html">test/math/Prime-miller-rabin.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Prime-rho.test.cpp.html">test/math/Prime-rho.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/BinaryIndexedTree-rsqraq.test.cpp.html">test/segment/BinaryIndexedTree-rsqraq.test.cpp</a>
