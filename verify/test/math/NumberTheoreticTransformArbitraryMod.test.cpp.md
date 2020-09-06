@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/math/NumberTheoreticTransformArbitraryMod.test.cpp
+# :heavy_check_mark: test/math/NumberTheoreticTransformArbitraryMod.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/NumberTheoreticTransformArbitraryMod.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-06 23:32:42+09:00
+    - Last commit date: 2020-09-07 01:58:37+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/754">https://yukicoder.me/problems/no/754</a>
@@ -39,7 +39,8 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
+* :heavy_check_mark: <a href="../../../library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
+* :heavy_check_mark: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
 
 
 ## Code
@@ -53,6 +54,7 @@ layout: default
 #include <iostream>
 #include <numeric>
 using namespace std;
+#include "../../lib/util/ModInt.cpp"
 #include "../../lib/math/NumberTheoreticTransform.cpp"
 constexpr long long MOD = 1000'000'007;
 
@@ -63,8 +65,8 @@ int main(void){
     for(int i = 0; i < N+1; ++i) cin >> B[i];
     NumberTheoreticTransform<MOD> ntt;
     auto C = ntt.convolution_arbitrarymod(A,B);
-    long long ans = 0;
-    for(int i = 0; i <= N; ++i) (ans += C[i]) %= MOD;
+    ModInt<MOD> ans = 0;
+    for(int i = 0; i <= N; ++i) ans += C[i];
     cout << ans << endl;
 	return 0;
 }
@@ -81,6 +83,48 @@ int main(void){
 #include <iostream>
 #include <numeric>
 using namespace std;
+#line 1 "lib/util/ModInt.cpp"
+/*
+ * @title ModInt
+ */
+template<long long mod> class ModInt {
+public:
+    long long x;
+    constexpr ModInt():x(0) {}
+    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}
+    ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator+=(const long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator-=(const int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}
+    ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}
+    ModInt &operator*=(const int y) {ModInt p(y);x = (x * p.x % mod);return *this;}
+    ModInt &operator^=(const ModInt &p) {x = (x ^ p.x) % mod;return *this;}
+    ModInt &operator^=(const long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}
+    ModInt &operator^=(const int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}
+    ModInt &operator/=(const ModInt &p) {*this *= p.inv();return *this;}
+    ModInt &operator/=(const long long y) {ModInt p(y);*this *= p.inv();return *this;}
+    ModInt &operator/=(const int y) {ModInt p(y);*this *= p.inv();return *this;}
+    ModInt operator=(const int y) {ModInt p(y);*this = p;return *this;}
+    ModInt operator=(const long long y) {ModInt p(y);*this = p;return *this;}
+    ModInt operator-() const {return ModInt(-x); }
+    ModInt operator++() {x++;if(x>=mod) x-=mod;return *this;}
+    ModInt operator--() {x--;if(x<0) x+=mod;return *this;}
+    ModInt operator+(const ModInt &p) const { return ModInt(*this) += p; }
+    ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }
+    ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }
+    ModInt operator/(const ModInt &p) const { return ModInt(*this) /= p; }
+    ModInt operator^(const ModInt &p) const { return ModInt(*this) ^= p; }
+    bool operator==(const ModInt &p) const { return x == p.x; }
+    bool operator!=(const ModInt &p) const { return x != p.x; }
+    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}
+    ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul *= mul,n >>= 1) if(n & 1) ret *= mul;return ret;}
+    friend ostream &operator<<(ostream &os, const ModInt &p) {return os << p.x;}
+    friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}
+};
+//using modint = ModInt<MOD>;
 #line 1 "lib/math/NumberTheoreticTransform.cpp"
 /*
  * @title NumberTheoreticTransform
@@ -157,7 +201,7 @@ public:
 		return res;
 	}
 };
-#line 8 "test/math/NumberTheoreticTransformArbitraryMod.test.cpp"
+#line 9 "test/math/NumberTheoreticTransformArbitraryMod.test.cpp"
 constexpr long long MOD = 1000'000'007;
 
 int main(void){
@@ -167,8 +211,8 @@ int main(void){
     for(int i = 0; i < N+1; ++i) cin >> B[i];
     NumberTheoreticTransform<MOD> ntt;
     auto C = ntt.convolution_arbitrarymod(A,B);
-    long long ans = 0;
-    for(int i = 0; i <= N; ++i) (ans += C[i]) %= MOD;
+    ModInt<MOD> ans = 0;
+    for(int i = 0; i <= N; ++i) ans += C[i];
     cout << ans << endl;
 	return 0;
 }
