@@ -31,10 +31,10 @@ layout: default
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/NumberTheoreticTransform1.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-07 02:50:31+09:00
+    - Last commit date: 2020-09-07 02:54:26+09:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/convolution_mod_1000000007">https://judge.yosupo.jp/problem/convolution_mod_1000000007</a>
+* see: <a href="https://judge.yosupo.jp/problem/convolution_mod">https://judge.yosupo.jp/problem/convolution_mod</a>
 
 
 ## Depends on
@@ -48,7 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod_1000000007"
+#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod"
 
 #include <vector>
 #include <iostream>
@@ -78,7 +78,7 @@ int main(void){
 {% raw %}
 ```cpp
 #line 1 "test/math/NumberTheoreticTransform1.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod_1000000007"
+#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod"
 
 #include <vector>
 #include <iostream>
