@@ -3,6 +3,9 @@
 #include <vector>
 #include <iostream>
 #include <numeric>
+#include <algorithm>
+#include <array>
+
 using namespace std;
 #include "../../lib/util/ModInt.cpp"
 #include "../../lib/math/NumberTheoreticTransform.cpp"

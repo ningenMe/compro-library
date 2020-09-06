@@ -9,6 +9,7 @@ template<int mod> class NumberTheoreticTransform {
 	inline static constexpr int inv31=766625513; // ModInt<mod3>(mod1).inv().x;
 	inline static constexpr int inv32=657107549; // ModInt<mod3>(mod2).inv().x;
 	inline static constexpr int prime12=(1002772198720536577LL) % mod;
+	inline static constexpr array<int,21> pow2 = {1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768,65536,131072,262144,524288,1048576};
 	using Mint = ModInt<mod>;
 	using Mint1 = ModInt<prime1>;
 	using Mint2 = ModInt<prime2>;
@@ -18,49 +19,39 @@ template<int mod> class NumberTheoreticTransform {
 		Mint3 t3 = ((b3-b1.x)*inv31-t2.x)*inv32;
 		return Mint(prime12*t3.x+b1.x+prime1*t2.x);
 	}
-	template<int prime> inline void ntt(vector<ModInt<prime>>& f,int sgn=1) {
-		int N = f.size();
-		ModInt<prime> h(3); h = h.pow((prime - 1) / N);
-		if (sgn == -1) h = h.inv();
-
-		for (int i = 0,j = 1; j < N - 1; ++j) {
-			for (int k = N >> 1; k > (i ^= k); k >>= 1);
-			if (j < i) swap(f[i], f[j]);
-		}
-		for (int i = 1,j = 2; i < N; i *= 2, j *= 2) {
-			ModInt<prime> w = 1, base = h.pow(N/j);
-			for(int k= 0;k < i; ++k, w*=base) {
-				for (int l = k; l < N; l += j) {
-					auto u = f[l];
-					auto d = f[l + i] * w;
-					f[l] = u + d;
-					f[l + i] = u - d;
+	template<int prime> inline void ntt(vector<ModInt<prime>>& f) {
+		const int N = f.size(), M = N>>1;
+		const int log2N = __builtin_ctz(N);
+		ModInt<prime> h(3); h = h.pow((prime - 1)/N);
+		vector<ModInt<prime>> base(log2N),g(N);
+		for(int i=0;i<log2N;++i) base[i] = h.pow(N/pow2[i+1]);
+		for(int n=0;n<log2N;++n) {
+			const int& p = pow2[log2N-n-1];
+			ModInt<prime> w = 1;
+			for (int i=0,k=0;i<M;i+=p,k=i<<1,w*=base[n]) {
+				for(int j=0;j<p;++j) {
+					ModInt<prime> l = f[k|j];
+					ModInt<prime> r = w * f[k|j|p];
+					g[i|j]   = l + r;
+					g[i|j|M] = l - r;
 				}
 			}
+			swap(f,g);
 		}
 	}
-	template<int prime=mod> inline vector<ModInt<prime>> convolution(const vector<long long>& a,const vector<long long>& b){
-		int N; for(N=1;N<a.size()+b.size(); N*=2);
-		vector<ModInt<prime>> f(N),g(N,0),h(N,0);
-		for(int i=0;i<a.size();++i) g[i]=a[i];
-		for(int i=0;i<b.size();++i) h[i]=b[i];
-		ntt<prime>(g); ntt<prime>(h);
-		for(int i = 0; i < N; ++i) f[i] = g[i]*h[i];
-		ntt<prime>(f,-1);
+	template<int prime=mod> inline vector<ModInt<prime>> convolution(const vector<Mint>& a,const vector<Mint>& b){
+		int N,M=a.size()+b.size()-1; for(N=1;N<M;N*=2);
 		ModInt<prime> inverse(N); inverse = inverse.inv();
-		for (auto& x : f) x = x * inverse;
-		return f;
+		vector<ModInt<prime>> g(N,0),h(N,0);
+		for(int i=0;i<a.size();++i) g[i]=a[i].x;
+		for(int i=0;i<b.size();++i) h[i]=b[i].x;
+		ntt<prime>(g); ntt<prime>(h);
+		for(int i = 0; i < N; ++i) g[i] = g[i]*h[i]*inverse;
+		reverse(g.begin()+1,g.end());
+		ntt<prime>(g);
+		return g;
 	}
-	template<int prime> inline vector<ModInt<prime>> convolution_friendrymod(const vector<Mint>& mg,const vector<Mint>& mh){
-		vector<long long> g(mg.size()),h(mh.size());
-		for(int i=0;i<g.size();++i) g[i]=mg[i].x;
-		for(int i=0;i<h.size();++i) h[i]=mh[i].x;
-		return convolution(g,h);
-	}
-	inline vector<Mint> convolution_arbitrarymod(const vector<Mint>& mg,const vector<Mint>& mh){
-		vector<long long> g(mg.size()),h(mh.size());
-		for(int i=0;i<g.size();++i) g[i]=mg[i].x;
-		for(int i=0;i<h.size();++i) h[i]=mh[i].x;
+	inline vector<Mint> convolution_arbitrarymod(const vector<Mint>& g,const vector<Mint>& h){
 		auto f1 = convolution<prime1>(g, h);
 		auto f2 = convolution<prime2>(g, h);
 		auto f3 = convolution<prime3>(g, h);
@@ -69,6 +60,6 @@ template<int mod> class NumberTheoreticTransform {
 		return f;
 	}
 public:
-	inline vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>& mg,const vector<ModInt<998244353>>& mh){return convolution_friendrymod<998244353>(mg,mh);}
-	inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& mg,const vector<ModInt<1000000007>>& mh){return convolution_arbitrarymod(mg,mh);}
+	inline vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){return convolution<998244353>(g,h);}
+	inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& g,const vector<ModInt<1000000007>>& h){return convolution_arbitrarymod(g,h);}
 };
