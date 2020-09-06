@@ -71,6 +71,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/math/CombinationMod.cpp.html">CombinationMod</a>
 * :heavy_check_mark: <a href="library/lib/math/Eratosthenes.cpp.html">Eratosthenes</a>
 * :warning: <a href="library/lib/math/FastFourierTransform.cpp.html">FastFourierTransform</a>
+* :warning: <a href="library/lib/math/FormalPowerSeries.cpp.html">FormalPowerSeries</a>
 * :heavy_check_mark: <a href="library/lib/math/Garner.cpp.html">Garner</a>
 * :heavy_check_mark: <a href="library/lib/math/Gcd.cpp.html">Gcd</a>
 * :heavy_check_mark: <a href="library/lib/math/Matrix.cpp.html">Matrix</a>

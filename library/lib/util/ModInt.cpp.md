@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#76d75a8065c92efe3b83e817563c11ef">lib/util</a>
 * <a href="{{ site.github.repository_url }}/blob/master/lib/util/ModInt.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-06 16:23:32+09:00
+    - Last commit date: 2020-09-06 21:12:06+09:00
 
 
 
@@ -56,40 +56,40 @@ layout: default
  */
 template<long long mod> class ModInt {
 public:
-	long long x;
-	constexpr ModInt():x(0) {}
-	constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}
-	ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}
-	ModInt &operator+=(const long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}
-	ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}
-	ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}
-	ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}
-	ModInt &operator-=(const int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}
-	ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}
-	ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}
-	ModInt &operator*=(const int y) {ModInt p(y);x = (x * p.x % mod);return *this;}
-	ModInt &operator^=(const ModInt &p) {x = (x ^ p.x) % mod;return *this;}
-	ModInt &operator^=(const long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}
-	ModInt &operator^=(const int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}
-	ModInt &operator/=(const ModInt &p) {*this *= p.inv();return *this;}
-	ModInt &operator/=(const long long y) {ModInt p(y);*this *= p.inv();return *this;}
-	ModInt &operator/=(const int y) {ModInt p(y);*this *= p.inv();return *this;}
-	ModInt operator=(const int y) {ModInt p(y);*this = p;return *this;}
-	ModInt operator=(const long long y) {ModInt p(y);*this = p;return *this;}
-	ModInt operator-() const {return ModInt(-x); }
+    long long x;
+    constexpr ModInt():x(0) {}
+    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}
+    ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator+=(const long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator-=(const int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}
+    ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}
+    ModInt &operator*=(const int y) {ModInt p(y);x = (x * p.x % mod);return *this;}
+    ModInt &operator^=(const ModInt &p) {x = (x ^ p.x) % mod;return *this;}
+    ModInt &operator^=(const long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}
+    ModInt &operator^=(const int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}
+    ModInt &operator/=(const ModInt &p) {*this *= p.inv();return *this;}
+    ModInt &operator/=(const long long y) {ModInt p(y);*this *= p.inv();return *this;}
+    ModInt &operator/=(const int y) {ModInt p(y);*this *= p.inv();return *this;}
+    ModInt operator=(const int y) {ModInt p(y);*this = p;return *this;}
+    ModInt operator=(const long long y) {ModInt p(y);*this = p;return *this;}
+    ModInt operator-() const {return ModInt(-x); }
     ModInt operator++() {x++;if(x>=mod) x-=mod;return *this;}
-	ModInt operator--() {x--;if(x<0) x+=mod;return *this;}
-	ModInt operator+(const ModInt &p) const { return ModInt(*this) += p; }
-	ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }
-	ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }
-	ModInt operator/(const ModInt &p) const { return ModInt(*this) /= p; }
-	ModInt operator^(const ModInt &p) const { return ModInt(*this) ^= p; }
-	bool operator==(const ModInt &p) const { return x == p.x; }
-	bool operator!=(const ModInt &p) const { return x != p.x; }
-	ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}
-	ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul *= mul,n >>= 1) if(n & 1) ret *= mul;return ret;}
-	friend ostream &operator<<(ostream &os, const ModInt &p) {return os << p.x;}
-	friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}
+    ModInt operator--() {x--;if(x<0) x+=mod;return *this;}
+    ModInt operator+(const ModInt &p) const { return ModInt(*this) += p; }
+    ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }
+    ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }
+    ModInt operator/(const ModInt &p) const { return ModInt(*this) /= p; }
+    ModInt operator^(const ModInt &p) const { return ModInt(*this) ^= p; }
+    bool operator==(const ModInt &p) const { return x == p.x; }
+    bool operator!=(const ModInt &p) const { return x != p.x; }
+    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}
+    ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul *= mul,n >>= 1) if(n & 1) ret *= mul;return ret;}
+    friend ostream &operator<<(ostream &os, const ModInt &p) {return os << p.x;}
+    friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}
 };
 //using modint = ModInt<MOD>;
 ```
@@ -104,40 +104,40 @@ public:
  */
 template<long long mod> class ModInt {
 public:
-	long long x;
-	constexpr ModInt():x(0) {}
-	constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}
-	ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}
-	ModInt &operator+=(const long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}
-	ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}
-	ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}
-	ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}
-	ModInt &operator-=(const int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}
-	ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}
-	ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}
-	ModInt &operator*=(const int y) {ModInt p(y);x = (x * p.x % mod);return *this;}
-	ModInt &operator^=(const ModInt &p) {x = (x ^ p.x) % mod;return *this;}
-	ModInt &operator^=(const long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}
-	ModInt &operator^=(const int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}
-	ModInt &operator/=(const ModInt &p) {*this *= p.inv();return *this;}
-	ModInt &operator/=(const long long y) {ModInt p(y);*this *= p.inv();return *this;}
-	ModInt &operator/=(const int y) {ModInt p(y);*this *= p.inv();return *this;}
-	ModInt operator=(const int y) {ModInt p(y);*this = p;return *this;}
-	ModInt operator=(const long long y) {ModInt p(y);*this = p;return *this;}
-	ModInt operator-() const {return ModInt(-x); }
+    long long x;
+    constexpr ModInt():x(0) {}
+    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}
+    ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator+=(const long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator-=(const int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}
+    ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}
+    ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}
+    ModInt &operator*=(const int y) {ModInt p(y);x = (x * p.x % mod);return *this;}
+    ModInt &operator^=(const ModInt &p) {x = (x ^ p.x) % mod;return *this;}
+    ModInt &operator^=(const long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}
+    ModInt &operator^=(const int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}
+    ModInt &operator/=(const ModInt &p) {*this *= p.inv();return *this;}
+    ModInt &operator/=(const long long y) {ModInt p(y);*this *= p.inv();return *this;}
+    ModInt &operator/=(const int y) {ModInt p(y);*this *= p.inv();return *this;}
+    ModInt operator=(const int y) {ModInt p(y);*this = p;return *this;}
+    ModInt operator=(const long long y) {ModInt p(y);*this = p;return *this;}
+    ModInt operator-() const {return ModInt(-x); }
     ModInt operator++() {x++;if(x>=mod) x-=mod;return *this;}
-	ModInt operator--() {x--;if(x<0) x+=mod;return *this;}
-	ModInt operator+(const ModInt &p) const { return ModInt(*this) += p; }
-	ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }
-	ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }
-	ModInt operator/(const ModInt &p) const { return ModInt(*this) /= p; }
-	ModInt operator^(const ModInt &p) const { return ModInt(*this) ^= p; }
-	bool operator==(const ModInt &p) const { return x == p.x; }
-	bool operator!=(const ModInt &p) const { return x != p.x; }
-	ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}
-	ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul *= mul,n >>= 1) if(n & 1) ret *= mul;return ret;}
-	friend ostream &operator<<(ostream &os, const ModInt &p) {return os << p.x;}
-	friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}
+    ModInt operator--() {x--;if(x<0) x+=mod;return *this;}
+    ModInt operator+(const ModInt &p) const { return ModInt(*this) += p; }
+    ModInt operator-(const ModInt &p) const { return ModInt(*this) -= p; }
+    ModInt operator*(const ModInt &p) const { return ModInt(*this) *= p; }
+    ModInt operator/(const ModInt &p) const { return ModInt(*this) /= p; }
+    ModInt operator^(const ModInt &p) const { return ModInt(*this) ^= p; }
+    bool operator==(const ModInt &p) const { return x == p.x; }
+    bool operator!=(const ModInt &p) const { return x != p.x; }
+    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}
+    ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul *= mul,n >>= 1) if(n & 1) ret *= mul;return ret;}
+    friend ostream &operator<<(ostream &os, const ModInt &p) {return os << p.x;}
+    friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}
 };
 //using modint = ModInt<MOD>;
 
