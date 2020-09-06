@@ -1,7 +1,7 @@
 /*
  * @title NumberTheoreticTransform
  */
-template<int mod,int root = 3> class NumberTheoreticTransform {
+template<int mod> class NumberTheoreticTransform {
 	inline static constexpr int prime1 =1004535809;
 	inline static constexpr int prime2 =998244353;
 	inline static constexpr int prime3 =985661441;
@@ -20,7 +20,7 @@ template<int mod,int root = 3> class NumberTheoreticTransform {
 	}
 	template<int prime> inline void ntt(vector<ModInt<prime>>& f,int sgn=1) {
 		int N = f.size();
-		ModInt<prime> h(root); h = h.pow((prime - 1) / N);
+		ModInt<prime> h(3); h = h.pow((prime - 1) / N);
 		if (sgn == -1) h = h.inv();
 
 		for (int i = 0,j = 1; j < N - 1; ++j) {
@@ -39,7 +39,6 @@ template<int mod,int root = 3> class NumberTheoreticTransform {
 			}
 		}
 	}
-public:
 	template<int prime=mod> inline vector<ModInt<prime>> convolution(const vector<long long>& a,const vector<long long>& b){
 		int N; for(N=1;N<a.size()+b.size(); N*=2);
 		vector<ModInt<prime>> f(N),g(N,0),h(N,0);
@@ -52,7 +51,7 @@ public:
 		for (auto& x : f) x = x * inverse;
 		return f;
 	}
-	template<int prime=mod> inline vector<ModInt<prime>> convolution(const vector<Mint>& mg,const vector<Mint>& mh){
+	template<int prime> inline vector<ModInt<prime>> convolution_friendrymod(const vector<Mint>& mg,const vector<Mint>& mh){
 		vector<long long> g(mg.size()),h(mh.size());
 		for(int i=0;i<g.size();++i) g[i]=mg[i].x;
 		for(int i=0;i<h.size();++i) h[i]=mh[i].x;
@@ -62,14 +61,14 @@ public:
 		vector<long long> g(mg.size()),h(mh.size());
 		for(int i=0;i<g.size();++i) g[i]=mg[i].x;
 		for(int i=0;i<h.size();++i) h[i]=mh[i].x;
-		return convolution_arbitrarymod(g,h);
+		auto f1 = convolution<prime1>(g, h);
+		auto f2 = convolution<prime2>(g, h);
+		auto f3 = convolution<prime3>(g, h);
+		vector<Mint> f(f1.size());
+		for(int i=0; i < f1.size(); ++i) f[i] = garner(f1[i],f2[i],f3[i]);
+		return f;
 	}
-	inline vector<Mint> convolution_arbitrarymod(vector<long long> g, vector<long long> h){
-		auto x = convolution<prime1>(g, h);
-		auto y = convolution<prime2>(g, h);
-		auto z = convolution<prime3>(g, h);
-		vector<Mint> res(x.size());
-		for(int i=0; i < x.size(); ++i) res[i] = garner(x[i],y[i],z[i]);
-		return res;
-	}
+public:
+	inline vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>& mg,const vector<ModInt<998244353>>& mh){return convolution_friendrymod<998244353>(mg,mh);}
+	inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& mg,const vector<ModInt<1000000007>>& mh){return convolution_arbitrarymod<1000000007>(mg,mh);}
 };
