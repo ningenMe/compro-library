@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
+* :question: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
 
 
 ## Code

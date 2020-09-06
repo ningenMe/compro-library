@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/math/NumberTheoreticTransform.test.cpp
+# :x: test/math/NumberTheoreticTransformArbitraryMod2.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/math/NumberTheoreticTransform.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-06 23:32:42+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/math/NumberTheoreticTransformArbitraryMod2.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-07 02:50:31+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/1068">https://yukicoder.me/problems/no/1068</a>
+* see: <a href="https://yukicoder.me/problems/no/754">https://yukicoder.me/problems/no/754</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
-* :heavy_check_mark: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
+* :x: <a href="../../../library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
+* :question: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
 
 
 ## Code
@@ -48,7 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://yukicoder.me/problems/no/1068"
+#define PROBLEM "https://yukicoder.me/problems/no/754"
 
 #include <vector>
 #include <iostream>
@@ -56,41 +56,28 @@ layout: default
 using namespace std;
 #include "../../lib/util/ModInt.cpp"
 #include "../../lib/math/NumberTheoreticTransform.cpp"
-constexpr long long MOD = 998244353;
+constexpr long long MOD = 1000'000'007;
 
-vector<vector<ModInt<MOD>>> v;
-vector<ModInt<MOD>> rec(int l, int r,NumberTheoreticTransform<MOD>& ntt) {
-    if(r-l==1) return v[l];
-    if(r-l==2) return ntt.convolution(v[l],v[l+1]);
-    auto vl=rec(l,(l+r)/2,ntt);
-    auto vr=rec((l+r)/2,r,ntt);
-    return ntt.convolution(vl,vr);
-}
-
-int main() {
-    int N,Q; cin >> N >> Q;
-    vector<ModInt<MOD>> A(N);
-    vector<int> B(Q);
-    for(int i = 0; i < N; ++i) cin >> A[i];
-    for(int i = 0; i < Q; ++i) cin >> B[i];
-    v.resize(N);
-    for(int i = 0; i < N; ++i) v[i].push_back(A[i]-1),v[i].push_back(1);
+int main(void){
+    int N; cin >> N;
+    vector<ModInt<MOD>> A(N+1),B(N+1);
+    for(int i = 0; i < N+1; ++i) cin >> A[i];
+    for(int i = 0; i < N+1; ++i) cin >> B[i];
     NumberTheoreticTransform<MOD> ntt;
-    auto c = rec(0,N,ntt);
-    for(int i = 0; i < Q; ++i) {
-        cout << c[B[i]] << endl;
-    }
-    return 0;
+    auto C = ntt.convolution(A,B);
+    ModInt<MOD> ans = 0;
+    for(int i = 0; i <= N; ++i) ans += C[i];
+    cout << ans << endl;
+	return 0;
 }
-
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/math/NumberTheoreticTransform.test.cpp"
-#define PROBLEM "https://yukicoder.me/problems/no/1068"
+#line 1 "test/math/NumberTheoreticTransformArbitraryMod2.test.cpp"
+#define PROBLEM "https://yukicoder.me/problems/no/754"
 
 #include <vector>
 #include <iostream>
@@ -142,7 +129,7 @@ public:
 /*
  * @title NumberTheoreticTransform
  */
-template<int mod,int root = 3> class NumberTheoreticTransform {
+template<int mod> class NumberTheoreticTransform {
 	inline static constexpr int prime1 =1004535809;
 	inline static constexpr int prime2 =998244353;
 	inline static constexpr int prime3 =985661441;
@@ -161,7 +148,7 @@ template<int mod,int root = 3> class NumberTheoreticTransform {
 	}
 	template<int prime> inline void ntt(vector<ModInt<prime>>& f,int sgn=1) {
 		int N = f.size();
-		ModInt<prime> h(root); h = h.pow((prime - 1) / N);
+		ModInt<prime> h(3); h = h.pow((prime - 1) / N);
 		if (sgn == -1) h = h.inv();
 
 		for (int i = 0,j = 1; j < N - 1; ++j) {
@@ -180,7 +167,6 @@ template<int mod,int root = 3> class NumberTheoreticTransform {
 			}
 		}
 	}
-public:
 	template<int prime=mod> inline vector<ModInt<prime>> convolution(const vector<long long>& a,const vector<long long>& b){
 		int N; for(N=1;N<a.size()+b.size(); N*=2);
 		vector<ModInt<prime>> f(N),g(N,0),h(N,0);
@@ -193,7 +179,7 @@ public:
 		for (auto& x : f) x = x * inverse;
 		return f;
 	}
-	template<int prime=mod> inline vector<ModInt<prime>> convolution(const vector<Mint>& mg,const vector<Mint>& mh){
+	template<int prime> inline vector<ModInt<prime>> convolution_friendrymod(const vector<Mint>& mg,const vector<Mint>& mh){
 		vector<long long> g(mg.size()),h(mh.size());
 		for(int i=0;i<g.size();++i) g[i]=mg[i].x;
 		for(int i=0;i<h.size();++i) h[i]=mh[i].x;
@@ -203,43 +189,31 @@ public:
 		vector<long long> g(mg.size()),h(mh.size());
 		for(int i=0;i<g.size();++i) g[i]=mg[i].x;
 		for(int i=0;i<h.size();++i) h[i]=mh[i].x;
-		return convolution_arbitrarymod(g,h);
+		auto f1 = convolution<prime1>(g, h);
+		auto f2 = convolution<prime2>(g, h);
+		auto f3 = convolution<prime3>(g, h);
+		vector<Mint> f(f1.size());
+		for(int i=0; i < f1.size(); ++i) f[i] = garner(f1[i],f2[i],f3[i]);
+		return f;
 	}
-	inline vector<Mint> convolution_arbitrarymod(vector<long long> g, vector<long long> h){
-		auto x = convolution<prime1>(g, h);
-		auto y = convolution<prime2>(g, h);
-		auto z = convolution<prime3>(g, h);
-		vector<Mint> res(x.size());
-		for(int i=0; i < x.size(); ++i) res[i] = garner(x[i],y[i],z[i]);
-		return res;
-	}
+public:
+	inline vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>& mg,const vector<ModInt<998244353>>& mh){return convolution_friendrymod<998244353>(mg,mh);}
+	inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& mg,const vector<ModInt<1000000007>>& mh){return convolution_arbitrarymod<1000000007>(mg,mh);}
 };
-#line 9 "test/math/NumberTheoreticTransform.test.cpp"
-constexpr long long MOD = 998244353;
+#line 9 "test/math/NumberTheoreticTransformArbitraryMod2.test.cpp"
+constexpr long long MOD = 1000'000'007;
 
-vector<vector<ModInt<MOD>>> v;
-vector<ModInt<MOD>> rec(int l, int r,NumberTheoreticTransform<MOD>& ntt) {
-    if(r-l==1) return v[l];
-    if(r-l==2) return ntt.convolution(v[l],v[l+1]);
-    auto vl=rec(l,(l+r)/2,ntt);
-    auto vr=rec((l+r)/2,r,ntt);
-    return ntt.convolution(vl,vr);
-}
-
-int main() {
-    int N,Q; cin >> N >> Q;
-    vector<ModInt<MOD>> A(N);
-    vector<int> B(Q);
-    for(int i = 0; i < N; ++i) cin >> A[i];
-    for(int i = 0; i < Q; ++i) cin >> B[i];
-    v.resize(N);
-    for(int i = 0; i < N; ++i) v[i].push_back(A[i]-1),v[i].push_back(1);
+int main(void){
+    int N; cin >> N;
+    vector<ModInt<MOD>> A(N+1),B(N+1);
+    for(int i = 0; i < N+1; ++i) cin >> A[i];
+    for(int i = 0; i < N+1; ++i) cin >> B[i];
     NumberTheoreticTransform<MOD> ntt;
-    auto c = rec(0,N,ntt);
-    for(int i = 0; i < Q; ++i) {
-        cout << c[B[i]] << endl;
-    }
-    return 0;
+    auto C = ntt.convolution(A,B);
+    ModInt<MOD> ans = 0;
+    for(int i = 0; i <= N; ++i) ans += C[i];
+    cout << ans << endl;
+	return 0;
 }
 
 ```
