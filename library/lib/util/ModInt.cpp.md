@@ -42,6 +42,7 @@ layout: default
 * :heavy_check_mark: <a href="../../../verify/test/math/CombinationMod-factorial.test.cpp.html">test/math/CombinationMod-factorial.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/math/Matrix-det.test.cpp.html">test/math/Matrix-det.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/math/Matrix-pow.test.cpp.html">test/math/Matrix-pow.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/NumberTheoreticTransform.test.cpp.html">test/math/NumberTheoreticTransform.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/segment/SegmentTree-rcq.test.cpp.html">test/segment/SegmentTree-rcq.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/util/ModInt.test.cpp.html">test/util/ModInt.test.cpp</a>
 

@@ -75,7 +75,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/math/Garner.cpp.html">Garner</a>
 * :heavy_check_mark: <a href="library/lib/math/Gcd.cpp.html">Gcd</a>
 * :heavy_check_mark: <a href="library/lib/math/Matrix.cpp.html">Matrix</a>
-* :heavy_check_mark: <a href="library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
+* :question: <a href="library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
 * :heavy_check_mark: <a href="library/lib/math/Prime.cpp.html">Prime</a>
 
 
@@ -215,7 +215,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/math/Matrix-det.test.cpp.html">test/math/Matrix-det.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Matrix-pow.test.cpp.html">test/math/Matrix-pow.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransform.test.cpp.html">test/math/NumberTheoreticTransform.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransformArbitraryMod.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod.test.cpp</a>
+* :x: <a href="verify/test/math/NumberTheoreticTransformArbitraryMod.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Prime-miller-rabin.test.cpp.html">test/math/Prime-miller-rabin.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Prime-rho.test.cpp.html">test/math/Prime-rho.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/BinaryIndexedTree-rsqraq.test.cpp.html">test/segment/BinaryIndexedTree-rsqraq.test.cpp</a>
