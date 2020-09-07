@@ -8,12 +8,15 @@ template<class Operator> class BinaryIndexedTree {
 	size_t num;
 	vector<TypeNode> node;
 public:
+	
+	//[0,N) constructed, inplace [0,1) + [1,N+1)
+	//you can ignore inplace offset
 	BinaryIndexedTree(const size_t num) : num(num) {
 		for (depth = 1,length = 1; length < num; depth++,length *= 2);
 		node.resize(length+1, Operator::unit_node);
 	}
  
-	//[idx,idx+1) update
+	//[idx,idx+1) update 
 	void update(size_t idx, TypeNode var) {
 		assert(0 <= idx && idx < length);
 		for (++idx; idx <= length; idx += idx & -idx) node[idx] = Operator::func_node(node[idx],var);
@@ -50,17 +53,14 @@ public:
 template<class T> struct NodePrefixSumPointAdd {
 	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
-	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr TypeNode func_node(const TypeNode& l,const TypeNode& r){return l+r;}
 	// Binary Search for first index where func_check is true
-	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode val){return val <= nodeVal;}
+	inline static constexpr bool func_check(const TypeNode nodeVal,const TypeNode& val){return val <= nodeVal;}
 };
 
-template<class TypeNode> struct nodeUpdatePrefixGCD {
+template<class TypeNode> struct NodeUpdatePrefixGcd {
 	TypeNode unit_node = 0;
-	TypeNode func_node(TypeNode l,TypeNode r){return ((r == 0) ? l : func_node(r, l % r));}
+	TypeNode func_node(const TypeNode& l,const TypeNode& r){return ((r == 0) ? l : func_node(r, l % r));}
 	// Binary Search for first index at where func_check is true
-	bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
+	bool func_check(const TypeNode nodeVal,const TypeNode& var){return var == nodeVal;}
 };
-
-//verify https://atcoder.jp/contests/chokudai_S001/tasks/chokudai_S001_j
-//verify https://atcoder.jp/contests/abc130/tasks/abc130_d
