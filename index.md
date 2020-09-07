@@ -71,6 +71,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/math/CombinationMod.cpp.html">CombinationMod</a>
 * :heavy_check_mark: <a href="library/lib/math/Eratosthenes.cpp.html">Eratosthenes</a>
 * :warning: <a href="library/lib/math/FastFourierTransform.cpp.html">FastFourierTransform</a>
+* :heavy_check_mark: <a href="library/lib/math/FloorSum.cpp.html">FloorSum</a>
 * :warning: <a href="library/lib/math/FormalPowerSeries.cpp.html">FormalPowerSeries</a>
 * :heavy_check_mark: <a href="library/lib/math/Garner.cpp.html">Garner</a>
 * :heavy_check_mark: <a href="library/lib/math/Gcd.cpp.html">Gcd</a>
@@ -211,6 +212,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/math/CombinationMod-binom.test.cpp.html">test/math/CombinationMod-binom.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/CombinationMod-factorial.test.cpp.html">test/math/CombinationMod-factorial.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Eratosthenes.test.cpp.html">test/math/Eratosthenes.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/FloorSum.test.cpp.html">test/math/FloorSum.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Garner.test.cpp.html">test/math/Garner.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Matrix-det.test.cpp.html">test/math/Matrix-det.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Matrix-pow.test.cpp.html">test/math/Matrix-pow.test.cpp</a>
