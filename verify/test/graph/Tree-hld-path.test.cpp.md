@@ -41,7 +41,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../library/lib/graph/Tree.cpp.html">Tree</a>
 * :heavy_check_mark: <a href="../../../library/lib/segment/SegmentTree.cpp.html">SegmentTree</a>
-* :heavy_check_mark: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
+* :question: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
 
 
 ## Code

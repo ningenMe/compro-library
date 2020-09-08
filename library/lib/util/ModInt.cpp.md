@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: ModInt
+# :question: ModInt
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -40,6 +40,10 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../verify/test/graph/Tree-hld-path.test.cpp.html">test/graph/Tree-hld-path.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/math/CombinationMod-factorial.test.cpp.html">test/math/CombinationMod-factorial.test.cpp</a>
+* :x: <a href="../../../verify/test/math/FormalPowerSeries-1000000007-1.test.cpp.html">test/math/FormalPowerSeries-1000000007-1.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/FormalPowerSeries-1000000007-2.test.cpp.html">test/math/FormalPowerSeries-1000000007-2.test.cpp</a>
+* :x: <a href="../../../verify/test/math/FormalPowerSeries-998244353-1.test.cpp.html">test/math/FormalPowerSeries-998244353-1.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/FormalPowerSeries-998244353-2.test.cpp.html">test/math/FormalPowerSeries-998244353-2.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/math/Matrix-det.test.cpp.html">test/math/Matrix-det.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/math/Matrix-pow.test.cpp.html">test/math/Matrix-pow.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/math/NumberTheoreticTransform1.test.cpp.html">test/math/NumberTheoreticTransform1.test.cpp</a>
