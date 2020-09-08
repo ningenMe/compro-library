@@ -72,7 +72,7 @@ layout: default
 * :heavy_check_mark: <a href="library/lib/math/Eratosthenes.cpp.html">Eratosthenes</a>
 * :warning: <a href="library/lib/math/FastFourierTransform.cpp.html">FastFourierTransform</a>
 * :heavy_check_mark: <a href="library/lib/math/FloorSum.cpp.html">FloorSum</a>
-* :question: <a href="library/lib/math/FormalPowerSeries.cpp.html">FormalPowerSeries</a>
+* :heavy_check_mark: <a href="library/lib/math/FormalPowerSeries.cpp.html">FormalPowerSeries</a>
 * :heavy_check_mark: <a href="library/lib/math/Garner.cpp.html">Garner</a>
 * :heavy_check_mark: <a href="library/lib/math/Gcd.cpp.html">Gcd</a>
 * :heavy_check_mark: <a href="library/lib/math/Matrix.cpp.html">Matrix</a>
@@ -109,7 +109,7 @@ layout: default
 ### lib/util
 
 * :heavy_check_mark: <a href="library/lib/util/Mod.cpp.html">Mod</a>
-* :question: <a href="library/lib/util/ModInt.cpp.html">ModInt</a>
+* :heavy_check_mark: <a href="library/lib/util/ModInt.cpp.html">ModInt</a>
 * :heavy_check_mark: <a href="library/lib/util/NBase.cpp.html">NBase</a>
 * :heavy_check_mark: <a href="library/lib/util/RangeIndex.cpp.html">RangeIndex</a>
 
@@ -213,9 +213,9 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/math/CombinationMod-factorial.test.cpp.html">test/math/CombinationMod-factorial.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Eratosthenes.test.cpp.html">test/math/Eratosthenes.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/FloorSum.test.cpp.html">test/math/FloorSum.test.cpp</a>
-* :x: <a href="verify/test/math/FormalPowerSeries-1000000007-1.test.cpp.html">test/math/FormalPowerSeries-1000000007-1.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/FormalPowerSeries-1000000007-1.test.cpp.html">test/math/FormalPowerSeries-1000000007-1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/FormalPowerSeries-1000000007-2.test.cpp.html">test/math/FormalPowerSeries-1000000007-2.test.cpp</a>
-* :x: <a href="verify/test/math/FormalPowerSeries-998244353-1.test.cpp.html">test/math/FormalPowerSeries-998244353-1.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/math/FormalPowerSeries-998244353-1.test.cpp.html">test/math/FormalPowerSeries-998244353-1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/FormalPowerSeries-998244353-2.test.cpp.html">test/math/FormalPowerSeries-998244353-2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Garner.test.cpp.html">test/math/Garner.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/math/Matrix-det.test.cpp.html">test/math/Matrix-det.test.cpp</a>

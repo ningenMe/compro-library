@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :question: FormalPowerSeries
+# :heavy_check_mark: FormalPowerSeries
 
 <a href="../../../index.html">Back to top page</a>
 
@@ -39,9 +39,9 @@ layout: default
 
 ## Verified with
 
-* :x: <a href="../../../verify/test/math/FormalPowerSeries-1000000007-1.test.cpp.html">test/math/FormalPowerSeries-1000000007-1.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/FormalPowerSeries-1000000007-1.test.cpp.html">test/math/FormalPowerSeries-1000000007-1.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/math/FormalPowerSeries-1000000007-2.test.cpp.html">test/math/FormalPowerSeries-1000000007-2.test.cpp</a>
-* :x: <a href="../../../verify/test/math/FormalPowerSeries-998244353-1.test.cpp.html">test/math/FormalPowerSeries-998244353-1.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/math/FormalPowerSeries-998244353-1.test.cpp.html">test/math/FormalPowerSeries-998244353-1.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/math/FormalPowerSeries-998244353-2.test.cpp.html">test/math/FormalPowerSeries-998244353-2.test.cpp</a>
 
 

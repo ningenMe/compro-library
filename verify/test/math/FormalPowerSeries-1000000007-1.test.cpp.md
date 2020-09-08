@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/math/FormalPowerSeries-1000000007-1.test.cpp
+# :heavy_check_mark: test/math/FormalPowerSeries-1000000007-1.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baced925baac5b3f9b4d24b3b28c718e">test/math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/math/FormalPowerSeries-1000000007-1.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-08 17:22:20+09:00
+    - Last commit date: 2020-09-08 17:30:05+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/convolution_mod_1000000007">https://judge.yosupo.jp/problem/convolution_mod_1000000007</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/lib/math/FormalPowerSeries.cpp.html">FormalPowerSeries</a>
-* :question: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
+* :heavy_check_mark: <a href="../../../library/lib/math/FormalPowerSeries.cpp.html">FormalPowerSeries</a>
+* :heavy_check_mark: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
 
 
 ## Code
@@ -60,11 +60,12 @@ using namespace std;
 #include "../../lib/util/ModInt.cpp"
 #include "../../lib/math/FormalPowerSeries.cpp"
 constexpr long long MOD = 1000'000'007;
+using fps = FormalPowerSeries<MOD,1500000>;
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);
     int N,M; cin >> N >> M;
-    FormalPowerSeries<MOD> A(N),B(M);
+    fps A(N),B(M);
     for(int i = 0; i < N; ++i) cin >> A[i];
     for(int i = 0; i < M; ++i) cin >> B[i];
 	auto C = A*B;
@@ -240,11 +241,12 @@ public:
 // using fps = FormalPowerSeries<MOD,1500000>;
 #line 12 "test/math/FormalPowerSeries-1000000007-1.test.cpp"
 constexpr long long MOD = 1000'000'007;
+using fps = FormalPowerSeries<MOD,1500000>;
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);
     int N,M; cin >> N >> M;
-    FormalPowerSeries<MOD> A(N),B(M);
+    fps A(N),B(M);
     for(int i = 0; i < N; ++i) cin >> A[i];
     for(int i = 0; i < M; ++i) cin >> B[i];
 	auto C = A*B;

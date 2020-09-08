@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../../library/lib/math/FormalPowerSeries.cpp.html">FormalPowerSeries</a>
-* :question: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
+* :heavy_check_mark: <a href="../../../library/lib/math/FormalPowerSeries.cpp.html">FormalPowerSeries</a>
+* :heavy_check_mark: <a href="../../../library/lib/util/ModInt.cpp.html">ModInt</a>
 
 
 ## Code
