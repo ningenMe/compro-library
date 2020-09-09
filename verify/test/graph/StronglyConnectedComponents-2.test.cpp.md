@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :x: test/graph/MinimumDirectedClosedCircuit.test.cpp
+# :heavy_check_mark: test/graph/StronglyConnectedComponents-2.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/graph/MinimumDirectedClosedCircuit.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/graph/StronglyConnectedComponents-2.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-09-10 02:59:35+09:00
 
 
+* see: <a href="https://judge.yosupo.jp/problem/scc">https://judge.yosupo.jp/problem/scc</a>
 
 
 ## Depends on
 
-* :x: <a href="../../../library/lib/graph/MinimumDirectedClosedCircuit.cpp.html">MinimumDirectedClosedCircuit</a>
 * :question: <a href="../../../library/lib/graph/StronglyConnectedComponents.cpp.html">StronglyConnectedComponents</a>
 
 
@@ -47,45 +47,33 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://judge.yosupo.jp/problem/cycle_detection"
-#define IGNORE
+#define PROBLEM "https://judge.yosupo.jp/problem/scc"
 
 #include <vector>
 #include <iostream>
 #include <numeric>
 #include <algorithm>
-#include <queue>
-#include <map>
+#include <stack>
 using namespace std;
 #include "../../lib/graph/StronglyConnectedComponents.cpp"
-#include "../../lib/graph/MinimumDirectedClosedCircuit.cpp"
 
 int main(){
+    cin.tie(0);ios::sync_with_stdio(false);
     int N,M; cin >> N >> M;
     StronglyConnectedComponents scc(N);
-    MinimumDirectedClosedCircuit dcc(N);
-    map<pair<int,int>,int> mp;
-    for(int i = 0; i < M; ++i) {
+    while(M--) {
         int u,v; cin >> u >> v;
         scc.make_edge(u,v);
-        dcc.make_edge(u,v);
-        mp[{u,v}]=i;
     }
     scc.solve();
-    vector<int> cnt(N,0);
-    for(int i = 0; i < N; ++i) cnt[scc[i]]++;
-    if(*max_element(cnt.begin(),cnt.end())==1){
-		cout << -1 << endl;
-        return 0;
-    };
-    int label=max_element(cnt.begin(),cnt.end())-cnt.begin();
-    int root;
-    for(int i = 0; i < N; ++i) if(scc[i]==label) root=i;
-    auto ans = dcc.solve(root);
-    int L = ans.size();
-    cout << L << endl;
-    for(int i = 0; i < L; ++i) cout << mp[{ans[i],ans[(i+1)%L]}] << endl;
-	return 0;
+    auto vv=scc.topological_sort();
+    cout << vv.size() << "\n";
+    for(auto& v:vv) {
+        cout << v.size();
+        for(auto& e:v) cout << " " << e;
+        cout << "\n";
+    }
+    return 0;
 }
 
 ```
@@ -94,16 +82,14 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/graph/MinimumDirectedClosedCircuit.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/cycle_detection"
-#define IGNORE
+#line 1 "test/graph/StronglyConnectedComponents-2.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/scc"
 
 #include <vector>
 #include <iostream>
 #include <numeric>
 #include <algorithm>
-#include <queue>
-#include <map>
+#include <stack>
 using namespace std;
 #line 1 "lib/graph/StronglyConnectedComponents.cpp"
 /*
@@ -180,87 +166,25 @@ public:
 		cout << endl;
 	}
 };
-#line 1 "lib/graph/MinimumDirectedClosedCircuit.cpp"
-/*
- * @title MinimumDirectedClosedCircuit
- * @docs md/graph/MinimumDirectedClosedCircuit.md
- */
-class MinimumDirectedClosedCircuit {
-	vector<vector<int>> edge,redge;  
-	vector<int> dist;
-	size_t N;
-public:
-	MinimumDirectedClosedCircuit(size_t N) : N(N),edge(N),redge(N),dist(N) {
-		//do nothing
-	}
-	inline void make_edge(int from,int to){
-		edge[from].push_back(to);
-		redge[to].push_back(from);
-	}
-	//rootを含む最小閉路の集合を返す O(N) 閉路がないときは空集合
-	inline vector<int> solve(int root,int inf = 123456789){
-		int mini = inf, last = -1;
-		for(int i = 0; i < N; ++i) dist[i] = -1;
-		queue<int> q;
-		q.push(root);
-		dist[root] = 0;
-		while (q.size()) {
-			int curr = q.front();
-			q.pop();
-			for(int next:edge[curr]){
-				if(next == root && mini > dist[curr]+1) mini = dist[curr]+1,last = curr;
-				if(dist[next]==-1) {
-					dist[next] = dist[curr] + 1;
-					q.push(next);
-				}
-			}
-		}
-		vector<int> res;
-		if(last != -1){
-			res.push_back(last);
-			int curr = last;
-			while(curr != root){
-				for(int next:redge[curr]){
-					if(dist[next]+1==dist[curr]) {
-						res.push_back(next);
-						curr = next;
-						break;
-					}
-				}
-			}
-			reverse(res.begin(),res.end());
-		}
-		return res;
-	}
-};
-#line 13 "test/graph/MinimumDirectedClosedCircuit.test.cpp"
+#line 10 "test/graph/StronglyConnectedComponents-2.test.cpp"
 
 int main(){
+    cin.tie(0);ios::sync_with_stdio(false);
     int N,M; cin >> N >> M;
     StronglyConnectedComponents scc(N);
-    MinimumDirectedClosedCircuit dcc(N);
-    map<pair<int,int>,int> mp;
-    for(int i = 0; i < M; ++i) {
+    while(M--) {
         int u,v; cin >> u >> v;
         scc.make_edge(u,v);
-        dcc.make_edge(u,v);
-        mp[{u,v}]=i;
     }
     scc.solve();
-    vector<int> cnt(N,0);
-    for(int i = 0; i < N; ++i) cnt[scc[i]]++;
-    if(*max_element(cnt.begin(),cnt.end())==1){
-		cout << -1 << endl;
-        return 0;
-    };
-    int label=max_element(cnt.begin(),cnt.end())-cnt.begin();
-    int root;
-    for(int i = 0; i < N; ++i) if(scc[i]==label) root=i;
-    auto ans = dcc.solve(root);
-    int L = ans.size();
-    cout << L << endl;
-    for(int i = 0; i < L; ++i) cout << mp[{ans[i],ans[(i+1)%L]}] << endl;
-	return 0;
+    auto vv=scc.topological_sort();
+    cout << vv.size() << "\n";
+    for(auto& v:vv) {
+        cout << v.size();
+        for(auto& e:v) cout << " " << e;
+        cout << "\n";
+    }
+    return 0;
 }
 
 ```

@@ -38,7 +38,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../../verify/test/graph/StronglyConnectedComponents.test.cpp.html">test/graph/StronglyConnectedComponents.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/graph/StronglyConnectedComponents-1.test.cpp.html">test/graph/StronglyConnectedComponents-1.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/graph/UnionFindTree.test.cpp.html">test/graph/UnionFindTree.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/util/RangeIndex.test.cpp.html">test/util/RangeIndex.test.cpp</a>
 

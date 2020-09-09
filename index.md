@@ -198,8 +198,9 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/graph/Dijkstra.test.cpp.html">test/graph/Dijkstra.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Dinic.test.cpp.html">test/graph/Dinic.test.cpp</a>
 * :x: <a href="verify/test/graph/MinimumDirectedClosedCircuit.test.cpp.html">test/graph/MinimumDirectedClosedCircuit.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graph/StronglyConnectedComponents-1.test.cpp.html">test/graph/StronglyConnectedComponents-1.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/graph/StronglyConnectedComponents-2.test.cpp.html">test/graph/StronglyConnectedComponents-2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/StronglyConnectedComponents-2sat.test.cpp.html">test/graph/StronglyConnectedComponents-2sat.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/StronglyConnectedComponents.test.cpp.html">test/graph/StronglyConnectedComponents.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-diameter.test.cpp.html">test/graph/Tree-diameter.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-eulertour.test.cpp.html">test/graph/Tree-eulertour.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/graph/Tree-hld-path.test.cpp.html">test/graph/Tree-hld-path.test.cpp</a>

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/graph/StronglyConnectedComponents.test.cpp
+# :heavy_check_mark: test/graph/StronglyConnectedComponents-1.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#baa37bfd168b079b758c0db816f7295f">test/graph</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/graph/StronglyConnectedComponents.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-15 06:33:25+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/graph/StronglyConnectedComponents-1.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-10 02:59:35+09:00
 
 
 * see: <a href="https://yukicoder.me/problems/no/1023">https://yukicoder.me/problems/no/1023</a>
@@ -54,6 +54,7 @@ layout: default
 #include <iostream>
 #include <numeric>
 #include <algorithm>
+#include <stack>
 using namespace std;
 #include "../../lib/graph/UnionFindTree.cpp"
 #include "../../lib/graph/StronglyConnectedComponents.cpp"
@@ -108,13 +109,14 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/graph/StronglyConnectedComponents.test.cpp"
+#line 1 "test/graph/StronglyConnectedComponents-1.test.cpp"
 #define PROBLEM "https://yukicoder.me/problems/no/1023"
 
 #include <vector>
 #include <iostream>
 #include <numeric>
 #include <algorithm>
+#include <stack>
 using namespace std;
 #line 1 "lib/graph/UnionFindTree.cpp"
 /*
@@ -165,57 +167,68 @@ public:
  * @title StronglyConnectedComponents
  */
 class StronglyConnectedComponents{
-	int num,is_2sat,half;
-	vector<vector<int>> edge,redge;
-
-	vector<int> label,visited,order;
-
-	inline void dfs(int curr){
-		visited[curr] = 1;
-		for(int next:edge[curr]) if(!visited[next]) dfs(next);
-		order.push_back(curr);
-	}
-
-	inline void rdfs(int curr,int id){
-		visited[curr] = 1;
-		label[curr] = id;
-		for(int next:redge[curr]) if(!visited[next]) rdfs(next,id);
-	}
+	int num,is_2sat,half,max_id,cnt;
+	vector<vector<int>> edge;
+	vector<int> label,order,low;
+    stack<size_t> st;
 	inline int rev(int i) { return i < half ? i + half : i - half; }
+    inline void dfs(int& from) {
+        low[from]=order[from]=cnt++;
+        st.push(from);
+        for(int& to:edge[from]) {
+            if(order[to]==-1) {
+                dfs(to);
+                low[from]=min(low[from],low[to]);
+            }
+            else {
+                low[from]=min(low[from],order[to]);
+            }
+        }
+        if (low[from] == order[from]) {
+            while(st.size()) {
+                int u = st.top();st.pop();
+                order[u] = num;
+                label[u] = max_id;
+                if (u == from) break;
+            }
+            max_id++;
+        }
+    }
 public:
-
-	StronglyConnectedComponents(const int n, bool is_2sat=0):num(n),is_2sat(is_2sat){
-		if(is_2sat) num*=2;
+	StronglyConnectedComponents(const int n, bool is_2sat=0):num(n),max_id(0),cnt(0),is_2sat(is_2sat){
+		if(is_2sat) num<<=1;
 		edge.resize(num);
-		redge.resize(num);
 		label.resize(num);
-		visited.resize(num);
-		half=num/2;
+        order.resize(num,-1);
+        low.resize(num);
+        half=(num>>1);
 	}
 	inline int operator[](int idx) {
 		return label[idx];
 	}
 	inline void make_edge(const int from,const int to) {
 		edge[from].push_back(to);
-		redge[to].push_back(from);
 	}
+    //xがflg_xならばyがflg_y
 	inline void make_condition(int x, bool flg_x, int y, bool flg_y) {
 		if (!flg_x) x = rev(x);
 		if (!flg_y) y = rev(y);
 		make_edge(x, y);
 		make_edge(rev(y), rev(x));
 	}
-	inline int solve(void) {
-		for(int i = 0; i < num; ++i) visited[i] = 0;
-		for(int i = 0; i < num; ++i) if(!visited[i]) dfs(i);
-		for(int i = 0; i < num; ++i) visited[i] = 0;
-		reverse(order.begin(),order.end());
-		int id = 0;
-		for(int i:order) if(!visited[i]) rdfs(i,id++);
+    //is_2sat=1のときに、2satを満たすかを返却する
+	inline bool solve(void) {
+        for (int i = 0; i < num; i++) if (order[i] == -1) dfs(i);
+        for (int& id:label) id = max_id-1-id;
 		if(!is_2sat) return true;
 		for (int i = 0; i < num; ++i) if (label[i] == label[rev(i)]) return false;
 		return true;
 	}
+    vector<vector<int>> topological_sort(void) {
+        vector<vector<int>> ret(max_id);
+        for(int i=0;i<num;++i) ret[label[i]].push_back(i);
+        return ret;
+    }
 	int is_true(int i) {
 		return label[i] > label[rev(i)];
 	}
@@ -223,9 +236,8 @@ public:
 		for(auto id:label) cout << id << " ";
 		cout << endl;
 	}
-
 };
-#line 10 "test/graph/StronglyConnectedComponents.test.cpp"
+#line 11 "test/graph/StronglyConnectedComponents-1.test.cpp"
 
 int main(){
     int N,M; cin >> N >> M;
