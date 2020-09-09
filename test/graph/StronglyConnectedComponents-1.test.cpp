@@ -4,6 +4,7 @@
 #include <iostream>
 #include <numeric>
 #include <algorithm>
+#include <stack>
 using namespace std;
 #include "../../lib/graph/UnionFindTree.cpp"
 #include "../../lib/graph/StronglyConnectedComponents.cpp"
