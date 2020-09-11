@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <iostream>
+#include <cassert>
 using namespace std;
 #include "../../lib/segment/SegmentTree.cpp"
 #include "../../lib/math/Gcd.cpp"
@@ -23,7 +24,7 @@ int main() {
 	SegmentTree<NodeGcdPointUpdate<long long>> seg(A);
 	long long ans = 0;
 	for(int i = 0; i < N; ++i) {
-		ans += N - seg.binary_search(i,N,1);
+		ans += N - seg.prefix_binary_search(i,N,1);
 	}
 	cout << ans << endl;
 }

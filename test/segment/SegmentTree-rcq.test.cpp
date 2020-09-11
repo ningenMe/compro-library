@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <iostream>
+#include <cassert>
 using namespace std;
 #include "../../lib/segment/SegmentTree.cpp"
 #include "../../lib/util/ModInt.cpp"
