@@ -40,7 +40,8 @@ layout: default
 
 * :heavy_check_mark: <a href="../../../verify/test/math/Prime-miller-rabin.test.cpp.html">test/math/Prime-miller-rabin.test.cpp</a>
 * :heavy_check_mark: <a href="../../../verify/test/math/Prime-rho.test.cpp.html">test/math/Prime-rho.test.cpp</a>
-* :heavy_check_mark: <a href="../../../verify/test/segment/SegmentTree-binary-search.test.cpp.html">test/segment/SegmentTree-binary-search.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/segment/SegmentTree-prefix-binary-search.test.cpp.html">test/segment/SegmentTree-prefix-binary-search.test.cpp</a>
+* :heavy_check_mark: <a href="../../../verify/test/segment/SegmentTree-suffix-binary-search.test.cpp.html">test/segment/SegmentTree-suffix-binary-search.test.cpp</a>
 
 
 ## Code

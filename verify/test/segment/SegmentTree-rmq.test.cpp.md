@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#071f76f489cfd361eed2a12635965092">test/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/segment/SegmentTree-rmq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-15 13:23:09+09:00
+    - Last commit date: 2020-09-12 08:49:30+09:00
 
 
 * see: <a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A</a>
@@ -51,6 +51,7 @@ layout: default
 
 #include <vector>
 #include <iostream>
+#include <cassert>
 using namespace std;
 #include "../../lib/segment/SegmentTree.cpp"
 
@@ -77,6 +78,7 @@ int main(void){
 
 #include <vector>
 #include <iostream>
+#include <cassert>
 using namespace std;
 #line 1 "lib/segment/SegmentTree.cpp"
 /*
@@ -87,16 +89,20 @@ template<class Operator> class SegmentTree {
 	size_t length;
 	size_t num;
 	vector<TypeNode> node;
-	vector<pair<size_t,size_t>> range;
+	vector<pair<int,int>> range;
+    inline void build() {
+		for (int i = length - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);
+        range.resize(2 * length);
+		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
+		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
+    }
 public:
 
 	//unitで初期化
 	SegmentTree(const size_t num): num(num) {
 		for (length = 1; length <= num; length *= 2);
 		node.resize(2 * length, Operator::unit_node);
-		range.resize(2 * length);
-		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
-		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
+        build();
 	}
 
 	//vectorで初期化
@@ -104,21 +110,15 @@ public:
 		for (length = 1; length <= vec.size(); length *= 2);
 		node.resize(2 * length, Operator::unit_node);
 		for (int i = 0; i < vec.size(); ++i) node[i + length] = vec[i];
-		for (int i = length - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);
-		range.resize(2 * length);
-		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
-		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
+        build();
 	}
  
 	//同じinitで初期化
 	SegmentTree(const size_t num, const TypeNode init) : num(num) {
 		for (length = 1; length <= num; length *= 2);
 		node.resize(2 * length, Operator::unit_node);
-		range.resize(2 * length);
 		for (int i = 0; i < length; ++i) node[i+length] = init;
-		for (int i = length - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);
-		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
-		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
+        build();
 	}
 	
 	//[idx,idx+1)
@@ -140,23 +140,9 @@ public:
 		return Operator::func_node(vl,vr);
 	}
 
-	//return [0,length]
-	int prefix_binary_search(TypeNode var) {
-		if(!Operator::func_check(node[1],var)) return num;
-		TypeNode ret = Operator::unit_node;
-		size_t idx = 2;
-		for(; idx < 2*length; idx<<=1){
-			if(!Operator::func_check(Operator::func_node(ret,node[idx]),var)) {
-				ret = Operator::func_node(ret,node[idx]);
-				idx++;
-			}
-		}
-		return min((idx>>1) - length,num);
-	}
-
-	//range[l,r) return [l,r]
-	int binary_search(size_t l, size_t r, TypeNode var) {
-		if (l < 0 || length <= l || r < 0 || length < r) return -1;
+	//range[l,r) return [l,r] search max right
+	int prefix_binary_search(int l, int r, TypeNode var) {
+		assert(0 <= l && l < length && 0 < r && r <= length);
 		TypeNode ret = Operator::unit_node;
 		size_t off = l;
 		for(size_t idx = l+length; idx < 2*length && off < r; ){
@@ -172,15 +158,28 @@ public:
 		return off;
 	}
 
+	//range(l,r] return [l,r] search max left
+	int suffix_binary_search(const int l, const int r, const TypeNode var) {
+		assert(-1 <= l && l < (int)length-1 && 0 <= r && r < length);
+		TypeNode ret = Operator::unit_node;
+		int off = r;
+		for(size_t idx = r+length; idx < 2*length && l < off; ){
+			if(l < range[idx].first && !Operator::func_check(Operator::func_node(node[idx],ret),var)) {
+				ret = Operator::func_node(node[idx],ret);
+				off = range[idx--].first-1;
+				if(idx&1) idx >>= 1;
+			}
+			else{
+				idx = (idx<<1)+1;
+			}
+		}
+		return off;
+	}
+
 	void print(){
 		// cout << "node" << endl;
 		// for(int i = 1,j = 1; i < 2*length; ++i) {
 		// 	cout << node[i] << " ";
-		// 	if(i==((1<<j)-1) && ++j) cout << endl;
-		// }
-		// cout << "lazy" << endl;
-		// for(int i = 1,j = 1; i < 2*length; ++i) {
-		// 	cout << lazy[i] << " ";
 		// 	if(i==((1<<j)-1) && ++j) cout << endl;
 		// }
 		cout << "vector" << endl;
@@ -216,7 +215,7 @@ template<class T> struct NodeCompositePointUpdate {
 	inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
 };
-#line 7 "test/segment/SegmentTree-rmq.test.cpp"
+#line 8 "test/segment/SegmentTree-rmq.test.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);

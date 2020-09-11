@@ -237,10 +237,11 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/segment/Rbst-get.test.cpp.html">test/segment/Rbst-get.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/Rbst-med.test.cpp.html">test/segment/Rbst-med.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/Rbst-pair.test.cpp.html">test/segment/Rbst-pair.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/SegmentTree-binary-search.test.cpp.html">test/segment/SegmentTree-binary-search.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/SegmentTree-prefix-binary-search.test.cpp.html">test/segment/SegmentTree-prefix-binary-search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rcq.test.cpp.html">test/segment/SegmentTree-rcq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rmq.test.cpp.html">test/segment/SegmentTree-rmq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rsq.test.cpp.html">test/segment/SegmentTree-rsq.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/segment/SegmentTree-suffix-binary-search.test.cpp.html">test/segment/SegmentTree-suffix-binary-search.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTreeBeats-1.test.cpp.html">test/segment/SegmentTreeBeats-1.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SegmentTreeBeats-2.test.cpp.html">test/segment/SegmentTreeBeats-2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/segment/SparseTable.test.cpp.html">test/segment/SparseTable.test.cpp</a>
