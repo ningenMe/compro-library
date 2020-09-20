@@ -16,24 +16,27 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/beta/room.html#ACPC2020Day2/problems/B
+    IGNORE: ''
+    IGNORE_IF_CLANG: ''
+    IGNORE_IF_GCC: ''
     links:
     - https://onlinejudge.u-aizu.ac.jp/beta/room.html#ACPC2020Day2/problems/B
   bundledCode: "#line 1 \"test/segment/ConvexHullTrickSegmentTree.test.cpp\"\n#define\
     \ PROBLEM \"https://onlinejudge.u-aizu.ac.jp/beta/room.html#ACPC2020Day2/problems/B\"\
-    \n\n#include <vector>\n#include <iostream>\nusing namespace std;\n#line 1 \"lib/segment/Rbst.cpp\"\
-    \n/*\n * @title Rbst\n */\ntemplate<class Operator> class Rbst {\n\tusing TypeNode\
-    \ = typename Operator::TypeNode;\n\tunsigned int x = 123456789, y = 362436069,\
-    \ z = 521288629, w = 88675123;\n\tunsigned int xor_shift() {\n\t\tunsigned int\
-    \ t = (x ^ (x << 11)); x = y; y = z; z = w;\n\t\treturn (w = (w ^ (w >> 19)) ^\
-    \ (t ^ (t >> 8)));\n\t}\n\tstruct Node {\n\t\tNode *left, *right;\n\t\tTypeNode\
-    \ val;\n\t\tint size;\n\t\tTypeNode sum;\n\n\t\tNode() : val(Operator::unit_node),\
-    \ size(1), sum(Operator::unit_node) {\n\t\t\tleft = right = nullptr;\n\t\t}\n\t\
-    \tNode(TypeNode v) : val(v), size(1), sum(v) {\n\t\t\tleft = right = nullptr;\n\
-    \t\t}\n\t};\n\tNode* root;\n\tinline int size(Node *node) {\n\t\treturn node==nullptr\
-    \ ? 0 : node->size;\n\t}\n\tinline TypeNode sum(Node *node) {\n\t\treturn node==nullptr\
-    \ ? Operator::unit_node : node->sum;\n\t}\n\tinline Node* update(Node *node) {\n\
-    \t\tnode->size = size(node->left) + size(node->right) + 1;\n\t\tnode->sum = Operator::func_node(sum(node->left),sum(node->right),node->val);\n\
+    \n#define IGNORE\n\n#include <vector>\n#include <iostream>\nusing namespace std;\n\
+    #line 1 \"lib/segment/Rbst.cpp\"\n/*\n * @title Rbst\n */\ntemplate<class Operator>\
+    \ class Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\tunsigned int\
+    \ x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\tunsigned int xor_shift()\
+    \ {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z; z = w;\n\t\treturn (w\
+    \ = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\t}\n\tstruct Node {\n\t\tNode *left,\
+    \ *right;\n\t\tTypeNode val;\n\t\tint size;\n\t\tTypeNode sum;\n\n\t\tNode() :\
+    \ val(Operator::unit_node), size(1), sum(Operator::unit_node) {\n\t\t\tleft =\
+    \ right = nullptr;\n\t\t}\n\t\tNode(TypeNode v) : val(v), size(1), sum(v) {\n\t\
+    \t\tleft = right = nullptr;\n\t\t}\n\t};\n\tNode* root;\n\tinline int size(Node\
+    \ *node) {\n\t\treturn node==nullptr ? 0 : node->size;\n\t}\n\tinline TypeNode\
+    \ sum(Node *node) {\n\t\treturn node==nullptr ? Operator::unit_node : node->sum;\n\
+    \t}\n\tinline Node* update(Node *node) {\n\t\tnode->size = size(node->left) +\
+    \ size(node->right) + 1;\n\t\tnode->sum = Operator::func_node(sum(node->left),sum(node->right),node->val);\n\
     \t\treturn node;\n\t}\n\tinline TypeNode get(Node *node, int k) {\n\t\tif (node==nullptr)\
     \ return Operator::unit_node;\n\t\tif (k == size(node->left)) return node->val;\n\
     \t\tif (k < size(node->left)) return get(node->left, k);\n\t\telse return get(node->right,\
@@ -150,7 +153,7 @@ data:
     \treturn (Operator::func_compare(y(vl,x),y(vr,x))?vl:vr);\n\t}\n\tvoid print(){\n\
     \t\tcout << \"node\" << endl;\n\t\tfor(int i = 1,j = 1; i < 2*length; ++i) {\n\
     \t\t\tnode[i].print();\n\t\t\tif(i==((1<<j)-1) && ++j) cout << endl;\n\t\t}  \
-    \  \n\t}\n};\n#line 9 \"test/segment/ConvexHullTrickSegmentTree.test.cpp\"\n\n\
+    \  \n\t}\n};\n#line 10 \"test/segment/ConvexHullTrickSegmentTree.test.cpp\"\n\n\
     int main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q;\n \
     \   cin >> N >> Q;\n    ConvexHullTrickSegmentTree<ValueMin<long long>> seg(N);\n\
     \    for(int i=0;i<N;++i){\n        int a,b; cin >> a >> b;\n        seg.update(i,a,b);\n\
@@ -158,8 +161,8 @@ data:
     \      l--;\n        cout << seg.get(l,r,x) << \"\\n\";\n    }\n\treturn 0;\n\
     }\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/beta/room.html#ACPC2020Day2/problems/B\"\
-    \n\n#include <vector>\n#include <iostream>\nusing namespace std;\n#include \"\
-    ../../lib/segment/Rbst.cpp\"\n#include \"../../lib/geometory/ConvexHullTrick.cpp\"\
+    \n#define IGNORE\n\n#include <vector>\n#include <iostream>\nusing namespace std;\n\
+    #include \"../../lib/segment/Rbst.cpp\"\n#include \"../../lib/geometory/ConvexHullTrick.cpp\"\
     \n#include \"../../lib/segment/ConvexHullTrickSegmentTree.cpp\"\n\nint main(void){\n\
     \    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q;\n    cin >> N >> Q;\n\
     \    ConvexHullTrickSegmentTree<ValueMin<long long>> seg(N);\n    for(int i=0;i<N;++i){\n\
@@ -173,7 +176,7 @@ data:
   isVerificationFile: true
   path: test/segment/ConvexHullTrickSegmentTree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-21 03:07:28+09:00'
+  timestamp: '2020-09-21 03:32:46+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/segment/ConvexHullTrickSegmentTree.test.cpp
