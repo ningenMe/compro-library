@@ -1,0 +1,37 @@
+---
+data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    links:
+    - https://atcoder.jp/contests/abc135/tasks/abc135_f
+  bundledCode: "#line 1 \"old/ZAlgorithm.cpp\"\n// O(N)\nvector<int> ZAlgorithm(const\
+    \ string str) {\n\tint N = str.size();\n\tvector<int> res(N);\n\tfor(int i = 1,\
+    \ j = 0; i < N; i++) {\n\t\tif(i + res[i - j] < j + res[j]) {\n\t\t\tres[i] =\
+    \ res[i - j];\n\t\t} \n\t\telse {\n\t\t\tint k = max(0, j + res[j] - i);\n\t\t\
+    \twhile(i + k < N && str[k] == str[i + k]) ++k;\n\t\t\tres[j = i] = k;\n\t\t}\n\
+    \t}\n\tres[0] = N;\n\treturn res;\n}\n//verify https://atcoder.jp/contests/abc135/tasks/abc135_f\n"
+  code: "// O(N)\nvector<int> ZAlgorithm(const string str) {\n\tint N = str.size();\n\
+    \tvector<int> res(N);\n\tfor(int i = 1, j = 0; i < N; i++) {\n\t\tif(i + res[i\
+    \ - j] < j + res[j]) {\n\t\t\tres[i] = res[i - j];\n\t\t} \n\t\telse {\n\t\t\t\
+    int k = max(0, j + res[j] - i);\n\t\t\twhile(i + k < N && str[k] == str[i + k])\
+    \ ++k;\n\t\t\tres[j = i] = k;\n\t\t}\n\t}\n\tres[0] = N;\n\treturn res;\n}\n//verify\
+    \ https://atcoder.jp/contests/abc135/tasks/abc135_f"
+  dependsOn: []
+  isVerificationFile: false
+  path: old/ZAlgorithm.cpp
+  requiredBy: []
+  timestamp: '2020-09-06 00:20:54+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: old/ZAlgorithm.cpp
+layout: document
+redirect_from:
+- /library/old/ZAlgorithm.cpp
+- /library/old/ZAlgorithm.cpp.html
+title: old/ZAlgorithm.cpp
+---

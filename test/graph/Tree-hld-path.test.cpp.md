@@ -1,0 +1,325 @@
+---
+data:
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: lib/graph/Tree.cpp
+    title: Tree
+  - icon: ':heavy_check_mark:'
+    path: lib/segment/SegmentTree.cpp
+    title: SegmentTree
+  - icon: ':heavy_check_mark:'
+    path: lib/util/ModInt.cpp
+    title: ModInt
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _pathExtension: cpp
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://yukicoder.me/problems/no/650
+    links:
+    - https://yukicoder.me/problems/no/650
+  bundledCode: "#line 1 \"test/graph/Tree-hld-path.test.cpp\"\n#define PROBLEM \"\
+    https://yukicoder.me/problems/no/650\"\n\n#include <vector>\n#include <iostream>\n\
+    #include <cassert>\n#include <map>\n#include <algorithm>\n#include <stack>\n#include\
+    \ <numeric>\n#include <array>\nusing namespace std;\n#line 1 \"lib/graph/Tree.cpp\"\
+    \n/*\n * @title Tree\n * @docs md/graph/Tree.md\n */\ntemplate<class Operator>\
+    \ class Tree {\n\tusing TypeDist = typename Operator::TypeDist;\n\tsize_t num;\n\
+    \tsize_t ord;\n\tenum METHODS{\n\t\tMAKE_DEPTH,\n\t\tMAKE_CHILD,\n\t\tMAKE_PARENT,\n\
+    \t\tMAKE_SIZE,\n\t\tMAKE_SUBTREE,\n\t\tMAKE_ANCESTOR,\n\t\tMAKE_EOULERTOUR,\n\t\
+    \tMAKE_HEAVY_LIGHT_DECOMPOSITION,\n\t\tMETHODS_SIZE,\n\t};\n\tarray<int,METHODS_SIZE>\
+    \ executed_flag;\npublic:\n\tvector<vector<pair<size_t,TypeDist>>> edge;\n\tvector<size_t>\
+    \ depth;\n\tvector<size_t> order;\n\tvector<size_t> reorder;\n\tvector<TypeDist>\
+    \ dist;\n\tvector<pair<size_t,TypeDist>> parent;\n\tvector<vector<pair<size_t,TypeDist>>>\
+    \ child;\n\tvector<array<pair<size_t,TypeDist>,Operator::bit>> ancestor;\n\tvector<size_t>\
+    \ size;\n\tvector<vector<size_t>> subtree;\n\tvector<size_t> head;\n\tvector<size_t>\
+    \ hldorder;\n\tvector<size_t> eulertour;\n\tvector<pair<size_t,size_t>> eulertour_range;\n\
+    \tTree(const int num):num(num),edge(num),depth(num,-1),order(num),dist(num),executed_flag(){}\n\
+    \t//O(1) anytime\n\tvoid make_edge(const int& from, const int& to, const TypeDist\
+    \ w = 1) {\n\t\tedge[from].push_back({to,w});\n\t}\n\t//O(N) anytime\n\tvoid make_depth(const\
+    \ int root) {\n\t\texecuted_flag[MAKE_DEPTH]++;\n\t\tdepth[root] = 0;\n\t\tdist[root]\
+    \ = Operator::unit_dist;\n\t\tord = 0;\n\t\tdfs(root,-1);\n\t\torder[ord++] =\
+    \ root;\n\t\treverse_copy(order.begin(),order.end(),back_inserter(reorder));\n\
+    \t}\n\t//O(N) anytime for forest\n\tvoid make_depth(void) {\n\t\texecuted_flag[MAKE_DEPTH]++;\n\
+    \t\tord = 0;\n\t\tfor(size_t root = 0; root < num; ++root) {\n\t\t\tif(depth[root]\
+    \ != -1) continue;\n\t\t\tdepth[root] = 0;\n\t\t\tdist[root] = Operator::unit_dist;\n\
+    \t\t\tdfs(root,-1);\n\t\t\torder[ord++] = root;\n\t\t}\n\t\treverse_copy(order.begin(),order.end(),back_inserter(reorder));\n\
+    \t}\n\t//for make_depth\n\tvoid dfs(int curr, int prev){\n\t\tfor(auto& e:edge[curr]){\n\
+    \t\t\tint next = e.first;\n\t\t\tif(next==prev) continue;\n\t\t\tdepth[next] =\
+    \ depth[curr] + 1;\n\t\t\tdist[next]  = Operator::func_dist(dist[curr],e.second);\n\
+    \t\t\tdfs(next,curr);\n\t\t\torder[ord++] = next;\n\t\t}\n\t}\n\t//for make_eulertour\n\
+    \tvoid dfs(int from){\n\t\teulertour.push_back(from);\n\t\tfor(auto& e:child[from]){\n\
+    \t\t\tint to = e.first;            \n\t\t\tdfs(to);        \n\t\t\teulertour.push_back(from);\n\
+    \t\t}\n\t}\n\t//O(N) after make_depth\n\tvoid make_parent(const int root = 0)\
+    \ {\n\t\tif(executed_flag[MAKE_PARENT]++) return;\n\t\tif(!executed_flag[MAKE_DEPTH])\
+    \ make_depth(root);\n\t\tparent.resize(num,make_pair(num,Operator::unit_dist));\n\
+    \t\tfor (size_t i = 0; i < num; ++i) for (auto& e : edge[i]) if (depth[i] > depth[e.first])\
+    \ parent[i] = e;\n\t}\n\t//O(N) after make_depth\n\tvoid make_child(const int\
+    \ root = 0) {\n\t\tif(executed_flag[MAKE_CHILD]++) return;\n\t\tif(!executed_flag[MAKE_DEPTH])\
+    \ make_depth(root);\n\t\tchild.resize(num);\n\t\tfor (size_t i = 0; i < num; ++i)\
+    \ for (auto& e : edge[i]) if (depth[i] < depth[e.first]) child[i].push_back(e);\n\
+    \t}\n\t//O(NlogN) after make_parent\n\tvoid make_ancestor(const int root = 0)\
+    \ {\n\t\tif(executed_flag[MAKE_ANCESTOR]++) return;\n\t\tif(!executed_flag[MAKE_PARENT])\
+    \ make_parent(root);\n\t\tancestor.resize(num);\n\t\tfor (size_t i = 0; i < num;\
+    \ ++i) ancestor[i][0] = (parent[i].first!=num?parent[i]:make_pair(i,Operator::unit_lca));\n\
+    \t\tfor (size_t j = 1; j < Operator::bit; ++j) {\n\t\t\tfor (size_t i = 0; i <\
+    \ num; ++i) {\n\t\t\t\tsize_t k = ancestor[i][j - 1].first;\n\t\t\t\tancestor[i][j]\
+    \ = Operator::func_lca(ancestor[k][j - 1],ancestor[i][j - 1]);\n\t\t\t}\n\t\t\
+    }\n\t}\n\t//O(logN) after make_ancestor\n\t//return {lca,lca_dist} l and r must\
+    \ be connected\n\tpair<size_t,TypeDist> lca(size_t l, size_t r) {\n\t\tassert(executed_flag[MAKE_ANCESTOR]);\n\
+    \t\tif (depth[l] < depth[r]) swap(l, r);\n\t\tint diff = depth[l] - depth[r];\n\
+    \t\tauto ancl = make_pair(l,Operator::unit_lca);\n\t\tauto ancr = make_pair(r,Operator::unit_lca);\n\
+    \t\tfor (int j = 0; j < Operator::bit; ++j) {\n\t\t\tif (diff & (1 << j)) {\n\t\
+    \t\t\tancl = Operator::func_lca(ancestor[ancl.first][j],ancl);\n\t\t\t}\n\t\t\
+    }\n\t\tif(ancl.first==ancr.first) return ancl;\n\t\tfor (int j = Operator::bit\
+    \ - 1; 0 <= j; --j) {\n\t\t\tif(ancestor[ancl.first][j].first!=ancestor[ancr.first][j].first)\
+    \ {\n\t\t\t\tancl = Operator::func_lca(ancestor[ancl.first][j],ancl);\n\t\t\t\t\
+    ancr = Operator::func_lca(ancestor[ancr.first][j],ancr);\n\t\t\t}\n\t\t}\n\t\t\
+    ancl = Operator::func_lca(ancestor[ancl.first][0],ancl);\n\t\tancr = Operator::func_lca(ancestor[ancr.first][0],ancr);\n\
+    \t\treturn Operator::func_lca(ancl,ancr);\n\t}\n\t//O(N) anytime\n\t//pair<diameter,vertex_set>\n\
+    \tpair<TypeDist,vector<int>> diameter(void){\n\t\tmake_depth(0);\n\t\tint root\
+    \ = max_element(dist.begin(), dist.end()) - dist.begin();\n\t\tmake_depth(root);\n\
+    \t\tint leaf = max_element(dist.begin(), dist.end()) - dist.begin();\n\t\tmake_parent();\n\
+    \t\tTypeDist d = dist[leaf];\n\t\tvector<int> v;\n\t\twhile (leaf != root) {\n\
+    \t\t\tv.push_back(leaf);\n\t\t\tleaf = parent[leaf].first;\n\t\t}\n\t\tv.push_back(root);\n\
+    \t\treturn make_pair(d,v);\n\t}\n\t//O(N^2) after make_depth\n\tvoid make_subtree(const\
+    \ int root = 0) {\n\t\tif(executed_flag[MAKE_SUBTREE]++) return;\n\t\tif(!executed_flag[MAKE_DEPTH])\
+    \ make_depth(root);\n\t\tsubtree.resize(num);\n\t\tfor (size_t i = 0; i < num;\
+    \ ++i) subtree[i].push_back(i);\n\t\tfor (size_t i = 0; i < num; ++i) for (auto&\
+    \ e : edge[order[i]]) if (depth[order[i]] < depth[e.first]) for(auto k: subtree[e.first])\
+    \ subtree[order[i]].push_back(k);\n\t}\n\t//O(N) after make_child\n\tvoid make_size(const\
+    \ int root = 0) {\n\t\tif(executed_flag[MAKE_SIZE]++) return;\n\t\tif(!executed_flag[MAKE_CHILD])\
+    \ make_child(root);\n\t\tsize.resize(num,1);\n\t\tfor (size_t i:order) for (auto\
+    \ e : child[i]) size[i] += size[e.first];\n\t}\n\t//(N) after make_depth and make_child\n\
+    \ttemplate<class TypeReroot> vector<TypeReroot> rerooting(vector<TypeReroot> rerootdp,vector<TypeReroot>\
+    \ rerootparent) {\n\t\tassert(executed_flag[MAKE_CHILD]);\n\t\tfor(size_t pa:order)\
+    \ for(auto& e:child[pa]) rerootdp[pa] = Operator::func_reroot(rerootdp[pa],rerootdp[e.first]);\n\
+    \t\tfor(size_t pa:reorder) {\n\t\t\tif(depth[pa]) rerootdp[pa] = Operator::func_reroot(rerootdp[pa],rerootparent[pa]);\n\
+    \t\t\tsize_t m = child[pa].size();\n\t\t\tfor(int j = 0; j < m && depth[pa]; ++j){\n\
+    \t\t\t\tsize_t ch = child[pa][j].first;\n\t\t\t\trerootparent[ch] = Operator::func_reroot(rerootparent[ch],rerootparent[pa]);\n\
+    \t\t\t}\n\t\t\tif(m <= 1) continue;\n\t\t\tvector<TypeReroot> l(m),r(m);\n\t\t\
+    \tfor(int j = 0; j < m; ++j) {\n\t\t\t\tsize_t ch = child[pa][j].first;\n\t\t\t\
+    \tl[j] = rerootdp[ch];\n\t\t\t\tr[j] = rerootdp[ch];\n\t\t\t}\n\t\t\tfor(int j\
+    \ = 1; j+1 < m; ++j) l[j] = Operator::func_reroot_merge(l[j],l[j-1]);\n\t\t\t\
+    for(int j = m-2; 0 <=j; --j) r[j] = Operator::func_reroot_merge(r[j],r[j+1]);\n\
+    \t\t\tsize_t chl = child[pa].front().first;\n\t\t\tsize_t chr = child[pa].back().first;\n\
+    \t\t\trerootparent[chl] = Operator::func_reroot(rerootparent[chl],r[1]);\n\t\t\
+    \trerootparent[chr] = Operator::func_reroot(rerootparent[chr],l[m-2]);\n\t\t\t\
+    for(int j = 1; j+1 < m; ++j) {\n\t\t\t\tsize_t ch = child[pa][j].first;\n\t\t\t\
+    \trerootparent[ch] = Operator::func_reroot(rerootparent[ch],l[j-1]);\n\t\t\t\t\
+    rerootparent[ch] = Operator::func_reroot(rerootparent[ch],r[j+1]);\n\t\t\t}\n\t\
+    \t}\n\t\treturn rerootdp;\n\t}\n\t//O(N) after make_depth,make_parent,make_child\n\
+    \tvoid make_heavy_light_decomposition(const int root = 0){\n\t\tif(executed_flag[MAKE_HEAVY_LIGHT_DECOMPOSITION]++)\
+    \ return;\n\t\tif(!executed_flag[MAKE_SIZE]) make_size(root);\n\t\tif(!executed_flag[MAKE_PARENT])\
+    \ make_parent(root);\n\t\thead.resize(num);\n\t\thldorder.resize(num);\n\t\tiota(head.begin(),head.end(),0);\n\
+    \t\tfor(size_t& pa:reorder) {\n\t\t\tpair<size_t,size_t> maxi = {0,num};\n\t\t\
+    \tfor(auto& e:child[pa]) maxi = max(maxi,{size[e.first],e.first});\n\t\t\tif(maxi.first)\
+    \ head[maxi.second] = head[pa];\n\t\t}\n\t\tstack<size_t> st_head,st_sub;\n\t\t\
+    size_t cnt = 0;\n\t\tfor(size_t& root:reorder){\n\t\t\tif(depth[root]) continue;\n\
+    \t\t\tst_head.push(root);\n\t\t\twhile(st_head.size()){\n\t\t\t\tsize_t h = st_head.top();\n\
+    \t\t\t\tst_head.pop();\n\t\t\t\tst_sub.push(h);\n\t\t\t\twhile (st_sub.size()){\n\
+    \t\t\t\t\tsize_t pa = st_sub.top();\n\t\t\t\t\tst_sub.pop();\n\t\t\t\t\thldorder[pa]\
+    \ = cnt++;\n\t\t\t\t\tfor(auto& e:child[pa]) {\n\t\t\t\t\t\tif(head[e.first]==head[pa])\
+    \ st_sub.push(e.first);\n\t\t\t\t\t\telse st_head.push(e.first);\n\t\t\t\t\t}\n\
+    \t\t\t\t}\t\t\t\t\n\t\t\t}\n\t\t}\n\t}\n\t//after hld type 0: vertex, 1: edge\n\
+    \tvector<pair<size_t,size_t>> path(size_t u,size_t v,int type = 0) {\n\t\tassert(executed_flag[MAKE_HEAVY_LIGHT_DECOMPOSITION]);\n\
+    \t\tvector<pair<size_t,size_t>> path;\n\t\twhile(1){\n\t\t\tif(hldorder[u]>hldorder[v])\
+    \ swap(u,v);\n\t\t\tif(head[u]!=head[v]) {\n\t\t\t\tpath.push_back({hldorder[head[v]],hldorder[v]});\n\
+    \t\t\t\tv=parent[head[v]].first;\n\t\t\t}\n\t\t\telse {\n\t\t\t\tpath.push_back({hldorder[u],hldorder[v]});\n\
+    \t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t\treverse(path.begin(),path.end());\n\t\tif(type)\
+    \ path.front().first++;\n\t\treturn path;\n\t}\n\tsize_t hld_lca(size_t u,size_t\
+    \ v){\n\t\tassert(executed_flag[MAKE_HEAVY_LIGHT_DECOMPOSITION]);\n\t\twhile(1){\n\
+    \t\t\tif(hldorder[u]>hldorder[v]) swap(u,v);\n\t\t\tif(head[u]==head[v]) return\
+    \ u;\n\t\t\tv=parent[head[v]].first;\n\t\t}\n\t}\n\t//O(N) after make_child and\
+    \ make_parent\n\tvoid make_eulertour(const int root = 0){\n\t\tif(executed_flag[MAKE_EOULERTOUR]++)\
+    \ return;\n\t\tif(!executed_flag[MAKE_CHILD]) make_child(root);\n\t\tif(!executed_flag[MAKE_PARENT])\
+    \ make_parent(root);\n\t\tdfs(reorder.front());\n\t\teulertour_range.resize(num);\n\
+    \t\tfor(int i = 0; i < eulertour.size(); ++i) eulertour_range[eulertour[i]].second\
+    \ = i;\n\t\tfor(int i = eulertour.size()-1; 0 <= i; --i) eulertour_range[eulertour[i]].first\
+    \ = i;\n\t}\n};\n//depth,dist\n//https://atcoder.jp/contests/abc126/tasks/abc126_d\n\
+    //child\n//https://atcoder.jp/contests/abc133/tasks/abc133_e\n//lca\n//https://atcoder.jp/contests/abc014/tasks/abc014_4\n\
+    //weighted lca\n//https://atcoder.jp/contests/code-thanks-festival-2017-open/tasks/code_thanks_festival_2017_h\n\
+    //https://atcoder.jp/contests/cf16-tournament-round1-open/tasks/asaporo_c\n//diameter\n\
+    //https://atcoder.jp/contests/agc033/tasks/agc033_c\n//subtree\n//https://atcoder.jp/contests/code-thanks-festival-2018/tasks/code_thanks_festival_2018_f\n\
+    //rerooting\n//https://yukicoder.me/problems/no/922\n//size\n//https://yukicoder.me/problems/no/872\n\
+    //eulerTour\n//https://yukicoder.me/problems/no/900\n//hld\n//https://yukicoder.me/problems/no/399\n\
+    //https://yukicoder.me/problems/no/650\ntemplate<class T> struct TreeOperator{\n\
+    \tusing TypeDist = T;\n\tinline static constexpr size_t bit = 20;\n\tinline static\
+    \ constexpr TypeDist unit_dist = 0;\n\tinline static constexpr TypeDist unit_lca\
+    \ = 0;\n\tinline static constexpr TypeDist func_dist(const TypeDist& parent,const\
+    \ TypeDist& w){return parent+w;}\n\tinline static constexpr pair<size_t,TypeDist>\
+    \ func_lca(const pair<size_t,TypeDist>& l,const pair<size_t,TypeDist>& r){return\
+    \ make_pair(l.first,l.second+r.second);}\n\ttemplate<class TypeReroot> inline\
+    \ static constexpr TypeReroot func_reroot(const TypeReroot& l,const TypeReroot&\
+    \ r) {\n\t\treturn {l.first+r.first+r.second,l.second+r.second};\n\t}\n\ttemplate<class\
+    \ TypeReroot> inline static constexpr TypeReroot func_reroot_merge(const TypeReroot&\
+    \ l,const TypeReroot& r) {\n\t\treturn {l.first+r.first,l.second+r.second};\n\t\
+    }\n};\n#line 1 \"lib/segment/SegmentTree.cpp\"\n/*\n * @title SegmentTree\n */\n\
+    template<class Operator> class SegmentTree {\n\tusing TypeNode = typename Operator::TypeNode;\
+    \ \n\tsize_t length;\n\tsize_t num;\n\tvector<TypeNode> node;\n\tvector<pair<int,int>>\
+    \ range;\n    inline void build() {\n\t\tfor (int i = length - 1; i >= 0; --i)\
+    \ node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);\n        range.resize(2\
+    \ * length);\n\t\tfor (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);\n\
+    \t\tfor (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);\n\
+    \    }\npublic:\n\n\t//unit\u3067\u521D\u671F\u5316\n\tSegmentTree(const size_t\
+    \ num): num(num) {\n\t\tfor (length = 1; length <= num; length *= 2);\n\t\tnode.resize(2\
+    \ * length, Operator::unit_node);\n        build();\n\t}\n\n\t//vector\u3067\u521D\
+    \u671F\u5316\n\tSegmentTree(const vector<TypeNode> & vec) : num(vec.size()) {\n\
+    \t\tfor (length = 1; length <= vec.size(); length *= 2);\n\t\tnode.resize(2 *\
+    \ length, Operator::unit_node);\n\t\tfor (int i = 0; i < vec.size(); ++i) node[i\
+    \ + length] = vec[i];\n        build();\n\t}\n \n\t//\u540C\u3058init\u3067\u521D\
+    \u671F\u5316\n\tSegmentTree(const size_t num, const TypeNode init) : num(num)\
+    \ {\n\t\tfor (length = 1; length <= num; length *= 2);\n\t\tnode.resize(2 * length,\
+    \ Operator::unit_node);\n\t\tfor (int i = 0; i < length; ++i) node[i+length] =\
+    \ init;\n        build();\n\t}\n\t\n\t//[idx,idx+1)\n\tvoid update(size_t idx,\
+    \ const TypeNode var) {\n\t\tif(idx < 0 || length <= idx) return;\n\t\tidx +=\
+    \ length;\n\t\tnode[idx] = Operator::func_merge(node[idx],var);\n\t\twhile(idx\
+    \ >>= 1) node[idx] = Operator::func_node(node[(idx<<1)+0],node[(idx<<1)+1]);\n\
+    \t}\n\n\t//[l,r)\n\tTypeNode get(int l, int r) {\n\t\tif (l < 0 || length <= l\
+    \ || r < 0 || length < r) return Operator::unit_node;\n\t\tTypeNode vl = Operator::unit_node,\
+    \ vr = Operator::unit_node;\n\t\tfor(l += length, r += length; l < r; l >>=1,\
+    \ r >>=1) {\n\t\t\tif(l&1) vl = Operator::func_node(vl,node[l++]);\n\t\t\tif(r&1)\
+    \ vr = Operator::func_node(node[--r],vr);\n\t\t}\n\t\treturn Operator::func_node(vl,vr);\n\
+    \t}\n\n\t//range[l,r) return [l,r] search max right\n\tint prefix_binary_search(int\
+    \ l, int r, TypeNode var) {\n\t\tassert(0 <= l && l < length && 0 < r && r <=\
+    \ length);\n\t\tTypeNode ret = Operator::unit_node;\n\t\tsize_t off = l;\n\t\t\
+    for(size_t idx = l+length; idx < 2*length && off < r; ){\n\t\t\tif(range[idx].second<=r\
+    \ && !Operator::func_check(Operator::func_node(ret,node[idx]),var)) {\n\t\t\t\t\
+    ret = Operator::func_node(ret,node[idx]);\n\t\t\t\toff = range[idx++].second;\n\
+    \t\t\t\tif(!(idx&1)) idx >>= 1;\t\t\t\n\t\t\t}\n\t\t\telse{\n\t\t\t\tidx <<=1;\n\
+    \t\t\t}\n\t\t}\n\t\treturn off;\n\t}\n\n\t//range(l,r] return [l,r] search max\
+    \ left\n\tint suffix_binary_search(const int l, const int r, const TypeNode var)\
+    \ {\n\t\tassert(-1 <= l && l < (int)length-1 && 0 <= r && r < length);\n\t\tTypeNode\
+    \ ret = Operator::unit_node;\n\t\tint off = r;\n\t\tfor(size_t idx = r+length;\
+    \ idx < 2*length && l < off; ){\n\t\t\tif(l < range[idx].first && !Operator::func_check(Operator::func_node(node[idx],ret),var))\
+    \ {\n\t\t\t\tret = Operator::func_node(node[idx],ret);\n\t\t\t\toff = range[idx--].first-1;\n\
+    \t\t\t\tif(idx&1) idx >>= 1;\n\t\t\t}\n\t\t\telse{\n\t\t\t\tidx = (idx<<1)+1;\n\
+    \t\t\t}\n\t\t}\n\t\treturn off;\n\t}\n\n\tvoid print(){\n\t\t// cout << \"node\"\
+    \ << endl;\n\t\t// for(int i = 1,j = 1; i < 2*length; ++i) {\n\t\t// \tcout <<\
+    \ node[i] << \" \";\n\t\t// \tif(i==((1<<j)-1) && ++j) cout << endl;\n\t\t// }\n\
+    \t\tcout << \"vector\" << endl;\n\t\tcout << \"{ \" << get(0,1);\n\t\tfor(int\
+    \ i = 1; i < length; ++i) cout << \", \" << get(i,i+1);\n\t\tcout << \" }\" <<\
+    \ endl;\n\t}\n};\n\n//\u4E00\u70B9\u66F4\u65B0 \u533A\u9593\u6700\u5C0F\ntemplate<class\
+    \ T> struct NodeMinPointUpdate {\n\tusing TypeNode = T;\n\tinline static constexpr\
+    \ TypeNode unit_node = (1LL<<31)-1;\n\tinline static constexpr TypeNode func_node(TypeNode\
+    \ l,TypeNode r){return min(l,r);}\n\tinline static constexpr TypeNode func_merge(TypeNode\
+    \ l,TypeNode r){return r;}\n\tinline static constexpr bool func_check(TypeNode\
+    \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n\n//\u4E00\u70B9\u52A0\u7B97\
+    \ \u533A\u9593\u7DCF\u548C\ntemplate<class T> struct NodeSumPointAdd {\n\tusing\
+    \ TypeNode = T;\n\tinline static constexpr TypeNode unit_node = 0;\n\tinline static\
+    \ constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n\tinline static\
+    \ constexpr TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}\n\tinline\
+    \ static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var ==\
+    \ nodeVal;}\n};\n\n//\u4E00\u6B21\u95A2\u6570\ntemplate<class T> struct NodeCompositePointUpdate\
+    \ {\n\tusing TypeNode = T;\n\tinline static constexpr TypeNode unit_node = make_pair(1,0);\n\
+    \tinline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return {r.first*l.first,r.first*l.second+r.second};}\n\
+    \tinline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n\
+    \tinline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
+    \ var == nodeVal;}\n};\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
+    \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
+    \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
+    \ (-y)%mod)%mod) {}\n    ModInt &operator+=(const ModInt &p) {if((x += p.x) >=\
+    \ mod) x -= mod;return *this;}\n    ModInt &operator+=(const long long y) {ModInt\
+    \ p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
+    \ int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt\
+    \ &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}\n\
+    \    ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >=\
+    \ mod) x -= mod;return *this;}\n    ModInt &operator-=(const int y) {ModInt p(y);if((x\
+    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator*=(const\
+    \ ModInt &p) {x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
+    \ long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
+    \ int y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator^=(const\
+    \ ModInt &p) {x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
+    \ long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
+    \ int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator/=(const\
+    \ ModInt &p) {*this *= p.inv();return *this;}\n    ModInt &operator/=(const long\
+    \ long y) {ModInt p(y);*this *= p.inv();return *this;}\n    ModInt &operator/=(const\
+    \ int y) {ModInt p(y);*this *= p.inv();return *this;}\n    ModInt operator=(const\
+    \ int y) {ModInt p(y);*this = p;return *this;}\n    ModInt operator=(const long\
+    \ long y) {ModInt p(y);*this = p;return *this;}\n    ModInt operator-() const\
+    \ {return ModInt(-x); }\n    ModInt operator++() {x++;if(x>=mod) x-=mod;return\
+    \ *this;}\n    ModInt operator--() {x--;if(x<0) x+=mod;return *this;}\n    ModInt\
+    \ operator+(const ModInt &p) const { return ModInt(*this) += p; }\n    ModInt\
+    \ operator-(const ModInt &p) const { return ModInt(*this) -= p; }\n    ModInt\
+    \ operator*(const ModInt &p) const { return ModInt(*this) *= p; }\n    ModInt\
+    \ operator/(const ModInt &p) const { return ModInt(*this) /= p; }\n    ModInt\
+    \ operator^(const ModInt &p) const { return ModInt(*this) ^= p; }\n    bool operator==(const\
+    \ ModInt &p) const { return x == p.x; }\n    bool operator!=(const ModInt &p)\
+    \ const { return x != p.x; }\n    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
+    \ > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}\n\
+    \    ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul *= mul,n\
+    \ >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream &operator<<(ostream\
+    \ &os, const ModInt &p) {return os << p.x;}\n    friend istream &operator>>(istream\
+    \ &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}\n};\n\
+    //using modint = ModInt<MOD>;\n#line 15 \"test/graph/Tree-hld-path.test.cpp\"\n\
+    \nconstexpr long long MOD = 1'000'000'007LL;\nusing modint = ModInt<MOD>;\nusing\
+    \ matrix = array<modint, 4>;\nconstexpr matrix E = {1,0,0,1};\n\n//\u4E00\u70B9\
+    \u66F4\u65B0 \u533A\u9593\u6700\u5C0F\ntemplate<class T> struct NodeMatrixPointUpdate\
+    \ {\n\tusing TypeNode = T;\n\tinline static constexpr TypeNode unit_node = {1,0,0,1};\n\
+    \tinline static constexpr TypeNode func_node(TypeNode l,TypeNode r){\n       \
+    \ matrix res = {};\n        for(int i = 0; i < 2; ++i) {\n            for(int\
+    \ j = 0; j < 2; ++j) {\n                for(int k = 0; k < 2; ++k) {\n       \
+    \             res[i*2+j] += l[i*2+k]*r[k*2+j];\n                }\n          \
+    \  }\n        }\n        return res;\n    }\n\tinline static constexpr TypeNode\
+    \ func_merge(TypeNode l,TypeNode r){return r;}\n\tinline static constexpr bool\
+    \ func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}\n};\n\nint\
+    \ main(void){\n\tint N; cin >> N;\n\tTree<TreeOperator<int>> tree(N);\n\tvector<pair<int,int>>\
+    \ edge(N-1);\n\tfor(int i = 0; i < N-1; ++i) {\n\t\tint u,v; cin >> u >> v;\n\t\
+    \ttree.make_edge(u,v);\n\t\ttree.make_edge(v,u);\n\t\tedge[i] = {u,v};\n\t}\n\t\
+    tree.make_heavy_light_decomposition(0);\n    SegmentTree<NodeMatrixPointUpdate<matrix>>\
+    \ seg(N);\n    int Q; cin >> Q;\n    for(int i = 0; i < Q; ++i) {\n        char\
+    \ c; cin >> c;\n        if(c == 'x'){\n            int j; cin >> j;\n        \
+    \    modint a,b,c,d; cin >> a >> b >> c >> d;\n            matrix x = {a,b,c,d};\n\
+    \            int l = edge[j].first, r = edge[j].second;\n            l = tree.hldorder[l],r\
+    \ = tree.hldorder[r];\n            if(l > r) swap(l,r);\n            seg.update(r,x);\n\
+    \        }\n        else{\n            int l,r; cin >> l >> r;\n            auto\
+    \ vp = tree.path(l,r,1);\n            matrix ans = E;\n            for(auto p:vp){\n\
+    \                ans = NodeMatrixPointUpdate<matrix>::func_node(ans,seg.get(p.first,p.second+1));\n\
+    \            }\n            cout << ans[0] << \" \" << ans[1] << \" \" << ans[2]\
+    \ << \" \" << ans[3] << endl;\n        }\n    }\n\treturn 0;\n}\n"
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/650\"\n\n#include <vector>\n\
+    #include <iostream>\n#include <cassert>\n#include <map>\n#include <algorithm>\n\
+    #include <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n\
+    #include \"../../lib/graph/Tree.cpp\"\n#include \"../../lib/segment/SegmentTree.cpp\"\
+    \n#include \"../../lib/util/ModInt.cpp\"\n\nconstexpr long long MOD = 1'000'000'007LL;\n\
+    using modint = ModInt<MOD>;\nusing matrix = array<modint, 4>;\nconstexpr matrix\
+    \ E = {1,0,0,1};\n\n//\u4E00\u70B9\u66F4\u65B0 \u533A\u9593\u6700\u5C0F\ntemplate<class\
+    \ T> struct NodeMatrixPointUpdate {\n\tusing TypeNode = T;\n\tinline static constexpr\
+    \ TypeNode unit_node = {1,0,0,1};\n\tinline static constexpr TypeNode func_node(TypeNode\
+    \ l,TypeNode r){\n        matrix res = {};\n        for(int i = 0; i < 2; ++i)\
+    \ {\n            for(int j = 0; j < 2; ++j) {\n                for(int k = 0;\
+    \ k < 2; ++k) {\n                    res[i*2+j] += l[i*2+k]*r[k*2+j];\n      \
+    \          }\n            }\n        }\n        return res;\n    }\n\tinline static\
+    \ constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n\tinline static\
+    \ constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}\n\
+    };\n\nint main(void){\n\tint N; cin >> N;\n\tTree<TreeOperator<int>> tree(N);\n\
+    \tvector<pair<int,int>> edge(N-1);\n\tfor(int i = 0; i < N-1; ++i) {\n\t\tint\
+    \ u,v; cin >> u >> v;\n\t\ttree.make_edge(u,v);\n\t\ttree.make_edge(v,u);\n\t\t\
+    edge[i] = {u,v};\n\t}\n\ttree.make_heavy_light_decomposition(0);\n    SegmentTree<NodeMatrixPointUpdate<matrix>>\
+    \ seg(N);\n    int Q; cin >> Q;\n    for(int i = 0; i < Q; ++i) {\n        char\
+    \ c; cin >> c;\n        if(c == 'x'){\n            int j; cin >> j;\n        \
+    \    modint a,b,c,d; cin >> a >> b >> c >> d;\n            matrix x = {a,b,c,d};\n\
+    \            int l = edge[j].first, r = edge[j].second;\n            l = tree.hldorder[l],r\
+    \ = tree.hldorder[r];\n            if(l > r) swap(l,r);\n            seg.update(r,x);\n\
+    \        }\n        else{\n            int l,r; cin >> l >> r;\n            auto\
+    \ vp = tree.path(l,r,1);\n            matrix ans = E;\n            for(auto p:vp){\n\
+    \                ans = NodeMatrixPointUpdate<matrix>::func_node(ans,seg.get(p.first,p.second+1));\n\
+    \            }\n            cout << ans[0] << \" \" << ans[1] << \" \" << ans[2]\
+    \ << \" \" << ans[3] << endl;\n        }\n    }\n\treturn 0;\n}"
+  dependsOn:
+  - lib/graph/Tree.cpp
+  - lib/segment/SegmentTree.cpp
+  - lib/util/ModInt.cpp
+  isVerificationFile: true
+  path: test/graph/Tree-hld-path.test.cpp
+  requiredBy: []
+  timestamp: '2020-09-12 08:49:30+09:00'
+  verificationStatus: TEST_ACCEPTED
+  verifiedWith: []
+documentation_of: test/graph/Tree-hld-path.test.cpp
+layout: document
+redirect_from:
+- /verify/test/graph/Tree-hld-path.test.cpp
+- /verify/test/graph/Tree-hld-path.test.cpp.html
+title: test/graph/Tree-hld-path.test.cpp
+---

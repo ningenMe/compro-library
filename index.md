@@ -1,255 +1,523 @@
 ---
-layout: default
+data:
+  libraryCategories:
+  - name: lib/geometory
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/geometory/Argument.cpp
+      title: Argument
+    - icon: ':heavy_check_mark:'
+      path: lib/geometory/ConvexHullTrick.cpp
+      title: ConvexHullTrick
+    - icon: ':heavy_check_mark:'
+      path: lib/geometory/ConvexHullTrickMonotone.cpp
+      title: ConvexHullTrickMonotone
+    - icon: ':heavy_check_mark:'
+      path: lib/geometory/Distance.cpp
+      title: Distance
+  - name: lib/graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/graph/Dijkstra.cpp
+      title: Dijkstra
+    - icon: ':heavy_check_mark:'
+      path: lib/graph/Dinic.cpp
+      title: Dinic
+    - icon: ':x:'
+      path: lib/graph/MinimumDirectedClosedCircuit.cpp
+      title: MinimumDirectedClosedCircuit
+    - icon: ':question:'
+      path: lib/graph/StronglyConnectedComponents.cpp
+      title: StronglyConnectedComponents
+    - icon: ':heavy_check_mark:'
+      path: lib/graph/Tree.cpp
+      title: Tree
+    - icon: ':heavy_check_mark:'
+      path: lib/graph/UnionFindTree.cpp
+      title: UnionFindTree
+  - name: lib/heap
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/heap/RadixHeap.cpp
+      title: RadixHeap
+    - icon: ':heavy_check_mark:'
+      path: lib/heap/RadixHeapInt.cpp
+      title: RadixHeapInt
+  - name: lib/math
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/math/CombinationMod.cpp
+      title: CombinationMod
+    - icon: ':heavy_check_mark:'
+      path: lib/math/Eratosthenes.cpp
+      title: Eratosthenes
+    - icon: ':warning:'
+      path: lib/math/FastFourierTransform.cpp
+      title: FastFourierTransform
+    - icon: ':heavy_check_mark:'
+      path: lib/math/FloorSum.cpp
+      title: FloorSum
+    - icon: ':heavy_check_mark:'
+      path: lib/math/FormalPowerSeries.cpp
+      title: FormalPowerSeries
+    - icon: ':heavy_check_mark:'
+      path: lib/math/Garner.cpp
+      title: Garner
+    - icon: ':heavy_check_mark:'
+      path: lib/math/Gcd.cpp
+      title: Gcd
+    - icon: ':heavy_check_mark:'
+      path: lib/math/Matrix.cpp
+      title: Matrix
+    - icon: ':heavy_check_mark:'
+      path: lib/math/NumberTheoreticTransform.cpp
+      title: NumberTheoreticTransform
+    - icon: ':heavy_check_mark:'
+      path: lib/math/Prime.cpp
+      title: Prime
+  - name: lib/segment
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/segment/BinaryIndexedTree.cpp
+      title: BinaryIndexedTree
+    - icon: ':heavy_check_mark:'
+      path: lib/segment/BinaryTrie.cpp
+      title: BinaryTrie
+    - icon: ':warning:'
+      path: lib/segment/ConvexHullTrickSegmentTree.cpp
+      title: ConvexHullTrickSegmentTree
+    - icon: ':heavy_check_mark:'
+      path: lib/segment/DisjointSparseTable.cpp
+      title: DisjointSparseTable
+    - icon: ':heavy_check_mark:'
+      path: lib/segment/LazySegmentTree.cpp
+      title: LazySegmentTree
+    - icon: ':heavy_check_mark:'
+      path: lib/segment/LiChaoTree.cpp
+      title: LiChaoTree
+    - icon: ':heavy_check_mark:'
+      path: lib/segment/Rbst.cpp
+      title: Rbst
+    - icon: ':heavy_check_mark:'
+      path: lib/segment/SegmentTree.cpp
+      title: SegmentTree
+    - icon: ':heavy_check_mark:'
+      path: lib/segment/SegmentTreeBeats.cpp
+      title: SegmentTreeBeats
+    - icon: ':heavy_check_mark:'
+      path: lib/segment/SparseTable.cpp
+      title: SparseTable
+    - icon: ':heavy_check_mark:'
+      path: lib/segment/Swag.cpp
+      title: Swag
+  - name: lib/string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/string/Zalgorithm.cpp
+      title: Zalgorithm
+  - name: lib/util
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/util/Mod.cpp
+      title: Mod
+    - icon: ':heavy_check_mark:'
+      path: lib/util/ModInt.cpp
+      title: ModInt
+    - icon: ':heavy_check_mark:'
+      path: lib/util/NBase.cpp
+      title: NBase
+    - icon: ':heavy_check_mark:'
+      path: lib/util/RangeIndex.cpp
+      title: RangeIndex
+  - name: non-verified
+    pages:
+    - icon: ':warning:'
+      path: non-verified/Accumulate2D.cpp
+      title: non-verified/Accumulate2D.cpp
+    - icon: ':warning:'
+      path: non-verified/BinaryColumnEchelonFormalize.cpp
+      title: non-verified/BinaryColumnEchelonFormalize.cpp
+    - icon: ':warning:'
+      path: non-verified/BinaryIndexedTree2D.cpp
+      title: non-verified/BinaryIndexedTree2D.cpp
+    - icon: ':warning:'
+      path: non-verified/BipartiteMatching.cpp
+      title: non-verified/BipartiteMatching.cpp
+    - icon: ':warning:'
+      path: non-verified/Chinese_Remainder_Theorem.cpp
+      title: non-verified/Chinese_Remainder_Theorem.cpp
+    - icon: ':warning:'
+      path: non-verified/CircleIntersection.cpp
+      title: non-verified/CircleIntersection.cpp
+    - icon: ':warning:'
+      path: non-verified/Combination.cpp
+      title: non-verified/Combination.cpp
+    - icon: ':warning:'
+      path: non-verified/Divisor.cpp
+      title: non-verified/Divisor.cpp
+    - icon: ':warning:'
+      path: non-verified/FastFourierTransform.cpp
+      title: non-verified/FastFourierTransform.cpp
+    - icon: ':warning:'
+      path: non-verified/Ford_Fulkerson.cpp
+      title: non-verified/Ford_Fulkerson.cpp
+    - icon: ':warning:'
+      path: non-verified/Line_Intersection_Judge.cpp
+      title: non-verified/Line_Intersection_Judge.cpp
+    - icon: ':warning:'
+      path: non-verified/LongestIncreasingSubsequence.cpp
+      title: non-verified/LongestIncreasingSubsequence.cpp
+    - icon: ':warning:'
+      path: non-verified/Longest_Common_Subsequence.cpp
+      title: non-verified/Longest_Common_Subsequence.cpp
+    - icon: ':warning:'
+      path: non-verified/Longest_Common_Subsequence_Size.cpp
+      title: non-verified/Longest_Common_Subsequence_Size.cpp
+    - icon: ':warning:'
+      path: non-verified/LowLink.cpp
+      title: non-verified/LowLink.cpp
+    - icon: ':warning:'
+      path: non-verified/MaximumSubarray.cpp
+      title: non-verified/MaximumSubarray.cpp
+    - icon: ':warning:'
+      path: non-verified/Maximum_Rectangle.cpp
+      title: non-verified/Maximum_Rectangle.cpp
+    - icon: ':warning:'
+      path: non-verified/Maximum_Segment_Sum.cpp
+      title: non-verified/Maximum_Segment_Sum.cpp
+    - icon: ':warning:'
+      path: non-verified/Median.cpp
+      title: non-verified/Median.cpp
+    - icon: ':warning:'
+      path: non-verified/MinimumDirectedClosedCircuit.cpp
+      title: non-verified/MinimumDirectedClosedCircuit.cpp
+    - icon: ':warning:'
+      path: non-verified/MinimumUndirectedClosedCircuit.cpp
+      title: non-verified/MinimumUndirectedClosedCircuit.cpp
+    - icon: ':warning:'
+      path: non-verified/Mo.cpp
+      title: non-verified/Mo.cpp
+    - icon: ':warning:'
+      path: non-verified/MontmortNumber.cpp
+      title: non-verified/MontmortNumber.cpp
+    - icon: ':warning:'
+      path: non-verified/Parser.cpp
+      title: non-verified/Parser.cpp
+    - icon: ':warning:'
+      path: non-verified/Partition_Number.cpp
+      title: non-verified/Partition_Number.cpp
+    - icon: ':warning:'
+      path: non-verified/Permutation_Mod.cpp
+      title: non-verified/Permutation_Mod.cpp
+    - icon: ':warning:'
+      path: non-verified/Rarts.cpp
+      title: non-verified/Rarts.cpp
+    - icon: ':warning:'
+      path: non-verified/RollingHash.cpp
+      title: non-verified/RollingHash.cpp
+    - icon: ':warning:'
+      path: non-verified/SlideMost.cpp
+      title: non-verified/SlideMost.cpp
+    - icon: ':warning:'
+      path: non-verified/SmallestEnclosingDisc.cpp
+      title: non-verified/SmallestEnclosingDisc.cpp
+    - icon: ':warning:'
+      path: non-verified/Union_Find_Tree_Persistence.cpp
+      title: non-verified/Union_Find_Tree_Persistence.cpp
+    - icon: ':warning:'
+      path: non-verified/Union_Find_Tree_With_Potential.cpp
+      title: non-verified/Union_Find_Tree_With_Potential.cpp
+    - icon: ':warning:'
+      path: non-verified/Zarts.cpp
+      title: non-verified/Zarts.cpp
+  - name: old
+    pages:
+    - icon: ':warning:'
+      path: old/BinaryIndexedTree.cpp
+      title: old/BinaryIndexedTree.cpp
+    - icon: ':warning:'
+      path: old/BinaryIndexedTree2DRangeModSumQuery.cpp
+      title: old/BinaryIndexedTree2DRangeModSumQuery.cpp
+    - icon: ':warning:'
+      path: old/Grid_Breadth_First_Search.cpp
+      title: old/Grid_Breadth_First_Search.cpp
+    - icon: ':warning:'
+      path: old/Grid_Translation.cpp
+      title: old/Grid_Translation.cpp
+    - icon: ':warning:'
+      path: old/Lazy_Segment_Tree_Range_Maximum_Query.cpp
+      title: old/Lazy_Segment_Tree_Range_Maximum_Query.cpp
+    - icon: ':warning:'
+      path: old/Lazy_Segment_Tree_Range_Minimum_Query.cpp
+      title: old/Lazy_Segment_Tree_Range_Minimum_Query.cpp
+    - icon: ':warning:'
+      path: old/Lazy_Segment_Tree_Range_Sum_Query.cpp
+      title: old/Lazy_Segment_Tree_Range_Sum_Query.cpp
+    - icon: ':warning:'
+      path: old/LiChaoTree.cpp
+      title: old/LiChaoTree.cpp
+    - icon: ':warning:'
+      path: old/Lowest_Common_Ancestor.cpp
+      title: old/Lowest_Common_Ancestor.cpp
+    - icon: ':warning:'
+      path: old/PowMod.cpp
+      title: old/PowMod.cpp
+    - icon: ':warning:'
+      path: old/PrimeFactorization.cpp
+      title: old/PrimeFactorization.cpp
+    - icon: ':warning:'
+      path: old/SegmentTree.cpp
+      title: old/SegmentTree.cpp
+    - icon: ':warning:'
+      path: old/SegmentTree2.cpp
+      title: old/SegmentTree2.cpp
+    - icon: ':warning:'
+      path: old/Segment_Tree_Range_Gcd_Query.cpp
+      title: old/Segment_Tree_Range_Gcd_Query.cpp
+    - icon: ':warning:'
+      path: old/Segment_Tree_Range_Maximum_Query.cpp
+      title: old/Segment_Tree_Range_Maximum_Query.cpp
+    - icon: ':warning:'
+      path: old/Segment_Tree_Range_Minimum_Query.cpp
+      title: old/Segment_Tree_Range_Minimum_Query.cpp
+    - icon: ':warning:'
+      path: old/Segment_Tree_Range_Sum_Query.cpp
+      title: old/Segment_Tree_Range_Sum_Query.cpp
+    - icon: ':warning:'
+      path: old/Solver.cpp
+      title: old/Solver.cpp
+    - icon: ':warning:'
+      path: old/Tree.cpp
+      title: old/Tree.cpp
+    - icon: ':warning:'
+      path: old/Tree2.cpp
+      title: old/Tree2.cpp
+    - icon: ':warning:'
+      path: old/UnionFindTreeMerge.cpp
+      title: old/UnionFindTreeMerge.cpp
+    - icon: ':warning:'
+      path: old/UnionFindTreeSize.cpp
+      title: old/UnionFindTreeSize.cpp
+    - icon: ':warning:'
+      path: old/Weighted_Tree.cpp
+      title: old/Weighted_Tree.cpp
+    - icon: ':warning:'
+      path: old/ZAlgorithm.cpp
+      title: old/ZAlgorithm.cpp
+    - icon: ':warning:'
+      path: old/ZArray.cpp
+      title: old/ZArray.cpp
+  verificationCategories:
+  - name: test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/example.test.cpp
+      title: test/example.test.cpp
+  - name: test/geometory
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/geometory/Argument-sort-by-atan2l.test.cpp
+      title: test/geometory/Argument-sort-by-atan2l.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometory/ConvexHullTrick-max.test.cpp
+      title: test/geometory/ConvexHullTrick-max.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometory/ConvexHullTrick-min.test.cpp
+      title: test/geometory/ConvexHullTrick-min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometory/ConvexHullTrick-no-monotone.test.cpp
+      title: test/geometory/ConvexHullTrick-no-monotone.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometory/ConvexHullTrickMonotone-max.test.cpp
+      title: test/geometory/ConvexHullTrickMonotone-max.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometory/ConvexHullTrickMonotone-min.test.cpp
+      title: test/geometory/ConvexHullTrickMonotone-min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometory/Distance-line.test.cpp
+      title: test/geometory/Distance-line.test.cpp
+  - name: test/graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/graph/Dijkstra-restore.test.cpp
+      title: test/graph/Dijkstra-restore.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/Dijkstra.test.cpp
+      title: test/graph/Dijkstra.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/Dinic.test.cpp
+      title: test/graph/Dinic.test.cpp
+    - icon: ':x:'
+      path: test/graph/MinimumDirectedClosedCircuit.test.cpp
+      title: test/graph/MinimumDirectedClosedCircuit.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/StronglyConnectedComponents-1.test.cpp
+      title: test/graph/StronglyConnectedComponents-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/StronglyConnectedComponents-2.test.cpp
+      title: test/graph/StronglyConnectedComponents-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/StronglyConnectedComponents-2sat.test.cpp
+      title: test/graph/StronglyConnectedComponents-2sat.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/Tree-diameter.test.cpp
+      title: test/graph/Tree-diameter.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/Tree-eulertour.test.cpp
+      title: test/graph/Tree-eulertour.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/Tree-hld-path.test.cpp
+      title: test/graph/Tree-hld-path.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/Tree-hld-vertex.test.cpp
+      title: test/graph/Tree-hld-vertex.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/Tree-rerooting.test.cpp
+      title: test/graph/Tree-rerooting.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/Tree-size.test.cpp
+      title: test/graph/Tree-size.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/UnionFindTree.test.cpp
+      title: test/graph/UnionFindTree.test.cpp
+  - name: test/heap
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/heap/RadixHeap.test.cpp
+      title: test/heap/RadixHeap.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/heap/RadixHeapInt.test.cpp
+      title: test/heap/RadixHeapInt.test.cpp
+  - name: test/math
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/math/CombinationMod-binom.test.cpp
+      title: test/math/CombinationMod-binom.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/CombinationMod-factorial.test.cpp
+      title: test/math/CombinationMod-factorial.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/Eratosthenes.test.cpp
+      title: test/math/Eratosthenes.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FloorSum.test.cpp
+      title: test/math/FloorSum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FormalPowerSeries-1000000007-1.test.cpp
+      title: test/math/FormalPowerSeries-1000000007-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FormalPowerSeries-1000000007-2.test.cpp
+      title: test/math/FormalPowerSeries-1000000007-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FormalPowerSeries-998244353-1.test.cpp
+      title: test/math/FormalPowerSeries-998244353-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FormalPowerSeries-998244353-2.test.cpp
+      title: test/math/FormalPowerSeries-998244353-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/Garner.test.cpp
+      title: test/math/Garner.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/Matrix-det.test.cpp
+      title: test/math/Matrix-det.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/Matrix-pow.test.cpp
+      title: test/math/Matrix-pow.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/NumberTheoreticTransform1.test.cpp
+      title: test/math/NumberTheoreticTransform1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/NumberTheoreticTransform2.test.cpp
+      title: test/math/NumberTheoreticTransform2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/NumberTheoreticTransformArbitraryMod1.test.cpp
+      title: test/math/NumberTheoreticTransformArbitraryMod1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/NumberTheoreticTransformArbitraryMod2.test.cpp
+      title: test/math/NumberTheoreticTransformArbitraryMod2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/Prime-miller-rabin.test.cpp
+      title: test/math/Prime-miller-rabin.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/Prime-rho.test.cpp
+      title: test/math/Prime-rho.test.cpp
+  - name: test/segment
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/segment/BinaryIndexedTree-rsqraq.test.cpp
+      title: test/segment/BinaryIndexedTree-rsqraq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/BinaryTrie-set-xor-min.test.cpp
+      title: test/segment/BinaryTrie-set-xor-min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/DisjointSparseTable.test.cpp
+      title: test/segment/DisjointSparseTable.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/LazySegmentTree-rmqraq.test.cpp
+      title: test/segment/LazySegmentTree-rmqraq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/LazySegmentTree-rsqruq.test.cpp
+      title: test/segment/LazySegmentTree-rsqruq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/LiChaoTree-line.test.cpp
+      title: test/segment/LiChaoTree-line.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/LiChaoTree-segment.test.cpp
+      title: test/segment/LiChaoTree-segment.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/Rbst-get.test.cpp
+      title: test/segment/Rbst-get.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/Rbst-med.test.cpp
+      title: test/segment/Rbst-med.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/Rbst-pair.test.cpp
+      title: test/segment/Rbst-pair.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/SegmentTree-prefix-binary-search.test.cpp
+      title: test/segment/SegmentTree-prefix-binary-search.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/SegmentTree-rcq.test.cpp
+      title: test/segment/SegmentTree-rcq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/SegmentTree-rmq.test.cpp
+      title: test/segment/SegmentTree-rmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/SegmentTree-rsq.test.cpp
+      title: test/segment/SegmentTree-rsq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/SegmentTree-suffix-binary-search.test.cpp
+      title: test/segment/SegmentTree-suffix-binary-search.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/SegmentTreeBeats-1.test.cpp
+      title: test/segment/SegmentTreeBeats-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/SegmentTreeBeats-2.test.cpp
+      title: test/segment/SegmentTreeBeats-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/SparseTable.test.cpp
+      title: test/segment/SparseTable.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/Swag.test.cpp
+      title: test/segment/Swag.test.cpp
+  - name: test/string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/string/Zalgorithm.test.cpp
+      title: test/string/Zalgorithm.test.cpp
+  - name: test/util
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/util/Mod.test.cpp
+      title: test/util/Mod.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/util/ModInt.test.cpp
+      title: test/util/ModInt.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/util/NBase.test.cpp
+      title: test/util/NBase.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/util/RangeIndex.test.cpp
+      title: test/util/RangeIndex.test.cpp
+layout: toppage
 ---
-
-<!-- mathjax config similar to math.stackexchange -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" }},
-    tex2jax: {
-      inlineMath: [ ['$','$'] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { matchFontHeight: false },
-    displayAlign: "left",
-    displayIndent: "2em"
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="assets/css/copy-button.css" />
-
-
-# {{ site.title }}
-
-[![Actions Status]({{ site.github.repository_url }}/workflows/verify/badge.svg)]({{ site.github.repository_url }}/actions)
-<a href="{{ site.github.repository_url }}"><img src="https://img.shields.io/github/last-commit/{{ site.github.owner_name }}/{{ site.github.repository_name }}" /></a>
-
-{% if site.github.project_tagline %}{{ site.github.project_tagline }}{% else %}This documentation is automatically generated by <a href="https://github.com/online-judge-tools/verification-helper">online-judge-tools/verification-helper</a>.{% endif %}
-
-## Library Files
-
-<div id="3ee383e089bb750d0bba9be448690113"></div>
-
-### lib/geometory
-
-* :heavy_check_mark: <a href="library/lib/geometory/Argument.cpp.html">Argument</a>
-* :heavy_check_mark: <a href="library/lib/geometory/ConvexHullTrick.cpp.html">ConvexHullTrick</a>
-* :heavy_check_mark: <a href="library/lib/geometory/ConvexHullTrickMonotone.cpp.html">ConvexHullTrickMonotone</a>
-* :heavy_check_mark: <a href="library/lib/geometory/Distance.cpp.html">Distance</a>
-
-
-<div id="6e267a37887a7dcb68cbf7008d6c7e48"></div>
-
-### lib/graph
-
-* :heavy_check_mark: <a href="library/lib/graph/Dijkstra.cpp.html">Dijkstra</a>
-* :heavy_check_mark: <a href="library/lib/graph/Dinic.cpp.html">Dinic</a>
-* :x: <a href="library/lib/graph/MinimumDirectedClosedCircuit.cpp.html">MinimumDirectedClosedCircuit</a>
-* :question: <a href="library/lib/graph/StronglyConnectedComponents.cpp.html">StronglyConnectedComponents</a>
-* :heavy_check_mark: <a href="library/lib/graph/Tree.cpp.html">Tree</a>
-* :heavy_check_mark: <a href="library/lib/graph/UnionFindTree.cpp.html">UnionFindTree</a>
-
-
-<div id="9d4770b6051a64e71c3ca0eb1d2879e1"></div>
-
-### lib/heap
-
-* :heavy_check_mark: <a href="library/lib/heap/RadixHeap.cpp.html">RadixHeap</a>
-* :heavy_check_mark: <a href="library/lib/heap/RadixHeapInt.cpp.html">RadixHeapInt</a>
-
-
-<div id="b524a7b47b8ed72180f0e5150ab6d934"></div>
-
-### lib/math
-
-* :heavy_check_mark: <a href="library/lib/math/CombinationMod.cpp.html">CombinationMod</a>
-* :heavy_check_mark: <a href="library/lib/math/Eratosthenes.cpp.html">Eratosthenes</a>
-* :warning: <a href="library/lib/math/FastFourierTransform.cpp.html">FastFourierTransform</a>
-* :heavy_check_mark: <a href="library/lib/math/FloorSum.cpp.html">FloorSum</a>
-* :heavy_check_mark: <a href="library/lib/math/FormalPowerSeries.cpp.html">FormalPowerSeries</a>
-* :heavy_check_mark: <a href="library/lib/math/Garner.cpp.html">Garner</a>
-* :heavy_check_mark: <a href="library/lib/math/Gcd.cpp.html">Gcd</a>
-* :heavy_check_mark: <a href="library/lib/math/Matrix.cpp.html">Matrix</a>
-* :heavy_check_mark: <a href="library/lib/math/NumberTheoreticTransform.cpp.html">NumberTheoreticTransform</a>
-* :heavy_check_mark: <a href="library/lib/math/Prime.cpp.html">Prime</a>
-
-
-<div id="c993b235c21a7035904945a028efa0ef"></div>
-
-### lib/segment
-
-* :heavy_check_mark: <a href="library/lib/segment/BinaryIndexedTree.cpp.html">BinaryIndexedTree</a>
-* :heavy_check_mark: <a href="library/lib/segment/BinaryTrie.cpp.html">BinaryTrie</a>
-* :warning: <a href="library/lib/segment/ConvexHullTrickSegmentTree.cpp.html">ConvexHullTrickSegmentTree</a>
-* :heavy_check_mark: <a href="library/lib/segment/DisjointSparseTable.cpp.html">DisjointSparseTable</a>
-* :heavy_check_mark: <a href="library/lib/segment/LazySegmentTree.cpp.html">LazySegmentTree</a>
-* :heavy_check_mark: <a href="library/lib/segment/LiChaoTree.cpp.html">LiChaoTree</a>
-* :heavy_check_mark: <a href="library/lib/segment/Rbst.cpp.html">Rbst</a>
-* :heavy_check_mark: <a href="library/lib/segment/SegmentTree.cpp.html">SegmentTree</a>
-* :heavy_check_mark: <a href="library/lib/segment/SegmentTreeBeats.cpp.html">SegmentTreeBeats</a>
-* :heavy_check_mark: <a href="library/lib/segment/SparseTable.cpp.html">SparseTable</a>
-* :heavy_check_mark: <a href="library/lib/segment/Swag.cpp.html">Swag</a>
-
-
-<div id="9a48db5fb6f746df590a3d4604f6478b"></div>
-
-### lib/string
-
-* :heavy_check_mark: <a href="library/lib/string/Zalgorithm.cpp.html">Zalgorithm</a>
-
-
-<div id="76d75a8065c92efe3b83e817563c11ef"></div>
-
-### lib/util
-
-* :heavy_check_mark: <a href="library/lib/util/Mod.cpp.html">Mod</a>
-* :heavy_check_mark: <a href="library/lib/util/ModInt.cpp.html">ModInt</a>
-* :heavy_check_mark: <a href="library/lib/util/NBase.cpp.html">NBase</a>
-* :heavy_check_mark: <a href="library/lib/util/RangeIndex.cpp.html">RangeIndex</a>
-
-
-<div id="f62ece6ccc2c02f6163dc5f3da3d641d"></div>
-
-### non-verified
-
-* :warning: <a href="library/non-verified/Accumulate2D.cpp.html">non-verified/Accumulate2D.cpp</a>
-* :warning: <a href="library/non-verified/BinaryColumnEchelonFormalize.cpp.html">non-verified/BinaryColumnEchelonFormalize.cpp</a>
-* :warning: <a href="library/non-verified/BinaryIndexedTree2D.cpp.html">non-verified/BinaryIndexedTree2D.cpp</a>
-* :warning: <a href="library/non-verified/BipartiteMatching.cpp.html">non-verified/BipartiteMatching.cpp</a>
-* :warning: <a href="library/non-verified/Chinese_Remainder_Theorem.cpp.html">non-verified/Chinese_Remainder_Theorem.cpp</a>
-* :warning: <a href="library/non-verified/CircleIntersection.cpp.html">non-verified/CircleIntersection.cpp</a>
-* :warning: <a href="library/non-verified/Combination.cpp.html">non-verified/Combination.cpp</a>
-* :warning: <a href="library/non-verified/Divisor.cpp.html">non-verified/Divisor.cpp</a>
-* :warning: <a href="library/non-verified/FastFourierTransform.cpp.html">non-verified/FastFourierTransform.cpp</a>
-* :warning: <a href="library/non-verified/Ford_Fulkerson.cpp.html">non-verified/Ford_Fulkerson.cpp</a>
-* :warning: <a href="library/non-verified/Line_Intersection_Judge.cpp.html">non-verified/Line_Intersection_Judge.cpp</a>
-* :warning: <a href="library/non-verified/LongestIncreasingSubsequence.cpp.html">non-verified/LongestIncreasingSubsequence.cpp</a>
-* :warning: <a href="library/non-verified/Longest_Common_Subsequence.cpp.html">non-verified/Longest_Common_Subsequence.cpp</a>
-* :warning: <a href="library/non-verified/Longest_Common_Subsequence_Size.cpp.html">non-verified/Longest_Common_Subsequence_Size.cpp</a>
-* :warning: <a href="library/non-verified/LowLink.cpp.html">non-verified/LowLink.cpp</a>
-* :warning: <a href="library/non-verified/MaximumSubarray.cpp.html">non-verified/MaximumSubarray.cpp</a>
-* :warning: <a href="library/non-verified/Maximum_Rectangle.cpp.html">non-verified/Maximum_Rectangle.cpp</a>
-* :warning: <a href="library/non-verified/Maximum_Segment_Sum.cpp.html">non-verified/Maximum_Segment_Sum.cpp</a>
-* :warning: <a href="library/non-verified/Median.cpp.html">non-verified/Median.cpp</a>
-* :warning: <a href="library/non-verified/MinimumDirectedClosedCircuit.cpp.html">non-verified/MinimumDirectedClosedCircuit.cpp</a>
-* :warning: <a href="library/non-verified/MinimumUndirectedClosedCircuit.cpp.html">non-verified/MinimumUndirectedClosedCircuit.cpp</a>
-* :warning: <a href="library/non-verified/Mo.cpp.html">non-verified/Mo.cpp</a>
-* :warning: <a href="library/non-verified/MontmortNumber.cpp.html">non-verified/MontmortNumber.cpp</a>
-* :warning: <a href="library/non-verified/Parser.cpp.html">non-verified/Parser.cpp</a>
-* :warning: <a href="library/non-verified/Partition_Number.cpp.html">non-verified/Partition_Number.cpp</a>
-* :warning: <a href="library/non-verified/Permutation_Mod.cpp.html">non-verified/Permutation_Mod.cpp</a>
-* :warning: <a href="library/non-verified/Rarts.cpp.html">non-verified/Rarts.cpp</a>
-* :warning: <a href="library/non-verified/RollingHash.cpp.html">non-verified/RollingHash.cpp</a>
-* :warning: <a href="library/non-verified/SlideMost.cpp.html">non-verified/SlideMost.cpp</a>
-* :warning: <a href="library/non-verified/SmallestEnclosingDisc.cpp.html">non-verified/SmallestEnclosingDisc.cpp</a>
-* :warning: <a href="library/non-verified/Union_Find_Tree_Persistence.cpp.html">non-verified/Union_Find_Tree_Persistence.cpp</a>
-* :warning: <a href="library/non-verified/Union_Find_Tree_With_Potential.cpp.html">non-verified/Union_Find_Tree_With_Potential.cpp</a>
-* :warning: <a href="library/non-verified/Zarts.cpp.html">non-verified/Zarts.cpp</a>
-
-
-<div id="149603e6c03516362a8da23f624db945"></div>
-
-### old
-
-* :warning: <a href="library/old/BinaryIndexedTree.cpp.html">old/BinaryIndexedTree.cpp</a>
-* :warning: <a href="library/old/BinaryIndexedTree2DRangeModSumQuery.cpp.html">old/BinaryIndexedTree2DRangeModSumQuery.cpp</a>
-* :warning: <a href="library/old/Grid_Breadth_First_Search.cpp.html">old/Grid_Breadth_First_Search.cpp</a>
-* :warning: <a href="library/old/Grid_Translation.cpp.html">old/Grid_Translation.cpp</a>
-* :warning: <a href="library/old/Lazy_Segment_Tree_Range_Maximum_Query.cpp.html">old/Lazy_Segment_Tree_Range_Maximum_Query.cpp</a>
-* :warning: <a href="library/old/Lazy_Segment_Tree_Range_Minimum_Query.cpp.html">old/Lazy_Segment_Tree_Range_Minimum_Query.cpp</a>
-* :warning: <a href="library/old/Lazy_Segment_Tree_Range_Sum_Query.cpp.html">old/Lazy_Segment_Tree_Range_Sum_Query.cpp</a>
-* :warning: <a href="library/old/LiChaoTree.cpp.html">old/LiChaoTree.cpp</a>
-* :warning: <a href="library/old/Lowest_Common_Ancestor.cpp.html">old/Lowest_Common_Ancestor.cpp</a>
-* :warning: <a href="library/old/PowMod.cpp.html">old/PowMod.cpp</a>
-* :warning: <a href="library/old/PrimeFactorization.cpp.html">old/PrimeFactorization.cpp</a>
-* :warning: <a href="library/old/SegmentTree.cpp.html">old/SegmentTree.cpp</a>
-* :warning: <a href="library/old/SegmentTree2.cpp.html">old/SegmentTree2.cpp</a>
-* :warning: <a href="library/old/Segment_Tree_Range_Gcd_Query.cpp.html">old/Segment_Tree_Range_Gcd_Query.cpp</a>
-* :warning: <a href="library/old/Segment_Tree_Range_Maximum_Query.cpp.html">old/Segment_Tree_Range_Maximum_Query.cpp</a>
-* :warning: <a href="library/old/Segment_Tree_Range_Minimum_Query.cpp.html">old/Segment_Tree_Range_Minimum_Query.cpp</a>
-* :warning: <a href="library/old/Segment_Tree_Range_Sum_Query.cpp.html">old/Segment_Tree_Range_Sum_Query.cpp</a>
-* :warning: <a href="library/old/Solver.cpp.html">old/Solver.cpp</a>
-* :warning: <a href="library/old/Tree.cpp.html">old/Tree.cpp</a>
-* :warning: <a href="library/old/Tree2.cpp.html">old/Tree2.cpp</a>
-* :warning: <a href="library/old/UnionFindTreeMerge.cpp.html">old/UnionFindTreeMerge.cpp</a>
-* :warning: <a href="library/old/UnionFindTreeSize.cpp.html">old/UnionFindTreeSize.cpp</a>
-* :warning: <a href="library/old/Weighted_Tree.cpp.html">old/Weighted_Tree.cpp</a>
-* :warning: <a href="library/old/ZAlgorithm.cpp.html">old/ZAlgorithm.cpp</a>
-* :warning: <a href="library/old/ZArray.cpp.html">old/ZArray.cpp</a>
-
-
-## Verify Files
-
-* :heavy_check_mark: <a href="verify/test/example.test.cpp.html">test/example.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/geometory/Argument-sort-by-atan2l.test.cpp.html">test/geometory/Argument-sort-by-atan2l.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrick-max.test.cpp.html">test/geometory/ConvexHullTrick-max.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrick-min.test.cpp.html">test/geometory/ConvexHullTrick-min.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrick-no-monotone.test.cpp.html">test/geometory/ConvexHullTrick-no-monotone.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrickMonotone-max.test.cpp.html">test/geometory/ConvexHullTrickMonotone-max.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/geometory/ConvexHullTrickMonotone-min.test.cpp.html">test/geometory/ConvexHullTrickMonotone-min.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/geometory/Distance-line.test.cpp.html">test/geometory/Distance-line.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/Dijkstra-restore.test.cpp.html">test/graph/Dijkstra-restore.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/Dijkstra.test.cpp.html">test/graph/Dijkstra.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/Dinic.test.cpp.html">test/graph/Dinic.test.cpp</a>
-* :x: <a href="verify/test/graph/MinimumDirectedClosedCircuit.test.cpp.html">test/graph/MinimumDirectedClosedCircuit.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/StronglyConnectedComponents-1.test.cpp.html">test/graph/StronglyConnectedComponents-1.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/StronglyConnectedComponents-2.test.cpp.html">test/graph/StronglyConnectedComponents-2.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/StronglyConnectedComponents-2sat.test.cpp.html">test/graph/StronglyConnectedComponents-2sat.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/Tree-diameter.test.cpp.html">test/graph/Tree-diameter.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/Tree-eulertour.test.cpp.html">test/graph/Tree-eulertour.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/Tree-hld-path.test.cpp.html">test/graph/Tree-hld-path.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/Tree-hld-vertex.test.cpp.html">test/graph/Tree-hld-vertex.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/Tree-rerooting.test.cpp.html">test/graph/Tree-rerooting.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/Tree-size.test.cpp.html">test/graph/Tree-size.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/graph/UnionFindTree.test.cpp.html">test/graph/UnionFindTree.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/heap/RadixHeap.test.cpp.html">test/heap/RadixHeap.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/heap/RadixHeapInt.test.cpp.html">test/heap/RadixHeapInt.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/CombinationMod-binom.test.cpp.html">test/math/CombinationMod-binom.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/CombinationMod-factorial.test.cpp.html">test/math/CombinationMod-factorial.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/Eratosthenes.test.cpp.html">test/math/Eratosthenes.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/FloorSum.test.cpp.html">test/math/FloorSum.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/FormalPowerSeries-1000000007-1.test.cpp.html">test/math/FormalPowerSeries-1000000007-1.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/FormalPowerSeries-1000000007-2.test.cpp.html">test/math/FormalPowerSeries-1000000007-2.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/FormalPowerSeries-998244353-1.test.cpp.html">test/math/FormalPowerSeries-998244353-1.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/FormalPowerSeries-998244353-2.test.cpp.html">test/math/FormalPowerSeries-998244353-2.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/Garner.test.cpp.html">test/math/Garner.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/Matrix-det.test.cpp.html">test/math/Matrix-det.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/Matrix-pow.test.cpp.html">test/math/Matrix-pow.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransform1.test.cpp.html">test/math/NumberTheoreticTransform1.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransform2.test.cpp.html">test/math/NumberTheoreticTransform2.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransformArbitraryMod1.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod1.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/NumberTheoreticTransformArbitraryMod2.test.cpp.html">test/math/NumberTheoreticTransformArbitraryMod2.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/Prime-miller-rabin.test.cpp.html">test/math/Prime-miller-rabin.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/math/Prime-rho.test.cpp.html">test/math/Prime-rho.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/BinaryIndexedTree-rsqraq.test.cpp.html">test/segment/BinaryIndexedTree-rsqraq.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/BinaryTrie-set-xor-min.test.cpp.html">test/segment/BinaryTrie-set-xor-min.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/DisjointSparseTable.test.cpp.html">test/segment/DisjointSparseTable.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rmqraq.test.cpp.html">test/segment/LazySegmentTree-rmqraq.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/LazySegmentTree-rsqruq.test.cpp.html">test/segment/LazySegmentTree-rsqruq.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-line.test.cpp.html">test/segment/LiChaoTree-line.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/LiChaoTree-segment.test.cpp.html">test/segment/LiChaoTree-segment.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/Rbst-get.test.cpp.html">test/segment/Rbst-get.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/Rbst-med.test.cpp.html">test/segment/Rbst-med.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/Rbst-pair.test.cpp.html">test/segment/Rbst-pair.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/SegmentTree-prefix-binary-search.test.cpp.html">test/segment/SegmentTree-prefix-binary-search.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rcq.test.cpp.html">test/segment/SegmentTree-rcq.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rmq.test.cpp.html">test/segment/SegmentTree-rmq.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/SegmentTree-rsq.test.cpp.html">test/segment/SegmentTree-rsq.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/SegmentTree-suffix-binary-search.test.cpp.html">test/segment/SegmentTree-suffix-binary-search.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/SegmentTreeBeats-1.test.cpp.html">test/segment/SegmentTreeBeats-1.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/SegmentTreeBeats-2.test.cpp.html">test/segment/SegmentTreeBeats-2.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/SparseTable.test.cpp.html">test/segment/SparseTable.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/segment/Swag.test.cpp.html">test/segment/Swag.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/string/Zalgorithm.test.cpp.html">test/string/Zalgorithm.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/util/Mod.test.cpp.html">test/util/Mod.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/util/ModInt.test.cpp.html">test/util/ModInt.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/util/NBase.test.cpp.html">test/util/NBase.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/util/RangeIndex.test.cpp.html">test/util/RangeIndex.test.cpp</a>
-
-
