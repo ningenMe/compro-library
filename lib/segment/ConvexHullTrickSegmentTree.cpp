@@ -1,5 +1,6 @@
 /*
  * @title ConvexHullTrickSegmentTree
+ * @see https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i
  */
 template<class Operator> class ConvexHullTrickSegmentTree {
 	using TypeValue = typename Operator::TypeValue;
@@ -60,4 +61,3 @@ public:
 		}    
 	}
 };
-//https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i
