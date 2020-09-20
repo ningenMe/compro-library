@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/segment/Rbst.cpp
     title: Rbst
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/geometory/ConvexHullTrick.cpp
     title: ConvexHullTrick
   _extendedRequiredBy: []

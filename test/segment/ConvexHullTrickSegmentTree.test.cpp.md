@@ -7,19 +7,22 @@ data:
   - icon: ':question:'
     path: lib/geometory/ConvexHullTrick.cpp
     title: ConvexHullTrick
+  - icon: ':x:'
+    path: lib/segment/ConvexHullTrickSegmentTree.cpp
+    title: ConvexHullTrickSegmentTree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://yukicoder.me/problems/no/409
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/beta/room.html#ACPC2020Day2/problems/B
     links:
-    - https://yukicoder.me/problems/no/409
-  bundledCode: "#line 1 \"test/geometory/ConvexHullTrick-min.test.cpp\"\n#define PROBLEM\
-    \ \"https://yukicoder.me/problems/no/409\"\n\n#include <iostream>\n#include <vector>\n\
-    #include <queue>\nusing namespace std;\n#line 1 \"lib/segment/Rbst.cpp\"\n/*\n\
-    \ * @title Rbst\n */\ntemplate<class Operator> class Rbst {\n\tusing TypeNode\
+    - https://onlinejudge.u-aizu.ac.jp/beta/room.html#ACPC2020Day2/problems/B
+  bundledCode: "#line 1 \"test/segment/ConvexHullTrickSegmentTree.test.cpp\"\n#define\
+    \ PROBLEM \"https://onlinejudge.u-aizu.ac.jp/beta/room.html#ACPC2020Day2/problems/B\"\
+    \n\n#include <vector>\n#include <iostream>\nusing namespace std;\n#line 1 \"lib/segment/Rbst.cpp\"\
+    \n/*\n * @title Rbst\n */\ntemplate<class Operator> class Rbst {\n\tusing TypeNode\
     \ = typename Operator::TypeNode;\n\tunsigned int x = 123456789, y = 362436069,\
     \ z = 521288629, w = 88675123;\n\tunsigned int xor_shift() {\n\t\tunsigned int\
     \ t = (x ^ (x << 11)); x = y; y = z; z = w;\n\t\treturn (w = (w ^ (w >> 19)) ^\
@@ -119,41 +122,64 @@ data:
     \ r){return l<r;}\n};\n\n//\u6700\u5927\u5024\u30AF\u30A8\u30EA\ntemplate<class\
     \ T> struct ValueMax {\n\tusing TypeValue = T;\n\tinline static constexpr TypeValue\
     \ unit_value = -3e18;\n\tinline static constexpr bool func_compare(TypeValue l,TypeValue\
-    \ r){return l>r;}\n};\n#line 9 \"test/geometory/ConvexHullTrick-min.test.cpp\"\
-    \nusing ll = long long;\n\nint main(void){\n\tll N,A,B,W; cin >> N >> A >> B >>\
-    \ W;\n\tvector<ll> D(N+2,0);\n\tfor(int i = 1; i <= N; ++i) cin >> D[i];\n\t//\
-    \ dp[i]=min{j:[0,i)}-> dp[j]+B*k*(k+1)/2-k*A+D[i] (k=i-j-1)\n\t//            \
-    \       -> dp[j]+B*(i-j-1)*(i-j)/2-(i-j-1)*A+D[i]\n\t//                   -> dp[j]+B/2*(i*i-2*i*j+j*j-i+j)-A*(i-j-1)+D[i]\n\
-    \t//                   -> (-B*j)*i  +  dp[j]+B/2*(j*j+j)+A*j  +  B/2*(i*i-i)-A*(i-1)+D[i]\
-    \ \n\tll dp=W;\n\tConvexHullTrick<ValueMin<ll>> cht;\n\tcht.insert(0,dp);\n\t\
-    for(ll i=1;i<=N+1;++i){\n\t\tdp=cht.get(i)+B*(i*i-i)/2-A*(i-1)+D[i];\n\t\tpair<ll,ll>\
-    \ line={-B*i,dp+B*(i*i+i)/2+A*i};\n\t\tcht.insert(line);\n\t}\n\tcout << dp <<\
-    \ endl;\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/409\"\n\n#include <iostream>\n\
-    #include <vector>\n#include <queue>\nusing namespace std;\n#include \"../../lib/segment/Rbst.cpp\"\
-    \n#include \"../../lib/geometory/ConvexHullTrick.cpp\"\nusing ll = long long;\n\
-    \nint main(void){\n\tll N,A,B,W; cin >> N >> A >> B >> W;\n\tvector<ll> D(N+2,0);\n\
-    \tfor(int i = 1; i <= N; ++i) cin >> D[i];\n\t// dp[i]=min{j:[0,i)}-> dp[j]+B*k*(k+1)/2-k*A+D[i]\
-    \ (k=i-j-1)\n\t//                   -> dp[j]+B*(i-j-1)*(i-j)/2-(i-j-1)*A+D[i]\n\
-    \t//                   -> dp[j]+B/2*(i*i-2*i*j+j*j-i+j)-A*(i-j-1)+D[i]\n\t// \
-    \                  -> (-B*j)*i  +  dp[j]+B/2*(j*j+j)+A*j  +  B/2*(i*i-i)-A*(i-1)+D[i]\
-    \ \n\tll dp=W;\n\tConvexHullTrick<ValueMin<ll>> cht;\n\tcht.insert(0,dp);\n\t\
-    for(ll i=1;i<=N+1;++i){\n\t\tdp=cht.get(i)+B*(i*i-i)/2-A*(i-1)+D[i];\n\t\tpair<ll,ll>\
-    \ line={-B*i,dp+B*(i*i+i)/2+A*i};\n\t\tcht.insert(line);\n\t}\n\tcout << dp <<\
-    \ endl;\n\treturn 0;\n}"
+    \ r){return l>r;}\n};\n#line 1 \"lib/segment/ConvexHullTrickSegmentTree.cpp\"\n\
+    /*\n * @title ConvexHullTrickSegmentTree\n * @see https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i\n\
+    \ */\ntemplate<class Operator> class ConvexHullTrickSegmentTree {\n\tusing TypeValue\
+    \ = typename Operator::TypeValue;\n\tusing TypeNode = pair<TypeValue,TypeValue>;\n\
+    \tsize_t length;\n\tsize_t num;\n\tvector<ConvexHullTrick<Operator>> node;\npublic:\n\
+    \tinline constexpr TypeValue y(const TypeNode p, TypeValue x) {\n\t\treturn p.first*x+p.second;\n\
+    \t}\n\tConvexHullTrickSegmentTree(const size_t num): num(num) {\n\t\tfor (length\
+    \ = 1; length <= num; length *= 2);\n\t\tnode.resize(2 * length);\n\t}\n\t//[idx,idx+1)\
+    \ insert{ax+b}\n\tvoid update(size_t idx, const TypeValue a, const TypeValue b)\
+    \ {\n\t\tif(idx < 0 || length <= idx) return;\n\t\tfor(idx+=length;idx;idx >>=\
+    \ 1) node[idx].insert(a,b);\n\t}\n\t//[l,r)\n\tTypeValue get(int l, int r, TypeValue\
+    \ x) {\n\t\tif (l < 0 || length <= l || r < 0 || length < r) return Operator::unit_value;\n\
+    \t\tTypeValue vl =  Operator::unit_value, vr = Operator::unit_value;\n\t\tfor(l\
+    \ += length, r += length; l < r; l >>=1, r >>=1) {\n\t\t\tif(l&1) {\n\t\t\t\t\
+    auto tl=node[l++].get(x);                \n\t\t\t\tvl = (Operator::func_compare(vl,tl)?vl:tl);\n\
+    \t\t\t}\n\t\t\tif(r&1) {\n\t\t\t\tauto tr=node[--r].get(x);                \n\t\
+    \t\t\tvr = (Operator::func_compare(tr,vr)?tr:vr);\n\t\t\t}\n\t\t}\n\t\treturn\
+    \ (Operator::func_compare(vl,vr)?vl:vr);\n\t}\n\t//[l,r)\n\tTypeNode get_line(int\
+    \ l, int r, TypeValue x) {\n\t\tif (l < 0 || length <= l || r < 0 || length <\
+    \ r) return {0,Operator::unit_value};\n\t\tTypeNode vl = {0,Operator::unit_value},\
+    \ vr = {0,Operator::unit_value};\n\t\tfor(l += length, r += length; l < r; l >>=1,\
+    \ r >>=1) {\n\t\t\tif(l&1) {\n\t\t\t\tauto tl=node[l++].get_line(x);         \
+    \       \n\t\t\t\tvl = (Operator::func_compare(y(vl,x),y(tl,x))?vl:tl);\n\t\t\t\
+    }\n\t\t\tif(r&1) {\n\t\t\t\tauto tr=node[--r].get_line(x);                \n\t\
+    \t\t\tvr = (Operator::func_compare(y(tr,x),y(vr,x))?tr:vr);\n\t\t\t}\n\t\t}\n\t\
+    \treturn (Operator::func_compare(y(vl,x),y(vr,x))?vl:vr);\n\t}\n\tvoid print(){\n\
+    \t\tcout << \"node\" << endl;\n\t\tfor(int i = 1,j = 1; i < 2*length; ++i) {\n\
+    \t\t\tnode[i].print();\n\t\t\tif(i==((1<<j)-1) && ++j) cout << endl;\n\t\t}  \
+    \  \n\t}\n};\n#line 9 \"test/segment/ConvexHullTrickSegmentTree.test.cpp\"\n\n\
+    int main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q;\n \
+    \   cin >> N >> Q;\n    ConvexHullTrickSegmentTree<ValueMin<long long>> seg(N);\n\
+    \    for(int i=0;i<N;++i){\n        int a,b; cin >> a >> b;\n        seg.update(i,a,b);\n\
+    \    }\n    while(Q--){\n        int l,r;long long x; cin >> l >> r >> x;\n  \
+    \      l--;\n        cout << seg.get(l,r,x) << \"\\n\";\n    }\n\treturn 0;\n\
+    }\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/beta/room.html#ACPC2020Day2/problems/B\"\
+    \n\n#include <vector>\n#include <iostream>\nusing namespace std;\n#include \"\
+    ../../lib/segment/Rbst.cpp\"\n#include \"../../lib/geometory/ConvexHullTrick.cpp\"\
+    \n#include \"../../lib/segment/ConvexHullTrickSegmentTree.cpp\"\n\nint main(void){\n\
+    \    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q;\n    cin >> N >> Q;\n\
+    \    ConvexHullTrickSegmentTree<ValueMin<long long>> seg(N);\n    for(int i=0;i<N;++i){\n\
+    \        int a,b; cin >> a >> b;\n        seg.update(i,a,b);\n    }\n    while(Q--){\n\
+    \        int l,r;long long x; cin >> l >> r >> x;\n        l--;\n        cout\
+    \ << seg.get(l,r,x) << \"\\n\";\n    }\n\treturn 0;\n}"
   dependsOn:
   - lib/segment/Rbst.cpp
   - lib/geometory/ConvexHullTrick.cpp
+  - lib/segment/ConvexHullTrickSegmentTree.cpp
   isVerificationFile: true
-  path: test/geometory/ConvexHullTrick-min.test.cpp
+  path: test/segment/ConvexHullTrickSegmentTree.test.cpp
   requiredBy: []
-  timestamp: '2020-07-26 22:40:42+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-21 03:07:28+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/geometory/ConvexHullTrick-min.test.cpp
+documentation_of: test/segment/ConvexHullTrickSegmentTree.test.cpp
 layout: document
 redirect_from:
-- /verify/test/geometory/ConvexHullTrick-min.test.cpp
-- /verify/test/geometory/ConvexHullTrick-min.test.cpp.html
-title: test/geometory/ConvexHullTrick-min.test.cpp
+- /verify/test/segment/ConvexHullTrickSegmentTree.test.cpp
+- /verify/test/segment/ConvexHullTrickSegmentTree.test.cpp.html
+title: test/segment/ConvexHullTrickSegmentTree.test.cpp
 ---

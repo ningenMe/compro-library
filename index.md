@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/geometory/Argument.cpp
       title: Argument
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/geometory/ConvexHullTrick.cpp
       title: ConvexHullTrick
     - icon: ':heavy_check_mark:'
@@ -83,7 +83,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/BinaryTrie.cpp
       title: BinaryTrie
-    - icon: ':warning:'
+    - icon: ':x:'
       path: lib/segment/ConvexHullTrickSegmentTree.cpp
       title: ConvexHullTrickSegmentTree
     - icon: ':heavy_check_mark:'
@@ -95,7 +95,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/LiChaoTree.cpp
       title: LiChaoTree
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/segment/Rbst.cpp
       title: Rbst
     - icon: ':heavy_check_mark:'
@@ -449,6 +449,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/BinaryTrie-set-xor-min.test.cpp
       title: test/segment/BinaryTrie-set-xor-min.test.cpp
+    - icon: ':x:'
+      path: test/segment/ConvexHullTrickSegmentTree.test.cpp
+      title: test/segment/ConvexHullTrickSegmentTree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment/DisjointSparseTable.test.cpp
       title: test/segment/DisjointSparseTable.test.cpp

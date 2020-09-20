@@ -2,17 +2,21 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/segment/ConvexHullTrickSegmentTree.test.cpp
+    title: test/segment/ConvexHullTrickSegmentTree.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: ConvexHullTrickSegmentTree
     links:
     - https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i
   bundledCode: "#line 1 \"lib/segment/ConvexHullTrickSegmentTree.cpp\"\n/*\n * @title\
-    \ ConvexHullTrickSegmentTree\n */\ntemplate<class Operator> class ConvexHullTrickSegmentTree\
-    \ {\n\tusing TypeValue = typename Operator::TypeValue;\n\tusing TypeNode = pair<TypeValue,TypeValue>;\n\
+    \ ConvexHullTrickSegmentTree\n * @see https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i\n\
+    \ */\ntemplate<class Operator> class ConvexHullTrickSegmentTree {\n\tusing TypeValue\
+    \ = typename Operator::TypeValue;\n\tusing TypeNode = pair<TypeValue,TypeValue>;\n\
     \tsize_t length;\n\tsize_t num;\n\tvector<ConvexHullTrick<Operator>> node;\npublic:\n\
     \tinline constexpr TypeValue y(const TypeNode p, TypeValue x) {\n\t\treturn p.first*x+p.second;\n\
     \t}\n\tConvexHullTrickSegmentTree(const size_t num): num(num) {\n\t\tfor (length\
@@ -37,14 +41,14 @@ data:
     \treturn (Operator::func_compare(y(vl,x),y(vr,x))?vl:vr);\n\t}\n\tvoid print(){\n\
     \t\tcout << \"node\" << endl;\n\t\tfor(int i = 1,j = 1; i < 2*length; ++i) {\n\
     \t\t\tnode[i].print();\n\t\t\tif(i==((1<<j)-1) && ++j) cout << endl;\n\t\t}  \
-    \  \n\t}\n};\n//https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i\n"
-  code: "/*\n * @title ConvexHullTrickSegmentTree\n */\ntemplate<class Operator> class\
-    \ ConvexHullTrickSegmentTree {\n\tusing TypeValue = typename Operator::TypeValue;\n\
-    \tusing TypeNode = pair<TypeValue,TypeValue>;\n\tsize_t length;\n\tsize_t num;\n\
-    \tvector<ConvexHullTrick<Operator>> node;\npublic:\n\tinline constexpr TypeValue\
-    \ y(const TypeNode p, TypeValue x) {\n\t\treturn p.first*x+p.second;\n\t}\n\t\
-    ConvexHullTrickSegmentTree(const size_t num): num(num) {\n\t\tfor (length = 1;\
-    \ length <= num; length *= 2);\n\t\tnode.resize(2 * length);\n\t}\n\t//[idx,idx+1)\
+    \  \n\t}\n};\n"
+  code: "/*\n * @title ConvexHullTrickSegmentTree\n * @see https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i\n\
+    \ */\ntemplate<class Operator> class ConvexHullTrickSegmentTree {\n\tusing TypeValue\
+    \ = typename Operator::TypeValue;\n\tusing TypeNode = pair<TypeValue,TypeValue>;\n\
+    \tsize_t length;\n\tsize_t num;\n\tvector<ConvexHullTrick<Operator>> node;\npublic:\n\
+    \tinline constexpr TypeValue y(const TypeNode p, TypeValue x) {\n\t\treturn p.first*x+p.second;\n\
+    \t}\n\tConvexHullTrickSegmentTree(const size_t num): num(num) {\n\t\tfor (length\
+    \ = 1; length <= num; length *= 2);\n\t\tnode.resize(2 * length);\n\t}\n\t//[idx,idx+1)\
     \ insert{ax+b}\n\tvoid update(size_t idx, const TypeValue a, const TypeValue b)\
     \ {\n\t\tif(idx < 0 || length <= idx) return;\n\t\tfor(idx+=length;idx;idx >>=\
     \ 1) node[idx].insert(a,b);\n\t}\n\t//[l,r)\n\tTypeValue get(int l, int r, TypeValue\
@@ -65,14 +69,15 @@ data:
     \treturn (Operator::func_compare(y(vl,x),y(vr,x))?vl:vr);\n\t}\n\tvoid print(){\n\
     \t\tcout << \"node\" << endl;\n\t\tfor(int i = 1,j = 1; i < 2*length; ++i) {\n\
     \t\t\tnode[i].print();\n\t\t\tif(i==((1<<j)-1) && ++j) cout << endl;\n\t\t}  \
-    \  \n\t}\n};\n//https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i"
+    \  \n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: lib/segment/ConvexHullTrickSegmentTree.cpp
   requiredBy: []
-  timestamp: '2020-07-26 22:41:42+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2020-09-21 03:07:28+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/segment/ConvexHullTrickSegmentTree.test.cpp
 documentation_of: lib/segment/ConvexHullTrickSegmentTree.cpp
 layout: document
 redirect_from:

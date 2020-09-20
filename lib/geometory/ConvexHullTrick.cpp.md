@@ -12,8 +12,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometory/ConvexHullTrick-max.test.cpp
     title: test/geometory/ConvexHullTrick-max.test.cpp
+  - icon: ':x:'
+    path: test/segment/ConvexHullTrickSegmentTree.test.cpp
+    title: test/segment/ConvexHullTrickSegmentTree.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     document_title: ConvexHullTrick
@@ -111,11 +114,12 @@ data:
   path: lib/geometory/ConvexHullTrick.cpp
   requiredBy: []
   timestamp: '2020-07-26 22:40:42+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometory/ConvexHullTrick-no-monotone.test.cpp
   - test/geometory/ConvexHullTrick-min.test.cpp
   - test/geometory/ConvexHullTrick-max.test.cpp
+  - test/segment/ConvexHullTrickSegmentTree.test.cpp
 documentation_of: lib/geometory/ConvexHullTrick.cpp
 layout: document
 redirect_from:
