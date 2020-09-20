@@ -1,4 +1,5 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/beta/room.html#ACPC2020Day2/problems/B"
+#define IGNORE
 
 #include <vector>
 #include <iostream>
