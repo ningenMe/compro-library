@@ -53,6 +53,7 @@ public:
         for(int64 p:v) {
             if(p == prev) vp.back().second++;
             else vp.emplace_back(p,1);
+            prev=p;
         }
         return vp;
     }
