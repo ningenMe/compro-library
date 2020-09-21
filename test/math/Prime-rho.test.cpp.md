@@ -55,13 +55,13 @@ data:
     \    vector<pair<int64,int64>> factorization(int64 n) {\n        auto v = factor(n);\n\
     \        vector<pair<int64,int64>> vp;\n        sort(v.begin(),v.end());\n   \
     \     int64 prev = 0;\n        for(int64 p:v) {\n            if(p == prev) vp.back().second++;\n\
-    \            else vp.emplace_back(p,1);\n        }\n        return vp;\n    }\n\
-    };\n#line 9 \"test/math/Prime-rho.test.cpp\"\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \    int Q; cin >> Q;\n\tPrime P;\n    while(Q--) {\n        long long a,sum=0;\
-    \ cin >> a;\n        auto pf = P.factorization(a);\n        string ans = \"\"\
-    ;\n        for(auto pa:pf) {\n            sum += pa.second;\n            for(int\
-    \ i=0;i<pa.second;++i) ans += \" \" + to_string(pa.first);\n        }\n      \
-    \  cout << sum << ans << \"\\n\";\n    }\n\treturn 0;\n}\n"
+    \            else vp.emplace_back(p,1);\n            prev=p;\n        }\n    \
+    \    return vp;\n    }\n};\n#line 9 \"test/math/Prime-rho.test.cpp\"\n\nint main(void){\n\
+    \    cin.tie(0);ios::sync_with_stdio(false);\n    int Q; cin >> Q;\n\tPrime P;\n\
+    \    while(Q--) {\n        long long a,sum=0; cin >> a;\n        auto pf = P.factorization(a);\n\
+    \        string ans = \"\";\n        for(auto pa:pf) {\n            sum += pa.second;\n\
+    \            for(int i=0;i<pa.second;++i) ans += \" \" + to_string(pa.first);\n\
+    \        }\n        cout << sum << ans << \"\\n\";\n    }\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/factorize\"\n\n#include\
     \ <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\
     #include \"../../lib/math/Gcd.cpp\"\n#include \"../../lib/math/Prime.cpp\"\n\n\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: test/math/Prime-rho.test.cpp
   requiredBy: []
-  timestamp: '2020-09-05 23:37:37+09:00'
+  timestamp: '2020-09-21 13:43:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/Prime-rho.test.cpp

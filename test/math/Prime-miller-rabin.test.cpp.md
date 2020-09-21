@@ -56,7 +56,7 @@ data:
     \ factorization(int64 n) {\n        auto v = factor(n);\n        vector<pair<int64,int64>>\
     \ vp;\n        sort(v.begin(),v.end());\n        int64 prev = 0;\n        for(int64\
     \ p:v) {\n            if(p == prev) vp.back().second++;\n            else vp.emplace_back(p,1);\n\
-    \        }\n        return vp;\n    }\n};\n#line 9 \"test/math/Prime-miller-rabin.test.cpp\"\
+    \            prev=p;\n        }\n        return vp;\n    }\n};\n#line 9 \"test/math/Prime-miller-rabin.test.cpp\"\
     \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    long long\
     \ N; cin >> N;\n\tPrime p;\n    for(int i = 0; i < N; ++i) {\n\t\tlong long A;\
     \ cin >> A;\n\t\tcout << A << \" \" << p.miller_rabin(A) << \"\\n\";\n\t}\n\t\
@@ -73,7 +73,7 @@ data:
   isVerificationFile: true
   path: test/math/Prime-miller-rabin.test.cpp
   requiredBy: []
-  timestamp: '2020-09-05 23:37:37+09:00'
+  timestamp: '2020-09-21 13:43:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/Prime-miller-rabin.test.cpp

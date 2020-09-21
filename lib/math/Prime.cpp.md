@@ -37,7 +37,7 @@ data:
     \ factorization(int64 n) {\n        auto v = factor(n);\n        vector<pair<int64,int64>>\
     \ vp;\n        sort(v.begin(),v.end());\n        int64 prev = 0;\n        for(int64\
     \ p:v) {\n            if(p == prev) vp.back().second++;\n            else vp.emplace_back(p,1);\n\
-    \        }\n        return vp;\n    }\n};\n"
+    \            prev=p;\n        }\n        return vp;\n    }\n};\n"
   code: "/*\n * @title Prime\n */\nclass Prime{\n    using int128 = __int128_t;\n\
     \    using int64  = long long;\n    long long pow(long long x, long long n, long\
     \ long mod) {\n        long long res = 1;\n        for (x %= mod; n > 0; n >>=\
@@ -59,13 +59,13 @@ data:
     \    vector<pair<int64,int64>> factorization(int64 n) {\n        auto v = factor(n);\n\
     \        vector<pair<int64,int64>> vp;\n        sort(v.begin(),v.end());\n   \
     \     int64 prev = 0;\n        for(int64 p:v) {\n            if(p == prev) vp.back().second++;\n\
-    \            else vp.emplace_back(p,1);\n        }\n        return vp;\n    }\n\
-    };"
+    \            else vp.emplace_back(p,1);\n            prev=p;\n        }\n    \
+    \    return vp;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: lib/math/Prime.cpp
   requiredBy: []
-  timestamp: '2020-09-05 23:37:37+09:00'
+  timestamp: '2020-09-21 13:43:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/Prime-rho.test.cpp
