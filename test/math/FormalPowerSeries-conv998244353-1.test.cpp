@@ -1,17 +1,16 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod_1000000007"
+#define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod"
 
 #include <vector>
 #include <iostream>
 #include <numeric>
 #include <algorithm>
 #include <array>
-
 using namespace std;
 #include "../../lib/util/ModInt.cpp"
 #include "../../lib/math/FormalPowerSeries.cpp"
-constexpr long long MOD = 1000'000'007;
-using fps = FormalPowerSeries<MOD,1500000>;
+constexpr long long MOD = 998244353;
 
+using fps = FormalPowerSeries<MOD>;
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);
     int N,M; cin >> N >> M;
