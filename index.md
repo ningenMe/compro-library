@@ -40,42 +40,41 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: lib/heap/RadixHeap.cpp
-      title: RadixHeap
+      title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
     - icon: ':heavy_check_mark:'
       path: lib/heap/RadixHeapInt.cpp
-      title: RadixHeapInt
+      title: "RadixHeapInt - 32bit\u578B\u975E\u8CA0\u6574\u6570heap"
   - name: lib/math
     pages:
     - icon: ':heavy_check_mark:'
       path: lib/math/CombinationMod.cpp
-      title: CombinationMod
+      title: "CombinationMod - mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\u968E\
+        \u4E57"
     - icon: ':heavy_check_mark:'
       path: lib/math/Eratosthenes.cpp
-      title: Eratosthenes
+      title: "Eratosthenes - \u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
     - icon: ':warning:'
       path: lib/math/FastFourierTransform.cpp
-      title: FastFourierTransform
+      title: "FastFourierTransform - \u9AD8\u901F\u30D5\u30FC\u30EA\u30A8\u5909\u63DB"
     - icon: ':heavy_check_mark:'
       path: lib/math/FloorSum.cpp
-      title: FloorSum
+      title: "FloorSum - \u76F4\u7DDA\u9818\u57DF\u306E\u683C\u5B50\u70B9\u6570"
     - icon: ':heavy_check_mark:'
       path: lib/math/FormalPowerSeries.cpp
       title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
     - icon: ':heavy_check_mark:'
       path: lib/math/Garner.cpp
-      title: Garner
+      title: "Garner - \u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
     - icon: ':heavy_check_mark:'
       path: lib/math/Gcd.cpp
-      title: Gcd
+      title: "Gcd - \u9AD8\u901FGCD"
     - icon: ':heavy_check_mark:'
       path: lib/math/Matrix.cpp
-      title: Matrix
-    - icon: ':heavy_check_mark:'
-      path: lib/math/NumberTheoreticTransform.cpp
-      title: NumberTheoreticTransform
+      title: "Matrix - \u884C\u5217\u6F14\u7B97"
     - icon: ':heavy_check_mark:'
       path: lib/math/Prime.cpp
-      title: Prime
+      title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\
+        \u30FC\u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A"
   - name: lib/segment
     pages:
     - icon: ':heavy_check_mark:'
@@ -436,18 +435,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Matrix-pow.test.cpp
       title: test/math/Matrix-pow.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/math/NumberTheoreticTransform1.test.cpp
-      title: test/math/NumberTheoreticTransform1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/math/NumberTheoreticTransform2.test.cpp
-      title: test/math/NumberTheoreticTransform2.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/math/NumberTheoreticTransformArbitraryMod1.test.cpp
-      title: test/math/NumberTheoreticTransformArbitraryMod1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/math/NumberTheoreticTransformArbitraryMod2.test.cpp
-      title: test/math/NumberTheoreticTransformArbitraryMod2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/math/Prime-miller-rabin.test.cpp
       title: test/math/Prime-miller-rabin.test.cpp

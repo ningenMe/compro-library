@@ -3,10 +3,11 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/math/Gcd.cpp
-    title: Gcd
+    title: "Gcd - \u9AD8\u901FGCD"
   - icon: ':heavy_check_mark:'
     path: lib/math/Prime.cpp
-    title: Prime
+    title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\u30FC\
+      \u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -18,26 +19,28 @@ data:
     - https://judge.yosupo.jp/problem/factorize
   bundledCode: "#line 1 \"test/math/Prime-rho.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/factorize\"\
     \n\n#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace\
-    \ std;\n#line 1 \"lib/math/Gcd.cpp\"\n/*\n * @title Gcd\n */\nclass Gcd{\npublic:\n\
-    \tinline static long long impl(long long n, long long m) {\n\t\tstatic constexpr\
-    \ long long K = 5;\n\t\tlong long t,s;\n\t\tfor(int i = 0; t = n - m, s = n -\
-    \ m * K, i < 80; ++i) {\n\t\t\tif(t<m){\n\t\t\t\tif(!t) return m;\n\t\t\t\tn =\
-    \ m, m = t;\n\t\t\t}\n\t\t\telse{\n\t\t\t\tif(!m) return t;\n\t\t\t\tn=t;\n\t\t\
-    \t\tif(t >= m * K) n = s;\n\t\t\t}\n\t\t}\n\t\treturn impl(m, n % m);\n\t}\n\t\
-    inline static long long pre(long long n, long long m) {\n\t\tlong long t;\n\t\t\
-    for(int i = 0; t = n - m, i < 4; ++i) {\n\t\t\t(t < m ? n=m,m=t : n=t);\n\t\t\t\
-    if(!m) return n;\n\t\t}\n\t\treturn impl(n, m);\n\t}\n\tinline static long long\
-    \ gcd(long long n, long long m) {\n\t\treturn (n>m ? pre(n,m) : pre(m,n));\n\t\
-    }\n\tinline static constexpr long long pureGcd(long long a, long long b) {\n\t\
-    \treturn (b ? pureGcd(b, a % b):a);\n\t}\n\tinline static constexpr long long\
-    \ lcm(long long a, long long b) {\n\t\treturn (a*b ? (a / gcd(a, b)*b): 0);\n\t\
-    }\n\tinline static constexpr long long extGcd(long long a, long long b, long long\
-    \ &x, long long &y) {\n\t\tif (b == 0) return x = 1, y = 0, a;\n\t\tlong long\
-    \ d = extGcd(b, a%b, y, x);\n\t\treturn y -= a / b * x, d;\n\t}\n};\n#line 1 \"\
-    lib/math/Prime.cpp\"\n/*\n * @title Prime\n */\nclass Prime{\n    using int128\
-    \ = __int128_t;\n    using int64  = long long;\n    long long pow(long long x,\
-    \ long long n, long long mod) {\n        long long res = 1;\n        for (x %=\
-    \ mod; n > 0; n >>= 1, x=(int128(x)*x)%mod) if (n & 1) res = (int128(res)*x)%mod;\n\
+    \ std;\n#line 1 \"lib/math/Gcd.cpp\"\n/*\n * @title Gcd - \u9AD8\u901FGCD\n *\
+    \ @docs md/math/Gcd.md\n */\nclass Gcd{\npublic:\n\tinline static long long impl(long\
+    \ long n, long long m) {\n\t\tstatic constexpr long long K = 5;\n\t\tlong long\
+    \ t,s;\n\t\tfor(int i = 0; t = n - m, s = n - m * K, i < 80; ++i) {\n\t\t\tif(t<m){\n\
+    \t\t\t\tif(!t) return m;\n\t\t\t\tn = m, m = t;\n\t\t\t}\n\t\t\telse{\n\t\t\t\t\
+    if(!m) return t;\n\t\t\t\tn=t;\n\t\t\t\tif(t >= m * K) n = s;\n\t\t\t}\n\t\t}\n\
+    \t\treturn impl(m, n % m);\n\t}\n\tinline static long long pre(long long n, long\
+    \ long m) {\n\t\tlong long t;\n\t\tfor(int i = 0; t = n - m, i < 4; ++i) {\n\t\
+    \t\t(t < m ? n=m,m=t : n=t);\n\t\t\tif(!m) return n;\n\t\t}\n\t\treturn impl(n,\
+    \ m);\n\t}\n\tinline static long long gcd(long long n, long long m) {\n\t\treturn\
+    \ (n>m ? pre(n,m) : pre(m,n));\n\t}\n\tinline static constexpr long long pureGcd(long\
+    \ long a, long long b) {\n\t\treturn (b ? pureGcd(b, a % b):a);\n\t}\n\tinline\
+    \ static constexpr long long lcm(long long a, long long b) {\n\t\treturn (a*b\
+    \ ? (a / gcd(a, b)*b): 0);\n\t}\n\tinline static constexpr long long extGcd(long\
+    \ long a, long long b, long long &x, long long &y) {\n\t\tif (b == 0) return x\
+    \ = 1, y = 0, a;\n\t\tlong long d = extGcd(b, a%b, y, x);\n\t\treturn y -= a /\
+    \ b * x, d;\n\t}\n};\n#line 1 \"lib/math/Prime.cpp\"\n/*\n * @title Prime - \u9AD8\
+    \u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\u30FC\u30E9\u30D3\u30F3\
+    \u7D20\u6570\u5224\u5B9A\n * @docs md/math/Prime.md\n */\nclass Prime{\n    using\
+    \ int128 = __int128_t;\n    using int64  = long long;\n    long long pow(long\
+    \ long x, long long n, long long mod) {\n        long long res = 1;\n        for\
+    \ (x %= mod; n > 0; n >>= 1, x=(int128(x)*x)%mod) if (n & 1) res = (int128(res)*x)%mod;\n\
     \        return res;\n    }\n    int64 rho(int64 n){\n        if(miller_rabin(n))\
     \ return n;\n        if(n%2 == 0) return 2;\n        for(int64 c=1,x=2,y=2,d;;c++){\n\
     \            do{\n                x=(int128(x)*x+c)%n;\n                y=(int128(y)*y+c)%n;\n\
@@ -77,7 +80,7 @@ data:
   isVerificationFile: true
   path: test/math/Prime-rho.test.cpp
   requiredBy: []
-  timestamp: '2020-09-21 13:43:21+09:00'
+  timestamp: '2020-09-26 16:29:44+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/Prime-rho.test.cpp

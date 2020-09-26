@@ -16,14 +16,8 @@ data:
     path: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
     title: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/math/NumberTheoreticTransform1.test.cpp
-    title: test/math/NumberTheoreticTransform1.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-conv998244353-2.test.cpp
     title: test/math/FormalPowerSeries-conv998244353-2.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/NumberTheoreticTransformArbitraryMod2.test.cpp
-    title: test/math/NumberTheoreticTransformArbitraryMod2.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-conv998244353-1.test.cpp
     title: test/math/FormalPowerSeries-conv998244353-1.test.cpp
@@ -31,14 +25,8 @@ data:
     path: test/math/Matrix-pow.test.cpp
     title: test/math/Matrix-pow.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/math/NumberTheoreticTransform2.test.cpp
-    title: test/math/NumberTheoreticTransform2.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-exp.test.cpp
     title: test/math/FormalPowerSeries-exp.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/NumberTheoreticTransformArbitraryMod1.test.cpp
-    title: test/math/NumberTheoreticTransformArbitraryMod1.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-pow.test.cpp
     title: test/math/FormalPowerSeries-pow.test.cpp
@@ -148,14 +136,10 @@ data:
   - test/util/ModInt.test.cpp
   - test/math/FormalPowerSeries-conv1000000007-2.test.cpp
   - test/math/FormalPowerSeries-conv1000000007-1.test.cpp
-  - test/math/NumberTheoreticTransform1.test.cpp
   - test/math/FormalPowerSeries-conv998244353-2.test.cpp
-  - test/math/NumberTheoreticTransformArbitraryMod2.test.cpp
   - test/math/FormalPowerSeries-conv998244353-1.test.cpp
   - test/math/Matrix-pow.test.cpp
-  - test/math/NumberTheoreticTransform2.test.cpp
   - test/math/FormalPowerSeries-exp.test.cpp
-  - test/math/NumberTheoreticTransformArbitraryMod1.test.cpp
   - test/math/FormalPowerSeries-pow.test.cpp
   - test/math/FormalPowerSeries-log.test.cpp
   - test/math/Matrix-det.test.cpp

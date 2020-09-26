@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/math/CombinationMod.cpp
-    title: CombinationMod
+    title: "CombinationMod - mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\u968E\u4E57"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -15,7 +15,8 @@ data:
     - https://yukicoder.me/problems/no/741
   bundledCode: "#line 1 \"test/math/CombinationMod-binom.test.cpp\"\n#define PROBLEM\
     \ \"https://yukicoder.me/problems/no/741\"\n\n#include <vector>\n#include <iostream>\n\
-    using namespace std;\n#line 1 \"lib/math/CombinationMod.cpp\"\n/*\n * @title CombinationMod\n\
+    using namespace std;\n#line 1 \"lib/math/CombinationMod.cpp\"\n/*\n * @title CombinationMod\
+    \ - mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\u968E\u4E57\n * @docs md/math/CombinationMod.md\n\
     \ */\ntemplate<long long mod> class CombinationMod {\n\tvector<long long> fac,finv,inv;\n\
     public:\n\tCombinationMod(int N) : fac(N + 1), finv(N + 1), inv(N + 1) {\n\t\t\
     fac[0] = fac[1] = finv[0] = finv[1] = inv[1] = 1;\n\t\tfor (int i = 2; i <= N;\
@@ -37,7 +38,7 @@ data:
   isVerificationFile: true
   path: test/math/CombinationMod-binom.test.cpp
   requiredBy: []
-  timestamp: '2020-05-24 03:14:51+09:00'
+  timestamp: '2020-09-26 16:29:44+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/CombinationMod-binom.test.cpp

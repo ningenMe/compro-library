@@ -10,9 +10,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    document_title: RadixHeapInt
+    _deprecated_at_docs: md/heap/RadixHeapInt.md
+    document_title: "RadixHeapInt - 32bit\u578B\u975E\u8CA0\u6574\u6570heap"
     links: []
-  bundledCode: "#line 1 \"lib/heap/RadixHeapInt.cpp\"\n/*\n * @title RadixHeapInt\n\
+  bundledCode: "#line 1 \"lib/heap/RadixHeapInt.cpp\"\n/*\n * @title RadixHeapInt\
+    \ - 32bit\u578B\u975E\u8CA0\u6574\u6570heap\n * @docs md/heap/RadixHeapInt.md\n\
     \ */\ntemplate<class T> class RadixHeapInt{\n\tusing TypeNode = pair<unsigned\
     \ int, T>;\n\tarray<vector<TypeNode>,33> vq;\n\tunsigned int size_num;\n\tTypeNode\
     \ last;\n\tinline int bit(int a) {\n\t\treturn a ? 32 - __builtin_clz(a) : 0;\n\
@@ -26,7 +28,8 @@ data:
     \t\t\tfor(auto &p : vq[i]) vq[bit(p.first ^ last.first)].push_back(p);\n\t\t\t\
     vq[i].clear();\n\t\t}\n\t\t--size_num;\n\t\tauto res = vq[0].back();\n\t\tvq[0].pop_back();\n\
     \t\treturn res;\n\t}\n};\n"
-  code: "/*\n * @title RadixHeapInt\n */\ntemplate<class T> class RadixHeapInt{\n\t\
+  code: "/*\n * @title RadixHeapInt - 32bit\u578B\u975E\u8CA0\u6574\u6570heap\n *\
+    \ @docs md/heap/RadixHeapInt.md\n */\ntemplate<class T> class RadixHeapInt{\n\t\
     using TypeNode = pair<unsigned int, T>;\n\tarray<vector<TypeNode>,33> vq;\n\t\
     unsigned int size_num;\n\tTypeNode last;\n\tinline int bit(int a) {\n\t\treturn\
     \ a ? 32 - __builtin_clz(a) : 0;\n\t}\npublic:\n\tRadixHeapInt(T mini) : size_num(0),\
@@ -43,7 +46,7 @@ data:
   isVerificationFile: false
   path: lib/heap/RadixHeapInt.cpp
   requiredBy: []
-  timestamp: '2020-05-13 02:48:46+09:00'
+  timestamp: '2020-09-26 16:29:44+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/heap/RadixHeapInt.test.cpp
@@ -52,5 +55,5 @@ layout: document
 redirect_from:
 - /library/lib/heap/RadixHeapInt.cpp
 - /library/lib/heap/RadixHeapInt.cpp.html
-title: RadixHeapInt
+title: "RadixHeapInt - 32bit\u578B\u975E\u8CA0\u6574\u6570heap"
 ---

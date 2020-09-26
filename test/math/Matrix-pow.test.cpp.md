@@ -6,7 +6,7 @@ data:
     title: ModInt
   - icon: ':heavy_check_mark:'
     path: lib/math/Matrix.cpp
-    title: Matrix
+    title: "Matrix - \u884C\u5217\u6F14\u7B97"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -55,24 +55,24 @@ data:
     \ &os, const ModInt &p) {return os << p.x;}\n    friend istream &operator>>(istream\
     \ &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}\n};\n\
     //using modint = ModInt<MOD>;\n#line 1 \"lib/math/Matrix.cpp\"\n/*\n * @title\
-    \ Matrix\n */\ntemplate <class T, int H, int W = H> class Matrix {\npublic:\n\t\
-    int h,w;\n\tarray<array<T,W>,H> a;\n\tMatrix():h(H),w(W){\n\t\t// do nothing\n\
-    \t}\n\tMatrix(const vector<vector<T>>& vec):h(H),w(W) {\n\t\tassert(vec.size()==H\
-    \ && vec.front().size()==W);\n\t\tfor(int i = 0; i < H; ++i) for(int j = 0; j\
-    \ < W; ++j) a[i][j]=vec[i][j];\n\t}\n\tstatic Matrix E() {\n\t\tassert(H==W);\n\
-    \t\tMatrix res = Matrix();\n\t\tfor(int i = 0; i < H; ++i) res[i][i]=1;\n\t\t\
-    return res;\n\t}\n\tMatrix &operator+=(const Matrix &r) {\n\t\tassert(H==r.h&&W==r.w);\n\
-    \t\tfor(int i = 0; i < H; ++i) for(int j = 0; j < W; ++j) a[i][j]+=r[i][j];\n\t\
-    \treturn *this;\n\t}\n\tMatrix &operator-=(const Matrix &r) {\n\t\tassert(H==r.h&&W==r.w);\n\
-    \t\tfor(int i = 0; i < H; ++i) for(int j = 0; j < W; ++j) a[i][j]-=r[i][j];\n\t\
-    \treturn *this;\n\t}\n\tMatrix &operator*=(const Matrix &r) {\n\t\tassert(W==r.h);\n\
-    \t\tMatrix res = Matrix();\n\t\tfor(int i = 0; i < H; ++i) for(int j = 0; j <\
-    \ r.w; ++j) for(int k = 0; k < W; ++k) res[i][j]+=(a[i][k])*(r[k][j]);\n\t\ta.swap(res.a);\n\
-    \t\treturn *this;\n\t}\n\tMatrix operator+(const Matrix& r) const {\n\t\treturn\
-    \ Matrix(*this) += r;\n\t}\n\tMatrix operator-(const Matrix& r) const {\n\t\t\
-    return Matrix(*this) -= r;\n\t}\n\tMatrix operator*(const Matrix& r) const {\n\
-    \t\treturn Matrix(*this) *= r;\n\t}\n\tinline array<T,W> &operator[](int i) {\
-    \ \n\t\treturn a[i];\n\t}\n\tinline const array<T,W> &operator[](int i) const\
+    \ Matrix - \u884C\u5217\u6F14\u7B97\n * @docs md/math/Matrix.md\n */\ntemplate\
+    \ <class T, int H, int W = H> class Matrix {\npublic:\n\tint h,w;\n\tarray<array<T,W>,H>\
+    \ a;\n\tMatrix():h(H),w(W){\n\t\t// do nothing\n\t}\n\tMatrix(const vector<vector<T>>&\
+    \ vec):h(H),w(W) {\n\t\tassert(vec.size()==H && vec.front().size()==W);\n\t\t\
+    for(int i = 0; i < H; ++i) for(int j = 0; j < W; ++j) a[i][j]=vec[i][j];\n\t}\n\
+    \tstatic Matrix E() {\n\t\tassert(H==W);\n\t\tMatrix res = Matrix();\n\t\tfor(int\
+    \ i = 0; i < H; ++i) res[i][i]=1;\n\t\treturn res;\n\t}\n\tMatrix &operator+=(const\
+    \ Matrix &r) {\n\t\tassert(H==r.h&&W==r.w);\n\t\tfor(int i = 0; i < H; ++i) for(int\
+    \ j = 0; j < W; ++j) a[i][j]+=r[i][j];\n\t\treturn *this;\n\t}\n\tMatrix &operator-=(const\
+    \ Matrix &r) {\n\t\tassert(H==r.h&&W==r.w);\n\t\tfor(int i = 0; i < H; ++i) for(int\
+    \ j = 0; j < W; ++j) a[i][j]-=r[i][j];\n\t\treturn *this;\n\t}\n\tMatrix &operator*=(const\
+    \ Matrix &r) {\n\t\tassert(W==r.h);\n\t\tMatrix res = Matrix();\n\t\tfor(int i\
+    \ = 0; i < H; ++i) for(int j = 0; j < r.w; ++j) for(int k = 0; k < W; ++k) res[i][j]+=(a[i][k])*(r[k][j]);\n\
+    \t\ta.swap(res.a);\n\t\treturn *this;\n\t}\n\tMatrix operator+(const Matrix& r)\
+    \ const {\n\t\treturn Matrix(*this) += r;\n\t}\n\tMatrix operator-(const Matrix&\
+    \ r) const {\n\t\treturn Matrix(*this) -= r;\n\t}\n\tMatrix operator*(const Matrix&\
+    \ r) const {\n\t\treturn Matrix(*this) *= r;\n\t}\n\tinline array<T,W> &operator[](int\
+    \ i) { \n\t\treturn a[i];\n\t}\n\tinline const array<T,W> &operator[](int i) const\
     \ { \n\t\treturn a[i];\n\t}\n\tMatrix pow(long long K) const {\n\t\tassert(H ==\
     \ W);\n\t\tMatrix x(*this);\n\t\tMatrix res = this->E();\n\t\tfor (; K > 0; K\
     \ /= 2) {\n\t\t\tif (K & 1) res *= x;\n\t\t\tx *= x;\n\t\t}\n\t\treturn res;\n\
@@ -107,7 +107,7 @@ data:
   isVerificationFile: true
   path: test/math/Matrix-pow.test.cpp
   requiredBy: []
-  timestamp: '2020-09-06 21:12:06+09:00'
+  timestamp: '2020-09-26 16:29:44+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/Matrix-pow.test.cpp

@@ -7,9 +7,12 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    document_title: FastFourierTransform
+    _deprecated_at_docs: md/math/FastFourierTransform.md
+    document_title: "FastFourierTransform - \u9AD8\u901F\u30D5\u30FC\u30EA\u30A8\u5909\
+      \u63DB"
     links: []
-  bundledCode: "#line 1 \"lib/math/FastFourierTransform.cpp\"\n/*\n * @title FastFourierTransform\n\
+  bundledCode: "#line 1 \"lib/math/FastFourierTransform.cpp\"\n/*\n * @title FastFourierTransform\
+    \ - \u9AD8\u901F\u30D5\u30FC\u30EA\u30A8\u5909\u63DB\n * @docs md/math/FastFourierTransform.md\n\
     \ */\nclass FastFourierTransform{\n    inline static constexpr double pi2 = 2.0\
     \ * M_PI;\n    inline static constexpr pair<double,double> mul(const pair<double,double>&\
     \ l,const pair<double,double>& r) {\n        return {(l.first*r.first-l.second*r.second),(l.first*r.second+l.second*r.first)};\n\
@@ -30,8 +33,9 @@ data:
     \ a.size(); ++i) g[i]={a[i],0};\n        for(int i = 0; i < b.size(); ++i) h[i]={b[i],0};\n\
     \        g = dft(g); h = dft(h);\n        for(int i=0; i<N; i++) f[i] = mul(g[i],h[i]);\n\
     \        return inv(f);\n    }\n};\n"
-  code: "/*\n * @title FastFourierTransform\n */\nclass FastFourierTransform{\n  \
-    \  inline static constexpr double pi2 = 2.0 * M_PI;\n    inline static constexpr\
+  code: "/*\n * @title FastFourierTransform - \u9AD8\u901F\u30D5\u30FC\u30EA\u30A8\
+    \u5909\u63DB\n * @docs md/math/FastFourierTransform.md\n */\nclass FastFourierTransform{\n\
+    \    inline static constexpr double pi2 = 2.0 * M_PI;\n    inline static constexpr\
     \ pair<double,double> mul(const pair<double,double>& l,const pair<double,double>&\
     \ r) {\n        return {(l.first*r.first-l.second*r.second),(l.first*r.second+l.second*r.first)};\n\
     \    }\n    inline static constexpr pair<double,double> add(const pair<double,double>&\
@@ -55,7 +59,7 @@ data:
   isVerificationFile: false
   path: lib/math/FastFourierTransform.cpp
   requiredBy: []
-  timestamp: '2020-08-23 15:54:46+09:00'
+  timestamp: '2020-09-26 16:29:44+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/math/FastFourierTransform.cpp
@@ -63,5 +67,5 @@ layout: document
 redirect_from:
 - /library/lib/math/FastFourierTransform.cpp
 - /library/lib/math/FastFourierTransform.cpp.html
-title: FastFourierTransform
+title: "FastFourierTransform - \u9AD8\u901F\u30D5\u30FC\u30EA\u30A8\u5909\u63DB"
 ---

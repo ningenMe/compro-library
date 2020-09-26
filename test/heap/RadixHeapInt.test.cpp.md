@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/heap/RadixHeapInt.cpp
-    title: RadixHeapInt
+    title: "RadixHeapInt - 32bit\u578B\u975E\u8CA0\u6574\u6570heap"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -15,7 +15,8 @@ data:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0596
   bundledCode: "#line 1 \"test/heap/RadixHeapInt.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0596\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <array>\n\
-    using namespace std;\n#line 1 \"lib/heap/RadixHeapInt.cpp\"\n/*\n * @title RadixHeapInt\n\
+    using namespace std;\n#line 1 \"lib/heap/RadixHeapInt.cpp\"\n/*\n * @title RadixHeapInt\
+    \ - 32bit\u578B\u975E\u8CA0\u6574\u6570heap\n * @docs md/heap/RadixHeapInt.md\n\
     \ */\ntemplate<class T> class RadixHeapInt{\n\tusing TypeNode = pair<unsigned\
     \ int, T>;\n\tarray<vector<TypeNode>,33> vq;\n\tunsigned int size_num;\n\tTypeNode\
     \ last;\n\tinline int bit(int a) {\n\t\treturn a ? 32 - __builtin_clz(a) : 0;\n\
@@ -61,7 +62,7 @@ data:
   isVerificationFile: true
   path: test/heap/RadixHeapInt.test.cpp
   requiredBy: []
-  timestamp: '2020-05-13 02:48:46+09:00'
+  timestamp: '2020-09-26 16:29:44+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/heap/RadixHeapInt.test.cpp
