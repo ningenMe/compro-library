@@ -1,5 +1,6 @@
 /*
- * @title StronglyConnectedComponents
+ * @title StronglyConnectedComponents - 強連結成分分解
+ * @docs md/graph/StronglyConnectedComponents.md
  */
 class StronglyConnectedComponents{
 	int num,is_2sat,half,max_id,cnt;

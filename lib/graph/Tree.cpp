@@ -1,5 +1,5 @@
 /*
- * @title Tree
+ * @title Tree - 木
  * @docs md/graph/Tree.md
  */
 template<class Operator> class Tree {

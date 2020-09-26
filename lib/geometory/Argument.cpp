@@ -1,5 +1,6 @@
 /*
- * @title Argument
+ * @title Argument - 偏角
+ * @docs md/geometory/Argument.md
  */
 class Argument {
 public:

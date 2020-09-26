@@ -1,5 +1,6 @@
 /*
- * @title UnionFindTree
+ * @title UnionFindTree - Union Find 木
+ * @docs md/graph/UnionFindTree.md
  */
 class UnionFindTree {
 	vector<int> parent,maxi,mini;

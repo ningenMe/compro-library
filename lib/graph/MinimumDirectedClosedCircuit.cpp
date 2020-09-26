@@ -1,5 +1,5 @@
 /*
- * @title MinimumDirectedClosedCircuit
+ * @title MinimumDirectedClosedCircuit - 最小有効閉路検出
  * @docs md/graph/MinimumDirectedClosedCircuit.md
  */
 class MinimumDirectedClosedCircuit {

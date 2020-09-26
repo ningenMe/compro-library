@@ -1,5 +1,6 @@
 /*
- * @title Distance
+ * @title Distance - 距離
+ * @docs md/geometory/Distance.md
  */
 template<class T> class Distance{
 public:

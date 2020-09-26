@@ -1,5 +1,5 @@
 /*
- * @title Dinic
+ * @title Dinic - Dinicフロー
  * @docs md/graph/Dinic.md
  */
 template <class T> class Dinic {

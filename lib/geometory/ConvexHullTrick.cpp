@@ -1,5 +1,6 @@
 /*
- * @title ConvexHullTrick
+ * @title ConvexHullTrick - 非単調CHT
+ * @docs md/geometory/ConvexHullTrick.md
  */
 template<class Operator> class ConvexHullTrick {
 private:

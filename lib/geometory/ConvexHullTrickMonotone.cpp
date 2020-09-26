@@ -1,5 +1,6 @@
 /*
- * @title ConvexHullTrickMonotone
+ * @title ConvexHullTrickMonotone - 単調CHT
+ * @docs md/geometory/ConvexHullTrickMonotone.md
  */
 template<class Operator> class ConvexHullTrickMonotone {
 private:

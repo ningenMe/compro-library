@@ -1,5 +1,5 @@
 /*
- * @title Dijkstra
+ * @title Dijkstra - 多次元ダイクストラ
  * @docs md/graph/Dijkstra.md
  */
 template<class T> class Dijkstra {
