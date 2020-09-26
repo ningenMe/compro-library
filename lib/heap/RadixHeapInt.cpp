@@ -1,5 +1,6 @@
 /*
- * @title RadixHeapInt
+ * @title RadixHeapInt - 32bit型非負整数heap
+ * @docs md/heap/RadixHeapInt.md
  */
 template<class T> class RadixHeapInt{
 	using TypeNode = pair<unsigned int, T>;

@@ -1,5 +1,6 @@
 /*
- * @title Gcd
+ * @title Gcd - 高速GCD
+ * @docs md/math/Gcd.md
  */
 class Gcd{
 public:

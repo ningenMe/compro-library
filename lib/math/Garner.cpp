@@ -1,5 +1,6 @@
 /*
- * @title Garner
+ * @title Garner - 中国剰余定理
+ * @docs md/math/Garner.md
  */
 class Garner{
 	inline static constexpr long long gcd(long long a, long long b) {

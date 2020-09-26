@@ -1,9 +1,6 @@
 /**
- * @title FloorSum
- * O(log(n+m+a+b))
- * Σi:[0,N) floor((a*i+b)/m)を計算する
- * @see "https://min-25.hatenablog.com/entry/2018/04/27/225535"
- * @see "https://min-25.hatenablog.com/entry/2018/05/03/145505"
+ * @title FloorSum - 直線領域の格子点数
+ * @docs md/math/FloorSum.md
  */
 inline static long long FloorSum(long long n, long long m, long long a, long long b) {
     long long ret=0;

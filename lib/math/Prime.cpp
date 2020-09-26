@@ -1,5 +1,6 @@
 /*
- * @title Prime
+ * @title Prime - 高速素因数分解・ミラーラビン素数判定
+ * @docs md/math/Prime.md
  */
 class Prime{
     using int128 = __int128_t;

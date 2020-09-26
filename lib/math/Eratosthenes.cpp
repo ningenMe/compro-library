@@ -1,5 +1,5 @@
 /*
- * @title Eratosthenes
+ * @title Eratosthenes - エラトステネスの篩
  * @docs md/math/Eratosthenes.md
  */
 inline static vector<int> Eratosthenes(int N) {

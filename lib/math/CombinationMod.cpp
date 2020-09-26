@@ -1,5 +1,6 @@
 /*
- * @title CombinationMod
+ * @title CombinationMod - mod上の二項係数・階乗
+ * @docs md/math/CombinationMod.md
  */
 template<long long mod> class CombinationMod {
 	vector<long long> fac,finv,inv;

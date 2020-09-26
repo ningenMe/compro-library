@@ -1,5 +1,6 @@
 /*
- * @title FastFourierTransform
+ * @title FastFourierTransform - 高速フーリエ変換
+ * @docs md/math/FastFourierTransform.md
  */
 class FastFourierTransform{
     inline static constexpr double pi2 = 2.0 * M_PI;
