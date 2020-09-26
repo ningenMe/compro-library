@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/graph/Tree.cpp
-    title: Tree
+    title: "Tree - \u6728"
   - icon: ':heavy_check_mark:'
     path: lib/segment/LazySegmentTree.cpp
     title: LazySegmentTree
@@ -20,14 +20,14 @@ data:
     https://yukicoder.me/problems/no/399\"\n\n#include <vector>\n#include <iostream>\n\
     #include <cassert>\n#include <map>\n#include <algorithm>\n#include <stack>\n#include\
     \ <numeric>\n#include <array>\nusing namespace std;\n#line 1 \"lib/graph/Tree.cpp\"\
-    \n/*\n * @title Tree\n * @docs md/graph/Tree.md\n */\ntemplate<class Operator>\
-    \ class Tree {\n\tusing TypeDist = typename Operator::TypeDist;\n\tsize_t num;\n\
-    \tsize_t ord;\n\tenum METHODS{\n\t\tMAKE_DEPTH,\n\t\tMAKE_CHILD,\n\t\tMAKE_PARENT,\n\
-    \t\tMAKE_SIZE,\n\t\tMAKE_SUBTREE,\n\t\tMAKE_ANCESTOR,\n\t\tMAKE_EOULERTOUR,\n\t\
-    \tMAKE_HEAVY_LIGHT_DECOMPOSITION,\n\t\tMETHODS_SIZE,\n\t};\n\tarray<int,METHODS_SIZE>\
-    \ executed_flag;\npublic:\n\tvector<vector<pair<size_t,TypeDist>>> edge;\n\tvector<size_t>\
-    \ depth;\n\tvector<size_t> order;\n\tvector<size_t> reorder;\n\tvector<TypeDist>\
-    \ dist;\n\tvector<pair<size_t,TypeDist>> parent;\n\tvector<vector<pair<size_t,TypeDist>>>\
+    \n/*\n * @title Tree - \u6728\n * @docs md/graph/Tree.md\n */\ntemplate<class\
+    \ Operator> class Tree {\n\tusing TypeDist = typename Operator::TypeDist;\n\t\
+    size_t num;\n\tsize_t ord;\n\tenum METHODS{\n\t\tMAKE_DEPTH,\n\t\tMAKE_CHILD,\n\
+    \t\tMAKE_PARENT,\n\t\tMAKE_SIZE,\n\t\tMAKE_SUBTREE,\n\t\tMAKE_ANCESTOR,\n\t\t\
+    MAKE_EOULERTOUR,\n\t\tMAKE_HEAVY_LIGHT_DECOMPOSITION,\n\t\tMETHODS_SIZE,\n\t};\n\
+    \tarray<int,METHODS_SIZE> executed_flag;\npublic:\n\tvector<vector<pair<size_t,TypeDist>>>\
+    \ edge;\n\tvector<size_t> depth;\n\tvector<size_t> order;\n\tvector<size_t> reorder;\n\
+    \tvector<TypeDist> dist;\n\tvector<pair<size_t,TypeDist>> parent;\n\tvector<vector<pair<size_t,TypeDist>>>\
     \ child;\n\tvector<array<pair<size_t,TypeDist>,Operator::bit>> ancestor;\n\tvector<size_t>\
     \ size;\n\tvector<vector<size_t>> subtree;\n\tvector<size_t> head;\n\tvector<size_t>\
     \ hldorder;\n\tvector<size_t> eulertour;\n\tvector<pair<size_t,size_t>> eulertour_range;\n\
@@ -275,7 +275,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-hld-vertex.test.cpp
   requiredBy: []
-  timestamp: '2020-08-16 00:24:44+09:00'
+  timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-hld-vertex.test.cpp

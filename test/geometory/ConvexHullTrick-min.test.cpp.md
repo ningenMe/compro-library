@@ -6,7 +6,7 @@ data:
     title: Rbst
   - icon: ':question:'
     path: lib/geometory/ConvexHullTrick.cpp
-    title: ConvexHullTrick
+    title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -76,16 +76,16 @@ data:
     \ l+c+r;}\n};\n\ntemplate<class T> struct NodeSimple {\n\tusing TypeNode = T;\n\
     \tinline static constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeNode\
     \ func_node(TypeNode l,TypeNode c,TypeNode r){return 0;}\n};\n#line 1 \"lib/geometory/ConvexHullTrick.cpp\"\
-    \n/*\n * @title ConvexHullTrick\n */\ntemplate<class Operator> class ConvexHullTrick\
-    \ {\nprivate:\n\tusing TypeValue = typename Operator::TypeValue;\n\tstruct NodePair\
-    \ {\n\t\tusing TypeNode = pair<TypeValue,TypeValue>;\n\t\tinline static constexpr\
-    \ TypeNode unit_node = {0,Operator::unit_value};\n\t\tinline static constexpr\
-    \ TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return {0,0};}\n\t};\n\t\
-    Rbst<NodePair> lines;\n\n\t//3\u76F4\u7DDA\u306B\u95A2\u3057\u3066line2\u304C\u5FC5\
-    \u8981\u304B\u78BA\u8A8D (\u3053\u306E\u3068\u304D a1 < a2 < a3\u304C\u5FC5\u8981\
-    =rbst\u306E\u9806\u305D\u306E\u307E\u307E)\n\tinline int is_required(const pair<TypeValue,TypeValue>&\
-    \ line1, const pair<TypeValue,TypeValue>& line2, const pair<TypeValue,TypeValue>&\
-    \ line3) {\n\t\treturn Operator::func_compare((line2.second-line3.second)*(line2.first-line1.first),(line1.second-line2.second)*(line3.first-line2.first));\n\
+    \n/*\n * @title ConvexHullTrick - \u975E\u5358\u8ABFCHT\n * @docs md/geometory/ConvexHullTrick.md\n\
+    \ */\ntemplate<class Operator> class ConvexHullTrick {\nprivate:\n\tusing TypeValue\
+    \ = typename Operator::TypeValue;\n\tstruct NodePair {\n\t\tusing TypeNode = pair<TypeValue,TypeValue>;\n\
+    \t\tinline static constexpr TypeNode unit_node = {0,Operator::unit_value};\n\t\
+    \tinline static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return\
+    \ {0,0};}\n\t};\n\tRbst<NodePair> lines;\n\n\t//3\u76F4\u7DDA\u306B\u95A2\u3057\
+    \u3066line2\u304C\u5FC5\u8981\u304B\u78BA\u8A8D (\u3053\u306E\u3068\u304D a1 <\
+    \ a2 < a3\u304C\u5FC5\u8981=rbst\u306E\u9806\u305D\u306E\u307E\u307E)\n\tinline\
+    \ int is_required(const pair<TypeValue,TypeValue>& line1, const pair<TypeValue,TypeValue>&\
+    \ line2, const pair<TypeValue,TypeValue>& line3) {\n\t\treturn Operator::func_compare((line2.second-line3.second)*(line2.first-line1.first),(line1.second-line2.second)*(line3.first-line2.first));\n\
     \t}\n\t\n\t//y=ax+b\u306E\u5024\n\tinline TypeValue y(const pair<TypeValue,TypeValue>\
     \ line, TypeValue x) {\n\t\treturn line.first * x + line.second;\n\t}\n\npublic:\n\
     \tConvexHullTrick() {\n\t\t// do nothing\n\t} \n\n\t//ax+b\u3092\u8FFD\u52A0\n\
@@ -147,7 +147,7 @@ data:
   isVerificationFile: true
   path: test/geometory/ConvexHullTrick-min.test.cpp
   requiredBy: []
-  timestamp: '2020-07-26 22:40:42+09:00'
+  timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometory/ConvexHullTrick-min.test.cpp

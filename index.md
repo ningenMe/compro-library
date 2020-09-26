@@ -5,36 +5,37 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: lib/geometory/Argument.cpp
-      title: Argument
+      title: "Argument - \u504F\u89D2"
     - icon: ':question:'
       path: lib/geometory/ConvexHullTrick.cpp
-      title: ConvexHullTrick
+      title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
     - icon: ':heavy_check_mark:'
       path: lib/geometory/ConvexHullTrickMonotone.cpp
-      title: ConvexHullTrickMonotone
+      title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
     - icon: ':heavy_check_mark:'
       path: lib/geometory/Distance.cpp
-      title: Distance
+      title: "Distance - \u8DDD\u96E2"
   - name: lib/graph
     pages:
     - icon: ':heavy_check_mark:'
       path: lib/graph/Dijkstra.cpp
-      title: Dijkstra
+      title: "Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9"
     - icon: ':heavy_check_mark:'
       path: lib/graph/Dinic.cpp
-      title: Dinic
+      title: "Dinic - Dinic\u30D5\u30ED\u30FC"
     - icon: ':x:'
       path: lib/graph/MinimumDirectedClosedCircuit.cpp
-      title: MinimumDirectedClosedCircuit
+      title: "MinimumDirectedClosedCircuit - \u6700\u5C0F\u6709\u52B9\u9589\u8DEF\u691C\
+        \u51FA"
     - icon: ':question:'
       path: lib/graph/StronglyConnectedComponents.cpp
-      title: StronglyConnectedComponents
+      title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
     - icon: ':heavy_check_mark:'
       path: lib/graph/Tree.cpp
-      title: Tree
+      title: "Tree - \u6728"
     - icon: ':heavy_check_mark:'
       path: lib/graph/UnionFindTree.cpp
-      title: UnionFindTree
+      title: "UnionFindTree - Union Find \u6728"
   - name: lib/heap
     pages:
     - icon: ':heavy_check_mark:'

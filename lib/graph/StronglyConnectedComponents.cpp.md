@@ -19,13 +19,16 @@ data:
   _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    document_title: StronglyConnectedComponents
+    _deprecated_at_docs: md/graph/StronglyConnectedComponents.md
+    document_title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\
+      \u89E3"
     links: []
   bundledCode: "#line 1 \"lib/graph/StronglyConnectedComponents.cpp\"\n/*\n * @title\
-    \ StronglyConnectedComponents\n */\nclass StronglyConnectedComponents{\n\tint\
-    \ num,is_2sat,half,max_id,cnt;\n\tvector<vector<int>> edge;\n\tvector<int> label,order,low;\n\
-    \    stack<size_t> st;\n\tinline int rev(int i) { return i < half ? i + half :\
-    \ i - half; }\n    inline void dfs(int& from) {\n        low[from]=order[from]=cnt++;\n\
+    \ StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\n *\
+    \ @docs md/graph/StronglyConnectedComponents.md\n */\nclass StronglyConnectedComponents{\n\
+    \tint num,is_2sat,half,max_id,cnt;\n\tvector<vector<int>> edge;\n\tvector<int>\
+    \ label,order,low;\n    stack<size_t> st;\n\tinline int rev(int i) { return i\
+    \ < half ? i + half : i - half; }\n    inline void dfs(int& from) {\n        low[from]=order[from]=cnt++;\n\
     \        st.push(from);\n        for(int& to:edge[from]) {\n            if(order[to]==-1)\
     \ {\n                dfs(to);\n                low[from]=min(low[from],low[to]);\n\
     \            }\n            else {\n                low[from]=min(low[from],order[to]);\n\
@@ -51,7 +54,8 @@ data:
     \  }\n\tint is_true(int i) {\n\t\treturn label[i] > label[rev(i)];\n\t}\n\tvoid\
     \ print(void) {\n\t\tfor(auto id:label) cout << id << \" \";\n\t\tcout << endl;\n\
     \t}\n};\n"
-  code: "/*\n * @title StronglyConnectedComponents\n */\nclass StronglyConnectedComponents{\n\
+  code: "/*\n * @title StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\
+    \u5206\u89E3\n * @docs md/graph/StronglyConnectedComponents.md\n */\nclass StronglyConnectedComponents{\n\
     \tint num,is_2sat,half,max_id,cnt;\n\tvector<vector<int>> edge;\n\tvector<int>\
     \ label,order,low;\n    stack<size_t> st;\n\tinline int rev(int i) { return i\
     \ < half ? i + half : i - half; }\n    inline void dfs(int& from) {\n        low[from]=order[from]=cnt++;\n\
@@ -84,7 +88,7 @@ data:
   isVerificationFile: false
   path: lib/graph/StronglyConnectedComponents.cpp
   requiredBy: []
-  timestamp: '2020-09-10 02:59:35+09:00'
+  timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/graph/StronglyConnectedComponents-2sat.test.cpp
@@ -96,5 +100,5 @@ layout: document
 redirect_from:
 - /library/lib/graph/StronglyConnectedComponents.cpp
 - /library/lib/graph/StronglyConnectedComponents.cpp.html
-title: StronglyConnectedComponents
+title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
 ---

@@ -3,10 +3,10 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/graph/UnionFindTree.cpp
-    title: UnionFindTree
+    title: "UnionFindTree - Union Find \u6728"
   - icon: ':question:'
     path: lib/graph/StronglyConnectedComponents.cpp
-    title: StronglyConnectedComponents
+    title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -19,21 +19,23 @@ data:
   bundledCode: "#line 1 \"test/graph/StronglyConnectedComponents-1.test.cpp\"\n#define\
     \ PROBLEM \"https://yukicoder.me/problems/no/1023\"\n\n#include <vector>\n#include\
     \ <iostream>\n#include <numeric>\n#include <algorithm>\n#include <stack>\nusing\
-    \ namespace std;\n#line 1 \"lib/graph/UnionFindTree.cpp\"\n/*\n * @title UnionFindTree\n\
-    \ */\nclass UnionFindTree {\n\tvector<int> parent,maxi,mini;\n\tinline int root(int\
-    \ n) {\n\t\treturn (parent[n]<0?n:parent[n] = root(parent[n]));\n\t}\npublic:\n\
-    \tUnionFindTree(int N = 1) : parent(N,-1),maxi(N),mini(N){\n\t\tiota(maxi.begin(),maxi.end(),0);\n\
-    \t\tiota(mini.begin(),mini.end(),0);\n\t}\n\tinline bool connected(int n, int\
-    \ m) {\n\t\treturn root(n) == root(m);\n\t}\n\tinline void merge(int n, int m)\
-    \ {\n\t\tn = root(n);\n\t\tm = root(m);\n\t\tif (n == m) return;\n\t\tif(parent[n]>parent[m])\
-    \ swap(n, m);\n\t\tparent[n] += parent[m];\n\t\tparent[m] = n;\n\t\tmaxi[n] =\
-    \ std::max(maxi[n],maxi[m]);\n\t\tmini[n] = std::min(mini[n],mini[m]);\n\t}\n\t\
-    inline int min(int n) {\n\t\treturn mini[root(n)];\n\t}\n\tinline int max(int\
-    \ n) {\n\t\treturn maxi[root(n)];\n\t}\n\tinline int size(int n){\n\t\treturn\
-    \ (-parent[root(n)]);\n\t}\n\tinline int operator[](int n) {\n\t\treturn root(n);\n\
-    \t}\n\tinline void print() {\n\t\tfor(int i = 0; i < parent.size(); ++i) cout\
-    \ << root(i) << \" \";\n\t\tcout << endl;\n\t}\n};\n#line 1 \"lib/graph/StronglyConnectedComponents.cpp\"\
-    \n/*\n * @title StronglyConnectedComponents\n */\nclass StronglyConnectedComponents{\n\
+    \ namespace std;\n#line 1 \"lib/graph/UnionFindTree.cpp\"\n/*\n * @title UnionFindTree\
+    \ - Union Find \u6728\n * @docs md/graph/UnionFindTree.md\n */\nclass UnionFindTree\
+    \ {\n\tvector<int> parent,maxi,mini;\n\tinline int root(int n) {\n\t\treturn (parent[n]<0?n:parent[n]\
+    \ = root(parent[n]));\n\t}\npublic:\n\tUnionFindTree(int N = 1) : parent(N,-1),maxi(N),mini(N){\n\
+    \t\tiota(maxi.begin(),maxi.end(),0);\n\t\tiota(mini.begin(),mini.end(),0);\n\t\
+    }\n\tinline bool connected(int n, int m) {\n\t\treturn root(n) == root(m);\n\t\
+    }\n\tinline void merge(int n, int m) {\n\t\tn = root(n);\n\t\tm = root(m);\n\t\
+    \tif (n == m) return;\n\t\tif(parent[n]>parent[m]) swap(n, m);\n\t\tparent[n]\
+    \ += parent[m];\n\t\tparent[m] = n;\n\t\tmaxi[n] = std::max(maxi[n],maxi[m]);\n\
+    \t\tmini[n] = std::min(mini[n],mini[m]);\n\t}\n\tinline int min(int n) {\n\t\t\
+    return mini[root(n)];\n\t}\n\tinline int max(int n) {\n\t\treturn maxi[root(n)];\n\
+    \t}\n\tinline int size(int n){\n\t\treturn (-parent[root(n)]);\n\t}\n\tinline\
+    \ int operator[](int n) {\n\t\treturn root(n);\n\t}\n\tinline void print() {\n\
+    \t\tfor(int i = 0; i < parent.size(); ++i) cout << root(i) << \" \";\n\t\tcout\
+    \ << endl;\n\t}\n};\n#line 1 \"lib/graph/StronglyConnectedComponents.cpp\"\n/*\n\
+    \ * @title StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
+    \n * @docs md/graph/StronglyConnectedComponents.md\n */\nclass StronglyConnectedComponents{\n\
     \tint num,is_2sat,half,max_id,cnt;\n\tvector<vector<int>> edge;\n\tvector<int>\
     \ label,order,low;\n    stack<size_t> st;\n\tinline int rev(int i) { return i\
     \ < half ? i + half : i - half; }\n    inline void dfs(int& from) {\n        low[from]=order[from]=cnt++;\n\
@@ -100,7 +102,7 @@ data:
   isVerificationFile: true
   path: test/graph/StronglyConnectedComponents-1.test.cpp
   requiredBy: []
-  timestamp: '2020-09-10 02:59:35+09:00'
+  timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/StronglyConnectedComponents-1.test.cpp

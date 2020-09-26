@@ -13,12 +13,14 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    document_title: ConvexHullTrickMonotone
+    _deprecated_at_docs: md/geometory/ConvexHullTrickMonotone.md
+    document_title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
     links: []
   bundledCode: "#line 1 \"lib/geometory/ConvexHullTrickMonotone.cpp\"\n/*\n * @title\
-    \ ConvexHullTrickMonotone\n */\ntemplate<class Operator> class ConvexHullTrickMonotone\
-    \ {\nprivate:\n\tusing TypeValue = typename Operator::TypeValue;\n\n\t//front->back\u306B\
-    \u5411\u304B\u3063\u3066\u50BE\u304D\u304Ca1<a2<...<aN\n\tdeque<pair<TypeValue,TypeValue>>\
+    \ ConvexHullTrickMonotone - \u5358\u8ABFCHT\n * @docs md/geometory/ConvexHullTrickMonotone.md\n\
+    \ */\ntemplate<class Operator> class ConvexHullTrickMonotone {\nprivate:\n\tusing\
+    \ TypeValue = typename Operator::TypeValue;\n\n\t//front->back\u306B\u5411\u304B\
+    \u3063\u3066\u50BE\u304D\u304Ca1<a2<...<aN\n\tdeque<pair<TypeValue,TypeValue>>\
     \ lines;\n\n\t//3\u76F4\u7DDA\u306B\u95A2\u3057\u3066line2\u304C\u5FC5\u8981\u304B\
     \u78BA\u8A8D (\u3053\u306E\u3068\u304D a1 < a2 < a3\u304C\u5FC5\u8981=deque\u306E\
     \u9806\u305D\u306E\u307E\u307E)\n\tinline int is_required(const pair<TypeValue,TypeValue>&\
@@ -60,14 +62,15 @@ data:
     \ T> struct ValueMax {\n\tusing TypeValue = T;\n\tinline static constexpr TypeValue\
     \ unit_value = -3e18;\n\tinline static constexpr bool func_compare(TypeValue l,TypeValue\
     \ r){return l>r;}\n};\n"
-  code: "/*\n * @title ConvexHullTrickMonotone\n */\ntemplate<class Operator> class\
-    \ ConvexHullTrickMonotone {\nprivate:\n\tusing TypeValue = typename Operator::TypeValue;\n\
-    \n\t//front->back\u306B\u5411\u304B\u3063\u3066\u50BE\u304D\u304Ca1<a2<...<aN\n\
-    \tdeque<pair<TypeValue,TypeValue>> lines;\n\n\t//3\u76F4\u7DDA\u306B\u95A2\u3057\
-    \u3066line2\u304C\u5FC5\u8981\u304B\u78BA\u8A8D (\u3053\u306E\u3068\u304D a1 <\
-    \ a2 < a3\u304C\u5FC5\u8981=deque\u306E\u9806\u305D\u306E\u307E\u307E)\n\tinline\
-    \ int is_required(const pair<TypeValue,TypeValue>& line1, const pair<TypeValue,TypeValue>&\
-    \ line2, const pair<TypeValue,TypeValue>& line3) {\n\t\treturn Operator::func_compare((line2.second-line3.second)*(line2.first-line1.first),(line1.second-line2.second)*(line3.first-line2.first));\n\
+  code: "/*\n * @title ConvexHullTrickMonotone - \u5358\u8ABFCHT\n * @docs md/geometory/ConvexHullTrickMonotone.md\n\
+    \ */\ntemplate<class Operator> class ConvexHullTrickMonotone {\nprivate:\n\tusing\
+    \ TypeValue = typename Operator::TypeValue;\n\n\t//front->back\u306B\u5411\u304B\
+    \u3063\u3066\u50BE\u304D\u304Ca1<a2<...<aN\n\tdeque<pair<TypeValue,TypeValue>>\
+    \ lines;\n\n\t//3\u76F4\u7DDA\u306B\u95A2\u3057\u3066line2\u304C\u5FC5\u8981\u304B\
+    \u78BA\u8A8D (\u3053\u306E\u3068\u304D a1 < a2 < a3\u304C\u5FC5\u8981=deque\u306E\
+    \u9806\u305D\u306E\u307E\u307E)\n\tinline int is_required(const pair<TypeValue,TypeValue>&\
+    \ line1, const pair<TypeValue,TypeValue>& line2, const pair<TypeValue,TypeValue>&\
+    \ line3) {\n\t\treturn Operator::func_compare((line2.second-line3.second)*(line2.first-line1.first),(line1.second-line2.second)*(line3.first-line2.first));\n\
     \t}\n\n\t//y=ax+b\u306E\u5024\n\tinline TypeValue y(const pair<TypeValue,TypeValue>\
     \ line, TypeValue x) {\n\t\treturn line.first * x + line.second;\n\t}\n\n\tinline\
     \ void insert_back(const pair<TypeValue,TypeValue> line){\n\t\t//\u50BE\u304D\u304C\
@@ -108,7 +111,7 @@ data:
   isVerificationFile: false
   path: lib/geometory/ConvexHullTrickMonotone.cpp
   requiredBy: []
-  timestamp: '2020-07-27 03:11:39+09:00'
+  timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometory/ConvexHullTrickMonotone-min.test.cpp
@@ -118,5 +121,5 @@ layout: document
 redirect_from:
 - /library/lib/geometory/ConvexHullTrickMonotone.cpp
 - /library/lib/geometory/ConvexHullTrickMonotone.cpp.html
-title: ConvexHullTrickMonotone
+title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
 ---

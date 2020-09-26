@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':question:'
     path: lib/graph/StronglyConnectedComponents.cpp
-    title: StronglyConnectedComponents
+    title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -17,7 +17,8 @@ data:
     #define PROBLEM \"https://judge.yosupo.jp/problem/two_sat\"\n\n#include <vector>\n\
     #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <stack>\n\
     using namespace std;\n#line 1 \"lib/graph/StronglyConnectedComponents.cpp\"\n\
-    /*\n * @title StronglyConnectedComponents\n */\nclass StronglyConnectedComponents{\n\
+    /*\n * @title StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\
+    \u89E3\n * @docs md/graph/StronglyConnectedComponents.md\n */\nclass StronglyConnectedComponents{\n\
     \tint num,is_2sat,half,max_id,cnt;\n\tvector<vector<int>> edge;\n\tvector<int>\
     \ label,order,low;\n    stack<size_t> st;\n\tinline int rev(int i) { return i\
     \ < half ? i + half : i - half; }\n    inline void dfs(int& from) {\n        low[from]=order[from]=cnt++;\n\
@@ -72,7 +73,7 @@ data:
   isVerificationFile: true
   path: test/graph/StronglyConnectedComponents-2sat.test.cpp
   requiredBy: []
-  timestamp: '2020-09-10 02:59:35+09:00'
+  timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/StronglyConnectedComponents-2sat.test.cpp

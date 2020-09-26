@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/graph/Tree.cpp
-    title: Tree
+    title: "Tree - \u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -16,7 +16,7 @@ data:
   bundledCode: "#line 1 \"test/graph/Tree-size.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/872\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
     #include <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n\
-    #line 1 \"lib/graph/Tree.cpp\"\n/*\n * @title Tree\n * @docs md/graph/Tree.md\n\
+    #line 1 \"lib/graph/Tree.cpp\"\n/*\n * @title Tree - \u6728\n * @docs md/graph/Tree.md\n\
     \ */\ntemplate<class Operator> class Tree {\n\tusing TypeDist = typename Operator::TypeDist;\n\
     \tsize_t num;\n\tsize_t ord;\n\tenum METHODS{\n\t\tMAKE_DEPTH,\n\t\tMAKE_CHILD,\n\
     \t\tMAKE_PARENT,\n\t\tMAKE_SIZE,\n\t\tMAKE_SUBTREE,\n\t\tMAKE_ANCESTOR,\n\t\t\
@@ -168,7 +168,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-size.test.cpp
   requiredBy: []
-  timestamp: '2020-08-16 00:24:44+09:00'
+  timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-size.test.cpp

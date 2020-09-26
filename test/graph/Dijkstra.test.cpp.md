@@ -3,10 +3,10 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/graph/Dijkstra.cpp
-    title: Dijkstra
+    title: "Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9"
   - icon: ':heavy_check_mark:'
     path: lib/geometory/Distance.cpp
-    title: Distance
+    title: "Distance - \u8DDD\u96E2"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -20,17 +20,18 @@ data:
   bundledCode: "#line 1 \"test/graph/Dijkstra.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1065\"\
     \n#define ERROR 0.0001\n#include <vector>\n#include <iostream>\n#include <queue>\n\
     #include <cmath>\n#include <algorithm>\nusing namespace std;\n#line 1 \"lib/graph/Dijkstra.cpp\"\
-    \n/*\n * @title Dijkstra\n * @docs md/graph/Dijkstra.md\n */\ntemplate<class T>\
-    \ class Dijkstra {\n\tvector<long long> num_list;\n\tvector<long long> sum;\n\t\
-    int N;\n\tT inf;\n\tvector<vector<pair<T,int>>> edge;\n\tvector<T> cost;\n\tvector<int>\
-    \ dp;\n\tvoid resize(const int N) {\n\t\tedge.resize(N);\n\t\tcost.resize(N);\n\
-    \t\tdp.resize(N);\n\t}\npublic:\n\tDijkstra(int N,T inf):inf(inf),num_list(1,N),sum(1,1),N(N){\n\
-    \t\tresize(N);\n\t}\n\tDijkstra(initializer_list<long long> size_list,T inf):num_list(size_list),inf(inf),N(1){\n\
-    \t\tfor(long long& e:num_list) N *= e;\n\t\tsum.resize(num_list.size(),1);\n\t\
-    \tfor(int i = 0; i < num_list.size(); ++i) {\n\t\t\tfor(int j = i + 1; j < num_list.size();\
-    \ ++j) {\n\t\t\t\tsum[i] *= num_list[j];\n\t\t\t}\n\t\t}\n\t\tresize(N);\n\t}\n\
-    \tvoid make_edge(int from, int to, T w) {\n\t\tif(from < 0 || N <= from || to\
-    \ < 0 || N <= to) return;\n\t\tedge[from].push_back({ w,to });\n\t}\n\tvoid make_edge(initializer_list<long\
+    \n/*\n * @title Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\
+    \n * @docs md/graph/Dijkstra.md\n */\ntemplate<class T> class Dijkstra {\n\tvector<long\
+    \ long> num_list;\n\tvector<long long> sum;\n\tint N;\n\tT inf;\n\tvector<vector<pair<T,int>>>\
+    \ edge;\n\tvector<T> cost;\n\tvector<int> dp;\n\tvoid resize(const int N) {\n\t\
+    \tedge.resize(N);\n\t\tcost.resize(N);\n\t\tdp.resize(N);\n\t}\npublic:\n\tDijkstra(int\
+    \ N,T inf):inf(inf),num_list(1,N),sum(1,1),N(N){\n\t\tresize(N);\n\t}\n\tDijkstra(initializer_list<long\
+    \ long> size_list,T inf):num_list(size_list),inf(inf),N(1){\n\t\tfor(long long&\
+    \ e:num_list) N *= e;\n\t\tsum.resize(num_list.size(),1);\n\t\tfor(int i = 0;\
+    \ i < num_list.size(); ++i) {\n\t\t\tfor(int j = i + 1; j < num_list.size(); ++j)\
+    \ {\n\t\t\t\tsum[i] *= num_list[j];\n\t\t\t}\n\t\t}\n\t\tresize(N);\n\t}\n\tvoid\
+    \ make_edge(int from, int to, T w) {\n\t\tif(from < 0 || N <= from || to < 0 ||\
+    \ N <= to) return;\n\t\tedge[from].push_back({ w,to });\n\t}\n\tvoid make_edge(initializer_list<long\
     \ long> from_list, initializer_list<long long> to_list, T w) {\n\t\tint from =\
     \ 0, to = 0;\n\t\tauto from_itr = from_list.begin(),to_itr = to_list.begin();\n\
     \t\tfor(int i = 0; i < num_list.size(); ++i) {\n\t\t\tif(*from_itr < 0 || num_list[i]\
@@ -53,18 +54,19 @@ data:
     \t}\n\t//vertex [start->node1->node2->...->idx]\n\tvector<int> restore(int idx)\
     \ {\n\t\tvector<int> res = {idx};\n\t\twhile(dp[idx] != -1) {\n\t\t\tidx = dp[idx];\n\
     \t\t\tres.push_back(idx);\n\t\t}\n\t\treverse(res.begin(),res.end());\n\t\treturn\
-    \ res;\n\t}\n};\n#line 1 \"lib/geometory/Distance.cpp\"\n/*\n * @title Distance\n\
-    \ */\ntemplate<class T> class Distance{\npublic:\n    //Euclidean distance\n \
-    \   inline static constexpr T euclid(const T& x1, const T& y1, const T& x2, const\
-    \ T& y2) {\n        return sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));\n\
-    \    }\n    //Chebyshev distance\n    inline static constexpr T chebyshev(T x1,\
-    \ T y1, T x2, T y2) {\n        return max(abs(x1 - x2),abs(y1 - y2));\n    }\n\
-    \    //Manhattan distance\n    inline static constexpr T manhattan(T x1, T y1,\
-    \ T x2, T y2) {\n        return abs(x1 - x2)+abs(y1 - y2);\n    }\n    inline\
-    \ static constexpr T between_point_and_line(const T& x,const T& y,const T& x1,const\
-    \ T& y1,const T& x2,const T& y2){\n        return abs((y2 - y1)*x+(x1 - x2)*y-(y2-y1)*x1+(x2-x1)*y1)/sqrt((y2\
-    \ - y1)*(y2 - y1)+(x1 - x2)*(x1 - x2));\n    }\n};\n#line 11 \"test/graph/Dijkstra.test.cpp\"\
-    \n\nint main() {\n    int N,M; cin >> N >> M;\n    Dijkstra<double> dij(N,1e15);\n\
+    \ res;\n\t}\n};\n#line 1 \"lib/geometory/Distance.cpp\"\n/*\n * @title Distance\
+    \ - \u8DDD\u96E2\n * @docs md/geometory/Distance.md\n */\ntemplate<class T> class\
+    \ Distance{\npublic:\n    //Euclidean distance\n    inline static constexpr T\
+    \ euclid(const T& x1, const T& y1, const T& x2, const T& y2) {\n        return\
+    \ sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));\n    }\n    //Chebyshev distance\n\
+    \    inline static constexpr T chebyshev(T x1, T y1, T x2, T y2) {\n        return\
+    \ max(abs(x1 - x2),abs(y1 - y2));\n    }\n    //Manhattan distance\n    inline\
+    \ static constexpr T manhattan(T x1, T y1, T x2, T y2) {\n        return abs(x1\
+    \ - x2)+abs(y1 - y2);\n    }\n    inline static constexpr T between_point_and_line(const\
+    \ T& x,const T& y,const T& x1,const T& y1,const T& x2,const T& y2){\n        return\
+    \ abs((y2 - y1)*x+(x1 - x2)*y-(y2-y1)*x1+(x2-x1)*y1)/sqrt((y2 - y1)*(y2 - y1)+(x1\
+    \ - x2)*(x1 - x2));\n    }\n};\n#line 11 \"test/graph/Dijkstra.test.cpp\"\n\n\
+    int main() {\n    int N,M; cin >> N >> M;\n    Dijkstra<double> dij(N,1e15);\n\
     \    int s,t; cin >> s >> t; s--,t--;\n    vector<double> p(N),q(N); \n    for(int\
     \ i = 0; i < N; ++i) {\n        cin >> p[i] >> q[i];\n    }\n    for(int i = 0;\
     \ i < M; ++i) {\n        int u,v; cin >> u >> v;\n        u--,v--;\n        double\
@@ -87,7 +89,7 @@ data:
   isVerificationFile: true
   path: test/graph/Dijkstra.test.cpp
   requiredBy: []
-  timestamp: '2020-08-18 00:55:08+09:00'
+  timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Dijkstra.test.cpp

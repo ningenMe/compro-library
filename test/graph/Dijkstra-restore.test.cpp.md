@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/graph/Dijkstra.cpp
-    title: Dijkstra
+    title: "Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -16,18 +16,18 @@ data:
   bundledCode: "#line 1 \"test/graph/Dijkstra-restore.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/shortest_path\"\n#include <vector>\n#include\
     \ <iostream>\n#include <queue>\n#include <cmath>\n#include <algorithm>\nusing\
-    \ namespace std;\n#line 1 \"lib/graph/Dijkstra.cpp\"\n/*\n * @title Dijkstra\n\
-    \ * @docs md/graph/Dijkstra.md\n */\ntemplate<class T> class Dijkstra {\n\tvector<long\
-    \ long> num_list;\n\tvector<long long> sum;\n\tint N;\n\tT inf;\n\tvector<vector<pair<T,int>>>\
-    \ edge;\n\tvector<T> cost;\n\tvector<int> dp;\n\tvoid resize(const int N) {\n\t\
-    \tedge.resize(N);\n\t\tcost.resize(N);\n\t\tdp.resize(N);\n\t}\npublic:\n\tDijkstra(int\
-    \ N,T inf):inf(inf),num_list(1,N),sum(1,1),N(N){\n\t\tresize(N);\n\t}\n\tDijkstra(initializer_list<long\
-    \ long> size_list,T inf):num_list(size_list),inf(inf),N(1){\n\t\tfor(long long&\
-    \ e:num_list) N *= e;\n\t\tsum.resize(num_list.size(),1);\n\t\tfor(int i = 0;\
-    \ i < num_list.size(); ++i) {\n\t\t\tfor(int j = i + 1; j < num_list.size(); ++j)\
-    \ {\n\t\t\t\tsum[i] *= num_list[j];\n\t\t\t}\n\t\t}\n\t\tresize(N);\n\t}\n\tvoid\
-    \ make_edge(int from, int to, T w) {\n\t\tif(from < 0 || N <= from || to < 0 ||\
-    \ N <= to) return;\n\t\tedge[from].push_back({ w,to });\n\t}\n\tvoid make_edge(initializer_list<long\
+    \ namespace std;\n#line 1 \"lib/graph/Dijkstra.cpp\"\n/*\n * @title Dijkstra -\
+    \ \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\n * @docs md/graph/Dijkstra.md\n\
+    \ */\ntemplate<class T> class Dijkstra {\n\tvector<long long> num_list;\n\tvector<long\
+    \ long> sum;\n\tint N;\n\tT inf;\n\tvector<vector<pair<T,int>>> edge;\n\tvector<T>\
+    \ cost;\n\tvector<int> dp;\n\tvoid resize(const int N) {\n\t\tedge.resize(N);\n\
+    \t\tcost.resize(N);\n\t\tdp.resize(N);\n\t}\npublic:\n\tDijkstra(int N,T inf):inf(inf),num_list(1,N),sum(1,1),N(N){\n\
+    \t\tresize(N);\n\t}\n\tDijkstra(initializer_list<long long> size_list,T inf):num_list(size_list),inf(inf),N(1){\n\
+    \t\tfor(long long& e:num_list) N *= e;\n\t\tsum.resize(num_list.size(),1);\n\t\
+    \tfor(int i = 0; i < num_list.size(); ++i) {\n\t\t\tfor(int j = i + 1; j < num_list.size();\
+    \ ++j) {\n\t\t\t\tsum[i] *= num_list[j];\n\t\t\t}\n\t\t}\n\t\tresize(N);\n\t}\n\
+    \tvoid make_edge(int from, int to, T w) {\n\t\tif(from < 0 || N <= from || to\
+    \ < 0 || N <= to) return;\n\t\tedge[from].push_back({ w,to });\n\t}\n\tvoid make_edge(initializer_list<long\
     \ long> from_list, initializer_list<long long> to_list, T w) {\n\t\tint from =\
     \ 0, to = 0;\n\t\tauto from_itr = from_list.begin(),to_itr = to_list.begin();\n\
     \t\tfor(int i = 0; i < num_list.size(); ++i) {\n\t\t\tif(*from_itr < 0 || num_list[i]\
@@ -73,7 +73,7 @@ data:
   isVerificationFile: true
   path: test/graph/Dijkstra-restore.test.cpp
   requiredBy: []
-  timestamp: '2020-08-18 00:55:08+09:00'
+  timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Dijkstra-restore.test.cpp

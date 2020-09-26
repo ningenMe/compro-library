@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/geometory/ConvexHullTrickMonotone.cpp
-    title: ConvexHullTrickMonotone
+    title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -16,15 +16,16 @@ data:
   bundledCode: "#line 1 \"test/geometory/ConvexHullTrickMonotone-max.test.cpp\"\n\
     #define PROBLEM \"https://yukicoder.me/problems/no/409\"\n\n#include <iostream>\n\
     #include <vector>\n#include <queue>\n#include <cassert>\nusing namespace std;\n\
-    #line 1 \"lib/geometory/ConvexHullTrickMonotone.cpp\"\n/*\n * @title ConvexHullTrickMonotone\n\
-    \ */\ntemplate<class Operator> class ConvexHullTrickMonotone {\nprivate:\n\tusing\
-    \ TypeValue = typename Operator::TypeValue;\n\n\t//front->back\u306B\u5411\u304B\
-    \u3063\u3066\u50BE\u304D\u304Ca1<a2<...<aN\n\tdeque<pair<TypeValue,TypeValue>>\
-    \ lines;\n\n\t//3\u76F4\u7DDA\u306B\u95A2\u3057\u3066line2\u304C\u5FC5\u8981\u304B\
-    \u78BA\u8A8D (\u3053\u306E\u3068\u304D a1 < a2 < a3\u304C\u5FC5\u8981=deque\u306E\
-    \u9806\u305D\u306E\u307E\u307E)\n\tinline int is_required(const pair<TypeValue,TypeValue>&\
-    \ line1, const pair<TypeValue,TypeValue>& line2, const pair<TypeValue,TypeValue>&\
-    \ line3) {\n\t\treturn Operator::func_compare((line2.second-line3.second)*(line2.first-line1.first),(line1.second-line2.second)*(line3.first-line2.first));\n\
+    #line 1 \"lib/geometory/ConvexHullTrickMonotone.cpp\"\n/*\n * @title ConvexHullTrickMonotone\
+    \ - \u5358\u8ABFCHT\n * @docs md/geometory/ConvexHullTrickMonotone.md\n */\ntemplate<class\
+    \ Operator> class ConvexHullTrickMonotone {\nprivate:\n\tusing TypeValue = typename\
+    \ Operator::TypeValue;\n\n\t//front->back\u306B\u5411\u304B\u3063\u3066\u50BE\u304D\
+    \u304Ca1<a2<...<aN\n\tdeque<pair<TypeValue,TypeValue>> lines;\n\n\t//3\u76F4\u7DDA\
+    \u306B\u95A2\u3057\u3066line2\u304C\u5FC5\u8981\u304B\u78BA\u8A8D (\u3053\u306E\
+    \u3068\u304D a1 < a2 < a3\u304C\u5FC5\u8981=deque\u306E\u9806\u305D\u306E\u307E\
+    \u307E)\n\tinline int is_required(const pair<TypeValue,TypeValue>& line1, const\
+    \ pair<TypeValue,TypeValue>& line2, const pair<TypeValue,TypeValue>& line3) {\n\
+    \t\treturn Operator::func_compare((line2.second-line3.second)*(line2.first-line1.first),(line1.second-line2.second)*(line3.first-line2.first));\n\
     \t}\n\n\t//y=ax+b\u306E\u5024\n\tinline TypeValue y(const pair<TypeValue,TypeValue>\
     \ line, TypeValue x) {\n\t\treturn line.first * x + line.second;\n\t}\n\n\tinline\
     \ void insert_back(const pair<TypeValue,TypeValue> line){\n\t\t//\u50BE\u304D\u304C\
@@ -90,7 +91,7 @@ data:
   isVerificationFile: true
   path: test/geometory/ConvexHullTrickMonotone-max.test.cpp
   requiredBy: []
-  timestamp: '2020-07-27 03:11:39+09:00'
+  timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometory/ConvexHullTrickMonotone-max.test.cpp

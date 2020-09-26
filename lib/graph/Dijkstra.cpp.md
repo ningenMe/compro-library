@@ -14,20 +14,20 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/graph/Dijkstra.md
-    document_title: Dijkstra
+    document_title: "Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9"
     links: []
-  bundledCode: "#line 1 \"lib/graph/Dijkstra.cpp\"\n/*\n * @title Dijkstra\n * @docs\
-    \ md/graph/Dijkstra.md\n */\ntemplate<class T> class Dijkstra {\n\tvector<long\
-    \ long> num_list;\n\tvector<long long> sum;\n\tint N;\n\tT inf;\n\tvector<vector<pair<T,int>>>\
-    \ edge;\n\tvector<T> cost;\n\tvector<int> dp;\n\tvoid resize(const int N) {\n\t\
-    \tedge.resize(N);\n\t\tcost.resize(N);\n\t\tdp.resize(N);\n\t}\npublic:\n\tDijkstra(int\
-    \ N,T inf):inf(inf),num_list(1,N),sum(1,1),N(N){\n\t\tresize(N);\n\t}\n\tDijkstra(initializer_list<long\
-    \ long> size_list,T inf):num_list(size_list),inf(inf),N(1){\n\t\tfor(long long&\
-    \ e:num_list) N *= e;\n\t\tsum.resize(num_list.size(),1);\n\t\tfor(int i = 0;\
-    \ i < num_list.size(); ++i) {\n\t\t\tfor(int j = i + 1; j < num_list.size(); ++j)\
-    \ {\n\t\t\t\tsum[i] *= num_list[j];\n\t\t\t}\n\t\t}\n\t\tresize(N);\n\t}\n\tvoid\
-    \ make_edge(int from, int to, T w) {\n\t\tif(from < 0 || N <= from || to < 0 ||\
-    \ N <= to) return;\n\t\tedge[from].push_back({ w,to });\n\t}\n\tvoid make_edge(initializer_list<long\
+  bundledCode: "#line 1 \"lib/graph/Dijkstra.cpp\"\n/*\n * @title Dijkstra - \u591A\
+    \u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\n * @docs md/graph/Dijkstra.md\n\
+    \ */\ntemplate<class T> class Dijkstra {\n\tvector<long long> num_list;\n\tvector<long\
+    \ long> sum;\n\tint N;\n\tT inf;\n\tvector<vector<pair<T,int>>> edge;\n\tvector<T>\
+    \ cost;\n\tvector<int> dp;\n\tvoid resize(const int N) {\n\t\tedge.resize(N);\n\
+    \t\tcost.resize(N);\n\t\tdp.resize(N);\n\t}\npublic:\n\tDijkstra(int N,T inf):inf(inf),num_list(1,N),sum(1,1),N(N){\n\
+    \t\tresize(N);\n\t}\n\tDijkstra(initializer_list<long long> size_list,T inf):num_list(size_list),inf(inf),N(1){\n\
+    \t\tfor(long long& e:num_list) N *= e;\n\t\tsum.resize(num_list.size(),1);\n\t\
+    \tfor(int i = 0; i < num_list.size(); ++i) {\n\t\t\tfor(int j = i + 1; j < num_list.size();\
+    \ ++j) {\n\t\t\t\tsum[i] *= num_list[j];\n\t\t\t}\n\t\t}\n\t\tresize(N);\n\t}\n\
+    \tvoid make_edge(int from, int to, T w) {\n\t\tif(from < 0 || N <= from || to\
+    \ < 0 || N <= to) return;\n\t\tedge[from].push_back({ w,to });\n\t}\n\tvoid make_edge(initializer_list<long\
     \ long> from_list, initializer_list<long long> to_list, T w) {\n\t\tint from =\
     \ 0, to = 0;\n\t\tauto from_itr = from_list.begin(),to_itr = to_list.begin();\n\
     \t\tfor(int i = 0; i < num_list.size(); ++i) {\n\t\t\tif(*from_itr < 0 || num_list[i]\
@@ -51,12 +51,13 @@ data:
     \ {\n\t\tvector<int> res = {idx};\n\t\twhile(dp[idx] != -1) {\n\t\t\tidx = dp[idx];\n\
     \t\t\tres.push_back(idx);\n\t\t}\n\t\treverse(res.begin(),res.end());\n\t\treturn\
     \ res;\n\t}\n};\n"
-  code: "/*\n * @title Dijkstra\n * @docs md/graph/Dijkstra.md\n */\ntemplate<class\
-    \ T> class Dijkstra {\n\tvector<long long> num_list;\n\tvector<long long> sum;\n\
-    \tint N;\n\tT inf;\n\tvector<vector<pair<T,int>>> edge;\n\tvector<T> cost;\n\t\
-    vector<int> dp;\n\tvoid resize(const int N) {\n\t\tedge.resize(N);\n\t\tcost.resize(N);\n\
-    \t\tdp.resize(N);\n\t}\npublic:\n\tDijkstra(int N,T inf):inf(inf),num_list(1,N),sum(1,1),N(N){\n\
-    \t\tresize(N);\n\t}\n\tDijkstra(initializer_list<long long> size_list,T inf):num_list(size_list),inf(inf),N(1){\n\
+  code: "/*\n * @title Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\
+    \u30E9\n * @docs md/graph/Dijkstra.md\n */\ntemplate<class T> class Dijkstra {\n\
+    \tvector<long long> num_list;\n\tvector<long long> sum;\n\tint N;\n\tT inf;\n\t\
+    vector<vector<pair<T,int>>> edge;\n\tvector<T> cost;\n\tvector<int> dp;\n\tvoid\
+    \ resize(const int N) {\n\t\tedge.resize(N);\n\t\tcost.resize(N);\n\t\tdp.resize(N);\n\
+    \t}\npublic:\n\tDijkstra(int N,T inf):inf(inf),num_list(1,N),sum(1,1),N(N){\n\t\
+    \tresize(N);\n\t}\n\tDijkstra(initializer_list<long long> size_list,T inf):num_list(size_list),inf(inf),N(1){\n\
     \t\tfor(long long& e:num_list) N *= e;\n\t\tsum.resize(num_list.size(),1);\n\t\
     \tfor(int i = 0; i < num_list.size(); ++i) {\n\t\t\tfor(int j = i + 1; j < num_list.size();\
     \ ++j) {\n\t\t\t\tsum[i] *= num_list[j];\n\t\t\t}\n\t\t}\n\t\tresize(N);\n\t}\n\
@@ -89,7 +90,7 @@ data:
   isVerificationFile: false
   path: lib/graph/Dijkstra.cpp
   requiredBy: []
-  timestamp: '2020-08-16 00:39:42+09:00'
+  timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/Dijkstra.test.cpp
@@ -99,5 +100,5 @@ layout: document
 redirect_from:
 - /library/lib/graph/Dijkstra.cpp
 - /library/lib/graph/Dijkstra.cpp.html
-title: Dijkstra
+title: "Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9"
 ---

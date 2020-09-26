@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/graph/Dinic.cpp
-    title: Dinic
+    title: "Dinic - Dinic\u30D5\u30ED\u30FC"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -15,32 +15,32 @@ data:
     - https://yukicoder.me/problems/no/904
   bundledCode: "#line 1 \"test/graph/Dinic.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/904\"\
     \n\n#include <vector>\n#include <iostream>\n#include <queue>\nusing namespace\
-    \ std;\n#line 1 \"lib/graph/Dinic.cpp\"\n/*\n * @title Dinic\n * @docs md/graph/Dinic.md\n\
-    \ */\ntemplate <class T> class Dinic {\n\tstruct info {\n\t\tint to, rev;\n\t\t\
-    T cap;\n\t};\n\tT ini, inf;\n\tvector<vector<info>> edge;\n\tvector<int> level,\
-    \ iter;\n\n\tinline void bfs(int start) {\n\t\tfor (int i = 0; i < level.size();\
-    \ ++i) level[i] = -1;\n\t\tqueue<int> q;\n\t\tlevel[start] = 0;\n\t\tq.push(start);\n\
-    \t\twhile (q.size()) {\n\t\t\tint from = q.front();\n\t\t\tq.pop();\n\t\t\tfor\
-    \ (auto& e : edge[from]) {\n\t\t\t\tif (e.cap > 0 && level[e.to] < 0) {\n\t\t\t\
-    \t\tlevel[e.to] = level[from] + 1;\n\t\t\t\t\tq.push(e.to);\n\t\t\t\t}\n\t\t\t\
-    }\n\t\t}\n\t}\n\n\tinline T dfs(int from, int goal, T flow) {\n\t\tif (from ==\
-    \ goal) return flow;\n\t\tfor (int& i = iter[from]; i < edge[from].size(); ++i)\
-    \ {\n\t\t\tauto& e = edge[from][i];\n\t\t\tif (e.cap <= 0 || level[from] >= level[e.to])\
-    \ continue;\n\t\t\tT dflow = dfs(e.to, goal, min(flow, e.cap));\n\t\t\tif (dflow\
-    \ <= 0) continue;\n\t\t\te.cap -= dflow;\n\t\t\tedge[e.to][e.rev].cap += dflow;\n\
-    \t\t\treturn dflow;\n\t\t}\n\t\treturn ini;\n\t}\n\npublic:\n\tDinic(int N, T\
-    \ ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {\n\t\t// do nothing\n\
-    \t}\n\n\tinline void make_edge(int from, int to, T cap) {\n\t\tedge[from].push_back({\
-    \ to, (int)edge[to].size(), cap });\n\t\tedge[to].push_back({ from, (int)edge[from].size()\
-    \ - 1, ini });\n\t}\n\n\tinline T maxflow(int start, int goal) {\n\t\tT maxflow\
-    \ = ini;\n\t\twhile (1) {\n\t\t\tbfs(start);\n\t\t\tif (level[goal] < 0) return\
-    \ maxflow;\n\t\t\tfor (int i = 0; i < iter.size(); ++i) iter[i] = 0;\n\t\t\tT\
-    \ flow;\n\t\t\twhile ((flow = dfs(start, goal, inf))>0) maxflow += flow;\n\t\t\
-    }\n\t}\n};\n\n//verify https://atcoder.jp/contests/arc085/tasks/arc085_c\n\n#line\
-    \ 8 \"test/graph/Dinic.test.cpp\"\n\nint main() {\n\tint N; cin >> N;\n\tvector<int>\
-    \ A(N),B(N);\n\tfor(int i = 1; i < N; ++i) cin >> A[i] >> B[i];\n\tDinic<int>\
-    \  dinic(2*N,0,1234567);\n\tfor(int i = 1; i < N; ++i) {\n\t\tfor(int j = 1; j\
-    \ < N; ++j) {\n\t\t\tif(i==j) continue;\n\t\t\tdinic.make_edge(i,j+N,1234567);\n\
+    \ std;\n#line 1 \"lib/graph/Dinic.cpp\"\n/*\n * @title Dinic - Dinic\u30D5\u30ED\
+    \u30FC\n * @docs md/graph/Dinic.md\n */\ntemplate <class T> class Dinic {\n\t\
+    struct info {\n\t\tint to, rev;\n\t\tT cap;\n\t};\n\tT ini, inf;\n\tvector<vector<info>>\
+    \ edge;\n\tvector<int> level, iter;\n\n\tinline void bfs(int start) {\n\t\tfor\
+    \ (int i = 0; i < level.size(); ++i) level[i] = -1;\n\t\tqueue<int> q;\n\t\tlevel[start]\
+    \ = 0;\n\t\tq.push(start);\n\t\twhile (q.size()) {\n\t\t\tint from = q.front();\n\
+    \t\t\tq.pop();\n\t\t\tfor (auto& e : edge[from]) {\n\t\t\t\tif (e.cap > 0 && level[e.to]\
+    \ < 0) {\n\t\t\t\t\tlevel[e.to] = level[from] + 1;\n\t\t\t\t\tq.push(e.to);\n\t\
+    \t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tinline T dfs(int from, int goal, T flow) {\n\
+    \t\tif (from == goal) return flow;\n\t\tfor (int& i = iter[from]; i < edge[from].size();\
+    \ ++i) {\n\t\t\tauto& e = edge[from][i];\n\t\t\tif (e.cap <= 0 || level[from]\
+    \ >= level[e.to]) continue;\n\t\t\tT dflow = dfs(e.to, goal, min(flow, e.cap));\n\
+    \t\t\tif (dflow <= 0) continue;\n\t\t\te.cap -= dflow;\n\t\t\tedge[e.to][e.rev].cap\
+    \ += dflow;\n\t\t\treturn dflow;\n\t\t}\n\t\treturn ini;\n\t}\n\npublic:\n\tDinic(int\
+    \ N, T ini, T inf) : edge(N), level(N), iter(N), ini(ini), inf(inf) {\n\t\t//\
+    \ do nothing\n\t}\n\n\tinline void make_edge(int from, int to, T cap) {\n\t\t\
+    edge[from].push_back({ to, (int)edge[to].size(), cap });\n\t\tedge[to].push_back({\
+    \ from, (int)edge[from].size() - 1, ini });\n\t}\n\n\tinline T maxflow(int start,\
+    \ int goal) {\n\t\tT maxflow = ini;\n\t\twhile (1) {\n\t\t\tbfs(start);\n\t\t\t\
+    if (level[goal] < 0) return maxflow;\n\t\t\tfor (int i = 0; i < iter.size(); ++i)\
+    \ iter[i] = 0;\n\t\t\tT flow;\n\t\t\twhile ((flow = dfs(start, goal, inf))>0)\
+    \ maxflow += flow;\n\t\t}\n\t}\n};\n\n//verify https://atcoder.jp/contests/arc085/tasks/arc085_c\n\
+    \n#line 8 \"test/graph/Dinic.test.cpp\"\n\nint main() {\n\tint N; cin >> N;\n\t\
+    vector<int> A(N),B(N);\n\tfor(int i = 1; i < N; ++i) cin >> A[i] >> B[i];\n\t\
+    Dinic<int>  dinic(2*N,0,1234567);\n\tfor(int i = 1; i < N; ++i) {\n\t\tfor(int\
+    \ j = 1; j < N; ++j) {\n\t\t\tif(i==j) continue;\n\t\t\tdinic.make_edge(i,j+N,1234567);\n\
     \t\t}\n\t}\n\tfor(int i = 1; i < N; ++i) dinic.make_edge(0,i,A[i]);\n\tfor(int\
     \ i = 1; i < N; ++i) dinic.make_edge(i+N,N,B[i]);\n\tcout << dinic.maxflow(0,N)+1\
     \ << endl;\n    return 0;\n}\n"
@@ -57,7 +57,7 @@ data:
   isVerificationFile: true
   path: test/graph/Dinic.test.cpp
   requiredBy: []
-  timestamp: '2020-05-13 02:32:42+09:00'
+  timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Dinic.test.cpp
