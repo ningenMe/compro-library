@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/1067
@@ -16,10 +16,10 @@ data:
   bundledCode: "#line 1 \"test/util/ModInt.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1067\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <map>\n\
     #include <queue>\nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n\
-    \ * @title ModInt\n */\ntemplate<long long mod> class ModInt {\npublic:\n    long\
-    \ long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long y) :\
-    \ x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const ModInt\
-    \ &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
+    \ * @title ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class\
+    \ ModInt {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr\
+    \ ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const\
+    \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
     \ long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n  \
     \  ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
     \ *this;}\n    ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod)\
@@ -97,8 +97,8 @@ data:
   isVerificationFile: true
   path: test/util/ModInt.test.cpp
   requiredBy: []
-  timestamp: '2020-09-06 21:12:06+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-26 17:01:19+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/util/ModInt.test.cpp
 layout: document

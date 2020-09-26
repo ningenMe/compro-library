@@ -4,10 +4,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/graph/Tree.cpp
     title: "Tree - \u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/segment/SegmentTree.cpp
-    title: SegmentTree
-  - icon: ':heavy_check_mark:'
+    title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\
+      \u30C8\u6728"
+  - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []
@@ -154,33 +155,33 @@ data:
     \ r) {\n\t\treturn {l.first+r.first+r.second,l.second+r.second};\n\t}\n\ttemplate<class\
     \ TypeReroot> inline static constexpr TypeReroot func_reroot_merge(const TypeReroot&\
     \ l,const TypeReroot& r) {\n\t\treturn {l.first+r.first,l.second+r.second};\n\t\
-    }\n};\n#line 1 \"lib/segment/SegmentTree.cpp\"\n/*\n * @title SegmentTree\n *\
-    \ @docs md/segment/SegmentTree.md\n */\ntemplate<class Operator> class SegmentTree\
-    \ {\n    using TypeNode = typename Operator::TypeNode; \n    size_t length;\n\
-    \    size_t num;\n    vector<TypeNode> node;\n    vector<pair<int,int>> range;\n\
-    \    inline void build() {\n        for (int i = length - 1; i >= 0; --i) node[i]\
-    \ = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);\n        range.resize(2\
-    \ * length);\n        for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);\n\
-    \        for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);\n\
-    \    }\npublic:\n\n    //unit\u3067\u521D\u671F\u5316\n    SegmentTree(const size_t\
-    \ num): num(num) {\n        for (length = 1; length <= num; length *= 2);\n  \
-    \      node.resize(2 * length, Operator::unit_node);\n        build();\n    }\n\
-    \n    //vector\u3067\u521D\u671F\u5316\n    SegmentTree(const vector<TypeNode>\
-    \ & vec) : num(vec.size()) {\n        for (length = 1; length <= vec.size(); length\
-    \ *= 2);\n        node.resize(2 * length, Operator::unit_node);\n        for (int\
-    \ i = 0; i < vec.size(); ++i) node[i + length] = vec[i];\n        build();\n \
-    \   }\n \n    //\u540C\u3058init\u3067\u521D\u671F\u5316\n    SegmentTree(const\
-    \ size_t num, const TypeNode init) : num(num) {\n        for (length = 1; length\
-    \ <= num; length *= 2);\n        node.resize(2 * length, Operator::unit_node);\n\
-    \        for (int i = 0; i < length; ++i) node[i+length] = init;\n        build();\n\
-    \    }\n    \n    //[idx,idx+1)\n    void update(size_t idx, const TypeNode var)\
-    \ {\n        if(idx < 0 || length <= idx) return;\n        idx += length;\n  \
-    \      node[idx] = Operator::func_merge(node[idx],var);\n        while(idx >>=\
-    \ 1) node[idx] = Operator::func_node(node[(idx<<1)+0],node[(idx<<1)+1]);\n   \
-    \ }\n\n    //[l,r)\n    TypeNode get(int l, int r) {\n        if (l < 0 || length\
-    \ <= l || r < 0 || length < r) return Operator::unit_node;\n        TypeNode vl\
-    \ = Operator::unit_node, vr = Operator::unit_node;\n        for(l += length, r\
-    \ += length; l < r; l >>=1, r >>=1) {\n            if(l&1) vl = Operator::func_node(vl,node[l++]);\n\
+    }\n};\n#line 1 \"lib/segment/SegmentTree.cpp\"\n/*\n * @title SegmentTree - \u975E\
+    \u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @docs md/segment/SegmentTree.md\n\
+    \ */\ntemplate<class Operator> class SegmentTree {\n    using TypeNode = typename\
+    \ Operator::TypeNode; \n    size_t length;\n    size_t num;\n    vector<TypeNode>\
+    \ node;\n    vector<pair<int,int>> range;\n    inline void build() {\n       \
+    \ for (int i = length - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);\n\
+    \        range.resize(2 * length);\n        for (int i = 0; i < length; ++i) range[i+length]\
+    \ = make_pair(i,i+1);\n        for (int i = length - 1; i >= 0; --i) range[i]\
+    \ = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);\n    }\npublic:\n\
+    \n    //unit\u3067\u521D\u671F\u5316\n    SegmentTree(const size_t num): num(num)\
+    \ {\n        for (length = 1; length <= num; length *= 2);\n        node.resize(2\
+    \ * length, Operator::unit_node);\n        build();\n    }\n\n    //vector\u3067\
+    \u521D\u671F\u5316\n    SegmentTree(const vector<TypeNode> & vec) : num(vec.size())\
+    \ {\n        for (length = 1; length <= vec.size(); length *= 2);\n        node.resize(2\
+    \ * length, Operator::unit_node);\n        for (int i = 0; i < vec.size(); ++i)\
+    \ node[i + length] = vec[i];\n        build();\n    }\n \n    //\u540C\u3058init\u3067\
+    \u521D\u671F\u5316\n    SegmentTree(const size_t num, const TypeNode init) : num(num)\
+    \ {\n        for (length = 1; length <= num; length *= 2);\n        node.resize(2\
+    \ * length, Operator::unit_node);\n        for (int i = 0; i < length; ++i) node[i+length]\
+    \ = init;\n        build();\n    }\n    \n    //[idx,idx+1)\n    void update(size_t\
+    \ idx, const TypeNode var) {\n        if(idx < 0 || length <= idx) return;\n \
+    \       idx += length;\n        node[idx] = Operator::func_merge(node[idx],var);\n\
+    \        while(idx >>= 1) node[idx] = Operator::func_node(node[(idx<<1)+0],node[(idx<<1)+1]);\n\
+    \    }\n\n    //[l,r)\n    TypeNode get(int l, int r) {\n        if (l < 0 ||\
+    \ length <= l || r < 0 || length < r) return Operator::unit_node;\n        TypeNode\
+    \ vl = Operator::unit_node, vr = Operator::unit_node;\n        for(l += length,\
+    \ r += length; l < r; l >>=1, r >>=1) {\n            if(l&1) vl = Operator::func_node(vl,node[l++]);\n\
     \            if(r&1) vr = Operator::func_node(node[--r],vr);\n        }\n    \
     \    return Operator::func_node(vl,vr);\n    }\n\n    //range[l,r) return [l,r]\
     \ search max right\n    int prefix_binary_search(int l, int r, TypeNode var) {\n\
@@ -223,36 +224,37 @@ data:
     \ static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n   \
     \ inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
     \ var == nodeVal;}\n};\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
-    \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
-    \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
-    \ (-y)%mod)%mod) {}\n    ModInt &operator+=(const ModInt &p) {if((x += p.x) >=\
-    \ mod) x -= mod;return *this;}\n    ModInt &operator+=(const long long y) {ModInt\
-    \ p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
-    \ int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt\
-    \ &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}\n\
-    \    ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >=\
-    \ mod) x -= mod;return *this;}\n    ModInt &operator-=(const int y) {ModInt p(y);if((x\
-    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator*=(const\
-    \ ModInt &p) {x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
-    \ long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
-    \ int y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator^=(const\
-    \ ModInt &p) {x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
-    \ long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
-    \ int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator/=(const\
-    \ ModInt &p) {*this *= p.inv();return *this;}\n    ModInt &operator/=(const long\
-    \ long y) {ModInt p(y);*this *= p.inv();return *this;}\n    ModInt &operator/=(const\
-    \ int y) {ModInt p(y);*this *= p.inv();return *this;}\n    ModInt operator=(const\
-    \ int y) {ModInt p(y);*this = p;return *this;}\n    ModInt operator=(const long\
-    \ long y) {ModInt p(y);*this = p;return *this;}\n    ModInt operator-() const\
-    \ {return ModInt(-x); }\n    ModInt operator++() {x++;if(x>=mod) x-=mod;return\
-    \ *this;}\n    ModInt operator--() {x--;if(x<0) x+=mod;return *this;}\n    ModInt\
-    \ operator+(const ModInt &p) const { return ModInt(*this) += p; }\n    ModInt\
-    \ operator-(const ModInt &p) const { return ModInt(*this) -= p; }\n    ModInt\
-    \ operator*(const ModInt &p) const { return ModInt(*this) *= p; }\n    ModInt\
-    \ operator/(const ModInt &p) const { return ModInt(*this) /= p; }\n    ModInt\
-    \ operator^(const ModInt &p) const { return ModInt(*this) ^= p; }\n    bool operator==(const\
-    \ ModInt &p) const { return x == p.x; }\n    bool operator!=(const ModInt &p)\
-    \ const { return x != p.x; }\n    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
+    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
+    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
+    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const\
+    \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
+    \ long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n  \
+    \  ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
+    \ *this;}\n    ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod)\
+    \ x -= mod;return *this;}\n    ModInt &operator-=(const long long y) {ModInt p(y);if((x\
+    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator-=(const\
+    \ int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}\n  \
+    \  ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}\n \
+    \   ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x % mod);return\
+    \ *this;}\n    ModInt &operator*=(const int y) {ModInt p(y);x = (x * p.x % mod);return\
+    \ *this;}\n    ModInt &operator^=(const ModInt &p) {x = (x ^ p.x) % mod;return\
+    \ *this;}\n    ModInt &operator^=(const long long y) {ModInt p(y);x = (x ^ p.x)\
+    \ % mod;return *this;}\n    ModInt &operator^=(const int y) {ModInt p(y);x = (x\
+    \ ^ p.x) % mod;return *this;}\n    ModInt &operator/=(const ModInt &p) {*this\
+    \ *= p.inv();return *this;}\n    ModInt &operator/=(const long long y) {ModInt\
+    \ p(y);*this *= p.inv();return *this;}\n    ModInt &operator/=(const int y) {ModInt\
+    \ p(y);*this *= p.inv();return *this;}\n    ModInt operator=(const int y) {ModInt\
+    \ p(y);*this = p;return *this;}\n    ModInt operator=(const long long y) {ModInt\
+    \ p(y);*this = p;return *this;}\n    ModInt operator-() const {return ModInt(-x);\
+    \ }\n    ModInt operator++() {x++;if(x>=mod) x-=mod;return *this;}\n    ModInt\
+    \ operator--() {x--;if(x<0) x+=mod;return *this;}\n    ModInt operator+(const\
+    \ ModInt &p) const { return ModInt(*this) += p; }\n    ModInt operator-(const\
+    \ ModInt &p) const { return ModInt(*this) -= p; }\n    ModInt operator*(const\
+    \ ModInt &p) const { return ModInt(*this) *= p; }\n    ModInt operator/(const\
+    \ ModInt &p) const { return ModInt(*this) /= p; }\n    ModInt operator^(const\
+    \ ModInt &p) const { return ModInt(*this) ^= p; }\n    bool operator==(const ModInt\
+    \ &p) const { return x == p.x; }\n    bool operator!=(const ModInt &p) const {\
+    \ return x != p.x; }\n    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
     \ > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}\n\
     \    ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul *= mul,n\
     \ >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream &operator<<(ostream\
@@ -320,7 +322,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-hld-path.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 16:13:14+09:00'
+  timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-hld-path.test.cpp

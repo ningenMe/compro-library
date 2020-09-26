@@ -4,9 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/graph/Tree.cpp
     title: "Tree - \u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/segment/LazySegmentTree.cpp
-    title: LazySegmentTree
+    title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
+      \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -151,14 +152,16 @@ data:
     \ r) {\n\t\treturn {l.first+r.first+r.second,l.second+r.second};\n\t}\n\ttemplate<class\
     \ TypeReroot> inline static constexpr TypeReroot func_reroot_merge(const TypeReroot&\
     \ l,const TypeReroot& r) {\n\t\treturn {l.first+r.first,l.second+r.second};\n\t\
-    }\n};\n#line 1 \"lib/segment/LazySegmentTree.cpp\"\n/*\n * @title LazySegmentTree\n\
-    \ */\ntemplate<class Operator> class LazySegmentTree {\n\tusing TypeNode = typename\
-    \ Operator::TypeNode;          \n\tusing TypeLazy = typename Operator::TypeLazy;\n\
-    \tsize_t num;      \n\tsize_t length;                                   \n\tsize_t\
-    \ height;                                   \n\tvector<TypeNode> node;       \
-    \                    \n\tvector<TypeLazy> lazy;                           \n\t\
-    vector<pair<size_t,size_t>> range;\n\n\tvoid propagate(int k) {\n\t\tif(lazy[k]\
-    \ == Operator::unit_lazy) return;\n\t\tnode[k] = Operator::func_merge(node[k],lazy[k],range[k].second-range[k].first);\n\
+    }\n};\n#line 1 \"lib/segment/LazySegmentTree.cpp\"\n/*\n * @title LazySegmentTree\
+    \ - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\
+    \u30F3\u30C8\u6728\n * @docs md/segment/LazySegmentTree.md\n */\ntemplate<class\
+    \ Operator> class LazySegmentTree {\n\tusing TypeNode = typename Operator::TypeNode;\
+    \          \n\tusing TypeLazy = typename Operator::TypeLazy;\n\tsize_t num;  \
+    \    \n\tsize_t length;                                   \n\tsize_t height; \
+    \                                  \n\tvector<TypeNode> node;                \
+    \           \n\tvector<TypeLazy> lazy;                           \n\tvector<pair<size_t,size_t>>\
+    \ range;\n\n\tvoid propagate(int k) {\n\t\tif(lazy[k] == Operator::unit_lazy)\
+    \ return;\n\t\tnode[k] = Operator::func_merge(node[k],lazy[k],range[k].second-range[k].first);\n\
     \t\tif(k < length) lazy[2*k+0] = Operator::func_lazy(lazy[2*k+0],lazy[k]);\n\t\
     \tif(k < length) lazy[2*k+1] = Operator::func_lazy(lazy[2*k+1],lazy[k]);\n\t\t\
     lazy[k] = Operator::unit_lazy;\n\t}\npublic:\n\n\t//unit\u3067\u521D\u671F\u5316\
@@ -275,7 +278,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-hld-vertex.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 16:13:14+09:00'
+  timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-hld-vertex.test.cpp

@@ -1,16 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/segment/SegmentTree.cpp
-    title: SegmentTree
-  - icon: ':heavy_check_mark:'
+    title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\
+      \u30C8\u6728"
+  - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_set_range_composite
@@ -19,7 +20,8 @@ data:
   bundledCode: "#line 1 \"test/segment/SegmentTree-rcq.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/point_set_range_composite\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\nusing namespace std;\n#line 1 \"lib/segment/SegmentTree.cpp\"\
-    \n/*\n * @title SegmentTree\n * @docs md/segment/SegmentTree.md\n */\ntemplate<class\
+    \n/*\n * @title SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\
+    \u30E1\u30F3\u30C8\u6728\n * @docs md/segment/SegmentTree.md\n */\ntemplate<class\
     \ Operator> class SegmentTree {\n    using TypeNode = typename Operator::TypeNode;\
     \ \n    size_t length;\n    size_t num;\n    vector<TypeNode> node;\n    vector<pair<int,int>>\
     \ range;\n    inline void build() {\n        for (int i = length - 1; i >= 0;\
@@ -87,36 +89,37 @@ data:
     \ static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n   \
     \ inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
     \ var == nodeVal;}\n};\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
-    \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
-    \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
-    \ (-y)%mod)%mod) {}\n    ModInt &operator+=(const ModInt &p) {if((x += p.x) >=\
-    \ mod) x -= mod;return *this;}\n    ModInt &operator+=(const long long y) {ModInt\
-    \ p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
-    \ int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt\
-    \ &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}\n\
-    \    ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >=\
-    \ mod) x -= mod;return *this;}\n    ModInt &operator-=(const int y) {ModInt p(y);if((x\
-    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator*=(const\
-    \ ModInt &p) {x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
-    \ long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
-    \ int y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator^=(const\
-    \ ModInt &p) {x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
-    \ long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
-    \ int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator/=(const\
-    \ ModInt &p) {*this *= p.inv();return *this;}\n    ModInt &operator/=(const long\
-    \ long y) {ModInt p(y);*this *= p.inv();return *this;}\n    ModInt &operator/=(const\
-    \ int y) {ModInt p(y);*this *= p.inv();return *this;}\n    ModInt operator=(const\
-    \ int y) {ModInt p(y);*this = p;return *this;}\n    ModInt operator=(const long\
-    \ long y) {ModInt p(y);*this = p;return *this;}\n    ModInt operator-() const\
-    \ {return ModInt(-x); }\n    ModInt operator++() {x++;if(x>=mod) x-=mod;return\
-    \ *this;}\n    ModInt operator--() {x--;if(x<0) x+=mod;return *this;}\n    ModInt\
-    \ operator+(const ModInt &p) const { return ModInt(*this) += p; }\n    ModInt\
-    \ operator-(const ModInt &p) const { return ModInt(*this) -= p; }\n    ModInt\
-    \ operator*(const ModInt &p) const { return ModInt(*this) *= p; }\n    ModInt\
-    \ operator/(const ModInt &p) const { return ModInt(*this) /= p; }\n    ModInt\
-    \ operator^(const ModInt &p) const { return ModInt(*this) ^= p; }\n    bool operator==(const\
-    \ ModInt &p) const { return x == p.x; }\n    bool operator!=(const ModInt &p)\
-    \ const { return x != p.x; }\n    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
+    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
+    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
+    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const\
+    \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
+    \ long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n  \
+    \  ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
+    \ *this;}\n    ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod)\
+    \ x -= mod;return *this;}\n    ModInt &operator-=(const long long y) {ModInt p(y);if((x\
+    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator-=(const\
+    \ int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}\n  \
+    \  ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}\n \
+    \   ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x % mod);return\
+    \ *this;}\n    ModInt &operator*=(const int y) {ModInt p(y);x = (x * p.x % mod);return\
+    \ *this;}\n    ModInt &operator^=(const ModInt &p) {x = (x ^ p.x) % mod;return\
+    \ *this;}\n    ModInt &operator^=(const long long y) {ModInt p(y);x = (x ^ p.x)\
+    \ % mod;return *this;}\n    ModInt &operator^=(const int y) {ModInt p(y);x = (x\
+    \ ^ p.x) % mod;return *this;}\n    ModInt &operator/=(const ModInt &p) {*this\
+    \ *= p.inv();return *this;}\n    ModInt &operator/=(const long long y) {ModInt\
+    \ p(y);*this *= p.inv();return *this;}\n    ModInt &operator/=(const int y) {ModInt\
+    \ p(y);*this *= p.inv();return *this;}\n    ModInt operator=(const int y) {ModInt\
+    \ p(y);*this = p;return *this;}\n    ModInt operator=(const long long y) {ModInt\
+    \ p(y);*this = p;return *this;}\n    ModInt operator-() const {return ModInt(-x);\
+    \ }\n    ModInt operator++() {x++;if(x>=mod) x-=mod;return *this;}\n    ModInt\
+    \ operator--() {x--;if(x<0) x+=mod;return *this;}\n    ModInt operator+(const\
+    \ ModInt &p) const { return ModInt(*this) += p; }\n    ModInt operator-(const\
+    \ ModInt &p) const { return ModInt(*this) -= p; }\n    ModInt operator*(const\
+    \ ModInt &p) const { return ModInt(*this) *= p; }\n    ModInt operator/(const\
+    \ ModInt &p) const { return ModInt(*this) /= p; }\n    ModInt operator^(const\
+    \ ModInt &p) const { return ModInt(*this) ^= p; }\n    bool operator==(const ModInt\
+    \ &p) const { return x == p.x; }\n    bool operator!=(const ModInt &p) const {\
+    \ return x != p.x; }\n    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
     \ > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}\n\
     \    ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul *= mul,n\
     \ >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream &operator<<(ostream\
@@ -146,8 +149,8 @@ data:
   isVerificationFile: true
   path: test/segment/SegmentTree-rcq.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 09:23:21+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-26 17:01:19+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/segment/SegmentTree-rcq.test.cpp
 layout: document

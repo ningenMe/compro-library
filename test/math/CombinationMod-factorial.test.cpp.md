@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/math/CombinationMod.cpp
     title: "CombinationMod - mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\u968E\u4E57"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []
@@ -28,19 +28,19 @@ data:
     \tinline long long binom(int n, int k) {\n\t\treturn ((n < 0 || k < 0 || n < k)\
     \ ? 0 : fac[n] * (finv[k] * finv[n - k] % mod) % mod);\n\t}\n\tinline long long\
     \ factorial(int n) {\n\t\treturn fac[n];\n\t}\n};\n\n//verify https://atcoder.jp/contests/abc021/tasks/abc021_d\n\
-    #line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n */\ntemplate<long long\
-    \ mod> class ModInt {\npublic:\n    long long x;\n    constexpr ModInt():x(0)\
-    \ {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod)\
-    \ {}\n    ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return\
-    \ *this;}\n    ModInt &operator+=(const long long y) {ModInt p(y);if((x += p.x)\
-    \ >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const int y) {ModInt\
-    \ p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator-=(const\
-    \ ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt\
-    \ &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >= mod) x -=\
-    \ mod;return *this;}\n    ModInt &operator-=(const int y) {ModInt p(y);if((x +=\
-    \ mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator*=(const ModInt\
-    \ &p) {x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const long long\
-    \ y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
+    #line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/util/ModInt.md\n\
+    \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
+    \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
+    \ (-y)%mod)%mod) {}\n    ModInt &operator+=(const ModInt &p) {if((x += p.x) >=\
+    \ mod) x -= mod;return *this;}\n    ModInt &operator+=(const long long y) {ModInt\
+    \ p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
+    \ int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt\
+    \ &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}\n\
+    \    ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >=\
+    \ mod) x -= mod;return *this;}\n    ModInt &operator-=(const int y) {ModInt p(y);if((x\
+    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator*=(const\
+    \ ModInt &p) {x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
+    \ long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
     \ int y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator^=(const\
     \ ModInt &p) {x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
     \ long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
@@ -99,7 +99,7 @@ data:
   isVerificationFile: true
   path: test/math/CombinationMod-factorial.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 16:29:44+09:00'
+  timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/CombinationMod-factorial.test.cpp

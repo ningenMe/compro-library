@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: lib/util/NBase.cpp
-    title: NBase
+    title: "NBase - N\u9032\u6570"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/699
@@ -15,22 +15,22 @@ data:
     - https://yukicoder.me/problems/no/699
   bundledCode: "#line 1 \"test/util/NBase.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/699\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <cassert>\n\
-    using namespace std;\n#line 1 \"lib/util/NBase.cpp\"\n/*\n * @title NBase\n */\n\
-    class NBase{\npublic:\n\tinline static vector<long long> translate(long long X,long\
-    \ long N) {\n\t\tassert(abs(N)>1);\n\t\tvector<long long> res;\n\t\twhile(1) {\n\
-    \t\t\tlong long b = (X%abs(N)+abs(N)) % abs(N);\n\t\t\tres.push_back(b);\n\t\t\
-    \t(X -= b) /= N;\n\t\t\tif(X==0) break;\n\t\t}\n\t\treturn res;\n\t}\n\t//Digit\
-    \ Sum\n\tinline static constexpr long long digit_sum(long long N, long long K)\
-    \ {\n\t\tlong long sum = 0;\n\t\tfor (; N > 0; N /= K) sum += N % K;\n\t\treturn\
-    \ sum;\n\t}\n};\n#line 9 \"test/util/NBase.test.cpp\"\n\nint main(void){\n\tint\
-    \ N; cin >> N;\n    vector<long long> A(N);\n    for(int i = 0; i < N; ++i) cin\
-    \ >> A[i];\n    sort(A.begin(),A.end());\n    vector<long long> B(N/2),C(N/2);\n\
-    \    long long ans = 0;\n    for(int i = 0; i < (1<<N); ++i) {\n        if(i&1\
-    \ || NBase::digit_sum(i,2)!=N/2) continue;\n        int b=0,c=0;\n        for(int\
-    \ j = 0; j < N; ++j) {\n            if(i&(1<<j)) B[b++]=A[j];\n            else\
-    \ C[c++]=A[j];\n        }\n        do{\n            long long sum = 0;\n     \
-    \       for(int j = 0; j < N/2; ++j) {\n                sum ^= (B[j]+C[j]);\n\
-    \            }\n\t\t\tans = max(ans,sum);\n        }while (next_permutation(B.begin(),B.end()));\n\
+    using namespace std;\n#line 1 \"lib/util/NBase.cpp\"\n/*\n * @title NBase - N\u9032\
+    \u6570\n * @docs md/util/NBase.md\n */\nclass NBase{\npublic:\n\tinline static\
+    \ vector<long long> translate(long long X,long long N) {\n\t\tassert(abs(N)>1);\n\
+    \t\tvector<long long> res;\n\t\twhile(1) {\n\t\t\tlong long b = (X%abs(N)+abs(N))\
+    \ % abs(N);\n\t\t\tres.push_back(b);\n\t\t\t(X -= b) /= N;\n\t\t\tif(X==0) break;\n\
+    \t\t}\n\t\treturn res;\n\t}\n\t//Digit Sum\n\tinline static constexpr long long\
+    \ digit_sum(long long N, long long K) {\n\t\tlong long sum = 0;\n\t\tfor (; N\
+    \ > 0; N /= K) sum += N % K;\n\t\treturn sum;\n\t}\n};\n#line 9 \"test/util/NBase.test.cpp\"\
+    \n\nint main(void){\n\tint N; cin >> N;\n    vector<long long> A(N);\n    for(int\
+    \ i = 0; i < N; ++i) cin >> A[i];\n    sort(A.begin(),A.end());\n    vector<long\
+    \ long> B(N/2),C(N/2);\n    long long ans = 0;\n    for(int i = 0; i < (1<<N);\
+    \ ++i) {\n        if(i&1 || NBase::digit_sum(i,2)!=N/2) continue;\n        int\
+    \ b=0,c=0;\n        for(int j = 0; j < N; ++j) {\n            if(i&(1<<j)) B[b++]=A[j];\n\
+    \            else C[c++]=A[j];\n        }\n        do{\n            long long\
+    \ sum = 0;\n            for(int j = 0; j < N/2; ++j) {\n                sum ^=\
+    \ (B[j]+C[j]);\n            }\n\t\t\tans = max(ans,sum);\n        }while (next_permutation(B.begin(),B.end()));\n\
     \    }\n    cout << ans << endl;\n\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/699\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <cassert>\nusing namespace\
@@ -49,8 +49,8 @@ data:
   isVerificationFile: true
   path: test/util/NBase.test.cpp
   requiredBy: []
-  timestamp: '2020-05-13 02:48:46+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-26 17:01:19+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/util/NBase.test.cpp
 layout: document

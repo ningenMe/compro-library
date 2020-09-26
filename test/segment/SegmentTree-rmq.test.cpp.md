@@ -1,13 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/segment/SegmentTree.cpp
-    title: SegmentTree
+    title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\
+      \u30C8\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
@@ -16,7 +17,8 @@ data:
   bundledCode: "#line 1 \"test/segment/SegmentTree-rmq.test.cpp\"\n#define PROBLEM\
     \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <cassert>\nusing namespace std;\n#line\
-    \ 1 \"lib/segment/SegmentTree.cpp\"\n/*\n * @title SegmentTree\n * @docs md/segment/SegmentTree.md\n\
+    \ 1 \"lib/segment/SegmentTree.cpp\"\n/*\n * @title SegmentTree - \u975E\u518D\u5E30\
+    \u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @docs md/segment/SegmentTree.md\n\
     \ */\ntemplate<class Operator> class SegmentTree {\n    using TypeNode = typename\
     \ Operator::TypeNode; \n    size_t length;\n    size_t num;\n    vector<TypeNode>\
     \ node;\n    vector<pair<int,int>> range;\n    inline void build() {\n       \
@@ -100,8 +102,8 @@ data:
   isVerificationFile: true
   path: test/segment/SegmentTree-rmq.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 09:23:21+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-26 17:01:19+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/segment/SegmentTree-rmq.test.cpp
 layout: document

@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: lib/segment/BinaryTrie.cpp
     title: BinaryTrie
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/set_xor_min
@@ -16,9 +16,9 @@ data:
   bundledCode: "#line 1 \"test/segment/BinaryTrie-set-xor-min.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n\n#include <vector>\n\
     #include <iostream>\n#include <stack>\nusing namespace std;\n#line 1 \"lib/segment/BinaryTrie.cpp\"\
-    \n/*\n * @title BinaryTrie\n */\ntemplate<class Operator, int bit=60> class BinaryTrie{\n\
-    \tusing TypeNode = typename Operator::TypeNode; \npublic:\n\tvector<TypeNode>\
-    \ node;\n\tvector<vector<int>> ch;\n\tBinaryTrie():node(1),ch(1,vector<int>(2,-1)){}\n\
+    \n/*\n * @title BinaryTrie\n * @docs md/segment/BinaryTrie.md\n */\ntemplate<class\
+    \ Operator, int bit=60> class BinaryTrie{\n\tusing TypeNode = typename Operator::TypeNode;\
+    \ \npublic:\n\tvector<TypeNode> node;\n\tvector<vector<int>> ch;\n\tBinaryTrie():node(1),ch(1,vector<int>(2,-1)){}\n\
     \tvoid update(long long idx, const TypeNode var) {\n\t\tint curr=0;\n\t\tstack<int>\
     \ st;\n\t\tfor(int i=bit-1; 0 <= i; --i) {\n\t\t\tst.push(curr);\n\t\t\tint f=(idx>>i)&1;\n\
     \t\t\tif(ch[curr][f]==-1) {\n\t\t\t\tnode.push_back(Operator::unit_node);\n\t\t\
@@ -58,8 +58,8 @@ data:
   isVerificationFile: true
   path: test/segment/BinaryTrie-set-xor-min.test.cpp
   requiredBy: []
-  timestamp: '2020-08-05 03:48:04+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-26 17:01:19+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/segment/BinaryTrie-set-xor-min.test.cpp
 layout: document

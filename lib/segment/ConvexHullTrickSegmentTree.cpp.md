@@ -10,11 +10,14 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    document_title: ConvexHullTrickSegmentTree
+    _deprecated_at_docs: md/segment/ConvexHullTrickSegmentTree.md
+    document_title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\
+      \u30E1\u30F3\u30C8\u6728"
     links:
     - https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i
   bundledCode: "#line 1 \"lib/segment/ConvexHullTrickSegmentTree.cpp\"\n/*\n * @title\
-    \ ConvexHullTrickSegmentTree\n * @see https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i\n\
+    \ ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\u30F3\u30C8\
+    \u6728\n * @docs md/segment/ConvexHullTrickSegmentTree.md\n * @see https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i\n\
     \ */\ntemplate<class Operator> class ConvexHullTrickSegmentTree {\n\tusing TypeValue\
     \ = typename Operator::TypeValue;\n\tusing TypeNode = pair<TypeValue,TypeValue>;\n\
     \tsize_t length;\n\tsize_t num;\n\tvector<ConvexHullTrick<Operator>> node;\npublic:\n\
@@ -42,13 +45,15 @@ data:
     \t\tcout << \"node\" << endl;\n\t\tfor(int i = 1,j = 1; i < 2*length; ++i) {\n\
     \t\t\tnode[i].print();\n\t\t\tif(i==((1<<j)-1) && ++j) cout << endl;\n\t\t}  \
     \  \n\t}\n};\n"
-  code: "/*\n * @title ConvexHullTrickSegmentTree\n * @see https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i\n\
-    \ */\ntemplate<class Operator> class ConvexHullTrickSegmentTree {\n\tusing TypeValue\
-    \ = typename Operator::TypeValue;\n\tusing TypeNode = pair<TypeValue,TypeValue>;\n\
-    \tsize_t length;\n\tsize_t num;\n\tvector<ConvexHullTrick<Operator>> node;\npublic:\n\
-    \tinline constexpr TypeValue y(const TypeNode p, TypeValue x) {\n\t\treturn p.first*x+p.second;\n\
-    \t}\n\tConvexHullTrickSegmentTree(const size_t num): num(num) {\n\t\tfor (length\
-    \ = 1; length <= num; length *= 2);\n\t\tnode.resize(2 * length);\n\t}\n\t//[idx,idx+1)\
+  code: "/*\n * @title ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\
+    \u30E1\u30F3\u30C8\u6728\n * @docs md/segment/ConvexHullTrickSegmentTree.md\n\
+    \ * @see https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i\n */\ntemplate<class\
+    \ Operator> class ConvexHullTrickSegmentTree {\n\tusing TypeValue = typename Operator::TypeValue;\n\
+    \tusing TypeNode = pair<TypeValue,TypeValue>;\n\tsize_t length;\n\tsize_t num;\n\
+    \tvector<ConvexHullTrick<Operator>> node;\npublic:\n\tinline constexpr TypeValue\
+    \ y(const TypeNode p, TypeValue x) {\n\t\treturn p.first*x+p.second;\n\t}\n\t\
+    ConvexHullTrickSegmentTree(const size_t num): num(num) {\n\t\tfor (length = 1;\
+    \ length <= num; length *= 2);\n\t\tnode.resize(2 * length);\n\t}\n\t//[idx,idx+1)\
     \ insert{ax+b}\n\tvoid update(size_t idx, const TypeValue a, const TypeValue b)\
     \ {\n\t\tif(idx < 0 || length <= idx) return;\n\t\tfor(idx+=length;idx;idx >>=\
     \ 1) node[idx].insert(a,b);\n\t}\n\t//[l,r)\n\tTypeValue get(int l, int r, TypeValue\
@@ -74,7 +79,7 @@ data:
   isVerificationFile: false
   path: lib/segment/ConvexHullTrickSegmentTree.cpp
   requiredBy: []
-  timestamp: '2020-09-21 03:07:28+09:00'
+  timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/segment/ConvexHullTrickSegmentTree.test.cpp
@@ -83,5 +88,6 @@ layout: document
 redirect_from:
 - /library/lib/segment/ConvexHullTrickSegmentTree.cpp
 - /library/lib/segment/ConvexHullTrickSegmentTree.cpp.html
-title: ConvexHullTrickSegmentTree
+title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\u30F3\
+  \u30C8\u6728"
 ---

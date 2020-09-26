@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':question:'
     path: lib/segment/Rbst.cpp
-    title: Rbst
+    title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
   - icon: ':question:'
     path: lib/geometory/ConvexHullTrick.cpp
     title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
@@ -19,9 +19,10 @@ data:
   bundledCode: "#line 1 \"test/geometory/ConvexHullTrick-no-monotone.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n#include\
     \ <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n#line\
-    \ 1 \"lib/segment/Rbst.cpp\"\n/*\n * @title Rbst\n */\ntemplate<class Operator>\
-    \ class Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\tunsigned int\
-    \ x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\tunsigned int xor_shift()\
+    \ 1 \"lib/segment/Rbst.cpp\"\n/*\n * @title Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\
+    \u7D22\u6728\n * @docs md/segment/Rbst.md\n */\ntemplate<class Operator> class\
+    \ Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\tunsigned int x =\
+    \ 123456789, y = 362436069, z = 521288629, w = 88675123;\n\tunsigned int xor_shift()\
     \ {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z; z = w;\n\t\treturn (w\
     \ = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\t}\n\tstruct Node {\n\t\tNode *left,\
     \ *right;\n\t\tTypeNode val;\n\t\tint size;\n\t\tTypeNode sum;\n\n\t\tNode() :\
@@ -142,7 +143,7 @@ data:
   isVerificationFile: true
   path: test/geometory/ConvexHullTrick-no-monotone.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 16:13:14+09:00'
+  timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometory/ConvexHullTrick-no-monotone.test.cpp

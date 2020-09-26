@@ -33,7 +33,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/Tree.cpp
       title: "Tree - \u6728"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/graph/UnionFindTree.cpp
       title: "UnionFindTree - Union Find \u6728"
   - name: lib/heap
@@ -65,10 +65,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/math/Garner.cpp
       title: "Garner - \u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/math/Gcd.cpp
       title: "Gcd - \u9AD8\u901FGCD"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
     - icon: ':heavy_check_mark:'
@@ -77,58 +77,61 @@ data:
         \u30FC\u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A"
   - name: lib/segment
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/segment/BinaryIndexedTree.cpp
       title: BinaryIndexedTree
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/segment/BinaryTrie.cpp
       title: BinaryTrie
     - icon: ':x:'
       path: lib/segment/ConvexHullTrickSegmentTree.cpp
-      title: ConvexHullTrickSegmentTree
-    - icon: ':heavy_check_mark:'
+      title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\
+        \u30F3\u30C8\u6728"
+    - icon: ':x:'
       path: lib/segment/DisjointSparseTable.cpp
       title: DisjointSparseTable
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/segment/LazySegmentTree.cpp
-      title: LazySegmentTree
-    - icon: ':heavy_check_mark:'
+      title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
+        \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+    - icon: ':x:'
       path: lib/segment/LiChaoTree.cpp
       title: LiChaoTree
     - icon: ':question:'
       path: lib/segment/Rbst.cpp
-      title: Rbst
-    - icon: ':heavy_check_mark:'
+      title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
+    - icon: ':question:'
       path: lib/segment/SegmentTree.cpp
-      title: SegmentTree
-    - icon: ':heavy_check_mark:'
+      title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
+        \u30F3\u30C8\u6728"
+    - icon: ':x:'
       path: lib/segment/SegmentTreeBeats.cpp
       title: SegmentTreeBeats
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/segment/SparseTable.cpp
       title: SparseTable
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/segment/Swag.cpp
       title: Swag
   - name: lib/string
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/string/Zalgorithm.cpp
       title: Zalgorithm
   - name: lib/util
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/util/Mod.cpp
       title: Mod
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/util/ModInt.cpp
       title: ModInt
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/util/NBase.cpp
-      title: NBase
-    - icon: ':heavy_check_mark:'
+      title: "NBase - N\u9032\u6570"
+    - icon: ':x:'
       path: lib/util/RangeIndex.cpp
-      title: RangeIndex
+      title: "RangeIndex - \u533A\u9593index"
   - name: non-verified
     pages:
     - icon: ':warning:'
@@ -429,10 +432,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Garner.test.cpp
       title: test/math/Garner.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/math/Matrix-det.test.cpp
       title: test/math/Matrix-det.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/math/Matrix-pow.test.cpp
       title: test/math/Matrix-pow.test.cpp
     - icon: ':heavy_check_mark:'
@@ -443,83 +446,83 @@ data:
       title: test/math/Prime-rho.test.cpp
   - name: test/segment
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/BinaryIndexedTree-rsqraq.test.cpp
       title: test/segment/BinaryIndexedTree-rsqraq.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/BinaryTrie-set-xor-min.test.cpp
       title: test/segment/BinaryTrie-set-xor-min.test.cpp
     - icon: ':x:'
       path: test/segment/ConvexHullTrickSegmentTree.test.cpp
       title: test/segment/ConvexHullTrickSegmentTree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/DisjointSparseTable.test.cpp
       title: test/segment/DisjointSparseTable.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/LazySegmentTree-rmqraq.test.cpp
       title: test/segment/LazySegmentTree-rmqraq.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/LazySegmentTree-rsqruq.test.cpp
       title: test/segment/LazySegmentTree-rsqruq.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/LiChaoTree-line.test.cpp
       title: test/segment/LiChaoTree-line.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/LiChaoTree-segment.test.cpp
       title: test/segment/LiChaoTree-segment.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/Rbst-get.test.cpp
       title: test/segment/Rbst-get.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/Rbst-med.test.cpp
       title: test/segment/Rbst-med.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/Rbst-pair.test.cpp
       title: test/segment/Rbst-pair.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/SegmentTree-prefix-binary-search.test.cpp
       title: test/segment/SegmentTree-prefix-binary-search.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/SegmentTree-rcq.test.cpp
       title: test/segment/SegmentTree-rcq.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/SegmentTree-rmq.test.cpp
       title: test/segment/SegmentTree-rmq.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/SegmentTree-rsq.test.cpp
       title: test/segment/SegmentTree-rsq.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/SegmentTree-suffix-binary-search.test.cpp
       title: test/segment/SegmentTree-suffix-binary-search.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/SegmentTreeBeats-1.test.cpp
       title: test/segment/SegmentTreeBeats-1.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/SegmentTreeBeats-2.test.cpp
       title: test/segment/SegmentTreeBeats-2.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/SparseTable.test.cpp
       title: test/segment/SparseTable.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/Swag.test.cpp
       title: test/segment/Swag.test.cpp
   - name: test/string
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/string/Zalgorithm.test.cpp
       title: test/string/Zalgorithm.test.cpp
   - name: test/util
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/util/Mod.test.cpp
       title: test/util/Mod.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/util/ModInt.test.cpp
       title: test/util/ModInt.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/util/NBase.test.cpp
       title: test/util/NBase.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/util/RangeIndex.test.cpp
       title: test/util/RangeIndex.test.cpp
 layout: toppage

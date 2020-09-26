@@ -3,13 +3,14 @@ data:
   _extendedDependsOn:
   - icon: ':question:'
     path: lib/segment/Rbst.cpp
-    title: Rbst
+    title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
   - icon: ':question:'
     path: lib/geometory/ConvexHullTrick.cpp
     title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
   - icon: ':x:'
     path: lib/segment/ConvexHullTrickSegmentTree.cpp
-    title: ConvexHullTrickSegmentTree
+    title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\u30F3\
+      \u30C8\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -24,7 +25,8 @@ data:
   bundledCode: "#line 1 \"test/segment/ConvexHullTrickSegmentTree.test.cpp\"\n#define\
     \ PROBLEM \"https://onlinejudge.u-aizu.ac.jp/beta/room.html#ACPC2020Day2/problems/B\"\
     \n#define IGNORE\n\n#include <vector>\n#include <iostream>\nusing namespace std;\n\
-    #line 1 \"lib/segment/Rbst.cpp\"\n/*\n * @title Rbst\n */\ntemplate<class Operator>\
+    #line 1 \"lib/segment/Rbst.cpp\"\n/*\n * @title Rbst - \u5E73\u8861\u4E8C\u5206\
+    \u63A2\u7D22\u6728\n * @docs md/segment/Rbst.md\n */\ntemplate<class Operator>\
     \ class Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\tunsigned int\
     \ x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\tunsigned int xor_shift()\
     \ {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z; z = w;\n\t\treturn (w\
@@ -126,13 +128,15 @@ data:
     \ T> struct ValueMax {\n\tusing TypeValue = T;\n\tinline static constexpr TypeValue\
     \ unit_value = -3e18;\n\tinline static constexpr bool func_compare(TypeValue l,TypeValue\
     \ r){return l>r;}\n};\n#line 1 \"lib/segment/ConvexHullTrickSegmentTree.cpp\"\n\
-    /*\n * @title ConvexHullTrickSegmentTree\n * @see https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i\n\
-    \ */\ntemplate<class Operator> class ConvexHullTrickSegmentTree {\n\tusing TypeValue\
-    \ = typename Operator::TypeValue;\n\tusing TypeNode = pair<TypeValue,TypeValue>;\n\
-    \tsize_t length;\n\tsize_t num;\n\tvector<ConvexHullTrick<Operator>> node;\npublic:\n\
-    \tinline constexpr TypeValue y(const TypeNode p, TypeValue x) {\n\t\treturn p.first*x+p.second;\n\
-    \t}\n\tConvexHullTrickSegmentTree(const size_t num): num(num) {\n\t\tfor (length\
-    \ = 1; length <= num; length *= 2);\n\t\tnode.resize(2 * length);\n\t}\n\t//[idx,idx+1)\
+    /*\n * @title ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\
+    \u30F3\u30C8\u6728\n * @docs md/segment/ConvexHullTrickSegmentTree.md\n * @see\
+    \ https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i\n */\ntemplate<class Operator>\
+    \ class ConvexHullTrickSegmentTree {\n\tusing TypeValue = typename Operator::TypeValue;\n\
+    \tusing TypeNode = pair<TypeValue,TypeValue>;\n\tsize_t length;\n\tsize_t num;\n\
+    \tvector<ConvexHullTrick<Operator>> node;\npublic:\n\tinline constexpr TypeValue\
+    \ y(const TypeNode p, TypeValue x) {\n\t\treturn p.first*x+p.second;\n\t}\n\t\
+    ConvexHullTrickSegmentTree(const size_t num): num(num) {\n\t\tfor (length = 1;\
+    \ length <= num; length *= 2);\n\t\tnode.resize(2 * length);\n\t}\n\t//[idx,idx+1)\
     \ insert{ax+b}\n\tvoid update(size_t idx, const TypeValue a, const TypeValue b)\
     \ {\n\t\tif(idx < 0 || length <= idx) return;\n\t\tfor(idx+=length;idx;idx >>=\
     \ 1) node[idx].insert(a,b);\n\t}\n\t//[l,r)\n\tTypeValue get(int l, int r, TypeValue\
@@ -176,7 +180,7 @@ data:
   isVerificationFile: true
   path: test/segment/ConvexHullTrickSegmentTree.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 16:13:14+09:00'
+  timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/segment/ConvexHullTrickSegmentTree.test.cpp

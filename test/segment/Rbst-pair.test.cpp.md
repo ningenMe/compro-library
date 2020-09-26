@@ -3,11 +3,11 @@ data:
   _extendedDependsOn:
   - icon: ':question:'
     path: lib/segment/Rbst.cpp
-    title: Rbst
+    title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/822
@@ -16,9 +16,10 @@ data:
   bundledCode: "#line 1 \"test/segment/Rbst-pair.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/822\"\
     \n\n#include <vector>\n#include <iostream>\n#include <unordered_map>\n#include\
     \ <algorithm>\n#include <numeric>\n#include <cmath>\nusing namespace std;\n#line\
-    \ 1 \"lib/segment/Rbst.cpp\"\n/*\n * @title Rbst\n */\ntemplate<class Operator>\
-    \ class Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\tunsigned int\
-    \ x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\tunsigned int xor_shift()\
+    \ 1 \"lib/segment/Rbst.cpp\"\n/*\n * @title Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\
+    \u7D22\u6728\n * @docs md/segment/Rbst.md\n */\ntemplate<class Operator> class\
+    \ Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\tunsigned int x =\
+    \ 123456789, y = 362436069, z = 521288629, w = 88675123;\n\tunsigned int xor_shift()\
     \ {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z; z = w;\n\t\treturn (w\
     \ = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\t}\n\tstruct Node {\n\t\tNode *left,\
     \ *right;\n\t\tTypeNode val;\n\t\tint size;\n\t\tTypeNode sum;\n\n\t\tNode() :\
@@ -100,8 +101,8 @@ data:
   isVerificationFile: true
   path: test/segment/Rbst-pair.test.cpp
   requiredBy: []
-  timestamp: '2020-07-26 19:14:16+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-26 17:01:19+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/segment/Rbst-pair.test.cpp
 layout: document

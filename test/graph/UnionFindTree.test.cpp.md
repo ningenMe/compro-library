@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/graph/UnionFindTree.cpp
     title: "UnionFindTree - Union Find \u6728"
   _extendedRequiredBy: []

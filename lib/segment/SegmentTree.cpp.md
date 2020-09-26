@@ -3,32 +3,34 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/segment/SegmentTree-rmq.test.cpp
     title: test/segment/SegmentTree-rmq.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/segment/SegmentTree-rcq.test.cpp
     title: test/segment/SegmentTree-rcq.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/segment/SegmentTree-suffix-binary-search.test.cpp
     title: test/segment/SegmentTree-suffix-binary-search.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/segment/SegmentTree-prefix-binary-search.test.cpp
     title: test/segment/SegmentTree-prefix-binary-search.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/segment/SegmentTree-rsq.test.cpp
     title: test/segment/SegmentTree-rsq.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-hld-path.test.cpp
     title: test/graph/Tree-hld-path.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/segment/SegmentTree.md
-    document_title: SegmentTree
+    document_title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\
+      \u30E1\u30F3\u30C8\u6728"
     links: []
-  bundledCode: "#line 1 \"lib/segment/SegmentTree.cpp\"\n/*\n * @title SegmentTree\n\
+  bundledCode: "#line 1 \"lib/segment/SegmentTree.cpp\"\n/*\n * @title SegmentTree\
+    \ - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n\
     \ * @docs md/segment/SegmentTree.md\n */\ntemplate<class Operator> class SegmentTree\
     \ {\n    using TypeNode = typename Operator::TypeNode; \n    size_t length;\n\
     \    size_t num;\n    vector<TypeNode> node;\n    vector<pair<int,int>> range;\n\
@@ -97,7 +99,8 @@ data:
     \ static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n   \
     \ inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
     \ var == nodeVal;}\n};\n"
-  code: "/*\n * @title SegmentTree\n * @docs md/segment/SegmentTree.md\n */\ntemplate<class\
+  code: "/*\n * @title SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\
+    \u30E1\u30F3\u30C8\u6728\n * @docs md/segment/SegmentTree.md\n */\ntemplate<class\
     \ Operator> class SegmentTree {\n    using TypeNode = typename Operator::TypeNode;\
     \ \n    size_t length;\n    size_t num;\n    vector<TypeNode> node;\n    vector<pair<int,int>>\
     \ range;\n    inline void build() {\n        for (int i = length - 1; i >= 0;\
@@ -169,8 +172,8 @@ data:
   isVerificationFile: false
   path: lib/segment/SegmentTree.cpp
   requiredBy: []
-  timestamp: '2020-09-26 09:23:21+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-09-26 17:01:19+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/segment/SegmentTree-rmq.test.cpp
   - test/segment/SegmentTree-rcq.test.cpp
@@ -183,7 +186,8 @@ layout: document
 redirect_from:
 - /library/lib/segment/SegmentTree.cpp
 - /library/lib/segment/SegmentTree.cpp.html
-title: SegmentTree
+title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\
+  \u30C8\u6728"
 ---
 ### SegmentTree
 - 非再帰抽象化セグメント木

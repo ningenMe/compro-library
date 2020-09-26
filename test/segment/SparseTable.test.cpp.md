@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: lib/segment/SparseTable.cpp
     title: SparseTable
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -16,10 +16,10 @@ data:
   bundledCode: "#line 1 \"test/segment/SparseTable.test.cpp\"\n#define PROBLEM \"\
     https://judge.yosupo.jp/problem/staticrmq\"\n\n#include <vector>\n#include <iostream>\n\
     using namespace std;\n#line 1 \"lib/segment/SparseTable.cpp\"\n/*\n * @title SparseTable\n\
-    \ */\ntemplate<class Operator> class SparseTable{\npublic:\n\tusing TypeNode =\
-    \ typename Operator::TypeNode;\n\tvector<TypeNode> node;\n\tvector<int> idx;\n\
-    \tsize_t depth;\n\tsize_t length;\n\n\tSparseTable(const vector<TypeNode>& vec)\
-    \ {\n\t\tfor(depth = 0;(1<<depth)<=vec.size();++depth);\n\t\tlength = (1<<depth);\n\
+    \ * @docs md/segment/SparseTable.md\n */\ntemplate<class Operator> class SparseTable{\n\
+    public:\n\tusing TypeNode = typename Operator::TypeNode;\n\tvector<TypeNode> node;\n\
+    \tvector<int> idx;\n\tsize_t depth;\n\tsize_t length;\n\n\tSparseTable(const vector<TypeNode>&\
+    \ vec) {\n\t\tfor(depth = 0;(1<<depth)<=vec.size();++depth);\n\t\tlength = (1<<depth);\n\
     \t\tnode.resize(depth*length);\n\t\tfor(int i = 0; i < vec.size(); ++i) node[i]\
     \ = vec[i];\n\t\tfor(int i = 1; i < depth; ++i) for(int j = 0; j + (1<<i) < (1<<depth);\
     \ ++j) node[i*length+j] = Operator::func_node(node[(i-1)*length+j],node[(i-1)*length+j\
@@ -46,8 +46,8 @@ data:
   isVerificationFile: true
   path: test/segment/SparseTable.test.cpp
   requiredBy: []
-  timestamp: '2020-05-13 02:48:46+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-26 17:01:19+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/segment/SparseTable.test.cpp
 layout: document

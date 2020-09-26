@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: lib/segment/LiChaoTree.cpp
     title: LiChaoTree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/segment_add_get_min
@@ -16,20 +16,20 @@ data:
   bundledCode: "#line 1 \"test/segment/LiChaoTree-segment.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/segment_add_get_min\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\nusing namespace std;\n#line 1 \"lib/segment/LiChaoTree.cpp\"\
-    \n/*\n * @title LiChaoTree\n */\ntemplate <typename Operator> class LiChaoTree{\n\
-    \tusing TypeValue = typename Operator::TypeValue;\n\tusing Line = pair<TypeValue,TypeValue>;\n\
-    \tvector<TypeValue> x;\n\tvector<Line> node;\n\tvector<int> clz;\n\tsize_t length;\n\
-    \tconst size_t bit;\npublic:\t\n\tLiChaoTree(const size_t bit=30):bit(bit){\n\t\
-    \t//do nothing\n\t}\n\tinline void build(){\n\t\tsort(x.begin(),x.end());\n\t\t\
-    x.erase(unique(x.begin(),x.end()),x.end());\n\t\tTypeValue maxi = x.back() + 1;\n\
-    \t\tfor (length = 1; length < x.size(); length *= 2);\n\t\tx.resize(length, maxi);\n\
-    \t\tnode.resize(2*length,make_pair(0,Operator::unit_value));\n\t\tclz.resize(2*length,32);\n\
-    \t\tfor(size_t i = 1; i < 2*length; ++i) {\n\t\t\t// for(int j = 0; j < bit; ++j)\
-    \ if(i&(1<<j)) clz[i] = 31-j;\n\t\t\tclz[i] = __builtin_clz(i);\n\t\t}\n\t}\n\n\
-    \tvoid x_push_back(TypeValue argx){\n\t\tx.push_back(argx);\n\t}\n\n\t//return\
-    \ y = ax+b\n\tinline static constexpr TypeValue f(Line& line,TypeValue& t)\t{\n\
-    \t\treturn line.first*t + line.second;\n\t}\n\t\t\n\tinline void update(Line line,int\
-    \ i = 1){\n\t\twhile(i < 2*length){\n\t\t\tint l = (i<<(clz[i]-clz[length]))-length;\n\
+    \n/*\n * @title LiChaoTree\n * @docs md/segment/LiChaoTree.md\n */\ntemplate <typename\
+    \ Operator> class LiChaoTree{\n\tusing TypeValue = typename Operator::TypeValue;\n\
+    \tusing Line = pair<TypeValue,TypeValue>;\n\tvector<TypeValue> x;\n\tvector<Line>\
+    \ node;\n\tvector<int> clz;\n\tsize_t length;\n\tconst size_t bit;\npublic:\t\n\
+    \tLiChaoTree(const size_t bit=30):bit(bit){\n\t\t//do nothing\n\t}\n\tinline void\
+    \ build(){\n\t\tsort(x.begin(),x.end());\n\t\tx.erase(unique(x.begin(),x.end()),x.end());\n\
+    \t\tTypeValue maxi = x.back() + 1;\n\t\tfor (length = 1; length < x.size(); length\
+    \ *= 2);\n\t\tx.resize(length, maxi);\n\t\tnode.resize(2*length,make_pair(0,Operator::unit_value));\n\
+    \t\tclz.resize(2*length,32);\n\t\tfor(size_t i = 1; i < 2*length; ++i) {\n\t\t\
+    \t// for(int j = 0; j < bit; ++j) if(i&(1<<j)) clz[i] = 31-j;\n\t\t\tclz[i] =\
+    \ __builtin_clz(i);\n\t\t}\n\t}\n\n\tvoid x_push_back(TypeValue argx){\n\t\tx.push_back(argx);\n\
+    \t}\n\n\t//return y = ax+b\n\tinline static constexpr TypeValue f(Line& line,TypeValue&\
+    \ t)\t{\n\t\treturn line.first*t + line.second;\n\t}\n\t\t\n\tinline void update(Line\
+    \ line,int i = 1){\n\t\twhile(i < 2*length){\n\t\t\tint l = (i<<(clz[i]-clz[length]))-length;\n\
     \t\t\tint r = l + (length>>(31-clz[i])) - 1;\n\t\t\tint m = (l+r)>>1;\n\t\t\t\
     bool flgl = Operator::func_compare(f(line,x[l]),f(node[i],x[l]));\n\t\t\tbool\
     \ flgm = Operator::func_compare(f(line,x[m]),f(node[i],x[m]));\n\t\t\tbool flgr\
@@ -78,8 +78,8 @@ data:
   isVerificationFile: true
   path: test/segment/LiChaoTree-segment.test.cpp
   requiredBy: []
-  timestamp: '2020-05-13 02:48:46+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-26 17:01:19+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/segment/LiChaoTree-segment.test.cpp
 layout: document

@@ -12,13 +12,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometory/ConvexHullTrick-max.test.cpp
     title: test/geometory/ConvexHullTrick-max.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/segment/Rbst-med.test.cpp
     title: test/segment/Rbst-med.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/segment/Rbst-get.test.cpp
     title: test/segment/Rbst-get.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/segment/Rbst-pair.test.cpp
     title: test/segment/Rbst-pair.test.cpp
   - icon: ':x:'
@@ -28,7 +28,8 @@ data:
   _verificationStatusIcon: ':question:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    document_title: Rbst
+    _deprecated_at_docs: md/segment/Rbst.md
+    document_title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
     links:
     - https://atcoder.jp/contests/abc154/tasks/abc154_c
     - https://atcoder.jp/contests/arc033/tasks/arc033_3
@@ -36,7 +37,8 @@ data:
     - https://yukicoder.me/problems/no/649
     - https://yukicoder.me/problems/no/822
     - https://yukicoder.me/problems/no/919
-  bundledCode: "#line 1 \"lib/segment/Rbst.cpp\"\n/*\n * @title Rbst\n */\ntemplate<class\
+  bundledCode: "#line 1 \"lib/segment/Rbst.cpp\"\n/*\n * @title Rbst - \u5E73\u8861\
+    \u4E8C\u5206\u63A2\u7D22\u6728\n * @docs md/segment/Rbst.md\n */\ntemplate<class\
     \ Operator> class Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\t\
     unsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\tunsigned\
     \ int xor_shift() {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z; z = w;\n\
@@ -94,7 +96,8 @@ data:
     \ l+c+r;}\n};\n\ntemplate<class T> struct NodeSimple {\n\tusing TypeNode = T;\n\
     \tinline static constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeNode\
     \ func_node(TypeNode l,TypeNode c,TypeNode r){return 0;}\n};\n"
-  code: "/*\n * @title Rbst\n */\ntemplate<class Operator> class Rbst {\n\tusing TypeNode\
+  code: "/*\n * @title Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\n * @docs\
+    \ md/segment/Rbst.md\n */\ntemplate<class Operator> class Rbst {\n\tusing TypeNode\
     \ = typename Operator::TypeNode;\n\tunsigned int x = 123456789, y = 362436069,\
     \ z = 521288629, w = 88675123;\n\tunsigned int xor_shift() {\n\t\tunsigned int\
     \ t = (x ^ (x << 11)); x = y; y = z; z = w;\n\t\treturn (w = (w ^ (w >> 19)) ^\
@@ -155,7 +158,7 @@ data:
   isVerificationFile: false
   path: lib/segment/Rbst.cpp
   requiredBy: []
-  timestamp: '2020-07-26 19:14:16+09:00'
+  timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometory/ConvexHullTrick-no-monotone.test.cpp
@@ -170,5 +173,5 @@ layout: document
 redirect_from:
 - /library/lib/segment/Rbst.cpp
 - /library/lib/segment/Rbst.cpp.html
-title: Rbst
+title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
 ---

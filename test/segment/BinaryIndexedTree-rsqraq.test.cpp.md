@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: lib/segment/BinaryIndexedTree.cpp
     title: BinaryIndexedTree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/742
@@ -16,16 +16,16 @@ data:
   bundledCode: "#line 1 \"test/segment/BinaryIndexedTree-rsqraq.test.cpp\"\n#define\
     \ PROBLEM \"https://yukicoder.me/problems/no/742\"\n\n#include <vector>\n#include\
     \ <iostream>\n#include <cassert>\nusing namespace std;\n#line 1 \"lib/segment/BinaryIndexedTree.cpp\"\
-    \n/*\n * @title BinaryIndexedTree\n */\ntemplate<class Operator> class BinaryIndexedTree\
-    \ {\n\tusing TypeNode = typename Operator::TypeNode;\n\tsize_t depth;        \
-    \ \n\tsize_t length;\n\tsize_t num;\n\tvector<TypeNode> node;\npublic:\n\t\n\t\
-    //[0,N) constructed, inplace [0,1) + [1,N+1)\n\t//you can ignore inplace offset\n\
-    \tBinaryIndexedTree(const size_t num) : num(num) {\n\t\tfor (depth = 1,length\
-    \ = 1; length < num; depth++,length *= 2);\n\t\tnode.resize(length+1, Operator::unit_node);\n\
-    \t}\n \n\t//[idx,idx+1) update \n\tvoid update(size_t idx, TypeNode var) {\n\t\
-    \tassert(0 <= idx && idx < length);\n\t\tfor (++idx; idx <= length; idx += idx\
-    \ & -idx) node[idx] = Operator::func_node(node[idx],var);\n\t}\n\n\t//[0,idx)\
-    \ get\n\tTypeNode get(size_t idx) {\n\t\tTypeNode ret = Operator::unit_node;\n\
+    \n/*\n * @title BinaryIndexedTree\n * @docs md/segment/BinaryIndexedTree.md\n\
+    \ */\ntemplate<class Operator> class BinaryIndexedTree {\n\tusing TypeNode = typename\
+    \ Operator::TypeNode;\n\tsize_t depth;         \n\tsize_t length;\n\tsize_t num;\n\
+    \tvector<TypeNode> node;\npublic:\n\t\n\t//[0,N) constructed, inplace [0,1) +\
+    \ [1,N+1)\n\t//you can ignore inplace offset\n\tBinaryIndexedTree(const size_t\
+    \ num) : num(num) {\n\t\tfor (depth = 1,length = 1; length < num; depth++,length\
+    \ *= 2);\n\t\tnode.resize(length+1, Operator::unit_node);\n\t}\n \n\t//[idx,idx+1)\
+    \ update \n\tvoid update(size_t idx, TypeNode var) {\n\t\tassert(0 <= idx && idx\
+    \ < length);\n\t\tfor (++idx; idx <= length; idx += idx & -idx) node[idx] = Operator::func_node(node[idx],var);\n\
+    \t}\n\n\t//[0,idx) get\n\tTypeNode get(size_t idx) {\n\t\tTypeNode ret = Operator::unit_node;\n\
     \t\tfor (idx = min(length,idx); idx > 0; idx -= idx & -idx) ret = Operator::func_node(ret,node[idx]);\n\
     \t\treturn ret;\n\t}\n\n\t//return [0,length]\n\tint binary_search(TypeNode var)\
     \ {\n\t\tif(!Operator::func_check(node.back(),var)) return num;\n\t\tTypeNode\
@@ -61,8 +61,8 @@ data:
   isVerificationFile: true
   path: test/segment/BinaryIndexedTree-rsqraq.test.cpp
   requiredBy: []
-  timestamp: '2020-09-08 04:22:54+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-09-26 17:01:19+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/segment/BinaryIndexedTree-rsqraq.test.cpp
 layout: document

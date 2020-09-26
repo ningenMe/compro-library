@@ -249,7 +249,7 @@ title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
 ---
 ### FormalPowerSeries
 - 形式的冪級数
-- 具体的には下記の係数$a=(a0,...a_{n-1})$を保持するクラス
+- 具体的には下記の係数$a=(a_0,...a_{n-1})$を保持するクラス
   - $f(x)=a_0 + a_1x^1 + a_2x^2 + ... + a_{n-1}x^{n-1}$
 
 - 以下FormalPowerSeriesの型のことを`Fps`と称す。

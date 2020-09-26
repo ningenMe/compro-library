@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
   - icon: ':heavy_check_mark:'
@@ -20,10 +20,10 @@ data:
     #define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod_1000000007\"\
     \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
     #include <array>\n\nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n\
-    \ * @title ModInt\n */\ntemplate<long long mod> class ModInt {\npublic:\n    long\
-    \ long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long y) :\
-    \ x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const ModInt\
-    \ &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
+    \ * @title ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class\
+    \ ModInt {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr\
+    \ ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const\
+    \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
     \ long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n  \
     \  ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
     \ *this;}\n    ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod)\
@@ -173,7 +173,7 @@ data:
   isVerificationFile: true
   path: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 15:25:43+09:00'
+  timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
