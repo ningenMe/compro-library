@@ -403,17 +403,29 @@ data:
       path: test/math/FloorSum.test.cpp
       title: test/math/FloorSum.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/math/FormalPowerSeries-1000000007-1.test.cpp
-      title: test/math/FormalPowerSeries-1000000007-1.test.cpp
+      path: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
+      title: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/math/FormalPowerSeries-1000000007-2.test.cpp
-      title: test/math/FormalPowerSeries-1000000007-2.test.cpp
+      path: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
+      title: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/math/FormalPowerSeries-998244353-1.test.cpp
-      title: test/math/FormalPowerSeries-998244353-1.test.cpp
+      path: test/math/FormalPowerSeries-conv998244353-1.test.cpp
+      title: test/math/FormalPowerSeries-conv998244353-1.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/math/FormalPowerSeries-998244353-2.test.cpp
-      title: test/math/FormalPowerSeries-998244353-2.test.cpp
+      path: test/math/FormalPowerSeries-conv998244353-2.test.cpp
+      title: test/math/FormalPowerSeries-conv998244353-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FormalPowerSeries-exp.test.cpp
+      title: test/math/FormalPowerSeries-exp.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FormalPowerSeries-inv.test.cpp
+      title: test/math/FormalPowerSeries-inv.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FormalPowerSeries-log.test.cpp
+      title: test/math/FormalPowerSeries-log.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FormalPowerSeries-pow.test.cpp
+      title: test/math/FormalPowerSeries-pow.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/math/Garner.test.cpp
       title: test/math/Garner.test.cpp

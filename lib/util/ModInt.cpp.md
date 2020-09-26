@@ -10,35 +10,47 @@ data:
     path: test/util/ModInt.test.cpp
     title: test/util/ModInt.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
+    title: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
+    title: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticTransform1.test.cpp
     title: test/math/NumberTheoreticTransform1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-conv998244353-2.test.cpp
+    title: test/math/FormalPowerSeries-conv998244353-2.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticTransformArbitraryMod2.test.cpp
     title: test/math/NumberTheoreticTransformArbitraryMod2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-conv998244353-1.test.cpp
+    title: test/math/FormalPowerSeries-conv998244353-1.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/Matrix-pow.test.cpp
     title: test/math/Matrix-pow.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-998244353-1.test.cpp
-    title: test/math/FormalPowerSeries-998244353-1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-998244353-2.test.cpp
-    title: test/math/FormalPowerSeries-998244353-2.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticTransform2.test.cpp
     title: test/math/NumberTheoreticTransform2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-exp.test.cpp
+    title: test/math/FormalPowerSeries-exp.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticTransformArbitraryMod1.test.cpp
     title: test/math/NumberTheoreticTransformArbitraryMod1.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-1000000007-2.test.cpp
-    title: test/math/FormalPowerSeries-1000000007-2.test.cpp
+    path: test/math/FormalPowerSeries-pow.test.cpp
+    title: test/math/FormalPowerSeries-pow.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-1000000007-1.test.cpp
-    title: test/math/FormalPowerSeries-1000000007-1.test.cpp
+    path: test/math/FormalPowerSeries-log.test.cpp
+    title: test/math/FormalPowerSeries-log.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/Matrix-det.test.cpp
     title: test/math/Matrix-det.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-inv.test.cpp
+    title: test/math/FormalPowerSeries-inv.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/CombinationMod-factorial.test.cpp
     title: test/math/CombinationMod-factorial.test.cpp
@@ -134,16 +146,20 @@ data:
   verifiedWith:
   - test/segment/SegmentTree-rcq.test.cpp
   - test/util/ModInt.test.cpp
+  - test/math/FormalPowerSeries-conv1000000007-2.test.cpp
+  - test/math/FormalPowerSeries-conv1000000007-1.test.cpp
   - test/math/NumberTheoreticTransform1.test.cpp
+  - test/math/FormalPowerSeries-conv998244353-2.test.cpp
   - test/math/NumberTheoreticTransformArbitraryMod2.test.cpp
+  - test/math/FormalPowerSeries-conv998244353-1.test.cpp
   - test/math/Matrix-pow.test.cpp
-  - test/math/FormalPowerSeries-998244353-1.test.cpp
-  - test/math/FormalPowerSeries-998244353-2.test.cpp
   - test/math/NumberTheoreticTransform2.test.cpp
+  - test/math/FormalPowerSeries-exp.test.cpp
   - test/math/NumberTheoreticTransformArbitraryMod1.test.cpp
-  - test/math/FormalPowerSeries-1000000007-2.test.cpp
-  - test/math/FormalPowerSeries-1000000007-1.test.cpp
+  - test/math/FormalPowerSeries-pow.test.cpp
+  - test/math/FormalPowerSeries-log.test.cpp
   - test/math/Matrix-det.test.cpp
+  - test/math/FormalPowerSeries-inv.test.cpp
   - test/math/CombinationMod-factorial.test.cpp
   - test/graph/Tree-hld-path.test.cpp
 documentation_of: lib/util/ModInt.cpp
