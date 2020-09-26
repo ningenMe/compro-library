@@ -25,136 +25,151 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
+    _deprecated_at_docs: md/segment/SegmentTree.md
     document_title: SegmentTree
     links: []
   bundledCode: "#line 1 \"lib/segment/SegmentTree.cpp\"\n/*\n * @title SegmentTree\n\
-    \ */\ntemplate<class Operator> class SegmentTree {\n\tusing TypeNode = typename\
-    \ Operator::TypeNode; \n\tsize_t length;\n\tsize_t num;\n\tvector<TypeNode> node;\n\
-    \tvector<pair<int,int>> range;\n    inline void build() {\n\t\tfor (int i = length\
-    \ - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);\n\
-    \        range.resize(2 * length);\n\t\tfor (int i = 0; i < length; ++i) range[i+length]\
-    \ = make_pair(i,i+1);\n\t\tfor (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);\n\
-    \    }\npublic:\n\n\t//unit\u3067\u521D\u671F\u5316\n\tSegmentTree(const size_t\
-    \ num): num(num) {\n\t\tfor (length = 1; length <= num; length *= 2);\n\t\tnode.resize(2\
-    \ * length, Operator::unit_node);\n        build();\n\t}\n\n\t//vector\u3067\u521D\
-    \u671F\u5316\n\tSegmentTree(const vector<TypeNode> & vec) : num(vec.size()) {\n\
-    \t\tfor (length = 1; length <= vec.size(); length *= 2);\n\t\tnode.resize(2 *\
-    \ length, Operator::unit_node);\n\t\tfor (int i = 0; i < vec.size(); ++i) node[i\
-    \ + length] = vec[i];\n        build();\n\t}\n \n\t//\u540C\u3058init\u3067\u521D\
-    \u671F\u5316\n\tSegmentTree(const size_t num, const TypeNode init) : num(num)\
-    \ {\n\t\tfor (length = 1; length <= num; length *= 2);\n\t\tnode.resize(2 * length,\
-    \ Operator::unit_node);\n\t\tfor (int i = 0; i < length; ++i) node[i+length] =\
-    \ init;\n        build();\n\t}\n\t\n\t//[idx,idx+1)\n\tvoid update(size_t idx,\
-    \ const TypeNode var) {\n\t\tif(idx < 0 || length <= idx) return;\n\t\tidx +=\
-    \ length;\n\t\tnode[idx] = Operator::func_merge(node[idx],var);\n\t\twhile(idx\
-    \ >>= 1) node[idx] = Operator::func_node(node[(idx<<1)+0],node[(idx<<1)+1]);\n\
-    \t}\n\n\t//[l,r)\n\tTypeNode get(int l, int r) {\n\t\tif (l < 0 || length <= l\
-    \ || r < 0 || length < r) return Operator::unit_node;\n\t\tTypeNode vl = Operator::unit_node,\
-    \ vr = Operator::unit_node;\n\t\tfor(l += length, r += length; l < r; l >>=1,\
-    \ r >>=1) {\n\t\t\tif(l&1) vl = Operator::func_node(vl,node[l++]);\n\t\t\tif(r&1)\
-    \ vr = Operator::func_node(node[--r],vr);\n\t\t}\n\t\treturn Operator::func_node(vl,vr);\n\
-    \t}\n\n\t//range[l,r) return [l,r] search max right\n\tint prefix_binary_search(int\
-    \ l, int r, TypeNode var) {\n\t\tassert(0 <= l && l < length && 0 < r && r <=\
-    \ length);\n\t\tTypeNode ret = Operator::unit_node;\n\t\tsize_t off = l;\n\t\t\
-    for(size_t idx = l+length; idx < 2*length && off < r; ){\n\t\t\tif(range[idx].second<=r\
-    \ && !Operator::func_check(Operator::func_node(ret,node[idx]),var)) {\n\t\t\t\t\
-    ret = Operator::func_node(ret,node[idx]);\n\t\t\t\toff = range[idx++].second;\n\
-    \t\t\t\tif(!(idx&1)) idx >>= 1;\t\t\t\n\t\t\t}\n\t\t\telse{\n\t\t\t\tidx <<=1;\n\
-    \t\t\t}\n\t\t}\n\t\treturn off;\n\t}\n\n\t//range(l,r] return [l,r] search max\
-    \ left\n\tint suffix_binary_search(const int l, const int r, const TypeNode var)\
-    \ {\n\t\tassert(-1 <= l && l < (int)length-1 && 0 <= r && r < length);\n\t\tTypeNode\
-    \ ret = Operator::unit_node;\n\t\tint off = r;\n\t\tfor(size_t idx = r+length;\
-    \ idx < 2*length && l < off; ){\n\t\t\tif(l < range[idx].first && !Operator::func_check(Operator::func_node(node[idx],ret),var))\
-    \ {\n\t\t\t\tret = Operator::func_node(node[idx],ret);\n\t\t\t\toff = range[idx--].first-1;\n\
-    \t\t\t\tif(idx&1) idx >>= 1;\n\t\t\t}\n\t\t\telse{\n\t\t\t\tidx = (idx<<1)+1;\n\
-    \t\t\t}\n\t\t}\n\t\treturn off;\n\t}\n\n\tvoid print(){\n\t\t// cout << \"node\"\
-    \ << endl;\n\t\t// for(int i = 1,j = 1; i < 2*length; ++i) {\n\t\t// \tcout <<\
-    \ node[i] << \" \";\n\t\t// \tif(i==((1<<j)-1) && ++j) cout << endl;\n\t\t// }\n\
-    \t\tcout << \"vector\" << endl;\n\t\tcout << \"{ \" << get(0,1);\n\t\tfor(int\
-    \ i = 1; i < length; ++i) cout << \", \" << get(i,i+1);\n\t\tcout << \" }\" <<\
-    \ endl;\n\t}\n};\n\n//\u4E00\u70B9\u66F4\u65B0 \u533A\u9593\u6700\u5C0F\ntemplate<class\
-    \ T> struct NodeMinPointUpdate {\n\tusing TypeNode = T;\n\tinline static constexpr\
-    \ TypeNode unit_node = (1LL<<31)-1;\n\tinline static constexpr TypeNode func_node(TypeNode\
-    \ l,TypeNode r){return min(l,r);}\n\tinline static constexpr TypeNode func_merge(TypeNode\
-    \ l,TypeNode r){return r;}\n\tinline static constexpr bool func_check(TypeNode\
+    \ * @docs md/segment/SegmentTree.md\n */\ntemplate<class Operator> class SegmentTree\
+    \ {\n    using TypeNode = typename Operator::TypeNode; \n    size_t length;\n\
+    \    size_t num;\n    vector<TypeNode> node;\n    vector<pair<int,int>> range;\n\
+    \    inline void build() {\n        for (int i = length - 1; i >= 0; --i) node[i]\
+    \ = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);\n        range.resize(2\
+    \ * length);\n        for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);\n\
+    \        for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);\n\
+    \    }\npublic:\n\n    //unit\u3067\u521D\u671F\u5316\n    SegmentTree(const size_t\
+    \ num): num(num) {\n        for (length = 1; length <= num; length *= 2);\n  \
+    \      node.resize(2 * length, Operator::unit_node);\n        build();\n    }\n\
+    \n    //vector\u3067\u521D\u671F\u5316\n    SegmentTree(const vector<TypeNode>\
+    \ & vec) : num(vec.size()) {\n        for (length = 1; length <= vec.size(); length\
+    \ *= 2);\n        node.resize(2 * length, Operator::unit_node);\n        for (int\
+    \ i = 0; i < vec.size(); ++i) node[i + length] = vec[i];\n        build();\n \
+    \   }\n \n    //\u540C\u3058init\u3067\u521D\u671F\u5316\n    SegmentTree(const\
+    \ size_t num, const TypeNode init) : num(num) {\n        for (length = 1; length\
+    \ <= num; length *= 2);\n        node.resize(2 * length, Operator::unit_node);\n\
+    \        for (int i = 0; i < length; ++i) node[i+length] = init;\n        build();\n\
+    \    }\n    \n    //[idx,idx+1)\n    void update(size_t idx, const TypeNode var)\
+    \ {\n        if(idx < 0 || length <= idx) return;\n        idx += length;\n  \
+    \      node[idx] = Operator::func_merge(node[idx],var);\n        while(idx >>=\
+    \ 1) node[idx] = Operator::func_node(node[(idx<<1)+0],node[(idx<<1)+1]);\n   \
+    \ }\n\n    //[l,r)\n    TypeNode get(int l, int r) {\n        if (l < 0 || length\
+    \ <= l || r < 0 || length < r) return Operator::unit_node;\n        TypeNode vl\
+    \ = Operator::unit_node, vr = Operator::unit_node;\n        for(l += length, r\
+    \ += length; l < r; l >>=1, r >>=1) {\n            if(l&1) vl = Operator::func_node(vl,node[l++]);\n\
+    \            if(r&1) vr = Operator::func_node(node[--r],vr);\n        }\n    \
+    \    return Operator::func_node(vl,vr);\n    }\n\n    //range[l,r) return [l,r]\
+    \ search max right\n    int prefix_binary_search(int l, int r, TypeNode var) {\n\
+    \        assert(0 <= l && l < length && 0 < r && r <= length);\n        TypeNode\
+    \ ret = Operator::unit_node;\n        size_t off = l;\n        for(size_t idx\
+    \ = l+length; idx < 2*length && off < r; ){\n            if(range[idx].second<=r\
+    \ && !Operator::func_check(Operator::func_node(ret,node[idx]),var)) {\n      \
+    \          ret = Operator::func_node(ret,node[idx]);\n                off = range[idx++].second;\n\
+    \                if(!(idx&1)) idx >>= 1;\t\t\t\n            }\n            else{\n\
+    \                idx <<=1;\n            }\n        }\n        return off;\n  \
+    \  }\n\n    //range(l,r] return [l,r] search max left\n    int suffix_binary_search(const\
+    \ int l, const int r, const TypeNode var) {\n        assert(-1 <= l && l < (int)length-1\
+    \ && 0 <= r && r < length);\n        TypeNode ret = Operator::unit_node;\n   \
+    \     int off = r;\n        for(size_t idx = r+length; idx < 2*length && l < off;\
+    \ ){\n            if(l < range[idx].first && !Operator::func_check(Operator::func_node(node[idx],ret),var))\
+    \ {\n                ret = Operator::func_node(node[idx],ret);\n             \
+    \   off = range[idx--].first-1;\n                if(idx&1) idx >>= 1;\n      \
+    \      }\n            else{\n                idx = (idx<<1)+1;\n            }\n\
+    \        }\n        return off;\n    }\n\n    void print(){\n        // cout <<\
+    \ \"node\" << endl;\n        // for(int i = 1,j = 1; i < 2*length; ++i) {\n  \
+    \      // \tcout << node[i] << \" \";\n        // \tif(i==((1<<j)-1) && ++j) cout\
+    \ << endl;\n        // }\n        cout << \"vector\" << endl;\n        cout <<\
+    \ \"{ \" << get(0,1);\n        for(int i = 1; i < length; ++i) cout << \", \"\
+    \ << get(i,i+1);\n        cout << \" }\" << endl;\n    }\n};\n\n//\u4E00\u70B9\
+    \u66F4\u65B0 \u533A\u9593\u6700\u5C0F\ntemplate<class T> struct NodeMinPointUpdate\
+    \ {\n    using TypeNode = T;\n    inline static constexpr TypeNode unit_node =\
+    \ (1LL<<31)-1;\n    inline static constexpr TypeNode func_node(TypeNode l,TypeNode\
+    \ r){return min(l,r);}\n    inline static constexpr TypeNode func_merge(TypeNode\
+    \ l,TypeNode r){return r;}\n    inline static constexpr bool func_check(TypeNode\
     \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n\n//\u4E00\u70B9\u52A0\u7B97\
-    \ \u533A\u9593\u7DCF\u548C\ntemplate<class T> struct NodeSumPointAdd {\n\tusing\
-    \ TypeNode = T;\n\tinline static constexpr TypeNode unit_node = 0;\n\tinline static\
-    \ constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n\tinline static\
-    \ constexpr TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}\n\tinline\
-    \ static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var ==\
-    \ nodeVal;}\n};\n\n//\u4E00\u6B21\u95A2\u6570\ntemplate<class T> struct NodeCompositePointUpdate\
-    \ {\n\tusing TypeNode = T;\n\tinline static constexpr TypeNode unit_node = make_pair(1,0);\n\
-    \tinline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return {r.first*l.first,r.first*l.second+r.second};}\n\
-    \tinline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n\
-    \tinline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
+    \ \u533A\u9593\u7DCF\u548C\ntemplate<class T> struct NodeSumPointAdd {\n    using\
+    \ TypeNode = T;\n    inline static constexpr TypeNode unit_node = 0;\n    inline\
+    \ static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n  \
+    \  inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}\n\
+    \    inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
+    \ var == nodeVal;}\n};\n\n//\u4E00\u6B21\u95A2\u6570\ntemplate<class T> struct\
+    \ NodeCompositePointUpdate {\n    using TypeNode = T;\n    inline static constexpr\
+    \ TypeNode unit_node = make_pair(1,0);\n    inline static constexpr TypeNode func_node(TypeNode\
+    \ l,TypeNode r){return {r.first*l.first,r.first*l.second+r.second};}\n    inline\
+    \ static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n   \
+    \ inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
     \ var == nodeVal;}\n};\n"
-  code: "/*\n * @title SegmentTree\n */\ntemplate<class Operator> class SegmentTree\
-    \ {\n\tusing TypeNode = typename Operator::TypeNode; \n\tsize_t length;\n\tsize_t\
-    \ num;\n\tvector<TypeNode> node;\n\tvector<pair<int,int>> range;\n    inline void\
-    \ build() {\n\t\tfor (int i = length - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);\n\
-    \        range.resize(2 * length);\n\t\tfor (int i = 0; i < length; ++i) range[i+length]\
-    \ = make_pair(i,i+1);\n\t\tfor (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);\n\
-    \    }\npublic:\n\n\t//unit\u3067\u521D\u671F\u5316\n\tSegmentTree(const size_t\
-    \ num): num(num) {\n\t\tfor (length = 1; length <= num; length *= 2);\n\t\tnode.resize(2\
-    \ * length, Operator::unit_node);\n        build();\n\t}\n\n\t//vector\u3067\u521D\
-    \u671F\u5316\n\tSegmentTree(const vector<TypeNode> & vec) : num(vec.size()) {\n\
-    \t\tfor (length = 1; length <= vec.size(); length *= 2);\n\t\tnode.resize(2 *\
-    \ length, Operator::unit_node);\n\t\tfor (int i = 0; i < vec.size(); ++i) node[i\
-    \ + length] = vec[i];\n        build();\n\t}\n \n\t//\u540C\u3058init\u3067\u521D\
-    \u671F\u5316\n\tSegmentTree(const size_t num, const TypeNode init) : num(num)\
-    \ {\n\t\tfor (length = 1; length <= num; length *= 2);\n\t\tnode.resize(2 * length,\
-    \ Operator::unit_node);\n\t\tfor (int i = 0; i < length; ++i) node[i+length] =\
-    \ init;\n        build();\n\t}\n\t\n\t//[idx,idx+1)\n\tvoid update(size_t idx,\
-    \ const TypeNode var) {\n\t\tif(idx < 0 || length <= idx) return;\n\t\tidx +=\
-    \ length;\n\t\tnode[idx] = Operator::func_merge(node[idx],var);\n\t\twhile(idx\
-    \ >>= 1) node[idx] = Operator::func_node(node[(idx<<1)+0],node[(idx<<1)+1]);\n\
-    \t}\n\n\t//[l,r)\n\tTypeNode get(int l, int r) {\n\t\tif (l < 0 || length <= l\
-    \ || r < 0 || length < r) return Operator::unit_node;\n\t\tTypeNode vl = Operator::unit_node,\
-    \ vr = Operator::unit_node;\n\t\tfor(l += length, r += length; l < r; l >>=1,\
-    \ r >>=1) {\n\t\t\tif(l&1) vl = Operator::func_node(vl,node[l++]);\n\t\t\tif(r&1)\
-    \ vr = Operator::func_node(node[--r],vr);\n\t\t}\n\t\treturn Operator::func_node(vl,vr);\n\
-    \t}\n\n\t//range[l,r) return [l,r] search max right\n\tint prefix_binary_search(int\
-    \ l, int r, TypeNode var) {\n\t\tassert(0 <= l && l < length && 0 < r && r <=\
-    \ length);\n\t\tTypeNode ret = Operator::unit_node;\n\t\tsize_t off = l;\n\t\t\
-    for(size_t idx = l+length; idx < 2*length && off < r; ){\n\t\t\tif(range[idx].second<=r\
-    \ && !Operator::func_check(Operator::func_node(ret,node[idx]),var)) {\n\t\t\t\t\
-    ret = Operator::func_node(ret,node[idx]);\n\t\t\t\toff = range[idx++].second;\n\
-    \t\t\t\tif(!(idx&1)) idx >>= 1;\t\t\t\n\t\t\t}\n\t\t\telse{\n\t\t\t\tidx <<=1;\n\
-    \t\t\t}\n\t\t}\n\t\treturn off;\n\t}\n\n\t//range(l,r] return [l,r] search max\
-    \ left\n\tint suffix_binary_search(const int l, const int r, const TypeNode var)\
-    \ {\n\t\tassert(-1 <= l && l < (int)length-1 && 0 <= r && r < length);\n\t\tTypeNode\
-    \ ret = Operator::unit_node;\n\t\tint off = r;\n\t\tfor(size_t idx = r+length;\
-    \ idx < 2*length && l < off; ){\n\t\t\tif(l < range[idx].first && !Operator::func_check(Operator::func_node(node[idx],ret),var))\
-    \ {\n\t\t\t\tret = Operator::func_node(node[idx],ret);\n\t\t\t\toff = range[idx--].first-1;\n\
-    \t\t\t\tif(idx&1) idx >>= 1;\n\t\t\t}\n\t\t\telse{\n\t\t\t\tidx = (idx<<1)+1;\n\
-    \t\t\t}\n\t\t}\n\t\treturn off;\n\t}\n\n\tvoid print(){\n\t\t// cout << \"node\"\
-    \ << endl;\n\t\t// for(int i = 1,j = 1; i < 2*length; ++i) {\n\t\t// \tcout <<\
-    \ node[i] << \" \";\n\t\t// \tif(i==((1<<j)-1) && ++j) cout << endl;\n\t\t// }\n\
-    \t\tcout << \"vector\" << endl;\n\t\tcout << \"{ \" << get(0,1);\n\t\tfor(int\
-    \ i = 1; i < length; ++i) cout << \", \" << get(i,i+1);\n\t\tcout << \" }\" <<\
-    \ endl;\n\t}\n};\n\n//\u4E00\u70B9\u66F4\u65B0 \u533A\u9593\u6700\u5C0F\ntemplate<class\
-    \ T> struct NodeMinPointUpdate {\n\tusing TypeNode = T;\n\tinline static constexpr\
-    \ TypeNode unit_node = (1LL<<31)-1;\n\tinline static constexpr TypeNode func_node(TypeNode\
-    \ l,TypeNode r){return min(l,r);}\n\tinline static constexpr TypeNode func_merge(TypeNode\
-    \ l,TypeNode r){return r;}\n\tinline static constexpr bool func_check(TypeNode\
+  code: "/*\n * @title SegmentTree\n * @docs md/segment/SegmentTree.md\n */\ntemplate<class\
+    \ Operator> class SegmentTree {\n    using TypeNode = typename Operator::TypeNode;\
+    \ \n    size_t length;\n    size_t num;\n    vector<TypeNode> node;\n    vector<pair<int,int>>\
+    \ range;\n    inline void build() {\n        for (int i = length - 1; i >= 0;\
+    \ --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);\n       \
+    \ range.resize(2 * length);\n        for (int i = 0; i < length; ++i) range[i+length]\
+    \ = make_pair(i,i+1);\n        for (int i = length - 1; i >= 0; --i) range[i]\
+    \ = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);\n    }\npublic:\n\
+    \n    //unit\u3067\u521D\u671F\u5316\n    SegmentTree(const size_t num): num(num)\
+    \ {\n        for (length = 1; length <= num; length *= 2);\n        node.resize(2\
+    \ * length, Operator::unit_node);\n        build();\n    }\n\n    //vector\u3067\
+    \u521D\u671F\u5316\n    SegmentTree(const vector<TypeNode> & vec) : num(vec.size())\
+    \ {\n        for (length = 1; length <= vec.size(); length *= 2);\n        node.resize(2\
+    \ * length, Operator::unit_node);\n        for (int i = 0; i < vec.size(); ++i)\
+    \ node[i + length] = vec[i];\n        build();\n    }\n \n    //\u540C\u3058init\u3067\
+    \u521D\u671F\u5316\n    SegmentTree(const size_t num, const TypeNode init) : num(num)\
+    \ {\n        for (length = 1; length <= num; length *= 2);\n        node.resize(2\
+    \ * length, Operator::unit_node);\n        for (int i = 0; i < length; ++i) node[i+length]\
+    \ = init;\n        build();\n    }\n    \n    //[idx,idx+1)\n    void update(size_t\
+    \ idx, const TypeNode var) {\n        if(idx < 0 || length <= idx) return;\n \
+    \       idx += length;\n        node[idx] = Operator::func_merge(node[idx],var);\n\
+    \        while(idx >>= 1) node[idx] = Operator::func_node(node[(idx<<1)+0],node[(idx<<1)+1]);\n\
+    \    }\n\n    //[l,r)\n    TypeNode get(int l, int r) {\n        if (l < 0 ||\
+    \ length <= l || r < 0 || length < r) return Operator::unit_node;\n        TypeNode\
+    \ vl = Operator::unit_node, vr = Operator::unit_node;\n        for(l += length,\
+    \ r += length; l < r; l >>=1, r >>=1) {\n            if(l&1) vl = Operator::func_node(vl,node[l++]);\n\
+    \            if(r&1) vr = Operator::func_node(node[--r],vr);\n        }\n    \
+    \    return Operator::func_node(vl,vr);\n    }\n\n    //range[l,r) return [l,r]\
+    \ search max right\n    int prefix_binary_search(int l, int r, TypeNode var) {\n\
+    \        assert(0 <= l && l < length && 0 < r && r <= length);\n        TypeNode\
+    \ ret = Operator::unit_node;\n        size_t off = l;\n        for(size_t idx\
+    \ = l+length; idx < 2*length && off < r; ){\n            if(range[idx].second<=r\
+    \ && !Operator::func_check(Operator::func_node(ret,node[idx]),var)) {\n      \
+    \          ret = Operator::func_node(ret,node[idx]);\n                off = range[idx++].second;\n\
+    \                if(!(idx&1)) idx >>= 1;\t\t\t\n            }\n            else{\n\
+    \                idx <<=1;\n            }\n        }\n        return off;\n  \
+    \  }\n\n    //range(l,r] return [l,r] search max left\n    int suffix_binary_search(const\
+    \ int l, const int r, const TypeNode var) {\n        assert(-1 <= l && l < (int)length-1\
+    \ && 0 <= r && r < length);\n        TypeNode ret = Operator::unit_node;\n   \
+    \     int off = r;\n        for(size_t idx = r+length; idx < 2*length && l < off;\
+    \ ){\n            if(l < range[idx].first && !Operator::func_check(Operator::func_node(node[idx],ret),var))\
+    \ {\n                ret = Operator::func_node(node[idx],ret);\n             \
+    \   off = range[idx--].first-1;\n                if(idx&1) idx >>= 1;\n      \
+    \      }\n            else{\n                idx = (idx<<1)+1;\n            }\n\
+    \        }\n        return off;\n    }\n\n    void print(){\n        // cout <<\
+    \ \"node\" << endl;\n        // for(int i = 1,j = 1; i < 2*length; ++i) {\n  \
+    \      // \tcout << node[i] << \" \";\n        // \tif(i==((1<<j)-1) && ++j) cout\
+    \ << endl;\n        // }\n        cout << \"vector\" << endl;\n        cout <<\
+    \ \"{ \" << get(0,1);\n        for(int i = 1; i < length; ++i) cout << \", \"\
+    \ << get(i,i+1);\n        cout << \" }\" << endl;\n    }\n};\n\n//\u4E00\u70B9\
+    \u66F4\u65B0 \u533A\u9593\u6700\u5C0F\ntemplate<class T> struct NodeMinPointUpdate\
+    \ {\n    using TypeNode = T;\n    inline static constexpr TypeNode unit_node =\
+    \ (1LL<<31)-1;\n    inline static constexpr TypeNode func_node(TypeNode l,TypeNode\
+    \ r){return min(l,r);}\n    inline static constexpr TypeNode func_merge(TypeNode\
+    \ l,TypeNode r){return r;}\n    inline static constexpr bool func_check(TypeNode\
     \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n\n//\u4E00\u70B9\u52A0\u7B97\
-    \ \u533A\u9593\u7DCF\u548C\ntemplate<class T> struct NodeSumPointAdd {\n\tusing\
-    \ TypeNode = T;\n\tinline static constexpr TypeNode unit_node = 0;\n\tinline static\
-    \ constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n\tinline static\
-    \ constexpr TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}\n\tinline\
-    \ static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var ==\
-    \ nodeVal;}\n};\n\n//\u4E00\u6B21\u95A2\u6570\ntemplate<class T> struct NodeCompositePointUpdate\
-    \ {\n\tusing TypeNode = T;\n\tinline static constexpr TypeNode unit_node = make_pair(1,0);\n\
-    \tinline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return {r.first*l.first,r.first*l.second+r.second};}\n\
-    \tinline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n\
-    \tinline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
+    \ \u533A\u9593\u7DCF\u548C\ntemplate<class T> struct NodeSumPointAdd {\n    using\
+    \ TypeNode = T;\n    inline static constexpr TypeNode unit_node = 0;\n    inline\
+    \ static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n  \
+    \  inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}\n\
+    \    inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
+    \ var == nodeVal;}\n};\n\n//\u4E00\u6B21\u95A2\u6570\ntemplate<class T> struct\
+    \ NodeCompositePointUpdate {\n    using TypeNode = T;\n    inline static constexpr\
+    \ TypeNode unit_node = make_pair(1,0);\n    inline static constexpr TypeNode func_node(TypeNode\
+    \ l,TypeNode r){return {r.first*l.first,r.first*l.second+r.second};}\n    inline\
+    \ static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n   \
+    \ inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
     \ var == nodeVal;}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: lib/segment/SegmentTree.cpp
   requiredBy: []
-  timestamp: '2020-09-12 08:49:30+09:00'
+  timestamp: '2020-09-26 09:23:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment/SegmentTree-rmq.test.cpp
@@ -170,3 +185,41 @@ redirect_from:
 - /library/lib/segment/SegmentTree.cpp.html
 title: SegmentTree
 ---
+### SegmentTree
+- 非再帰抽象化セグメント木
+- 0-indexed
+- モノイドのクラスをテンプレートで渡す必要がある
+  - 下記が一例
+```
+//一点加算 区間総和
+template<class T> struct NodeSumPointAdd {
+	using TypeNode = T;
+	inline static constexpr TypeNode unit_node = 0;
+	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
+};
+```
+- モノイドのクラスは、get,updateに対する演算と単位元を必要とする。
+- 二分探索は任意始点で左右両向きにできる
+
+### コンストラクタ
+- SegmentTree(const size_t num)
+  - 単位元`unit_node`で初期化
+  - $O(N)$
+  - num:要素数
+- SegmentTree(const vector<TypeNode> & vec)
+  - vectorで初期化
+  - $O(N)$
+  - vec:初期化用vector
+- SegmentTree(const size_t num, const TypeNode init)
+  - `init`で初期化
+  - $O(N)$
+  - init:初期化用の値
+
+### メソッド
+- void update(size_t idx, const TypeNode var)
+- TypeNode get(int l, int r)
+- int prefix_binary_search(int l, int r, TypeNode var)
+- int suffix_binary_search(const int l, const int r, const TypeNode var)
+- void print()
