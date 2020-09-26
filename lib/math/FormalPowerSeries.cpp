@@ -1,5 +1,6 @@
 /*
- * @title FormalPowerSeries
+ * @title FormalPowerSeries - 形式的冪級数
+ * @docs md/math/FormalPowerSeries.md
  */
 template<int mod> struct FormalPowerSeries : public vector<ModInt<mod>> {
     inline static constexpr int prime1 =1004535809;
@@ -64,18 +65,8 @@ template<int mod> struct FormalPowerSeries : public vector<ModInt<mod>> {
         for(int i=0; i<f1.size(); ++i) f[i] = garner(f1[i],f2[i],f3[i]);
         return f;
     }
-    inline vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){
-		return convolution_friendrymod<998244353>(g,h);
-	}
+    inline vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){return convolution_friendrymod<998244353>(g,h);}
     inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& g,const vector<ModInt<1000000007>>& h){return convolution_arbitrarymod(g,h);}
-    /**
-     * O(log(n)*Nlog(N)) N = fps.size()
-     * fpsのn項目のみを求める。
-     * @param n 求めたい項数
-     * @param numerator 分子のfps
-     * @param denominator 分母のfps
-     * @see http://q.c.titech.ac.jp/docs/progs/polynomial_division.html
-     */
     static inline Mint nth_term_impl(long long n, Fps numerator,Fps denominator) {
         while(n) {
             numerator   *= denominator.minus_x();
