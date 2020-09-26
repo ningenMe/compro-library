@@ -153,7 +153,7 @@ data:
     \ fps = FormalPowerSeries<MOD>;\n#line 12 \"test/math/FormalPowerSeries-pow.test.cpp\"\
     \nconstexpr long long MOD = 998244353;\nusing fps = FormalPowerSeries<MOD>;\n\n\
     int main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,M; cin >>\
-    \ N >> M;\n    fps f(N);\n    for(int i=0;i<N;++i) cin >> f[i];\n    f = f.pow(M);\n\
+    \ N >> M;\n    fps f(N);\n    for(int i=0;i<N;++i) cin >> f[i];\n    f = f.pow(M,N);\n\
     \    for(int i=0;i<f.size();++i) cout << f[i] << \" \\n\"[i==N-1];\n    return\
     \ 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/pow_of_formal_power_series\"\
@@ -162,15 +162,15 @@ data:
     \n#include \"../../lib/math/FormalPowerSeries.cpp\"\nconstexpr long long MOD =\
     \ 998244353;\nusing fps = FormalPowerSeries<MOD>;\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
     \    int N,M; cin >> N >> M;\n    fps f(N);\n    for(int i=0;i<N;++i) cin >> f[i];\n\
-    \    f = f.pow(M);\n    for(int i=0;i<f.size();++i) cout << f[i] << \" \\n\"[i==N-1];\n\
-    \    return 0;\n}"
+    \    f = f.pow(M,N);\n    for(int i=0;i<f.size();++i) cout << f[i] << \" \\n\"\
+    [i==N-1];\n    return 0;\n}"
   dependsOn:
   - lib/util/ModInt.cpp
   - lib/math/FormalPowerSeries.cpp
   isVerificationFile: true
   path: test/math/FormalPowerSeries-pow.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 15:25:43+09:00'
+  timestamp: '2020-09-26 16:01:45+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/FormalPowerSeries-pow.test.cpp

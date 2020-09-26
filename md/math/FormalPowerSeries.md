@@ -1,8 +1,8 @@
 ### FormalPowerSeries
 - 形式的冪級数
-- 具体的には下記の係数$a=(a0,...a_(n-1))$を保持するクラス
+- 具体的には下記の係数$a=(a0,...a_{n-1})$を保持するクラス
 ```
-f(x)=a0 + a_1*x^1 + a_2*x^2 + ... + a_(n-1)*x^(n-1)
+$f(x)=a0 + a_1*x^1 + a_2*x^2 + ... + a_{n-1}*x^{n-1}$
 ```
 - 以下FormalPowerSeriesの型のことを`Fps`と称す。
 - 0-indexed
@@ -12,16 +12,16 @@ f(x)=a0 + a_1*x^1 + a_2*x^2 + ... + a_(n-1)*x^(n-1)
 
 ### コンストラクタ
 - 基本的にはvectorに同じ
-- FormalPowerSeries(vector<Mint> v)
+- FormalPowerSeries(vector< Mint > v)
   - ModInt型のvectorでも初期化できる
   
 ### メソッド
 - int,long long,ModInt型とFpsとの四則演算は各要素に演算が行われる
   - 和,差,積: $O(N)$
-  - 商: $O(N+log(mod))$
+  - 商: $O(N+\log mod)$
 - Fps型どうしの四則演算は、和,差については各要素同士、積については畳み込みになる
   - 和,差: $O(N)$
-  - 積,商: $O(Nlog(N))$
+  - 積,商: $O(N\log N)$
   - 積はnttによる畳込み
   - 商は形式的ニュートン法
 - Fps prefix(size_t n)
@@ -29,12 +29,12 @@ f(x)=a0 + a_1*x^1 + a_2*x^2 + ... + a_(n-1)*x^(n-1)
   - $O(N)$
   - Fpsの`0`項目から`n-1`項目までのコピーが返却される
 - Fps pow(long long k,size_t n) 
-  - 累乗$(f(x))^k$を返却する
-  - $O(NlogN)$
-  - nは打ち切りたい項数。指定しなかった場合は今のFpsと同じ大きさで返却される
+  - 累乗$ f(x)^k$を返却する
+  - $O(N\log N)$
+  - nは打ち切りたい項数。指定しなかった場合は今のFps.size()*kの大きさで返却される
 - Fps inv(size_t n)
   - 逆元$1/(f(x))$を返却する
-  - $O(NlogN)$
+  - $O(N\log N)$
   - nは打ち切りたい項数。指定しなかった場合は今のFpsと同じ大きさで返却される
 - Fps diff(void) 
   - 微分$\( f'(x) \)$を返却する
@@ -48,7 +48,7 @@ f(x)=a0 + a_1*x^1 + a_2*x^2 + ... + a_(n-1)*x^(n-1)
   - nは打ち切りたい項数。指定しなかった場合は今のFpsと同じ大きさで返却される
 - Fps exp(size_t n) 
   - 指数$\exp f(x)$を返却する
-  - $O(NlogN)$
+  - $O(N\log N)$
   - nは打ち切りたい項数。指定しなかった場合は今のFpsと同じ大きさで返却される
 - Mint nth_term(long long n,const Fps& numerator,const Fps& denominator)
   - f(x)のn項目が返却される
