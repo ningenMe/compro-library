@@ -157,7 +157,7 @@ template<class T, class U> struct NodeSumRangeUpdate {
 	inline static constexpr TypeLazy unit_lazy = -2000;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
 	inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return r;}
-	inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l, int r){return node!=-2000?lazy*(r-l):node;}
+	inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l, int r){return lazy!=-2000?lazy*(r-l):node;}
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
 };
