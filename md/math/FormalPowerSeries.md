@@ -60,8 +60,8 @@
 
 ### 参考資料
 - [【競技プログラミング】形式的冪級数の応用テクニック(前編)](https://qiita.com/hotman78/items/f0e6d2265badd84d429a)
-- [形式的冪級数(Formal-Power-Series) | Luzhiled’s memo](https://ei1333.github.io/luzhiled/snippets/math/formal-power-series.html)
-- [形式的べき級数解説 | maspyのHP](https://maspypy.com/category/%e5%bd%a2%e5%bc%8f%e7%9a%84%e3%81%b9%e3%81%8d%e7%b4%9a%e6%95%b0%e8%a7%a3%e8%aa%ac)
+- [形式的冪級数(Formal-Power-Series) / Luzhiled’s memo](https://ei1333.github.io/luzhiled/snippets/math/formal-power-series.html)
+- [形式的べき級数解説 / maspyのHP](https://maspypy.com/category/%e5%bd%a2%e5%bc%8f%e7%9a%84%e3%81%b9%e3%81%8d%e7%b4%9a%e6%95%b0%e8%a7%a3%e8%aa%ac)
 - [(形式的)べき級数と数え上げの写像12相との関係性　前編 - Senの競技プログラミング備忘録](https://sen-comp.hatenablog.com/entry/2019/12/07/142131)
 - [今年中に理解する！多項式、母関数、形式的べき級数の競プロでの実践的使い方 - はまやんはまやんはまやん](https://www.hamayanhamayan.com/entry/2019/12/07/000441)
 - [線形漸化式を満たす数列の N 項目を計算するアルゴリズム](http://q.c.titech.ac.jp/docs/progs/polynomial_division.html)
