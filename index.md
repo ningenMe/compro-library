@@ -90,7 +90,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/DisjointSparseTable.cpp
       title: DisjointSparseTable
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/segment/LazySegmentTree.cpp
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -461,7 +461,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/LazySegmentTree-rmqraq.test.cpp
       title: test/segment/LazySegmentTree-rmqraq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment/LazySegmentTree-rsqruq.test.cpp
       title: test/segment/LazySegmentTree-rsqruq.test.cpp
     - icon: ':heavy_check_mark:'

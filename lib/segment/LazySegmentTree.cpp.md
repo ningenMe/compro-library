@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment/LazySegmentTree-rsqruq.test.cpp
     title: test/segment/LazySegmentTree-rsqruq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -19,7 +19,7 @@ data:
     path: test/graph/Tree-hld-vertex.test.cpp
     title: test/graph/Tree-hld-vertex.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/segment/LazySegmentTree.md
@@ -111,7 +111,7 @@ data:
     \ TypeLazy unit_lazy = -2000;\n\tinline static constexpr TypeNode func_node(TypeNode\
     \ l,TypeNode r){return l+r;}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy\
     \ l,TypeLazy r){return r;}\n\tinline static constexpr TypeNode func_merge(TypeNode\
-    \ node,TypeLazy lazy,int l, int r){return node!=-2000?lazy*(r-l):node;}\n\tinline\
+    \ node,TypeLazy lazy,int l, int r){return lazy!=-2000?lazy*(r-l):node;}\n\tinline\
     \ static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <=\
     \ nodeVal;}\n\t// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);\n};\n\n\
     //node:\u7DCF\u548C\u3000lazy:\u52A0\u7B97\ntemplate<class T, class U> struct\
@@ -216,7 +216,7 @@ data:
     \ TypeLazy unit_lazy = -2000;\n\tinline static constexpr TypeNode func_node(TypeNode\
     \ l,TypeNode r){return l+r;}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy\
     \ l,TypeLazy r){return r;}\n\tinline static constexpr TypeNode func_merge(TypeNode\
-    \ node,TypeLazy lazy,int l, int r){return node!=-2000?lazy*(r-l):node;}\n\tinline\
+    \ node,TypeLazy lazy,int l, int r){return lazy!=-2000?lazy*(r-l):node;}\n\tinline\
     \ static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <=\
     \ nodeVal;}\n\t// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);\n};\n\n\
     //node:\u7DCF\u548C\u3000lazy:\u52A0\u7B97\ntemplate<class T, class U> struct\
@@ -241,8 +241,8 @@ data:
   isVerificationFile: false
   path: lib/segment/LazySegmentTree.cpp
   requiredBy: []
-  timestamp: '2020-09-26 18:44:29+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2020-09-26 18:54:36+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment/LazySegmentTree-rsqruq.test.cpp
   - test/segment/LazySegmentTree-rmqraq.test.cpp

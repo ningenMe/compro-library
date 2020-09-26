@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/graph/Tree.cpp
     title: "Tree - \u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/segment/LazySegmentTree.cpp
     title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
       \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -237,7 +237,7 @@ data:
     \ TypeLazy unit_lazy = -2000;\n\tinline static constexpr TypeNode func_node(TypeNode\
     \ l,TypeNode r){return l+r;}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy\
     \ l,TypeLazy r){return r;}\n\tinline static constexpr TypeNode func_merge(TypeNode\
-    \ node,TypeLazy lazy,int l, int r){return node!=-2000?lazy*(r-l):node;}\n\tinline\
+    \ node,TypeLazy lazy,int l, int r){return lazy!=-2000?lazy*(r-l):node;}\n\tinline\
     \ static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <=\
     \ nodeVal;}\n\t// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);\n};\n\n\
     //node:\u7DCF\u548C\u3000lazy:\u52A0\u7B97\ntemplate<class T, class U> struct\
@@ -288,7 +288,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-hld-vertex.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 18:44:29+09:00'
+  timestamp: '2020-09-26 18:54:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-hld-vertex.test.cpp
