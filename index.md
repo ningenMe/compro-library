@@ -59,7 +59,7 @@ data:
       title: FloorSum
     - icon: ':heavy_check_mark:'
       path: lib/math/FormalPowerSeries.cpp
-      title: FormalPowerSeries
+      title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
     - icon: ':heavy_check_mark:'
       path: lib/math/Garner.cpp
       title: Garner

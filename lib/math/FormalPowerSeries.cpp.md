@@ -31,10 +31,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    document_title: FormalPowerSeries
-    links:
-    - http://q.c.titech.ac.jp/docs/progs/polynomial_division.html
-  bundledCode: "#line 1 \"lib/math/FormalPowerSeries.cpp\"\n/*\n * @title FormalPowerSeries\n\
+    _deprecated_at_docs: md/math/FormalPowerSeries.md
+    document_title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
+    links: []
+  bundledCode: "#line 1 \"lib/math/FormalPowerSeries.cpp\"\n/*\n * @title FormalPowerSeries\
+    \ - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n * @docs md/math/FormalPowerSeries.md\n\
     \ */\ntemplate<int mod> struct FormalPowerSeries : public vector<ModInt<mod>>\
     \ {\n    inline static constexpr int prime1 =1004535809;\n    inline static constexpr\
     \ int prime2 =998244353;\n    inline static constexpr int prime3 =985661441;\n\
@@ -77,14 +78,9 @@ data:
     \ f3 = convolution_friendrymod<prime3>(g, h);\n        vector<Mint> f(f1.size());\n\
     \        for(int i=0; i<f1.size(); ++i) f[i] = garner(f1[i],f2[i],f3[i]);\n  \
     \      return f;\n    }\n    inline vector<ModInt<998244353>> convolution(const\
-    \ vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){\n\t\treturn\
-    \ convolution_friendrymod<998244353>(g,h);\n\t}\n    inline vector<ModInt<1000000007>>\
-    \ convolution(const vector<ModInt<1000000007>>& g,const vector<ModInt<1000000007>>&\
-    \ h){return convolution_arbitrarymod(g,h);}\n    /**\n     * O(log(n)*Nlog(N))\
-    \ N = fps.size()\n     * fps\u306En\u9805\u76EE\u306E\u307F\u3092\u6C42\u3081\u308B\
-    \u3002\n     * @param n \u6C42\u3081\u305F\u3044\u9805\u6570\n     * @param numerator\
-    \ \u5206\u5B50\u306Efps\n     * @param denominator \u5206\u6BCD\u306Efps\n   \
-    \  * @see http://q.c.titech.ac.jp/docs/progs/polynomial_division.html\n     */\n\
+    \ vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){return convolution_friendrymod<998244353>(g,h);}\n\
+    \    inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>&\
+    \ g,const vector<ModInt<1000000007>>& h){return convolution_arbitrarymod(g,h);}\n\
     \    static inline Mint nth_term_impl(long long n, Fps numerator,Fps denominator)\
     \ {\n        while(n) {\n            numerator   *= denominator.minus_x();\n \
     \           numerator    = ((n&1)?numerator.odd():numerator.even());\n       \
@@ -134,7 +130,8 @@ data:
     \ ostream &operator<<(ostream &os, const Fps& fps) {os << \"{\" << fps[0];for(int\
     \ i=1;i<fps.size();++i) os << \", \" << fps[i];return os << \"}\";}\n};\n\n//using\
     \ fps = FormalPowerSeries<MOD>;\n"
-  code: "/*\n * @title FormalPowerSeries\n */\ntemplate<int mod> struct FormalPowerSeries\
+  code: "/*\n * @title FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n\
+    \ * @docs md/math/FormalPowerSeries.md\n */\ntemplate<int mod> struct FormalPowerSeries\
     \ : public vector<ModInt<mod>> {\n    inline static constexpr int prime1 =1004535809;\n\
     \    inline static constexpr int prime2 =998244353;\n    inline static constexpr\
     \ int prime3 =985661441;\n    inline static constexpr int inv21  =332747959; //\
@@ -176,14 +173,9 @@ data:
     \ f3 = convolution_friendrymod<prime3>(g, h);\n        vector<Mint> f(f1.size());\n\
     \        for(int i=0; i<f1.size(); ++i) f[i] = garner(f1[i],f2[i],f3[i]);\n  \
     \      return f;\n    }\n    inline vector<ModInt<998244353>> convolution(const\
-    \ vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){\n\t\treturn\
-    \ convolution_friendrymod<998244353>(g,h);\n\t}\n    inline vector<ModInt<1000000007>>\
-    \ convolution(const vector<ModInt<1000000007>>& g,const vector<ModInt<1000000007>>&\
-    \ h){return convolution_arbitrarymod(g,h);}\n    /**\n     * O(log(n)*Nlog(N))\
-    \ N = fps.size()\n     * fps\u306En\u9805\u76EE\u306E\u307F\u3092\u6C42\u3081\u308B\
-    \u3002\n     * @param n \u6C42\u3081\u305F\u3044\u9805\u6570\n     * @param numerator\
-    \ \u5206\u5B50\u306Efps\n     * @param denominator \u5206\u6BCD\u306Efps\n   \
-    \  * @see http://q.c.titech.ac.jp/docs/progs/polynomial_division.html\n     */\n\
+    \ vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){return convolution_friendrymod<998244353>(g,h);}\n\
+    \    inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>&\
+    \ g,const vector<ModInt<1000000007>>& h){return convolution_arbitrarymod(g,h);}\n\
     \    static inline Mint nth_term_impl(long long n, Fps numerator,Fps denominator)\
     \ {\n        while(n) {\n            numerator   *= denominator.minus_x();\n \
     \           numerator    = ((n&1)?numerator.odd():numerator.even());\n       \
@@ -237,7 +229,7 @@ data:
   isVerificationFile: false
   path: lib/math/FormalPowerSeries.cpp
   requiredBy: []
-  timestamp: '2020-09-26 08:48:37+09:00'
+  timestamp: '2020-09-26 15:25:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/FormalPowerSeries-conv1000000007-2.test.cpp
@@ -253,5 +245,71 @@ layout: document
 redirect_from:
 - /library/lib/math/FormalPowerSeries.cpp
 - /library/lib/math/FormalPowerSeries.cpp.html
-title: FormalPowerSeries
+title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
 ---
+### FormalPowerSeries
+- 形式的冪級数
+- 具体的には下記の係数$a=(a0,...a_(n-1))$を保持するクラス
+```
+f(x)=a0 + a_1*x^1 + a_2*x^2 + ... + a_(n-1)*x^(n-1)
+```
+- 以下FormalPowerSeriesの型のことを`Fps`と称す。
+- 0-indexed
+  - `Fps f(N)`で初期化した場合は`N-1`項までが確保される
+- `mod`をテンプレートで渡す必要がある
+- 実装はvectorを継承しているので、`[]`演算子などが使える。
+
+### コンストラクタ
+- 基本的にはvectorに同じ
+- FormalPowerSeries(vector<Mint> v)
+  - ModInt型のvectorでも初期化できる
+  
+### メソッド
+- int,long long,ModInt型とFpsとの四則演算は各要素に演算が行われる
+  - 和,差,積: $O(N)$
+  - 商: $O(N+log(mod))$
+- Fps型どうしの四則演算は、和,差については各要素同士、積については畳み込みになる
+  - 和,差: $O(N)$
+  - 積,商: $O(Nlog(N))$
+  - 積はnttによる畳込み
+  - 商は形式的ニュートン法
+- Fps prefix(size_t n)
+  - Fpsのprefix
+  - $O(N)$
+  - Fpsの`0`項目から`n-1`項目までのコピーが返却される
+- Fps pow(long long k,size_t n) 
+  - 累乗$(f(x))^k$を返却する
+  - $O(NlogN)$
+  - nは打ち切りたい項数。指定しなかった場合は今のFpsと同じ大きさで返却される
+- Fps inv(size_t n)
+  - 逆元$1/(f(x))$を返却する
+  - $O(NlogN)$
+  - nは打ち切りたい項数。指定しなかった場合は今のFpsと同じ大きさで返却される
+- Fps diff(void) 
+  - 微分$\( f'(x) \)$を返却する
+  - $O(N)$
+- Fps intg(void) 
+  - 積分$\( \int f(x)dx \)$を返却する
+  - $O(N)$
+- Fps log(size_t n)
+  - 対数$\log f(x)$を返却する
+  - $O(NlogN)$
+  - nは打ち切りたい項数。指定しなかった場合は今のFpsと同じ大きさで返却される
+- Fps exp(size_t n) 
+  - 指数$\exp f(x)$を返却する
+  - $O(NlogN)$
+  - nは打ち切りたい項数。指定しなかった場合は今のFpsと同じ大きさで返却される
+- Mint nth_term(long long n,const Fps& numerator,const Fps& denominator)
+  - f(x)のn項目が返却される
+  - $O(N\log N \log n)$
+  - nは求めたい項数
+  - numeratorは分子のFps
+  - denominatorは分母のFps
+
+### 参考資料
+- https://qiita.com/hotman78/items/f0e6d2265badd84d429a
+- https://ei1333.github.io/luzhiled/snippets/math/formal-power-series.html
+- https://maspypy.com/category/%e5%bd%a2%e5%bc%8f%e7%9a%84%e3%81%b9%e3%81%8d%e7%b4%9a%e6%95%b0%e8%a7%a3%e8%aa%ac
+- https://sen-comp.hatenablog.com/entry/2019/12/07/142131
+- https://www.hamayanhamayan.com/entry/2019/12/07/000441
+- http://q.c.titech.ac.jp/docs/progs/polynomial_division.html

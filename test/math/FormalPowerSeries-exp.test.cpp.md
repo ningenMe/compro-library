@@ -6,7 +6,7 @@ data:
     title: ModInt
   - icon: ':heavy_check_mark:'
     path: lib/math/FormalPowerSeries.cpp
-    title: FormalPowerSeries
+    title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -56,7 +56,8 @@ data:
     \ &os, const ModInt &p) {return os << p.x;}\n    friend istream &operator>>(istream\
     \ &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}\n};\n\
     //using modint = ModInt<MOD>;\n#line 1 \"lib/math/FormalPowerSeries.cpp\"\n/*\n\
-    \ * @title FormalPowerSeries\n */\ntemplate<int mod> struct FormalPowerSeries\
+    \ * @title FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n * @docs\
+    \ md/math/FormalPowerSeries.md\n */\ntemplate<int mod> struct FormalPowerSeries\
     \ : public vector<ModInt<mod>> {\n    inline static constexpr int prime1 =1004535809;\n\
     \    inline static constexpr int prime2 =998244353;\n    inline static constexpr\
     \ int prime3 =985661441;\n    inline static constexpr int inv21  =332747959; //\
@@ -98,14 +99,9 @@ data:
     \ f3 = convolution_friendrymod<prime3>(g, h);\n        vector<Mint> f(f1.size());\n\
     \        for(int i=0; i<f1.size(); ++i) f[i] = garner(f1[i],f2[i],f3[i]);\n  \
     \      return f;\n    }\n    inline vector<ModInt<998244353>> convolution(const\
-    \ vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){\n\t\treturn\
-    \ convolution_friendrymod<998244353>(g,h);\n\t}\n    inline vector<ModInt<1000000007>>\
-    \ convolution(const vector<ModInt<1000000007>>& g,const vector<ModInt<1000000007>>&\
-    \ h){return convolution_arbitrarymod(g,h);}\n    /**\n     * O(log(n)*Nlog(N))\
-    \ N = fps.size()\n     * fps\u306En\u9805\u76EE\u306E\u307F\u3092\u6C42\u3081\u308B\
-    \u3002\n     * @param n \u6C42\u3081\u305F\u3044\u9805\u6570\n     * @param numerator\
-    \ \u5206\u5B50\u306Efps\n     * @param denominator \u5206\u6BCD\u306Efps\n   \
-    \  * @see http://q.c.titech.ac.jp/docs/progs/polynomial_division.html\n     */\n\
+    \ vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){return convolution_friendrymod<998244353>(g,h);}\n\
+    \    inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>&\
+    \ g,const vector<ModInt<1000000007>>& h){return convolution_arbitrarymod(g,h);}\n\
     \    static inline Mint nth_term_impl(long long n, Fps numerator,Fps denominator)\
     \ {\n        while(n) {\n            numerator   *= denominator.minus_x();\n \
     \           numerator    = ((n&1)?numerator.odd():numerator.even());\n       \
@@ -173,7 +169,7 @@ data:
   isVerificationFile: true
   path: test/math/FormalPowerSeries-exp.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 08:49:44+09:00'
+  timestamp: '2020-09-26 15:25:43+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/FormalPowerSeries-exp.test.cpp
