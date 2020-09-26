@@ -1,5 +1,6 @@
 /*
- * @title Rbst
+ * @title Rbst - 平衡二分探索木
+ * @docs md/segment/Rbst.md
  */
 template<class Operator> class Rbst {
 	using TypeNode = typename Operator::TypeNode;

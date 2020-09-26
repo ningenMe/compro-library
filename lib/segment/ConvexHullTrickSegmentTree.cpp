@@ -1,5 +1,6 @@
 /*
- * @title ConvexHullTrickSegmentTree
+ * @title ConvexHullTrickSegmentTree - 非単調CHTセグメント木
+ * @docs md/segment/ConvexHullTrickSegmentTree.md
  * @see https://atcoder.jp/contests/wupc2019/tasks/wupc2019_i
  */
 template<class Operator> class ConvexHullTrickSegmentTree {

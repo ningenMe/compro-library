@@ -1,5 +1,6 @@
 /*
  * @title SparseTable
+ * @docs md/segment/SparseTable.md
  */
 template<class Operator> class SparseTable{
 public:

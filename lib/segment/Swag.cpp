@@ -1,5 +1,6 @@
 /*
  * @title Swag
+ * @docs md/segment/Swag.md
  */
 template<class Operator> class Swag{
 public:

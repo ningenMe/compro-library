@@ -1,5 +1,6 @@
 /*
  * @title BinaryTrie
+ * @docs md/segment/BinaryTrie.md
  */
 template<class Operator, int bit=60> class BinaryTrie{
 	using TypeNode = typename Operator::TypeNode; 

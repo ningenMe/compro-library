@@ -1,5 +1,6 @@
 /*
  * @title Zalgorithm
+ * @docs md/string/Zalgorithm.md
  */
 class Zalgorithm{
     vector<int> zarray;

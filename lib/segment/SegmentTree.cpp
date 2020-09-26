@@ -1,5 +1,5 @@
 /*
- * @title SegmentTree
+ * @title SegmentTree - 非再帰抽象化セグメント木
  * @docs md/segment/SegmentTree.md
  */
 template<class Operator> class SegmentTree {

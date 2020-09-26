@@ -1,5 +1,6 @@
 /*
  * @title LiChaoTree
+ * @docs md/segment/LiChaoTree.md
  */
 template <typename Operator> class LiChaoTree{
 	using TypeValue = typename Operator::TypeValue;

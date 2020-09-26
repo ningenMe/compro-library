@@ -1,5 +1,6 @@
 /*
  * @title Mod
+ * @docs md/util/Mod.md
  */
 class Mod{
 public:

@@ -1,8 +1,6 @@
 /*
- * @title RangeIndex
- */
-/*
- * @title RangeIndex
+ * @title RangeIndex - 区間index
+ * @docs md/util/RangeIndex.md
  */
 class RangeIndex{
 	int length;

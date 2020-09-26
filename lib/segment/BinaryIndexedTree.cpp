@@ -1,5 +1,6 @@
 /*
  * @title BinaryIndexedTree
+ * @docs md/segment/BinaryIndexedTree.md
  */
 template<class Operator> class BinaryIndexedTree {
 	using TypeNode = typename Operator::TypeNode;
