@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/util/RangeIndex.cpp
     title: "RangeIndex - \u533A\u9593index"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/graph/UnionFindTree.cpp
     title: "UnionFindTree - Union Find \u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/1170
@@ -76,7 +76,7 @@ data:
   path: test/util/RangeIndex.test.cpp
   requiredBy: []
   timestamp: '2020-09-26 18:05:17+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/util/RangeIndex.test.cpp
 layout: document

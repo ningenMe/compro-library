@@ -33,7 +33,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/Tree.cpp
       title: "Tree - \u6728"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/graph/UnionFindTree.cpp
       title: "UnionFindTree - Union Find \u6728"
   - name: lib/heap
@@ -90,7 +90,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/DisjointSparseTable.cpp
       title: DisjointSparseTable
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/segment/LazySegmentTree.cpp
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -129,7 +129,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/util/NBase.cpp
       title: "NBase - N\u9032\u6570"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/util/RangeIndex.cpp
       title: "RangeIndex - \u533A\u9593index"
   - name: non-verified
@@ -461,7 +461,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/LazySegmentTree-rmqraq.test.cpp
       title: test/segment/LazySegmentTree-rmqraq.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/LazySegmentTree-rsqruq.test.cpp
       title: test/segment/LazySegmentTree-rsqruq.test.cpp
     - icon: ':heavy_check_mark:'
@@ -522,7 +522,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/util/NBase.test.cpp
       title: test/util/NBase.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/util/RangeIndex.test.cpp
       title: test/util/RangeIndex.test.cpp
 layout: toppage
