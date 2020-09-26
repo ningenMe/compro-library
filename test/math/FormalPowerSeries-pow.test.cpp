@@ -17,7 +17,7 @@ int main() {
     int N,M; cin >> N >> M;
     fps f(N);
     for(int i=0;i<N;++i) cin >> f[i];
-    f = f.pow(M);
+    f = f.pow(M,N);
     for(int i=0;i<f.size();++i) cout << f[i] << " \n"[i==N-1];
     return 0;
 }
