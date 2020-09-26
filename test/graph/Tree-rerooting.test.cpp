@@ -20,7 +20,7 @@ template<class T, class U> struct NodeSumRangeEoulerTourAdd {
 	inline static constexpr TypeLazy unit_lazy = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return {l.first+r.first,l.second+r.second};}
 	inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return l+r;}
-	inline static constexpr TypeNode func_merge(TypeNode l,TypeLazy r,int len){return {l.first+l.second*r,l.second};}
+	inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l,int r){return {node.first+node.second*lazy,node.second};}
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
 };

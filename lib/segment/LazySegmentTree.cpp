@@ -14,7 +14,7 @@ template<class Operator> class LazySegmentTree {
 
 	void propagate(int k) {
 		if(lazy[k] == Operator::unit_lazy) return;
-		node[k] = Operator::func_merge(node[k],lazy[k],range[k].second-range[k].first);
+        node[k] = Operator::func_merge(node[k],lazy[k],range[k].first,range[k].second);
 		if(k < length) lazy[2*k+0] = Operator::func_lazy(lazy[2*k+0],lazy[k]);
 		if(k < length) lazy[2*k+1] = Operator::func_lazy(lazy[2*k+1],lazy[k]);
 		lazy[k] = Operator::unit_lazy;
@@ -67,9 +67,9 @@ public:
 		}
 		l = a + length, r = b + length - 1;
 		while ((l>>=1),(r>>=1),l) {
-			if(lazy[l] == Operator::unit_lazy) node[l] = Operator::func_node(Operator::func_merge(node[(l<<1)+0],lazy[(l<<1)+0],range[(l<<1)+0].second-range[(l<<1)+0].first),Operator::func_merge(node[(l<<1)+1],lazy[(l<<1)+1],range[(l<<1)+1].second-range[(l<<1)+1].first));
-			if(lazy[r] == Operator::unit_lazy) node[r] = Operator::func_node(Operator::func_merge(node[(r<<1)+0],lazy[(r<<1)+0],range[(r<<1)+0].second-range[(r<<1)+0].first),Operator::func_merge(node[(r<<1)+1],lazy[(r<<1)+1],range[(r<<1)+1].second-range[(r<<1)+1].first));
-		}
+            if(lazy[l] == Operator::unit_lazy) node[l] = Operator::func_node(Operator::func_merge(node[(l<<1)+0],lazy[(l<<1)+0],range[(l<<1)+0].first,range[(l<<1)+0].second),Operator::func_merge(node[(l<<1)+1],lazy[(l<<1)+1],range[(l<<1)+1].first,range[(l<<1)+1].second));
+            if(lazy[r] == Operator::unit_lazy) node[r] = Operator::func_node(Operator::func_merge(node[(r<<1)+0],lazy[(r<<1)+0],range[(r<<1)+0].first,range[(r<<1)+0].second),Operator::func_merge(node[(r<<1)+1],lazy[(r<<1)+1],range[(r<<1)+1].first,range[(r<<1)+1].second));
+  		}
 	}
 
 	//get [a,b)
@@ -78,9 +78,9 @@ public:
 		for (int i = height; 0 < i; --i) propagate(l >> i), propagate(r >> i);
 		TypeNode vl = Operator::unit_node, vr = Operator::unit_node;
 		for(r++; l < r; l >>=1, r >>=1) {
-			if(l&1) vl = Operator::func_node(vl,Operator::func_merge(node[l],lazy[l],range[l].second-range[l].first)),l++;
-			if(r&1) r--,vr = Operator::func_node(Operator::func_merge(node[r],lazy[r],range[r].second-range[r].first),vr);
-		}
+            if(l&1) vl = Operator::func_node(vl,Operator::func_merge(node[l],lazy[l],range[l].first,range[l].second)),l++;
+            if(r&1) r--,vr = Operator::func_node(Operator::func_merge(node[r],lazy[r],range[r].first,range[r].second),vr);
+ 		}
 		return Operator::func_node(vl,vr);
 	}
 
@@ -92,10 +92,10 @@ public:
 		TypeNode ret = Operator::unit_node;
 		size_t idx = 2;
 		for(; idx < 2*length; idx<<=1){
-			if(!Operator::func_check(Operator::func_node(ret,Operator::func_merge(node[idx],lazy[idx],range[idx].second-range[idx].first)),var)) {
-				ret = Operator::func_node(ret,Operator::func_merge(node[idx],lazy[idx],range[idx].second-range[idx].first));
-				idx++;
-			}
+            if(!Operator::func_check(Operator::func_node(ret,Operator::func_merge(node[idx],lazy[idx],range[idx].first,range[idx].second)),var)) {
+                ret = Operator::func_node(ret,Operator::func_merge(node[idx],lazy[idx],range[idx].first,range[idx].second));
+                idx++;
+            }
 		}
 		return min((idx>>1) - length,num);
 	}
@@ -107,12 +107,12 @@ public:
 		TypeNode ret = Operator::unit_node;
 		size_t off = l;
 		for(size_t idx = l+length; idx < 2*length && off < r; ){
-			if(range[idx].second<=r && !Operator::func_check(Operator::func_node(ret,Operator::func_merge(node[idx],lazy[idx],range[idx].second-range[idx].first)),var)) {
-				ret = Operator::func_node(ret,Operator::func_merge(node[idx],lazy[idx],range[idx].second-range[idx].first));
-				off = range[idx++].second;
-				if(!(idx&1)) idx >>= 1;			
-			}
-			else{
+            if(range[idx].second<=r && !Operator::func_check(Operator::func_node(ret,Operator::func_merge(node[idx],lazy[idx],range[idx].first,range[idx].second)),var)) {
+                ret = Operator::func_node(ret,Operator::func_merge(node[idx],lazy[idx],range[idx].first,range[idx].second));
+                off = range[idx++].second;
+                if(!(idx&1)) idx >>= 1;			
+            }
+            else{
 				idx <<=1;
 			}
 		}
@@ -145,7 +145,7 @@ template<class T, class U> struct NodeMinRangeAdd {
 	inline static constexpr TypeLazy unit_lazy = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return min(l,r);}
 	inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return l+r;}
-	inline static constexpr TypeNode func_merge(TypeNode l,TypeLazy r,int len){return l+r;}
+	inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l, int r){return node+lazy;}
 	// LazySegmentTree<NodeMinRangeAdd<ll,ll>> Seg(N,0);
 };
 
@@ -157,12 +157,12 @@ template<class T, class U> struct NodeSumRangeUpdate {
 	inline static constexpr TypeLazy unit_lazy = -2000;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
 	inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return r;}
-	inline static constexpr TypeNode func_merge(TypeNode l,TypeLazy r,int len){return r!=-2000?r*len:l;}
+	inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l, int r){return node!=-2000?lazy*(r-l):node;}
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
 };
 
-//node:総和　lazy:更新
+//node:総和　lazy:加算
 template<class T, class U> struct NodeSumRangeAdd {
 	using TypeNode = T;
 	using TypeLazy = U;
@@ -170,7 +170,19 @@ template<class T, class U> struct NodeSumRangeAdd {
 	inline static constexpr TypeLazy unit_lazy = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
 	inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return l+r;}
-	inline static constexpr TypeNode func_merge(TypeNode l,TypeLazy r,int len){return l+r*len;}
+	inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l, int r){return node+lazy*(r-l);}
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
+};
+
+//node:最小　lazy:等差数列更新
+template<class T, class U> struct NodeMinRangeArithmeticUpdate {
+    using TypeNode = T;
+    using TypeLazy = U;
+    inline static constexpr TypeNode unit_node = 1234567;
+    inline static constexpr TypeLazy unit_lazy = {-2000,-2000};
+    inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return min(l,r);}
+    inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return r;}
+    inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l,int r){ return (lazy.first==-2000?node:lazy.first + (l-lazy.second));}
+    inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 };
