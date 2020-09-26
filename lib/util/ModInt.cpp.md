@@ -3,10 +3,10 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment/SegmentTree-rcq.test.cpp
     title: test/segment/SegmentTree-rcq.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/util/ModInt.test.cpp
     title: test/util/ModInt.test.cpp
   - icon: ':heavy_check_mark:'
@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-conv998244353-1.test.cpp
     title: test/math/FormalPowerSeries-conv998244353-1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Matrix-pow.test.cpp
     title: test/math/Matrix-pow.test.cpp
   - icon: ':heavy_check_mark:'
@@ -33,7 +33,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-log.test.cpp
     title: test/math/FormalPowerSeries-log.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Matrix-det.test.cpp
     title: test/math/Matrix-det.test.cpp
   - icon: ':heavy_check_mark:'
@@ -46,7 +46,7 @@ data:
     path: test/graph/Tree-hld-path.test.cpp
     title: test/graph/Tree-hld-path.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/util/ModInt.md
@@ -131,7 +131,7 @@ data:
   path: lib/util/ModInt.cpp
   requiredBy: []
   timestamp: '2020-09-26 17:01:19+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment/SegmentTree-rcq.test.cpp
   - test/util/ModInt.test.cpp

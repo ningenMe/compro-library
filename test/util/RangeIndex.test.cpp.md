@@ -42,12 +42,12 @@ data:
     \ (-parent[root(n)]);\n\t}\n\tinline int operator[](int n) {\n\t\treturn root(n);\n\
     \t}\n\tinline void print() {\n\t\tfor(int i = 0; i < parent.size(); ++i) cout\
     \ << root(i) << \" \";\n\t\tcout << endl;\n\t}\n};\n#line 11 \"test/util/RangeIndex.test.cpp\"\
-    \n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    long long N,A,B;\
-    \ cin >> N >> A >> B;\n    vector<long long> X(N);\n    for(int i = 0; i < N;\
-    \ ++i) cin >> X[i];\n    X.push_back(1e10);\n    RangeIndex ri(N);\n    UnionFindTree\
-    \ uf(ri.size());\n    vector<int> st(ri.size(),0);\n    for(int i = 0; i < N;\
-    \ ++i) {\n        int l = lower_bound(X.begin(),X.end(),X[i]+A)-X.begin();\n \
-    \       int r = upper_bound(X.begin(),X.end(),X[i]+B)-X.begin();\n        for(auto&\
+    \n\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    long long\
+    \ N,A,B; cin >> N >> A >> B;\n    vector<long long> X(N);\n    for(int i = 0;\
+    \ i < N; ++i) cin >> X[i];\n    X.push_back(1e10);\n    RangeIndex ri(N);\n  \
+    \  UnionFindTree uf(ri.size());\n    vector<int> st(ri.size(),0);\n    for(int\
+    \ i = 0; i < N; ++i) {\n        int l = lower_bound(X.begin(),X.end(),X[i]+A)-X.begin();\n\
+    \        int r = upper_bound(X.begin(),X.end(),X[i]+B)-X.begin();\n        for(auto&\
     \ e:ri.range(l,r)) {\n            st[e]=1;\n            uf.merge(ri[i],e);\n \
     \       }\n    }\n    for(int i = 0; i < N; ++i) {\n        for(auto& e:ri.include_range(i))\
     \ if(st[e]) uf.merge(ri[i],e);\n    }\n    vector<int> cnt(ri.size(),0);\n   \
@@ -57,7 +57,7 @@ data:
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1170\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <cassert>\n#include <numeric>\n\
     using namespace std;\n#include \"../../lib/util/RangeIndex.cpp\"\n#include \"\
-    ../../lib/graph/UnionFindTree.cpp\"\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
+    ../../lib/graph/UnionFindTree.cpp\"\n\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
     \    long long N,A,B; cin >> N >> A >> B;\n    vector<long long> X(N);\n    for(int\
     \ i = 0; i < N; ++i) cin >> X[i];\n    X.push_back(1e10);\n    RangeIndex ri(N);\n\
     \    UnionFindTree uf(ri.size());\n    vector<int> st(ri.size(),0);\n    for(int\
@@ -75,7 +75,7 @@ data:
   isVerificationFile: true
   path: test/util/RangeIndex.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 17:01:19+09:00'
+  timestamp: '2020-09-26 18:05:17+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/util/RangeIndex.test.cpp

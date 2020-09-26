@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment/Swag.test.cpp
     title: test/segment/Swag.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/segment/Swag.md
@@ -54,7 +54,7 @@ data:
   path: lib/segment/Swag.cpp
   requiredBy: []
   timestamp: '2020-09-26 17:01:19+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment/Swag.test.cpp
 documentation_of: lib/segment/Swag.cpp

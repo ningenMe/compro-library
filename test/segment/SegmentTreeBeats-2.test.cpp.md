@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/segment/SegmentTreeBeats.cpp
     title: SegmentTreeBeats
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/1074
@@ -144,7 +144,7 @@ data:
   path: test/segment/SegmentTreeBeats-2.test.cpp
   requiredBy: []
   timestamp: '2020-09-26 17:01:19+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment/SegmentTreeBeats-2.test.cpp
 layout: document

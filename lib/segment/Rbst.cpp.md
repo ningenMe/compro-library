@@ -12,13 +12,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometory/ConvexHullTrick-max.test.cpp
     title: test/geometory/ConvexHullTrick-max.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment/Rbst-med.test.cpp
     title: test/segment/Rbst-med.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment/Rbst-get.test.cpp
     title: test/segment/Rbst-get.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment/Rbst-pair.test.cpp
     title: test/segment/Rbst-pair.test.cpp
   - icon: ':x:'
