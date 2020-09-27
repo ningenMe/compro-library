@@ -229,34 +229,36 @@ data:
     \ = U;\n\tinline static constexpr TypeNode unit_node = 1234567890;\n\tinline static\
     \ constexpr TypeLazy unit_lazy = 0;\n\tinline static constexpr TypeNode func_node(TypeNode\
     \ l,TypeNode r){return min(l,r);}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy\
-    \ l,TypeLazy r){return l+r;}\n\tinline static constexpr TypeNode func_merge(TypeNode\
-    \ node,TypeLazy lazy,int l, int r){return node+lazy;}\n\t// LazySegmentTree<NodeMinRangeAdd<ll,ll>>\
-    \ Seg(N,0);\n};\n\n//node:\u7DCF\u548C\u3000lazy:\u66F4\u65B0\ntemplate<class\
-    \ T, class U> struct NodeSumRangeUpdate {\n\tusing TypeNode = T;\n\tusing TypeLazy\
-    \ = U;\n\tinline static constexpr TypeNode unit_node = 0;\n\tinline static constexpr\
-    \ TypeLazy unit_lazy = -2000;\n\tinline static constexpr TypeNode func_node(TypeNode\
-    \ l,TypeNode r){return l+r;}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy\
-    \ l,TypeLazy r){return r;}\n\tinline static constexpr TypeNode func_merge(TypeNode\
-    \ node,TypeLazy lazy,int l, int r){return lazy!=-2000?lazy*(r-l):node;}\n\tinline\
-    \ static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <=\
-    \ nodeVal;}\n\t// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);\n};\n\n\
-    //node:\u7DCF\u548C\u3000lazy:\u52A0\u7B97\ntemplate<class T, class U> struct\
-    \ NodeSumRangeAdd {\n\tusing TypeNode = T;\n\tusing TypeLazy = U;\n\tinline static\
-    \ constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeLazy unit_lazy\
-    \ = 0;\n\tinline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return\
-    \ l+r;}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return\
-    \ l+r;}\n\tinline static constexpr TypeNode func_merge(TypeNode node,TypeLazy\
-    \ lazy,int l, int r){return node+lazy*(r-l);}\n\tinline static constexpr bool\
-    \ func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}\n\t// LazySegmentTree<NodeSumRangeUpdate<ll,ll>>\
-    \ Seg(N,0);\n};\n\n//node:\u6700\u5C0F\u3000lazy:\u7B49\u5DEE\u6570\u5217\u66F4\
-    \u65B0\ntemplate<class T, class U> struct NodeMinRangeArithmeticUpdate {\n   \
-    \ using TypeNode = T;\n    using TypeLazy = U;\n    inline static constexpr TypeNode\
-    \ unit_node = 1234567;\n    inline static constexpr TypeLazy unit_lazy = {-2000,-2000};\n\
-    \    inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return\
-    \ min(l,r);}\n    inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy\
-    \ r){return r;}\n    inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy\
-    \ lazy,int l,int r){ return (lazy.first==-2000?node:lazy.first + (l-lazy.second));}\n\
-    \    inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
+    \ old_lazy,TypeLazy new_lazy){return old_lazy+new_lazy;}\n\tinline static constexpr\
+    \ TypeNode func_merge(TypeNode node,TypeLazy lazy,int l, int r){return node+lazy;}\n\
+    \t// LazySegmentTree<NodeMinRangeAdd<ll,ll>> Seg(N,0);\n};\n\n//node:\u7DCF\u548C\
+    \u3000lazy:\u66F4\u65B0\ntemplate<class T, class U> struct NodeSumRangeUpdate\
+    \ {\n\tusing TypeNode = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode\
+    \ unit_node = 0;\n\tinline static constexpr TypeLazy unit_lazy = -2000;\n\tinline\
+    \ static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n\t\
+    inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return\
+    \ new_lazy;}\n\tinline static constexpr TypeNode func_merge(TypeNode node,TypeLazy\
+    \ lazy,int l, int r){return lazy!=-2000?lazy*(r-l):node;}\n\tinline static constexpr\
+    \ bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}\n\t//\
+    \ LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);\n};\n\n//node:\u7DCF\u548C\
+    \u3000lazy:\u52A0\u7B97\ntemplate<class T, class U> struct NodeSumRangeAdd {\n\
+    \tusing TypeNode = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode\
+    \ unit_node = 0;\n\tinline static constexpr TypeLazy unit_lazy = 0;\n\tinline\
+    \ static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n\t\
+    inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return\
+    \ old_lazy+new_lazy;}\n\tinline static constexpr TypeNode func_merge(TypeNode\
+    \ node,TypeLazy lazy,int l, int r){return node+lazy*(r-l);}\n\tinline static constexpr\
+    \ bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}\n\t//\
+    \ LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);\n};\n\n//node:\u6700\u5C0F\
+    \u3000lazy:\u7B49\u5DEE\u6570\u5217\u66F4\u65B0\ntemplate<class T, class U> struct\
+    \ NodeMinRangeArithmeticUpdate {\n    using TypeNode = T;\n    using TypeLazy\
+    \ = U;\n    inline static constexpr TypeNode unit_node = 1234567;\n    inline\
+    \ static constexpr TypeLazy unit_lazy = {-2000,-2000};\n    inline static constexpr\
+    \ TypeNode func_node(TypeNode l,TypeNode r){return min(l,r);}\n    inline static\
+    \ constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return new_lazy;}\n\
+    \    inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int\
+    \ l,int r){ return (lazy.first==-2000?node:lazy.first + (l-lazy.second));}\n \
+    \   inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
     \ var <= nodeVal;}\n};\n#line 14 \"test/graph/Tree-hld-vertex.test.cpp\"\n\nint\
     \ main(void){\n\tint N; cin >> N;\n\tTree<TreeOperator<int>> tree(N);\n\tvector<pair<int,int>>\
     \ edge(N-1);\n\tfor(int i = 0; i < N-1; ++i) {\n\t\tint u,v; cin >> u >> v;\n\t\
@@ -288,7 +290,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-hld-vertex.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 18:54:36+09:00'
+  timestamp: '2020-09-27 22:47:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-hld-vertex.test.cpp
