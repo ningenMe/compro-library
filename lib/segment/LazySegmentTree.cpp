@@ -144,7 +144,7 @@ template<class T, class U> struct NodeMinRangeAdd {
 	inline static constexpr TypeNode unit_node = 1234567890;
 	inline static constexpr TypeLazy unit_lazy = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return min(l,r);}
-	inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return l+r;}
+	inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return old_lazy+new_lazy;}
 	inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l, int r){return node+lazy;}
 	// LazySegmentTree<NodeMinRangeAdd<ll,ll>> Seg(N,0);
 };
@@ -156,7 +156,7 @@ template<class T, class U> struct NodeSumRangeUpdate {
 	inline static constexpr TypeNode unit_node = 0;
 	inline static constexpr TypeLazy unit_lazy = -2000;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
-	inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return r;}
+	inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return new_lazy;}
 	inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l, int r){return lazy!=-2000?lazy*(r-l):node;}
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
@@ -169,7 +169,7 @@ template<class T, class U> struct NodeSumRangeAdd {
 	inline static constexpr TypeNode unit_node = 0;
 	inline static constexpr TypeLazy unit_lazy = 0;
 	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
-	inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return l+r;}
+	inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return old_lazy+new_lazy;}
 	inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l, int r){return node+lazy*(r-l);}
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
@@ -182,7 +182,7 @@ template<class T, class U> struct NodeMinRangeArithmeticUpdate {
     inline static constexpr TypeNode unit_node = 1234567;
     inline static constexpr TypeLazy unit_lazy = {-2000,-2000};
     inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return min(l,r);}
-    inline static constexpr TypeLazy func_lazy(TypeLazy l,TypeLazy r){return r;}
+    inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return new_lazy;}
     inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l,int r){ return (lazy.first==-2000?node:lazy.first + (l-lazy.second));}
     inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 };
