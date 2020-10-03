@@ -59,9 +59,8 @@
 "test/segment/SparseTable.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/segment/Swag.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/string/Zalgorithm.test.cpp": "2020-09-26 17:01:19 +0900",
-"test/util/Mod.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/util/ModInt.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/util/NBase.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/util/RangeIndex.test.cpp": "2020-09-26 18:05:17 +0900",
-"test/util/RuntimeModInt.test.cpp": "2020-10-04 03:23:13 +0900"
+"test/util/RuntimeModInt.test.cpp": "2020-10-04 03:32:45 +0900"
 }
