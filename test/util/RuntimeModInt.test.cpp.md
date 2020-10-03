@@ -56,25 +56,28 @@ data:
     \ > 0;mul *= mul,n >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream\
     \ &operator<<(ostream &os, const RuntimeModInt &p) {return os << p.x;}\n    friend\
     \ istream &operator>>(istream &is, RuntimeModInt &a) {long long t;is >> t;a =\
-    \ RuntimeModInt<mod>(t);return (is);}\n};\nlong long mod;\nusing modint = RuntimeModInt<mod>;\n\
-    #line 9 \"test/util/RuntimeModInt.test.cpp\"\n\nint main() {\n\tlong long A,B,C;\n\
-    \tcin >> A >> B >> C;\n\tmod = C;\n\tmodint ans = 0;\n\tarray<modint,100001> cnt;\n\
-    \tfor(long long i = 1; i <= C; ++i) {\n\t\tcnt[i] = modint(i).pow(B);\n\t}\n\t\
-    for(long long i = 1; i <= A%C; ++i) {\n\t\tans += cnt[i];\n\t}\n\tans += accumulate(cnt.begin(),cnt.begin()+C,modint(0))*(A/C);\n\
-    \tcout << ans << \"\\n\";\n    return 0;\n}\n"
+    \ RuntimeModInt<mod>(t);return (is);}\n};\nlong long runtime_mod;\n// using modint\
+    \ = RuntimeModInt<mod>;\n#line 9 \"test/util/RuntimeModInt.test.cpp\"\n\nusing\
+    \ modint = RuntimeModInt<runtime_mod>;\n\nint main() {\n\tlong long A,B,C;\n\t\
+    cin >> A >> B >> C;\n\truntime_mod = C;\n\tmodint ans = 0;\n\tarray<modint,100001>\
+    \ cnt;\n\tfor(long long i = 1; i <= C; ++i) {\n\t\tcnt[i] = modint(i).pow(B);\n\
+    \t}\n\tfor(long long i = 1; i <= A%C; ++i) {\n\t\tans += cnt[i];\n\t}\n\tans +=\
+    \ accumulate(cnt.begin(),cnt.begin()+C,modint(0))*(A/C);\n\tcout << ans << \"\\\
+    n\";\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1161\"\n\n#include <vector>\n\
     #include <iostream>\n#include <array>\n#include <numeric>\nusing namespace std;\n\
-    #include \"../../lib/util/RuntimeModInt.cpp\"\n\nint main() {\n\tlong long A,B,C;\n\
-    \tcin >> A >> B >> C;\n\tmod = C;\n\tmodint ans = 0;\n\tarray<modint,100001> cnt;\n\
-    \tfor(long long i = 1; i <= C; ++i) {\n\t\tcnt[i] = modint(i).pow(B);\n\t}\n\t\
-    for(long long i = 1; i <= A%C; ++i) {\n\t\tans += cnt[i];\n\t}\n\tans += accumulate(cnt.begin(),cnt.begin()+C,modint(0))*(A/C);\n\
+    #include \"../../lib/util/RuntimeModInt.cpp\"\n\nusing modint = RuntimeModInt<runtime_mod>;\n\
+    \nint main() {\n\tlong long A,B,C;\n\tcin >> A >> B >> C;\n\truntime_mod = C;\n\
+    \tmodint ans = 0;\n\tarray<modint,100001> cnt;\n\tfor(long long i = 1; i <= C;\
+    \ ++i) {\n\t\tcnt[i] = modint(i).pow(B);\n\t}\n\tfor(long long i = 1; i <= A%C;\
+    \ ++i) {\n\t\tans += cnt[i];\n\t}\n\tans += accumulate(cnt.begin(),cnt.begin()+C,modint(0))*(A/C);\n\
     \tcout << ans << \"\\n\";\n    return 0;\n}\n"
   dependsOn:
   - lib/util/RuntimeModInt.cpp
   isVerificationFile: true
   path: test/util/RuntimeModInt.test.cpp
   requiredBy: []
-  timestamp: '2020-10-04 03:32:45+09:00'
+  timestamp: '2020-10-04 04:28:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/util/RuntimeModInt.test.cpp

@@ -35,23 +35,23 @@ data:
     links: []
   bundledCode: "#line 1 \"lib/math/FormalPowerSeries.cpp\"\n/*\n * @title FormalPowerSeries\
     \ - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n * @docs md/math/FormalPowerSeries.md\n\
-    \ */\ntemplate<int mod> struct FormalPowerSeries : public vector<ModInt<mod>>\
-    \ {\n    inline static constexpr int prime1 =1004535809;\n    inline static constexpr\
-    \ int prime2 =998244353;\n    inline static constexpr int prime3 =985661441;\n\
-    \    inline static constexpr int inv21  =332747959; // ModInt<mod2>(mod1).inv().x;\n\
-    \    inline static constexpr int inv31  =766625513; // ModInt<mod3>(mod1).inv().x;\n\
+    \ */\ntemplate<class T> struct FormalPowerSeries : public vector<T> {\n    inline\
+    \ static constexpr int prime1 =1004535809;\n    inline static constexpr int prime2\
+    \ =998244353;\n    inline static constexpr int prime3 =985661441;\n    inline\
+    \ static constexpr int inv21  =332747959; // ModInt<mod2>(mod1).inv().x;\n   \
+    \ inline static constexpr int inv31  =766625513; // ModInt<mod3>(mod1).inv().x;\n\
     \    inline static constexpr int inv32  =657107549; // ModInt<mod3>(mod2).inv().x;\n\
-    \    inline static constexpr int prime12=(1002772198720536577LL) % mod;\n    inline\
+    \    inline static constexpr long long prime12=(1002772198720536577LL);\n    inline\
     \ static constexpr array<int,26> pow2 = {1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768,65536,131072,262144,524288,1048576,2097152,4194304,8388608,16777216,33554432};\n\
-    \    using vector<ModInt<mod>>::vector;\n    using Mint  = ModInt<mod>;\n    using\
-    \ Mint1 = ModInt<prime1>;\n    using Mint2 = ModInt<prime2>;\n    using Mint3\
-    \ = ModInt<prime3>;\n    using Fps   = FormalPowerSeries<mod>;\n    Fps even(void)\
-    \ const {Fps ret;for(int i = 0; i < this->size(); i+=2) ret.push_back((*this)[i]);return\
-    \ ret;}\n    Fps odd(void)  const {Fps ret;for(int i = 1; i < this->size(); i+=2)\
-    \ ret.push_back((*this)[i]);return ret;}\n    Fps minus_x(void) const {Fps ret(this->size());for(int\
-    \ i = 0; i < ret.size(); ++i) ret[i] = (*this)[i]*(i&1?-1:1);return ret;}\n  \
-    \  inline Mint garner(const Mint1& b1,const Mint2& b2,const Mint3& b3) {Mint2\
-    \ t2 = (b2-b1.x)*inv21;Mint3 t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return Mint(prime12*t3.x+b1.x+prime1*t2.x);}\n\
+    \    using vector<T>::vector;\n    using Mint  = T;\n    using Mint1 = ModInt<prime1>;\n\
+    \    using Mint2 = ModInt<prime2>;\n    using Mint3 = ModInt<prime3>;\n    using\
+    \ Fps   = FormalPowerSeries<T>;\n    Fps even(void) const {Fps ret;for(int i =\
+    \ 0; i < this->size(); i+=2) ret.push_back((*this)[i]);return ret;}\n    Fps odd(void)\
+    \  const {Fps ret;for(int i = 1; i < this->size(); i+=2) ret.push_back((*this)[i]);return\
+    \ ret;}\n    Fps minus_x(void) const {Fps ret(this->size());for(int i = 0; i <\
+    \ ret.size(); ++i) ret[i] = (*this)[i]*(i&1?-1:1);return ret;}\n    inline Mint\
+    \ garner(const Mint1& b1,const Mint2& b2,const Mint3& b3) {Mint2 t2 = (b2-b1.x)*inv21;Mint3\
+    \ t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return Mint(Mint(prime12)*t3.x+b1.x+prime1*t2.x);}\n\
     \    template<int prime> inline void ntt(vector<ModInt<prime>>& f) {\n       \
     \ const int N = f.size(), M = N>>1;\n        const int log2N = __builtin_ctz(N);\n\
     \        ModInt<prime> h(3);\n        vector<ModInt<prime>> g(N),base(log2N);\n\
@@ -61,7 +61,7 @@ data:
     \ {\n                for(int j=0;j<p;++j) {\n                    ModInt<prime>\
     \ l = f[k|j],r = w*f[k|j|p];\n                    g[i|j]   = l + r;\n        \
     \            g[i|j|M] = l - r;\n                }\n            }\n           \
-    \ swap(f,g);\n        }\n    }\n    template<int prime=mod> inline vector<ModInt<prime>>\
+    \ swap(f,g);\n        }\n    }\n    template<int prime> inline vector<ModInt<prime>>\
     \ convolution_friendrymod(const vector<Mint>& a,const vector<Mint>& b){\n    \
     \    if (min(a.size(), b.size()) <= 60) {\n            vector<ModInt<prime>> f(a.size()\
     \ + b.size() - 1);\n            for (int i = 0; i < a.size(); i++) for (int j\
@@ -80,7 +80,9 @@ data:
     \ vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){return convolution_friendrymod<998244353>(g,h);}\n\
     \    inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>&\
     \ g,const vector<ModInt<1000000007>>& h){return convolution_arbitrarymod(g,h);}\n\
-    \    static inline Mint nth_term_impl(long long n, Fps numerator,Fps denominator)\
+    \    inline vector<RuntimeModInt<runtime_mod>> convolution(const vector<RuntimeModInt<runtime_mod>>&\
+    \ g,const vector<RuntimeModInt<runtime_mod>>& h){return convolution_arbitrarymod(g,h);}\n\
+    \n    static inline Mint nth_term_impl(long long n, Fps numerator,Fps denominator)\
     \ {\n        while(n) {\n            numerator   *= denominator.minus_x();\n \
     \           numerator    = ((n&1)?numerator.odd():numerator.even());\n       \
     \     denominator *= denominator.minus_x();\n            denominator  = denominator.even();\n\
@@ -127,26 +129,26 @@ data:
     \ i=1;i<n;i<<=1) ret = (ret*(this->prefix(i<<1) + Fps(1,1) - ret.log(i<<1))).prefix(i<<1);return\
     \ ret.prefix(n);}\n    Fps exp(void) const {return exp(this->size());}\n    friend\
     \ ostream &operator<<(ostream &os, const Fps& fps) {os << \"{\" << fps[0];for(int\
-    \ i=1;i<fps.size();++i) os << \", \" << fps[i];return os << \"}\";}\n};\n\n//using\
-    \ fps = FormalPowerSeries<MOD>;\n"
+    \ i=1;i<fps.size();++i) os << \", \" << fps[i];return os << \"}\";}\n};\n//using\
+    \ fps = FormalPowerSeries<RuntimeModInt<mod>>;\n//using fps = FormalPowerSeries<ModInt<MOD>>;\n"
   code: "/*\n * @title FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n\
-    \ * @docs md/math/FormalPowerSeries.md\n */\ntemplate<int mod> struct FormalPowerSeries\
-    \ : public vector<ModInt<mod>> {\n    inline static constexpr int prime1 =1004535809;\n\
+    \ * @docs md/math/FormalPowerSeries.md\n */\ntemplate<class T> struct FormalPowerSeries\
+    \ : public vector<T> {\n    inline static constexpr int prime1 =1004535809;\n\
     \    inline static constexpr int prime2 =998244353;\n    inline static constexpr\
     \ int prime3 =985661441;\n    inline static constexpr int inv21  =332747959; //\
     \ ModInt<mod2>(mod1).inv().x;\n    inline static constexpr int inv31  =766625513;\
     \ // ModInt<mod3>(mod1).inv().x;\n    inline static constexpr int inv32  =657107549;\
-    \ // ModInt<mod3>(mod2).inv().x;\n    inline static constexpr int prime12=(1002772198720536577LL)\
-    \ % mod;\n    inline static constexpr array<int,26> pow2 = {1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768,65536,131072,262144,524288,1048576,2097152,4194304,8388608,16777216,33554432};\n\
-    \    using vector<ModInt<mod>>::vector;\n    using Mint  = ModInt<mod>;\n    using\
-    \ Mint1 = ModInt<prime1>;\n    using Mint2 = ModInt<prime2>;\n    using Mint3\
-    \ = ModInt<prime3>;\n    using Fps   = FormalPowerSeries<mod>;\n    Fps even(void)\
-    \ const {Fps ret;for(int i = 0; i < this->size(); i+=2) ret.push_back((*this)[i]);return\
-    \ ret;}\n    Fps odd(void)  const {Fps ret;for(int i = 1; i < this->size(); i+=2)\
-    \ ret.push_back((*this)[i]);return ret;}\n    Fps minus_x(void) const {Fps ret(this->size());for(int\
-    \ i = 0; i < ret.size(); ++i) ret[i] = (*this)[i]*(i&1?-1:1);return ret;}\n  \
-    \  inline Mint garner(const Mint1& b1,const Mint2& b2,const Mint3& b3) {Mint2\
-    \ t2 = (b2-b1.x)*inv21;Mint3 t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return Mint(prime12*t3.x+b1.x+prime1*t2.x);}\n\
+    \ // ModInt<mod3>(mod2).inv().x;\n    inline static constexpr long long prime12=(1002772198720536577LL);\n\
+    \    inline static constexpr array<int,26> pow2 = {1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768,65536,131072,262144,524288,1048576,2097152,4194304,8388608,16777216,33554432};\n\
+    \    using vector<T>::vector;\n    using Mint  = T;\n    using Mint1 = ModInt<prime1>;\n\
+    \    using Mint2 = ModInt<prime2>;\n    using Mint3 = ModInt<prime3>;\n    using\
+    \ Fps   = FormalPowerSeries<T>;\n    Fps even(void) const {Fps ret;for(int i =\
+    \ 0; i < this->size(); i+=2) ret.push_back((*this)[i]);return ret;}\n    Fps odd(void)\
+    \  const {Fps ret;for(int i = 1; i < this->size(); i+=2) ret.push_back((*this)[i]);return\
+    \ ret;}\n    Fps minus_x(void) const {Fps ret(this->size());for(int i = 0; i <\
+    \ ret.size(); ++i) ret[i] = (*this)[i]*(i&1?-1:1);return ret;}\n    inline Mint\
+    \ garner(const Mint1& b1,const Mint2& b2,const Mint3& b3) {Mint2 t2 = (b2-b1.x)*inv21;Mint3\
+    \ t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return Mint(Mint(prime12)*t3.x+b1.x+prime1*t2.x);}\n\
     \    template<int prime> inline void ntt(vector<ModInt<prime>>& f) {\n       \
     \ const int N = f.size(), M = N>>1;\n        const int log2N = __builtin_ctz(N);\n\
     \        ModInt<prime> h(3);\n        vector<ModInt<prime>> g(N),base(log2N);\n\
@@ -156,7 +158,7 @@ data:
     \ {\n                for(int j=0;j<p;++j) {\n                    ModInt<prime>\
     \ l = f[k|j],r = w*f[k|j|p];\n                    g[i|j]   = l + r;\n        \
     \            g[i|j|M] = l - r;\n                }\n            }\n           \
-    \ swap(f,g);\n        }\n    }\n    template<int prime=mod> inline vector<ModInt<prime>>\
+    \ swap(f,g);\n        }\n    }\n    template<int prime> inline vector<ModInt<prime>>\
     \ convolution_friendrymod(const vector<Mint>& a,const vector<Mint>& b){\n    \
     \    if (min(a.size(), b.size()) <= 60) {\n            vector<ModInt<prime>> f(a.size()\
     \ + b.size() - 1);\n            for (int i = 0; i < a.size(); i++) for (int j\
@@ -175,7 +177,9 @@ data:
     \ vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){return convolution_friendrymod<998244353>(g,h);}\n\
     \    inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>&\
     \ g,const vector<ModInt<1000000007>>& h){return convolution_arbitrarymod(g,h);}\n\
-    \    static inline Mint nth_term_impl(long long n, Fps numerator,Fps denominator)\
+    \    inline vector<RuntimeModInt<runtime_mod>> convolution(const vector<RuntimeModInt<runtime_mod>>&\
+    \ g,const vector<RuntimeModInt<runtime_mod>>& h){return convolution_arbitrarymod(g,h);}\n\
+    \n    static inline Mint nth_term_impl(long long n, Fps numerator,Fps denominator)\
     \ {\n        while(n) {\n            numerator   *= denominator.minus_x();\n \
     \           numerator    = ((n&1)?numerator.odd():numerator.even());\n       \
     \     denominator *= denominator.minus_x();\n            denominator  = denominator.even();\n\
@@ -222,13 +226,13 @@ data:
     \ i=1;i<n;i<<=1) ret = (ret*(this->prefix(i<<1) + Fps(1,1) - ret.log(i<<1))).prefix(i<<1);return\
     \ ret.prefix(n);}\n    Fps exp(void) const {return exp(this->size());}\n    friend\
     \ ostream &operator<<(ostream &os, const Fps& fps) {os << \"{\" << fps[0];for(int\
-    \ i=1;i<fps.size();++i) os << \", \" << fps[i];return os << \"}\";}\n};\n\n//using\
-    \ fps = FormalPowerSeries<MOD>;\n"
+    \ i=1;i<fps.size();++i) os << \", \" << fps[i];return os << \"}\";}\n};\n//using\
+    \ fps = FormalPowerSeries<RuntimeModInt<mod>>;\n//using fps = FormalPowerSeries<ModInt<MOD>>;\n"
   dependsOn: []
   isVerificationFile: false
   path: lib/math/FormalPowerSeries.cpp
   requiredBy: []
-  timestamp: '2020-09-26 15:25:43+09:00'
+  timestamp: '2020-10-04 04:28:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/FormalPowerSeries-conv1000000007-2.test.cpp

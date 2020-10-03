@@ -4,6 +4,30 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
+    title: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
+    title: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-conv998244353-1.test.cpp
+    title: test/math/FormalPowerSeries-conv998244353-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-conv998244353-2.test.cpp
+    title: test/math/FormalPowerSeries-conv998244353-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-exp.test.cpp
+    title: test/math/FormalPowerSeries-exp.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-inv.test.cpp
+    title: test/math/FormalPowerSeries-inv.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-log.test.cpp
+    title: test/math/FormalPowerSeries-log.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-pow.test.cpp
+    title: test/math/FormalPowerSeries-pow.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/util/RuntimeModInt.test.cpp
     title: test/util/RuntimeModInt.test.cpp
   _pathExtension: cpp
@@ -53,7 +77,8 @@ data:
     \ > 0;mul *= mul,n >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream\
     \ &operator<<(ostream &os, const RuntimeModInt &p) {return os << p.x;}\n    friend\
     \ istream &operator>>(istream &is, RuntimeModInt &a) {long long t;is >> t;a =\
-    \ RuntimeModInt<mod>(t);return (is);}\n};\nlong long mod;\nusing modint = RuntimeModInt<mod>;\n"
+    \ RuntimeModInt<mod>(t);return (is);}\n};\nlong long runtime_mod;\n// using modint\
+    \ = RuntimeModInt<mod>;\n"
   code: "/*\n * @title RuntimeModInt - \u5B9F\u884C\u6642ModInt\n * @docs md/util/RuntimeModInt.md\n\
     \ */\ntemplate<long long& mod> class RuntimeModInt {\npublic:\n    long long x;\n\
     \    constexpr RuntimeModInt():x(0) {}\n    constexpr RuntimeModInt(long long\
@@ -95,15 +120,23 @@ data:
     \ >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream &operator<<(ostream\
     \ &os, const RuntimeModInt &p) {return os << p.x;}\n    friend istream &operator>>(istream\
     \ &is, RuntimeModInt &a) {long long t;is >> t;a = RuntimeModInt<mod>(t);return\
-    \ (is);}\n};\nlong long mod;\nusing modint = RuntimeModInt<mod>;"
+    \ (is);}\n};\nlong long runtime_mod;\n// using modint = RuntimeModInt<mod>;"
   dependsOn: []
   isVerificationFile: false
   path: lib/util/RuntimeModInt.cpp
   requiredBy: []
-  timestamp: '2020-10-04 03:32:45+09:00'
+  timestamp: '2020-10-04 04:28:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/util/RuntimeModInt.test.cpp
+  - test/math/FormalPowerSeries-conv1000000007-2.test.cpp
+  - test/math/FormalPowerSeries-conv1000000007-1.test.cpp
+  - test/math/FormalPowerSeries-conv998244353-2.test.cpp
+  - test/math/FormalPowerSeries-conv998244353-1.test.cpp
+  - test/math/FormalPowerSeries-exp.test.cpp
+  - test/math/FormalPowerSeries-pow.test.cpp
+  - test/math/FormalPowerSeries-log.test.cpp
+  - test/math/FormalPowerSeries-inv.test.cpp
 documentation_of: lib/util/RuntimeModInt.cpp
 layout: document
 redirect_from:
