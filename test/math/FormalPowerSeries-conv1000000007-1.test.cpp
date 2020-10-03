@@ -7,10 +7,11 @@
 #include <array>
 
 using namespace std;
+#include "../../lib/util/RuntimeModInt.cpp"
 #include "../../lib/util/ModInt.cpp"
 #include "../../lib/math/FormalPowerSeries.cpp"
 constexpr long long MOD = 1000'000'007;
-using fps = FormalPowerSeries<MOD>;
+using fps = FormalPowerSeries<ModInt<MOD>>;
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);

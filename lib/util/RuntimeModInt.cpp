@@ -39,5 +39,5 @@ public:
     friend ostream &operator<<(ostream &os, const RuntimeModInt &p) {return os << p.x;}
     friend istream &operator>>(istream &is, RuntimeModInt &a) {long long t;is >> t;a = RuntimeModInt<mod>(t);return (is);}
 };
-long long mod;
-using modint = RuntimeModInt<mod>;
+long long runtime_mod;
+// using modint = RuntimeModInt<mod>;

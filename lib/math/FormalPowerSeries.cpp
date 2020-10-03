@@ -2,25 +2,25 @@
  * @title FormalPowerSeries - 形式的冪級数
  * @docs md/math/FormalPowerSeries.md
  */
-template<int mod> struct FormalPowerSeries : public vector<ModInt<mod>> {
+template<class T> struct FormalPowerSeries : public vector<T> {
     inline static constexpr int prime1 =1004535809;
     inline static constexpr int prime2 =998244353;
     inline static constexpr int prime3 =985661441;
     inline static constexpr int inv21  =332747959; // ModInt<mod2>(mod1).inv().x;
     inline static constexpr int inv31  =766625513; // ModInt<mod3>(mod1).inv().x;
     inline static constexpr int inv32  =657107549; // ModInt<mod3>(mod2).inv().x;
-    inline static constexpr int prime12=(1002772198720536577LL) % mod;
+    inline static constexpr long long prime12=(1002772198720536577LL);
     inline static constexpr array<int,26> pow2 = {1,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768,65536,131072,262144,524288,1048576,2097152,4194304,8388608,16777216,33554432};
-    using vector<ModInt<mod>>::vector;
-    using Mint  = ModInt<mod>;
+    using vector<T>::vector;
+    using Mint  = T;
     using Mint1 = ModInt<prime1>;
     using Mint2 = ModInt<prime2>;
     using Mint3 = ModInt<prime3>;
-    using Fps   = FormalPowerSeries<mod>;
+    using Fps   = FormalPowerSeries<T>;
     Fps even(void) const {Fps ret;for(int i = 0; i < this->size(); i+=2) ret.push_back((*this)[i]);return ret;}
     Fps odd(void)  const {Fps ret;for(int i = 1; i < this->size(); i+=2) ret.push_back((*this)[i]);return ret;}
     Fps minus_x(void) const {Fps ret(this->size());for(int i = 0; i < ret.size(); ++i) ret[i] = (*this)[i]*(i&1?-1:1);return ret;}
-    inline Mint garner(const Mint1& b1,const Mint2& b2,const Mint3& b3) {Mint2 t2 = (b2-b1.x)*inv21;Mint3 t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return Mint(prime12*t3.x+b1.x+prime1*t2.x);}
+    inline Mint garner(const Mint1& b1,const Mint2& b2,const Mint3& b3) {Mint2 t2 = (b2-b1.x)*inv21;Mint3 t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return Mint(Mint(prime12)*t3.x+b1.x+prime1*t2.x);}
     template<int prime> inline void ntt(vector<ModInt<prime>>& f) {
         const int N = f.size(), M = N>>1;
         const int log2N = __builtin_ctz(N);
@@ -40,7 +40,7 @@ template<int mod> struct FormalPowerSeries : public vector<ModInt<mod>> {
             swap(f,g);
         }
     }
-    template<int prime=mod> inline vector<ModInt<prime>> convolution_friendrymod(const vector<Mint>& a,const vector<Mint>& b){
+    template<int prime> inline vector<ModInt<prime>> convolution_friendrymod(const vector<Mint>& a,const vector<Mint>& b){
         if (min(a.size(), b.size()) <= 60) {
             vector<ModInt<prime>> f(a.size() + b.size() - 1);
             for (int i = 0; i < a.size(); i++) for (int j = 0; j < b.size(); j++) f[i+j]+=a[i].x*b[j].x;
@@ -67,6 +67,8 @@ template<int mod> struct FormalPowerSeries : public vector<ModInt<mod>> {
     }
     inline vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){return convolution_friendrymod<998244353>(g,h);}
     inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& g,const vector<ModInt<1000000007>>& h){return convolution_arbitrarymod(g,h);}
+    inline vector<RuntimeModInt<runtime_mod>> convolution(const vector<RuntimeModInt<runtime_mod>>& g,const vector<RuntimeModInt<runtime_mod>>& h){return convolution_arbitrarymod(g,h);}
+
     static inline Mint nth_term_impl(long long n, Fps numerator,Fps denominator) {
         while(n) {
             numerator   *= denominator.minus_x();
@@ -124,5 +126,5 @@ public:
     Fps exp(void) const {return exp(this->size());}
     friend ostream &operator<<(ostream &os, const Fps& fps) {os << "{" << fps[0];for(int i=1;i<fps.size();++i) os << ", " << fps[i];return os << "}";}
 };
-
-//using fps = FormalPowerSeries<MOD>;
+//using fps = FormalPowerSeries<RuntimeModInt<mod>>;
+//using fps = FormalPowerSeries<ModInt<MOD>>;

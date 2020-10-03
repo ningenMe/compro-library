@@ -7,10 +7,12 @@
 using namespace std;
 #include "../../lib/util/RuntimeModInt.cpp"
 
+using modint = RuntimeModInt<runtime_mod>;
+
 int main() {
 	long long A,B,C;
 	cin >> A >> B >> C;
-	mod = C;
+	runtime_mod = C;
 	modint ans = 0;
 	array<modint,100001> cnt;
 	for(long long i = 1; i <= C; ++i) {
