@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/math/Garner.md
     document_title: "Garner - \u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
     links: []

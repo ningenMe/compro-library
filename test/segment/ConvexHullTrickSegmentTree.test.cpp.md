@@ -2,15 +2,15 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
-    path: lib/segment/Rbst.cpp
-    title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
-  - icon: ':question:'
     path: lib/geometory/ConvexHullTrick.cpp
     title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
   - icon: ':x:'
     path: lib/segment/ConvexHullTrickSegmentTree.cpp
     title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
+  - icon: ':question:'
+    path: lib/segment/Rbst.cpp
+    title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

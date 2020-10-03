@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc097/tasks/arc097_b
   bundledCode: "#line 1 \"old/UnionFindTreeMerge.cpp\"\n\n\n//Union Find Tree\ntemplate<class\

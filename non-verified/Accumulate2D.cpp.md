@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"non-verified/Accumulate2D.cpp\"\ntemplate<class T> class\
     \ Accumulate2D {\n\tvector<vector<T>> acc;\npublic:\n\t//arg grid is 0-indexed\

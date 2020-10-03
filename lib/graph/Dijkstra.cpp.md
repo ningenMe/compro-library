@@ -4,15 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/graph/Dijkstra.test.cpp
-    title: test/graph/Dijkstra.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/Dijkstra-restore.test.cpp
     title: test/graph/Dijkstra-restore.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Dijkstra.test.cpp
+    title: test/graph/Dijkstra.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/graph/Dijkstra.md
     document_title: "Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9"
     links: []

@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/code-festival-2018-final-open/tasks/code_festival_2018_final_c
     - https://atcoder.jp/contests/colopl2018-final-open/tasks/colopl2018_final_c

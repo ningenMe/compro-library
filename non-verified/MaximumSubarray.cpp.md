@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"non-verified/MaximumSubarray.cpp\"\ntemplate<class T> vector<T>\
     \ MaximumSubarray(const vector<T>& vec, T unit=0) {\n\tassert(!vec.empty());\n\

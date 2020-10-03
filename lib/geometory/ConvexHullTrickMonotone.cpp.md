@@ -4,15 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/geometory/ConvexHullTrickMonotone-min.test.cpp
-    title: test/geometory/ConvexHullTrickMonotone-min.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/geometory/ConvexHullTrickMonotone-max.test.cpp
     title: test/geometory/ConvexHullTrickMonotone-max.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/geometory/ConvexHullTrickMonotone-min.test.cpp
+    title: test/geometory/ConvexHullTrickMonotone-min.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/geometory/ConvexHullTrickMonotone.md
     document_title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
     links: []

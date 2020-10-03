@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://codeforces.com/contest/1130/problem/C
   bundledCode: "#line 1 \"old/Grid_Translation.cpp\"\n#include <bits/stdc++.h>\nusing\

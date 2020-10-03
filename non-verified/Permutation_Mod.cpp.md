@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/arc067/tasks/arc067_c
   bundledCode: "#line 1 \"non-verified/Permutation_Mod.cpp\"\n#include <bits/stdc++.h>\n\

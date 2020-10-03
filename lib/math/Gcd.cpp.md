@@ -4,21 +4,20 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/segment/SegmentTree-suffix-binary-search.test.cpp
-    title: test/segment/SegmentTree-suffix-binary-search.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/SegmentTree-prefix-binary-search.test.cpp
-    title: test/segment/SegmentTree-prefix-binary-search.test.cpp
+    path: test/math/Prime-miller-rabin.test.cpp
+    title: test/math/Prime-miller-rabin.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/Prime-rho.test.cpp
     title: test/math/Prime-rho.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/math/Prime-miller-rabin.test.cpp
-    title: test/math/Prime-miller-rabin.test.cpp
+    path: test/segment/SegmentTree-prefix-binary-search.test.cpp
+    title: test/segment/SegmentTree-prefix-binary-search.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/segment/SegmentTree-suffix-binary-search.test.cpp
+    title: test/segment/SegmentTree-suffix-binary-search.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/math/Gcd.md
     document_title: "Gcd - \u9AD8\u901FGCD"
     links: []

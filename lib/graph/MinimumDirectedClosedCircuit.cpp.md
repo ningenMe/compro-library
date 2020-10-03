@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':x:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/graph/MinimumDirectedClosedCircuit.md
     document_title: "MinimumDirectedClosedCircuit - \u6700\u5C0F\u6709\u52B9\u9589\
       \u8DEF\u691C\u51FA"

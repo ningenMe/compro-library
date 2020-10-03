@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/bitflyer2018-final-open/tasks/bitflyer2018_final_c
   bundledCode: "#line 1 \"old/Segment_Tree_Range_Minimum_Query.cpp\"\n#include <bits/stdc++.h>\n\

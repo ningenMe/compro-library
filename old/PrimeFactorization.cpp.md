@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"old/PrimeFactorization.cpp\"\n\n//Prime Factorization O(sqrt(N))\n\
     vector<pair<long long,long long>> PrimeFactorization(long long N) {\n    vector<pair<long\

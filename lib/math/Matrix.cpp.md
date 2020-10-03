@@ -4,15 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/math/Matrix-pow.test.cpp
-    title: test/math/Matrix-pow.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/math/Matrix-det.test.cpp
     title: test/math/Matrix-det.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/Matrix-pow.test.cpp
+    title: test/math/Matrix-pow.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/math/Matrix.md
     document_title: "Matrix - \u884C\u5217\u6F14\u7B97"
     links: []

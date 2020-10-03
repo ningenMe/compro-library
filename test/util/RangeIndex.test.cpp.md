@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/util/RangeIndex.cpp
-    title: "RangeIndex - \u533A\u9593index"
-  - icon: ':heavy_check_mark:'
     path: lib/graph/UnionFindTree.cpp
     title: "UnionFindTree - Union Find \u6728"
+  - icon: ':heavy_check_mark:'
+    path: lib/util/RangeIndex.cpp
+    title: "RangeIndex - \u533A\u9593index"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

@@ -4,18 +4,17 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/util/RangeIndex.test.cpp
-    title: test/util/RangeIndex.test.cpp
+    path: test/graph/StronglyConnectedComponents-1.test.cpp
+    title: test/graph/StronglyConnectedComponents-1.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/UnionFindTree.test.cpp
     title: test/graph/UnionFindTree.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/StronglyConnectedComponents-1.test.cpp
-    title: test/graph/StronglyConnectedComponents-1.test.cpp
+    path: test/util/RangeIndex.test.cpp
+    title: test/util/RangeIndex.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/graph/UnionFindTree.md
     document_title: "UnionFindTree - Union Find \u6728"
     links: []

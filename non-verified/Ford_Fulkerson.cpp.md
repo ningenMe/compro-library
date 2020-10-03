@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/arc085/tasks/arc085_c
   bundledCode: "#line 1 \"non-verified/Ford_Fulkerson.cpp\"\n#include <bits/stdc++.h>\n\

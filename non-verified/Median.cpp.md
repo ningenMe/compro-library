@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"non-verified/Median.cpp\"\n\ntemplate<class T> class Median{\n\
     \tmultiset<T, greater<>> stl;\n\tmultiset<T> str;\n    T init;\n\n    // \u8981\

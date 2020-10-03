@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc087/tasks/arc090_b
   bundledCode: "#line 1 \"non-verified/Union_Find_Tree_With_Potential.cpp\"\n#include\

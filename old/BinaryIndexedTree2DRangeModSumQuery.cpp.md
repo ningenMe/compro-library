@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc130/tasks/abc130_e
   bundledCode: "#line 1 \"old/BinaryIndexedTree2DRangeModSumQuery.cpp\"\nclass BinaryIndexedTree2DRangeModSumQuery{\n\

@@ -4,15 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/segment/LiChaoTree-segment.test.cpp
-    title: test/segment/LiChaoTree-segment.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/segment/LiChaoTree-line.test.cpp
     title: test/segment/LiChaoTree-line.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/segment/LiChaoTree-segment.test.cpp
+    title: test/segment/LiChaoTree-segment.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/segment/LiChaoTree.md
     document_title: LiChaoTree
     links: []

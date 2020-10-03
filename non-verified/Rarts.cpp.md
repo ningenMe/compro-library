@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/agc039/tasks/agc039_a
   bundledCode: "#line 1 \"non-verified/Rarts.cpp\"\nvector<pair<char,long long>> Rarts(string\

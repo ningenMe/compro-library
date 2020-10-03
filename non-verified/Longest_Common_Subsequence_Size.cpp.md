@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/iroha2019-day2/tasks/iroha2019_day2_a
   bundledCode: "#line 1 \"non-verified/Longest_Common_Subsequence_Size.cpp\"\n#include\

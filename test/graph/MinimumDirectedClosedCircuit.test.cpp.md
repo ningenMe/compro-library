@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
-    path: lib/graph/StronglyConnectedComponents.cpp
-    title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
   - icon: ':x:'
     path: lib/graph/MinimumDirectedClosedCircuit.cpp
     title: "MinimumDirectedClosedCircuit - \u6700\u5C0F\u6709\u52B9\u9589\u8DEF\u691C\
       \u51FA"
+  - icon: ':question:'
+    path: lib/graph/StronglyConnectedComponents.cpp
+    title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"old/UnionFindTreeSize.cpp\"\n\n//Union Find Tree\nclass\
     \ UnionFindTreeSize {\npublic:\n\tvector<int> parent;\n    vector<int> maxidx;\n\

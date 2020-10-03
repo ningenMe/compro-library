@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"non-verified/BipartiteMatching.cpp\"\n\nclass BipartiteMatching\
     \ {\n\tvector<vector<int>> edge;\n\tvector<int> match, used;\n    size_t N;\n\n\

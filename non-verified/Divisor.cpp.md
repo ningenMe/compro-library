@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc112/tasks/abc112_d
   bundledCode: "#line 1 \"non-verified/Divisor.cpp\"\n//divisor O(sqrt(N))\nset<long\

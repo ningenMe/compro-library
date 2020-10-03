@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/code-festival-2018-final/tasks/code_festival_2018_final_e
   bundledCode: "#line 1 \"old/Lazy_Segment_Tree_Range_Minimum_Query.cpp\"\n#include\

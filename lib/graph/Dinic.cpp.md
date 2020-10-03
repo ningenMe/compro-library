@@ -9,7 +9,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/graph/Dinic.md
     document_title: "Dinic - Dinic\u30D5\u30ED\u30FC"
     links:

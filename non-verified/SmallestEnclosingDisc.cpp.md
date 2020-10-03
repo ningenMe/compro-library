@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc151/tasks/abc151_f
   bundledCode: "#line 1 \"non-verified/SmallestEnclosingDisc.cpp\"\n\ntemplate <class\

@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
-    path: lib/segment/Rbst.cpp
-    title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
-  - icon: ':question:'
     path: lib/geometory/ConvexHullTrick.cpp
     title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
+  - icon: ':question:'
+    path: lib/segment/Rbst.cpp
+    title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

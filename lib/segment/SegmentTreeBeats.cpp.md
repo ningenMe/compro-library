@@ -4,15 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/segment/SegmentTreeBeats-2.test.cpp
-    title: test/segment/SegmentTreeBeats-2.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/segment/SegmentTreeBeats-1.test.cpp
     title: test/segment/SegmentTreeBeats-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/segment/SegmentTreeBeats-2.test.cpp
+    title: test/segment/SegmentTreeBeats-2.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/segment/SegmentTreeBeats.md
     document_title: SegmentTreeBeats
     links: []

@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"non-verified/MontmortNumber.cpp\"\ntemplate <long long mod>\
     \ class MontmortNumber{\n    vector<long long> res;\npublic:\n    MontmortNumber(long\

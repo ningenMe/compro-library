@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: lib/graph/UnionFindTree.cpp
-    title: "UnionFindTree - Union Find \u6728"
   - icon: ':question:'
     path: lib/graph/StronglyConnectedComponents.cpp
     title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
+  - icon: ':heavy_check_mark:'
+    path: lib/graph/UnionFindTree.cpp
+    title: "UnionFindTree - Union Find \u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

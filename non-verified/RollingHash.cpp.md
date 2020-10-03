@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc141/tasks/abc141_e
   bundledCode: "#line 1 \"non-verified/RollingHash.cpp\"\nclass RollingHash {\nprivate:\n\

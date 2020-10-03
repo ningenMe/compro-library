@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc130/tasks/abc130_e
   bundledCode: "#line 1 \"non-verified/BinaryIndexedTree2D.cpp\"\ntemplate<class T>\

@@ -132,6 +132,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/util/RangeIndex.cpp
       title: "RangeIndex - \u533A\u9593index"
+    - icon: ':heavy_check_mark:'
+      path: lib/util/RuntimeModInt.cpp
+      title: RuntimeModInt
   - name: non-verified
     pages:
     - icon: ':warning:'
@@ -525,5 +528,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/util/RangeIndex.test.cpp
       title: test/util/RangeIndex.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/util/RuntimeModInt.test.cpp
+      title: test/util/RuntimeModInt.test.cpp
 layout: toppage
 ---

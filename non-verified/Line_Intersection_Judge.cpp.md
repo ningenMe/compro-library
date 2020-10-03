@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc016/tasks/abc016_4
   bundledCode: "#line 1 \"non-verified/Line_Intersection_Judge.cpp\"\n#include <bits/stdc++.h>\n\

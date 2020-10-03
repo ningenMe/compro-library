@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"non-verified/Maximum_Rectangle.cpp\"\n#include <bits/stdc++.h>\n\
     using namespace std;\n\nlong long Maximum_Rectangle(vector<long long>& ar){\n\t\

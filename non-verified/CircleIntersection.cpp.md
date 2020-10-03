@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc157/tasks/abc157_f
   bundledCode: "#line 1 \"non-verified/CircleIntersection.cpp\"\ntemplate<class T>\

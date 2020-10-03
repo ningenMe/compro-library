@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/dwango2015-prelims/tasks/dwango2015_prelims_3
   bundledCode: "#line 1 \"non-verified/Combination.cpp\"\ntemplate<class T> class\

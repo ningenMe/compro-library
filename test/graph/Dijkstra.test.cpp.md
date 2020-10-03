@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/graph/Dijkstra.cpp
-    title: "Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9"
-  - icon: ':heavy_check_mark:'
     path: lib/geometory/Distance.cpp
     title: "Distance - \u8DDD\u96E2"
+  - icon: ':heavy_check_mark:'
+    path: lib/graph/Dijkstra.cpp
+    title: "Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

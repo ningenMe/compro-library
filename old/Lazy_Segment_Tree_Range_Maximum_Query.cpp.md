@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/nikkei2019-final/tasks/nikkei2019_final_d
   bundledCode: "#line 1 \"old/Lazy_Segment_Tree_Range_Maximum_Query.cpp\"\n#include\

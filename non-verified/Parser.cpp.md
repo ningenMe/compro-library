@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"non-verified/Parser.cpp\"\ntemplate<class T> class Parser\
     \ {\npublic:\n    int root;\n    vector<T> res;\n    vector<int> leftNode, rightNode;\

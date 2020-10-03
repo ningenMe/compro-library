@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"old/SegmentTree.cpp\"\ntemplate<class Operator> class SegmentTree\
     \ {\n\tOperator Op;                            \n\tusing typeNode = decltype(Op.unitNode);\

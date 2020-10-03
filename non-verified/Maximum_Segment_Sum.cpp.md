@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"non-verified/Maximum_Segment_Sum.cpp\"\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n//Maximum Segment Sum O(N)\ntemplate<class T> T Maximum_Segment_Sum(const\

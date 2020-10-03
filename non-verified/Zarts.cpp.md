@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc036/tasks/abc036_c
   bundledCode: "#line 1 \"non-verified/Zarts.cpp\"\n//Seat Pressure O(NlogN)\ntemplate<class\

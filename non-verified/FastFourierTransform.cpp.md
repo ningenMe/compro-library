@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"non-verified/FastFourierTransform.cpp\"\nclass FastFourierTransform{\n\
     \    inline static constexpr double pi2 = 2.0 * M_PI;\n    inline static constexpr\

@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc135/tasks/abc135_f
   bundledCode: "#line 1 \"old/ZAlgorithm.cpp\"\n// O(N)\nvector<int> ZAlgorithm(const\

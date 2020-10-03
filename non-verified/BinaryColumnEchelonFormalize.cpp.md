@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"non-verified/BinaryColumnEchelonFormalize.cpp\"\n\n// Column_01Echelon_Formalize\
     \ O(N)\u3000\u5B9A\u6570\u500D\u91CD\u3081\nvector<long long>  BinaryColumnEchelonFormalize(vector<long\

@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"non-verified/MinimumUndirectedClosedCircuit.cpp\"\n\n//\u91CD\
     \u307F\u306A\u3057\u7121\u52B9\u30B0\u30E9\u30D5\u306E\u6700\u5C0F\u9589\u8DEF\

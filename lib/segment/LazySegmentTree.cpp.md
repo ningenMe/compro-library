@@ -4,24 +4,23 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/segment/LazySegmentTree-rsqruq.test.cpp
-    title: test/segment/LazySegmentTree-rsqruq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/LazySegmentTree-rmqraq.test.cpp
-    title: test/segment/LazySegmentTree-rmqraq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-rerooting.test.cpp
-    title: test/graph/Tree-rerooting.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/Tree-eulertour.test.cpp
     title: test/graph/Tree-eulertour.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-hld-vertex.test.cpp
     title: test/graph/Tree-hld-vertex.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-rerooting.test.cpp
+    title: test/graph/Tree-rerooting.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/segment/LazySegmentTree-rmqraq.test.cpp
+    title: test/segment/LazySegmentTree-rmqraq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/segment/LazySegmentTree-rsqruq.test.cpp
+    title: test/segment/LazySegmentTree-rsqruq.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/segment/LazySegmentTree.md
     document_title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\
       \u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"

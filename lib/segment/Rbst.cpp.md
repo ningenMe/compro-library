@@ -4,30 +4,29 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/geometory/ConvexHullTrick-no-monotone.test.cpp
-    title: test/geometory/ConvexHullTrick-no-monotone.test.cpp
+    path: test/geometory/ConvexHullTrick-max.test.cpp
+    title: test/geometory/ConvexHullTrick-max.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometory/ConvexHullTrick-min.test.cpp
     title: test/geometory/ConvexHullTrick-min.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/geometory/ConvexHullTrick-max.test.cpp
-    title: test/geometory/ConvexHullTrick-max.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/Rbst-med.test.cpp
-    title: test/segment/Rbst-med.test.cpp
+    path: test/geometory/ConvexHullTrick-no-monotone.test.cpp
+    title: test/geometory/ConvexHullTrick-no-monotone.test.cpp
+  - icon: ':x:'
+    path: test/segment/ConvexHullTrickSegmentTree.test.cpp
+    title: test/segment/ConvexHullTrickSegmentTree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/segment/Rbst-get.test.cpp
     title: test/segment/Rbst-get.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/segment/Rbst-med.test.cpp
+    title: test/segment/Rbst-med.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/segment/Rbst-pair.test.cpp
     title: test/segment/Rbst-pair.test.cpp
-  - icon: ':x:'
-    path: test/segment/ConvexHullTrickSegmentTree.test.cpp
-    title: test/segment/ConvexHullTrickSegmentTree.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/segment/Rbst.md
     document_title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
     links:

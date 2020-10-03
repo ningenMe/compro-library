@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/agc038/tasks/agc038_b
     - https://atcoder.jp/contests/cf16-tournament-round3-open/tasks/asaporo_d

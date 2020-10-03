@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc014/tasks/abc014_4
   bundledCode: "#line 1 \"old/Tree2.cpp\"\n#include <bits/stdc++.h>\nusing namespace\

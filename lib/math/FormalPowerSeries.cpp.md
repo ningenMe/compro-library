@@ -4,33 +4,32 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
-    title: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
     title: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-conv998244353-2.test.cpp
-    title: test/math/FormalPowerSeries-conv998244353-2.test.cpp
+    path: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
+    title: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-conv998244353-1.test.cpp
     title: test/math/FormalPowerSeries-conv998244353-1.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-conv998244353-2.test.cpp
+    title: test/math/FormalPowerSeries-conv998244353-2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-exp.test.cpp
     title: test/math/FormalPowerSeries-exp.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-pow.test.cpp
-    title: test/math/FormalPowerSeries-pow.test.cpp
+    path: test/math/FormalPowerSeries-inv.test.cpp
+    title: test/math/FormalPowerSeries-inv.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-log.test.cpp
     title: test/math/FormalPowerSeries-log.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-inv.test.cpp
-    title: test/math/FormalPowerSeries-inv.test.cpp
+    path: test/math/FormalPowerSeries-pow.test.cpp
+    title: test/math/FormalPowerSeries-pow.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/math/FormalPowerSeries.md
     document_title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
     links: []

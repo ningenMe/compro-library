@@ -4,27 +4,26 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/segment/SegmentTree-rmq.test.cpp
-    title: test/segment/SegmentTree-rmq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/SegmentTree-rcq.test.cpp
-    title: test/segment/SegmentTree-rcq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/SegmentTree-suffix-binary-search.test.cpp
-    title: test/segment/SegmentTree-suffix-binary-search.test.cpp
+    path: test/graph/Tree-hld-path.test.cpp
+    title: test/graph/Tree-hld-path.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/segment/SegmentTree-prefix-binary-search.test.cpp
     title: test/segment/SegmentTree-prefix-binary-search.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/segment/SegmentTree-rcq.test.cpp
+    title: test/segment/SegmentTree-rcq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/segment/SegmentTree-rmq.test.cpp
+    title: test/segment/SegmentTree-rmq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/segment/SegmentTree-rsq.test.cpp
     title: test/segment/SegmentTree-rsq.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-hld-path.test.cpp
-    title: test/graph/Tree-hld-path.test.cpp
+    path: test/segment/SegmentTree-suffix-binary-search.test.cpp
+    title: test/segment/SegmentTree-suffix-binary-search.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/segment/SegmentTree.md
     document_title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\
       \u30E1\u30F3\u30C8\u6728"

@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/arc068/tasks/arc068_c
   bundledCode: "#line 1 \"old/Lazy_Segment_Tree_Range_Sum_Query.cpp\"\n#include <bits/stdc++.h>\n\

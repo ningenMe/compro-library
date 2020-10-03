@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/wupc2019/tasks/wupc2019_d
   bundledCode: "#line 1 \"old/Segment_Tree_Range_Maximum_Query.cpp\"\n#include <bits/stdc++.h>\n\

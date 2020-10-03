@@ -4,21 +4,20 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/geometory/ConvexHullTrick-no-monotone.test.cpp
-    title: test/geometory/ConvexHullTrick-no-monotone.test.cpp
+    path: test/geometory/ConvexHullTrick-max.test.cpp
+    title: test/geometory/ConvexHullTrick-max.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/geometory/ConvexHullTrick-min.test.cpp
     title: test/geometory/ConvexHullTrick-min.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/geometory/ConvexHullTrick-max.test.cpp
-    title: test/geometory/ConvexHullTrick-max.test.cpp
+    path: test/geometory/ConvexHullTrick-no-monotone.test.cpp
+    title: test/geometory/ConvexHullTrick-no-monotone.test.cpp
   - icon: ':x:'
     path: test/segment/ConvexHullTrickSegmentTree.test.cpp
     title: test/segment/ConvexHullTrickSegmentTree.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/geometory/ConvexHullTrick.md
     document_title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
     links: []

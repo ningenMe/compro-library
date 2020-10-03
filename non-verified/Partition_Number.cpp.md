@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/dwacon2018-prelims/tasks/dwacon2018_prelims_c
   bundledCode: "#line 1 \"non-verified/Partition_Number.cpp\"\n#include <bits/stdc++.h>\n\

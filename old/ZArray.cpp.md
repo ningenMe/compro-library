@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/abc150/tasks/abc150_f
   bundledCode: "#line 1 \"old/ZArray.cpp\"\n\n// O(N)\ntemplate<class T> vector<int>\

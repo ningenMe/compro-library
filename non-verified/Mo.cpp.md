@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"non-verified/Mo.cpp\"\ntemplate<class T> class Mo{\n   \
     \ unordered_map<long long,int> mp;\n    long long N;\n    int bucket;\n    vector<pair<int,int>>\

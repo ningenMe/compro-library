@@ -3,22 +3,21 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/graph/StronglyConnectedComponents-2sat.test.cpp
-    title: test/graph/StronglyConnectedComponents-2sat.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/StronglyConnectedComponents-2.test.cpp
-    title: test/graph/StronglyConnectedComponents-2.test.cpp
   - icon: ':x:'
     path: test/graph/MinimumDirectedClosedCircuit.test.cpp
     title: test/graph/MinimumDirectedClosedCircuit.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/StronglyConnectedComponents-1.test.cpp
     title: test/graph/StronglyConnectedComponents-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/StronglyConnectedComponents-2.test.cpp
+    title: test/graph/StronglyConnectedComponents-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/StronglyConnectedComponents-2sat.test.cpp
+    title: test/graph/StronglyConnectedComponents-2sat.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/graph/StronglyConnectedComponents.md
     document_title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\
       \u89E3"

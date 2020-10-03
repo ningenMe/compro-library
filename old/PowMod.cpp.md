@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links: []
   bundledCode: "#line 1 \"old/PowMod.cpp\"\n//Pow_Mod O(log(n))\nlong long PowMod(long\
     \ long x, long long n, long long mod) {\n    long long res = 1;\n    for (; n\

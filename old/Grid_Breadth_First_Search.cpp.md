@@ -6,7 +6,6 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     links:
     - https://atcoder.jp/contests/agc014/tasks/agc014_c
   bundledCode: "#line 1 \"old/Grid_Breadth_First_Search.cpp\"\n#include <bits/stdc++.h>\n\

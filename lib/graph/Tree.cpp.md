@@ -4,27 +4,26 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-rerooting.test.cpp
-    title: test/graph/Tree-rerooting.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-hld-path.test.cpp
-    title: test/graph/Tree-hld-path.test.cpp
+    path: test/graph/Tree-diameter.test.cpp
+    title: test/graph/Tree-diameter.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-eulertour.test.cpp
     title: test/graph/Tree-eulertour.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-size.test.cpp
-    title: test/graph/Tree-size.test.cpp
+    path: test/graph/Tree-hld-path.test.cpp
+    title: test/graph/Tree-hld-path.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-hld-vertex.test.cpp
     title: test/graph/Tree-hld-vertex.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-diameter.test.cpp
-    title: test/graph/Tree-diameter.test.cpp
+    path: test/graph/Tree-rerooting.test.cpp
+    title: test/graph/Tree-rerooting.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-size.test.cpp
+    title: test/graph/Tree-size.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     _deprecated_at_docs: md/graph/Tree.md
     document_title: "Tree - \u6728"
     links:
