@@ -121,9 +121,6 @@ data:
   - name: lib/util
     pages:
     - icon: ':heavy_check_mark:'
-      path: lib/util/Mod.cpp
-      title: Mod
-    - icon: ':heavy_check_mark:'
       path: lib/util/ModInt.cpp
       title: ModInt
     - icon: ':heavy_check_mark:'
@@ -134,7 +131,7 @@ data:
       title: "RangeIndex - \u533A\u9593index"
     - icon: ':heavy_check_mark:'
       path: lib/util/RuntimeModInt.cpp
-      title: RuntimeModInt
+      title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
   - name: non-verified
     pages:
     - icon: ':warning:'
@@ -516,9 +513,6 @@ data:
       title: test/string/Zalgorithm.test.cpp
   - name: test/util
     pages:
-    - icon: ':heavy_check_mark:'
-      path: test/util/Mod.test.cpp
-      title: test/util/Mod.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/util/ModInt.test.cpp
       title: test/util/ModInt.test.cpp
