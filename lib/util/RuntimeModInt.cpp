@@ -1,5 +1,5 @@
 /*
- * @title RuntimeModInt
+ * @title RuntimeModInt - 実行時ModInt
  * @docs md/util/RuntimeModInt.md
  */
 template<long long& mod> class RuntimeModInt {
