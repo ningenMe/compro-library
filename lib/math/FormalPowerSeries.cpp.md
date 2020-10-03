@@ -258,10 +258,11 @@ title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
 - 以下FormalPowerSeriesの型のことを`Fps`と称す。
 - 0-indexed
   - `Fps f(N)`で初期化した場合は`N-1`項までが確保される
-- `mod`をテンプレートで渡す必要がある
+- `ModInt`あるいは`RuntimeModInt`をテンプレートで渡す必要がある
 - 実装はvectorを継承しているので、`[]`演算子などが使える。
 - ntt-friendlyでないmod(1000'000'007など)でも対応。使い方は同じ。
   - 内部でgarnerを使うかどうかを制御している。
+- 実行時modにも対応。使い方は同じ。
 
 ### コンストラクタ
 - 基本的にはvectorに同じ
