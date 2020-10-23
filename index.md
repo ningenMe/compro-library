@@ -231,6 +231,9 @@ data:
       path: non-verified/Union_Find_Tree_With_Potential.cpp
       title: non-verified/Union_Find_Tree_With_Potential.cpp
     - icon: ':warning:'
+      path: non-verified/XorShift.cpp
+      title: non-verified/XorShift.cpp
+    - icon: ':warning:'
       path: non-verified/Zarts.cpp
       title: non-verified/Zarts.cpp
   - name: old

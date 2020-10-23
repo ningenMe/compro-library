@@ -249,9 +249,9 @@ data:
   verifiedWith:
   - test/segment/LazySegmentTree-rsqruq.test.cpp
   - test/segment/LazySegmentTree-rmqraq.test.cpp
+  - test/graph/Tree-hld-vertex.test.cpp
   - test/graph/Tree-rerooting.test.cpp
   - test/graph/Tree-eulertour.test.cpp
-  - test/graph/Tree-hld-vertex.test.cpp
 documentation_of: lib/segment/LazySegmentTree.cpp
 layout: document
 redirect_from:

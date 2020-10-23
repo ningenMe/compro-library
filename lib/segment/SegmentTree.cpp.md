@@ -174,11 +174,11 @@ data:
   timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment/SegmentTree-rmq.test.cpp
-  - test/segment/SegmentTree-rcq.test.cpp
-  - test/segment/SegmentTree-suffix-binary-search.test.cpp
-  - test/segment/SegmentTree-prefix-binary-search.test.cpp
   - test/segment/SegmentTree-rsq.test.cpp
+  - test/segment/SegmentTree-rmq.test.cpp
+  - test/segment/SegmentTree-suffix-binary-search.test.cpp
+  - test/segment/SegmentTree-rcq.test.cpp
+  - test/segment/SegmentTree-prefix-binary-search.test.cpp
   - test/graph/Tree-hld-path.test.cpp
 documentation_of: lib/segment/SegmentTree.cpp
 layout: document

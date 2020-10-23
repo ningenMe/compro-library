@@ -235,14 +235,14 @@ data:
   timestamp: '2020-10-04 04:28:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/math/FormalPowerSeries-conv1000000007-2.test.cpp
-  - test/math/FormalPowerSeries-conv1000000007-1.test.cpp
   - test/math/FormalPowerSeries-conv998244353-2.test.cpp
-  - test/math/FormalPowerSeries-conv998244353-1.test.cpp
+  - test/math/FormalPowerSeries-inv.test.cpp
   - test/math/FormalPowerSeries-exp.test.cpp
+  - test/math/FormalPowerSeries-conv1000000007-2.test.cpp
   - test/math/FormalPowerSeries-pow.test.cpp
   - test/math/FormalPowerSeries-log.test.cpp
-  - test/math/FormalPowerSeries-inv.test.cpp
+  - test/math/FormalPowerSeries-conv1000000007-1.test.cpp
+  - test/math/FormalPowerSeries-conv998244353-1.test.cpp
 documentation_of: lib/math/FormalPowerSeries.cpp
 layout: document
 redirect_from:
