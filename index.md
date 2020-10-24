@@ -27,6 +27,10 @@ data:
       path: lib/graph/MinimumDirectedClosedCircuit.cpp
       title: "MinimumDirectedClosedCircuit - \u6700\u5C0F\u6709\u52B9\u9589\u8DEF\u691C\
         \u51FA"
+    - icon: ':heavy_check_mark:'
+      path: lib/graph/PotentializedUnionFindTree.cpp
+      title: "PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\u4ED8\
+        \u304DUnionFind\u6728"
     - icon: ':question:'
       path: lib/graph/StronglyConnectedComponents.cpp
       title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
@@ -359,6 +363,9 @@ data:
     - icon: ':x:'
       path: test/graph/MinimumDirectedClosedCircuit.test.cpp
       title: test/graph/MinimumDirectedClosedCircuit.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/PotentializedUnionFindTree.test.cpp
+      title: test/graph/PotentializedUnionFindTree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/StronglyConnectedComponents-1.test.cpp
       title: test/graph/StronglyConnectedComponents-1.test.cpp
