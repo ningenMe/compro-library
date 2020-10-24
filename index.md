@@ -112,6 +112,9 @@ data:
       path: lib/segment/SegmentTreeBeats.cpp
       title: SegmentTreeBeats
     - icon: ':heavy_check_mark:'
+      path: lib/segment/SlideMost.cpp
+      title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
+    - icon: ':heavy_check_mark:'
       path: lib/segment/SparseTable.cpp
       title: SparseTable
     - icon: ':heavy_check_mark:'
@@ -513,6 +516,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/SegmentTreeBeats-2.test.cpp
       title: test/segment/SegmentTreeBeats-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/SlideMost.test.cpp
+      title: test/segment/SlideMost.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment/SparseTable.test.cpp
       title: test/segment/SparseTable.test.cpp
