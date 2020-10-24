@@ -10,6 +10,7 @@
 "test/graph/Dijkstra-restore.test.cpp": "2020-09-26 16:13:14 +0900",
 "test/graph/Dijkstra.test.cpp": "2020-09-26 16:13:14 +0900",
 "test/graph/Dinic.test.cpp": "2020-09-26 16:13:14 +0900",
+"test/graph/PotentializedUnionFindTree.test.cpp": "2020-10-25 03:59:16 +0900",
 "test/graph/StronglyConnectedComponents-1.test.cpp": "2020-09-26 16:13:14 +0900",
 "test/graph/StronglyConnectedComponents-2.test.cpp": "2020-09-26 16:13:14 +0900",
 "test/graph/StronglyConnectedComponents-2sat.test.cpp": "2020-09-26 16:13:14 +0900",
