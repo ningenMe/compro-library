@@ -7,6 +7,7 @@
 "test/geometory/ConvexHullTrickMonotone-max.test.cpp": "2020-09-26 16:13:14 +0900",
 "test/geometory/ConvexHullTrickMonotone-min.test.cpp": "2020-09-26 16:13:14 +0900",
 "test/geometory/Distance-line.test.cpp": "2020-09-26 16:13:14 +0900",
+"test/geometory/RectangleWeight.test.cpp": "2020-10-25 05:38:36 +0900",
 "test/graph/Dijkstra-restore.test.cpp": "2020-09-26 16:13:14 +0900",
 "test/graph/Dijkstra.test.cpp": "2020-09-26 16:13:14 +0900",
 "test/graph/Dinic.test.cpp": "2020-09-26 16:13:14 +0900",
