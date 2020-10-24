@@ -131,6 +131,9 @@ data:
   - name: lib/util
     pages:
     - icon: ':heavy_check_mark:'
+      path: lib/util/LongestIncreasingSubsequence.cpp
+      title: LongestIncreasingSubsequence
+    - icon: ':heavy_check_mark:'
       path: lib/util/ModInt.cpp
       title: ModInt
     - icon: ':heavy_check_mark:'
@@ -177,9 +180,6 @@ data:
     - icon: ':warning:'
       path: non-verified/Line_Intersection_Judge.cpp
       title: non-verified/Line_Intersection_Judge.cpp
-    - icon: ':warning:'
-      path: non-verified/LongestIncreasingSubsequence.cpp
-      title: non-verified/LongestIncreasingSubsequence.cpp
     - icon: ':warning:'
       path: non-verified/Longest_Common_Subsequence.cpp
       title: non-verified/Longest_Common_Subsequence.cpp
@@ -532,6 +532,9 @@ data:
       title: test/string/Zalgorithm.test.cpp
   - name: test/util
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/util/LongestIncreasingSubsequence.test.cpp
+      title: test/util/LongestIncreasingSubsequence.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/util/ModInt.test.cpp
       title: test/util/ModInt.test.cpp
