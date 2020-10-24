@@ -229,17 +229,11 @@ data:
       path: non-verified/RollingHash.cpp
       title: non-verified/RollingHash.cpp
     - icon: ':warning:'
-      path: non-verified/SlideMost.cpp
-      title: non-verified/SlideMost.cpp
-    - icon: ':warning:'
       path: non-verified/SmallestEnclosingDisc.cpp
       title: non-verified/SmallestEnclosingDisc.cpp
     - icon: ':warning:'
       path: non-verified/Union_Find_Tree_Persistence.cpp
       title: non-verified/Union_Find_Tree_Persistence.cpp
-    - icon: ':warning:'
-      path: non-verified/Union_Find_Tree_With_Potential.cpp
-      title: non-verified/Union_Find_Tree_With_Potential.cpp
     - icon: ':warning:'
       path: non-verified/XorShift.cpp
       title: non-verified/XorShift.cpp
