@@ -113,7 +113,7 @@ template<class T> struct NodeMinPointUpdate {
     inline static constexpr TypeNode unit_node = (1LL<<31)-1;
     inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return min(l,r);}
     inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}
-    inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
+    inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var > nodeVal;}
 };
 
 //一点加算 区間総和
