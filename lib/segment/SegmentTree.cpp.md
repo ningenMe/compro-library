@@ -85,7 +85,7 @@ data:
     \ (1LL<<31)-1;\n    inline static constexpr TypeNode func_node(TypeNode l,TypeNode\
     \ r){return min(l,r);}\n    inline static constexpr TypeNode func_merge(TypeNode\
     \ l,TypeNode r){return r;}\n    inline static constexpr bool func_check(TypeNode\
-    \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n\n//\u4E00\u70B9\u52A0\u7B97\
+    \ nodeVal,TypeNode var){return var > nodeVal;}\n};\n\n//\u4E00\u70B9\u52A0\u7B97\
     \ \u533A\u9593\u7DCF\u548C\ntemplate<class T> struct NodeSumPointAdd {\n    using\
     \ TypeNode = T;\n    inline static constexpr TypeNode unit_node = 0;\n    inline\
     \ static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n  \
@@ -154,7 +154,7 @@ data:
     \ (1LL<<31)-1;\n    inline static constexpr TypeNode func_node(TypeNode l,TypeNode\
     \ r){return min(l,r);}\n    inline static constexpr TypeNode func_merge(TypeNode\
     \ l,TypeNode r){return r;}\n    inline static constexpr bool func_check(TypeNode\
-    \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n\n//\u4E00\u70B9\u52A0\u7B97\
+    \ nodeVal,TypeNode var){return var > nodeVal;}\n};\n\n//\u4E00\u70B9\u52A0\u7B97\
     \ \u533A\u9593\u7DCF\u548C\ntemplate<class T> struct NodeSumPointAdd {\n    using\
     \ TypeNode = T;\n    inline static constexpr TypeNode unit_node = 0;\n    inline\
     \ static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n  \
@@ -166,12 +166,12 @@ data:
     \ l,TypeNode r){return {r.first*l.first,r.first*l.second+r.second};}\n    inline\
     \ static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n   \
     \ inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
-    \ var == nodeVal;}\n};\n"
+    \ var == nodeVal;}\n};"
   dependsOn: []
   isVerificationFile: false
   path: lib/segment/SegmentTree.cpp
   requiredBy: []
-  timestamp: '2020-09-26 17:01:19+09:00'
+  timestamp: '2020-10-25 02:58:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment/SegmentTree-rsq.test.cpp

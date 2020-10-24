@@ -213,6 +213,9 @@ data:
       path: non-verified/Permutation_Mod.cpp
       title: non-verified/Permutation_Mod.cpp
     - icon: ':warning:'
+      path: non-verified/RangeMexQuery.cpp
+      title: non-verified/RangeMexQuery.cpp
+    - icon: ':warning:'
       path: non-verified/Rarts.cpp
       title: non-verified/Rarts.cpp
     - icon: ':warning:'
