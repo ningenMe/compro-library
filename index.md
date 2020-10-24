@@ -15,6 +15,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/geometory/Distance.cpp
       title: "Distance - \u8DDD\u96E2"
+    - icon: ':heavy_check_mark:'
+      path: lib/geometory/RectangleWeight.cpp
+      title: "RectangleWeight - \u91CD\u307F\u3064\u304D\u77E9\u5F62"
   - name: lib/graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -346,6 +349,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometory/Distance-line.test.cpp
       title: test/geometory/Distance-line.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometory/RectangleWeight.test.cpp
+      title: test/geometory/RectangleWeight.test.cpp
   - name: test/graph
     pages:
     - icon: ':heavy_check_mark:'
