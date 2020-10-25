@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../lib/util/LongestIncreasingSubsequence.cpp"
+#include "../../lib/optimize/LongestIncreasingSubsequence.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);

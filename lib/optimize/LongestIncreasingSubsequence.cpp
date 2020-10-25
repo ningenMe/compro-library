@@ -1,6 +1,6 @@
 /*
  * @title LongestIncreasingSubsequence
- * @docs md/util/LongestIncreasingSubsequence.md
+ * @docs md/optimize/LongestIncreasingSubsequence.md
  */
 template<class T> inline static int LongestIncreasingSubsequence(const vector<T> & ar, T inf=3e18) {
 	vector<T> dp(ar.size(), inf);
