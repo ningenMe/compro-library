@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/optimize/MaximumRectangle.cpp
     title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B
-  bundledCode: "#line 1 \"test/optimize/MaximumRectangle.test.cpp\"\n#define PROBLEM\
+  bundledCode: "#line 1 \"test/optimize/MaximumRectangle-1.test.cpp\"\n#define PROBLEM\
     \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <stack>\nusing namespace std;\n#line\
     \ 1 \"lib/optimize/MaximumRectangle.cpp\"\n/*\n * @title MaximumRectangle - \u6700\
@@ -26,14 +26,14 @@ data:
     \n\t\twhile(vl > vr) {\n\t\t\tres = max(res,vl*(r - l));\n\t\t\tst.pop();\n\n\t\
     \t\tif(st.size() && st.top().first > vr) vl = st.top().first, l = st.top().second;\n\
     \t\t\telse break;\n\t\t}\n\t\tst.push({vr,l});\n\t}\n\tar.pop_back();\n\treturn\
-    \ res;\n}\n#line 8 \"test/optimize/MaximumRectangle.test.cpp\"\n\nint main(void){\n\
+    \ res;\n}\n#line 8 \"test/optimize/MaximumRectangle-1.test.cpp\"\n\nint main(void){\n\
     \    cin.tie(0);ios::sync_with_stdio(false);\n    int H,W; cin >> H >> W;\n  \
     \  vector<vector<int>> c(H,vector<int>(W,0));\n    vector<vector<int>> s(H,vector<int>(W,0));\
     \    \n    for(int i=0;i<H;++i) {\n        for(int j=0;j<W;++j) {\n          \
     \  cin >> c[i][j];\n        }\n    }\n    for(int j=0;j<W;++j) {\n        s[0][j]=(!c[0][j]);\n\
     \        for(int i=1;i<H;++i) {\n            if(c[i][j]) s[i][j]=0;\n        \
     \    else s[i][j]=s[i-1][j]+1;\n        }\n    }\n    long long ans = 0;\n   \
-    \ for(int i=0;i<H;++i) {\n        chmax(ans,MaximumRectangle(s[i]));\n    }\n\
+    \ for(int i=0;i<H;++i) {\n        ans=max(ans,MaximumRectangle(s[i]));\n    }\n\
     \    cout << ans << endl;\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_B\"\
     \n\n#include <vector>\n#include <iostream>\n#include <stack>\nusing namespace\
@@ -44,20 +44,20 @@ data:
     \  cin >> c[i][j];\n        }\n    }\n    for(int j=0;j<W;++j) {\n        s[0][j]=(!c[0][j]);\n\
     \        for(int i=1;i<H;++i) {\n            if(c[i][j]) s[i][j]=0;\n        \
     \    else s[i][j]=s[i-1][j]+1;\n        }\n    }\n    long long ans = 0;\n   \
-    \ for(int i=0;i<H;++i) {\n        chmax(ans,MaximumRectangle(s[i]));\n    }\n\
+    \ for(int i=0;i<H;++i) {\n        ans=max(ans,MaximumRectangle(s[i]));\n    }\n\
     \    cout << ans << endl;\n\treturn 0;\n}"
   dependsOn:
   - lib/optimize/MaximumRectangle.cpp
   isVerificationFile: true
-  path: test/optimize/MaximumRectangle.test.cpp
+  path: test/optimize/MaximumRectangle-1.test.cpp
   requiredBy: []
-  timestamp: '2020-10-25 16:36:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-10-25 16:41:58+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/optimize/MaximumRectangle.test.cpp
+documentation_of: test/optimize/MaximumRectangle-1.test.cpp
 layout: document
 redirect_from:
-- /verify/test/optimize/MaximumRectangle.test.cpp
-- /verify/test/optimize/MaximumRectangle.test.cpp.html
-title: test/optimize/MaximumRectangle.test.cpp
+- /verify/test/optimize/MaximumRectangle-1.test.cpp
+- /verify/test/optimize/MaximumRectangle-1.test.cpp.html
+title: test/optimize/MaximumRectangle-1.test.cpp
 ---

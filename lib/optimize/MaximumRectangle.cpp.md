@@ -3,11 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/optimize/MaximumRectangle.test.cpp
-    title: test/optimize/MaximumRectangle.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/optimize/MaximumRectangle-1.test.cpp
+    title: test/optimize/MaximumRectangle-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/optimize/MaximumRectangle-2.test.cpp
+    title: test/optimize/MaximumRectangle-2.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/optimize/MaximumRectangle.md
     document_title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
@@ -38,9 +41,10 @@ data:
   path: lib/optimize/MaximumRectangle.cpp
   requiredBy: []
   timestamp: '2020-10-25 16:36:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/optimize/MaximumRectangle.test.cpp
+  - test/optimize/MaximumRectangle-2.test.cpp
+  - test/optimize/MaximumRectangle-1.test.cpp
 documentation_of: lib/optimize/MaximumRectangle.cpp
 layout: document
 redirect_from:
