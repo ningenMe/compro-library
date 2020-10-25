@@ -25,7 +25,7 @@ int main(void){
     }
     long long ans = 0;
     for(int i=0;i<H;++i) {
-        chmax(ans,MaximumRectangle(s[i]));
+        ans=max(ans,MaximumRectangle(s[i]));
     }
     cout << ans << endl;
 	return 0;
