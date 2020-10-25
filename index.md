@@ -126,6 +126,9 @@ data:
   - name: lib/string
     pages:
     - icon: ':heavy_check_mark:'
+      path: lib/string/LevenshteinDistance.cpp
+      title: "LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2"
+    - icon: ':heavy_check_mark:'
       path: lib/string/Zalgorithm.cpp
       title: Zalgorithm
   - name: lib/util
@@ -527,6 +530,12 @@ data:
       title: test/segment/Swag.test.cpp
   - name: test/string
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/string/LevenshteinDistance-1.test.cpp
+      title: test/string/LevenshteinDistance-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/string/LevenshteinDistance-2.test.cpp
+      title: test/string/LevenshteinDistance-2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/string/Zalgorithm.test.cpp
       title: test/string/Zalgorithm.test.cpp
