@@ -1,7 +1,8 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-long long Maximum_Rectangle(vector<long long>& ar){
+/*
+ * @title MaximumRectangle - 最大長方形
+ * @docs md/optimize/MaximumRectangle.md
+ */
+template<class T> long long MaximumRectangle(vector<T> ar){
 	ar.push_back(0);
 	stack<pair<long long,long long>> st;
 	long long res = 0;
@@ -28,6 +29,3 @@ long long Maximum_Rectangle(vector<long long>& ar){
 	ar.pop_back();
 	return res;
 }
-
-
-//verify
