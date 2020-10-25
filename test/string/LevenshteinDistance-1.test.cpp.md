@@ -16,7 +16,7 @@ data:
   bundledCode: "#line 1 \"test/string/LevenshteinDistance-1.test.cpp\"\n#define PROBLEM\
     \ \"https://yukicoder.me/problems/no/225\"\n\n#include <vector>\n#include <iostream>\n\
     #include <string>\nusing namespace std;\n#line 1 \"lib/string/LevenshteinDistance.cpp\"\
-    \n/*\n * @title LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2\n * @docs md/util/LevenshteinDistance.md\n\
+    \n/*\n * @title LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2\n * @docs md/string/LevenshteinDistance.md\n\
     \ */\nint LevenshteinDistance(string S, string T,char dummy='#') {\n    int N\
     \ = S.size();\n    int M = T.size();\n    S.push_back(dummy);T.push_back(dummy);\n\
     \    vector<vector<int>> dp(N+2, vector<int>(M+2,N+M));\n    dp[0][0]=0;\n   \
@@ -38,7 +38,7 @@ data:
   isVerificationFile: true
   path: test/string/LevenshteinDistance-1.test.cpp
   requiredBy: []
-  timestamp: '2020-10-25 15:24:47+09:00'
+  timestamp: '2020-10-25 16:15:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/string/LevenshteinDistance-1.test.cpp
