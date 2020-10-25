@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/geometory/KdTree.test.cpp
     title: test/geometory/KdTree.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/geometory/KdTree.md
     document_title: "KdTree - 2\u6B21\u5143\u9802\u70B9\u5206\u985E\u6728"
@@ -86,7 +86,7 @@ data:
   path: lib/geometory/KdTree.cpp
   requiredBy: []
   timestamp: '2020-10-26 04:31:11+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometory/KdTree.test.cpp
 documentation_of: lib/geometory/KdTree.cpp

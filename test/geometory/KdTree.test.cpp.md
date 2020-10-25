@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/geometory/KdTree.cpp
     title: "KdTree - 2\u6B21\u5143\u9802\u70B9\u5206\u985E\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C
   bundledCode: "#line 1 \"test/geometory/KdTree.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C\"\
-    \n\n#include <iostream>\n#include <vector>\n#include <stack>\nusing namespace\
-    \ std;\n#line 1 \"lib/geometory/KdTree.cpp\"\n/*\n * @title KdTree - 2\u6B21\u5143\
-    \u9802\u70B9\u5206\u985E\u6728\n * @docs md/geometory/KdTree.md\n */\ntemplate<class\
-    \ T> class KdTree{\n    struct Point{\n        T x,y;\n        int idx;\n    \
-    \    friend ostream &operator<<(ostream &os, const Point& point) {return os <<\
-    \ \"{\" << point.x << \", \" << point.y << \", \" << point.idx << \"}\";}\n  \
-    \  };\n    struct Node{\n        int depth,ch_l,ch_r;\n        Point point;\n\
-    \        Node(const Point point,const int depth):point(point),depth(depth),ch_l(-1),ch_r(-1){};\n\
+    \n\n#include <iostream>\n#include <vector>\n#include <stack>\n#include <algorithm>\n\
+    using namespace std;\n#line 1 \"lib/geometory/KdTree.cpp\"\n/*\n * @title KdTree\
+    \ - 2\u6B21\u5143\u9802\u70B9\u5206\u985E\u6728\n * @docs md/geometory/KdTree.md\n\
+    \ */\ntemplate<class T> class KdTree{\n    struct Point{\n        T x,y;\n   \
+    \     int idx;\n        friend ostream &operator<<(ostream &os, const Point& point)\
+    \ {return os << \"{\" << point.x << \", \" << point.y << \", \" << point.idx <<\
+    \ \"}\";}\n    };\n    struct Node{\n        int depth,ch_l,ch_r;\n        Point\
+    \ point;\n        Node(const Point point,const int depth):point(point),depth(depth),ch_l(-1),ch_r(-1){};\n\
     \    };\n    vector<Node> tree;\n\n    //[l,r)\n    void dfs(int depth, int l,\
     \ int r, vector<Point>& points) {\n        if(r-l==1) {\n            tree.push_back(Node(points[l],depth));\n\
     \            return;\n        }\n        int m = (l+r)/2;\n        int root =\
@@ -49,7 +49,7 @@ data:
     \              //x\n                if(tree[p].ch_r!=-1 && tree[p].point.x <=\
     \ x2) st.push(tree[p].ch_r);\n                if(tree[p].ch_l!=-1 && x1 <= tree[p].point.x)\
     \ st.push(tree[p].ch_l);\n            }\n        }\n        sort(ret.begin(),ret.end(),[&](Point\
-    \ l,Point r){return l.idx < r.idx;});\n        return ret;\n    }\n};\n#line 8\
+    \ l,Point r){return l.idx < r.idx;});\n        return ret;\n    }\n};\n#line 9\
     \ \"test/geometory/KdTree.test.cpp\"\n\nint main(void){\n    int N; \n    scanf(\"\
     %d\",&N);\n    vector<pair<int,int>> points(N);\n    for(int i=0;i<N;++i) {\n\
     \        int x,y;\n        scanf(\"%d%d\",&x,&y);\n        points[i]={x,y};\n\
@@ -59,21 +59,22 @@ data:
     \ cout << e.idx << \"\\n\";\n        cout << \"\\n\";\n    }\n    return 0;\n\
     }\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C\"\
-    \n\n#include <iostream>\n#include <vector>\n#include <stack>\nusing namespace\
-    \ std;\n#include \"../../lib/geometory/KdTree.cpp\"\n\nint main(void){\n    int\
-    \ N; \n    scanf(\"%d\",&N);\n    vector<pair<int,int>> points(N);\n    for(int\
-    \ i=0;i<N;++i) {\n        int x,y;\n        scanf(\"%d%d\",&x,&y);\n        points[i]={x,y};\n\
-    \    }\n    KdTree<int> kdtree(points);\n    int Q;\n    scanf(\"%d\",&Q);\n \
-    \   while(Q--) {\n        int x1,x2,y1,y2;\n        scanf(\"%d%d%d%d\",&x1,&x2,&y1,&y2);\n\
-    \        auto v = kdtree.points_in_range(x1,x2,y1,y2);\n        for(auto& e:v)\
-    \ cout << e.idx << \"\\n\";\n        cout << \"\\n\";\n    }\n    return 0;\n}"
+    \n\n#include <iostream>\n#include <vector>\n#include <stack>\n#include <algorithm>\n\
+    using namespace std;\n#include \"../../lib/geometory/KdTree.cpp\"\n\nint main(void){\n\
+    \    int N; \n    scanf(\"%d\",&N);\n    vector<pair<int,int>> points(N);\n  \
+    \  for(int i=0;i<N;++i) {\n        int x,y;\n        scanf(\"%d%d\",&x,&y);\n\
+    \        points[i]={x,y};\n    }\n    KdTree<int> kdtree(points);\n    int Q;\n\
+    \    scanf(\"%d\",&Q);\n    while(Q--) {\n        int x1,x2,y1,y2;\n        scanf(\"\
+    %d%d%d%d\",&x1,&x2,&y1,&y2);\n        auto v = kdtree.points_in_range(x1,x2,y1,y2);\n\
+    \        for(auto& e:v) cout << e.idx << \"\\n\";\n        cout << \"\\n\";\n\
+    \    }\n    return 0;\n}"
   dependsOn:
   - lib/geometory/KdTree.cpp
   isVerificationFile: true
   path: test/geometory/KdTree.test.cpp
   requiredBy: []
-  timestamp: '2020-10-26 04:31:11+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-10-26 04:42:25+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/geometory/KdTree.test.cpp
 layout: document

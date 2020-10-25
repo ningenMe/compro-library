@@ -15,7 +15,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/geometory/Distance.cpp
       title: "Distance - \u8DDD\u96E2"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/geometory/KdTree.cpp
       title: "KdTree - 2\u6B21\u5143\u9802\u70B9\u5206\u985E\u6728"
     - icon: ':heavy_check_mark:'
@@ -357,7 +357,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometory/Distance-line.test.cpp
       title: test/geometory/Distance-line.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/geometory/KdTree.test.cpp
       title: test/geometory/KdTree.test.cpp
     - icon: ':heavy_check_mark:'
