@@ -1,6 +1,6 @@
 /*
  * @title LevenshteinDistance - 編集距離
- * @docs md/util/LevenshteinDistance.md
+ * @docs md/string/LevenshteinDistance.md
  */
 int LevenshteinDistance(string S, string T,char dummy='#') {
     int N = S.size();
