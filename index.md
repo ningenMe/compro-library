@@ -15,6 +15,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/geometory/Distance.cpp
       title: "Distance - \u8DDD\u96E2"
+    - icon: ':x:'
+      path: lib/geometory/KdTree.cpp
+      title: "KdTree - 2\u6B21\u5143\u9802\u70B9\u5206\u985E\u6728"
     - icon: ':heavy_check_mark:'
       path: lib/geometory/RectangleWeight.cpp
       title: "RectangleWeight - \u91CD\u307F\u3064\u304D\u77E9\u5F62"
@@ -354,6 +357,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometory/Distance-line.test.cpp
       title: test/geometory/Distance-line.test.cpp
+    - icon: ':x:'
+      path: test/geometory/KdTree.test.cpp
+      title: test/geometory/KdTree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/geometory/RectangleWeight.test.cpp
       title: test/geometory/RectangleWeight.test.cpp
