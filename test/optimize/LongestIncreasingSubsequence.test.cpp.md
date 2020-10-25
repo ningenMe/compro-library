@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/optimize/LongestIncreasingSubsequence.cpp
-    title: LongestIncreasingSubsequence
+    title: LongestIncreasingSubsequence - LIS
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -16,7 +16,7 @@ data:
   bundledCode: "#line 1 \"test/optimize/LongestIncreasingSubsequence.test.cpp\"\n\
     #define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_D\"\
     \n\n#include <vector>\n#include <iostream>\nusing namespace std;\n#line 1 \"lib/optimize/LongestIncreasingSubsequence.cpp\"\
-    \n/*\n * @title LongestIncreasingSubsequence\n * @docs md/optimize/LongestIncreasingSubsequence.md\n\
+    \n/*\n * @title LongestIncreasingSubsequence - LIS\n * @docs md/optimize/LongestIncreasingSubsequence.md\n\
     \ */\ntemplate<class T> inline static int LongestIncreasingSubsequence(const vector<T>\
     \ & ar, T inf=3e18) {\n\tvector<T> dp(ar.size(), inf);\n\tfor (int i = 0; i <\
     \ ar.size(); ++i) *lower_bound(dp.begin(),dp.end(), ar[i]) = ar[i];\n\treturn\
@@ -36,7 +36,7 @@ data:
   isVerificationFile: true
   path: test/optimize/LongestIncreasingSubsequence.test.cpp
   requiredBy: []
-  timestamp: '2020-10-25 16:21:15+09:00'
+  timestamp: '2020-10-25 16:36:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/optimize/LongestIncreasingSubsequence.test.cpp

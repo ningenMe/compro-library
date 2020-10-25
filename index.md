@@ -86,7 +86,10 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: lib/optimize/LongestIncreasingSubsequence.cpp
-      title: LongestIncreasingSubsequence
+      title: LongestIncreasingSubsequence - LIS
+    - icon: ':x:'
+      path: lib/optimize/MaximumRectangle.cpp
+      title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
   - name: lib/segment
     pages:
     - icon: ':heavy_check_mark:'
@@ -197,9 +200,6 @@ data:
     - icon: ':warning:'
       path: non-verified/MaximumSubarray.cpp
       title: non-verified/MaximumSubarray.cpp
-    - icon: ':warning:'
-      path: non-verified/Maximum_Rectangle.cpp
-      title: non-verified/Maximum_Rectangle.cpp
     - icon: ':warning:'
       path: non-verified/Maximum_Segment_Sum.cpp
       title: non-verified/Maximum_Segment_Sum.cpp
@@ -470,6 +470,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/optimize/LongestIncreasingSubsequence.test.cpp
       title: test/optimize/LongestIncreasingSubsequence.test.cpp
+    - icon: ':x:'
+      path: test/optimize/MaximumRectangle.test.cpp
+      title: test/optimize/MaximumRectangle.test.cpp
   - name: test/segment
     pages:
     - icon: ':heavy_check_mark:'
