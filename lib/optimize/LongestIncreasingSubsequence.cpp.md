@@ -4,37 +4,37 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/util/LongestIncreasingSubsequence.test.cpp
-    title: test/util/LongestIncreasingSubsequence.test.cpp
+    path: test/optimize/LongestIncreasingSubsequence.test.cpp
+    title: test/optimize/LongestIncreasingSubsequence.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/util/LongestIncreasingSubsequence.md
+    _deprecated_at_docs: md/optimize/LongestIncreasingSubsequence.md
     document_title: LongestIncreasingSubsequence
     links: []
-  bundledCode: "#line 1 \"lib/util/LongestIncreasingSubsequence.cpp\"\n/*\n * @title\
-    \ LongestIncreasingSubsequence\n * @docs md/util/LongestIncreasingSubsequence.md\n\
+  bundledCode: "#line 1 \"lib/optimize/LongestIncreasingSubsequence.cpp\"\n/*\n *\
+    \ @title LongestIncreasingSubsequence\n * @docs md/optimize/LongestIncreasingSubsequence.md\n\
     \ */\ntemplate<class T> inline static int LongestIncreasingSubsequence(const vector<T>\
     \ & ar, T inf=3e18) {\n\tvector<T> dp(ar.size(), inf);\n\tfor (int i = 0; i <\
     \ ar.size(); ++i) *lower_bound(dp.begin(),dp.end(), ar[i]) = ar[i];\n\treturn\
     \ distance(dp.begin(), lower_bound(dp.begin(), dp.end(), inf));\n}\n"
-  code: "/*\n * @title LongestIncreasingSubsequence\n * @docs md/util/LongestIncreasingSubsequence.md\n\
+  code: "/*\n * @title LongestIncreasingSubsequence\n * @docs md/optimize/LongestIncreasingSubsequence.md\n\
     \ */\ntemplate<class T> inline static int LongestIncreasingSubsequence(const vector<T>\
     \ & ar, T inf=3e18) {\n\tvector<T> dp(ar.size(), inf);\n\tfor (int i = 0; i <\
     \ ar.size(); ++i) *lower_bound(dp.begin(),dp.end(), ar[i]) = ar[i];\n\treturn\
     \ distance(dp.begin(), lower_bound(dp.begin(), dp.end(), inf));\n}\n"
   dependsOn: []
   isVerificationFile: false
-  path: lib/util/LongestIncreasingSubsequence.cpp
+  path: lib/optimize/LongestIncreasingSubsequence.cpp
   requiredBy: []
-  timestamp: '2020-10-25 05:50:34+09:00'
+  timestamp: '2020-10-25 16:21:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/util/LongestIncreasingSubsequence.test.cpp
-documentation_of: lib/util/LongestIncreasingSubsequence.cpp
+  - test/optimize/LongestIncreasingSubsequence.test.cpp
+documentation_of: lib/optimize/LongestIncreasingSubsequence.cpp
 layout: document
 redirect_from:
-- /library/lib/util/LongestIncreasingSubsequence.cpp
-- /library/lib/util/LongestIncreasingSubsequence.cpp.html
+- /library/lib/optimize/LongestIncreasingSubsequence.cpp
+- /library/lib/optimize/LongestIncreasingSubsequence.cpp.html
 title: LongestIncreasingSubsequence
 ---

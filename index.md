@@ -82,6 +82,11 @@ data:
       path: lib/math/Prime.cpp
       title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\
         \u30FC\u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A"
+  - name: lib/optimize
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/optimize/LongestIncreasingSubsequence.cpp
+      title: LongestIncreasingSubsequence
   - name: lib/segment
     pages:
     - icon: ':heavy_check_mark:'
@@ -133,9 +138,6 @@ data:
       title: Zalgorithm
   - name: lib/util
     pages:
-    - icon: ':heavy_check_mark:'
-      path: lib/util/LongestIncreasingSubsequence.cpp
-      title: LongestIncreasingSubsequence
     - icon: ':heavy_check_mark:'
       path: lib/util/ModInt.cpp
       title: ModInt
@@ -463,6 +465,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Prime-rho.test.cpp
       title: test/math/Prime-rho.test.cpp
+  - name: test/optimize
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/optimize/LongestIncreasingSubsequence.test.cpp
+      title: test/optimize/LongestIncreasingSubsequence.test.cpp
   - name: test/segment
     pages:
     - icon: ':heavy_check_mark:'
@@ -541,9 +548,6 @@ data:
       title: test/string/Zalgorithm.test.cpp
   - name: test/util
     pages:
-    - icon: ':heavy_check_mark:'
-      path: test/util/LongestIncreasingSubsequence.test.cpp
-      title: test/util/LongestIncreasingSubsequence.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/util/ModInt.test.cpp
       title: test/util/ModInt.test.cpp
