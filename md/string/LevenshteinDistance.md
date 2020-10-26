@@ -5,3 +5,4 @@
 ### メソッド
 - int LevenshteinDistance(string S, string T,char dummy='#')
   - dummyはS,Tに含まれない文字列が良い。
+  - SのサイズをN,TのサイズをMとして $O(NM)$

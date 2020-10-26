@@ -57,3 +57,4 @@ title: "LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2"
 ### メソッド
 - int LevenshteinDistance(string S, string T,char dummy='#')
   - dummyはS,Tに含まれない文字列が良い。
+  - SのサイズをN,TのサイズをMとして $O(NM)$

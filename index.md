@@ -140,6 +140,9 @@ data:
       path: lib/string/LevenshteinDistance.cpp
       title: "LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2"
     - icon: ':heavy_check_mark:'
+      path: lib/string/LongestCommonSubsequence.cpp
+      title: LongestCommonSubsequence - LCS
+    - icon: ':heavy_check_mark:'
       path: lib/string/Zalgorithm.cpp
       title: Zalgorithm
   - name: lib/util
@@ -555,6 +558,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/string/LevenshteinDistance-2.test.cpp
       title: test/string/LevenshteinDistance-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/string/LongestCommonSubsequence.test.cpp
+      title: test/string/LongestCommonSubsequence.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/string/Zalgorithm.test.cpp
       title: test/string/Zalgorithm.test.cpp
