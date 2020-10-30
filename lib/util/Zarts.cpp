@@ -7,7 +7,7 @@ template<class T> class Zarts{
     map<T,int> key;
     size_t sz;
 public:
-    vector<T> compressed;
+    vector<int> compressed;
     Zarts(const vector<T> & ar, int light_flag = 0, T pre=-1) : compressed(ar.size()) {
         if(!light_flag) {
             for (auto &e : ar) key[e];
