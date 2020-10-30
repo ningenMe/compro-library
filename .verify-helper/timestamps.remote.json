@@ -67,6 +67,7 @@
 "test/segment/Swag.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/string/LevenshteinDistance-1.test.cpp": "2020-10-25 16:15:38 +0900",
 "test/string/LevenshteinDistance-2.test.cpp": "2020-10-25 16:15:38 +0900",
+"test/string/LongestCommonSubsequence.test.cpp": "2020-10-27 04:08:47 +0900",
 "test/string/Zalgorithm.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/util/ModInt.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/util/NBase.test.cpp": "2020-09-26 17:01:19 +0900",
