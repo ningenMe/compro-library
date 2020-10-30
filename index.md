@@ -159,6 +159,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/util/RuntimeModInt.cpp
       title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
+    - icon: ':heavy_check_mark:'
+      path: lib/util/Zarts.cpp
+      title: "Zarts - \u5EA7\u6A19\u5727\u7E2E"
   - name: non-verified
     pages:
     - icon: ':warning:'
@@ -194,12 +197,6 @@ data:
     - icon: ':warning:'
       path: non-verified/Line_Intersection_Judge.cpp
       title: non-verified/Line_Intersection_Judge.cpp
-    - icon: ':warning:'
-      path: non-verified/Longest_Common_Subsequence.cpp
-      title: non-verified/Longest_Common_Subsequence.cpp
-    - icon: ':warning:'
-      path: non-verified/Longest_Common_Subsequence_Size.cpp
-      title: non-verified/Longest_Common_Subsequence_Size.cpp
     - icon: ':warning:'
       path: non-verified/LowLink.cpp
       title: non-verified/LowLink.cpp
@@ -251,9 +248,6 @@ data:
     - icon: ':warning:'
       path: non-verified/XorShift.cpp
       title: non-verified/XorShift.cpp
-    - icon: ':warning:'
-      path: non-verified/Zarts.cpp
-      title: non-verified/Zarts.cpp
   - name: old
     pages:
     - icon: ':warning:'
@@ -578,5 +572,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/util/RuntimeModInt.test.cpp
       title: test/util/RuntimeModInt.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/util/Zarts.test.cpp
+      title: test/util/Zarts.test.cpp
 layout: toppage
 ---
