@@ -14,7 +14,7 @@ data:
     links: []
   bundledCode: "#line 1 \"lib/util/Zarts.cpp\"\n/*\n * @title Zarts - \u5EA7\u6A19\
     \u5727\u7E2E\n * @docs md/util/Zarts.md\n */\ntemplate<class T> class Zarts{\n\
-    \    vector<T> value;\n    map<T,int> key;\n    size_t sz;\npublic:\n    vector<T>\
+    \    vector<T> value;\n    map<T,int> key;\n    size_t sz;\npublic:\n    vector<int>\
     \ compressed;\n    Zarts(const vector<T> & ar, int light_flag = 0, T pre=-1) :\
     \ compressed(ar.size()) {\n        if(!light_flag) {\n            for (auto &e\
     \ : ar) key[e];\n            int cnt=0;\n            for (auto &e : key) e.second\
@@ -31,7 +31,7 @@ data:
     \ size() {\n        return sz;\n    }\n};\n"
   code: "/*\n * @title Zarts - \u5EA7\u6A19\u5727\u7E2E\n * @docs md/util/Zarts.md\n\
     \ */\ntemplate<class T> class Zarts{\n    vector<T> value;\n    map<T,int> key;\n\
-    \    size_t sz;\npublic:\n    vector<T> compressed;\n    Zarts(const vector<T>\
+    \    size_t sz;\npublic:\n    vector<int> compressed;\n    Zarts(const vector<T>\
     \ & ar, int light_flag = 0, T pre=-1) : compressed(ar.size()) {\n        if(!light_flag)\
     \ {\n            for (auto &e : ar) key[e];\n            int cnt=0;\n        \
     \    for (auto &e : key) e.second = cnt++;\n            for (int i=0;i<ar.size();++i)\
@@ -50,7 +50,7 @@ data:
   isVerificationFile: false
   path: lib/util/Zarts.cpp
   requiredBy: []
-  timestamp: '2020-10-30 09:48:46+09:00'
+  timestamp: '2020-10-30 09:51:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/util/Zarts.test.cpp
