@@ -55,8 +55,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/util/RangeIndex.test.cpp
-  - test/graph/StronglyConnectedComponents-1.test.cpp
   - test/graph/UnionFindTree.test.cpp
+  - test/graph/StronglyConnectedComponents-1.test.cpp
 documentation_of: lib/graph/UnionFindTree.cpp
 layout: document
 redirect_from:

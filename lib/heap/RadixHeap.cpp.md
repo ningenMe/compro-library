@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/graph/MinimumDirectedClosedCircuit.test.cpp
+    title: test/graph/MinimumDirectedClosedCircuit.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/heap/RadixHeap.test.cpp
     title: test/heap/RadixHeap.test.cpp
   _pathExtension: cpp
@@ -50,6 +53,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/heap/RadixHeap.test.cpp
+  - test/graph/MinimumDirectedClosedCircuit.test.cpp
 documentation_of: lib/heap/RadixHeap.cpp
 layout: document
 redirect_from:

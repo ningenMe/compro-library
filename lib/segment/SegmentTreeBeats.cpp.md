@@ -238,8 +238,8 @@ data:
   timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment/SegmentTreeBeats-1.test.cpp
   - test/segment/SegmentTreeBeats-2.test.cpp
+  - test/segment/SegmentTreeBeats-1.test.cpp
 documentation_of: lib/segment/SegmentTreeBeats.cpp
 layout: document
 redirect_from:

@@ -29,15 +29,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/Dinic.cpp
       title: "Dinic - Dinic\u30D5\u30ED\u30FC"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
+      path: lib/graph/Graph.cpp
+      title: Graph
+    - icon: ':heavy_check_mark:'
       path: lib/graph/MinimumDirectedClosedCircuit.cpp
-      title: "MinimumDirectedClosedCircuit - \u6700\u5C0F\u6709\u52B9\u9589\u8DEF\u691C\
-        \u51FA"
+      title: "MinimumDirectedClosedCircuit - \u6709\u5411\u30B0\u30E9\u30D5\u306E\u6700\
+        \u5C0F\u9589\u8DEF\u691C\u51FA"
     - icon: ':heavy_check_mark:'
       path: lib/graph/PotentializedUnionFindTree.cpp
       title: "PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\u4ED8\
         \u304DUnionFind\u6728"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/graph/StronglyConnectedComponents.cpp
       title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
     - icon: ':heavy_check_mark:'
@@ -371,7 +374,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/Dinic.test.cpp
       title: test/graph/Dinic.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/MinimumDirectedClosedCircuit.test.cpp
       title: test/graph/MinimumDirectedClosedCircuit.test.cpp
     - icon: ':heavy_check_mark:'

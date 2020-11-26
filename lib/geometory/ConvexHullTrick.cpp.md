@@ -118,8 +118,8 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/geometory/ConvexHullTrick-no-monotone.test.cpp
-  - test/geometory/ConvexHullTrick-min.test.cpp
   - test/geometory/ConvexHullTrick-max.test.cpp
+  - test/geometory/ConvexHullTrick-min.test.cpp
   - test/segment/ConvexHullTrickSegmentTree.test.cpp
 documentation_of: lib/geometory/ConvexHullTrick.cpp
 layout: document
