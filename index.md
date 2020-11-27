@@ -36,6 +36,10 @@ data:
       path: lib/graph/MinimumDirectedClosedCircuit.cpp
       title: "MinimumDirectedClosedCircuit - \u6709\u5411\u30B0\u30E9\u30D5\u306E\u6700\
         \u5C0F\u9589\u8DEF\u691C\u51FA"
+    - icon: ':warning:'
+      path: lib/graph/MinimumUndirectedClosedCircuit.cpp
+      title: "MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\u306E\
+        \u6700\u5C0F\u9589\u8DEF\u691C\u51FA"
     - icon: ':heavy_check_mark:'
       path: lib/graph/PotentializedUnionFindTree.cpp
       title: "PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\u4ED8\
@@ -209,15 +213,6 @@ data:
     - icon: ':warning:'
       path: non-verified/Maximum_Segment_Sum.cpp
       title: non-verified/Maximum_Segment_Sum.cpp
-    - icon: ':warning:'
-      path: non-verified/Median.cpp
-      title: non-verified/Median.cpp
-    - icon: ':warning:'
-      path: non-verified/MinimumDirectedClosedCircuit.cpp
-      title: non-verified/MinimumDirectedClosedCircuit.cpp
-    - icon: ':warning:'
-      path: non-verified/MinimumUndirectedClosedCircuit.cpp
-      title: non-verified/MinimumUndirectedClosedCircuit.cpp
     - icon: ':warning:'
       path: non-verified/Mo.cpp
       title: non-verified/Mo.cpp
