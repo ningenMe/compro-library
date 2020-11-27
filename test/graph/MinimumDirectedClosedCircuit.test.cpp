@@ -24,8 +24,9 @@ int main(){
     int ans = 0;
     int inf = 1234567;
     for(int i = 0; i < N; ++i){
-        auto tmp = mdcc.solve(i,1);
-        if(!tmp.second.empty()) ans = 1;
+        mdcc.solve(i);
+        auto tmp = mdcc.restore();
+        if(!tmp.empty()) ans = 1;
     }
     cout << ans << endl;
 	return 0;
