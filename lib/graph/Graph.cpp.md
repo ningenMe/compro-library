@@ -3,32 +3,54 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/graph/MinimumDirectedClosedCircuit.test.cpp
     title: test/graph/MinimumDirectedClosedCircuit.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
+    title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/graph/Graph.md
     document_title: Graph
     links: []
   bundledCode: "#line 1 \"lib/graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
-    \ */\ntemplate<class T> class Graph{\nprivate:\n    const size_t N;\npublic:\n\
+    \ */\ntemplate<class T> class Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n\
     \    vector<vector<pair<size_t,T>>> edges;\n    Graph(const size_t N):N(N), edges(N)\
-    \ {}\n    void make_edge(size_t from, size_t to, T w) {\n        edges[from].emplace_back(to,w);\n\
-    \    }\n    size_t size(){return N;}\n};\n"
+    \ {}\n    Graph(const size_t H, const size_t W):H(H),W(W),N(H*W), edges(H*W) {}\n\
+    \    inline void make_edge(size_t from, size_t to, T w) {\n        edges[from].emplace_back(to,w);\n\
+    \    }\n    //{from_y,from_x} -> {to_y,to_x} \n    inline void make_edge(pair<size_t,size_t>\
+    \ from, pair<size_t,size_t> to, T w) {\n        make_edge(from.first*W+from.second,to.first*W+to.second,w);\n\
+    \    }\n    inline void make_bidirectional_edge(size_t from, size_t to, T w) {\n\
+    \        make_edge(from,to,w);\n        make_edge(to,from,w);\n    }\n    inline\
+    \ void make_bidirectional_edge(pair<size_t,size_t> from, pair<size_t,size_t> to,\
+    \ T w) {\n        make_edge(from.first*W+from.second,to.first*W+to.second,w);\n\
+    \        make_edge(to.first*W+to.second,from.first*W+from.second,w);\n    }\n\
+    \    inline size_t size(){return N;}\n    inline size_t idx(pair<size_t,size_t>\
+    \ yx){return yx.first*W+yx.second;}\n};\n"
   code: "/*\n * @title Graph\n * @docs md/graph/Graph.md\n */\ntemplate<class T> class\
-    \ Graph{\nprivate:\n    const size_t N;\npublic:\n    vector<vector<pair<size_t,T>>>\
-    \ edges;\n    Graph(const size_t N):N(N), edges(N) {}\n    void make_edge(size_t\
+    \ Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n    vector<vector<pair<size_t,T>>>\
+    \ edges;\n    Graph(const size_t N):N(N), edges(N) {}\n    Graph(const size_t\
+    \ H, const size_t W):H(H),W(W),N(H*W), edges(H*W) {}\n    inline void make_edge(size_t\
     \ from, size_t to, T w) {\n        edges[from].emplace_back(to,w);\n    }\n  \
-    \  size_t size(){return N;}\n};"
+    \  //{from_y,from_x} -> {to_y,to_x} \n    inline void make_edge(pair<size_t,size_t>\
+    \ from, pair<size_t,size_t> to, T w) {\n        make_edge(from.first*W+from.second,to.first*W+to.second,w);\n\
+    \    }\n    inline void make_bidirectional_edge(size_t from, size_t to, T w) {\n\
+    \        make_edge(from,to,w);\n        make_edge(to,from,w);\n    }\n    inline\
+    \ void make_bidirectional_edge(pair<size_t,size_t> from, pair<size_t,size_t> to,\
+    \ T w) {\n        make_edge(from.first*W+from.second,to.first*W+to.second,w);\n\
+    \        make_edge(to.first*W+to.second,from.first*W+from.second,w);\n    }\n\
+    \    inline size_t size(){return N;}\n    inline size_t idx(pair<size_t,size_t>\
+    \ yx){return yx.first*W+yx.second;}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: lib/graph/Graph.cpp
   requiredBy: []
-  timestamp: '2020-11-27 07:59:54+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-11-27 17:11:12+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/graph/MinimumUndirectedClosedCircuit.test.cpp
   - test/graph/MinimumDirectedClosedCircuit.test.cpp
 documentation_of: lib/graph/Graph.cpp
 layout: document

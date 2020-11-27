@@ -29,14 +29,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/Dinic.cpp
       title: "Dinic - Dinic\u30D5\u30ED\u30FC"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/graph/Graph.cpp
       title: Graph
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/graph/MinimumDirectedClosedCircuit.cpp
       title: "MinimumDirectedClosedCircuit - \u6709\u5411\u30B0\u30E9\u30D5\u306E\u6700\
         \u5C0F\u9589\u8DEF\u691C\u51FA"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/graph/MinimumUndirectedClosedCircuit.cpp
       title: "MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\u306E\
         \u6700\u5C0F\u9589\u8DEF\u691C\u51FA"
@@ -55,7 +55,7 @@ data:
       title: "UnionFindTree - Union Find \u6728"
   - name: lib/heap
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/heap/RadixHeap.cpp
       title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
     - icon: ':heavy_check_mark:'
@@ -369,9 +369,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/Dinic.test.cpp
       title: test/graph/Dinic.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/graph/MinimumDirectedClosedCircuit.test.cpp
       title: test/graph/MinimumDirectedClosedCircuit.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
+      title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/PotentializedUnionFindTree.test.cpp
       title: test/graph/PotentializedUnionFindTree.test.cpp

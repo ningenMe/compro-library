@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
+    title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/graph/MinimumUndirectedClosedCircuit.md
     document_title: "MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\
@@ -120,8 +123,9 @@ data:
   path: lib/graph/MinimumUndirectedClosedCircuit.cpp
   requiredBy: []
   timestamp: '2020-11-27 16:35:52+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/graph/MinimumUndirectedClosedCircuit.test.cpp
 documentation_of: lib/graph/MinimumUndirectedClosedCircuit.cpp
 layout: document
 redirect_from:
