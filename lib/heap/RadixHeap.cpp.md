@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/graph/MinimumDirectedClosedCircuit.test.cpp
     title: test/graph/MinimumDirectedClosedCircuit.test.cpp
   - icon: ':heavy_check_mark:'
@@ -13,7 +13,7 @@ data:
     path: test/heap/RadixHeap.test.cpp
     title: test/heap/RadixHeap.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/heap/RadixHeap.md
     document_title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
@@ -53,7 +53,7 @@ data:
   path: lib/heap/RadixHeap.cpp
   requiredBy: []
   timestamp: '2020-09-26 16:29:44+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/heap/RadixHeap.test.cpp
   - test/graph/MinimumUndirectedClosedCircuit.test.cpp

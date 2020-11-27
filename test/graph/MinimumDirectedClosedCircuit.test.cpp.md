@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/graph/Graph.cpp
     title: Graph
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/graph/MinimumDirectedClosedCircuit.cpp
     title: "MinimumDirectedClosedCircuit - \u6709\u5411\u30B0\u30E9\u30D5\u306E\u6700\
       \u5C0F\u9589\u8DEF\u691C\u51FA"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/heap/RadixHeap.cpp
     title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A
@@ -26,9 +26,9 @@ data:
     #include <set>\n#include <queue>\n#include <map>\n\nusing namespace std;\n#line\
     \ 1 \"lib/graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
     \ */\ntemplate<class T> class Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n\
-    \    vector<vector<pair<size_t,T>>> edges;\n    Graph(const size_t N):N(N), edges(N)\
-    \ {}\n    Graph(const size_t H, const size_t W):H(H),W(W),N(H*W), edges(H*W) {}\n\
-    \    inline void make_edge(size_t from, size_t to, T w) {\n        edges[from].emplace_back(to,w);\n\
+    \    vector<vector<pair<size_t,T>>> edges;\n    Graph(const size_t N):H(-1),W(-1),N(N),\
+    \ edges(N) {}\n    Graph(const size_t H, const size_t W):H(H),W(W),N(H*W), edges(H*W)\
+    \ {}\n    inline void make_edge(size_t from, size_t to, T w) {\n        edges[from].emplace_back(to,w);\n\
     \    }\n    //{from_y,from_x} -> {to_y,to_x} \n    inline void make_edge(pair<size_t,size_t>\
     \ from, pair<size_t,size_t> to, T w) {\n        make_edge(from.first*W+from.second,to.first*W+to.second,w);\n\
     \    }\n    inline void make_bidirectional_edge(size_t from, size_t to, T w) {\n\
@@ -125,8 +125,8 @@ data:
   isVerificationFile: true
   path: test/graph/MinimumDirectedClosedCircuit.test.cpp
   requiredBy: []
-  timestamp: '2020-11-27 17:11:12+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-11-27 17:19:55+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/MinimumDirectedClosedCircuit.test.cpp
 layout: document
