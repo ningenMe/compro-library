@@ -7,7 +7,7 @@ private:
     const size_t N,H,W;
 public:
     vector<vector<pair<size_t,T>>> edges;
-    Graph(const size_t N):N(N), edges(N) {}
+    Graph(const size_t N):H(-1),W(-1),N(N), edges(N) {}
     Graph(const size_t H, const size_t W):H(H),W(W),N(H*W), edges(H*W) {}
     inline void make_edge(size_t from, size_t to, T w) {
         edges[from].emplace_back(to,w);
