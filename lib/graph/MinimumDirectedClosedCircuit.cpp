@@ -6,7 +6,8 @@ template<class T> class MinimumDirectedClosedCircuit {
     //Tは整数型のみ
     static_assert(std::is_integral<T>::value, "template parameter T must be integral type");
     Graph<T>& graph;
-    vector<int> dist,parent;
+    vector<T> dist;
+    vector<int> parent;
     size_t N;
     bool is_same_weighted;
     T inf;
