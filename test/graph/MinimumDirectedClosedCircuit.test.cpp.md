@@ -57,18 +57,18 @@ data:
     \u6700\u5C0F\u9589\u8DEF\u691C\u51FA\n * @docs md/graph/MinimumDirectedClosedCircuit.md\n\
     \ */\ntemplate<class T> class MinimumDirectedClosedCircuit {\n    //T\u306F\u6574\
     \u6570\u578B\u306E\u307F\n    static_assert(std::is_integral<T>::value, \"template\
-    \ parameter T must be integral type\");\n    Graph<T>& graph;\n    vector<int>\
-    \ dist,parent;\n    size_t N;\n    bool is_same_weighted;\n    T inf;\n    int\
-    \ last,root;\nprivate:\n    T solve_same_weighted() {\n        T mini = inf;\n\
-    \        last = -1;\n        queue<int> q;\n        q.push(root);\n        dist[root]\
-    \ = 0;\n        while (q.size()) {\n            size_t curr = q.front(); q.pop();\n\
-    \            for(auto& edge:graph.edges[curr]){\n                size_t next =\
-    \ edge.first;\n                T w  = edge.second;\n                \n       \
-    \         //\u6839\u306B\u8FD4\u3063\u3066\u6765\u3066\u308B\u306A\u3089\u9589\
-    \u8DEF\n                if(next == root && mini > dist[curr]+w) {\n          \
-    \          mini = dist[curr]+w;\n                    last = curr;\n          \
-    \      }\n                //\u305D\u3046\u3058\u3083\u306A\u3044\u306A\u3089\u63A2\
-    \u7D22\u6728\u3092\u5E83\u3052\u308B\n                else if(dist[next]==-1)\
+    \ parameter T must be integral type\");\n    Graph<T>& graph;\n    vector<T> dist;\n\
+    \    vector<int> parent;\n    size_t N;\n    bool is_same_weighted;\n    T inf;\n\
+    \    int last,root;\nprivate:\n    T solve_same_weighted() {\n        T mini =\
+    \ inf;\n        last = -1;\n        queue<int> q;\n        q.push(root);\n   \
+    \     dist[root] = 0;\n        while (q.size()) {\n            size_t curr = q.front();\
+    \ q.pop();\n            for(auto& edge:graph.edges[curr]){\n                size_t\
+    \ next = edge.first;\n                T w  = edge.second;\n                \n\
+    \                //\u6839\u306B\u8FD4\u3063\u3066\u6765\u3066\u308B\u306A\u3089\
+    \u9589\u8DEF\n                if(next == root && mini > dist[curr]+w) {\n    \
+    \                mini = dist[curr]+w;\n                    last = curr;\n    \
+    \            }\n                //\u305D\u3046\u3058\u3083\u306A\u3044\u306A\u3089\
+    \u63A2\u7D22\u6728\u3092\u5E83\u3052\u308B\n                else if(dist[next]==-1)\
     \ {\n                    dist[next]   = dist[curr] + w;\n                    parent[next]\
     \ = curr;\n                    q.push(next);\n                }\n            }\n\
     \        }\n        return mini;\n    }\n    T solve_diff_weighted() {\n     \
@@ -125,7 +125,7 @@ data:
   isVerificationFile: true
   path: test/graph/MinimumDirectedClosedCircuit.test.cpp
   requiredBy: []
-  timestamp: '2020-11-27 17:19:55+09:00'
+  timestamp: '2020-12-01 04:18:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/MinimumDirectedClosedCircuit.test.cpp
