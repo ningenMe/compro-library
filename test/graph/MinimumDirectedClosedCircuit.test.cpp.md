@@ -62,16 +62,17 @@ data:
     \n    T solve_impl() {\n        T mini = inf;\n        last = -1;\n        RadixHeap<int>\
     \ q(0);\n        q.push({0,root});\n        dist[root] = 0;\n        while (q.size())\
     \ {\n            auto top =  q.pop();\n            size_t curr = top.second;\n\
-    \            for(auto& edge:graph.edges[curr]){\n                size_t next =\
-    \ edge.first;\n                T w  = edge.second;                \n         \
-    \       if(dist[next] > dist[curr]+w) {\n                    dist[next]   = dist[curr]\
-    \ + w;\n                    parent[next] = curr;\n                    q.push({dist[next],next});\n\
-    \                }\n                //\u6839\u306B\u8FD4\u3063\u3066\u6765\u3066\
-    \u308B\u306A\u3089\u9589\u8DEF\u5019\u88DC\n                if(next == root &&\
-    \ mini > dist[curr]+w) {\n                    mini = dist[curr]+w;\n         \
-    \           last = curr;\n                }                \n            }\n \
-    \       }\n        return mini;\n    }\npublic:\n    MinimumDirectedClosedCircuit(Graph<T>&\
-    \ graph, T inf)\n     : graph(graph),N(graph.size()),dist(graph.size()),parent(graph.size()),inf(inf)\
+    \            if(top.first > dist[curr]) continue;\n            for(auto& edge:graph.edges[curr]){\n\
+    \                size_t next = edge.first;\n                T w  = edge.second;\
+    \                \n                if(dist[next] > dist[curr]+w) {\n         \
+    \           dist[next]   = dist[curr] + w;\n                    parent[next] =\
+    \ curr;\n                    q.push({dist[next],next});\n                }\n \
+    \               //\u6839\u306B\u8FD4\u3063\u3066\u6765\u3066\u308B\u306A\u3089\
+    \u9589\u8DEF\u5019\u88DC\n                if(next == root && mini > dist[curr]+w)\
+    \ {\n                    mini = dist[curr]+w;\n                    last = curr;\n\
+    \                }                \n            }\n        }\n        return mini;\n\
+    \    }\npublic:\n    MinimumDirectedClosedCircuit(Graph<T>& graph, T inf)\n  \
+    \   : graph(graph),N(graph.size()),dist(graph.size()),parent(graph.size()),inf(inf)\
     \ {\n    }\n    //root\u3092\u542B\u3080\u6700\u5C0F\u9589\u8DEF\u306E\u96C6\u5408\
     \u3092\u8FD4\u3059 O(NlogN) \u9589\u8DEF\u304C\u306A\u3044\u3068\u304D\u306F\u7A7A\
     \u96C6\u5408\n    inline T solve(size_t rt){\n        root = rt;\n        //\u521D\
@@ -106,7 +107,7 @@ data:
   isVerificationFile: true
   path: test/graph/MinimumDirectedClosedCircuit.test.cpp
   requiredBy: []
-  timestamp: '2020-12-02 19:42:18+09:00'
+  timestamp: '2020-12-02 20:12:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/MinimumDirectedClosedCircuit.test.cpp
