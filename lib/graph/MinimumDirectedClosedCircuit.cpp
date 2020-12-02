@@ -22,6 +22,7 @@ private:
         while (q.size()) {
             auto top =  q.pop();
             size_t curr = top.second;
+            if(top.first > dist[curr]) continue;
             for(auto& edge:graph.edges[curr]){
                 size_t next = edge.first;
                 T w  = edge.second;                
