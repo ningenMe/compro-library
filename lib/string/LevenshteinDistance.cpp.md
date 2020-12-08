@@ -41,8 +41,8 @@ data:
   timestamp: '2020-10-25 16:15:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/string/LevenshteinDistance-1.test.cpp
   - test/string/LevenshteinDistance-2.test.cpp
+  - test/string/LevenshteinDistance-1.test.cpp
 documentation_of: lib/string/LevenshteinDistance.cpp
 layout: document
 redirect_from:

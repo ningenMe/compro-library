@@ -50,8 +50,8 @@ data:
   timestamp: '2020-11-27 17:19:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/graph/MinimumUndirectedClosedCircuit.test.cpp
   - test/graph/MinimumDirectedClosedCircuit.test.cpp
+  - test/graph/MinimumUndirectedClosedCircuit.test.cpp
 documentation_of: lib/graph/Graph.cpp
 layout: document
 redirect_from:

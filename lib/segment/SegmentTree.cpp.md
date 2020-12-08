@@ -175,11 +175,11 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/Tree-hld-path.test.cpp
-  - test/segment/SegmentTree-prefix-binary-search.test.cpp
-  - test/segment/SegmentTree-rsq.test.cpp
   - test/segment/SegmentTree-suffix-binary-search.test.cpp
-  - test/segment/SegmentTree-rcq.test.cpp
+  - test/segment/SegmentTree-prefix-binary-search.test.cpp
   - test/segment/SegmentTree-rmq.test.cpp
+  - test/segment/SegmentTree-rsq.test.cpp
+  - test/segment/SegmentTree-rcq.test.cpp
 documentation_of: lib/segment/SegmentTree.cpp
 layout: document
 redirect_from:

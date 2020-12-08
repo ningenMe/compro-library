@@ -312,10 +312,10 @@ data:
   verifiedWith:
   - test/graph/Tree-diameter.test.cpp
   - test/graph/Tree-rerooting.test.cpp
-  - test/graph/Tree-hld-vertex.test.cpp
-  - test/graph/Tree-eulertour.test.cpp
-  - test/graph/Tree-size.test.cpp
   - test/graph/Tree-hld-path.test.cpp
+  - test/graph/Tree-hld-vertex.test.cpp
+  - test/graph/Tree-size.test.cpp
+  - test/graph/Tree-eulertour.test.cpp
 documentation_of: lib/graph/Tree.cpp
 layout: document
 redirect_from:

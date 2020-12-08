@@ -113,8 +113,8 @@ data:
   timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/geometory/ConvexHullTrickMonotone-max.test.cpp
   - test/geometory/ConvexHullTrickMonotone-min.test.cpp
+  - test/geometory/ConvexHullTrickMonotone-max.test.cpp
 documentation_of: lib/geometory/ConvexHullTrickMonotone.cpp
 layout: document
 redirect_from:

@@ -70,7 +70,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/math/Eratosthenes.cpp
       title: "Eratosthenes - \u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/math/FastFourierTransform.cpp
       title: "FastFourierTransform - \u9AD8\u901F\u30D5\u30FC\u30EA\u30A8\u5909\u63DB"
     - icon: ':heavy_check_mark:'
@@ -427,6 +427,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Eratosthenes.test.cpp
       title: test/math/Eratosthenes.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FastFourierTransform.test.cpp
+      title: test/math/FastFourierTransform.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/math/FloorSum.test.cpp
       title: test/math/FloorSum.test.cpp

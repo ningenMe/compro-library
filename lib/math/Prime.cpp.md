@@ -72,8 +72,8 @@ data:
   timestamp: '2020-09-26 16:29:44+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/math/Prime-miller-rabin.test.cpp
   - test/math/Prime-rho.test.cpp
+  - test/math/Prime-miller-rabin.test.cpp
 documentation_of: lib/math/Prime.cpp
 layout: document
 redirect_from:

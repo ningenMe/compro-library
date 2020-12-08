@@ -55,9 +55,9 @@ data:
   timestamp: '2020-09-26 16:29:44+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/heap/RadixHeap.test.cpp
-  - test/graph/MinimumUndirectedClosedCircuit.test.cpp
   - test/graph/MinimumDirectedClosedCircuit.test.cpp
+  - test/graph/MinimumUndirectedClosedCircuit.test.cpp
+  - test/heap/RadixHeap.test.cpp
 documentation_of: lib/heap/RadixHeap.cpp
 layout: document
 redirect_from:
