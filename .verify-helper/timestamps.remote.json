@@ -30,6 +30,7 @@
 "test/math/CombinationMod-binom.test.cpp": "2020-09-26 16:29:44 +0900",
 "test/math/CombinationMod-factorial.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/math/Eratosthenes.test.cpp": "2020-09-26 16:29:44 +0900",
+"test/math/FastFourierTransform.test.cpp": "2020-12-09 06:18:03 +0900",
 "test/math/FloorSum.test.cpp": "2020-09-26 16:29:44 +0900",
 "test/math/FormalPowerSeries-conv1000000007-1.test.cpp": "2020-10-04 04:28:01 +0900",
 "test/math/FormalPowerSeries-conv1000000007-2.test.cpp": "2020-10-04 04:28:01 +0900",
