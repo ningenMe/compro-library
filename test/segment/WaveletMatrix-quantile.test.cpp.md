@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/segment/BitVector.cpp
     title: BitVector
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/segment/WaveletMatrix.cpp
     title: WaveletMatrix
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: '"https://judge.yosupo.jp/problem/range_kth_smallest'
+    PROBLEM: https://judge.yosupo.jp/problem/range_kth_smallest
     links:
     - https://judge.yosupo.jp/problem/range_kth_smallest
   bundledCode: "#line 1 \"test/segment/WaveletMatrix-quantile.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\n\n#include <vector>\n\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <algorithm>\n#include <numeric>\n\
     using namespace std;\nusing int128  = __int128_t;\nusing int64   = long long;\n\
     using int32   = int;\nusing uint128 = __uint128_t;\nusing uint64  = unsigned long\
@@ -85,7 +85,7 @@ data:
     vector<uint32> A(N);\n    for(int i=0; i<N; ++i) cin >> A[i];\n\tWaveletMatrix<uint32>\
     \ wm(A);\n    while(Q--) {\n        int l,r; uint32 k;\n\t\tcin >> l >> r >> k;\n\
     \t\tcout << wm.quantile(l, r, k) << \"\\n\";\n\t}\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\n\n\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n\
     #include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
     #include <numeric>\nusing namespace std;\nusing int128  = __int128_t;\nusing int64\
     \   = long long;\nusing int32   = int;\nusing uint128 = __uint128_t;\nusing uint64\
@@ -101,8 +101,8 @@ data:
   isVerificationFile: true
   path: test/segment/WaveletMatrix-quantile.test.cpp
   requiredBy: []
-  timestamp: '2021-01-04 03:34:23+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-01-04 03:39:05+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment/WaveletMatrix-quantile.test.cpp
 layout: document
