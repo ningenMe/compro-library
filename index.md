@@ -109,6 +109,9 @@ data:
       path: lib/segment/BinaryTrie.cpp
       title: BinaryTrie
     - icon: ':x:'
+      path: lib/segment/BitVector.cpp
+      title: BitVector
+    - icon: ':x:'
       path: lib/segment/ConvexHullTrickSegmentTree.cpp
       title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\
         \u30F3\u30C8\u6728"
@@ -141,6 +144,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/Swag.cpp
       title: Swag
+    - icon: ':x:'
+      path: lib/segment/WaveletMatrix.cpp
+      title: WaveletMatrix
   - name: lib/string
     pages:
     - icon: ':heavy_check_mark:'
@@ -548,6 +554,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/Swag.test.cpp
       title: test/segment/Swag.test.cpp
+    - icon: ':x:'
+      path: test/segment/WaveletMatrix-quantile.test.cpp
+      title: test/segment/WaveletMatrix-quantile.test.cpp
   - name: test/string
     pages:
     - icon: ':heavy_check_mark:'
