@@ -555,8 +555,11 @@ data:
       path: test/segment/Swag.test.cpp
       title: test/segment/Swag.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/segment/WaveletMatrix-quantile.test.cpp
-      title: test/segment/WaveletMatrix-quantile.test.cpp
+      path: test/segment/WaveletMatrix-quantile-1.test.cpp
+      title: test/segment/WaveletMatrix-quantile-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/WaveletMatrix-quantile-2.test.cpp
+      title: test/segment/WaveletMatrix-quantile-2.test.cpp
   - name: test/string
     pages:
     - icon: ':heavy_check_mark:'

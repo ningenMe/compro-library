@@ -4,8 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/segment/WaveletMatrix-quantile.test.cpp
-    title: test/segment/WaveletMatrix-quantile.test.cpp
+    path: test/segment/WaveletMatrix-quantile-1.test.cpp
+    title: test/segment/WaveletMatrix-quantile-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/segment/WaveletMatrix-quantile-2.test.cpp
+    title: test/segment/WaveletMatrix-quantile-2.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -107,7 +110,8 @@ data:
   timestamp: '2021-01-04 03:42:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment/WaveletMatrix-quantile.test.cpp
+  - test/segment/WaveletMatrix-quantile-1.test.cpp
+  - test/segment/WaveletMatrix-quantile-2.test.cpp
 documentation_of: lib/segment/WaveletMatrix.cpp
 layout: document
 redirect_from:
