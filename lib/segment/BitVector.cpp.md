@@ -17,43 +17,45 @@ data:
     \ size_t BIT_BLOCK_SIZE = 5;\n    inline static constexpr size_t BIT_BLOCK_NUM\
     \  = 1<<BIT_BLOCK_SIZE;\n    inline static constexpr uint32 popcount(uint32 x)\
     \ {return __builtin_popcount(x);}\n    inline static constexpr uint32 popcount(uint64\
-    \ x) {return __builtin_popcountll(x);}\n\n\tvector<uint32> vec, acc;\n    bool\
-    \ is_builded = false;\npublic:\n\tBitVector(uint32 N) {\n        uint32 tmp =\
-    \ (N + BIT_BLOCK_NUM-1) / BIT_BLOCK_NUM;\n\t\tvec.assign(tmp, 0);\n\t\tacc.assign(tmp,\
-    \ 0);\n\t}\n\tvoid build() {\n\t\tfor (size_t i = 0,sum = 0; i < acc.size(); ++i)\
-    \ acc[i] = (sum += popcount(vec[i]) );\n        is_builded = true;\n\t}\n\t//[0,r)\
-    \ count of bit\n\tuint32 rank(uint32 r, const bool bit) const {\n        assert(is_builded);\n\
-    \t\tuint32 bit_r = r >> BIT_BLOCK_SIZE;\n\t\tuint32 sum = (bit_r ? acc[bit_r -\
-    \ 1] : 0) + popcount(vec[bit_r] & ((1U << (r & (BIT_BLOCK_NUM-1))) - 1));\n\t\t\
-    return bit ? sum : r - sum;\n\t}\n    //[l,l+1) = bit\n\tvoid update(uint32 l,\
-    \ const bool bit) {\n\t\tuint32 bit_l = l >> BIT_BLOCK_SIZE;\n\t\tif (bit) vec[bit_l]\
-    \ |=   1U << (l & (BIT_BLOCK_NUM-1));\n\t\telse     vec[bit_l] &= ~(1U << (l &\
-    \ (BIT_BLOCK_NUM-1)));\n\t}\n    //[l,l+1)\n\tbool operator[](uint32 l) const\
-    \ { \n        assert(is_builded);\n        return ((vec[l >> BIT_BLOCK_SIZE] >>\
-    \ (l & (BIT_BLOCK_NUM-1))) & 1); \n    }\n};\n"
+    \ x) {return __builtin_popcountll(x);}\n\n    vector<uint32> vec, acc;\n    bool\
+    \ is_builded = false;\npublic:\n    BitVector(uint32 N) {\n        uint32 tmp\
+    \ = (N + BIT_BLOCK_NUM-1) / BIT_BLOCK_NUM;\n        vec.assign(tmp, 0);\n    \
+    \    acc.assign(tmp, 0);\n    }\n    void build() {\n        for (size_t i = 0,sum\
+    \ = 0; i < acc.size(); ++i) acc[i] = (sum += popcount(vec[i]) );\n        is_builded\
+    \ = true;\n    }\n    //[0,r) count of bit\n    uint32 rank(uint32 r, const bool\
+    \ bit) const {\n        assert(is_builded);\n        uint32 bit_r = r >> BIT_BLOCK_SIZE;\n\
+    \        uint32 sum = (bit_r ? acc[bit_r - 1] : 0) + popcount(vec[bit_r] & ((1U\
+    \ << (r & (BIT_BLOCK_NUM-1))) - 1));\n        return bit ? sum : r - sum;\n  \
+    \  }\n    //[l,l+1) = bit\n    void update(uint32 l, const bool bit) {\n     \
+    \   uint32 bit_l = l >> BIT_BLOCK_SIZE;\n        if (bit) vec[bit_l] |=   1U <<\
+    \ (l & (BIT_BLOCK_NUM-1));\n        else     vec[bit_l] &= ~(1U << (l & (BIT_BLOCK_NUM-1)));\n\
+    \    }\n    //[l,l+1)\n    bool operator[](uint32 l) const { \n        assert(is_builded);\n\
+    \        return ((vec[l >> BIT_BLOCK_SIZE] >> (l & (BIT_BLOCK_NUM-1))) & 1); \n\
+    \    }\n};\n"
   code: "/*\n * @title BitVector\n * @docs md/segment/BitVector.md\n */\nclass BitVector{\n\
     \    inline static constexpr size_t BIT_BLOCK_SIZE = 5;\n    inline static constexpr\
     \ size_t BIT_BLOCK_NUM  = 1<<BIT_BLOCK_SIZE;\n    inline static constexpr uint32\
     \ popcount(uint32 x) {return __builtin_popcount(x);}\n    inline static constexpr\
-    \ uint32 popcount(uint64 x) {return __builtin_popcountll(x);}\n\n\tvector<uint32>\
-    \ vec, acc;\n    bool is_builded = false;\npublic:\n\tBitVector(uint32 N) {\n\
-    \        uint32 tmp = (N + BIT_BLOCK_NUM-1) / BIT_BLOCK_NUM;\n\t\tvec.assign(tmp,\
-    \ 0);\n\t\tacc.assign(tmp, 0);\n\t}\n\tvoid build() {\n\t\tfor (size_t i = 0,sum\
-    \ = 0; i < acc.size(); ++i) acc[i] = (sum += popcount(vec[i]) );\n        is_builded\
-    \ = true;\n\t}\n\t//[0,r) count of bit\n\tuint32 rank(uint32 r, const bool bit)\
-    \ const {\n        assert(is_builded);\n\t\tuint32 bit_r = r >> BIT_BLOCK_SIZE;\n\
-    \t\tuint32 sum = (bit_r ? acc[bit_r - 1] : 0) + popcount(vec[bit_r] & ((1U <<\
-    \ (r & (BIT_BLOCK_NUM-1))) - 1));\n\t\treturn bit ? sum : r - sum;\n\t}\n    //[l,l+1)\
-    \ = bit\n\tvoid update(uint32 l, const bool bit) {\n\t\tuint32 bit_l = l >> BIT_BLOCK_SIZE;\n\
-    \t\tif (bit) vec[bit_l] |=   1U << (l & (BIT_BLOCK_NUM-1));\n\t\telse     vec[bit_l]\
-    \ &= ~(1U << (l & (BIT_BLOCK_NUM-1)));\n\t}\n    //[l,l+1)\n\tbool operator[](uint32\
+    \ uint32 popcount(uint64 x) {return __builtin_popcountll(x);}\n\n    vector<uint32>\
+    \ vec, acc;\n    bool is_builded = false;\npublic:\n    BitVector(uint32 N) {\n\
+    \        uint32 tmp = (N + BIT_BLOCK_NUM-1) / BIT_BLOCK_NUM;\n        vec.assign(tmp,\
+    \ 0);\n        acc.assign(tmp, 0);\n    }\n    void build() {\n        for (size_t\
+    \ i = 0,sum = 0; i < acc.size(); ++i) acc[i] = (sum += popcount(vec[i]) );\n \
+    \       is_builded = true;\n    }\n    //[0,r) count of bit\n    uint32 rank(uint32\
+    \ r, const bool bit) const {\n        assert(is_builded);\n        uint32 bit_r\
+    \ = r >> BIT_BLOCK_SIZE;\n        uint32 sum = (bit_r ? acc[bit_r - 1] : 0) +\
+    \ popcount(vec[bit_r] & ((1U << (r & (BIT_BLOCK_NUM-1))) - 1));\n        return\
+    \ bit ? sum : r - sum;\n    }\n    //[l,l+1) = bit\n    void update(uint32 l,\
+    \ const bool bit) {\n        uint32 bit_l = l >> BIT_BLOCK_SIZE;\n        if (bit)\
+    \ vec[bit_l] |=   1U << (l & (BIT_BLOCK_NUM-1));\n        else     vec[bit_l]\
+    \ &= ~(1U << (l & (BIT_BLOCK_NUM-1)));\n    }\n    //[l,l+1)\n    bool operator[](uint32\
     \ l) const { \n        assert(is_builded);\n        return ((vec[l >> BIT_BLOCK_SIZE]\
     \ >> (l & (BIT_BLOCK_NUM-1))) & 1); \n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: lib/segment/BitVector.cpp
   requiredBy: []
-  timestamp: '2021-01-04 03:34:23+09:00'
+  timestamp: '2021-01-04 03:42:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment/WaveletMatrix-quantile.test.cpp
