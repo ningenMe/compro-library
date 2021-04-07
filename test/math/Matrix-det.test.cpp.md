@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/math/Matrix.cpp
     title: "Matrix - \u884C\u5217\u6F14\u7B97"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []

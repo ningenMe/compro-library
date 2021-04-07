@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/math/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   - icon: ':heavy_check_mark:'
     path: lib/math/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []
@@ -69,11 +69,10 @@ data:
     \    inline static constexpr int inv31  =766625513; // ModInt<mod3>(mod1).inv().x;\n\
     \    inline static constexpr int inv32  =657107549; // ModInt<mod3>(mod2).inv().x;\n\
     \    inline static constexpr long long prime12=(1002772198720536577LL);\n    inline\
-    \ static constexpr int log2n_max = 21;\n    static unordered_map<int,array<int,log2n_max>>\
-    \ base_map;\n    using Mint  = T;\n    using Mint1 = ModInt<prime1>;\n    using\
-    \ Mint2 = ModInt<prime2>;\n    using Mint3 = ModInt<prime3>;\n    inline static\
-    \ Mint garner(const Mint1& b1,const Mint2& b2,const Mint3& b3) {Mint2 t2 = (b2-b1.x)*inv21;Mint3\
-    \ t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return Mint(Mint(prime12)*t3.x+b1.x+prime1*t2.x);}\n\
+    \ static constexpr int log2n_max = 21;\n    using Mint  = T;\n    using Mint1\
+    \ = ModInt<prime1>;\n    using Mint2 = ModInt<prime2>;\n    using Mint3 = ModInt<prime3>;\n\
+    \    inline static Mint garner(const Mint1& b1,const Mint2& b2,const Mint3& b3)\
+    \ {Mint2 t2 = (b2-b1.x)*inv21;Mint3 t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return Mint(Mint(prime12)*t3.x+b1.x+prime1*t2.x);}\n\
     \    template<int prime> inline static array<ModInt<prime>,log2n_max> get_base(int\
     \ inv=0) {\n        array<ModInt<prime>,log2n_max> base, es, ies;\n        ModInt<prime>\
     \ e = ModInt<prime>(3).pow((prime - 1) >> log2n_max), ie = e.inv();\n        for\
@@ -137,7 +136,7 @@ data:
     \ - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n * @docs md/math/FormalPowerSeries.md\n\
     \ */\ntemplate<class T> struct FormalPowerSeries : public vector<T> {\n    using\
     \ vector<T>::vector;\n    using Mint  = T;\n    using Fps   = FormalPowerSeries<T>;\n\
-    \    inline static constexpr int N_MAX = 500000;\npublic:\n    //a0 + a_1*x^1\
+    \    inline static constexpr int N_MAX = 1000000;\npublic:\n    //a0 + a_1*x^1\
     \ + a_2*x^2 + ... + a_(n-1)*x^(n-1)\n    FormalPowerSeries(vector<Mint> v){*this=FormalPowerSeries(v.size());for(int\
     \ i=0;i<v.size();++i) (*this)[i]=v[i];}\n    inline static vector<Mint> invs;\n\
     \    static void invs_build() {\n        if(invs.size()) return;\n        vector<Mint>\
@@ -151,18 +150,16 @@ data:
     \ r) {for(int i=0;i< this->size(); ++i) (*this)[i] *= r; return *this; }\n   \
     \ Fps operator*(const Mint r) const {return Fps(*this) *= r; }\n    Fps &operator*=(const\
     \ Mint r) {for(int i=0;i< this->size(); ++i) (*this)[i] *= r; return *this; }\n\
-    \n    Fps operator/(const int r) const {return Fps(*this) /= r; }\n    Fps &operator/=(const\
-    \ int r) {return (*this) *= Mint(r).inv(); }\n\n    Fps operator+(const Fps& r)\
-    \ const { return Fps(*this) += r; }\n    Fps &operator+=(const Fps& r) {if(r.size()\
-    \ > this->size()) this->resize(r.size());for(int i = 0; i < r.size(); i++) (*this)[i]\
-    \ += r[i];return *this;}\n    Fps operator+(const int r) const {return Fps(*this)\
-    \ += r; }\n    Fps &operator+=(const int r) {for(int i=0;i< this->size(); ++i)\
-    \ (*this)[i] += r; return *this; }\n\n    Fps operator-(void) const {return Fps(*this)\
-    \ *= (-1);}\n    Fps operator-(const int r) const {return Fps(*this) -= r; }\n\
-    \    Fps &operator-=(const int r) {for(int i=0;i< this->size(); ++i) (*this)[i]\
-    \ -= r; return *this; }\n\n    Fps prefix(size_t n) const {\n        return Fps(this->begin(),this->begin()+min(n,this->size()));\n\
-    \    }\n    Fps inv(size_t n) const {\n        Fps ret({Mint(1)/(*this)[0]});\n\
-    \        for(size_t i=2,m=(n<<1);i < m; i<<=1) {\n            Fps h = mul(mul(ret,ret),(this->prefix(i)));\n\
+    \    Fps operator/(const int r) const {return Fps(*this) /= r; }\n    Fps &operator/=(const\
+    \ int r) {return (*this) *= Mint(r).inv(); }\n    Fps operator+(const int r) const\
+    \ {return Fps(*this) += r; }\n    Fps &operator+=(const int r) {for(int i=0;i<\
+    \ this->size(); ++i) (*this)[i] += r; return *this; }\n    Fps operator-(void)\
+    \ const {return Fps(*this) *= (-1);}\n    Fps operator-(const int r) const {return\
+    \ Fps(*this) -= r; }\n    Fps &operator-=(const int r) {for(int i=0;i< this->size();\
+    \ ++i) (*this)[i] -= r; return *this; }\n    Fps prefix(size_t n) const {\n  \
+    \      return Fps(this->begin(),this->begin()+min(n,this->size()));\n    }\n \
+    \   Fps inv(size_t n) const {\n        Fps ret({Mint(1)/(*this)[0]});\n      \
+    \  for(size_t i=2,m=(n<<1);i < m; i<<=1) {\n            Fps h = mul(mul(ret,ret),(this->prefix(i)));\n\
     \            ret.resize(i);\n            for(int j=i>>1;j<i;++j) ret[j] -= h[j];\n\
     \        }\n        return ret.prefix(n);\n    }\n    Fps inv(void) const {return\
     \ inv(this->size());}\n    Fps even(void) const {Fps ret;for(int i = 0; i < this->size();\
@@ -175,23 +172,25 @@ data:
     \ n) const {\n        invs_build();\n        Fps ret(min(this->size()+1,n));\n\
     \        for(int i=1;i<ret.size(); ++i) ret[i]=(*this)[i-1]*invs[i];\n       \
     \ return ret;\n    }\n    Fps log(size_t n) const {\n        return mul(this->diff(),this->inv(n)).intg(n);\n\
-    \    }\n    Fps log(void) const {return log(this->size());}\n\n\n    Fps pow(long\
-    \ long k,size_t n) const {\n        Fps ret(n,0);\n        for(size_t i=0; i <\
-    \ min(n,this->size()) && i*k < n; ++i) {\n            if((*this)[i].x == 0) continue;\n\
-    \            Mint t0=(*this)[i], t0_inv=t0.inv();\n            Fps tmp(n-i);for(int\
-    \ j=i;j<min(n,this->size()); ++j) tmp[j-i]=(*this)[j]*t0_inv;\n            tmp\
-    \ = (tmp.log(n)*k).exp(n)*(t0.pow(k));\n            for(int j=0;j+i*k<n;++j) ret[j+i*k]\
-    \ = tmp[j];\n            break;\n        }\n        return ret;\n    }\n    Fps\
-    \ pow(long long k) const {return pow(k,this->size());}\n    Fps exp(size_t n)\
-    \ const {Fps ret(1,1);for(size_t i=1;i<n;i<<=1) ret = (ret*(this->prefix(i<<1)\
-    \ + Fps(1,1) - ret.log(i<<1))).prefix(i<<1);return ret.prefix(n);}\n    Fps exp(void)\
-    \ const {return exp(this->size());}\n    Mint sub(Mint x) const {Mint base = 1,ret\
-    \ = 0; for(size_t i=0;i<this->size(); ++i,base *= x) ret += base*(*this)[i]; return\
-    \ ret;}\n    inline static Fps add(const Fps& lhs,const Fps& rhs) {\n        size_t\
-    \ n = lhs.size(), m = rhs.size();\n        Fps res(max(n,m),0);\n        for(int\
-    \ i=0;i<n;++i) res[i] += lhs[i];\n        for(int i=0;i<m;++i) res[i] += rhs[i];\n\
-    \        return res;\n    }\n    inline static Fps sub(const Fps& lhs,const Fps&\
-    \ rhs) {\n        size_t n = lhs.size(), m = rhs.size();\n        Fps res(max(n,m),0);\n\
+    \    }\n    Fps log(void) const {return log(this->size());}\n    Fps exp(size_t\
+    \ n) const {\n        Fps ret(1,1);\n        for(size_t i=2,m=(n<<1);i<m;i<<=1)\
+    \ {\n            Fps h = mul(ret,(sub(this->prefix(i),ret.log(i))));\n       \
+    \     ret.resize(i);\n            for(int j=i>>1;j<i;++j) ret[j] += h[j];    \
+    \        \n        }\n        return ret.prefix(n);\n    }\n    Fps exp(void)\
+    \ const {return exp(this->size());}\n\n    Fps pow(long long k,size_t n) const\
+    \ {\n        Fps ret(n,0);\n        for(size_t i=0; i < min(n,this->size()) &&\
+    \ i*k < n; ++i) {\n            if((*this)[i].x == 0) continue;\n            Mint\
+    \ t0=(*this)[i], t0_inv=t0.inv();\n            Fps tmp(n-i);for(int j=i;j<min(n,this->size());\
+    \ ++j) tmp[j-i]=(*this)[j]*t0_inv;\n            tmp = (tmp.log(n)*k).exp(n)*(t0.pow(k));\n\
+    \            for(int j=0;j+i*k<n;++j) ret[j+i*k] = tmp[j];\n            break;\n\
+    \        }\n        return ret;\n    }\n    Fps pow(long long k) const {return\
+    \ pow(k,this->size());}\n    Mint sub(Mint x) const {Mint base = 1,ret = 0; for(size_t\
+    \ i=0;i<this->size(); ++i,base *= x) ret += base*(*this)[i]; return ret;}\n  \
+    \  inline static Fps add(const Fps& lhs,const Fps& rhs) {\n        size_t n =\
+    \ lhs.size(), m = rhs.size();\n        Fps res(max(n,m),0);\n        for(int i=0;i<n;++i)\
+    \ res[i] += lhs[i];\n        for(int i=0;i<m;++i) res[i] += rhs[i];\n        return\
+    \ res;\n    }\n    inline static Fps sub(const Fps& lhs,const Fps& rhs) {\n  \
+    \      size_t n = lhs.size(), m = rhs.size();\n        Fps res(max(n,m),0);\n\
     \        for(int i=0;i<n;++i) res[i] += lhs[i];\n        for(int i=0;i<m;++i)\
     \ res[i] -= rhs[i];\n        return res;\n    }\n    inline static Fps mul(const\
     \ Fps& lhs, const Fps& rhs) {\n        return NumberTheoreticalTransform<Mint>::convolution(lhs,rhs);\n\
@@ -224,7 +223,7 @@ data:
   isVerificationFile: true
   path: test/math/FormalPowerSeries-inv.test.cpp
   requiredBy: []
-  timestamp: '2021-04-08 04:12:51+09:00'
+  timestamp: '2021-04-08 04:49:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/FormalPowerSeries-inv.test.cpp

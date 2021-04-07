@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/math/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []
@@ -66,11 +66,10 @@ data:
     \    inline static constexpr int inv31  =766625513; // ModInt<mod3>(mod1).inv().x;\n\
     \    inline static constexpr int inv32  =657107549; // ModInt<mod3>(mod2).inv().x;\n\
     \    inline static constexpr long long prime12=(1002772198720536577LL);\n    inline\
-    \ static constexpr int log2n_max = 21;\n    static unordered_map<int,array<int,log2n_max>>\
-    \ base_map;\n    using Mint  = T;\n    using Mint1 = ModInt<prime1>;\n    using\
-    \ Mint2 = ModInt<prime2>;\n    using Mint3 = ModInt<prime3>;\n    inline static\
-    \ Mint garner(const Mint1& b1,const Mint2& b2,const Mint3& b3) {Mint2 t2 = (b2-b1.x)*inv21;Mint3\
-    \ t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return Mint(Mint(prime12)*t3.x+b1.x+prime1*t2.x);}\n\
+    \ static constexpr int log2n_max = 21;\n    using Mint  = T;\n    using Mint1\
+    \ = ModInt<prime1>;\n    using Mint2 = ModInt<prime2>;\n    using Mint3 = ModInt<prime3>;\n\
+    \    inline static Mint garner(const Mint1& b1,const Mint2& b2,const Mint3& b3)\
+    \ {Mint2 t2 = (b2-b1.x)*inv21;Mint3 t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return Mint(Mint(prime12)*t3.x+b1.x+prime1*t2.x);}\n\
     \    template<int prime> inline static array<ModInt<prime>,log2n_max> get_base(int\
     \ inv=0) {\n        array<ModInt<prime>,log2n_max> base, es, ies;\n        ModInt<prime>\
     \ e = ModInt<prime>(3).pow((prime - 1) >> log2n_max), ie = e.inv();\n        for\
@@ -158,7 +157,7 @@ data:
   isVerificationFile: true
   path: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
   requiredBy: []
-  timestamp: '2021-04-08 01:38:12+09:00'
+  timestamp: '2021-04-08 04:49:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp

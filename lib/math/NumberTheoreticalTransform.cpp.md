@@ -4,11 +4,17 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-exp.test.cpp
+    title: test/math/FormalPowerSeries-exp.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-inv.test.cpp
     title: test/math/FormalPowerSeries-inv.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-log.test.cpp
     title: test/math/FormalPowerSeries-log.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-pow.test.cpp
+    title: test/math/FormalPowerSeries-pow.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
@@ -37,29 +43,29 @@ data:
     \ int inv31  =766625513; // ModInt<mod3>(mod1).inv().x;\n    inline static constexpr\
     \ int inv32  =657107549; // ModInt<mod3>(mod2).inv().x;\n    inline static constexpr\
     \ long long prime12=(1002772198720536577LL);\n    inline static constexpr int\
-    \ log2n_max = 21;\n    static unordered_map<int,array<int,log2n_max>> base_map;\n\
-    \    using Mint  = T;\n    using Mint1 = ModInt<prime1>;\n    using Mint2 = ModInt<prime2>;\n\
-    \    using Mint3 = ModInt<prime3>;\n    inline static Mint garner(const Mint1&\
-    \ b1,const Mint2& b2,const Mint3& b3) {Mint2 t2 = (b2-b1.x)*inv21;Mint3 t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return\
-    \ Mint(Mint(prime12)*t3.x+b1.x+prime1*t2.x);}\n    template<int prime> inline\
-    \ static array<ModInt<prime>,log2n_max> get_base(int inv=0) {\n        array<ModInt<prime>,log2n_max>\
-    \ base, es, ies;\n        ModInt<prime> e = ModInt<prime>(3).pow((prime - 1) >>\
-    \ log2n_max), ie = e.inv();\n        for (int i = log2n_max; i >= 2; --i) {\n\
-    \            es[i - 2]  = e, ies[i - 2] = ie;\n            e *= e, ie *= ie;\n\
-    \        }\n        ModInt<prime> acc = 1;\n        if(!inv) for (int i = 0; i\
-    \ < log2n_max - 2; ++i) {\n            base[i] = es[i] * acc;\n            acc\
-    \ *= ies[i];\n        }\n        else for (int i = 0; i < log2n_max - 2; ++i)\
-    \ {\n            base[i] = ies[i] * acc;\n            acc *= es[i];\n        }\n\
-    \        return base;\n    }\n    template<int prime> inline static void butterfly(vector<ModInt<prime>>&\
-    \ a, const array<ModInt<prime>,log2n_max>& base) {\n        int h = __builtin_ctz(a.size());\n\
-    \        for (int i = 0; i < h; i++) {\n            int w = 1 << i, p = 1 << (h\
-    \ - (i+1));\n            ModInt<prime> acc = 1;\n            for (int s = 0; s\
-    \ < w; s++) {\n                int offset = s << (h - i);\n                for\
-    \ (int j = 0; j < p; ++j) {\n                    auto l = a[j + offset];\n   \
-    \                 auto r = a[j + offset + p] * acc;\n                    a[j +\
-    \ offset] = l + r;\n                    a[j + offset + p] = l - r;\n         \
-    \       }\n                acc *= base[__builtin_ctz(~(unsigned int)(s))];\n \
-    \           }\n        }\n    }\n    template<int prime> inline static void ibutterfly(vector<ModInt<prime>>&\
+    \ log2n_max = 21;\n    using Mint  = T;\n    using Mint1 = ModInt<prime1>;\n \
+    \   using Mint2 = ModInt<prime2>;\n    using Mint3 = ModInt<prime3>;\n    inline\
+    \ static Mint garner(const Mint1& b1,const Mint2& b2,const Mint3& b3) {Mint2 t2\
+    \ = (b2-b1.x)*inv21;Mint3 t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return Mint(Mint(prime12)*t3.x+b1.x+prime1*t2.x);}\n\
+    \    template<int prime> inline static array<ModInt<prime>,log2n_max> get_base(int\
+    \ inv=0) {\n        array<ModInt<prime>,log2n_max> base, es, ies;\n        ModInt<prime>\
+    \ e = ModInt<prime>(3).pow((prime - 1) >> log2n_max), ie = e.inv();\n        for\
+    \ (int i = log2n_max; i >= 2; --i) {\n            es[i - 2]  = e, ies[i - 2] =\
+    \ ie;\n            e *= e, ie *= ie;\n        }\n        ModInt<prime> acc = 1;\n\
+    \        if(!inv) for (int i = 0; i < log2n_max - 2; ++i) {\n            base[i]\
+    \ = es[i] * acc;\n            acc *= ies[i];\n        }\n        else for (int\
+    \ i = 0; i < log2n_max - 2; ++i) {\n            base[i] = ies[i] * acc;\n    \
+    \        acc *= es[i];\n        }\n        return base;\n    }\n    template<int\
+    \ prime> inline static void butterfly(vector<ModInt<prime>>& a, const array<ModInt<prime>,log2n_max>&\
+    \ base) {\n        int h = __builtin_ctz(a.size());\n        for (int i = 0; i\
+    \ < h; i++) {\n            int w = 1 << i, p = 1 << (h - (i+1));\n           \
+    \ ModInt<prime> acc = 1;\n            for (int s = 0; s < w; s++) {\n        \
+    \        int offset = s << (h - i);\n                for (int j = 0; j < p; ++j)\
+    \ {\n                    auto l = a[j + offset];\n                    auto r =\
+    \ a[j + offset + p] * acc;\n                    a[j + offset] = l + r;\n     \
+    \               a[j + offset + p] = l - r;\n                }\n              \
+    \  acc *= base[__builtin_ctz(~(unsigned int)(s))];\n            }\n        }\n\
+    \    }\n    template<int prime> inline static void ibutterfly(vector<ModInt<prime>>&\
     \ a, const array<ModInt<prime>,log2n_max>& base) {\n        int h = __builtin_ctz(a.size());\n\
     \        for (int i = h-1; 0 <= i; i--) {\n            int w = 1 << i, p = 1 <<\
     \ (h - (i+1));\n            ModInt<prime> acc = 1;\n            for (int s = 0;\
@@ -109,11 +115,10 @@ data:
     \    inline static constexpr int inv31  =766625513; // ModInt<mod3>(mod1).inv().x;\n\
     \    inline static constexpr int inv32  =657107549; // ModInt<mod3>(mod2).inv().x;\n\
     \    inline static constexpr long long prime12=(1002772198720536577LL);\n    inline\
-    \ static constexpr int log2n_max = 21;\n    static unordered_map<int,array<int,log2n_max>>\
-    \ base_map;\n    using Mint  = T;\n    using Mint1 = ModInt<prime1>;\n    using\
-    \ Mint2 = ModInt<prime2>;\n    using Mint3 = ModInt<prime3>;\n    inline static\
-    \ Mint garner(const Mint1& b1,const Mint2& b2,const Mint3& b3) {Mint2 t2 = (b2-b1.x)*inv21;Mint3\
-    \ t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return Mint(Mint(prime12)*t3.x+b1.x+prime1*t2.x);}\n\
+    \ static constexpr int log2n_max = 21;\n    using Mint  = T;\n    using Mint1\
+    \ = ModInt<prime1>;\n    using Mint2 = ModInt<prime2>;\n    using Mint3 = ModInt<prime3>;\n\
+    \    inline static Mint garner(const Mint1& b1,const Mint2& b2,const Mint3& b3)\
+    \ {Mint2 t2 = (b2-b1.x)*inv21;Mint3 t3 = ((b3-b1.x)*inv31-t2.x)*inv32;return Mint(Mint(prime12)*t3.x+b1.x+prime1*t2.x);}\n\
     \    template<int prime> inline static array<ModInt<prime>,log2n_max> get_base(int\
     \ inv=0) {\n        array<ModInt<prime>,log2n_max> base, es, ies;\n        ModInt<prime>\
     \ e = ModInt<prime>(3).pow((prime - 1) >> log2n_max), ie = e.inv();\n        for\
@@ -178,15 +183,17 @@ data:
   isVerificationFile: false
   path: lib/math/NumberTheoreticalTransform.cpp
   requiredBy: []
-  timestamp: '2021-04-08 01:18:14+09:00'
+  timestamp: '2021-04-08 04:49:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/FormalPowerSeries-inv.test.cpp
   - test/math/NumberTheoreticalTransform-conv-fft.test.cpp
+  - test/math/FormalPowerSeries-exp.test.cpp
   - test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - test/math/FormalPowerSeries-log.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
+  - test/math/FormalPowerSeries-pow.test.cpp
 documentation_of: lib/math/NumberTheoreticalTransform.cpp
 layout: document
 redirect_from:
