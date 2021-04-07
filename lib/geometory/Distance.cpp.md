@@ -9,6 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/Dijkstra.test.cpp
     title: test/graph/Dijkstra.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -45,8 +46,8 @@ data:
   timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/graph/Dijkstra.test.cpp
   - test/geometory/Distance-line.test.cpp
+  - test/graph/Dijkstra.test.cpp
 documentation_of: lib/geometory/Distance.cpp
 layout: document
 redirect_from:

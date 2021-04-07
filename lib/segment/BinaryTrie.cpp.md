@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/segment/BinaryTrie-set-xor-min.test.cpp
     title: test/segment/BinaryTrie-set-xor-min.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

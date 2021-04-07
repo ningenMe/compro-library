@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/segment/BinaryIndexedTree-rsqraq.test.cpp
     title: test/segment/BinaryIndexedTree-rsqraq.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

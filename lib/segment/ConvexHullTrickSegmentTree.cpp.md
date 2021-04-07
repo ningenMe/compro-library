@@ -6,6 +6,7 @@ data:
   - icon: ':x:'
     path: test/segment/ConvexHullTrickSegmentTree.test.cpp
     title: test/segment/ConvexHullTrickSegmentTree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':x:'
   attributes:

@@ -6,6 +6,7 @@ data:
     title: "RectangleWeight - \u91CD\u307F\u3064\u304D\u77E9\u5F62"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

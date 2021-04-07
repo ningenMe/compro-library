@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/string/LongestCommonSubsequence.test.cpp
     title: test/string/LongestCommonSubsequence.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

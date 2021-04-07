@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/segment/SlideMost.test.cpp
     title: test/segment/SlideMost.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

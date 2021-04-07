@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/util/Zarts.test.cpp
     title: test/util/Zarts.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

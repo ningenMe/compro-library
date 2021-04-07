@@ -12,6 +12,7 @@ data:
     title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -148,7 +149,7 @@ data:
     \ vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){return convolution_friendrymod<998244353>(g,h);}\n\
     \    inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>&\
     \ g,const vector<ModInt<1000000007>>& h){return convolution_arbitrarymod(g,h);}\n\
-    \    inline vector<RuntimeModInt<runtime_mod>> convolution(const vector<RuntimeModInt<runtime_mod>>&\
+    \    // inline vector<RuntimeModInt<runtime_mod>> convolution(const vector<RuntimeModInt<runtime_mod>>&\
     \ g,const vector<RuntimeModInt<runtime_mod>>& h){return convolution_arbitrarymod(g,h);}\n\
     \n    static inline Mint nth_term_impl(long long n, Fps numerator,Fps denominator)\
     \ {\n        while(n) {\n            numerator   *= denominator.minus_x();\n \
@@ -166,14 +167,14 @@ data:
     \ {return Fps(*this) *= r; }\n    Fps &operator*=(const long long int r) {for(int\
     \ i=0;i< this->size(); ++i) (*this)[i] *= r; return *this; }\n    Fps operator*(const\
     \ Mint r) const {return Fps(*this) *= r; }\n    Fps &operator*=(const Mint r)\
-    \ {for(int i=0;i< this->size(); ++i) (*this)[i] *= r; return *this; }\n    Fps\
+    \ {for(int i=0;i< this->size(); ++i) (*this)[i] *= r; return *this; }\n\n    Fps\
     \ operator/(const int r) const {return Fps(*this) /= r; }\n    Fps &operator/=(const\
-    \ int r) {return (*this) *= Mint(r).inv(); }\n    Fps operator+(const Fps& r)\
+    \ int r) {return (*this) *= Mint(r).inv(); }\n\n    Fps operator+(const Fps& r)\
     \ const { return Fps(*this) += r; }\n    Fps &operator+=(const Fps& r) {if(r.size()\
     \ > this->size()) this->resize(r.size());for(int i = 0; i < r.size(); i++) (*this)[i]\
     \ += r[i];return *this;}\n    Fps operator+(const int r) const {return Fps(*this)\
     \ += r; }\n    Fps &operator+=(const int r) {for(int i=0;i< this->size(); ++i)\
-    \ (*this)[i] += r; return *this; }\n    Fps operator-(void) const {return Fps(*this)\
+    \ (*this)[i] += r; return *this; }\n\n    Fps operator-(void) const {return Fps(*this)\
     \ *= (-1);}\n    Fps operator-(const Fps& r) const { return Fps(*this) -= r; }\n\
     \    Fps &operator-=(const Fps& r) {if(r.size() > this->size()) this->resize(r.size());for(int\
     \ i = 0; i < r.size(); i++) (*this)[i] -= r[i];return *this;}\n    Fps operator-(const\
@@ -195,12 +196,13 @@ data:
     \ n) const {return (this->diff()*this->inv(n)).intg().prefix(n);}\n    Fps log(void)\
     \ const {return log(this->size());}\n    Fps exp(size_t n) const {Fps ret(1,1);for(size_t\
     \ i=1;i<n;i<<=1) ret = (ret*(this->prefix(i<<1) + Fps(1,1) - ret.log(i<<1))).prefix(i<<1);return\
-    \ ret.prefix(n);}\n    Fps exp(void) const {return exp(this->size());}\n    friend\
-    \ ostream &operator<<(ostream &os, const Fps& fps) {os << \"{\" << fps[0];for(int\
-    \ i=1;i<fps.size();++i) os << \", \" << fps[i];return os << \"}\";}\n};\n//using\
-    \ fps = FormalPowerSeries<RuntimeModInt<mod>>;\n//using fps = FormalPowerSeries<ModInt<MOD>>;\n\
-    #line 13 \"test/math/FormalPowerSeries-conv1000000007-2.test.cpp\"\nconstexpr\
-    \ long long MOD = 1000'000'007;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
+    \ ret.prefix(n);}\n    Fps exp(void) const {return exp(this->size());}\n    Mint\
+    \ sub(Mint x) const {Mint base = 1,ret = 0; for(size_t i=0;i<this->size(); ++i,base\
+    \ *= x) ret += base*(*this)[i]; return ret;}\n    friend ostream &operator<<(ostream\
+    \ &os, const Fps& fps) {os << \"{\" << fps[0];for(int i=1;i<fps.size();++i) os\
+    \ << \", \" << fps[i];return os << \"}\";}\n};\n//using fps = FormalPowerSeries<RuntimeModInt<mod>>;\n\
+    //using fps = FormalPowerSeries<ModInt<MOD>>;\n#line 13 \"test/math/FormalPowerSeries-conv1000000007-2.test.cpp\"\
+    \nconstexpr long long MOD = 1000'000'007;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
     int main(void){\n    int N; cin >> N;\n    fps A(N+1),B(N+1);\n    for(int i =\
     \ 0; i < N+1; ++i) cin >> A[i];\n    for(int i = 0; i < N+1; ++i) cin >> B[i];\n\
     \    auto C = A*B;\n    cout << fps::nth_term(N,C,{1,-1}) << endl;\n\treturn 0;\n\
@@ -221,7 +223,7 @@ data:
   isVerificationFile: true
   path: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
   requiredBy: []
-  timestamp: '2020-10-04 04:28:01+09:00'
+  timestamp: '2021-04-07 21:05:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/FormalPowerSeries-conv1000000007-2.test.cpp

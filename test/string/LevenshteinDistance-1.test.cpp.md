@@ -6,6 +6,7 @@ data:
     title: "LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

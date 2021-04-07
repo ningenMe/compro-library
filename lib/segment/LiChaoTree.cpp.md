@@ -9,6 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/segment/LiChaoTree-segment.test.cpp
     title: test/segment/LiChaoTree-segment.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -81,8 +82,8 @@ data:
   timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment/LiChaoTree-segment.test.cpp
   - test/segment/LiChaoTree-line.test.cpp
+  - test/segment/LiChaoTree-segment.test.cpp
 documentation_of: lib/segment/LiChaoTree.cpp
 layout: document
 redirect_from:

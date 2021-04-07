@@ -9,6 +9,7 @@ data:
     title: "RangeIndex - \u533A\u9593index"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

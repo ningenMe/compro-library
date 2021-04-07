@@ -6,6 +6,7 @@ data:
     title: "KdTree - 2\u6B21\u5143\u9802\u70B9\u5206\u985E\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

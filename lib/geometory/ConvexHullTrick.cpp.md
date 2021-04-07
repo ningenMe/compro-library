@@ -15,6 +15,7 @@ data:
   - icon: ':x:'
     path: test/segment/ConvexHullTrickSegmentTree.test.cpp
     title: test/segment/ConvexHullTrickSegmentTree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
   attributes:
@@ -117,9 +118,9 @@ data:
   timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/geometory/ConvexHullTrick-no-monotone.test.cpp
   - test/geometory/ConvexHullTrick-max.test.cpp
   - test/geometory/ConvexHullTrick-min.test.cpp
+  - test/geometory/ConvexHullTrick-no-monotone.test.cpp
   - test/segment/ConvexHullTrickSegmentTree.test.cpp
 documentation_of: lib/geometory/ConvexHullTrick.cpp
 layout: document

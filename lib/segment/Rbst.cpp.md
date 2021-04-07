@@ -24,6 +24,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/segment/Rbst-pair.test.cpp
     title: test/segment/Rbst-pair.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
   attributes:
@@ -160,13 +161,13 @@ data:
   timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/geometory/ConvexHullTrick-no-monotone.test.cpp
   - test/geometory/ConvexHullTrick-max.test.cpp
   - test/geometory/ConvexHullTrick-min.test.cpp
+  - test/geometory/ConvexHullTrick-no-monotone.test.cpp
+  - test/segment/Rbst-med.test.cpp
   - test/segment/ConvexHullTrickSegmentTree.test.cpp
   - test/segment/Rbst-get.test.cpp
   - test/segment/Rbst-pair.test.cpp
-  - test/segment/Rbst-med.test.cpp
 documentation_of: lib/segment/Rbst.cpp
 layout: document
 redirect_from:

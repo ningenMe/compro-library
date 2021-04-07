@@ -12,6 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/StronglyConnectedComponents-2sat.test.cpp
     title: test/graph/StronglyConnectedComponents-2sat.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -87,9 +88,9 @@ data:
   timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/graph/StronglyConnectedComponents-1.test.cpp
   - test/graph/StronglyConnectedComponents-2sat.test.cpp
   - test/graph/StronglyConnectedComponents-2.test.cpp
-  - test/graph/StronglyConnectedComponents-1.test.cpp
 documentation_of: lib/graph/StronglyConnectedComponents.cpp
 layout: document
 redirect_from:
