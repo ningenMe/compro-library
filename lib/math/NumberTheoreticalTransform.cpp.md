@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-inv.test.cpp
+    title: test/math/FormalPowerSeries-inv.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -175,6 +178,7 @@ data:
   timestamp: '2021-04-08 01:18:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/math/FormalPowerSeries-inv.test.cpp
   - test/math/NumberTheoreticalTransform-conv-fft.test.cpp
   - test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp

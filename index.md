@@ -76,7 +76,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/math/FloorSum.cpp
       title: "FloorSum - \u76F4\u7DDA\u9818\u57DF\u306E\u683C\u5B50\u70B9\u6570"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/math/FormalPowerSeries.cpp
       title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
     - icon: ':heavy_check_mark:'
@@ -163,7 +163,7 @@ data:
       title: Zalgorithm
   - name: lib/util
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/util/ModInt.cpp
       title: ModInt
     - icon: ':heavy_check_mark:'
@@ -172,7 +172,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/util/RangeIndex.cpp
       title: "RangeIndex - \u533A\u9593index"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/util/RuntimeModInt.cpp
       title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
     - icon: ':heavy_check_mark:'
@@ -447,16 +447,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/FloorSum.test.cpp
       title: test/math/FloorSum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/math/FormalPowerSeries-exp.test.cpp
       title: test/math/FormalPowerSeries-exp.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-inv.test.cpp
       title: test/math/FormalPowerSeries-inv.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/math/FormalPowerSeries-log.test.cpp
       title: test/math/FormalPowerSeries-log.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/math/FormalPowerSeries-pow.test.cpp
       title: test/math/FormalPowerSeries-pow.test.cpp
     - icon: ':heavy_check_mark:'

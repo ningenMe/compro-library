@@ -3,24 +3,21 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/FormalPowerSeries-exp.test.cpp
     title: test/math/FormalPowerSeries-exp.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-inv.test.cpp
-    title: test/math/FormalPowerSeries-inv.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/FormalPowerSeries-log.test.cpp
     title: test/math/FormalPowerSeries-log.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/FormalPowerSeries-pow.test.cpp
     title: test/math/FormalPowerSeries-pow.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/util/RuntimeModInt.test.cpp
     title: test/util/RuntimeModInt.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/util/RuntimeModInt.md
     document_title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
@@ -115,9 +112,8 @@ data:
   path: lib/util/RuntimeModInt.cpp
   requiredBy: []
   timestamp: '2020-10-04 04:28:01+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/math/FormalPowerSeries-inv.test.cpp
   - test/math/FormalPowerSeries-exp.test.cpp
   - test/math/FormalPowerSeries-log.test.cpp
   - test/math/FormalPowerSeries-pow.test.cpp

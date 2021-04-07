@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/util/RuntimeModInt.cpp
     title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
   _extendedRequiredBy: []
