@@ -105,11 +105,11 @@ public:
     inline static Fps mul(const Fps& lhs, const Fps& rhs) {
         return NumberTheoreticalTransform<Mint>::convolution(lhs,rhs);
     }
-    inline static Mint nth_term_impl(long long n, Fps numerator,Fps denominator) {
+    inline static Mint nth_term(long long n, Fps numerator,Fps denominator) {
         while(n) {
-            numerator   *= denominator.symmetry();
+            numerator    = mul(numerator,denominator.symmetry());
             numerator    = ((n&1)?numerator.odd():numerator.even());
-            denominator *= denominator.symmetry();
+            denominator  = mul(denominator,denominator.symmetry());
             denominator  = denominator.even();
             n >>= 1;
         }
