@@ -74,13 +74,12 @@ public:
         return ret.prefix(n);
     }
     Fps exp(void) const {return exp(this->size());}
-
     Fps pow(long long k,size_t n) const {
         Fps ret(n,0);
-        for(size_t i=0; i < min(n,this->size()) && i*k < n; ++i) {
+        for(size_t i=0,m = min(n,this->size()); i < m && i*k < n; ++i) {
             if((*this)[i].x == 0) continue;
             Mint t0=(*this)[i], t0_inv=t0.inv();
-            Fps tmp(n-i);for(int j=i;j<min(n,this->size()); ++j) tmp[j-i]=(*this)[j]*t0_inv;
+            Fps tmp(n-i);for(int j=i;j<m; ++j) tmp[j-i]=(*this)[j]*t0_inv;
             tmp = (tmp.log(n)*k).exp(n)*(t0.pow(k));
             for(int j=0;j+i*k<n;++j) ret[j+i*k] = tmp[j];
             break;
