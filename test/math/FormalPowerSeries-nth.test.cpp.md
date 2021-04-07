@@ -17,44 +17,43 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/exp_of_formal_power_series
+    PROBLEM: https://yukicoder.me/problems/no/754
     links:
-    - https://judge.yosupo.jp/problem/exp_of_formal_power_series
-  bundledCode: "#line 1 \"test/math/FormalPowerSeries-exp.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/exp_of_formal_power_series\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\
-    \nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
-    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
-    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
-    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const\
-    \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
-    \ long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n  \
-    \  ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
-    \ *this;}\n    ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod)\
-    \ x -= mod;return *this;}\n    ModInt &operator-=(const long long y) {ModInt p(y);if((x\
-    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator-=(const\
-    \ int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}\n  \
-    \  ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}\n \
-    \   ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x % mod);return\
-    \ *this;}\n    ModInt &operator*=(const int y) {ModInt p(y);x = (x * p.x % mod);return\
-    \ *this;}\n    ModInt &operator^=(const ModInt &p) {x = (x ^ p.x) % mod;return\
-    \ *this;}\n    ModInt &operator^=(const long long y) {ModInt p(y);x = (x ^ p.x)\
-    \ % mod;return *this;}\n    ModInt &operator^=(const int y) {ModInt p(y);x = (x\
-    \ ^ p.x) % mod;return *this;}\n    ModInt &operator/=(const ModInt &p) {*this\
-    \ *= p.inv();return *this;}\n    ModInt &operator/=(const long long y) {ModInt\
-    \ p(y);*this *= p.inv();return *this;}\n    ModInt &operator/=(const int y) {ModInt\
-    \ p(y);*this *= p.inv();return *this;}\n    ModInt operator=(const int y) {ModInt\
-    \ p(y);*this = p;return *this;}\n    ModInt operator=(const long long y) {ModInt\
-    \ p(y);*this = p;return *this;}\n    ModInt operator-() const {return ModInt(-x);\
-    \ }\n    ModInt operator++() {x++;if(x>=mod) x-=mod;return *this;}\n    ModInt\
-    \ operator--() {x--;if(x<0) x+=mod;return *this;}\n    ModInt operator+(const\
-    \ ModInt &p) const { return ModInt(*this) += p; }\n    ModInt operator-(const\
-    \ ModInt &p) const { return ModInt(*this) -= p; }\n    ModInt operator*(const\
-    \ ModInt &p) const { return ModInt(*this) *= p; }\n    ModInt operator/(const\
-    \ ModInt &p) const { return ModInt(*this) /= p; }\n    ModInt operator^(const\
-    \ ModInt &p) const { return ModInt(*this) ^= p; }\n    bool operator==(const ModInt\
-    \ &p) const { return x == p.x; }\n    bool operator!=(const ModInt &p) const {\
-    \ return x != p.x; }\n    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
+    - https://yukicoder.me/problems/no/754
+  bundledCode: "#line 1 \"test/math/FormalPowerSeries-nth.test.cpp\"\n#define PROBLEM\
+    \ \"https://yukicoder.me/problems/no/754\"\n\n#include <vector>\n#include <iostream>\n\
+    #include <numeric>\n#include <algorithm>\n#include <array>\n\nusing namespace\
+    \ std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/util/ModInt.md\n\
+    \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
+    \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
+    \ (-y)%mod)%mod) {}\n    ModInt &operator+=(const ModInt &p) {if((x += p.x) >=\
+    \ mod) x -= mod;return *this;}\n    ModInt &operator+=(const long long y) {ModInt\
+    \ p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
+    \ int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt\
+    \ &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}\n\
+    \    ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >=\
+    \ mod) x -= mod;return *this;}\n    ModInt &operator-=(const int y) {ModInt p(y);if((x\
+    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator*=(const\
+    \ ModInt &p) {x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
+    \ long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
+    \ int y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator^=(const\
+    \ ModInt &p) {x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
+    \ long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
+    \ int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator/=(const\
+    \ ModInt &p) {*this *= p.inv();return *this;}\n    ModInt &operator/=(const long\
+    \ long y) {ModInt p(y);*this *= p.inv();return *this;}\n    ModInt &operator/=(const\
+    \ int y) {ModInt p(y);*this *= p.inv();return *this;}\n    ModInt operator=(const\
+    \ int y) {ModInt p(y);*this = p;return *this;}\n    ModInt operator=(const long\
+    \ long y) {ModInt p(y);*this = p;return *this;}\n    ModInt operator-() const\
+    \ {return ModInt(-x); }\n    ModInt operator++() {x++;if(x>=mod) x-=mod;return\
+    \ *this;}\n    ModInt operator--() {x--;if(x<0) x+=mod;return *this;}\n    ModInt\
+    \ operator+(const ModInt &p) const { return ModInt(*this) += p; }\n    ModInt\
+    \ operator-(const ModInt &p) const { return ModInt(*this) -= p; }\n    ModInt\
+    \ operator*(const ModInt &p) const { return ModInt(*this) *= p; }\n    ModInt\
+    \ operator/(const ModInt &p) const { return ModInt(*this) /= p; }\n    ModInt\
+    \ operator^(const ModInt &p) const { return ModInt(*this) ^= p; }\n    bool operator==(const\
+    \ ModInt &p) const { return x == p.x; }\n    bool operator!=(const ModInt &p)\
+    \ const { return x != p.x; }\n    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
     \ > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}\n\
     \    ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul *= mul,n\
     \ >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream &operator<<(ostream\
@@ -202,35 +201,34 @@ data:
     \    }\n\n    friend ostream &operator<<(ostream &os, const Fps& fps) {os << \"\
     {\" << fps[0];for(int i=1;i<fps.size();++i) os << \", \" << fps[i];return os <<\
     \ \"}\";}\n};\n//using fps = FormalPowerSeries<RuntimeModInt<mod>>;\n//using fps\
-    \ = FormalPowerSeries<ModInt<MOD>>;\n#line 13 \"test/math/FormalPowerSeries-exp.test.cpp\"\
-    \nconstexpr long long MOD = 998244353;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
-    \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N; cin >>\
-    \ N;\n    fps f(N);\n    for(int i=0;i<N;++i) cin >> f[i];\n    f = f.exp();\n\
-    \    for(int i=0;i<f.size();++i) cout << f[i] << \" \\n\"[i==N-1];\n    return\
-    \ 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_formal_power_series\"\
-    \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
-    #include <array>\n\nusing namespace std;\n#include \"../../lib/util/ModInt.cpp\"\
-    \n#include \"../../lib/math/NumberTheoreticalTransform.cpp\"\n#include \"../../lib/math/FormalPowerSeries.cpp\"\
-    \nconstexpr long long MOD = 998244353;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
-    \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N; cin >>\
-    \ N;\n    fps f(N);\n    for(int i=0;i<N;++i) cin >> f[i];\n    f = f.exp();\n\
-    \    for(int i=0;i<f.size();++i) cout << f[i] << \" \\n\"[i==N-1];\n    return\
-    \ 0;\n}"
+    \ = FormalPowerSeries<ModInt<MOD>>;\n#line 13 \"test/math/FormalPowerSeries-nth.test.cpp\"\
+    \nconstexpr long long MOD = 1000'000'007;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
+    int main(void){\n    int N; cin >> N;\n    fps A(N+1),B(N+1);\n    for(int i =\
+    \ 0; i < N+1; ++i) cin >> A[i];\n    for(int i = 0; i < N+1; ++i) cin >> B[i];\n\
+    \    fps C = fps::mul(A,B), D({1,-1});\n    cout << fps::nth_term(N,C,D) << endl;\n\
+    \treturn 0;\n}\n"
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/754\"\n\n#include <vector>\n\
+    #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\
+    \nusing namespace std;\n#include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/math/NumberTheoreticalTransform.cpp\"\
+    \n#include \"../../lib/math/FormalPowerSeries.cpp\"\nconstexpr long long MOD =\
+    \ 1000'000'007;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\nint main(void){\n\
+    \    int N; cin >> N;\n    fps A(N+1),B(N+1);\n    for(int i = 0; i < N+1; ++i)\
+    \ cin >> A[i];\n    for(int i = 0; i < N+1; ++i) cin >> B[i];\n    fps C = fps::mul(A,B),\
+    \ D({1,-1});\n    cout << fps::nth_term(N,C,D) << endl;\n\treturn 0;\n}"
   dependsOn:
   - lib/util/ModInt.cpp
   - lib/math/NumberTheoreticalTransform.cpp
   - lib/math/FormalPowerSeries.cpp
   isVerificationFile: true
-  path: test/math/FormalPowerSeries-exp.test.cpp
+  path: test/math/FormalPowerSeries-nth.test.cpp
   requiredBy: []
   timestamp: '2021-04-08 05:28:05+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/math/FormalPowerSeries-exp.test.cpp
+documentation_of: test/math/FormalPowerSeries-nth.test.cpp
 layout: document
 redirect_from:
-- /verify/test/math/FormalPowerSeries-exp.test.cpp
-- /verify/test/math/FormalPowerSeries-exp.test.cpp.html
-title: test/math/FormalPowerSeries-exp.test.cpp
+- /verify/test/math/FormalPowerSeries-nth.test.cpp
+- /verify/test/math/FormalPowerSeries-nth.test.cpp.html
+title: test/math/FormalPowerSeries-nth.test.cpp
 ---

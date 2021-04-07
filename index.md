@@ -329,11 +329,6 @@ data:
     - icon: ':warning:'
       path: old/ZArray.cpp
       title: old/ZArray.cpp
-  - name: test/math
-    pages:
-    - icon: ':warning:'
-      path: test/math/hoge.cpp
-      title: test/math/hoge.cpp
   verificationCategories:
   - name: test
     pages:
@@ -450,6 +445,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-log.test.cpp
       title: test/math/FormalPowerSeries-log.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FormalPowerSeries-nth.test.cpp
+      title: test/math/FormalPowerSeries-nth.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-pow.test.cpp
       title: test/math/FormalPowerSeries-pow.test.cpp

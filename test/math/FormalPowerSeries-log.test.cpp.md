@@ -194,19 +194,20 @@ data:
     \        for(int i=0;i<n;++i) res[i] += lhs[i];\n        for(int i=0;i<m;++i)\
     \ res[i] -= rhs[i];\n        return res;\n    }\n    inline static Fps mul(const\
     \ Fps& lhs, const Fps& rhs) {\n        return NumberTheoreticalTransform<Mint>::convolution(lhs,rhs);\n\
-    \    }\n    inline static Mint nth_term_impl(long long n, Fps numerator,Fps denominator)\
-    \ {\n        while(n) {\n            numerator   *= denominator.symmetry();\n\
+    \    }\n    inline static Mint nth_term(long long n, Fps numerator,Fps denominator)\
+    \ {\n        while(n) {\n            numerator    = mul(numerator,denominator.symmetry());\n\
     \            numerator    = ((n&1)?numerator.odd():numerator.even());\n      \
-    \      denominator *= denominator.symmetry();\n            denominator  = denominator.even();\n\
-    \            n >>= 1;\n        }\n        return numerator[0];\n    }\n\n    friend\
-    \ ostream &operator<<(ostream &os, const Fps& fps) {os << \"{\" << fps[0];for(int\
-    \ i=1;i<fps.size();++i) os << \", \" << fps[i];return os << \"}\";}\n};\n//using\
-    \ fps = FormalPowerSeries<RuntimeModInt<mod>>;\n//using fps = FormalPowerSeries<ModInt<MOD>>;\n\
-    #line 13 \"test/math/FormalPowerSeries-log.test.cpp\"\nconstexpr long long MOD\
-    \ = 998244353;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\nint main() {\n\
-    \    cin.tie(0);ios::sync_with_stdio(false);\n    int N; cin >> N;\n    fps f(N);\n\
-    \    for(int i=0;i<N;++i) cin >> f[i];\n    f = f.log();\n    for(int i=0;i<f.size();++i)\
-    \ cout << f[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
+    \      denominator  = mul(denominator,denominator.symmetry());\n            denominator\
+    \  = denominator.even();\n            n >>= 1;\n        }\n        return numerator[0];\n\
+    \    }\n\n    friend ostream &operator<<(ostream &os, const Fps& fps) {os << \"\
+    {\" << fps[0];for(int i=1;i<fps.size();++i) os << \", \" << fps[i];return os <<\
+    \ \"}\";}\n};\n//using fps = FormalPowerSeries<RuntimeModInt<mod>>;\n//using fps\
+    \ = FormalPowerSeries<ModInt<MOD>>;\n#line 13 \"test/math/FormalPowerSeries-log.test.cpp\"\
+    \nconstexpr long long MOD = 998244353;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
+    \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N; cin >>\
+    \ N;\n    fps f(N);\n    for(int i=0;i<N;++i) cin >> f[i];\n    f = f.log();\n\
+    \    for(int i=0;i<f.size();++i) cout << f[i] << \" \\n\"[i==N-1];\n    return\
+    \ 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/log_of_formal_power_series\"\
     \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
     #include <array>\n\nusing namespace std;\n#include \"../../lib/util/ModInt.cpp\"\
@@ -223,7 +224,7 @@ data:
   isVerificationFile: true
   path: test/math/FormalPowerSeries-log.test.cpp
   requiredBy: []
-  timestamp: '2021-04-08 05:02:54+09:00'
+  timestamp: '2021-04-08 05:28:05+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/FormalPowerSeries-log.test.cpp

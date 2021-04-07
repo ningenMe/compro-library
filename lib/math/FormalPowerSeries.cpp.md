@@ -13,6 +13,9 @@ data:
     path: test/math/FormalPowerSeries-log.test.cpp
     title: test/math/FormalPowerSeries-log.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-nth.test.cpp
+    title: test/math/FormalPowerSeries-nth.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-pow.test.cpp
     title: test/math/FormalPowerSeries-pow.test.cpp
   _isVerificationFailed: false
@@ -84,14 +87,15 @@ data:
     \        for(int i=0;i<n;++i) res[i] += lhs[i];\n        for(int i=0;i<m;++i)\
     \ res[i] -= rhs[i];\n        return res;\n    }\n    inline static Fps mul(const\
     \ Fps& lhs, const Fps& rhs) {\n        return NumberTheoreticalTransform<Mint>::convolution(lhs,rhs);\n\
-    \    }\n    inline static Mint nth_term_impl(long long n, Fps numerator,Fps denominator)\
-    \ {\n        while(n) {\n            numerator   *= denominator.symmetry();\n\
+    \    }\n    inline static Mint nth_term(long long n, Fps numerator,Fps denominator)\
+    \ {\n        while(n) {\n            numerator    = mul(numerator,denominator.symmetry());\n\
     \            numerator    = ((n&1)?numerator.odd():numerator.even());\n      \
-    \      denominator *= denominator.symmetry();\n            denominator  = denominator.even();\n\
-    \            n >>= 1;\n        }\n        return numerator[0];\n    }\n\n    friend\
-    \ ostream &operator<<(ostream &os, const Fps& fps) {os << \"{\" << fps[0];for(int\
-    \ i=1;i<fps.size();++i) os << \", \" << fps[i];return os << \"}\";}\n};\n//using\
-    \ fps = FormalPowerSeries<RuntimeModInt<mod>>;\n//using fps = FormalPowerSeries<ModInt<MOD>>;\n"
+    \      denominator  = mul(denominator,denominator.symmetry());\n            denominator\
+    \  = denominator.even();\n            n >>= 1;\n        }\n        return numerator[0];\n\
+    \    }\n\n    friend ostream &operator<<(ostream &os, const Fps& fps) {os << \"\
+    {\" << fps[0];for(int i=1;i<fps.size();++i) os << \", \" << fps[i];return os <<\
+    \ \"}\";}\n};\n//using fps = FormalPowerSeries<RuntimeModInt<mod>>;\n//using fps\
+    \ = FormalPowerSeries<ModInt<MOD>>;\n"
   code: "/*\n * @title FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n\
     \ * @docs md/math/FormalPowerSeries.md\n */\ntemplate<class T> struct FormalPowerSeries\
     \ : public vector<T> {\n    using vector<T>::vector;\n    using Mint  = T;\n \
@@ -154,24 +158,26 @@ data:
     \        for(int i=0;i<n;++i) res[i] += lhs[i];\n        for(int i=0;i<m;++i)\
     \ res[i] -= rhs[i];\n        return res;\n    }\n    inline static Fps mul(const\
     \ Fps& lhs, const Fps& rhs) {\n        return NumberTheoreticalTransform<Mint>::convolution(lhs,rhs);\n\
-    \    }\n    inline static Mint nth_term_impl(long long n, Fps numerator,Fps denominator)\
-    \ {\n        while(n) {\n            numerator   *= denominator.symmetry();\n\
+    \    }\n    inline static Mint nth_term(long long n, Fps numerator,Fps denominator)\
+    \ {\n        while(n) {\n            numerator    = mul(numerator,denominator.symmetry());\n\
     \            numerator    = ((n&1)?numerator.odd():numerator.even());\n      \
-    \      denominator *= denominator.symmetry();\n            denominator  = denominator.even();\n\
-    \            n >>= 1;\n        }\n        return numerator[0];\n    }\n\n    friend\
-    \ ostream &operator<<(ostream &os, const Fps& fps) {os << \"{\" << fps[0];for(int\
-    \ i=1;i<fps.size();++i) os << \", \" << fps[i];return os << \"}\";}\n};\n//using\
-    \ fps = FormalPowerSeries<RuntimeModInt<mod>>;\n//using fps = FormalPowerSeries<ModInt<MOD>>;"
+    \      denominator  = mul(denominator,denominator.symmetry());\n            denominator\
+    \  = denominator.even();\n            n >>= 1;\n        }\n        return numerator[0];\n\
+    \    }\n\n    friend ostream &operator<<(ostream &os, const Fps& fps) {os << \"\
+    {\" << fps[0];for(int i=1;i<fps.size();++i) os << \", \" << fps[i];return os <<\
+    \ \"}\";}\n};\n//using fps = FormalPowerSeries<RuntimeModInt<mod>>;\n//using fps\
+    \ = FormalPowerSeries<ModInt<MOD>>;"
   dependsOn: []
   isVerificationFile: false
   path: lib/math/FormalPowerSeries.cpp
   requiredBy: []
-  timestamp: '2021-04-08 05:02:54+09:00'
+  timestamp: '2021-04-08 05:28:05+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/FormalPowerSeries-inv.test.cpp
   - test/math/FormalPowerSeries-exp.test.cpp
   - test/math/FormalPowerSeries-log.test.cpp
+  - test/math/FormalPowerSeries-nth.test.cpp
   - test/math/FormalPowerSeries-pow.test.cpp
 documentation_of: lib/math/FormalPowerSeries.cpp
 layout: document

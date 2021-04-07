@@ -13,6 +13,9 @@ data:
     path: test/math/FormalPowerSeries-log.test.cpp
     title: test/math/FormalPowerSeries-log.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-nth.test.cpp
+    title: test/math/FormalPowerSeries-nth.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-pow.test.cpp
     title: test/math/FormalPowerSeries-pow.test.cpp
   - icon: ':heavy_check_mark:'
@@ -193,6 +196,7 @@ data:
   - test/math/FormalPowerSeries-log.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
+  - test/math/FormalPowerSeries-nth.test.cpp
   - test/math/FormalPowerSeries-pow.test.cpp
 documentation_of: lib/math/NumberTheoreticalTransform.cpp
 layout: document
