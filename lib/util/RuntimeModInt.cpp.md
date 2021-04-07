@@ -7,9 +7,6 @@ data:
     path: test/math/FormalPowerSeries-exp.test.cpp
     title: test/math/FormalPowerSeries-exp.test.cpp
   - icon: ':x:'
-    path: test/math/FormalPowerSeries-log.test.cpp
-    title: test/math/FormalPowerSeries-log.test.cpp
-  - icon: ':x:'
     path: test/math/FormalPowerSeries-pow.test.cpp
     title: test/math/FormalPowerSeries-pow.test.cpp
   - icon: ':heavy_check_mark:'
@@ -115,7 +112,6 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/math/FormalPowerSeries-exp.test.cpp
-  - test/math/FormalPowerSeries-log.test.cpp
   - test/math/FormalPowerSeries-pow.test.cpp
   - test/util/RuntimeModInt.test.cpp
 documentation_of: lib/util/RuntimeModInt.cpp

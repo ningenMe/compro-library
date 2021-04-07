@@ -447,7 +447,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-inv.test.cpp
       title: test/math/FormalPowerSeries-inv.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-log.test.cpp
       title: test/math/FormalPowerSeries-log.test.cpp
     - icon: ':x:'
