@@ -177,10 +177,10 @@ data:
     \ {\n            Fps h = mul(ret,(sub(this->prefix(i),ret.log(i))));\n       \
     \     ret.resize(i);\n            for(int j=i>>1;j<i;++j) ret[j] += h[j];    \
     \        \n        }\n        return ret.prefix(n);\n    }\n    Fps exp(void)\
-    \ const {return exp(this->size());}\n\n    Fps pow(long long k,size_t n) const\
-    \ {\n        Fps ret(n,0);\n        for(size_t i=0; i < min(n,this->size()) &&\
-    \ i*k < n; ++i) {\n            if((*this)[i].x == 0) continue;\n            Mint\
-    \ t0=(*this)[i], t0_inv=t0.inv();\n            Fps tmp(n-i);for(int j=i;j<min(n,this->size());\
+    \ const {return exp(this->size());}\n    Fps pow(long long k,size_t n) const {\n\
+    \        Fps ret(n,0);\n        for(size_t i=0,m = min(n,this->size()); i < m\
+    \ && i*k < n; ++i) {\n            if((*this)[i].x == 0) continue;\n          \
+    \  Mint t0=(*this)[i], t0_inv=t0.inv();\n            Fps tmp(n-i);for(int j=i;j<m;\
     \ ++j) tmp[j-i]=(*this)[j]*t0_inv;\n            tmp = (tmp.log(n)*k).exp(n)*(t0.pow(k));\n\
     \            for(int j=0;j+i*k<n;++j) ret[j+i*k] = tmp[j];\n            break;\n\
     \        }\n        return ret;\n    }\n    Fps pow(long long k) const {return\
@@ -223,7 +223,7 @@ data:
   isVerificationFile: true
   path: test/math/FormalPowerSeries-exp.test.cpp
   requiredBy: []
-  timestamp: '2021-04-08 04:49:07+09:00'
+  timestamp: '2021-04-08 05:02:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/FormalPowerSeries-exp.test.cpp
