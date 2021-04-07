@@ -14,43 +14,44 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://yukicoder.me/problems/no/1307
+    PROBLEM: https://yukicoder.me/problems/no/1068
     links:
-    - https://yukicoder.me/problems/no/1307
-  bundledCode: "#line 1 \"test/math/NumberTheoreticalTransform.test.cpp\"\n#define\
-    \ PROBLEM \"https://yukicoder.me/problems/no/1307\"\n\n#include <vector>\n#include\
-    \ <iostream>\n#include <algorithm>\n#include <array>\nusing namespace std;\n#line\
-    \ 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/util/ModInt.md\n\
-    \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
-    \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
-    \ (-y)%mod)%mod) {}\n    ModInt &operator+=(const ModInt &p) {if((x += p.x) >=\
-    \ mod) x -= mod;return *this;}\n    ModInt &operator+=(const long long y) {ModInt\
-    \ p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
-    \ int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt\
-    \ &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}\n\
-    \    ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >=\
-    \ mod) x -= mod;return *this;}\n    ModInt &operator-=(const int y) {ModInt p(y);if((x\
-    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator*=(const\
-    \ ModInt &p) {x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
-    \ long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
-    \ int y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator^=(const\
-    \ ModInt &p) {x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
-    \ long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
-    \ int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator/=(const\
-    \ ModInt &p) {*this *= p.inv();return *this;}\n    ModInt &operator/=(const long\
-    \ long y) {ModInt p(y);*this *= p.inv();return *this;}\n    ModInt &operator/=(const\
-    \ int y) {ModInt p(y);*this *= p.inv();return *this;}\n    ModInt operator=(const\
-    \ int y) {ModInt p(y);*this = p;return *this;}\n    ModInt operator=(const long\
-    \ long y) {ModInt p(y);*this = p;return *this;}\n    ModInt operator-() const\
-    \ {return ModInt(-x); }\n    ModInt operator++() {x++;if(x>=mod) x-=mod;return\
-    \ *this;}\n    ModInt operator--() {x--;if(x<0) x+=mod;return *this;}\n    ModInt\
-    \ operator+(const ModInt &p) const { return ModInt(*this) += p; }\n    ModInt\
-    \ operator-(const ModInt &p) const { return ModInt(*this) -= p; }\n    ModInt\
-    \ operator*(const ModInt &p) const { return ModInt(*this) *= p; }\n    ModInt\
-    \ operator/(const ModInt &p) const { return ModInt(*this) /= p; }\n    ModInt\
-    \ operator^(const ModInt &p) const { return ModInt(*this) ^= p; }\n    bool operator==(const\
-    \ ModInt &p) const { return x == p.x; }\n    bool operator!=(const ModInt &p)\
-    \ const { return x != p.x; }\n    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
+    - https://yukicoder.me/problems/no/1068
+  bundledCode: "#line 1 \"test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp\"\
+    \n#define PROBLEM \"https://yukicoder.me/problems/no/1068\"\n\n#include <vector>\n\
+    #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\
+    \nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
+    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
+    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
+    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const\
+    \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
+    \ long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n  \
+    \  ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
+    \ *this;}\n    ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod)\
+    \ x -= mod;return *this;}\n    ModInt &operator-=(const long long y) {ModInt p(y);if((x\
+    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator-=(const\
+    \ int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}\n  \
+    \  ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}\n \
+    \   ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x % mod);return\
+    \ *this;}\n    ModInt &operator*=(const int y) {ModInt p(y);x = (x * p.x % mod);return\
+    \ *this;}\n    ModInt &operator^=(const ModInt &p) {x = (x ^ p.x) % mod;return\
+    \ *this;}\n    ModInt &operator^=(const long long y) {ModInt p(y);x = (x ^ p.x)\
+    \ % mod;return *this;}\n    ModInt &operator^=(const int y) {ModInt p(y);x = (x\
+    \ ^ p.x) % mod;return *this;}\n    ModInt &operator/=(const ModInt &p) {*this\
+    \ *= p.inv();return *this;}\n    ModInt &operator/=(const long long y) {ModInt\
+    \ p(y);*this *= p.inv();return *this;}\n    ModInt &operator/=(const int y) {ModInt\
+    \ p(y);*this *= p.inv();return *this;}\n    ModInt operator=(const int y) {ModInt\
+    \ p(y);*this = p;return *this;}\n    ModInt operator=(const long long y) {ModInt\
+    \ p(y);*this = p;return *this;}\n    ModInt operator-() const {return ModInt(-x);\
+    \ }\n    ModInt operator++() {x++;if(x>=mod) x-=mod;return *this;}\n    ModInt\
+    \ operator--() {x--;if(x<0) x+=mod;return *this;}\n    ModInt operator+(const\
+    \ ModInt &p) const { return ModInt(*this) += p; }\n    ModInt operator-(const\
+    \ ModInt &p) const { return ModInt(*this) -= p; }\n    ModInt operator*(const\
+    \ ModInt &p) const { return ModInt(*this) *= p; }\n    ModInt operator/(const\
+    \ ModInt &p) const { return ModInt(*this) /= p; }\n    ModInt operator^(const\
+    \ ModInt &p) const { return ModInt(*this) ^= p; }\n    bool operator==(const ModInt\
+    \ &p) const { return x == p.x; }\n    bool operator!=(const ModInt &p) const {\
+    \ return x != p.x; }\n    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
     \ > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}\n\
     \    ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul *= mul,n\
     \ >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream &operator<<(ostream\
@@ -129,35 +130,41 @@ data:
     \ g,const vector<ModInt<1000000007>>& h){return convolution_arbitrarymod(g,h);}\n\
     \    // inline vector<RuntimeModInt<runtime_mod>> convolution(const vector<RuntimeModInt<runtime_mod>>&\
     \ g,const vector<RuntimeModInt<runtime_mod>>& h){return convolution_arbitrarymod(g,h);}\n\
-    };\n#line 10 \"test/math/NumberTheoreticalTransform.test.cpp\"\n\nconstexpr long\
-    \ long mod = 1000000000000000000;\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \    int N,Q; cin >> N >> Q;\n    vector<long long> A(N),B(N,0),D(N,0);\n    for(int\
-    \ i=0;i<N;++i) cin >> A[i];\n    while(Q--){\n        int r; cin >> r; B[N-1-r]+=1;\n\
-    \    }\n    auto C = NumberTheoreticalTransform<ModInt<mod>>::convolution(A,B);\n\
-    \    for(int i=0;i<2*N-1;++i) {\n        D[(i+1)%N]+=C[i];\n    }\n    for(int\
-    \ i=0;i<N;++i) cout << D[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/1307\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <algorithm>\n#include <array>\nusing namespace std;\n\
-    #include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/math/NumberTheoreticalTransform.cpp\"\
-    \n\nconstexpr long long mod = 1000000000000000000;\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \    int N,Q; cin >> N >> Q;\n    vector<long long> A(N),B(N,0),D(N,0);\n    for(int\
-    \ i=0;i<N;++i) cin >> A[i];\n    while(Q--){\n        int r; cin >> r; B[N-1-r]+=1;\n\
-    \    }\n    auto C = NumberTheoreticalTransform<ModInt<mod>>::convolution(A,B);\n\
-    \    for(int i=0;i<2*N-1;++i) {\n        D[(i+1)%N]+=C[i];\n    }\n    for(int\
-    \ i=0;i<N;++i) cout << D[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
+    };\n#line 12 \"test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp\"\
+    \nconstexpr long long MOD = 998244353;\nusing modint = ModInt<MOD>;\n\nvector<vector<modint>>\
+    \ v;\nvector<modint> rec(int l, int r) {\n    if(r-l==1) return v[l];\n    if(r-l==2)\
+    \ return NumberTheoreticalTransform<modint>::convolution(v[l],v[l+1]);\n    return\
+    \ NumberTheoreticalTransform<modint>::convolution(rec(l,(l+r)/2),rec((l+r)/2,r));\n\
+    }\n\nint main() {\n    int N,Q; cin >> N >> Q;\n    vector<ModInt<MOD>> A(N);\n\
+    \    vector<int> B(Q);\n    for(int i = 0; i < N; ++i) cin >> A[i];\n    for(int\
+    \ i = 0; i < Q; ++i) cin >> B[i];\n    v.resize(N);\n    for(int i = 0; i < N;\
+    \ ++i) v[i]={A[i]-1,1};\n    auto c = rec(0,N);\n    for(int i = 0; i < Q; ++i)\
+    \ {\n        cout << c[B[i]] << endl;\n    }\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/1068\"\n\n#include <vector>\n\
+    #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\
+    \nusing namespace std;\n#include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/math/NumberTheoreticalTransform.cpp\"\
+    \nconstexpr long long MOD = 998244353;\nusing modint = ModInt<MOD>;\n\nvector<vector<modint>>\
+    \ v;\nvector<modint> rec(int l, int r) {\n    if(r-l==1) return v[l];\n    if(r-l==2)\
+    \ return NumberTheoreticalTransform<modint>::convolution(v[l],v[l+1]);\n    return\
+    \ NumberTheoreticalTransform<modint>::convolution(rec(l,(l+r)/2),rec((l+r)/2,r));\n\
+    }\n\nint main() {\n    int N,Q; cin >> N >> Q;\n    vector<ModInt<MOD>> A(N);\n\
+    \    vector<int> B(Q);\n    for(int i = 0; i < N; ++i) cin >> A[i];\n    for(int\
+    \ i = 0; i < Q; ++i) cin >> B[i];\n    v.resize(N);\n    for(int i = 0; i < N;\
+    \ ++i) v[i]={A[i]-1,1};\n    auto c = rec(0,N);\n    for(int i = 0; i < Q; ++i)\
+    \ {\n        cout << c[B[i]] << endl;\n    }\n    return 0;\n}\n"
   dependsOn:
   - lib/util/ModInt.cpp
   - lib/math/NumberTheoreticalTransform.cpp
   isVerificationFile: true
-  path: test/math/NumberTheoreticalTransform.test.cpp
+  path: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
   requiredBy: []
-  timestamp: '2021-04-08 01:21:45+09:00'
+  timestamp: '2021-04-08 01:38:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/math/NumberTheoreticalTransform.test.cpp
+documentation_of: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
 layout: document
 redirect_from:
-- /verify/test/math/NumberTheoreticalTransform.test.cpp
-- /verify/test/math/NumberTheoreticalTransform.test.cpp.html
-title: test/math/NumberTheoreticalTransform.test.cpp
+- /verify/test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
+- /verify/test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp.html
+title: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
 ---

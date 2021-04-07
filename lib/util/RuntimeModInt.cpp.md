@@ -10,12 +10,6 @@ data:
     path: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
     title: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-conv998244353-1.test.cpp
-    title: test/math/FormalPowerSeries-conv998244353-1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-conv998244353-2.test.cpp
-    title: test/math/FormalPowerSeries-conv998244353-2.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-exp.test.cpp
     title: test/math/FormalPowerSeries-exp.test.cpp
   - icon: ':heavy_check_mark:'
@@ -133,8 +127,6 @@ data:
   - test/math/FormalPowerSeries-exp.test.cpp
   - test/math/FormalPowerSeries-log.test.cpp
   - test/math/FormalPowerSeries-conv1000000007-1.test.cpp
-  - test/math/FormalPowerSeries-conv998244353-2.test.cpp
-  - test/math/FormalPowerSeries-conv998244353-1.test.cpp
   - test/math/FormalPowerSeries-conv1000000007-2.test.cpp
   - test/math/FormalPowerSeries-pow.test.cpp
   - test/util/RuntimeModInt.test.cpp
