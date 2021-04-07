@@ -43,6 +43,7 @@
 "test/math/Garner.test.cpp": "2020-09-26 16:29:44 +0900",
 "test/math/Matrix-det.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/math/Matrix-pow.test.cpp": "2020-09-26 17:01:19 +0900",
+"test/math/NumberTheoreticalTransform.test.cpp": "2021-04-08 01:21:45 +0900",
 "test/math/Prime-miller-rabin.test.cpp": "2020-09-26 16:29:44 +0900",
 "test/math/Prime-rho.test.cpp": "2020-09-26 16:29:44 +0900",
 "test/optimize/LongestIncreasingSubsequence.test.cpp": "2020-10-25 16:36:50 +0900",
