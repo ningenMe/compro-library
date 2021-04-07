@@ -88,7 +88,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/math/NumberTheoreticalTransform.cpp
       title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
     - icon: ':heavy_check_mark:'
@@ -163,7 +163,7 @@ data:
       title: Zalgorithm
   - name: lib/util
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/util/ModInt.cpp
       title: ModInt
     - icon: ':heavy_check_mark:'
@@ -475,7 +475,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Matrix-pow.test.cpp
       title: test/math/Matrix-pow.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/NumberTheoreticalTransform.test.cpp
       title: test/math/NumberTheoreticalTransform.test.cpp
     - icon: ':heavy_check_mark:'

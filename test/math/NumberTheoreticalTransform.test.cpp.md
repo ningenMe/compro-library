@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/math/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/1307
@@ -131,18 +131,18 @@ data:
     \ g,const vector<RuntimeModInt<runtime_mod>>& h){return convolution_arbitrarymod(g,h);}\n\
     };\n#line 10 \"test/math/NumberTheoreticalTransform.test.cpp\"\n\nconstexpr long\
     \ long mod = 1000000000000000000;\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \    int N,Q; cin >> N >> Q;\n    vector<ModInt<mod>> A(N),B(N,0),D(N,0);\n  \
-    \  for(int i=0;i<N;++i) cin >> A[i];\n    while(Q--){\n        int r; cin >> r;\
-    \ B[N-1-r]+=1;\n    }\n    auto C = NumberTheoreticalTransform<ModInt<mod>>::convolution(A,B);\n\
+    \    int N,Q; cin >> N >> Q;\n    vector<long long> A(N),B(N,0),D(N,0);\n    for(int\
+    \ i=0;i<N;++i) cin >> A[i];\n    while(Q--){\n        int r; cin >> r; B[N-1-r]+=1;\n\
+    \    }\n    auto C = NumberTheoreticalTransform<ModInt<mod>>::convolution(A,B);\n\
     \    for(int i=0;i<2*N-1;++i) {\n        D[(i+1)%N]+=C[i];\n    }\n    for(int\
     \ i=0;i<N;++i) cout << D[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1307\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <array>\nusing namespace std;\n\
     #include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/math/NumberTheoreticalTransform.cpp\"\
     \n\nconstexpr long long mod = 1000000000000000000;\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \    int N,Q; cin >> N >> Q;\n    vector<ModInt<mod>> A(N),B(N,0),D(N,0);\n  \
-    \  for(int i=0;i<N;++i) cin >> A[i];\n    while(Q--){\n        int r; cin >> r;\
-    \ B[N-1-r]+=1;\n    }\n    auto C = NumberTheoreticalTransform<ModInt<mod>>::convolution(A,B);\n\
+    \    int N,Q; cin >> N >> Q;\n    vector<long long> A(N),B(N,0),D(N,0);\n    for(int\
+    \ i=0;i<N;++i) cin >> A[i];\n    while(Q--){\n        int r; cin >> r; B[N-1-r]+=1;\n\
+    \    }\n    auto C = NumberTheoreticalTransform<ModInt<mod>>::convolution(A,B);\n\
     \    for(int i=0;i<2*N-1;++i) {\n        D[(i+1)%N]+=C[i];\n    }\n    for(int\
     \ i=0;i<N;++i) cout << D[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
   dependsOn:
@@ -151,8 +151,8 @@ data:
   isVerificationFile: true
   path: test/math/NumberTheoreticalTransform.test.cpp
   requiredBy: []
-  timestamp: '2021-04-08 01:18:14+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-04-08 01:21:45+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/NumberTheoreticalTransform.test.cpp
 layout: document

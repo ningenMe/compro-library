@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticalTransform.test.cpp
     title: test/math/NumberTheoreticalTransform.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/math/NumberTheoreticalTransform.md
     document_title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
@@ -164,7 +164,7 @@ data:
   path: lib/math/NumberTheoreticalTransform.cpp
   requiredBy: []
   timestamp: '2021-04-08 01:18:14+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/NumberTheoreticalTransform.test.cpp
 documentation_of: lib/math/NumberTheoreticalTransform.cpp
