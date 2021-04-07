@@ -332,6 +332,11 @@ data:
     - icon: ':warning:'
       path: old/ZArray.cpp
       title: old/ZArray.cpp
+  - name: test/math
+    pages:
+    - icon: ':warning:'
+      path: test/math/hoge.cpp
+      title: test/math/hoge.cpp
   verificationCategories:
   - name: test
     pages:
@@ -443,12 +448,6 @@ data:
       path: test/math/FloorSum.test.cpp
       title: test/math/FloorSum.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
-      title: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
-      title: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-exp.test.cpp
       title: test/math/FormalPowerSeries-exp.test.cpp
     - icon: ':heavy_check_mark:'
@@ -469,6 +468,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Matrix-pow.test.cpp
       title: test/math/Matrix-pow.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
+      title: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
       title: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp

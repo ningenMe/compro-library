@@ -13,12 +13,6 @@ data:
     path: test/math/FastFourierTransform.test.cpp
     title: test/math/FastFourierTransform.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
-    title: test/math/FormalPowerSeries-conv1000000007-1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
-    title: test/math/FormalPowerSeries-conv1000000007-2.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-exp.test.cpp
     title: test/math/FormalPowerSeries-exp.test.cpp
   - icon: ':heavy_check_mark:'
@@ -36,6 +30,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/Matrix-pow.test.cpp
     title: test/math/Matrix-pow.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
+    title: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
     title: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
@@ -143,14 +140,13 @@ data:
   - test/math/NumberTheoreticalTransform-conv-fft.test.cpp
   - test/math/FormalPowerSeries-exp.test.cpp
   - test/math/CombinationMod-factorial.test.cpp
+  - test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - test/math/Matrix-det.test.cpp
   - test/math/FormalPowerSeries-log.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
-  - test/math/FormalPowerSeries-conv1000000007-1.test.cpp
   - test/math/FastFourierTransform.test.cpp
   - test/math/Matrix-pow.test.cpp
-  - test/math/FormalPowerSeries-conv1000000007-2.test.cpp
   - test/math/FormalPowerSeries-pow.test.cpp
   - test/graph/Tree-hld-path.test.cpp
   - test/segment/SegmentTree-rcq.test.cpp
