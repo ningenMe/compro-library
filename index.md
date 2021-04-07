@@ -71,9 +71,6 @@ data:
       path: lib/math/Eratosthenes.cpp
       title: "Eratosthenes - \u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
     - icon: ':heavy_check_mark:'
-      path: lib/math/FastFourierTransform.cpp
-      title: "FastFourierTransform - \u9AD8\u901F\u30D5\u30FC\u30EA\u30A8\u5909\u63DB"
-    - icon: ':heavy_check_mark:'
       path: lib/math/FloorSum.cpp
       title: "FloorSum - \u76F4\u7DDA\u9818\u57DF\u306E\u683C\u5B50\u70B9\u6570"
     - icon: ':question:'
@@ -441,9 +438,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Eratosthenes.test.cpp
       title: test/math/Eratosthenes.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/math/FastFourierTransform.test.cpp
-      title: test/math/FastFourierTransform.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/math/FloorSum.test.cpp
       title: test/math/FloorSum.test.cpp

@@ -66,3 +66,7 @@
 - [(形式的)べき級数と数え上げの写像12相との関係性　前編 - Senの競技プログラミング備忘録](https://sen-comp.hatenablog.com/entry/2019/12/07/142131)
 - [今年中に理解する！多項式、母関数、形式的べき級数の競プロでの実践的使い方 - はまやんはまやんはまやん](https://www.hamayanhamayan.com/entry/2019/12/07/000441)
 - [線形漸化式を満たす数列の N 項目を計算するアルゴリズム](http://q.c.titech.ac.jp/docs/progs/polynomial_division.html)
+- [形式的冪級数（FPS）の inv，log，exp，pow の定数倍の軽いアルゴリズム](https://opt-cp.com/fps-fast-algorithms/)
+- [多項式を使うテクニックたち](https://yukicoder.me/wiki/polynomial_techniques)
+- [非再帰で多項式の多点評価をするよ](https://rsk0315.hatenablog.com/entry/2020/04/05/190941)
+- [非再帰で補間多項式を求めるよ](https://rsk0315.hatenablog.com/entry/2020/04/05/203210)

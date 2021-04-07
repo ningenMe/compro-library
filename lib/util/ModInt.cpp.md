@@ -9,9 +9,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/CombinationMod-factorial.test.cpp
     title: test/math/CombinationMod-factorial.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FastFourierTransform.test.cpp
-    title: test/math/FastFourierTransform.test.cpp
   - icon: ':x:'
     path: test/math/FormalPowerSeries-exp.test.cpp
     title: test/math/FormalPowerSeries-exp.test.cpp
@@ -145,7 +142,6 @@ data:
   - test/math/FormalPowerSeries-log.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
-  - test/math/FastFourierTransform.test.cpp
   - test/math/Matrix-pow.test.cpp
   - test/math/FormalPowerSeries-pow.test.cpp
   - test/graph/Tree-hld-path.test.cpp
