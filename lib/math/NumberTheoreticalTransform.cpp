@@ -108,21 +108,14 @@ template<class T> class NumberTheoreticalTransform {
     }
 public:
     inline static vector<long long> convolution(const vector<long long>& g,const vector<long long>& h) {
-        vector<T> a(g.size()), b(h.size());
-        transform(g.begin(),g.end(),a.begin(),[&](long long x){return T(x);});
-        transform(h.begin(),h.end(),b.begin(),[&](long long x){return T(x);});
-        auto c = convolution_arbitrarymod(a,b);
-        vector<long long> f(g.size()+h.size()-1);
-        transform(c.begin(),c.end(),f.begin(),[&](T x){return x.x;});
-        return f;
-    }
-    inline static vector<long long> convolution(const vector<long long>& g,const vector<long long>& h) {
-        vector<T> a(g.size()), b(h.size());
-        transform(g.begin(),g.end(),a.begin(),[&](long long x){return T(x);});
-        transform(h.begin(),h.end(),b.begin(),[&](long long x){return T(x);});
-        auto c = convolution_arbitrarymod(a,b);
-        vector<long long> f(g.size()+h.size()-1);
-        transform(c.begin(),c.end(),f.begin(),[&](T x){return x.x;});
+        vector<T> a(g.size()),b(h.size());
+        for(int i=0;i<a.size();++i) a[i]=T(g[i]);
+        for(int i=0;i<b.size();++i) b[i]=T(h[i]);
+        auto f1 = convolution_friendrymod<prime1>(a, b);
+        auto f2 = convolution_friendrymod<prime2>(a, b);
+        auto f3 = convolution_friendrymod<prime3>(a, b);
+        vector<long long> f(f1.size());
+        for(int i=0; i<f1.size(); ++i) f[i] = garner(f1[i],f2[i],f3[i]).x;
         return f;
     }
     inline static vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){return convolution_friendrymod<998244353>(g,h);}
