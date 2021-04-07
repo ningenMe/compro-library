@@ -117,25 +117,20 @@ data:
     \ f3 = convolution_friendrymod<prime3>(g, h);\n\n        vector<Mint> f(f1.size());\n\
     \        for(int i=0; i<f1.size(); ++i) f[i] = garner(f1[i],f2[i],f3[i]);\n  \
     \      return f;\n    }\npublic:\n    inline static vector<long long> convolution(const\
-    \ vector<long long>& g,const vector<long long>& h) {\n        vector<T> a(g.size()),\
-    \ b(h.size());\n        transform(g.begin(),g.end(),a.begin(),[&](long long x){return\
-    \ T(x);});\n        transform(h.begin(),h.end(),b.begin(),[&](long long x){return\
-    \ T(x);});\n        auto c = convolution_arbitrarymod(a,b);\n        vector<long\
-    \ long> f(g.size()+h.size()-1);\n        transform(c.begin(),c.end(),f.begin(),[&](T\
-    \ x){return x.x;});\n        return f;\n    }\n    inline static vector<long long>\
-    \ convolution(const vector<long long>& g,const vector<long long>& h) {\n     \
-    \   vector<T> a(g.size()), b(h.size());\n        transform(g.begin(),g.end(),a.begin(),[&](long\
-    \ long x){return T(x);});\n        transform(h.begin(),h.end(),b.begin(),[&](long\
-    \ long x){return T(x);});\n        auto c = convolution_arbitrarymod(a,b);\n \
-    \       vector<long long> f(g.size()+h.size()-1);\n        transform(c.begin(),c.end(),f.begin(),[&](T\
-    \ x){return x.x;});\n        return f;\n    }\n    inline static vector<ModInt<998244353>>\
-    \ convolution(const vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>&\
-    \ h){return convolution_friendrymod<998244353>(g,h);}\n    inline static vector<ModInt<1000000007>>\
-    \ convolution(const vector<ModInt<1000000007>>& g,const vector<ModInt<1000000007>>&\
-    \ h){return convolution_arbitrarymod(g,h);}\n    // inline vector<RuntimeModInt<runtime_mod>>\
-    \ convolution(const vector<RuntimeModInt<runtime_mod>>& g,const vector<RuntimeModInt<runtime_mod>>&\
-    \ h){return convolution_arbitrarymod(g,h);}\n};\n#line 10 \"test/math/NumberTheoreticalTransform.test.cpp\"\
-    \n\nconstexpr long long mod = 1000000000000000000;\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
+    \ vector<long long>& g,const vector<long long>& h) {\n        vector<T> a(g.size()),b(h.size());\n\
+    \        for(int i=0;i<a.size();++i) a[i]=T(g[i]);\n        for(int i=0;i<b.size();++i)\
+    \ b[i]=T(h[i]);\n        auto f1 = convolution_friendrymod<prime1>(a, b);\n  \
+    \      auto f2 = convolution_friendrymod<prime2>(a, b);\n        auto f3 = convolution_friendrymod<prime3>(a,\
+    \ b);\n        vector<long long> f(f1.size());\n        for(int i=0; i<f1.size();\
+    \ ++i) f[i] = garner(f1[i],f2[i],f3[i]).x;\n        return f;\n    }\n    inline\
+    \ static vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>&\
+    \ g,const vector<ModInt<998244353>>& h){return convolution_friendrymod<998244353>(g,h);}\n\
+    \    inline static vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>&\
+    \ g,const vector<ModInt<1000000007>>& h){return convolution_arbitrarymod(g,h);}\n\
+    \    // inline vector<RuntimeModInt<runtime_mod>> convolution(const vector<RuntimeModInt<runtime_mod>>&\
+    \ g,const vector<RuntimeModInt<runtime_mod>>& h){return convolution_arbitrarymod(g,h);}\n\
+    };\n#line 10 \"test/math/NumberTheoreticalTransform.test.cpp\"\n\nconstexpr long\
+    \ long mod = 1000000000000000000;\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
     \    int N,Q; cin >> N >> Q;\n    vector<ModInt<mod>> A(N),B(N,0),D(N,0);\n  \
     \  for(int i=0;i<N;++i) cin >> A[i];\n    while(Q--){\n        int r; cin >> r;\
     \ B[N-1-r]+=1;\n    }\n    auto C = NumberTheoreticalTransform<ModInt<mod>>::convolution(A,B);\n\
@@ -156,7 +151,7 @@ data:
   isVerificationFile: true
   path: test/math/NumberTheoreticalTransform.test.cpp
   requiredBy: []
-  timestamp: '2021-04-08 01:06:00+09:00'
+  timestamp: '2021-04-08 01:18:14+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/math/NumberTheoreticalTransform.test.cpp
