@@ -7,8 +7,8 @@
 #include <array>
 
 using namespace std;
-#include "../../lib/util/RuntimeModInt.cpp"
 #include "../../lib/util/ModInt.cpp"
+#include "../../lib/math/NumberTheoreticalTransform.cpp"
 #include "../../lib/math/FormalPowerSeries.cpp"
 constexpr long long MOD = 998244353;
 using fps = FormalPowerSeries<ModInt<MOD>>;
