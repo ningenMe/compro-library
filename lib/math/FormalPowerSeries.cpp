@@ -67,7 +67,7 @@ template<class T> struct FormalPowerSeries : public vector<T> {
     }
     inline vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h){return convolution_friendrymod<998244353>(g,h);}
     inline vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& g,const vector<ModInt<1000000007>>& h){return convolution_arbitrarymod(g,h);}
-    inline vector<RuntimeModInt<runtime_mod>> convolution(const vector<RuntimeModInt<runtime_mod>>& g,const vector<RuntimeModInt<runtime_mod>>& h){return convolution_arbitrarymod(g,h);}
+    // inline vector<RuntimeModInt<runtime_mod>> convolution(const vector<RuntimeModInt<runtime_mod>>& g,const vector<RuntimeModInt<runtime_mod>>& h){return convolution_arbitrarymod(g,h);}
 
     static inline Mint nth_term_impl(long long n, Fps numerator,Fps denominator) {
         while(n) {
@@ -91,12 +91,15 @@ public:
     Fps &operator*=(const long long int r) {for(int i=0;i< this->size(); ++i) (*this)[i] *= r; return *this; }
     Fps operator*(const Mint r) const {return Fps(*this) *= r; }
     Fps &operator*=(const Mint r) {for(int i=0;i< this->size(); ++i) (*this)[i] *= r; return *this; }
+
     Fps operator/(const int r) const {return Fps(*this) /= r; }
     Fps &operator/=(const int r) {return (*this) *= Mint(r).inv(); }
+
     Fps operator+(const Fps& r) const { return Fps(*this) += r; }
     Fps &operator+=(const Fps& r) {if(r.size() > this->size()) this->resize(r.size());for(int i = 0; i < r.size(); i++) (*this)[i] += r[i];return *this;}
     Fps operator+(const int r) const {return Fps(*this) += r; }
     Fps &operator+=(const int r) {for(int i=0;i< this->size(); ++i) (*this)[i] += r; return *this; }
+
     Fps operator-(void) const {return Fps(*this) *= (-1);}
     Fps operator-(const Fps& r) const { return Fps(*this) -= r; }
     Fps &operator-=(const Fps& r) {if(r.size() > this->size()) this->resize(r.size());for(int i = 0; i < r.size(); i++) (*this)[i] -= r[i];return *this;}
@@ -124,6 +127,7 @@ public:
     Fps log(void) const {return log(this->size());}
     Fps exp(size_t n) const {Fps ret(1,1);for(size_t i=1;i<n;i<<=1) ret = (ret*(this->prefix(i<<1) + Fps(1,1) - ret.log(i<<1))).prefix(i<<1);return ret.prefix(n);}
     Fps exp(void) const {return exp(this->size());}
+    Mint sub(Mint x) const {Mint base = 1,ret = 0; for(size_t i=0;i<this->size(); ++i,base *= x) ret += base*(*this)[i]; return ret;}
     friend ostream &operator<<(ostream &os, const Fps& fps) {os << "{" << fps[0];for(int i=1;i<fps.size();++i) os << ", " << fps[i];return os << "}";}
 };
 //using fps = FormalPowerSeries<RuntimeModInt<mod>>;
