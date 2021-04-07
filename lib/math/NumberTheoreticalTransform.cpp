@@ -11,7 +11,6 @@ template<class T> class NumberTheoreticalTransform {
     inline static constexpr int inv32  =657107549; // ModInt<mod3>(mod2).inv().x;
     inline static constexpr long long prime12=(1002772198720536577LL);
     inline static constexpr int log2n_max = 21;
-    static unordered_map<int,array<int,log2n_max>> base_map;
     using Mint  = T;
     using Mint1 = ModInt<prime1>;
     using Mint2 = ModInt<prime2>;

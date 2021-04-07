@@ -6,7 +6,7 @@ template<class T> struct FormalPowerSeries : public vector<T> {
     using vector<T>::vector;
     using Mint  = T;
     using Fps   = FormalPowerSeries<T>;
-    inline static constexpr int N_MAX = 500000;
+    inline static constexpr int N_MAX = 1000000;
 public:
     //a0 + a_1*x^1 + a_2*x^2 + ... + a_(n-1)*x^(n-1)
     FormalPowerSeries(vector<Mint> v){*this=FormalPowerSeries(v.size());for(int i=0;i<v.size();++i) (*this)[i]=v[i];}
@@ -26,19 +26,13 @@ public:
     Fps &operator*=(const long long int r) {for(int i=0;i< this->size(); ++i) (*this)[i] *= r; return *this; }
     Fps operator*(const Mint r) const {return Fps(*this) *= r; }
     Fps &operator*=(const Mint r) {for(int i=0;i< this->size(); ++i) (*this)[i] *= r; return *this; }
-
     Fps operator/(const int r) const {return Fps(*this) /= r; }
     Fps &operator/=(const int r) {return (*this) *= Mint(r).inv(); }
-
-    Fps operator+(const Fps& r) const { return Fps(*this) += r; }
-    Fps &operator+=(const Fps& r) {if(r.size() > this->size()) this->resize(r.size());for(int i = 0; i < r.size(); i++) (*this)[i] += r[i];return *this;}
     Fps operator+(const int r) const {return Fps(*this) += r; }
     Fps &operator+=(const int r) {for(int i=0;i< this->size(); ++i) (*this)[i] += r; return *this; }
-
     Fps operator-(void) const {return Fps(*this) *= (-1);}
     Fps operator-(const int r) const {return Fps(*this) -= r; }
     Fps &operator-=(const int r) {for(int i=0;i< this->size(); ++i) (*this)[i] -= r; return *this; }
-
     Fps prefix(size_t n) const {
         return Fps(this->begin(),this->begin()+min(n,this->size()));
     }
@@ -70,7 +64,16 @@ public:
         return mul(this->diff(),this->inv(n)).intg(n);
     }
     Fps log(void) const {return log(this->size());}
-
+    Fps exp(size_t n) const {
+        Fps ret(1,1);
+        for(size_t i=2,m=(n<<1);i<m;i<<=1) {
+            Fps h = mul(ret,(sub(this->prefix(i),ret.log(i))));
+            ret.resize(i);
+            for(int j=i>>1;j<i;++j) ret[j] += h[j];            
+        }
+        return ret.prefix(n);
+    }
+    Fps exp(void) const {return exp(this->size());}
 
     Fps pow(long long k,size_t n) const {
         Fps ret(n,0);
@@ -85,8 +88,6 @@ public:
         return ret;
     }
     Fps pow(long long k) const {return pow(k,this->size());}
-    Fps exp(size_t n) const {Fps ret(1,1);for(size_t i=1;i<n;i<<=1) ret = (ret*(this->prefix(i<<1) + Fps(1,1) - ret.log(i<<1))).prefix(i<<1);return ret.prefix(n);}
-    Fps exp(void) const {return exp(this->size());}
     Mint sub(Mint x) const {Mint base = 1,ret = 0; for(size_t i=0;i<this->size(); ++i,base *= x) ret += base*(*this)[i]; return ret;}
     inline static Fps add(const Fps& lhs,const Fps& rhs) {
         size_t n = lhs.size(), m = rhs.size();
