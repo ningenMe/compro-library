@@ -18,32 +18,29 @@
   - ModInt型のvectorでも初期化できる
   
 ### メソッド
-- int,long long,ModInt型とFpsとの四則演算は各要素に演算が行われる
-  - 和,差,積: $O(N)$
-  - 商: $O(N+\log mod)$
-- Fps型どうしの四則演算は、和,差については各要素同士、積については畳み込みになる
-  - 和,差: $O(N)$
-  - 積,商: $O(N\log N)$
-  - 積はnttによる畳込み
-  - 商は形式的ニュートン法
+- int,long long,ModInt型に対して、Fpsとの四則演算をオーバーロードしている。
+  - 演算は、fpsの各項に対して行われる。
+  - +,-,*: $O(N)$
+  - /: $O(N+\log mod)$
 - Fps prefix(size_t n)
   - Fpsのprefix
-  - $O(N)$
+  - $O(n)$
   - Fpsの`0`項目から`n-1`項目までのコピーが返却される
+- Fps inv(size_t n)
+  - Fpsの逆元$1/(f(x))$を返却する
+  - $O(N\log N)$
+  - nは打ち切りたい項数。指定しなかった場合は今のFpsと同じ大きさで返却される
 - Fps pow(long long k,size_t n) 
   - 累乗$ f(x)^k$を返却する
   - $O(N\log N)$
   - nは打ち切りたい項数。指定しなかった場合は今のFps.size()*kの大きさで返却される
-- Fps inv(size_t n)
-  - 逆元$1/(f(x))$を返却する
-  - $O(N\log N)$
-  - nは打ち切りたい項数。指定しなかった場合は今のFpsと同じ大きさで返却される
 - Fps diff(void) 
   - 微分$\( f'(x) \)$を返却する
   - $O(N)$
 - Fps intg(void) 
   - 積分$\( \int f(x)dx \)$を返却する
   - $O(N)$
+  - 初回時だけ、$O(N+\log mod)$
 - Fps log(size_t n)
   - 対数$\log f(x)$を返却する
   - $O(NlogN)$
@@ -52,6 +49,17 @@
   - 指数$\exp f(x)$を返却する
   - $O(N\log N)$
   - nは打ち切りたい項数。指定しなかった場合は今のFpsと同じ大きさで返却される
+- Fps add(const Fps& lhs,const Fps& rhs) 
+  - 2個のfpsの各要素の和を取ったfpsを返却する。
+  - サイズは、lhs,rhsの大きい方に合わせる。
+- Fps sub(const Fps& lhs,const Fps& rhs) 
+  - 2個のfpsの各要素の差を取ったfpsを返却する。
+  - lhs[i]-rhs[i]が返ると思って良い
+  - サイズは、lhs,rhsの大きい方に合わせる。
+- Fps mul(const Fps& lhs,const Fps& rhs) 
+  - 2個のfpsを畳み込んだfpsを返却する。
+  - 内部的にはnttを使用
+  - サイズは、lhs.size()+rhs.size()-1になる。
 - Mint nth_term(long long n,const Fps& numerator,const Fps& denominator)
   - f(x)のn項目が返却される
   - $O(N\log N \log n)$
