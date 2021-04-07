@@ -13,7 +13,7 @@ constexpr long long mod = 1000000000000000000;
 int main() {
     cin.tie(0);ios::sync_with_stdio(false);
     int N,Q; cin >> N >> Q;
-    vector<ModInt<mod>> A(N),B(N,0),D(N,0);
+    vector<long long> A(N),B(N,0),D(N,0);
     for(int i=0;i<N;++i) cin >> A[i];
     while(Q--){
         int r; cin >> r; B[N-1-r]+=1;
