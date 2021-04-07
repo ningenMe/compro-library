@@ -88,6 +88,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
+    - icon: ':x:'
+      path: lib/math/NumberTheoreticalTransform.cpp
+      title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
     - icon: ':heavy_check_mark:'
       path: lib/math/Prime.cpp
       title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\
@@ -160,7 +163,7 @@ data:
       title: Zalgorithm
   - name: lib/util
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/util/ModInt.cpp
       title: ModInt
     - icon: ':heavy_check_mark:'
@@ -472,6 +475,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Matrix-pow.test.cpp
       title: test/math/Matrix-pow.test.cpp
+    - icon: ':x:'
+      path: test/math/NumberTheoreticalTransform.test.cpp
+      title: test/math/NumberTheoreticalTransform.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/math/Prime-miller-rabin.test.cpp
       title: test/math/Prime-miller-rabin.test.cpp

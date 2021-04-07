@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/math/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
   - icon: ':heavy_check_mark:'

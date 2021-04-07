@@ -8,7 +8,7 @@ data:
     path: lib/segment/SegmentTree.cpp
     title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []

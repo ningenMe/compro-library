@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []
