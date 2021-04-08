@@ -34,9 +34,7 @@ public:
     Fps operator-(const int r) const {return Fps(*this) -= r; }
     Fps &operator-=(const int r) {for(int i=0;i< this->size(); ++i) (*this)[i] -= r; return *this; }
     Fps prefix(size_t n) const {
-        Fps ret(this->begin(),this->begin()+min(n,this->size()));
-        while(ret.size() && ret.back().x==0) ret.pop_back();
-        return ret;
+        return Fps(this->begin(),this->begin()+min(n,this->size()));
     }
     Fps inv(size_t n) const {
         Fps ret({Mint(1)/(*this)[0]});
@@ -89,7 +87,14 @@ public:
         return ret;
     }
     Fps pow(long long k) const {return pow(k,this->size());}
-    Mint sub(Mint x) const {Mint base = 1,ret = 0; for(size_t i=0;i<this->size(); ++i,base *= x) ret += base*(*this)[i]; return ret;}
+    Mint eval(Mint x) const {
+        Mint base = 1,ret = 0;
+        for(size_t i=0;i<this->size();++i) {
+            ret += (*this)[i]*base;
+            base *= x;
+        }
+        return ret;
+    }
     inline static Fps add(const Fps& lhs,const Fps& rhs) {
         size_t n = lhs.size(), m = rhs.size();
         Fps res(max(n,m),0);
@@ -124,16 +129,28 @@ public:
         while(f.size() && f.back().x==0) f.pop_back();
         return f;
     }
-    vector<Mint> multipoint_evaluation(vector<Mint> points) {
-        int n = points.size(),m;
+    vector<Mint> multipoint_evaluation(vector<Mint> x) {
+        int n = x.size(),m;
         for(m=1;m<n;m<<=1);
-        vector<Fps> node(2*m,Fps(1,1));
-        for(int i=0;i<n;++i) node[i+m] = Fps({-points[i],1});
-        for(int i=m-1;i;--i) node[i] = mul(node[(i<<1)|0],node[(i<<1)|1]);
-        node[1] = mod(*this,node[1]);
-        for(int i=2;i<m+n;++i) node[i] = mod(node[i>>1],node[i]);
-        for(int i=0;i<n;++i)   points[i] = node[i+m][0];
-        return points;
+        vector<Fps> f(2*m,Fps(1,1));
+        for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});
+        for(int i=m-1;i;--i) f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);
+        f[1] = mod(*this,f[1]);
+        for(int i=2;i<m+n;++i) f[i] = mod(f[i>>1],f[i]);
+        for(int i=0;i<n;++i)   x[i] = f[i+m][0];
+        return x;
+    }
+    inline static Fps interpolation(const vector<Mint>& x,const vector<Mint>& y) {
+        int n = x.size(),m;
+        for(m=1;m<n;m<<=1);
+        vector<Fps> f(2*m,Fps(1,1)),g(2*m);
+        for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});
+        for(int i=m-1;i;--i) f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);
+        g[1] = mod(f[1].diff(), f[1]);
+        for(int i=2;i<m+n;++i) g[i] = mod(g[i>>1],f[i]);
+        for(int i=0;i<n;++i) g[i+m] = Fps(1, y[i] / g[i+m][0]);
+        for(int i=m-1;i;--i) g[i] = add(mul(g[(i<<1)|0],f[(i<<1)|1]),mul(f[(i<<1)|0],g[(i<<1)|1]));
+        return g[1];
     }
     inline static Mint nth_term(long long n, Fps numerator,Fps denominator) {
         while(n) {
