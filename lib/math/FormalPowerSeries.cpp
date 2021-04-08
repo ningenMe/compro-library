@@ -34,7 +34,9 @@ public:
     Fps operator-(const int r) const {return Fps(*this) -= r; }
     Fps &operator-=(const int r) {for(int i=0;i< this->size(); ++i) (*this)[i] -= r; return *this; }
     Fps prefix(size_t n) const {
-        return Fps(this->begin(),this->begin()+min(n,this->size()));
+        Fps ret(this->begin(),this->begin()+min(n,this->size()));
+        while(ret.size() && ret.back().x==0) ret.pop_back();
+        return ret;
     }
     Fps inv(size_t n) const {
         Fps ret({Mint(1)/(*this)[0]});
@@ -104,6 +106,34 @@ public:
     }
     inline static Fps mul(const Fps& lhs, const Fps& rhs) {
         return NumberTheoreticalTransform<Mint>::convolution(lhs,rhs);
+    }
+    inline static Fps div(Fps lhs, Fps rhs) {
+        while(lhs.size() && lhs.back().x == 0) lhs.pop_back();
+        while(rhs.size() && rhs.back().x == 0) rhs.pop_back();
+        int n = lhs.size(), m = rhs.size();
+        if(n < m) return Fps(1,0);
+        reverse(lhs.begin(),lhs.end());
+        reverse(rhs.begin(),rhs.end());
+        auto f = mul(lhs,rhs.inv(n-m+1)).prefix(n-m+1);
+        reverse(f.begin(),f.end());
+        return f;
+    }
+    inline static Fps mod(const Fps& lhs, const Fps& rhs) {
+        int m = rhs.size();
+        auto f = sub(lhs,mul(div(lhs,rhs).prefix(m),rhs)).prefix(m);
+        while(f.size() && f.back().x==0) f.pop_back();
+        return f;
+    }
+    vector<Mint> multipoint_evaluation(vector<Mint> points) {
+        int n = points.size(),m;
+        for(m=1;m<n;m<<=1);
+        vector<Fps> node(2*m,Fps(1,1));
+        for(int i=0;i<n;++i) node[i+m] = Fps({-points[i],1});
+        for(int i=m-1;i;--i) node[i] = mul(node[(i<<1)|0],node[(i<<1)|1]);
+        node[1] = mod(*this,node[1]);
+        for(int i=2;i<m+n;++i) node[i] = mod(node[i>>1],node[i]);
+        for(int i=0;i<n;++i)   points[i] = node[i+m][0];
+        return points;
     }
     inline static Mint nth_term(long long n, Fps numerator,Fps denominator) {
         while(n) {
