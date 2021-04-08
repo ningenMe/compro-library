@@ -9,10 +9,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/CombinationMod-factorial.test.cpp
     title: test/math/CombinationMod-factorial.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-exp.test.cpp
     title: test/math/FormalPowerSeries-exp.test.cpp
   - icon: ':x:'
+    path: test/math/FormalPowerSeries-interpolation.test.cpp
+    title: test/math/FormalPowerSeries-interpolation.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-inv.test.cpp
     title: test/math/FormalPowerSeries-inv.test.cpp
   - icon: ':heavy_check_mark:'
@@ -149,6 +152,7 @@ data:
   - test/math/FormalPowerSeries-log.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
+  - test/math/FormalPowerSeries-interpolation.test.cpp
   - test/math/Matrix-pow.test.cpp
   - test/math/FormalPowerSeries-nth.test.cpp
   - test/math/FormalPowerSeries-pow.test.cpp

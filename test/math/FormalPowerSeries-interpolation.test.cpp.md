@@ -12,21 +12,21 @@ data:
     title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/inv_of_formal_power_series
+    PROBLEM: https://judge.yosupo.jp/problem/multipoint_evaluation
     links:
-    - https://judge.yosupo.jp/problem/inv_of_formal_power_series
-  bundledCode: "#line 1 \"test/math/FormalPowerSeries-inv.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/inv_of_formal_power_series\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\
-    \nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
-    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
-    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
-    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const\
+    - https://judge.yosupo.jp/problem/multipoint_evaluation
+  bundledCode: "#line 1 \"test/math/FormalPowerSeries-interpolation.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\n\n#include\
+    \ <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n#include\
+    \ <array>\n\nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title\
+    \ ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt\
+    \ {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr\
+    \ ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const\
     \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
     \ long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n  \
     \  ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
@@ -224,35 +224,35 @@ data:
     \      return numerator[0];\n    }\n\n    friend ostream &operator<<(ostream &os,\
     \ const Fps& fps) {os << \"{\" << fps[0];for(int i=1;i<fps.size();++i) os << \"\
     , \" << fps[i];return os << \"}\";}\n};\n//using fps = FormalPowerSeries<RuntimeModInt<mod>>;\n\
-    //using fps = FormalPowerSeries<ModInt<MOD>>;\n#line 13 \"test/math/FormalPowerSeries-inv.test.cpp\"\
+    //using fps = FormalPowerSeries<ModInt<MOD>>;\n#line 13 \"test/math/FormalPowerSeries-interpolation.test.cpp\"\
     \nconstexpr long long MOD = 998244353;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
     \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N; cin >>\
-    \ N;\n    fps f(N);\n    for(int i=0;i<N;++i) cin >> f[i];\n    f = f.inv();\n\
-    \    for(int i=0;i<f.size();++i) cout << f[i] << \" \\n\"[i==N-1];\n    return\
-    \ 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/inv_of_formal_power_series\"\
+    \ N;\n    vector<ModInt<MOD>> X(N),Y(N);\n    for(int i=0;i<N;++i) cin >> X[i];\n\
+    \    for(int i=0;i<N;++i) cin >> Y[i];\n    auto f = fps::interpolation(X,Y);\n\
+    \    for(int i=0;i<N;++i) cout << f[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\
     \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
     #include <array>\n\nusing namespace std;\n#include \"../../lib/util/ModInt.cpp\"\
     \n#include \"../../lib/math/NumberTheoreticalTransform.cpp\"\n#include \"../../lib/math/FormalPowerSeries.cpp\"\
     \nconstexpr long long MOD = 998244353;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
     \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N; cin >>\
-    \ N;\n    fps f(N);\n    for(int i=0;i<N;++i) cin >> f[i];\n    f = f.inv();\n\
-    \    for(int i=0;i<f.size();++i) cout << f[i] << \" \\n\"[i==N-1];\n    return\
-    \ 0;\n}"
+    \ N;\n    vector<ModInt<MOD>> X(N),Y(N);\n    for(int i=0;i<N;++i) cin >> X[i];\n\
+    \    for(int i=0;i<N;++i) cin >> Y[i];\n    auto f = fps::interpolation(X,Y);\n\
+    \    for(int i=0;i<N;++i) cout << f[i] << \" \\n\"[i==N-1];\n    return 0;\n}"
   dependsOn:
   - lib/util/ModInt.cpp
   - lib/math/NumberTheoreticalTransform.cpp
   - lib/math/FormalPowerSeries.cpp
   isVerificationFile: true
-  path: test/math/FormalPowerSeries-inv.test.cpp
+  path: test/math/FormalPowerSeries-interpolation.test.cpp
   requiredBy: []
   timestamp: '2021-04-08 13:34:44+09:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/math/FormalPowerSeries-inv.test.cpp
+documentation_of: test/math/FormalPowerSeries-interpolation.test.cpp
 layout: document
 redirect_from:
-- /verify/test/math/FormalPowerSeries-inv.test.cpp
-- /verify/test/math/FormalPowerSeries-inv.test.cpp.html
-title: test/math/FormalPowerSeries-inv.test.cpp
+- /verify/test/math/FormalPowerSeries-interpolation.test.cpp
+- /verify/test/math/FormalPowerSeries-interpolation.test.cpp.html
+title: test/math/FormalPowerSeries-interpolation.test.cpp
 ---

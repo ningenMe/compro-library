@@ -156,11 +156,10 @@ data:
     \ const {return Fps(*this) *= (-1);}\n    Fps operator-(const int r) const {return\
     \ Fps(*this) -= r; }\n    Fps &operator-=(const int r) {for(int i=0;i< this->size();\
     \ ++i) (*this)[i] -= r; return *this; }\n    Fps prefix(size_t n) const {\n  \
-    \      Fps ret(this->begin(),this->begin()+min(n,this->size()));\n        while(ret.size()\
-    \ && ret.back().x==0) ret.pop_back();\n        return ret;\n    }\n    Fps inv(size_t\
-    \ n) const {\n        Fps ret({Mint(1)/(*this)[0]});\n        for(size_t i=2,m=(n<<1);i\
-    \ < m; i<<=1) {\n            Fps h = mul(mul(ret,ret),(this->prefix(i)));\n  \
-    \          ret.resize(i);\n            for(int j=i>>1;j<i;++j) ret[j] -= h[j];\n\
+    \      return Fps(this->begin(),this->begin()+min(n,this->size()));\n    }\n \
+    \   Fps inv(size_t n) const {\n        Fps ret({Mint(1)/(*this)[0]});\n      \
+    \  for(size_t i=2,m=(n<<1);i < m; i<<=1) {\n            Fps h = mul(mul(ret,ret),(this->prefix(i)));\n\
+    \            ret.resize(i);\n            for(int j=i>>1;j<i;++j) ret[j] -= h[j];\n\
     \        }\n        return ret.prefix(n);\n    }\n    Fps inv(void) const {return\
     \ inv(this->size());}\n    Fps even(void) const {Fps ret;for(int i = 0; i < this->size();\
     \ i+=2) ret.push_back((*this)[i]);return ret;}\n    Fps odd(void)  const {Fps\
@@ -184,16 +183,17 @@ data:
     \ ++j) tmp[j-i]=(*this)[j]*t0_inv;\n            tmp = (tmp.log(n)*k).exp(n)*(t0.pow(k));\n\
     \            for(int j=0;j+i*k<n;++j) ret[j+i*k] = tmp[j];\n            break;\n\
     \        }\n        return ret;\n    }\n    Fps pow(long long k) const {return\
-    \ pow(k,this->size());}\n    Mint sub(Mint x) const {Mint base = 1,ret = 0; for(size_t\
-    \ i=0;i<this->size(); ++i,base *= x) ret += base*(*this)[i]; return ret;}\n  \
-    \  inline static Fps add(const Fps& lhs,const Fps& rhs) {\n        size_t n =\
-    \ lhs.size(), m = rhs.size();\n        Fps res(max(n,m),0);\n        for(int i=0;i<n;++i)\
-    \ res[i] += lhs[i];\n        for(int i=0;i<m;++i) res[i] += rhs[i];\n        return\
-    \ res;\n    }\n    inline static Fps sub(const Fps& lhs,const Fps& rhs) {\n  \
-    \      size_t n = lhs.size(), m = rhs.size();\n        Fps res(max(n,m),0);\n\
-    \        for(int i=0;i<n;++i) res[i] += lhs[i];\n        for(int i=0;i<m;++i)\
-    \ res[i] -= rhs[i];\n        return res;\n    }\n    inline static Fps mul(const\
-    \ Fps& lhs, const Fps& rhs) {\n        return NumberTheoreticalTransform<Mint>::convolution(lhs,rhs);\n\
+    \ pow(k,this->size());}\n    Mint eval(Mint x) const {\n        Mint base = 1,ret\
+    \ = 0;\n        for(size_t i=0;i<this->size();++i) {\n            ret += (*this)[i]*base;\n\
+    \            base *= x;\n        }\n        return ret;\n    }\n    inline static\
+    \ Fps add(const Fps& lhs,const Fps& rhs) {\n        size_t n = lhs.size(), m =\
+    \ rhs.size();\n        Fps res(max(n,m),0);\n        for(int i=0;i<n;++i) res[i]\
+    \ += lhs[i];\n        for(int i=0;i<m;++i) res[i] += rhs[i];\n        return res;\n\
+    \    }\n    inline static Fps sub(const Fps& lhs,const Fps& rhs) {\n        size_t\
+    \ n = lhs.size(), m = rhs.size();\n        Fps res(max(n,m),0);\n        for(int\
+    \ i=0;i<n;++i) res[i] += lhs[i];\n        for(int i=0;i<m;++i) res[i] -= rhs[i];\n\
+    \        return res;\n    }\n    inline static Fps mul(const Fps& lhs, const Fps&\
+    \ rhs) {\n        return NumberTheoreticalTransform<Mint>::convolution(lhs,rhs);\n\
     \    }\n    inline static Fps div(Fps lhs, Fps rhs) {\n        while(lhs.size()\
     \ && lhs.back().x == 0) lhs.pop_back();\n        while(rhs.size() && rhs.back().x\
     \ == 0) rhs.pop_back();\n        int n = lhs.size(), m = rhs.size();\n       \
@@ -203,21 +203,27 @@ data:
     \ Fps mod(const Fps& lhs, const Fps& rhs) {\n        int m = rhs.size();\n   \
     \     auto f = sub(lhs,mul(div(lhs,rhs).prefix(m),rhs)).prefix(m);\n        while(f.size()\
     \ && f.back().x==0) f.pop_back();\n        return f;\n    }\n    vector<Mint>\
-    \ multipoint_evaluation(vector<Mint> points) {\n        int n = points.size(),m;\n\
-    \        for(m=1;m<n;m<<=1);\n        vector<Fps> node(2*m,Fps(1,1));\n      \
-    \  for(int i=0;i<n;++i) node[i+m] = Fps({-points[i],1});\n        for(int i=m-1;i;--i)\
-    \ node[i] = mul(node[(i<<1)|0],node[(i<<1)|1]);\n        node[1] = mod(*this,node[1]);\n\
-    \        for(int i=2;i<m+n;++i) node[i] = mod(node[i>>1],node[i]);\n        for(int\
-    \ i=0;i<n;++i)   points[i] = node[i+m][0];\n        return points;\n    }\n  \
-    \  inline static Mint nth_term(long long n, Fps numerator,Fps denominator) {\n\
-    \        while(n) {\n            numerator    = mul(numerator,denominator.symmetry());\n\
-    \            numerator    = ((n&1)?numerator.odd():numerator.even());\n      \
-    \      denominator  = mul(denominator,denominator.symmetry());\n            denominator\
-    \  = denominator.even();\n            n >>= 1;\n        }\n        return numerator[0];\n\
-    \    }\n\n    friend ostream &operator<<(ostream &os, const Fps& fps) {os << \"\
-    {\" << fps[0];for(int i=1;i<fps.size();++i) os << \", \" << fps[i];return os <<\
-    \ \"}\";}\n};\n//using fps = FormalPowerSeries<RuntimeModInt<mod>>;\n//using fps\
-    \ = FormalPowerSeries<ModInt<MOD>>;\n#line 13 \"test/math/FormalPowerSeries-nth.test.cpp\"\
+    \ multipoint_evaluation(vector<Mint> x) {\n        int n = x.size(),m;\n     \
+    \   for(m=1;m<n;m<<=1);\n        vector<Fps> f(2*m,Fps(1,1));\n        for(int\
+    \ i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n        for(int i=m-1;i;--i) f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n\
+    \        f[1] = mod(*this,f[1]);\n        for(int i=2;i<m+n;++i) f[i] = mod(f[i>>1],f[i]);\n\
+    \        for(int i=0;i<n;++i)   x[i] = f[i+m][0];\n        return x;\n    }\n\
+    \    inline static Fps interpolation(const vector<Mint>& x,const vector<Mint>&\
+    \ y) {\n        int n = x.size(),m;\n        for(m=1;m<n;m<<=1);\n        vector<Fps>\
+    \ f(2*m,Fps(1,1)),g(2*m);\n        for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n\
+    \        for(int i=m-1;i;--i) f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        g[1]\
+    \ = mod(f[1].diff(), f[1]);\n        for(int i=2;i<m+n;++i) g[i] = mod(g[i>>1],f[i]);\n\
+    \        for(int i=0;i<n;++i) g[i+m] = Fps(1, y[i] / g[i+m][0]);\n        for(int\
+    \ i=m-1;i;--i) g[i] = add(mul(g[(i<<1)|0],f[(i<<1)|1]),mul(f[(i<<1)|0],g[(i<<1)|1]));\n\
+    \        return g[1];\n    }\n    inline static Mint nth_term(long long n, Fps\
+    \ numerator,Fps denominator) {\n        while(n) {\n            numerator    =\
+    \ mul(numerator,denominator.symmetry());\n            numerator    = ((n&1)?numerator.odd():numerator.even());\n\
+    \            denominator  = mul(denominator,denominator.symmetry());\n       \
+    \     denominator  = denominator.even();\n            n >>= 1;\n        }\n  \
+    \      return numerator[0];\n    }\n\n    friend ostream &operator<<(ostream &os,\
+    \ const Fps& fps) {os << \"{\" << fps[0];for(int i=1;i<fps.size();++i) os << \"\
+    , \" << fps[i];return os << \"}\";}\n};\n//using fps = FormalPowerSeries<RuntimeModInt<mod>>;\n\
+    //using fps = FormalPowerSeries<ModInt<MOD>>;\n#line 13 \"test/math/FormalPowerSeries-nth.test.cpp\"\
     \nconstexpr long long MOD = 1000'000'007;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
     int main(void){\n    int N; cin >> N;\n    fps A(N+1),B(N+1);\n    for(int i =\
     \ 0; i < N+1; ++i) cin >> A[i];\n    for(int i = 0; i < N+1; ++i) cin >> B[i];\n\
@@ -238,7 +244,7 @@ data:
   isVerificationFile: true
   path: test/math/FormalPowerSeries-nth.test.cpp
   requiredBy: []
-  timestamp: '2021-04-08 12:58:34+09:00'
+  timestamp: '2021-04-08 13:34:44+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/FormalPowerSeries-nth.test.cpp

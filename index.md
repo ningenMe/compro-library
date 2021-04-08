@@ -436,10 +436,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/FloorSum.test.cpp
       title: test/math/FloorSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-exp.test.cpp
       title: test/math/FormalPowerSeries-exp.test.cpp
     - icon: ':x:'
+      path: test/math/FormalPowerSeries-interpolation.test.cpp
+      title: test/math/FormalPowerSeries-interpolation.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-inv.test.cpp
       title: test/math/FormalPowerSeries-inv.test.cpp
     - icon: ':heavy_check_mark:'
