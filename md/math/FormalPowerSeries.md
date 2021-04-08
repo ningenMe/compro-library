@@ -1,5 +1,5 @@
 ### FormalPowerSeries
-- 形式的冪級数
+- 形式的冪級数、多項式ライブラリ
 - 具体的には下記の係数$a=(a_0,...a_{n-1})$を保持するクラス
   - $f(x)=a_0 + a_1x^1 + a_2x^2 + ... + a_{n-1}x^{n-1}$
 
@@ -7,6 +7,7 @@
 - 0-indexed
   - `Fps f(N)`で初期化した場合は`N-1`項までが確保される
 - `ModInt`あるいは`RuntimeModInt`をテンプレートで渡す必要がある
+  - [RuntimeModIntのときの使い方はこの提出を参考](https://atcoder.jp/contests/abc137/submissions/21563722)
 - 実装はvectorを継承しているので、`[]`演算子などが使える。
 - ntt-friendlyでないmod(1000'000'007など)でも対応。使い方は同じ。
   - 内部でgarnerを使うかどうかを制御している。
