@@ -31,10 +31,6 @@
   - Fpsの逆元$1/(f(x))$を返却する
   - $O(N\log N)$
   - nは打ち切りたい項数。指定しなかった場合は今のFpsと同じ大きさで返却される
-- Fps pow(long long k,size_t n) 
-  - 累乗$ f(x)^k$を返却する
-  - $O(N\log N)$
-  - nは打ち切りたい項数。指定しなかった場合は今のFps.size()*kの大きさで返却される
 - Fps diff(void) 
   - 微分$\( f'(x) \)$を返却する
   - $O(N)$
@@ -50,17 +46,46 @@
   - 指数$\exp f(x)$を返却する
   - $O(N\log N)$
   - nは打ち切りたい項数。指定しなかった場合は今のFpsと同じ大きさで返却される
+- Fps pow(long long k,size_t n) 
+  - 累乗$ f(x)^k$を返却する
+  - $O(N\log N)$
+  - nは打ち切りたい項数。指定しなかった場合は今のFps.size()*kの大きさで返却される
+- Mint eval(Mint x)
+  - 一点評価
+  - f(x)を返す
+  - $O(N)$
 - Fps add(const Fps& lhs,const Fps& rhs) 
   - 2個のfpsの各要素の和を取ったfpsを返却する。
+  - $O(N)$
   - サイズは、lhs,rhsの大きい方に合わせる。
 - Fps sub(const Fps& lhs,const Fps& rhs) 
   - 2個のfpsの各要素の差を取ったfpsを返却する。
   - lhs[i]-rhs[i]が返ると思って良い
+  - $O(N)$
   - サイズは、lhs,rhsの大きい方に合わせる。
 - Fps mul(const Fps& lhs,const Fps& rhs) 
   - 2個のfpsを畳み込んだfpsを返却する。
   - 内部的にはnttを使用
+  - $O(N\log N)$
   - サイズは、lhs.size()+rhs.size()-1になる。
+- Fps div(const Fps& lhs,const Fps& rhs) 
+  - lhsをrhsで割ったfpsを返却する。
+  - lhs * rhs.inv() とは違うことに注意。単純な多項式除算である。
+  - $O(N\log N)$
+  - サイズは、lhs.size()-rhs.size()+1になる。
+- Fps mod(const Fps& lhs,const Fps& rhs) 
+  - lhsをrhsで割ったあまりのfpsを返却する。
+  - 単純な多項式除算から発生する余りであることに注意。
+  - $O(N\log N)$
+  - サイズは、rhs.size()-1になる
+- vector<Mint> multipoint_evaluation(vector<Mint> x)
+  - 多点評価
+  - f(x_0),f(x_1), ... , f(x_N) が返る
+  - $O(N\log N)$ 定数倍重め。
+- inline static Fps interpolation(const vector<Mint>& x,const vector<Mint>& y) 
+  - 多項式補間
+  - f(x_0)=y_0,f(x_1)=y_1, ... , f(x_N)=y_N を満たすfpsが返る
+  - $O(N\log N)$ 定数倍重め。
 - Mint nth_term(long long n,const Fps& numerator,const Fps& denominator)
   - f(x)のn項目が返却される
   - $O(N\log N \log n)$
