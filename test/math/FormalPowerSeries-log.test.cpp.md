@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/math/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/math/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []
@@ -157,10 +157,11 @@ data:
     \ const {return Fps(*this) *= (-1);}\n    Fps operator-(const int r) const {return\
     \ Fps(*this) -= r; }\n    Fps &operator-=(const int r) {for(int i=0;i< this->size();\
     \ ++i) (*this)[i] -= r; return *this; }\n    Fps prefix(size_t n) const {\n  \
-    \      return Fps(this->begin(),this->begin()+min(n,this->size()));\n    }\n \
-    \   Fps inv(size_t n) const {\n        Fps ret({Mint(1)/(*this)[0]});\n      \
-    \  for(size_t i=2,m=(n<<1);i < m; i<<=1) {\n            Fps h = mul(mul(ret,ret),(this->prefix(i)));\n\
-    \            ret.resize(i);\n            for(int j=i>>1;j<i;++j) ret[j] -= h[j];\n\
+    \      Fps ret(this->begin(),this->begin()+min(n,this->size()));\n        while(ret.size()\
+    \ && ret.back().x==0) ret.pop_back();\n        return ret;\n    }\n    Fps inv(size_t\
+    \ n) const {\n        Fps ret({Mint(1)/(*this)[0]});\n        for(size_t i=2,m=(n<<1);i\
+    \ < m; i<<=1) {\n            Fps h = mul(mul(ret,ret),(this->prefix(i)));\n  \
+    \          ret.resize(i);\n            for(int j=i>>1;j<i;++j) ret[j] -= h[j];\n\
     \        }\n        return ret.prefix(n);\n    }\n    Fps inv(void) const {return\
     \ inv(this->size());}\n    Fps even(void) const {Fps ret;for(int i = 0; i < this->size();\
     \ i+=2) ret.push_back((*this)[i]);return ret;}\n    Fps odd(void)  const {Fps\
@@ -194,8 +195,23 @@ data:
     \        for(int i=0;i<n;++i) res[i] += lhs[i];\n        for(int i=0;i<m;++i)\
     \ res[i] -= rhs[i];\n        return res;\n    }\n    inline static Fps mul(const\
     \ Fps& lhs, const Fps& rhs) {\n        return NumberTheoreticalTransform<Mint>::convolution(lhs,rhs);\n\
-    \    }\n    inline static Mint nth_term(long long n, Fps numerator,Fps denominator)\
-    \ {\n        while(n) {\n            numerator    = mul(numerator,denominator.symmetry());\n\
+    \    }\n    inline static Fps div(Fps lhs, Fps rhs) {\n        while(lhs.size()\
+    \ && lhs.back().x == 0) lhs.pop_back();\n        while(rhs.size() && rhs.back().x\
+    \ == 0) rhs.pop_back();\n        int n = lhs.size(), m = rhs.size();\n       \
+    \ if(n < m) return Fps(1,0);\n        reverse(lhs.begin(),lhs.end());\n      \
+    \  reverse(rhs.begin(),rhs.end());\n        auto f = mul(lhs,rhs.inv(n-m+1)).prefix(n-m+1);\n\
+    \        reverse(f.begin(),f.end());\n        return f;\n    }\n    inline static\
+    \ Fps mod(const Fps& lhs, const Fps& rhs) {\n        int m = rhs.size();\n   \
+    \     auto f = sub(lhs,mul(div(lhs,rhs).prefix(m),rhs)).prefix(m);\n        while(f.size()\
+    \ && f.back().x==0) f.pop_back();\n        return f;\n    }\n    vector<Mint>\
+    \ multipoint_evaluation(vector<Mint> points) {\n        int n = points.size(),m;\n\
+    \        for(m=1;m<n;m<<=1);\n        vector<Fps> node(2*m,Fps(1,1));\n      \
+    \  for(int i=0;i<n;++i) node[i+m] = Fps({-points[i],1});\n        for(int i=m-1;i;--i)\
+    \ node[i] = mul(node[(i<<1)|0],node[(i<<1)|1]);\n        node[1] = mod(*this,node[1]);\n\
+    \        for(int i=2;i<m+n;++i) node[i] = mod(node[i>>1],node[i]);\n        for(int\
+    \ i=0;i<n;++i)   points[i] = node[i+m][0];\n        return points;\n    }\n  \
+    \  inline static Mint nth_term(long long n, Fps numerator,Fps denominator) {\n\
+    \        while(n) {\n            numerator    = mul(numerator,denominator.symmetry());\n\
     \            numerator    = ((n&1)?numerator.odd():numerator.even());\n      \
     \      denominator  = mul(denominator,denominator.symmetry());\n            denominator\
     \  = denominator.even();\n            n >>= 1;\n        }\n        return numerator[0];\n\
@@ -224,7 +240,7 @@ data:
   isVerificationFile: true
   path: test/math/FormalPowerSeries-log.test.cpp
   requiredBy: []
-  timestamp: '2021-04-08 05:28:05+09:00'
+  timestamp: '2021-04-08 12:58:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/FormalPowerSeries-log.test.cpp

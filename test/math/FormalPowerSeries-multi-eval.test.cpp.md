@@ -17,16 +17,16 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/pow_of_formal_power_series
+    PROBLEM: https://judge.yosupo.jp/problem/multipoint_evaluation
     links:
-    - https://judge.yosupo.jp/problem/pow_of_formal_power_series
-  bundledCode: "#line 1 \"test/math/FormalPowerSeries-pow.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/pow_of_formal_power_series\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\
-    \nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
-    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
-    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
-    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const\
+    - https://judge.yosupo.jp/problem/multipoint_evaluation
+  bundledCode: "#line 1 \"test/math/FormalPowerSeries-multi-eval.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\n\n#include\
+    \ <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n#include\
+    \ <array>\n\nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title\
+    \ ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt\
+    \ {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr\
+    \ ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const\
     \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
     \ long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n  \
     \  ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
@@ -218,35 +218,35 @@ data:
     \    }\n\n    friend ostream &operator<<(ostream &os, const Fps& fps) {os << \"\
     {\" << fps[0];for(int i=1;i<fps.size();++i) os << \", \" << fps[i];return os <<\
     \ \"}\";}\n};\n//using fps = FormalPowerSeries<RuntimeModInt<mod>>;\n//using fps\
-    \ = FormalPowerSeries<ModInt<MOD>>;\n#line 13 \"test/math/FormalPowerSeries-pow.test.cpp\"\
+    \ = FormalPowerSeries<ModInt<MOD>>;\n#line 13 \"test/math/FormalPowerSeries-multi-eval.test.cpp\"\
     \nconstexpr long long MOD = 998244353;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
     \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,M; cin\
-    \ >> N >> M;\n    fps f(N);\n    for(int i=0;i<N;++i) cin >> f[i];\n    f = f.pow(M,N);\n\
-    \    for(int i=0;i<f.size();++i) cout << f[i] << \" \\n\"[i==N-1];\n    return\
-    \ 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/pow_of_formal_power_series\"\
+    \ >> N >> M;\n    fps C(N);\n    vector<ModInt<MOD>> P(M);\n    for(int i=0;i<N;++i)\
+    \ cin >> C[i];\n    for(int i=0;i<M;++i) cin >> P[i];\n    P = C.multipoint_evaluation(P);\n\
+    \    for(int i=0;i<M;++i) cout << P[i] << \" \\n\"[i==M-1];\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\
     \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
     #include <array>\n\nusing namespace std;\n#include \"../../lib/util/ModInt.cpp\"\
     \n#include \"../../lib/math/NumberTheoreticalTransform.cpp\"\n#include \"../../lib/math/FormalPowerSeries.cpp\"\
     \nconstexpr long long MOD = 998244353;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
     \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,M; cin\
-    \ >> N >> M;\n    fps f(N);\n    for(int i=0;i<N;++i) cin >> f[i];\n    f = f.pow(M,N);\n\
-    \    for(int i=0;i<f.size();++i) cout << f[i] << \" \\n\"[i==N-1];\n    return\
-    \ 0;\n}"
+    \ >> N >> M;\n    fps C(N);\n    vector<ModInt<MOD>> P(M);\n    for(int i=0;i<N;++i)\
+    \ cin >> C[i];\n    for(int i=0;i<M;++i) cin >> P[i];\n    P = C.multipoint_evaluation(P);\n\
+    \    for(int i=0;i<M;++i) cout << P[i] << \" \\n\"[i==M-1];\n    return 0;\n}"
   dependsOn:
   - lib/util/ModInt.cpp
   - lib/math/NumberTheoreticalTransform.cpp
   - lib/math/FormalPowerSeries.cpp
   isVerificationFile: true
-  path: test/math/FormalPowerSeries-pow.test.cpp
+  path: test/math/FormalPowerSeries-multi-eval.test.cpp
   requiredBy: []
   timestamp: '2021-04-08 12:58:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/math/FormalPowerSeries-pow.test.cpp
+documentation_of: test/math/FormalPowerSeries-multi-eval.test.cpp
 layout: document
 redirect_from:
-- /verify/test/math/FormalPowerSeries-pow.test.cpp
-- /verify/test/math/FormalPowerSeries-pow.test.cpp.html
-title: test/math/FormalPowerSeries-pow.test.cpp
+- /verify/test/math/FormalPowerSeries-multi-eval.test.cpp
+- /verify/test/math/FormalPowerSeries-multi-eval.test.cpp.html
+title: test/math/FormalPowerSeries-multi-eval.test.cpp
 ---

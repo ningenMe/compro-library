@@ -3,15 +3,18 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/FormalPowerSeries-exp.test.cpp
     title: test/math/FormalPowerSeries-exp.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/FormalPowerSeries-inv.test.cpp
     title: test/math/FormalPowerSeries-inv.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-log.test.cpp
     title: test/math/FormalPowerSeries-log.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-multi-eval.test.cpp
+    title: test/math/FormalPowerSeries-multi-eval.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-nth.test.cpp
     title: test/math/FormalPowerSeries-nth.test.cpp
@@ -30,9 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
     title: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/math/NumberTheoreticalTransform.md
     document_title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
@@ -187,12 +190,13 @@ data:
   path: lib/math/NumberTheoreticalTransform.cpp
   requiredBy: []
   timestamp: '2021-04-08 04:49:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/math/FormalPowerSeries-inv.test.cpp
   - test/math/NumberTheoreticalTransform-conv-fft.test.cpp
   - test/math/FormalPowerSeries-exp.test.cpp
   - test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
+  - test/math/FormalPowerSeries-multi-eval.test.cpp
   - test/math/FormalPowerSeries-log.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
