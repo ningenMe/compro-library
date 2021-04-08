@@ -88,6 +88,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/math/NumberTheoreticalTransform.cpp
       title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
+    - icon: ':warning:'
+      path: lib/math/Polynomial.cpp
+      title: "Polynomial - \u591A\u9805\u5F0F\u88DC\u9593"
     - icon: ':heavy_check_mark:'
       path: lib/math/Prime.cpp
       title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\
