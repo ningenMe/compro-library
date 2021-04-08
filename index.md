@@ -73,7 +73,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/math/FloorSum.cpp
       title: "FloorSum - \u76F4\u7DDA\u9818\u57DF\u306E\u683C\u5B50\u70B9\u6570"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/math/FormalPowerSeries.cpp
       title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
     - icon: ':heavy_check_mark:'
@@ -85,7 +85,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/math/NumberTheoreticalTransform.cpp
       title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
     - icon: ':heavy_check_mark:'
@@ -160,7 +160,7 @@ data:
       title: Zalgorithm
   - name: lib/util
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/util/ModInt.cpp
       title: ModInt
     - icon: ':heavy_check_mark:'
@@ -439,7 +439,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-exp.test.cpp
       title: test/math/FormalPowerSeries-exp.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-interpolation.test.cpp
       title: test/math/FormalPowerSeries-interpolation.test.cpp
     - icon: ':heavy_check_mark:'

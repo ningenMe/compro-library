@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/math/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/math/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/multipoint_evaluation
+    PROBLEM: https://judge.yosupo.jp/problem/polynomial_interpolation
     links:
-    - https://judge.yosupo.jp/problem/multipoint_evaluation
+    - https://judge.yosupo.jp/problem/polynomial_interpolation
   bundledCode: "#line 1 \"test/math/FormalPowerSeries-interpolation.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\n\n#include\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/polynomial_interpolation\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n#include\
     \ <array>\n\nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title\
     \ ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt\
@@ -230,7 +230,7 @@ data:
     \ N;\n    vector<ModInt<MOD>> X(N),Y(N);\n    for(int i=0;i<N;++i) cin >> X[i];\n\
     \    for(int i=0;i<N;++i) cin >> Y[i];\n    auto f = fps::interpolation(X,Y);\n\
     \    for(int i=0;i<N;++i) cout << f[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/polynomial_interpolation\"\
     \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
     #include <array>\n\nusing namespace std;\n#include \"../../lib/util/ModInt.cpp\"\
     \n#include \"../../lib/math/NumberTheoreticalTransform.cpp\"\n#include \"../../lib/math/FormalPowerSeries.cpp\"\
@@ -246,8 +246,8 @@ data:
   isVerificationFile: true
   path: test/math/FormalPowerSeries-interpolation.test.cpp
   requiredBy: []
-  timestamp: '2021-04-08 13:34:44+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-04-08 13:51:42+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/FormalPowerSeries-interpolation.test.cpp
 layout: document
