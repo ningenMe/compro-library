@@ -95,6 +95,9 @@ data:
       path: lib/math/Prime.cpp
       title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\
         \u30FC\u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A"
+    - icon: ':warning:'
+      path: lib/math/PrimitiveRoot.cpp
+      title: "PrimitiveRoot - \u539F\u5B50\u6839"
   - name: lib/optimize
     pages:
     - icon: ':heavy_check_mark:'
