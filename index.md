@@ -82,6 +82,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/math/Gcd.cpp
       title: "Gcd - \u9AD8\u901FGCD"
+    - icon: ':warning:'
+      path: lib/math/GcdConvolution.cpp
+      title: "Gcd - \u9AD8\u901FGCD"
     - icon: ':heavy_check_mark:'
       path: lib/math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
