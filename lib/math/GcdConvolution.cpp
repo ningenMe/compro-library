@@ -1,5 +1,5 @@
 /*
- * @title Gcd - 高速GCD
+ * @title GcdConvolution - 添字gcd畳み込み
  * @docs md/math/GcdConvolution.md
  */
 class GcdConvolution {
