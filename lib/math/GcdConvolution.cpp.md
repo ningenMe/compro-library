@@ -8,26 +8,10 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     _deprecated_at_docs: md/math/GcdConvolution.md
-    document_title: "Gcd - \u9AD8\u901FGCD"
+    document_title: "GcdConvolution - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F"
     links: []
-  bundledCode: "#line 1 \"lib/math/GcdConvolution.cpp\"\n/*\n * @title Gcd - \u9AD8\
-    \u901FGCD\n * @docs md/math/GcdConvolution.md\n */\nclass GcdConvolution {\n \
-    \   inline static vector<int> primes;\n    inline static vector<int> eratosthenes(int\
-    \ N) {\n        vector<int> sieve(N+1,1),primes;\n        sieve[0]=sieve[1]=0;\n\
-    \        for(int i=1; i <= N/i; ++i) if(sieve[i]) for(int j=2*i;j<=N;j+=i) sieve[j]=0;\n\
-    \        for(int i=1; i <= N  ; ++i) if(sieve[i]) primes.push_back(i);\n     \
-    \   return primes;\n    };\n    template<class T> inline static void zeta(vector<T>&\
-    \ v) {\n        assert(v.size());\n        int N = v.size();\n        for(const\
-    \ int& p:primes) for(int i=(N-1)/p; i; --i) v[i] += v[i*p];\n    }\n    template<class\
-    \ T> inline static void mobius(vector<T>& v) {\n        assert(v.size());\n  \
-    \      int N = v.size();\n        for(const int& p:primes) for(int i=1; i*p<N;\
-    \ ++i) v[i] -= v[i*p];\n    }\npublic:\n    template<class T> inline static vector<T>\
-    \ convolution(const vector<T>& a,const vector<T>& b) {\n        int N = max(a.size(),b.size());\n\
-    \        vector<T> f(N,0),g(N,0);\n        for(int i=0;i<N;++i) f[i] = a[i];\n\
-    \        for(int i=0;i<N;++i) g[i] = b[i];\n        if(primes.empty()) primes\
-    \ = eratosthenes(N);\n        zeta(f);zeta(g);\n        for(int i=0;i<N;++i) f[i]\
-    \ = f[i]*g[i];\n        mobius(f);\n        return f;\n    } \n};\n"
-  code: "/*\n * @title Gcd - \u9AD8\u901FGCD\n * @docs md/math/GcdConvolution.md\n\
+  bundledCode: "#line 1 \"lib/math/GcdConvolution.cpp\"\n/*\n * @title GcdConvolution\
+    \ - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F\n * @docs md/math/GcdConvolution.md\n\
     \ */\nclass GcdConvolution {\n    inline static vector<int> primes;\n    inline\
     \ static vector<int> eratosthenes(int N) {\n        vector<int> sieve(N+1,1),primes;\n\
     \        sieve[0]=sieve[1]=0;\n        for(int i=1; i <= N/i; ++i) if(sieve[i])\
@@ -43,12 +27,29 @@ data:
     \ f(N,0),g(N,0);\n        for(int i=0;i<N;++i) f[i] = a[i];\n        for(int i=0;i<N;++i)\
     \ g[i] = b[i];\n        if(primes.empty()) primes = eratosthenes(N);\n       \
     \ zeta(f);zeta(g);\n        for(int i=0;i<N;++i) f[i] = f[i]*g[i];\n        mobius(f);\n\
-    \        return f;\n    } \n};"
+    \        return f;\n    } \n};\n"
+  code: "/*\n * @title GcdConvolution - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F\n\
+    \ * @docs md/math/GcdConvolution.md\n */\nclass GcdConvolution {\n    inline static\
+    \ vector<int> primes;\n    inline static vector<int> eratosthenes(int N) {\n \
+    \       vector<int> sieve(N+1,1),primes;\n        sieve[0]=sieve[1]=0;\n     \
+    \   for(int i=1; i <= N/i; ++i) if(sieve[i]) for(int j=2*i;j<=N;j+=i) sieve[j]=0;\n\
+    \        for(int i=1; i <= N  ; ++i) if(sieve[i]) primes.push_back(i);\n     \
+    \   return primes;\n    };\n    template<class T> inline static void zeta(vector<T>&\
+    \ v) {\n        assert(v.size());\n        int N = v.size();\n        for(const\
+    \ int& p:primes) for(int i=(N-1)/p; i; --i) v[i] += v[i*p];\n    }\n    template<class\
+    \ T> inline static void mobius(vector<T>& v) {\n        assert(v.size());\n  \
+    \      int N = v.size();\n        for(const int& p:primes) for(int i=1; i*p<N;\
+    \ ++i) v[i] -= v[i*p];\n    }\npublic:\n    template<class T> inline static vector<T>\
+    \ convolution(const vector<T>& a,const vector<T>& b) {\n        int N = max(a.size(),b.size());\n\
+    \        vector<T> f(N,0),g(N,0);\n        for(int i=0;i<N;++i) f[i] = a[i];\n\
+    \        for(int i=0;i<N;++i) g[i] = b[i];\n        if(primes.empty()) primes\
+    \ = eratosthenes(N);\n        zeta(f);zeta(g);\n        for(int i=0;i<N;++i) f[i]\
+    \ = f[i]*g[i];\n        mobius(f);\n        return f;\n    } \n};"
   dependsOn: []
   isVerificationFile: false
   path: lib/math/GcdConvolution.cpp
   requiredBy: []
-  timestamp: '2021-04-16 17:36:55+09:00'
+  timestamp: '2021-04-16 17:47:19+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/math/GcdConvolution.cpp
@@ -56,7 +57,7 @@ layout: document
 redirect_from:
 - /library/lib/math/GcdConvolution.cpp
 - /library/lib/math/GcdConvolution.cpp.html
-title: "Gcd - \u9AD8\u901FGCD"
+title: "GcdConvolution - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F"
 ---
 ### Polynomial
 - Gcd添字畳み込み

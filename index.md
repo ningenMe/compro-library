@@ -84,7 +84,7 @@ data:
       title: "Gcd - \u9AD8\u901FGCD"
     - icon: ':warning:'
       path: lib/math/GcdConvolution.cpp
-      title: "Gcd - \u9AD8\u901FGCD"
+      title: "GcdConvolution - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F"
     - icon: ':heavy_check_mark:'
       path: lib/math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
