@@ -8,10 +8,10 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     _deprecated_at_docs: md/math/PrimitiveRoot.md
-    document_title: "PrimitiveRoot - \u539F\u5B50\u6839"
+    document_title: "PrimitiveRoot - \u539F\u59CB\u6839"
     links: []
   bundledCode: "#line 1 \"lib/math/PrimitiveRoot.cpp\"\n/*\n * @title PrimitiveRoot\
-    \ - \u539F\u5B50\u6839\n * @docs md/math/PrimitiveRoot.md\n */\nclass PrimitiveRoot{\n\
+    \ - \u539F\u59CB\u6839\n * @docs md/math/PrimitiveRoot.md\n */\nclass PrimitiveRoot{\n\
     \    inline static constexpr long long pow_mod_constexpr(long long x, long long\
     \ n, int m) {\n        if (m == 1) return 0;\n        unsigned int _m = (unsigned\
     \ int)(m);\n        unsigned long long r = 1;\n        unsigned long long y =\
@@ -32,7 +32,7 @@ data:
     \ {\n                    ok = false;\n                    break;\n           \
     \     }\n            }\n            if (ok) return g;\n        }        \n   \
     \ }\n};\n"
-  code: "/*\n * @title PrimitiveRoot - \u539F\u5B50\u6839\n * @docs md/math/PrimitiveRoot.md\n\
+  code: "/*\n * @title PrimitiveRoot - \u539F\u59CB\u6839\n * @docs md/math/PrimitiveRoot.md\n\
     \ */\nclass PrimitiveRoot{\n    inline static constexpr long long pow_mod_constexpr(long\
     \ long x, long long n, int m) {\n        if (m == 1) return 0;\n        unsigned\
     \ int _m = (unsigned int)(m);\n        unsigned long long r = 1;\n        unsigned\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: false
   path: lib/math/PrimitiveRoot.cpp
   requiredBy: []
-  timestamp: '2021-04-14 02:14:14+09:00'
+  timestamp: '2021-04-20 21:21:00+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/math/PrimitiveRoot.cpp
@@ -65,7 +65,7 @@ layout: document
 redirect_from:
 - /library/lib/math/PrimitiveRoot.cpp
 - /library/lib/math/PrimitiveRoot.cpp.html
-title: "PrimitiveRoot - \u539F\u5B50\u6839"
+title: "PrimitiveRoot - \u539F\u59CB\u6839"
 ---
 ### PrimitiveRoot
 - 原子根を返す

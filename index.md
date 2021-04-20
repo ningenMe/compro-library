@@ -100,7 +100,7 @@ data:
         \u30FC\u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A"
     - icon: ':warning:'
       path: lib/math/PrimitiveRoot.cpp
-      title: "PrimitiveRoot - \u539F\u5B50\u6839"
+      title: "PrimitiveRoot - \u539F\u59CB\u6839"
   - name: lib/optimize
     pages:
     - icon: ':heavy_check_mark:'
