@@ -106,7 +106,7 @@ title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
   - 列と、列に含まれない最小値preを渡す必要がある。
   - これは座圧を内部的に行うため、最小を定義する必要がある。
   - ソートできる列であれば何でも渡せる
-  - $O(N\sqrt(N))
+  - $O(N\sqrt(N))$
 
 ### メソッド
 - pair<size_t,T> get(int l, int r)
