@@ -1,11 +1,6 @@
 /*
- * 区間mex
- * @params A vector
- * @params ranges 半開区間[l,r)のvector 0-indexed
- * @params offset mexの最小値
- * @params ret rangeに対するmexの値
- * @see https://codeforces.com/contest/1436/problem/E
- * @see https://twitter.com/noshi91/status/1279594849826533377?s=20
+ * @title RangeMexQuery - 区間mex
+ * @docs md/segment/RangeMexQuery.md
  */
 template<class T> map<pair<int,int>,int> static_range_mex_query(const vector<T>& A, const vector<pair<int,int>>& ranges, T offset = 0) {
     int N = A.size();

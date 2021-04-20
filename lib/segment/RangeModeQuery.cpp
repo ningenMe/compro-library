@@ -5,8 +5,8 @@
 template<class T> class RangeModeQuery {
     vector<size_t> compressed;
     vector<T> origin;
-    vector<size_t> sqrt_bucket_freq;
-    vector<size_t> sqrt_bucket_mode;
+    vector<vector<size_t>> sqrt_bucket_freq;
+    vector<vector<size_t>> sqrt_bucket_mode;
     vector<vector<size_t>> idx;
     vector<int> pos;
     size_t N,B;
