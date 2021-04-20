@@ -134,6 +134,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/LiChaoTree.cpp
       title: LiChaoTree
+    - icon: ':warning:'
+      path: lib/segment/RangeModeQuery.cpp
+      title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
     - icon: ':question:'
       path: lib/segment/Rbst.cpp
       title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
