@@ -1,5 +1,5 @@
 /*
- * @title PrimitiveRoot - 原子根
+ * @title PrimitiveRoot - 原始根
  * @docs md/math/PrimitiveRoot.md
  */
 class PrimitiveRoot{
