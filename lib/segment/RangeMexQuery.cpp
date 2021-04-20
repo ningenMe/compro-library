@@ -2,7 +2,7 @@
  * @title RangeMexQuery - 区間mex
  * @docs md/segment/RangeMexQuery.md
  */
-template<class T> map<pair<int,int>,int> static_range_mex_query(const vector<T>& A, const vector<pair<int,int>>& ranges, T offset = 0) {
+template<class T> map<pair<int,int>,int> RangeMexQuery(const vector<T>& A, const vector<pair<int,int>>& ranges, T offset = 0) {
     int N = A.size();
     vector<vector<int>> r_to_l(N+1);
     for(int i=0;i<ranges.size();++i) {
