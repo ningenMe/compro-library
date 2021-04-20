@@ -135,6 +135,9 @@ data:
       path: lib/segment/LiChaoTree.cpp
       title: LiChaoTree
     - icon: ':warning:'
+      path: lib/segment/RangeMexQuery.cpp
+      title: "RangeMexQuery - \u533A\u9593mex"
+    - icon: ':warning:'
       path: lib/segment/RangeModeQuery.cpp
       title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
     - icon: ':question:'
@@ -243,9 +246,6 @@ data:
     - icon: ':warning:'
       path: non-verified/Permutation_Mod.cpp
       title: non-verified/Permutation_Mod.cpp
-    - icon: ':warning:'
-      path: non-verified/RangeMexQuery.cpp
-      title: non-verified/RangeMexQuery.cpp
     - icon: ':warning:'
       path: non-verified/Rarts.cpp
       title: non-verified/Rarts.cpp

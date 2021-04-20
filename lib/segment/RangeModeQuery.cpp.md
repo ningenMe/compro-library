@@ -13,7 +13,7 @@ data:
   bundledCode: "#line 1 \"lib/segment/RangeModeQuery.cpp\"\n/*\n * @title RangeModeQuery\
     \ - \u533A\u9593\u6700\u983B\u5024\n * @docs md/segment/RangeModeQuery.md\n */\n\
     template<class T> class RangeModeQuery {\n    vector<size_t> compressed;\n   \
-    \ vector<T> origin;\n    vector<size_t> sqrt_bucket_freq;\n    vector<size_t>\
+    \ vector<T> origin;\n    vector<vector<size_t>> sqrt_bucket_freq;\n    vector<vector<size_t>>\
     \ sqrt_bucket_mode;\n    vector<vector<size_t>> idx;\n    vector<int> pos;\n \
     \   size_t N,B;\npublic:\n    RangeModeQuery(const vector<T>& ar, T pre=-1)\n\
     \    : compressed(ar.size()), origin(ar.size()), idx(ar.size()), pos(ar.size())\
@@ -56,7 +56,7 @@ data:
     \ }\n}; \n"
   code: "/*\n * @title RangeModeQuery - \u533A\u9593\u6700\u983B\u5024\n * @docs md/segment/RangeModeQuery.md\n\
     \ */\ntemplate<class T> class RangeModeQuery {\n    vector<size_t> compressed;\n\
-    \    vector<T> origin;\n    vector<size_t> sqrt_bucket_freq;\n    vector<size_t>\
+    \    vector<T> origin;\n    vector<vector<size_t>> sqrt_bucket_freq;\n    vector<vector<size_t>>\
     \ sqrt_bucket_mode;\n    vector<vector<size_t>> idx;\n    vector<int> pos;\n \
     \   size_t N,B;\npublic:\n    RangeModeQuery(const vector<T>& ar, T pre=-1)\n\
     \    : compressed(ar.size()), origin(ar.size()), idx(ar.size()), pos(ar.size())\
@@ -101,7 +101,7 @@ data:
   isVerificationFile: false
   path: lib/segment/RangeModeQuery.cpp
   requiredBy: []
-  timestamp: '2021-04-20 21:14:28+09:00'
+  timestamp: '2021-04-20 21:31:55+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/segment/RangeModeQuery.cpp
@@ -111,7 +111,7 @@ redirect_from:
 - /library/lib/segment/RangeModeQuery.cpp.html
 title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
 ---
-### Polynomial
+### RangeModeQuery
 - 区間最瀕値
   - 半開区間[l,r)に対する最瀕値となる頻度(freq)とその値(mode)が求まる。
   - クエリはオンラインでも可能。

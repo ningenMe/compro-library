@@ -1,4 +1,4 @@
-### Polynomial
+### RangeModeQuery
 - 区間最瀕値
   - 半開区間[l,r)に対する最瀕値となる頻度(freq)とその値(mode)が求まる。
   - クエリはオンラインでも可能。
