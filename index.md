@@ -214,9 +214,6 @@ data:
       path: non-verified/Divisor.cpp
       title: non-verified/Divisor.cpp
     - icon: ':warning:'
-      path: non-verified/FastFourierTransform.cpp
-      title: non-verified/FastFourierTransform.cpp
-    - icon: ':warning:'
       path: non-verified/Ford_Fulkerson.cpp
       title: non-verified/Ford_Fulkerson.cpp
     - icon: ':warning:'
@@ -267,74 +264,14 @@ data:
   - name: old
     pages:
     - icon: ':warning:'
-      path: old/BinaryIndexedTree.cpp
-      title: old/BinaryIndexedTree.cpp
-    - icon: ':warning:'
       path: old/BinaryIndexedTree2DRangeModSumQuery.cpp
       title: old/BinaryIndexedTree2DRangeModSumQuery.cpp
-    - icon: ':warning:'
-      path: old/Grid_Breadth_First_Search.cpp
-      title: old/Grid_Breadth_First_Search.cpp
-    - icon: ':warning:'
-      path: old/Grid_Translation.cpp
-      title: old/Grid_Translation.cpp
-    - icon: ':warning:'
-      path: old/Lazy_Segment_Tree_Range_Maximum_Query.cpp
-      title: old/Lazy_Segment_Tree_Range_Maximum_Query.cpp
-    - icon: ':warning:'
-      path: old/Lazy_Segment_Tree_Range_Minimum_Query.cpp
-      title: old/Lazy_Segment_Tree_Range_Minimum_Query.cpp
-    - icon: ':warning:'
-      path: old/Lazy_Segment_Tree_Range_Sum_Query.cpp
-      title: old/Lazy_Segment_Tree_Range_Sum_Query.cpp
-    - icon: ':warning:'
-      path: old/LiChaoTree.cpp
-      title: old/LiChaoTree.cpp
-    - icon: ':warning:'
-      path: old/Lowest_Common_Ancestor.cpp
-      title: old/Lowest_Common_Ancestor.cpp
     - icon: ':warning:'
       path: old/PowMod.cpp
       title: old/PowMod.cpp
     - icon: ':warning:'
       path: old/PrimeFactorization.cpp
       title: old/PrimeFactorization.cpp
-    - icon: ':warning:'
-      path: old/SegmentTree.cpp
-      title: old/SegmentTree.cpp
-    - icon: ':warning:'
-      path: old/SegmentTree2.cpp
-      title: old/SegmentTree2.cpp
-    - icon: ':warning:'
-      path: old/Segment_Tree_Range_Gcd_Query.cpp
-      title: old/Segment_Tree_Range_Gcd_Query.cpp
-    - icon: ':warning:'
-      path: old/Segment_Tree_Range_Maximum_Query.cpp
-      title: old/Segment_Tree_Range_Maximum_Query.cpp
-    - icon: ':warning:'
-      path: old/Segment_Tree_Range_Minimum_Query.cpp
-      title: old/Segment_Tree_Range_Minimum_Query.cpp
-    - icon: ':warning:'
-      path: old/Segment_Tree_Range_Sum_Query.cpp
-      title: old/Segment_Tree_Range_Sum_Query.cpp
-    - icon: ':warning:'
-      path: old/Solver.cpp
-      title: old/Solver.cpp
-    - icon: ':warning:'
-      path: old/Tree.cpp
-      title: old/Tree.cpp
-    - icon: ':warning:'
-      path: old/Tree2.cpp
-      title: old/Tree2.cpp
-    - icon: ':warning:'
-      path: old/UnionFindTreeMerge.cpp
-      title: old/UnionFindTreeMerge.cpp
-    - icon: ':warning:'
-      path: old/UnionFindTreeSize.cpp
-      title: old/UnionFindTreeSize.cpp
-    - icon: ':warning:'
-      path: old/Weighted_Tree.cpp
-      title: old/Weighted_Tree.cpp
     - icon: ':warning:'
       path: old/ZAlgorithm.cpp
       title: old/ZAlgorithm.cpp
