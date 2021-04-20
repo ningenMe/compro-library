@@ -12,9 +12,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometory/ConvexHullTrick-no-monotone.test.cpp
     title: test/geometory/ConvexHullTrick-no-monotone.test.cpp
-  - icon: ':x:'
-    path: test/segment/ConvexHullTrickSegmentTree.test.cpp
-    title: test/segment/ConvexHullTrickSegmentTree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/segment/Rbst-get.test.cpp
     title: test/segment/Rbst-get.test.cpp
@@ -24,9 +21,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/segment/Rbst-pair.test.cpp
     title: test/segment/Rbst-pair.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/segment/Rbst.md
     document_title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
@@ -159,13 +156,12 @@ data:
   path: lib/segment/Rbst.cpp
   requiredBy: []
   timestamp: '2020-09-26 17:01:19+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometory/ConvexHullTrick-max.test.cpp
   - test/geometory/ConvexHullTrick-min.test.cpp
   - test/geometory/ConvexHullTrick-no-monotone.test.cpp
   - test/segment/Rbst-med.test.cpp
-  - test/segment/ConvexHullTrickSegmentTree.test.cpp
   - test/segment/Rbst-get.test.cpp
   - test/segment/Rbst-pair.test.cpp
 documentation_of: lib/segment/Rbst.cpp

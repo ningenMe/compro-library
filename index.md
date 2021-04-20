@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/geometory/Argument.cpp
       title: "Argument - \u504F\u89D2"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/geometory/ConvexHullTrick.cpp
       title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
     - icon: ':heavy_check_mark:'
@@ -123,7 +123,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/BitVector.cpp
       title: BitVector
-    - icon: ':x:'
+    - icon: ':warning:'
       path: lib/segment/ConvexHullTrickSegmentTree.cpp
       title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\
         \u30F3\u30C8\u6728"
@@ -143,7 +143,7 @@ data:
     - icon: ':warning:'
       path: lib/segment/RangeModeQuery.cpp
       title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/segment/Rbst.cpp
       title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
     - icon: ':heavy_check_mark:'
@@ -455,9 +455,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/BinaryTrie-set-xor-min.test.cpp
       title: test/segment/BinaryTrie-set-xor-min.test.cpp
-    - icon: ':x:'
-      path: test/segment/ConvexHullTrickSegmentTree.test.cpp
-      title: test/segment/ConvexHullTrickSegmentTree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment/DisjointSparseTable.test.cpp
       title: test/segment/DisjointSparseTable.test.cpp

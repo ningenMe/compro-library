@@ -12,12 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometory/ConvexHullTrick-no-monotone.test.cpp
     title: test/geometory/ConvexHullTrick-no-monotone.test.cpp
-  - icon: ':x:'
-    path: test/segment/ConvexHullTrickSegmentTree.test.cpp
-    title: test/segment/ConvexHullTrickSegmentTree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/geometory/ConvexHullTrick.md
     document_title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
@@ -116,12 +113,11 @@ data:
   path: lib/geometory/ConvexHullTrick.cpp
   requiredBy: []
   timestamp: '2020-09-26 16:13:14+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometory/ConvexHullTrick-max.test.cpp
   - test/geometory/ConvexHullTrick-min.test.cpp
   - test/geometory/ConvexHullTrick-no-monotone.test.cpp
-  - test/segment/ConvexHullTrickSegmentTree.test.cpp
 documentation_of: lib/geometory/ConvexHullTrick.cpp
 layout: document
 redirect_from:
