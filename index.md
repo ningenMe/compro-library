@@ -63,6 +63,9 @@ data:
       title: "RadixHeapInt - 32bit\u578B\u975E\u8CA0\u6574\u6570heap"
   - name: lib/math
     pages:
+    - icon: ':warning:'
+      path: lib/math/Combination.cpp
+      title: "Combination - \u4E8C\u9805\u4FC2\u6570"
     - icon: ':heavy_check_mark:'
       path: lib/math/CombinationMod.cpp
       title: "CombinationMod - mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\u968E\
