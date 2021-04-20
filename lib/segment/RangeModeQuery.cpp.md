@@ -127,6 +127,7 @@ title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
 ### メソッド
 - pair<size_t,T> get(int l, int r)
   - 半開区間[l,r)に対する最瀕値となる頻度(freq)とその値(mode)を返す
+  - $O(\sqrt(N))$
 
 ### 参考資料
 - [Range Mode Query](https://scrapbox.io/data-structures/Range_Mode_Query)
