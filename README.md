@@ -8,14 +8,13 @@ https://ningenme.github.io/compro-library/
 ## フォルダ構成
 - lib
     - ライブラリ本体
+    - CIないやつもいれている。AtCoderかCodeforcesでverify済み
 - md
     - ライブラリのapi説明用マークダウン
     - ライブラリによってなかったりする
 - non-verified
     - ciでverifyしてないやつ 作成時に一度verifyはしているのでそこそこ信用できる
     - 少しずつlibに移し替え中
-- old
-    - 古いやつ、基本的に必要ない
 - test
     - ci用のテストコード
 ## ひとこと

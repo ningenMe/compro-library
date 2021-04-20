@@ -205,6 +205,9 @@ data:
       path: non-verified/BinaryIndexedTree2D.cpp
       title: non-verified/BinaryIndexedTree2D.cpp
     - icon: ':warning:'
+      path: non-verified/BinaryIndexedTree2DRangeModSumQuery.cpp
+      title: non-verified/BinaryIndexedTree2DRangeModSumQuery.cpp
+    - icon: ':warning:'
       path: non-verified/BipartiteMatching.cpp
       title: non-verified/BipartiteMatching.cpp
     - icon: ':warning:'
@@ -250,6 +253,12 @@ data:
       path: non-verified/Permutation_Mod.cpp
       title: non-verified/Permutation_Mod.cpp
     - icon: ':warning:'
+      path: non-verified/PowMod.cpp
+      title: non-verified/PowMod.cpp
+    - icon: ':warning:'
+      path: non-verified/PrimeFactorization.cpp
+      title: non-verified/PrimeFactorization.cpp
+    - icon: ':warning:'
       path: non-verified/Rarts.cpp
       title: non-verified/Rarts.cpp
     - icon: ':warning:'
@@ -264,23 +273,12 @@ data:
     - icon: ':warning:'
       path: non-verified/XorShift.cpp
       title: non-verified/XorShift.cpp
-  - name: old
-    pages:
     - icon: ':warning:'
-      path: old/BinaryIndexedTree2DRangeModSumQuery.cpp
-      title: old/BinaryIndexedTree2DRangeModSumQuery.cpp
+      path: non-verified/ZAlgorithm.cpp
+      title: non-verified/ZAlgorithm.cpp
     - icon: ':warning:'
-      path: old/PowMod.cpp
-      title: old/PowMod.cpp
-    - icon: ':warning:'
-      path: old/PrimeFactorization.cpp
-      title: old/PrimeFactorization.cpp
-    - icon: ':warning:'
-      path: old/ZAlgorithm.cpp
-      title: old/ZAlgorithm.cpp
-    - icon: ':warning:'
-      path: old/ZArray.cpp
-      title: old/ZArray.cpp
+      path: non-verified/ZArray.cpp
+      title: non-verified/ZArray.cpp
   verificationCategories:
   - name: test
     pages:
