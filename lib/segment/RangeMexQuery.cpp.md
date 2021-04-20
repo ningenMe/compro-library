@@ -12,7 +12,7 @@ data:
     links: []
   bundledCode: "#line 1 \"lib/segment/RangeMexQuery.cpp\"\n/*\n * @title RangeMexQuery\
     \ - \u533A\u9593mex\n * @docs md/segment/RangeMexQuery.md\n */\ntemplate<class\
-    \ T> map<pair<int,int>,int> static_range_mex_query(const vector<T>& A, const vector<pair<int,int>>&\
+    \ T> map<pair<int,int>,int> RangeMexQuery(const vector<T>& A, const vector<pair<int,int>>&\
     \ ranges, T offset = 0) {\n    int N = A.size();\n    vector<vector<int>> r_to_l(N+1);\n\
     \    for(int i=0;i<ranges.size();++i) {\n        const int& l=ranges[i].first;\n\
     \        const int& r=ranges[i].second;\n        r_to_l[r].push_back(l);\n   \
@@ -22,7 +22,7 @@ data:
     \        for(int& l:r_to_l[r+1]) {\n            ret[{l,r+1}] = seg.prefix_binary_search(offset,offset+N+1,l);\n\
     \        }\n    }\n    return ret;\n}\n"
   code: "/*\n * @title RangeMexQuery - \u533A\u9593mex\n * @docs md/segment/RangeMexQuery.md\n\
-    \ */\ntemplate<class T> map<pair<int,int>,int> static_range_mex_query(const vector<T>&\
+    \ */\ntemplate<class T> map<pair<int,int>,int> RangeMexQuery(const vector<T>&\
     \ A, const vector<pair<int,int>>& ranges, T offset = 0) {\n    int N = A.size();\n\
     \    vector<vector<int>> r_to_l(N+1);\n    for(int i=0;i<ranges.size();++i) {\n\
     \        const int& l=ranges[i].first;\n        const int& r=ranges[i].second;\n\
@@ -36,7 +36,7 @@ data:
   isVerificationFile: false
   path: lib/segment/RangeMexQuery.cpp
   requiredBy: []
-  timestamp: '2021-04-20 21:31:55+09:00'
+  timestamp: '2021-04-20 21:34:55+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/segment/RangeMexQuery.cpp
