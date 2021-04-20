@@ -15,6 +15,7 @@
   - コンストラクタで渡したNに対して、p <= Nである必要がある
   - n,kの値はなんでもよい。(p < n, p < kでもok）
   - $O(\log(n))$
+
 ### 参考資料
 - [C - ゲーマーじゃんけん](https://atcoder.jp/contests/dwango2015-prelims/tasks/dwango2015_prelims_3)
 - [B - 123 Triangle](https://atcoder.jp/contests/agc043/tasks/agc043_b)
