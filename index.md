@@ -359,6 +359,9 @@ data:
       path: test/graph/Tree-hld-vertex.test.cpp
       title: test/graph/Tree-hld-vertex.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/graph/Tree-parent.test.cpp
+      title: test/graph/Tree-parent.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-rerooting.test.cpp
       title: test/graph/Tree-rerooting.test.cpp
     - icon: ':heavy_check_mark:'
