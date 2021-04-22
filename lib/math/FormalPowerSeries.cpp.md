@@ -224,13 +224,13 @@ data:
   timestamp: '2021-04-08 13:34:44+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/math/FormalPowerSeries-inv.test.cpp
-  - test/math/FormalPowerSeries-exp.test.cpp
-  - test/math/FormalPowerSeries-multi-eval.test.cpp
   - test/math/FormalPowerSeries-log.test.cpp
+  - test/math/FormalPowerSeries-inv.test.cpp
   - test/math/FormalPowerSeries-interpolation.test.cpp
   - test/math/FormalPowerSeries-nth.test.cpp
+  - test/math/FormalPowerSeries-multi-eval.test.cpp
   - test/math/FormalPowerSeries-pow.test.cpp
+  - test/math/FormalPowerSeries-exp.test.cpp
 documentation_of: lib/math/FormalPowerSeries.cpp
 layout: document
 redirect_from:

@@ -158,12 +158,12 @@ data:
   timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/segment/Rbst-pair.test.cpp
+  - test/segment/Rbst-get.test.cpp
+  - test/segment/Rbst-med.test.cpp
   - test/geometory/ConvexHullTrick-max.test.cpp
   - test/geometory/ConvexHullTrick-min.test.cpp
   - test/geometory/ConvexHullTrick-no-monotone.test.cpp
-  - test/segment/Rbst-med.test.cpp
-  - test/segment/Rbst-get.test.cpp
-  - test/segment/Rbst-pair.test.cpp
 documentation_of: lib/segment/Rbst.cpp
 layout: document
 redirect_from:

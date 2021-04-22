@@ -248,11 +248,11 @@ data:
   timestamp: '2020-09-27 22:47:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/segment/LazySegmentTree-rmqraq.test.cpp
+  - test/segment/LazySegmentTree-rsqruq.test.cpp
   - test/graph/Tree-hld-vertex.test.cpp
   - test/graph/Tree-eulertour.test.cpp
   - test/graph/Tree-rerooting.test.cpp
-  - test/segment/LazySegmentTree-rsqruq.test.cpp
-  - test/segment/LazySegmentTree-rmqraq.test.cpp
 documentation_of: lib/segment/LazySegmentTree.cpp
 layout: document
 redirect_from:

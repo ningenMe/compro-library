@@ -142,23 +142,23 @@ data:
   timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/math/FormalPowerSeries-inv.test.cpp
-  - test/math/NumberTheoreticalTransform-conv-fft.test.cpp
-  - test/math/FormalPowerSeries-exp.test.cpp
-  - test/math/CombinationMod-factorial.test.cpp
-  - test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
-  - test/math/Matrix-det.test.cpp
-  - test/math/FormalPowerSeries-multi-eval.test.cpp
   - test/math/FormalPowerSeries-log.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
+  - test/math/FormalPowerSeries-inv.test.cpp
   - test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
   - test/math/FormalPowerSeries-interpolation.test.cpp
-  - test/math/Matrix-pow.test.cpp
+  - test/math/CombinationMod-factorial.test.cpp
   - test/math/FormalPowerSeries-nth.test.cpp
+  - test/math/FormalPowerSeries-multi-eval.test.cpp
   - test/math/FormalPowerSeries-pow.test.cpp
-  - test/graph/Tree-hld-path.test.cpp
+  - test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
+  - test/math/Matrix-pow.test.cpp
+  - test/math/NumberTheoreticalTransform-conv-fft.test.cpp
+  - test/math/Matrix-det.test.cpp
+  - test/math/FormalPowerSeries-exp.test.cpp
   - test/segment/SegmentTree-rcq.test.cpp
   - test/util/ModInt.test.cpp
+  - test/graph/Tree-hld-path.test.cpp
 documentation_of: lib/util/ModInt.cpp
 layout: document
 redirect_from:

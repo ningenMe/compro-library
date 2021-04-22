@@ -50,6 +50,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/Tree.cpp
       title: "Tree - \u6728"
+    - icon: ':warning:'
+      path: lib/graph/Tree2.cpp
+      title: "Tree - \u6728"
     - icon: ':heavy_check_mark:'
       path: lib/graph/UnionFindTree.cpp
       title: "UnionFindTree - Union Find \u6728"

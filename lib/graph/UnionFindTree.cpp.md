@@ -55,9 +55,9 @@ data:
   timestamp: '2020-09-26 16:13:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/graph/StronglyConnectedComponents-1.test.cpp
-  - test/graph/UnionFindTree.test.cpp
   - test/util/RangeIndex.test.cpp
+  - test/graph/UnionFindTree.test.cpp
+  - test/graph/StronglyConnectedComponents-1.test.cpp
 documentation_of: lib/graph/UnionFindTree.cpp
 layout: document
 redirect_from:

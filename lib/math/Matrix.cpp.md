@@ -82,8 +82,8 @@ data:
   timestamp: '2020-09-26 16:29:44+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/math/Matrix-det.test.cpp
   - test/math/Matrix-pow.test.cpp
+  - test/math/Matrix-det.test.cpp
 documentation_of: lib/math/Matrix.cpp
 layout: document
 redirect_from:
