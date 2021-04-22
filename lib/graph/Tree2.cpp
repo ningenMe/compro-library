@@ -32,7 +32,7 @@ template<class Operator> class Tree {
 		}
 	}
 	/**
-	 * 寝付き木を作る
+	 * 根付き木を作る
 	 * O(N) you can use anytime
 	 */
 	void make_root(const int root) {
@@ -41,6 +41,21 @@ template<class Operator> class Tree {
 		ord = 0;
 		dfs(root,-1);
 		order[ord++] = root;
+		reverse_copy(order.begin(),order.end(),back_inserter(reorder));
+	}
+	/**
+	 * 根付き木を作る
+	 * O(N) you can use anytime
+	 */
+	void make_root() {
+        ord = 0;
+        for(int i=0;i<num;++i) {
+            if(depth[i]!=-1) continue;
+            depth[i] = 0;
+            edge_dist[i] = Operator::unit_edge;
+            dfs(i,-1);
+            order[ord++] = i;
+        }
 		reverse_copy(order.begin(),order.end(),back_inserter(reorder));
 	}
 	/**
@@ -119,6 +134,36 @@ template<class Operator> class Tree {
 		}
 		return make_pair(sz,st);
 	}
+	template<class TypeReroot> vector<TypeReroot> rerooting_impl(vector<TypeReroot> rerootdp,vector<TypeReroot> rerootparent) {
+		for(size_t pa:order) for(auto& e:child[pa]) rerootdp[pa] = Operator::func_reroot_dp(rerootdp[pa],rerootdp[e.first]);
+		for(size_t pa:reorder) {
+			if(depth[pa]) rerootdp[pa] = Operator::func_reroot_dp(rerootdp[pa],rerootparent[pa]);
+			size_t m = child[pa].size();
+			for(int j = 0; j < m && depth[pa]; ++j){
+				size_t ch = child[pa][j].first;
+				rerootparent[ch] = Operator::func_reroot_dp(rerootparent[ch],rerootparent[pa]);
+			}
+			if(m <= 1) continue;
+			vector<TypeReroot> l(m),r(m);
+			for(int j = 0; j < m; ++j) {
+				size_t ch = child[pa][j].first;
+				l[j] = rerootdp[ch];
+				r[j] = rerootdp[ch];
+			}
+			for(int j = 1; j+1 < m; ++j) l[j] = Operator::func_reroot_merge(l[j],l[j-1]);
+			for(int j = m-2; 0 <=j; --j) r[j] = Operator::func_reroot_merge(r[j],r[j+1]);
+			size_t chl = child[pa].front().first;
+			size_t chr = child[pa].back().first;
+			rerootparent[chl] = Operator::func_reroot_dp(rerootparent[chl],r[1]);
+			rerootparent[chr] = Operator::func_reroot_dp(rerootparent[chr],l[m-2]);
+			for(int j = 1; j+1 < m; ++j) {
+				size_t ch = child[pa][j].first;
+				rerootparent[ch] = Operator::func_reroot_dp(rerootparent[ch],l[j-1]);
+				rerootparent[ch] = Operator::func_reroot_dp(rerootparent[ch],r[j+1]);
+			}
+		}
+		return rerootdp;
+	}
 public:
 	vector<size_t> depth;
 	vector<size_t> order;
@@ -143,6 +188,10 @@ public:
 	 * return {diameter size,diameter set} 
 	 */
 	pair<TypeEdge,vector<size_t>> diameter(void){return diameter_impl();}
+	/**
+	 * O(N) after make_child
+	 */
+	template<class TypeReroot> vector<TypeReroot> rerooting(const vector<TypeReroot>& rerootdp,const vector<TypeReroot>& rerootparent) {return rerooting_impl(rerootdp,rerootparent);}
 };
  
 template<class Operator> class TreeBuilder {
@@ -153,6 +202,7 @@ public:
 	using TypeEdge = typename Operator::TypeEdge;
 	TreeBuilder(Graph<TypeEdge>& g):tree(g){}
 	TreeBuilder& root(const int rt) { is_root_made=true; tree.make_root(rt); return *this;}
+	TreeBuilder& root() { is_root_made=true; tree.make_root(); return *this;}
 	TreeBuilder& child() { assert(is_root_made); is_child_made=true;  tree.make_child();  return *this;}
 	TreeBuilder& parent() { assert(is_root_made); is_parent_made=true; tree.make_parent(); return *this;}
 	TreeBuilder& subtree_size() { assert(is_child_made); tree.make_subtree_size(); return *this;}
@@ -168,5 +218,7 @@ template<class T> struct TreeOperator{
 	inline static constexpr TypeEdge unit_lca_edge = 0;
 	inline static constexpr TypeEdge func_edge_merge(const TypeEdge& parent,const TypeEdge& w){return parent+w;}
 	inline static constexpr pair<size_t,TypeEdge> func_lca_edge_merge(const pair<size_t,TypeEdge>& l,const pair<size_t,TypeEdge>& r){return make_pair(l.first,l.second+r.second);}
+	template<class TypeReroot> inline static constexpr TypeReroot func_reroot_dp(const TypeReroot& l,const TypeReroot& r) {return {l.first+r.first+r.second,l.second+r.second};}
+	template<class TypeReroot> inline static constexpr TypeReroot func_reroot_merge(const TypeReroot& l,const TypeReroot& r) {return {l.first+r.first,l.second+r.second};}
 };
 //auto tree = Tree<TreeOperator<int>>::builder(g).build();
