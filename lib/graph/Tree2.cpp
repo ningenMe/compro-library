@@ -31,6 +31,15 @@ template<class Operator> class Tree {
 			order[ord++] = next;
 		}
 	}
+	//for make_eulertour
+	void dfs(int from){
+		eulertour.push_back(from);
+		for(auto& e:child[from]){
+			int to = e.first;            
+			dfs(to);        
+			eulertour.push_back(from);
+		}
+	}
 	/**
 	 * 根付き木を作る
 	 * O(N) you can use anytime
@@ -164,6 +173,12 @@ template<class Operator> class Tree {
 		}
 		return rerootdp;
 	}
+	void make_eulertour() {
+		dfs(reorder.front());
+		eulertour_range.resize(num);
+		for(int i = 0; i < eulertour.size(); ++i) eulertour_range[eulertour[i]].second = i+1;
+		for(int i = eulertour.size()-1; 0 <= i; --i) eulertour_range[eulertour[i]].first = i;
+	}
 public:
 	vector<size_t> depth;
 	vector<size_t> order;
@@ -173,6 +188,8 @@ public:
 	vector<vector<pair<size_t,TypeEdge>>> child;
 	vector<TypeEdge> edge_dist;
 	vector<array<pair<size_t,TypeEdge>,Operator::bit>> ancestor;
+	vector<size_t> eulertour;
+	vector<pair<size_t,size_t>> eulertour_range;
  
 	/**
 	 * O(N) builder
@@ -207,6 +224,7 @@ public:
 	TreeBuilder& parent() { assert(is_root_made); is_parent_made=true; tree.make_parent(); return *this;}
 	TreeBuilder& subtree_size() { assert(is_child_made); tree.make_subtree_size(); return *this;}
 	TreeBuilder& ancestor() { assert(is_parent_made); tree.make_ancestor(); return *this;}
+	TreeBuilder& eulertour() { assert(is_child_made); tree.make_eulertour(); return *this;}
 	Tree<Operator>&& build() {return move(tree);}
 private:
 	Tree<Operator> tree;
