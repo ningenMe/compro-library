@@ -7,6 +7,9 @@ data:
     path: test/graph/Tree-hld-path.test.cpp
     title: test/graph/Tree-hld-path.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-2.test.cpp
+    title: test/graph/Tree-hld-vertex-2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/segment/SegmentTree-prefix-binary-search.test.cpp
     title: test/segment/SegmentTree-prefix-binary-search.test.cpp
   - icon: ':heavy_check_mark:'
@@ -181,6 +184,7 @@ data:
   - test/segment/SegmentTree-rcq.test.cpp
   - test/segment/SegmentTree-prefix-binary-search.test.cpp
   - test/graph/Tree-hld-path.test.cpp
+  - test/graph/Tree-hld-vertex-2.test.cpp
 documentation_of: lib/segment/SegmentTree.cpp
 layout: document
 redirect_from:

@@ -21,8 +21,8 @@ data:
     PROBLEM: https://yukicoder.me/problems/no/399
     links:
     - https://yukicoder.me/problems/no/399
-  bundledCode: "#line 1 \"test/graph/Tree-hld-vertex.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/399\"\n\n#include <vector>\n#include <iostream>\n\
+  bundledCode: "#line 1 \"test/graph/Tree-hld-vertex-1.test.cpp\"\n#define PROBLEM\
+    \ \"https://yukicoder.me/problems/no/399\"\n\n#include <vector>\n#include <iostream>\n\
     #include <cassert>\n#include <map>\n#include <algorithm>\n#include <stack>\n#include\
     \ <numeric>\n#include <array>\nusing namespace std;\n#line 1 \"lib/graph/Graph.cpp\"\
     \n/*\n * @title Graph\n * @docs md/graph/Graph.md\n */\ntemplate<class T> class\
@@ -289,8 +289,8 @@ data:
     \    inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int\
     \ l,int r){ return (lazy.first==-2000?node:lazy.first + (l-lazy.second));}\n \
     \   inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
-    \ var <= nodeVal;}\n};\n#line 15 \"test/graph/Tree-hld-vertex.test.cpp\"\n\nint\
-    \ main(void){\n\tint N; cin >> N;\n\tGraph<int> g(N);\n\tfor(int i=0;i<N-1;++i)\
+    \ var <= nodeVal;}\n};\n#line 15 \"test/graph/Tree-hld-vertex-1.test.cpp\"\n\n\
+    int main(void){\n\tint N; cin >> N;\n\tGraph<int> g(N);\n\tfor(int i=0;i<N-1;++i)\
     \ {\n\t\tint u,v; cin >> u >> v;\n\t\tu--,v--;\n\t\tg.make_bidirectional_edge(u,v,1);\n\
     \t}\n\tauto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();\n\
     \tLazySegmentTree<NodeSumRangeAdd<long long,long long>> seg(N);\n\tint Q; cin\
@@ -316,15 +316,15 @@ data:
   - lib/graph/Tree2.cpp
   - lib/segment/LazySegmentTree.cpp
   isVerificationFile: true
-  path: test/graph/Tree-hld-vertex.test.cpp
+  path: test/graph/Tree-hld-vertex-1.test.cpp
   requiredBy: []
-  timestamp: '2021-04-23 05:00:43+09:00'
+  timestamp: '2021-04-23 05:15:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/graph/Tree-hld-vertex.test.cpp
+documentation_of: test/graph/Tree-hld-vertex-1.test.cpp
 layout: document
 redirect_from:
-- /verify/test/graph/Tree-hld-vertex.test.cpp
-- /verify/test/graph/Tree-hld-vertex.test.cpp.html
-title: test/graph/Tree-hld-vertex.test.cpp
+- /verify/test/graph/Tree-hld-vertex-1.test.cpp
+- /verify/test/graph/Tree-hld-vertex-1.test.cpp.html
+title: test/graph/Tree-hld-vertex-1.test.cpp
 ---
