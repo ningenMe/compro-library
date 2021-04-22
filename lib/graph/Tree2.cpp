@@ -9,10 +9,6 @@ template<class Operator> class Tree {
 	size_t ord;
 	Graph<TypeEdge>& g;
 	friend TreeBuilder<Operator>;
-	/**
-	 * constructor
-	 * O(N) 
-	 */
 	Tree(Graph<TypeEdge>& graph):
 		g(graph),
 		num(graph.size()),
@@ -40,10 +36,6 @@ template<class Operator> class Tree {
 			eulertour.push_back(from);
 		}
 	}
-	/**
-	 * 根付き木を作る
-	 * O(N) you can use anytime
-	 */
 	void make_root(const int root) {
 		depth[root] = 0;
 		edge_dist[root] = Operator::unit_edge;
@@ -52,10 +44,6 @@ template<class Operator> class Tree {
 		order[ord++] = root;
 		reverse_copy(order.begin(),order.end(),back_inserter(reorder));
 	}
-	/**
-	 * 根付き木を作る
-	 * O(N) you can use anytime
-	 */
 	void make_root() {
         ord = 0;
         for(int i=0;i<num;++i) {
@@ -67,26 +55,14 @@ template<class Operator> class Tree {
         }
 		reverse_copy(order.begin(),order.end(),back_inserter(reorder));
 	}
-	/**
-	 * 子を作る
-	 * O(N) after make_root
-	 */
 	void make_child(const int root = 0) {
 		child.resize(num);
 		for (size_t i = 0; i < num; ++i) for (auto& e : g.edges[i]) if (depth[i] < depth[e.first]) child[i].push_back(e);
 	}
-	/**
-	 * 部分木のサイズを作る
-	 * O(N) after make_child
-	 */
 	void make_subtree_size() {
 		subtree_size.resize(num,1);
 		for (size_t i:order) for (auto e : child[i]) subtree_size[i] += subtree_size[e.first];
 	}
-	/**
-	 * 親を作る
-	 * O(N) after make_root
-	 */
 	void make_parent() {
 		parent.resize(num,make_pair(num,Operator::unit_edge));
 		for (size_t i = 0; i < num; ++i) for (auto& e : g.edges[i]) if (depth[i] > depth[e.first]) parent[i] = e;
@@ -179,6 +155,69 @@ template<class Operator> class Tree {
 		for(int i = 0; i < eulertour.size(); ++i) eulertour_range[eulertour[i]].second = i+1;
 		for(int i = eulertour.size()-1; 0 <= i; --i) eulertour_range[eulertour[i]].first = i;
 	}
+	void make_heavy_light_decomposition(){
+		head.resize(num);
+		hld.resize(num);
+		iota(head.begin(),head.end(),0);
+		for(size_t& pa:reorder) {
+			pair<size_t,size_t> maxi = {0,num};
+			for(auto& p:child[pa]) maxi = max(maxi,{subtree_size[p.first],p.first});
+			if(maxi.first) head[maxi.second] = head[pa];
+		}
+		stack<size_t> st_head,st_sub;
+		size_t cnt = 0;
+		//根に近い方から探索
+		for(size_t& root:reorder){
+			if(depth[root]) continue;
+			//根をpush
+			st_head.push(root);
+			while(st_head.size()){
+				size_t h = st_head.top();
+				st_head.pop();
+				//部分木の根をpush
+				st_sub.push(h);
+				while (st_sub.size()){
+					size_t pa = st_sub.top();
+					st_sub.pop();
+					//部分木をカウントしていく
+					hld[pa] = cnt++;
+					//子を探索
+					for(auto& p:child[pa]) {
+						//子のheadが親と同じなら、そのまま進む
+						if(head[p.first]==head[pa]) st_sub.push(p.first);
+						//そうじゃない場合は、そこから新しく部分木としてみなす
+						else st_head.push(p.first);
+					}
+				}				
+			}
+		}
+	}
+	//type 0: vertex, 1: edge
+	vector<pair<size_t,size_t>> path_impl(size_t u,size_t v,int type = 0) {
+		vector<pair<size_t,size_t>> path;
+		while(1){
+			if(hld[u]>hld[v]) swap(u,v);
+			if(head[u]!=head[v]) {
+				path.push_back({hld[head[v]],hld[v]});
+				v=parent[head[v]].first;
+			}
+			else {
+				path.push_back({hld[u],hld[v]});
+				break;
+			}
+		}
+		reverse(path.begin(),path.end());
+		if(type) path.front().first++;
+		return path;
+	}
+	size_t lca_idx_impl(size_t u,size_t v){
+		while(1){
+			if(hld[u]>hld[v]) swap(u,v);
+			if(head[u]==head[v]) return u;
+			v=parent[head[v]].first;
+		}
+	}
+	vector<size_t> head;
 public:
 	vector<size_t> depth;
 	vector<size_t> order;
@@ -190,7 +229,8 @@ public:
 	vector<array<pair<size_t,TypeEdge>,Operator::bit>> ancestor;
 	vector<size_t> eulertour;
 	vector<pair<size_t,size_t>> eulertour_range;
- 
+	vector<size_t> hld;
+
 	/**
 	 * O(N) builder
 	 */
@@ -209,12 +249,28 @@ public:
 	 * O(N) after make_child
 	 */
 	template<class TypeReroot> vector<TypeReroot> rerooting(const vector<TypeReroot>& rerootdp,const vector<TypeReroot>& rerootparent) {return rerooting_impl(rerootdp,rerootparent);}
+	/**
+	 * O(logN) 
+	 * lca(u,v)=u あるいは lca(u,v)=v のときは、根側から順方向パスを返してくれる 
+	 */
+	vector<pair<size_t,size_t>> vertex_set_on_path(size_t u, size_t v) {return path_impl(u,v,0);}
+	/**
+	/**
+	 * O(logN) 
+	 * lca(u,v)=u あるいは lca(u,v)=v のときは、根側から順方向パスを返してくれる 
+	 */
+	vector<pair<size_t,size_t>> edge_set_on_path(size_t u, size_t v) {return path_impl(u,v,1);}
+	/**
+	 * O(logN) ancestorのlcaより定数倍軽め。idxだけ
+	 */
+	size_t lca_idx(size_t u, size_t v) {return lca_idx_impl(u,v);}
 };
  
 template<class Operator> class TreeBuilder {
 	bool is_root_made =false;
 	bool is_child_made =false;
 	bool is_parent_made=false;
+	bool is_subtree_size_made=false;
 public:
 	using TypeEdge = typename Operator::TypeEdge;
 	TreeBuilder(Graph<TypeEdge>& g):tree(g){}
@@ -222,9 +278,10 @@ public:
 	TreeBuilder& root() { is_root_made=true; tree.make_root(); return *this;}
 	TreeBuilder& child() { assert(is_root_made); is_child_made=true;  tree.make_child();  return *this;}
 	TreeBuilder& parent() { assert(is_root_made); is_parent_made=true; tree.make_parent(); return *this;}
-	TreeBuilder& subtree_size() { assert(is_child_made); tree.make_subtree_size(); return *this;}
+	TreeBuilder& subtree_size() { assert(is_child_made); is_subtree_size_made=true; tree.make_subtree_size(); return *this;}
 	TreeBuilder& ancestor() { assert(is_parent_made); tree.make_ancestor(); return *this;}
 	TreeBuilder& eulertour() { assert(is_child_made); tree.make_eulertour(); return *this;}
+	TreeBuilder& heavy_light_decomposition() { assert(is_subtree_size_made); assert(is_parent_made); tree.make_heavy_light_decomposition(); return *this;}
 	Tree<Operator>&& build() {return move(tree);}
 private:
 	Tree<Operator> tree;

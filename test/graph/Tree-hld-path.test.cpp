@@ -9,66 +9,58 @@
 #include <numeric>
 #include <array>
 using namespace std;
-#include "../../lib/graph/Tree.cpp"
+#include "../../lib/graph/Graph.cpp"
+#include "../../lib/math/Matrix.cpp"
+#include "../../lib/graph/Tree2.cpp"
 #include "../../lib/segment/SegmentTree.cpp"
 #include "../../lib/util/ModInt.cpp"
 
 constexpr long long MOD = 1'000'000'007LL;
 using modint = ModInt<MOD>;
-using matrix = array<modint, 4>;
-constexpr matrix E = {1,0,0,1};
+using matrix = Matrix<modint,2,2>;
 
 //一点更新 区間最小
-template<class T> struct NodeMatrixPointUpdate {
-	using TypeNode = T;
-	inline static constexpr TypeNode unit_node = {1,0,0,1};
-	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){
-        matrix res = {};
-        for(int i = 0; i < 2; ++i) {
-            for(int j = 0; j < 2; ++j) {
-                for(int k = 0; k < 2; ++k) {
-                    res[i*2+j] += l[i*2+k]*r[k*2+j];
-                }
-            }
-        }
-        return res;
-    }
-	inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}
-	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
+template<class T> struct NodeMulPointUpdate {
+    using TypeNode = T;
+    inline static TypeNode unit_node = Matrix<modint,2,2>::E();
+    inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l*r;}
+    inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}
+    inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var > nodeVal;}
 };
+
 
 int main(void){
 	int N; cin >> N;
-	Tree<TreeOperator<int>> tree(N);
-	vector<pair<int,int>> edge(N-1);
+	Graph<int> g(N);
+	vector<pair<size_t,size_t>> vp(N-1);
 	for(int i = 0; i < N-1; ++i) {
 		int u,v; cin >> u >> v;
-		tree.make_edge(u,v);
-		tree.make_edge(v,u);
-		edge[i] = {u,v};
+		g.make_bidirectional_edge(u,v,1);
+		vp[i]={u,v};
 	}
-	tree.make_heavy_light_decomposition(0);
-    SegmentTree<NodeMatrixPointUpdate<matrix>> seg(N);
+	auto tree = Tree<TreeOperator<int>>::builder(g).root(0).child().subtree_size().parent().heavy_light_decomposition().build();
+    SegmentTree<NodeMulPointUpdate<matrix>> seg(N);
     int Q; cin >> Q;
-    for(int i = 0; i < Q; ++i) {
+    while(Q--) {
         char c; cin >> c;
         if(c == 'x'){
-            int j; cin >> j;
+            int i; cin >> i;
             modint a,b,c,d; cin >> a >> b >> c >> d;
-            matrix x = {a,b,c,d};
-            int l = edge[j].first, r = edge[j].second;
-            l = tree.hldorder[l],r = tree.hldorder[r];
-            if(l > r) swap(l,r);
-            seg.update(r,x);
+            matrix x;
+			x[0]={a,b};
+			x[1]={c,d};
+			int l = vp[i].first, r = vp[i].second;
+            l = tree.hld[l],r = tree.hld[r];
+            seg.update(max(l,r),x);
         }
         else{
             int l,r; cin >> l >> r;
-            auto vp = tree.path(l,r,1);
-            matrix ans = E;
+            auto vp = tree.edge_set_on_path(l,r);
+            matrix ans = matrix::E();
             for(auto p:vp){
-                ans = NodeMatrixPointUpdate<matrix>::func_node(ans,seg.get(p.first,p.second+1));
+                ans *= seg.get(p.first,p.second+1);
             }
-            cout << ans[0] << " " << ans[1] << " " << ans[2] << " " << ans[3] << endl;
+            cout << ans[0][0] << " " << ans[0][1] << " " << ans[1][0] << " " << ans[1][1] << endl;
         }
     }
 	return 0;
