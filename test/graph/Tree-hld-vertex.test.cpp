@@ -9,34 +9,33 @@
 #include <numeric>
 #include <array>
 using namespace std;
-#include "../../lib/graph/Tree.cpp"
+#include "../../lib/graph/Graph.cpp"
+#include "../../lib/graph/Tree2.cpp"
 #include "../../lib/segment/LazySegmentTree.cpp"
 
 int main(void){
 	int N; cin >> N;
-	Tree<TreeOperator<int>> tree(N);
-	vector<pair<int,int>> edge(N-1);
-	for(int i = 0; i < N-1; ++i) {
+	Graph<int> g(N);
+	for(int i=0;i<N-1;++i) {
 		int u,v; cin >> u >> v;
 		u--,v--;
-		tree.make_edge(u,v);
-		tree.make_edge(v,u);
-		edge[i] = {u,v};
+		g.make_bidirectional_edge(u,v,1);
 	}
-	tree.make_heavy_light_decomposition(0);
-    LazySegmentTree<NodeSumRangeAdd<long long,long long>> seg(N);
-    int Q; cin >> Q;
-    long long ans = 0;
-    for(int i = 0; i < Q; ++i) {
-        int a,b; cin >> a >> b;
-        a--,b--;
-        auto path = tree.path(a,b);
-        for(auto p:path){
-            int l = p.first,r = p.second;
-            seg.update(l,r+1,1);
-            ans += seg.get(l,r+1);
-        }
-    }
-    cout << ans << endl;
-    return 0;
+	auto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();
+	LazySegmentTree<NodeSumRangeAdd<long long,long long>> seg(N);
+	int Q; cin >> Q;
+	long long ans = 0;
+	while(Q--) {
+		int a,b; cin >> a >> b;
+		a--,b--;
+		auto vp = tree.vertex_set_on_path(a,b);
+		for(auto& p:vp) {
+			int l = p.first, r = p.second+1;
+			int n = r-l;
+			ans += seg.get(l,r)+n;
+			seg.update(l,r,1);
+		}
+	}
+	cout << ans << endl;
+   return 0;
 }
