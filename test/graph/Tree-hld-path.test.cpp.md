@@ -75,9 +75,9 @@ data:
     \ x[j][i];\n\t\t\t\tfor(int k = 0; k < W; k++) x[j][k] -= x[i][k]*tmp;\n\t\t\t\
     }\n\t\t}\n\t\treturn res;\n\t}\n};\n#line 1 \"lib/graph/Tree.cpp\"\n/*\n * @title\
     \ Tree - \u6728\n * @docs md/graph/Tree.md\n */\ntemplate<class Operator> class\
-    \ TreeBuilder;\ntemplate<class Operator> class Tree {\n\tusing TypeEdge = typename\
-    \ Operator::TypeEdge;\n\tsize_t num;\n\tsize_t ord;\n\tGraph<TypeEdge>& g;\n\t\
-    friend TreeBuilder<Operator>;\n\tTree(Graph<TypeEdge>& graph):\n\t\tg(graph),\n\
+    \ TreeBuilder;\ntemplate<class Operator> class Tree {\nprivate:\n\tusing TypeEdge\
+    \ = typename Operator::TypeEdge;\n\tsize_t num;\n\tsize_t ord;\n\tGraph<TypeEdge>&\
+    \ g;\n\tfriend TreeBuilder<Operator>;\n\tTree(Graph<TypeEdge>& graph):\n\t\tg(graph),\n\
     \t\tnum(graph.size()),\n\t\tdepth(graph.size(),-1),\n\t\torder(graph.size()),\n\
     \t\tedge_dist(graph.size()){\n\t}\n\t//for make_depth\n\tvoid dfs(int curr, int\
     \ prev){\n\t\tfor(const auto& e:g.edges[curr]){\n\t\t\tconst int& next = e.first;\n\
@@ -388,7 +388,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-hld-path.test.cpp
   requiredBy: []
-  timestamp: '2021-04-23 06:30:38+09:00'
+  timestamp: '2021-04-23 06:36:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-hld-path.test.cpp

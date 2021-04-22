@@ -39,8 +39,8 @@ data:
     links: []
   bundledCode: "#line 1 \"lib/graph/Tree.cpp\"\n/*\n * @title Tree - \u6728\n * @docs\
     \ md/graph/Tree.md\n */\ntemplate<class Operator> class TreeBuilder;\ntemplate<class\
-    \ Operator> class Tree {\n\tusing TypeEdge = typename Operator::TypeEdge;\n\t\
-    size_t num;\n\tsize_t ord;\n\tGraph<TypeEdge>& g;\n\tfriend TreeBuilder<Operator>;\n\
+    \ Operator> class Tree {\nprivate:\n\tusing TypeEdge = typename Operator::TypeEdge;\n\
+    \tsize_t num;\n\tsize_t ord;\n\tGraph<TypeEdge>& g;\n\tfriend TreeBuilder<Operator>;\n\
     \tTree(Graph<TypeEdge>& graph):\n\t\tg(graph),\n\t\tnum(graph.size()),\n\t\tdepth(graph.size(),-1),\n\
     \t\torder(graph.size()),\n\t\tedge_dist(graph.size()){\n\t}\n\t//for make_depth\n\
     \tvoid dfs(int curr, int prev){\n\t\tfor(const auto& e:g.edges[curr]){\n\t\t\t\
@@ -190,17 +190,17 @@ data:
     \ TypeReroot& l,const TypeReroot& r) {return {l.first+r.first,l.second+r.second};}\n\
     };\n//auto tree = Tree<TreeOperator<int>>::builder(g).build();\n"
   code: "/*\n * @title Tree - \u6728\n * @docs md/graph/Tree.md\n */\ntemplate<class\
-    \ Operator> class TreeBuilder;\ntemplate<class Operator> class Tree {\n\tusing\
-    \ TypeEdge = typename Operator::TypeEdge;\n\tsize_t num;\n\tsize_t ord;\n\tGraph<TypeEdge>&\
-    \ g;\n\tfriend TreeBuilder<Operator>;\n\tTree(Graph<TypeEdge>& graph):\n\t\tg(graph),\n\
-    \t\tnum(graph.size()),\n\t\tdepth(graph.size(),-1),\n\t\torder(graph.size()),\n\
-    \t\tedge_dist(graph.size()){\n\t}\n\t//for make_depth\n\tvoid dfs(int curr, int\
-    \ prev){\n\t\tfor(const auto& e:g.edges[curr]){\n\t\t\tconst int& next = e.first;\n\
-    \t\t\tif(next==prev) continue;\n\t\t\tdepth[next] = depth[curr] + 1;\n\t\t\tedge_dist[next]\
-    \  = Operator::func_edge_merge(edge_dist[curr],e.second);\n\t\t\tdfs(next,curr);\n\
-    \t\t\torder[ord++] = next;\n\t\t}\n\t}\n\t//for make_eulertour\n\tvoid dfs(int\
-    \ from){\n\t\teulertour.push_back(from);\n\t\tfor(auto& e:child[from]){\n\t\t\t\
-    int to = e.first;            \n\t\t\tdfs(to);        \n\t\t\teulertour.push_back(from);\n\
+    \ Operator> class TreeBuilder;\ntemplate<class Operator> class Tree {\nprivate:\n\
+    \tusing TypeEdge = typename Operator::TypeEdge;\n\tsize_t num;\n\tsize_t ord;\n\
+    \tGraph<TypeEdge>& g;\n\tfriend TreeBuilder<Operator>;\n\tTree(Graph<TypeEdge>&\
+    \ graph):\n\t\tg(graph),\n\t\tnum(graph.size()),\n\t\tdepth(graph.size(),-1),\n\
+    \t\torder(graph.size()),\n\t\tedge_dist(graph.size()){\n\t}\n\t//for make_depth\n\
+    \tvoid dfs(int curr, int prev){\n\t\tfor(const auto& e:g.edges[curr]){\n\t\t\t\
+    const int& next = e.first;\n\t\t\tif(next==prev) continue;\n\t\t\tdepth[next]\
+    \ = depth[curr] + 1;\n\t\t\tedge_dist[next]  = Operator::func_edge_merge(edge_dist[curr],e.second);\n\
+    \t\t\tdfs(next,curr);\n\t\t\torder[ord++] = next;\n\t\t}\n\t}\n\t//for make_eulertour\n\
+    \tvoid dfs(int from){\n\t\teulertour.push_back(from);\n\t\tfor(auto& e:child[from]){\n\
+    \t\t\tint to = e.first;            \n\t\t\tdfs(to);        \n\t\t\teulertour.push_back(from);\n\
     \t\t}\n\t}\n\tvoid make_root(const int root) {\n\t\tdepth[root] = 0;\n\t\tedge_dist[root]\
     \ = Operator::unit_edge;\n\t\tord = 0;\n\t\tdfs(root,-1);\n\t\torder[ord++] =\
     \ root;\n\t\treverse_copy(order.begin(),order.end(),back_inserter(reorder));\n\
@@ -345,7 +345,7 @@ data:
   isVerificationFile: false
   path: lib/graph/Tree.cpp
   requiredBy: []
-  timestamp: '2021-04-23 06:30:38+09:00'
+  timestamp: '2021-04-23 06:36:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/Tree-eulertour.test.cpp
