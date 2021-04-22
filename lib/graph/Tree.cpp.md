@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-rerooting.test.cpp
-    title: test/graph/Tree-rerooting.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     _deprecated_at_docs: md/graph/Tree.md
     document_title: "Tree - \u6728"
@@ -294,9 +291,8 @@ data:
   path: lib/graph/Tree.cpp
   requiredBy: []
   timestamp: '2020-09-26 16:13:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/graph/Tree-rerooting.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: lib/graph/Tree.cpp
 layout: document
 redirect_from:

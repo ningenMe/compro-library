@@ -10,9 +10,6 @@ data:
     path: test/graph/Tree-hld-vertex.test.cpp
     title: test/graph/Tree-hld-vertex.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-rerooting.test.cpp
-    title: test/graph/Tree-rerooting.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/segment/LazySegmentTree-rmqraq.test.cpp
     title: test/segment/LazySegmentTree-rmqraq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -252,7 +249,6 @@ data:
   - test/segment/LazySegmentTree-rsqruq.test.cpp
   - test/graph/Tree-hld-vertex.test.cpp
   - test/graph/Tree-eulertour.test.cpp
-  - test/graph/Tree-rerooting.test.cpp
 documentation_of: lib/segment/LazySegmentTree.cpp
 layout: document
 redirect_from:

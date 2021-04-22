@@ -47,7 +47,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/StronglyConnectedComponents.cpp
       title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/graph/Tree.cpp
       title: "Tree - \u6728"
     - icon: ':heavy_check_mark:'
@@ -364,9 +364,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/Tree-parent.test.cpp
       title: test/graph/Tree-parent.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/graph/Tree-rerooting.test.cpp
-      title: test/graph/Tree-rerooting.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/Tree-size.test.cpp
       title: test/graph/Tree-size.test.cpp
