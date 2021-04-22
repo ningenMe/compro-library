@@ -7,6 +7,9 @@ data:
     path: test/graph/StronglyConnectedComponents-1.test.cpp
     title: test/graph/StronglyConnectedComponents-1.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-lca.test.cpp
+    title: test/graph/Tree-lca.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/UnionFindTree.test.cpp
     title: test/graph/UnionFindTree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -58,6 +61,7 @@ data:
   - test/util/RangeIndex.test.cpp
   - test/graph/UnionFindTree.test.cpp
   - test/graph/StronglyConnectedComponents-1.test.cpp
+  - test/graph/Tree-lca.test.cpp
 documentation_of: lib/graph/UnionFindTree.cpp
 layout: document
 redirect_from:

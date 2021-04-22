@@ -7,6 +7,9 @@ data:
     path: test/graph/Tree-diameter.test.cpp
     title: test/graph/Tree-diameter.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-lca.test.cpp
+    title: test/graph/Tree-lca.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/Tree-parent.test.cpp
     title: test/graph/Tree-parent.test.cpp
   - icon: ':heavy_check_mark:'
@@ -236,6 +239,7 @@ data:
   verifiedWith:
   - test/graph/Tree-diameter.test.cpp
   - test/graph/Tree-size.test.cpp
+  - test/graph/Tree-lca.test.cpp
   - test/graph/Tree-parent.test.cpp
 documentation_of: lib/graph/Tree2.cpp
 layout: document
