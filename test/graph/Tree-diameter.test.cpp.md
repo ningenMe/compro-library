@@ -107,14 +107,14 @@ data:
     \ 0;\n\tinline static constexpr TypeEdge func_edge_merge(const TypeEdge& parent,const\
     \ TypeEdge& w){return parent+w;}\n\tinline static constexpr pair<size_t,TypeEdge>\
     \ func_lca_edge_merge(const pair<size_t,TypeEdge>& l,const pair<size_t,TypeEdge>&\
-    \ r){return make_pair(l.first,l.second+r.second);}\n};\n//using Op = TreeOperator<int>;\n\
-    //Tree<Op> tree = Tree<Op>::builder(g).build();\n#line 13 \"test/graph/Tree-diameter.test.cpp\"\
-    \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\tint N; cin\
-    \ >> N;\n\tGraph<long long> g(N);\n\tfor(int i=1;i<N;++i){\n\t\tint u,v,w; cin\
-    \ >> u >> v >> w;\n\t\tg.make_bidirectional_edge(u,v,w);\n\t}\n\tusing Op = TreeOperator<long\
-    \ long>;\n\tauto tree = Tree<Op>::builder(g).build();\n\tauto p = tree.diameter();\n\
-    \tcout << p.first << \" \" << p.second.size() << endl;\n\tfor(auto& e:p.second)\
-    \ cout << e << \" \";\n\tcout << endl;\n\treturn 0;\n}\n"
+    \ r){return make_pair(l.first,l.second+r.second);}\n};\n//auto tree = Tree<TreeOperator<int>>::builder(g).build();\n\
+    #line 13 \"test/graph/Tree-diameter.test.cpp\"\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\
+    \tint N; cin >> N;\n\tGraph<long long> g(N);\n\tfor(int i=1;i<N;++i){\n\t\tint\
+    \ u,v,w; cin >> u >> v >> w;\n\t\tg.make_bidirectional_edge(u,v,w);\n\t}\n\tusing\
+    \ Op = TreeOperator<long long>;\n\tauto tree = Tree<Op>::builder(g).build();\n\
+    \tauto p = tree.diameter();\n\tcout << p.first << \" \" << p.second.size() <<\
+    \ endl;\n\tfor(auto& e:p.second) cout << e << \" \";\n\tcout << endl;\n\treturn\
+    \ 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/tree_diameter\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n#include\
     \ <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n#include\
@@ -131,7 +131,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-diameter.test.cpp
   requiredBy: []
-  timestamp: '2021-04-22 21:43:07+09:00'
+  timestamp: '2021-04-22 21:48:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-diameter.test.cpp

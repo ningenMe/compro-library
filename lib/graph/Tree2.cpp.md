@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-diameter.test.cpp
     title: test/graph/Tree-diameter.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-size.test.cpp
+    title: test/graph/Tree-size.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -85,8 +88,7 @@ data:
     \ 0;\n\tinline static constexpr TypeEdge func_edge_merge(const TypeEdge& parent,const\
     \ TypeEdge& w){return parent+w;}\n\tinline static constexpr pair<size_t,TypeEdge>\
     \ func_lca_edge_merge(const pair<size_t,TypeEdge>& l,const pair<size_t,TypeEdge>&\
-    \ r){return make_pair(l.first,l.second+r.second);}\n};\n//using Op = TreeOperator<int>;\n\
-    //Tree<Op> tree = Tree<Op>::builder(g).build();\n"
+    \ r){return make_pair(l.first,l.second+r.second);}\n};\n//auto tree = Tree<TreeOperator<int>>::builder(g).build();\n"
   code: "/*\n * @title Tree - \u6728\n * @docs md/graph/Tree.md\n */\ntemplate<class\
     \ Operator> class TreeBuilder;\ntemplate<class Operator> class Tree {\n\tusing\
     \ TypeEdge = typename Operator::TypeEdge;\n\tsize_t num;\n\tsize_t ord;\n\tGraph<TypeEdge>&\
@@ -159,16 +161,16 @@ data:
     \ 0;\n\tinline static constexpr TypeEdge func_edge_merge(const TypeEdge& parent,const\
     \ TypeEdge& w){return parent+w;}\n\tinline static constexpr pair<size_t,TypeEdge>\
     \ func_lca_edge_merge(const pair<size_t,TypeEdge>& l,const pair<size_t,TypeEdge>&\
-    \ r){return make_pair(l.first,l.second+r.second);}\n};\n//using Op = TreeOperator<int>;\n\
-    //Tree<Op> tree = Tree<Op>::builder(g).build();"
+    \ r){return make_pair(l.first,l.second+r.second);}\n};\n//auto tree = Tree<TreeOperator<int>>::builder(g).build();"
   dependsOn: []
   isVerificationFile: false
   path: lib/graph/Tree2.cpp
   requiredBy: []
-  timestamp: '2021-04-22 21:27:41+09:00'
+  timestamp: '2021-04-22 21:48:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/Tree-diameter.test.cpp
+  - test/graph/Tree-size.test.cpp
 documentation_of: lib/graph/Tree2.cpp
 layout: document
 redirect_from:

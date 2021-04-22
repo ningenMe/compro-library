@@ -15,9 +15,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-rerooting.test.cpp
     title: test/graph/Tree-rerooting.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-size.test.cpp
-    title: test/graph/Tree-size.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -311,7 +308,6 @@ data:
   - test/graph/Tree-hld-vertex.test.cpp
   - test/graph/Tree-eulertour.test.cpp
   - test/graph/Tree-hld-path.test.cpp
-  - test/graph/Tree-size.test.cpp
   - test/graph/Tree-rerooting.test.cpp
 documentation_of: lib/graph/Tree.cpp
 layout: document
