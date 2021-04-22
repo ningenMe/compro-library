@@ -5,7 +5,7 @@ data:
     path: lib/graph/Graph.cpp
     title: Graph
   - icon: ':heavy_check_mark:'
-    path: lib/graph/Tree2.cpp
+    path: lib/graph/Tree.cpp
     title: "Tree - \u6728"
   - icon: ':heavy_check_mark:'
     path: lib/segment/LazySegmentTree.cpp
@@ -38,7 +38,7 @@ data:
     \ T w) {\n        make_edge(from.first*W+from.second,to.first*W+to.second,w);\n\
     \        make_edge(to.first*W+to.second,from.first*W+from.second,w);\n    }\n\
     \    inline size_t size(){return N;}\n    inline size_t idx(pair<size_t,size_t>\
-    \ yx){return yx.first*W+yx.second;}\n};\n#line 1 \"lib/graph/Tree2.cpp\"\n/*\n\
+    \ yx){return yx.first*W+yx.second;}\n};\n#line 1 \"lib/graph/Tree.cpp\"\n/*\n\
     \ * @title Tree - \u6728\n * @docs md/graph/Tree.md\n */\ntemplate<class Operator>\
     \ class TreeBuilder;\ntemplate<class Operator> class Tree {\n\tusing TypeEdge\
     \ = typename Operator::TypeEdge;\n\tsize_t num;\n\tsize_t ord;\n\tGraph<TypeEdge>&\
@@ -301,9 +301,9 @@ data:
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/399\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <map>\n#include <algorithm>\n\
     #include <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n\
-    #include \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/graph/Tree2.cpp\"\
-    \n#include \"../../lib/segment/LazySegmentTree.cpp\"\n\nint main(void){\n\tint\
-    \ N; cin >> N;\n\tGraph<int> g(N);\n\tfor(int i=0;i<N-1;++i) {\n\t\tint u,v; cin\
+    #include \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/graph/Tree.cpp\"\n\
+    #include \"../../lib/segment/LazySegmentTree.cpp\"\n\nint main(void){\n\tint N;\
+    \ cin >> N;\n\tGraph<int> g(N);\n\tfor(int i=0;i<N-1;++i) {\n\t\tint u,v; cin\
     \ >> u >> v;\n\t\tu--,v--;\n\t\tg.make_bidirectional_edge(u,v,1);\n\t}\n\tauto\
     \ tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();\n\
     \tLazySegmentTree<NodeSumRangeAdd<long long,long long>> seg(N);\n\tint Q; cin\
@@ -313,12 +313,12 @@ data:
     \t\t\tseg.update(l,r,1);\n\t\t}\n\t}\n\tcout << ans << endl;\n   return 0;\n}"
   dependsOn:
   - lib/graph/Graph.cpp
-  - lib/graph/Tree2.cpp
+  - lib/graph/Tree.cpp
   - lib/segment/LazySegmentTree.cpp
   isVerificationFile: true
   path: test/graph/Tree-hld-vertex-1.test.cpp
   requiredBy: []
-  timestamp: '2021-04-23 05:15:41+09:00'
+  timestamp: '2021-04-23 05:33:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-hld-vertex-1.test.cpp

@@ -5,7 +5,7 @@ data:
     path: lib/graph/Graph.cpp
     title: Graph
   - icon: ':heavy_check_mark:'
-    path: lib/graph/Tree2.cpp
+    path: lib/graph/Tree.cpp
     title: "Tree - \u6728"
   - icon: ':heavy_check_mark:'
     path: lib/math/Matrix.cpp
@@ -73,7 +73,7 @@ data:
     }\n\t\t\tres *= x[i][i];\n\t\t\tT tmp = x[i][i];\n\t\t\tfor(int j = 0; j < W;\
     \ ++j) x[i][j] /= tmp;\n\t\t\tfor(int j = i + 1; j < H; j++) {\n\t\t\t\ttmp =\
     \ x[j][i];\n\t\t\t\tfor(int k = 0; k < W; k++) x[j][k] -= x[i][k]*tmp;\n\t\t\t\
-    }\n\t\t}\n\t\treturn res;\n\t}\n};\n#line 1 \"lib/graph/Tree2.cpp\"\n/*\n * @title\
+    }\n\t\t}\n\t\treturn res;\n\t}\n};\n#line 1 \"lib/graph/Tree.cpp\"\n/*\n * @title\
     \ Tree - \u6728\n * @docs md/graph/Tree.md\n */\ntemplate<class Operator> class\
     \ TreeBuilder;\ntemplate<class Operator> class Tree {\n\tusing TypeEdge = typename\
     \ Operator::TypeEdge;\n\tsize_t num;\n\tsize_t ord;\n\tGraph<TypeEdge>& g;\n\t\
@@ -349,7 +349,7 @@ data:
     #include <iostream>\n#include <cassert>\n#include <map>\n#include <algorithm>\n\
     #include <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n\
     #include \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/math/Matrix.cpp\"\
-    \n#include \"../../lib/graph/Tree2.cpp\"\n#include \"../../lib/segment/SegmentTree.cpp\"\
+    \n#include \"../../lib/graph/Tree.cpp\"\n#include \"../../lib/segment/SegmentTree.cpp\"\
     \n#include \"../../lib/util/ModInt.cpp\"\n\nconstexpr long long MOD = 1'000'000'007LL;\n\
     using modint = ModInt<MOD>;\nusing matrix = Matrix<modint,2,2>;\n\n//\u4E00\u70B9\
     \u66F4\u65B0 \u533A\u9593\u6700\u5C0F\ntemplate<class T> struct NodeMulPointUpdate\
@@ -374,13 +374,13 @@ data:
   dependsOn:
   - lib/graph/Graph.cpp
   - lib/math/Matrix.cpp
-  - lib/graph/Tree2.cpp
+  - lib/graph/Tree.cpp
   - lib/segment/SegmentTree.cpp
   - lib/util/ModInt.cpp
   isVerificationFile: true
   path: test/graph/Tree-hld-path.test.cpp
   requiredBy: []
-  timestamp: '2021-04-23 04:44:43+09:00'
+  timestamp: '2021-04-23 05:33:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-hld-path.test.cpp

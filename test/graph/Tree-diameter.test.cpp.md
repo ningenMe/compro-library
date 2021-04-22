@@ -5,7 +5,7 @@ data:
     path: lib/graph/Graph.cpp
     title: Graph
   - icon: ':heavy_check_mark:'
-    path: lib/graph/Tree2.cpp
+    path: lib/graph/Tree.cpp
     title: "Tree - \u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -34,7 +34,7 @@ data:
     \ T w) {\n        make_edge(from.first*W+from.second,to.first*W+to.second,w);\n\
     \        make_edge(to.first*W+to.second,from.first*W+from.second,w);\n    }\n\
     \    inline size_t size(){return N;}\n    inline size_t idx(pair<size_t,size_t>\
-    \ yx){return yx.first*W+yx.second;}\n};\n#line 1 \"lib/graph/Tree2.cpp\"\n/*\n\
+    \ yx){return yx.first*W+yx.second;}\n};\n#line 1 \"lib/graph/Tree.cpp\"\n/*\n\
     \ * @title Tree - \u6728\n * @docs md/graph/Tree.md\n */\ntemplate<class Operator>\
     \ class TreeBuilder;\ntemplate<class Operator> class Tree {\n\tusing TypeEdge\
     \ = typename Operator::TypeEdge;\n\tsize_t num;\n\tsize_t ord;\n\tGraph<TypeEdge>&\
@@ -188,7 +188,7 @@ data:
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/tree_diameter\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n#include\
     \ <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n#include\
-    \ \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/graph/Tree2.cpp\"\n\nint\
+    \ \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/graph/Tree.cpp\"\n\nint\
     \ main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\tint N; cin >> N;\n\
     \tGraph<long long> g(N);\n\tfor(int i=1;i<N;++i){\n\t\tint u,v,w; cin >> u >>\
     \ v >> w;\n\t\tg.make_bidirectional_edge(u,v,w);\n\t}\n\tusing Op = TreeOperator<long\
@@ -197,11 +197,11 @@ data:
     \ cout << e << \" \";\n\tcout << endl;\n\treturn 0;\n}"
   dependsOn:
   - lib/graph/Graph.cpp
-  - lib/graph/Tree2.cpp
+  - lib/graph/Tree.cpp
   isVerificationFile: true
   path: test/graph/Tree-diameter.test.cpp
   requiredBy: []
-  timestamp: '2021-04-23 04:44:43+09:00'
+  timestamp: '2021-04-23 05:33:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-diameter.test.cpp

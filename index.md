@@ -47,11 +47,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/StronglyConnectedComponents.cpp
       title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
-    - icon: ':warning:'
-      path: lib/graph/Tree.cpp
-      title: "Tree - \u6728"
     - icon: ':heavy_check_mark:'
-      path: lib/graph/Tree2.cpp
+      path: lib/graph/Tree.cpp
       title: "Tree - \u6728"
     - icon: ':heavy_check_mark:'
       path: lib/graph/UnionFindTree.cpp
@@ -282,6 +279,9 @@ data:
     - icon: ':warning:'
       path: non-verified/ZArray.cpp
       title: non-verified/ZArray.cpp
+    - icon: ':warning:'
+      path: non-verified/old-tree.cpp
+      title: "Tree - \u6728"
   verificationCategories:
   - name: test
     pages:
