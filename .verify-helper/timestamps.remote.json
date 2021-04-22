@@ -24,7 +24,6 @@
 "test/graph/Tree-hld-vertex.test.cpp": "2021-04-23 05:00:43 +0900",
 "test/graph/Tree-lca.test.cpp": "2021-04-23 04:44:43 +0900",
 "test/graph/Tree-parent.test.cpp": "2021-04-23 04:44:43 +0900",
-"test/graph/Tree-rerooting.test.cpp": "2020-09-27 22:47:01 +0900",
 "test/graph/Tree-size.test.cpp": "2021-04-23 04:44:43 +0900",
 "test/graph/UnionFindTree.test.cpp": "2020-09-26 16:13:14 +0900",
 "test/heap/RadixHeap.test.cpp": "2020-09-26 16:29:44 +0900",
