@@ -128,7 +128,16 @@ data:
     \t\t\tif(head[u]!=head[v]) {\n\t\t\t\tpath.push_back({hld[head[v]],hld[v]});\n\
     \t\t\t\tv=parent[head[v]].first;\n\t\t\t}\n\t\t\telse {\n\t\t\t\tpath.push_back({hld[u],hld[v]});\n\
     \t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t\treverse(path.begin(),path.end());\n\t\tif(type)\
-    \ path.front().first++;\n\t\treturn path;\n\t}\n\tsize_t lca_idx_impl(size_t u,size_t\
+    \ path.front().first++;\n\t\treturn path;\n\t}\n\tpair<vector<pair<size_t,size_t>>,vector<pair<size_t,size_t>>>\
+    \ ordered_path_impl(size_t u,size_t v,int type = 0) {\n\t\tvector<pair<size_t,size_t>>\
+    \ path_lca_to_u;\n\t\tvector<pair<size_t,size_t>> path_lca_to_v;\n\t\twhile(1){\n\
+    \t\t\tif(head[u] == head[v]) {\n                if(depth[u] < depth[v]) path_lca_to_v.emplace_back(hld[u]+type,hld[v]);\n\
+    \                else path_lca_to_u.emplace_back(hld[v]+type,hld[u]);\n\t\t\t\t\
+    break;\n\t\t\t}\n            else if(hld[u] < hld[v]) {\n                path_lca_to_v.emplace_back(hld[head[v]],hld[v]);\n\
+    \                v = parent[head[v]].first;\n            }\n            else if(hld[u]\
+    \ > hld[v]) {\n                path_lca_to_u.emplace_back(hld[head[u]],hld[u]);\n\
+    \                u = parent[head[u]].first;\n            }\n\t\t}\n\t\treverse(path_lca_to_v.begin(),path_lca_to_v.end());\n\
+    \t\treturn {path_lca_to_u,path_lca_to_v};\n\t}\n\tsize_t lca_idx_impl(size_t u,size_t\
     \ v){\n\t\twhile(1){\n\t\t\tif(hld[u]>hld[v]) swap(u,v);\n\t\t\tif(head[u]==head[v])\
     \ return u;\n\t\t\tv=parent[head[v]].first;\n\t\t}\n\t}\n\tvector<size_t> head;\n\
     public:\n\tvector<size_t> depth;\n\tvector<size_t> order;\n\tvector<size_t> reorder;\n\
@@ -143,23 +152,22 @@ data:
     \ set} \n\t */\n\tpair<TypeEdge,vector<size_t>> diameter(void){return diameter_impl();}\n\
     \t/**\n\t * O(N) after make_child\n\t */\n\ttemplate<class TypeReroot> vector<TypeReroot>\
     \ rerooting(const vector<TypeReroot>& rerootdp,const vector<TypeReroot>& rerootparent)\
-    \ {return rerooting_impl(rerootdp,rerootparent);}\n\t/**\n\t * O(logN) \n\t *\
-    \ lca(u,v)=u \u3042\u308B\u3044\u306F lca(u,v)=v \u306E\u3068\u304D\u306F\u3001\
-    \u6839\u5074\u304B\u3089\u9806\u65B9\u5411\u30D1\u30B9\u3092\u8FD4\u3057\u3066\
-    \u304F\u308C\u308B \n\t */\n\tvector<pair<size_t,size_t>> vertex_set_on_path(size_t\
-    \ u, size_t v) {return path_impl(u,v,0);}\n\t/**\n\t/**\n\t * O(logN) \n\t * lca(u,v)=u\
-    \ \u3042\u308B\u3044\u306F lca(u,v)=v \u306E\u3068\u304D\u306F\u3001\u6839\u5074\
-    \u304B\u3089\u9806\u65B9\u5411\u30D1\u30B9\u3092\u8FD4\u3057\u3066\u304F\u308C\
-    \u308B \n\t */\n\tvector<pair<size_t,size_t>> edge_set_on_path(size_t u, size_t\
-    \ v) {return path_impl(u,v,1);}\n\t/**\n\t * O(logN) ancestor\u306Elca\u3088\u308A\
-    \u5B9A\u6570\u500D\u8EFD\u3081\u3002idx\u3060\u3051\n\t */\n\tsize_t lca_idx(size_t\
-    \ u, size_t v) {return lca_idx_impl(u,v);}\n};\n \ntemplate<class Operator> class\
-    \ TreeBuilder {\n\tbool is_root_made =false;\n\tbool is_child_made =false;\n\t\
-    bool is_parent_made=false;\n\tbool is_subtree_size_made=false;\npublic:\n\tusing\
-    \ TypeEdge = typename Operator::TypeEdge;\n\tTreeBuilder(Graph<TypeEdge>& g):tree(g){}\n\
-    \tTreeBuilder& root(const int rt) { is_root_made=true; tree.make_root(rt); return\
-    \ *this;}\n\tTreeBuilder& root() { is_root_made=true; tree.make_root(); return\
-    \ *this;}\n\tTreeBuilder& child() { assert(is_root_made); is_child_made=true;\
+    \ {return rerooting_impl(rerootdp,rerootparent);}\n\t/**\n\t * O(logN) \n\t */\n\
+    \tvector<pair<size_t,size_t>> vertex_set_on_path(size_t u, size_t v) {return path_impl(u,v,0);}\n\
+    \t/**\n\t/**\n\t * O(logN) \n\t */\n\tvector<pair<size_t,size_t>> edge_set_on_path(size_t\
+    \ u, size_t v) {return path_impl(u,v,1);}\n\t/**\n\t * O(logN) \n     * {lca to\
+    \ u path,lca to v path}\n\t */\n\tpair<vector<pair<size_t,size_t>>,vector<pair<size_t,size_t>>>\
+    \ vertex_ordered_set_on_path(size_t u, size_t v) {return ordered_path_impl(u,v,0);}\n\
+    \t/**\n\t * O(logN) \n     * {lca to u path,lca to v path}\n\t */\n\tpair<vector<pair<size_t,size_t>>,vector<pair<size_t,size_t>>>\
+    \ edge_ordered_set_on_path(size_t u, size_t v) {return ordered_path_impl(u,v,1);}\n\
+    \t/**\n\t * O(logN) ancestor\u306Elca\u3088\u308A\u5B9A\u6570\u500D\u8EFD\u3081\
+    \u3002idx\u3060\u3051\n\t */\n\tsize_t lca_idx(size_t u, size_t v) {return lca_idx_impl(u,v);}\n\
+    };\n \ntemplate<class Operator> class TreeBuilder {\n\tbool is_root_made =false;\n\
+    \tbool is_child_made =false;\n\tbool is_parent_made=false;\n\tbool is_subtree_size_made=false;\n\
+    public:\n\tusing TypeEdge = typename Operator::TypeEdge;\n\tTreeBuilder(Graph<TypeEdge>&\
+    \ g):tree(g){}\n\tTreeBuilder& root(const int rt) { is_root_made=true; tree.make_root(rt);\
+    \ return *this;}\n\tTreeBuilder& root() { is_root_made=true; tree.make_root();\
+    \ return *this;}\n\tTreeBuilder& child() { assert(is_root_made); is_child_made=true;\
     \  tree.make_child();  return *this;}\n\tTreeBuilder& parent() { assert(is_root_made);\
     \ is_parent_made=true; tree.make_parent(); return *this;}\n\tTreeBuilder& subtree_size()\
     \ { assert(is_child_made); is_subtree_size_made=true; tree.make_subtree_size();\
@@ -201,7 +209,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-diameter.test.cpp
   requiredBy: []
-  timestamp: '2021-04-23 05:33:17+09:00'
+  timestamp: '2021-04-23 06:30:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-diameter.test.cpp

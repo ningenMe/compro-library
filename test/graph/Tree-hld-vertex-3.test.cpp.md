@@ -8,9 +8,6 @@ data:
     path: lib/graph/Tree.cpp
     title: "Tree - \u6728"
   - icon: ':heavy_check_mark:'
-    path: lib/math/Matrix.cpp
-    title: "Matrix - \u884C\u5217\u6F14\u7B97"
-  - icon: ':heavy_check_mark:'
     path: lib/segment/SegmentTree.cpp
     title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
@@ -24,19 +21,19 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://yukicoder.me/problems/no/650
+    PROBLEM: https://judge.yosupo.jp/problem/vertex_set_path_composite
     links:
-    - https://yukicoder.me/problems/no/650
-  bundledCode: "#line 1 \"test/graph/Tree-hld-path.test.cpp\"\n#define PROBLEM \"\
-    https://yukicoder.me/problems/no/650\"\n\n#include <vector>\n#include <iostream>\n\
-    #include <cassert>\n#include <map>\n#include <algorithm>\n#include <stack>\n#include\
-    \ <numeric>\n#include <array>\nusing namespace std;\n#line 1 \"lib/graph/Graph.cpp\"\
-    \n/*\n * @title Graph\n * @docs md/graph/Graph.md\n */\ntemplate<class T> class\
-    \ Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n    vector<vector<pair<size_t,T>>>\
-    \ edges;\n    Graph(const size_t N):H(-1),W(-1),N(N), edges(N) {}\n    Graph(const\
-    \ size_t H, const size_t W):H(H),W(W),N(H*W), edges(H*W) {}\n    inline void make_edge(size_t\
-    \ from, size_t to, T w) {\n        edges[from].emplace_back(to,w);\n    }\n  \
-    \  //{from_y,from_x} -> {to_y,to_x} \n    inline void make_edge(pair<size_t,size_t>\
+    - https://judge.yosupo.jp/problem/vertex_set_path_composite
+  bundledCode: "#line 1 \"test/graph/Tree-hld-vertex-3.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/vertex_set_path_composite\"\n\n#include <vector>\n\
+    #include <iostream>\n#include <cassert>\n#include <map>\n#include <algorithm>\n\
+    #include <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n\
+    #line 1 \"lib/graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
+    \ */\ntemplate<class T> class Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n\
+    \    vector<vector<pair<size_t,T>>> edges;\n    Graph(const size_t N):H(-1),W(-1),N(N),\
+    \ edges(N) {}\n    Graph(const size_t H, const size_t W):H(H),W(W),N(H*W), edges(H*W)\
+    \ {}\n    inline void make_edge(size_t from, size_t to, T w) {\n        edges[from].emplace_back(to,w);\n\
+    \    }\n    //{from_y,from_x} -> {to_y,to_x} \n    inline void make_edge(pair<size_t,size_t>\
     \ from, pair<size_t,size_t> to, T w) {\n        make_edge(from.first*W+from.second,to.first*W+to.second,w);\n\
     \    }\n    inline void make_bidirectional_edge(size_t from, size_t to, T w) {\n\
     \        make_edge(from,to,w);\n        make_edge(to,from,w);\n    }\n    inline\
@@ -44,40 +41,11 @@ data:
     \ T w) {\n        make_edge(from.first*W+from.second,to.first*W+to.second,w);\n\
     \        make_edge(to.first*W+to.second,from.first*W+from.second,w);\n    }\n\
     \    inline size_t size(){return N;}\n    inline size_t idx(pair<size_t,size_t>\
-    \ yx){return yx.first*W+yx.second;}\n};\n#line 1 \"lib/math/Matrix.cpp\"\n/*\n\
-    \ * @title Matrix - \u884C\u5217\u6F14\u7B97\n * @docs md/math/Matrix.md\n */\n\
-    template <class T, int H, int W = H> class Matrix {\npublic:\n\tint h,w;\n\tarray<array<T,W>,H>\
-    \ a;\n\tMatrix():h(H),w(W){\n\t\t// do nothing\n\t}\n\tMatrix(const vector<vector<T>>&\
-    \ vec):h(H),w(W) {\n\t\tassert(vec.size()==H && vec.front().size()==W);\n\t\t\
-    for(int i = 0; i < H; ++i) for(int j = 0; j < W; ++j) a[i][j]=vec[i][j];\n\t}\n\
-    \tstatic Matrix E() {\n\t\tassert(H==W);\n\t\tMatrix res = Matrix();\n\t\tfor(int\
-    \ i = 0; i < H; ++i) res[i][i]=1;\n\t\treturn res;\n\t}\n\tMatrix &operator+=(const\
-    \ Matrix &r) {\n\t\tassert(H==r.h&&W==r.w);\n\t\tfor(int i = 0; i < H; ++i) for(int\
-    \ j = 0; j < W; ++j) a[i][j]+=r[i][j];\n\t\treturn *this;\n\t}\n\tMatrix &operator-=(const\
-    \ Matrix &r) {\n\t\tassert(H==r.h&&W==r.w);\n\t\tfor(int i = 0; i < H; ++i) for(int\
-    \ j = 0; j < W; ++j) a[i][j]-=r[i][j];\n\t\treturn *this;\n\t}\n\tMatrix &operator*=(const\
-    \ Matrix &r) {\n\t\tassert(W==r.h);\n\t\tMatrix res = Matrix();\n\t\tfor(int i\
-    \ = 0; i < H; ++i) for(int j = 0; j < r.w; ++j) for(int k = 0; k < W; ++k) res[i][j]+=(a[i][k])*(r[k][j]);\n\
-    \t\ta.swap(res.a);\n\t\treturn *this;\n\t}\n\tMatrix operator+(const Matrix& r)\
-    \ const {\n\t\treturn Matrix(*this) += r;\n\t}\n\tMatrix operator-(const Matrix&\
-    \ r) const {\n\t\treturn Matrix(*this) -= r;\n\t}\n\tMatrix operator*(const Matrix&\
-    \ r) const {\n\t\treturn Matrix(*this) *= r;\n\t}\n\tinline array<T,W> &operator[](int\
-    \ i) { \n\t\treturn a[i];\n\t}\n\tinline const array<T,W> &operator[](int i) const\
-    \ { \n\t\treturn a[i];\n\t}\n\tMatrix pow(long long K) const {\n\t\tassert(H ==\
-    \ W);\n\t\tMatrix x(*this);\n\t\tMatrix res = this->E();\n\t\tfor (; K > 0; K\
-    \ /= 2) {\n\t\t\tif (K & 1) res *= x;\n\t\t\tx *= x;\n\t\t}\n\t\treturn res;\n\
-    \t}\n\tT determinant(void) const {\n\t\tassert(H==W);\n\t\tMatrix x(*this);\n\t\
-    \tT res = 1;\n\t\tfor(int i = 0; i < H; i++) {\n\t\t\tint idx = -1;\n\t\t\tfor(int\
-    \ j = i; j < W; j++) if(x[j][i] != 0) idx = j;\n\t\t\tif(idx == -1) return 0;\n\
-    \t\t\tif(i != idx) {\n\t\t\t\tres *= -1;\n\t\t\t\tswap(x[i], x[idx]);\n\t\t\t\
-    }\n\t\t\tres *= x[i][i];\n\t\t\tT tmp = x[i][i];\n\t\t\tfor(int j = 0; j < W;\
-    \ ++j) x[i][j] /= tmp;\n\t\t\tfor(int j = i + 1; j < H; j++) {\n\t\t\t\ttmp =\
-    \ x[j][i];\n\t\t\t\tfor(int k = 0; k < W; k++) x[j][k] -= x[i][k]*tmp;\n\t\t\t\
-    }\n\t\t}\n\t\treturn res;\n\t}\n};\n#line 1 \"lib/graph/Tree.cpp\"\n/*\n * @title\
-    \ Tree - \u6728\n * @docs md/graph/Tree.md\n */\ntemplate<class Operator> class\
-    \ TreeBuilder;\ntemplate<class Operator> class Tree {\n\tusing TypeEdge = typename\
-    \ Operator::TypeEdge;\n\tsize_t num;\n\tsize_t ord;\n\tGraph<TypeEdge>& g;\n\t\
-    friend TreeBuilder<Operator>;\n\tTree(Graph<TypeEdge>& graph):\n\t\tg(graph),\n\
+    \ yx){return yx.first*W+yx.second;}\n};\n#line 1 \"lib/graph/Tree.cpp\"\n/*\n\
+    \ * @title Tree - \u6728\n * @docs md/graph/Tree.md\n */\ntemplate<class Operator>\
+    \ class TreeBuilder;\ntemplate<class Operator> class Tree {\n\tusing TypeEdge\
+    \ = typename Operator::TypeEdge;\n\tsize_t num;\n\tsize_t ord;\n\tGraph<TypeEdge>&\
+    \ g;\n\tfriend TreeBuilder<Operator>;\n\tTree(Graph<TypeEdge>& graph):\n\t\tg(graph),\n\
     \t\tnum(graph.size()),\n\t\tdepth(graph.size(),-1),\n\t\torder(graph.size()),\n\
     \t\tedge_dist(graph.size()){\n\t}\n\t//for make_depth\n\tvoid dfs(int curr, int\
     \ prev){\n\t\tfor(const auto& e:g.edges[curr]){\n\t\t\tconst int& next = e.first;\n\
@@ -331,70 +299,79 @@ data:
     \ >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream &operator<<(ostream\
     \ &os, const ModInt &p) {return os << p.x;}\n    friend istream &operator>>(istream\
     \ &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}\n};\n\
-    //using modint = ModInt<MOD>;\n#line 17 \"test/graph/Tree-hld-path.test.cpp\"\n\
-    \nconstexpr long long MOD = 1'000'000'007LL;\nusing modint = ModInt<MOD>;\nusing\
-    \ matrix = Matrix<modint,2,2>;\n\n//\u4E00\u70B9\u66F4\u65B0 \u533A\u9593\u6700\
-    \u5C0F\ntemplate<class T> struct NodeMulPointUpdate {\n    using TypeNode = T;\n\
-    \    inline static TypeNode unit_node = Matrix<modint,2,2>::E();\n    inline static\
-    \ constexpr TypeNode func_node(TypeNode l,TypeNode r){return l*r;}\n    inline\
-    \ static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n   \
-    \ inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
-    \ var > nodeVal;}\n};\n\n\nint main(void){\n\tint N; cin >> N;\n\tGraph<int> g(N);\n\
-    \tvector<pair<size_t,size_t>> vp(N-1);\n\tfor(int i = 0; i < N-1; ++i) {\n\t\t\
-    int u,v; cin >> u >> v;\n\t\tg.make_bidirectional_edge(u,v,1);\n\t\tvp[i]={u,v};\n\
-    \t}\n\tauto tree = Tree<TreeOperator<int>>::builder(g).root(0).child().subtree_size().parent().heavy_light_decomposition().build();\n\
-    \    SegmentTree<NodeMulPointUpdate<matrix>> seg(N);\n    int Q; cin >> Q;\n \
-    \   while(Q--) {\n        char c; cin >> c;\n        if(c == 'x'){\n         \
-    \   int i; cin >> i;\n            modint a,b,c,d; cin >> a >> b >> c >> d;\n \
-    \           matrix x;\n\t\t\tx[0]={a,b};\n\t\t\tx[1]={c,d};\n\t\t\tint l = vp[i].first,\
-    \ r = vp[i].second;\n            l = tree.hld[l],r = tree.hld[r];\n          \
-    \  seg.update(max(l,r),x);\n        }\n        else{\n            int l,r; cin\
-    \ >> l >> r;\n            auto vp = tree.edge_set_on_path(l,r);\n            matrix\
-    \ ans = matrix::E();\n            for(auto p:vp){\n                ans *= seg.get(p.first,p.second+1);\n\
-    \            }\n            cout << ans[0][0] << \" \" << ans[0][1] << \" \" <<\
-    \ ans[1][0] << \" \" << ans[1][1] << endl;\n        }\n    }\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/650\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <cassert>\n#include <map>\n#include <algorithm>\n\
-    #include <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n\
-    #include \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/math/Matrix.cpp\"\
-    \n#include \"../../lib/graph/Tree.cpp\"\n#include \"../../lib/segment/SegmentTree.cpp\"\
-    \n#include \"../../lib/util/ModInt.cpp\"\n\nconstexpr long long MOD = 1'000'000'007LL;\n\
-    using modint = ModInt<MOD>;\nusing matrix = Matrix<modint,2,2>;\n\n//\u4E00\u70B9\
-    \u66F4\u65B0 \u533A\u9593\u6700\u5C0F\ntemplate<class T> struct NodeMulPointUpdate\
-    \ {\n    using TypeNode = T;\n    inline static TypeNode unit_node = Matrix<modint,2,2>::E();\n\
-    \    inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return\
-    \ l*r;}\n    inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return\
-    \ r;}\n    inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
-    \ var > nodeVal;}\n};\n\n\nint main(void){\n\tint N; cin >> N;\n\tGraph<int> g(N);\n\
-    \tvector<pair<size_t,size_t>> vp(N-1);\n\tfor(int i = 0; i < N-1; ++i) {\n\t\t\
-    int u,v; cin >> u >> v;\n\t\tg.make_bidirectional_edge(u,v,1);\n\t\tvp[i]={u,v};\n\
-    \t}\n\tauto tree = Tree<TreeOperator<int>>::builder(g).root(0).child().subtree_size().parent().heavy_light_decomposition().build();\n\
-    \    SegmentTree<NodeMulPointUpdate<matrix>> seg(N);\n    int Q; cin >> Q;\n \
-    \   while(Q--) {\n        char c; cin >> c;\n        if(c == 'x'){\n         \
-    \   int i; cin >> i;\n            modint a,b,c,d; cin >> a >> b >> c >> d;\n \
-    \           matrix x;\n\t\t\tx[0]={a,b};\n\t\t\tx[1]={c,d};\n\t\t\tint l = vp[i].first,\
-    \ r = vp[i].second;\n            l = tree.hld[l],r = tree.hld[r];\n          \
-    \  seg.update(max(l,r),x);\n        }\n        else{\n            int l,r; cin\
-    \ >> l >> r;\n            auto vp = tree.edge_set_on_path(l,r);\n            matrix\
-    \ ans = matrix::E();\n            for(auto p:vp){\n                ans *= seg.get(p.first,p.second+1);\n\
-    \            }\n            cout << ans[0][0] << \" \" << ans[0][1] << \" \" <<\
-    \ ans[1][0] << \" \" << ans[1][1] << endl;\n        }\n    }\n\treturn 0;\n}"
+    //using modint = ModInt<MOD>;\n#line 16 \"test/graph/Tree-hld-vertex-3.test.cpp\"\
+    \n\n//\u4E00\u6B21\u95A2\u6570\ntemplate<class T> struct NodeRevCompositePointUpdate\
+    \ {\n    using TypeNode = T;\n    inline static constexpr TypeNode unit_node =\
+    \ make_pair(1,0);\n    inline static constexpr TypeNode func_node(TypeNode l,TypeNode\
+    \ r){return {l.first*r.first,l.first*r.second+l.second};}\n    inline static constexpr\
+    \ TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n    inline static constexpr\
+    \ bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}\n};\n\
+    \nusing modint = ModInt<998244353>;\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\
+    \    int N,Q;\n    cin >> N >> Q;\n    SegmentTree<NodeCompositePointUpdate<pair<modint,modint>>>\
+    \ segLtoR(N,{1,0});\n    SegmentTree<NodeRevCompositePointUpdate<pair<modint,modint>>>\
+    \ segRtoL(N,{1,0});\n    vector<int> A(N),B(N);\n    for(int i=0;i<N;++i) cin\
+    \ >> A[i] >> B[i];\n    Graph<int> g(N);\n    for(int i=0;i+1<N;++i) {\n     \
+    \   int u,v; cin >> u >> v;\n        g.make_bidirectional_edge(u,v,1);\n    }\n\
+    \    auto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();\n\
+    \    for(int i=0;i<N;++i) {\n        int j = tree.hld[i];\n        segLtoR.update(j,{A[i],B[i]});\n\
+    \        segRtoL.update(j,{A[i],B[i]});\n    }\n    while(Q--) {\n        int\
+    \ q; cin >> q;\n        if(q==0) {\n            int i,a,b; cin >> i >> a >> b;\n\
+    \            int j = tree.hld[i];\n            segLtoR.update(j,{a,b});\n    \
+    \        segRtoL.update(j,{a,b});\n        }\n        else {\n            int\
+    \ l,r,x; cin >> l >> r >> x;\n            auto tp = tree.vertex_ordered_set_on_path(l,r);\n\
+    \n            pair<modint,modint> line = {1,0};\n            for(auto& p:tp.first)\
+    \ {\n                auto tmp = segRtoL.get(p.first,p.second+1);\n           \
+    \     line = {tmp.first*line.first,tmp.first*line.second+tmp.second};\n      \
+    \      }\n            for(auto& p:tp.second) {\n                auto tmp = segLtoR.get(p.first,p.second+1);\n\
+    \                line = {tmp.first*line.first,tmp.first*line.second+tmp.second};\n\
+    \            }\n            cout << line.first*x+line.second << \"\\n\";\n   \
+    \     }\n    }\n    return 0; \n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_set_path_composite\"\
+    \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <map>\n\
+    #include <algorithm>\n#include <stack>\n#include <numeric>\n#include <array>\n\
+    using namespace std;\n#include \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/graph/Tree.cpp\"\
+    \n#include \"../../lib/segment/SegmentTree.cpp\"\n#include \"../../lib/util/ModInt.cpp\"\
+    \n\n//\u4E00\u6B21\u95A2\u6570\ntemplate<class T> struct NodeRevCompositePointUpdate\
+    \ {\n    using TypeNode = T;\n    inline static constexpr TypeNode unit_node =\
+    \ make_pair(1,0);\n    inline static constexpr TypeNode func_node(TypeNode l,TypeNode\
+    \ r){return {l.first*r.first,l.first*r.second+l.second};}\n    inline static constexpr\
+    \ TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n    inline static constexpr\
+    \ bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}\n};\n\
+    \nusing modint = ModInt<998244353>;\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\
+    \    int N,Q;\n    cin >> N >> Q;\n    SegmentTree<NodeCompositePointUpdate<pair<modint,modint>>>\
+    \ segLtoR(N,{1,0});\n    SegmentTree<NodeRevCompositePointUpdate<pair<modint,modint>>>\
+    \ segRtoL(N,{1,0});\n    vector<int> A(N),B(N);\n    for(int i=0;i<N;++i) cin\
+    \ >> A[i] >> B[i];\n    Graph<int> g(N);\n    for(int i=0;i+1<N;++i) {\n     \
+    \   int u,v; cin >> u >> v;\n        g.make_bidirectional_edge(u,v,1);\n    }\n\
+    \    auto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();\n\
+    \    for(int i=0;i<N;++i) {\n        int j = tree.hld[i];\n        segLtoR.update(j,{A[i],B[i]});\n\
+    \        segRtoL.update(j,{A[i],B[i]});\n    }\n    while(Q--) {\n        int\
+    \ q; cin >> q;\n        if(q==0) {\n            int i,a,b; cin >> i >> a >> b;\n\
+    \            int j = tree.hld[i];\n            segLtoR.update(j,{a,b});\n    \
+    \        segRtoL.update(j,{a,b});\n        }\n        else {\n            int\
+    \ l,r,x; cin >> l >> r >> x;\n            auto tp = tree.vertex_ordered_set_on_path(l,r);\n\
+    \n            pair<modint,modint> line = {1,0};\n            for(auto& p:tp.first)\
+    \ {\n                auto tmp = segRtoL.get(p.first,p.second+1);\n           \
+    \     line = {tmp.first*line.first,tmp.first*line.second+tmp.second};\n      \
+    \      }\n            for(auto& p:tp.second) {\n                auto tmp = segLtoR.get(p.first,p.second+1);\n\
+    \                line = {tmp.first*line.first,tmp.first*line.second+tmp.second};\n\
+    \            }\n            cout << line.first*x+line.second << \"\\n\";\n   \
+    \     }\n    }\n    return 0; \n}"
   dependsOn:
   - lib/graph/Graph.cpp
-  - lib/math/Matrix.cpp
   - lib/graph/Tree.cpp
   - lib/segment/SegmentTree.cpp
   - lib/util/ModInt.cpp
   isVerificationFile: true
-  path: test/graph/Tree-hld-path.test.cpp
+  path: test/graph/Tree-hld-vertex-3.test.cpp
   requiredBy: []
   timestamp: '2021-04-23 06:30:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/graph/Tree-hld-path.test.cpp
+documentation_of: test/graph/Tree-hld-vertex-3.test.cpp
 layout: document
 redirect_from:
-- /verify/test/graph/Tree-hld-path.test.cpp
-- /verify/test/graph/Tree-hld-path.test.cpp.html
-title: test/graph/Tree-hld-path.test.cpp
+- /verify/test/graph/Tree-hld-vertex-3.test.cpp
+- /verify/test/graph/Tree-hld-vertex-3.test.cpp.html
+title: test/graph/Tree-hld-vertex-3.test.cpp
 ---

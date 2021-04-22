@@ -362,6 +362,9 @@ data:
       path: test/graph/Tree-hld-vertex-2.test.cpp
       title: test/graph/Tree-hld-vertex-2.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/graph/Tree-hld-vertex-3.test.cpp
+      title: test/graph/Tree-hld-vertex-3.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-lca.test.cpp
       title: test/graph/Tree-lca.test.cpp
     - icon: ':heavy_check_mark:'
