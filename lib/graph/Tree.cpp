@@ -4,6 +4,7 @@
  */
 template<class Operator> class TreeBuilder;
 template<class Operator> class Tree {
+private:
 	using TypeEdge = typename Operator::TypeEdge;
 	size_t num;
 	size_t ord;
