@@ -13,6 +13,9 @@ data:
     path: test/graph/Tree-hld-path.test.cpp
     title: test/graph/Tree-hld-path.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex.test.cpp
+    title: test/graph/Tree-hld-vertex.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/Tree-lca.test.cpp
     title: test/graph/Tree-lca.test.cpp
   - icon: ':heavy_check_mark:'
@@ -323,6 +326,7 @@ data:
   timestamp: '2021-04-23 04:44:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/graph/Tree-hld-vertex.test.cpp
   - test/graph/Tree-eulertour.test.cpp
   - test/graph/Tree-hld-path.test.cpp
   - test/graph/Tree-diameter.test.cpp
