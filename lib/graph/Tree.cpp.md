@@ -4,9 +4,6 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-eulertour.test.cpp
-    title: test/graph/Tree-eulertour.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/Tree-hld-path.test.cpp
     title: test/graph/Tree-hld-path.test.cpp
   - icon: ':heavy_check_mark:'
@@ -306,7 +303,6 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/Tree-hld-vertex.test.cpp
-  - test/graph/Tree-eulertour.test.cpp
   - test/graph/Tree-hld-path.test.cpp
   - test/graph/Tree-rerooting.test.cpp
 documentation_of: lib/graph/Tree.cpp
