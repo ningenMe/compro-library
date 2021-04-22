@@ -44,19 +44,24 @@ data:
     \t}\n\t//for make_depth\n\tvoid dfs(int curr, int prev){\n\t\tfor(const auto&\
     \ e:g.edges[curr]){\n\t\t\tconst int& next = e.first;\n\t\t\tif(next==prev) continue;\n\
     \t\t\tdepth[next] = depth[curr] + 1;\n\t\t\tedge_dist[next]  = Operator::func_edge_merge(edge_dist[curr],e.second);\n\
-    \t\t\tdfs(next,curr);\n\t\t\torder[ord++] = next;\n\t\t}\n\t}\n\t/**\n\t * \u5BDD\
+    \t\t\tdfs(next,curr);\n\t\t\torder[ord++] = next;\n\t\t}\n\t}\n\t/**\n\t * \u6839\
     \u4ED8\u304D\u6728\u3092\u4F5C\u308B\n\t * O(N) you can use anytime\n\t */\n\t\
     void make_root(const int root) {\n\t\tdepth[root] = 0;\n\t\tedge_dist[root] =\
     \ Operator::unit_edge;\n\t\tord = 0;\n\t\tdfs(root,-1);\n\t\torder[ord++] = root;\n\
     \t\treverse_copy(order.begin(),order.end(),back_inserter(reorder));\n\t}\n\t/**\n\
-    \t * \u5B50\u3092\u4F5C\u308B\n\t * O(N) after make_root\n\t */\n\tvoid make_child(const\
-    \ int root = 0) {\n\t\tchild.resize(num);\n\t\tfor (size_t i = 0; i < num; ++i)\
-    \ for (auto& e : g.edges[i]) if (depth[i] < depth[e.first]) child[i].push_back(e);\n\
-    \t}\n\t/**\n\t * \u90E8\u5206\u6728\u306E\u30B5\u30A4\u30BA\u3092\u4F5C\u308B\n\
-    \t * O(N) after make_child\n\t */\n\tvoid make_subtree_size() {\n\t\tsubtree_size.resize(num,1);\n\
-    \t\tfor (size_t i:order) for (auto e : child[i]) subtree_size[i] += subtree_size[e.first];\n\
-    \t}\n\t/**\n\t * \u89AA\u3092\u4F5C\u308B\n\t * O(N) after make_root\n\t */\n\t\
-    void make_parent() {\n\t\tparent.resize(num,make_pair(num,Operator::unit_edge));\n\
+    \t * \u6839\u4ED8\u304D\u6728\u3092\u4F5C\u308B\n\t * O(N) you can use anytime\n\
+    \t */\n\tvoid make_root() {\n        ord = 0;\n        for(int i=0;i<num;++i)\
+    \ {\n            if(depth[i]!=-1) continue;\n            depth[i] = 0;\n     \
+    \       edge_dist[i] = Operator::unit_edge;\n            dfs(i,-1);\n        \
+    \    order[ord++] = i;\n        }\n\t\treverse_copy(order.begin(),order.end(),back_inserter(reorder));\n\
+    \t}\n\t/**\n\t * \u5B50\u3092\u4F5C\u308B\n\t * O(N) after make_root\n\t */\n\t\
+    void make_child(const int root = 0) {\n\t\tchild.resize(num);\n\t\tfor (size_t\
+    \ i = 0; i < num; ++i) for (auto& e : g.edges[i]) if (depth[i] < depth[e.first])\
+    \ child[i].push_back(e);\n\t}\n\t/**\n\t * \u90E8\u5206\u6728\u306E\u30B5\u30A4\
+    \u30BA\u3092\u4F5C\u308B\n\t * O(N) after make_child\n\t */\n\tvoid make_subtree_size()\
+    \ {\n\t\tsubtree_size.resize(num,1);\n\t\tfor (size_t i:order) for (auto e : child[i])\
+    \ subtree_size[i] += subtree_size[e.first];\n\t}\n\t/**\n\t * \u89AA\u3092\u4F5C\
+    \u308B\n\t * O(N) after make_root\n\t */\n\tvoid make_parent() {\n\t\tparent.resize(num,make_pair(num,Operator::unit_edge));\n\
     \t\tfor (size_t i = 0; i < num; ++i) for (auto& e : g.edges[i]) if (depth[i] >\
     \ depth[e.first]) parent[i] = e;\n\t}\n\tvoid make_ancestor() {\n\t\tancestor.resize(num);\n\
     \t\tfor (size_t i = 0; i < num; ++i) ancestor[i][0] = (parent[i].first!=num?parent[i]:make_pair(i,Operator::unit_lca_edge));\n\
@@ -82,20 +87,41 @@ data:
     \t\tTypeEdge sz = tree.edge_dist[leaf];\n\t\tvector<size_t> st;\n\t\t{\n\t\t\t\
     tree.make_parent();\n\t\t\twhile(leaf != root) {\n\t\t\t\tst.push_back(leaf);\n\
     \t\t\t\tleaf = tree.parent[leaf].first;\n\t\t\t}\n\t\t\tst.push_back(root);\n\t\
-    \t}\n\t\treturn make_pair(sz,st);\n\t}\npublic:\n\tvector<size_t> depth;\n\tvector<size_t>\
-    \ order;\n\tvector<size_t> reorder;\n\tvector<size_t> subtree_size;\n\tvector<pair<size_t,TypeEdge>>\
-    \ parent;\n\tvector<vector<pair<size_t,TypeEdge>>> child;\n\tvector<TypeEdge>\
-    \ edge_dist;\n\tvector<array<pair<size_t,TypeEdge>,Operator::bit>> ancestor;\n\
-    \ \n\t/**\n\t * O(N) builder\n\t */\n\tstatic TreeBuilder<Operator> builder(Graph<TypeEdge>&\
-    \ graph) { return TreeBuilder<Operator>(graph);}\n\t/**\n\t * O(logN) after make_ancestor\n\
-    \t * return {lca,lca_dist} l and r must be connected \n\t */\n\tpair<size_t,TypeEdge>\
-    \ lca(size_t l, size_t r) {return lca_impl(l,r);}\n\t/**\n\t * O(N) anytime\n\t\
-    \ * return {diameter size,diameter set} \n\t */\n\tpair<TypeEdge,vector<size_t>>\
-    \ diameter(void){return diameter_impl();}\n};\n \ntemplate<class Operator> class\
-    \ TreeBuilder {\n\tbool is_root_made =false;\n\tbool is_child_made =false;\n\t\
-    bool is_parent_made=false;\npublic:\n\tusing TypeEdge = typename Operator::TypeEdge;\n\
+    \t}\n\t\treturn make_pair(sz,st);\n\t}\n\ttemplate<class TypeReroot> vector<TypeReroot>\
+    \ rerooting_impl(vector<TypeReroot> rerootdp,vector<TypeReroot> rerootparent)\
+    \ {\n\t\tfor(size_t pa:order) for(auto& e:child[pa]) rerootdp[pa] = Operator::func_reroot_dp(rerootdp[pa],rerootdp[e.first]);\n\
+    \t\tfor(size_t pa:reorder) {\n\t\t\tif(depth[pa]) rerootdp[pa] = Operator::func_reroot_dp(rerootdp[pa],rerootparent[pa]);\n\
+    \t\t\tsize_t m = child[pa].size();\n\t\t\tfor(int j = 0; j < m && depth[pa]; ++j){\n\
+    \t\t\t\tsize_t ch = child[pa][j].first;\n\t\t\t\trerootparent[ch] = Operator::func_reroot_dp(rerootparent[ch],rerootparent[pa]);\n\
+    \t\t\t}\n\t\t\tif(m <= 1) continue;\n\t\t\tvector<TypeReroot> l(m),r(m);\n\t\t\
+    \tfor(int j = 0; j < m; ++j) {\n\t\t\t\tsize_t ch = child[pa][j].first;\n\t\t\t\
+    \tl[j] = rerootdp[ch];\n\t\t\t\tr[j] = rerootdp[ch];\n\t\t\t}\n\t\t\tfor(int j\
+    \ = 1; j+1 < m; ++j) l[j] = Operator::func_reroot_merge(l[j],l[j-1]);\n\t\t\t\
+    for(int j = m-2; 0 <=j; --j) r[j] = Operator::func_reroot_merge(r[j],r[j+1]);\n\
+    \t\t\tsize_t chl = child[pa].front().first;\n\t\t\tsize_t chr = child[pa].back().first;\n\
+    \t\t\trerootparent[chl] = Operator::func_reroot_dp(rerootparent[chl],r[1]);\n\t\
+    \t\trerootparent[chr] = Operator::func_reroot_dp(rerootparent[chr],l[m-2]);\n\t\
+    \t\tfor(int j = 1; j+1 < m; ++j) {\n\t\t\t\tsize_t ch = child[pa][j].first;\n\t\
+    \t\t\trerootparent[ch] = Operator::func_reroot_dp(rerootparent[ch],l[j-1]);\n\t\
+    \t\t\trerootparent[ch] = Operator::func_reroot_dp(rerootparent[ch],r[j+1]);\n\t\
+    \t\t}\n\t\t}\n\t\treturn rerootdp;\n\t}\npublic:\n\tvector<size_t> depth;\n\t\
+    vector<size_t> order;\n\tvector<size_t> reorder;\n\tvector<size_t> subtree_size;\n\
+    \tvector<pair<size_t,TypeEdge>> parent;\n\tvector<vector<pair<size_t,TypeEdge>>>\
+    \ child;\n\tvector<TypeEdge> edge_dist;\n\tvector<array<pair<size_t,TypeEdge>,Operator::bit>>\
+    \ ancestor;\n \n\t/**\n\t * O(N) builder\n\t */\n\tstatic TreeBuilder<Operator>\
+    \ builder(Graph<TypeEdge>& graph) { return TreeBuilder<Operator>(graph);}\n\t\
+    /**\n\t * O(logN) after make_ancestor\n\t * return {lca,lca_dist} l and r must\
+    \ be connected \n\t */\n\tpair<size_t,TypeEdge> lca(size_t l, size_t r) {return\
+    \ lca_impl(l,r);}\n\t/**\n\t * O(N) anytime\n\t * return {diameter size,diameter\
+    \ set} \n\t */\n\tpair<TypeEdge,vector<size_t>> diameter(void){return diameter_impl();}\n\
+    \t/**\n\t * O(N) after make_child\n\t */\n\ttemplate<class TypeReroot> vector<TypeReroot>\
+    \ rerooting(const vector<TypeReroot>& rerootdp,const vector<TypeReroot>& rerootparent)\
+    \ {return rerooting_impl(rerootdp,rerootparent);}\n};\n \ntemplate<class Operator>\
+    \ class TreeBuilder {\n\tbool is_root_made =false;\n\tbool is_child_made =false;\n\
+    \tbool is_parent_made=false;\npublic:\n\tusing TypeEdge = typename Operator::TypeEdge;\n\
     \tTreeBuilder(Graph<TypeEdge>& g):tree(g){}\n\tTreeBuilder& root(const int rt)\
-    \ { is_root_made=true; tree.make_root(rt); return *this;}\n\tTreeBuilder& child()\
+    \ { is_root_made=true; tree.make_root(rt); return *this;}\n\tTreeBuilder& root()\
+    \ { is_root_made=true; tree.make_root(); return *this;}\n\tTreeBuilder& child()\
     \ { assert(is_root_made); is_child_made=true;  tree.make_child();  return *this;}\n\
     \tTreeBuilder& parent() { assert(is_root_made); is_parent_made=true; tree.make_parent();\
     \ return *this;}\n\tTreeBuilder& subtree_size() { assert(is_child_made); tree.make_subtree_size();\
@@ -107,14 +133,18 @@ data:
     \ 0;\n\tinline static constexpr TypeEdge func_edge_merge(const TypeEdge& parent,const\
     \ TypeEdge& w){return parent+w;}\n\tinline static constexpr pair<size_t,TypeEdge>\
     \ func_lca_edge_merge(const pair<size_t,TypeEdge>& l,const pair<size_t,TypeEdge>&\
-    \ r){return make_pair(l.first,l.second+r.second);}\n};\n//auto tree = Tree<TreeOperator<int>>::builder(g).build();\n\
-    #line 13 \"test/graph/Tree-diameter.test.cpp\"\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \tint N; cin >> N;\n\tGraph<long long> g(N);\n\tfor(int i=1;i<N;++i){\n\t\tint\
-    \ u,v,w; cin >> u >> v >> w;\n\t\tg.make_bidirectional_edge(u,v,w);\n\t}\n\tusing\
-    \ Op = TreeOperator<long long>;\n\tauto tree = Tree<Op>::builder(g).build();\n\
-    \tauto p = tree.diameter();\n\tcout << p.first << \" \" << p.second.size() <<\
-    \ endl;\n\tfor(auto& e:p.second) cout << e << \" \";\n\tcout << endl;\n\treturn\
-    \ 0;\n}\n"
+    \ r){return make_pair(l.first,l.second+r.second);}\n\ttemplate<class TypeReroot>\
+    \ inline static constexpr TypeReroot func_reroot_dp(const TypeReroot& l,const\
+    \ TypeReroot& r) {return {l.first+r.first+r.second,l.second+r.second};}\n\ttemplate<class\
+    \ TypeReroot> inline static constexpr TypeReroot func_reroot_merge(const TypeReroot&\
+    \ l,const TypeReroot& r) {return {l.first+r.first,l.second+r.second};}\n};\n//auto\
+    \ tree = Tree<TreeOperator<int>>::builder(g).build();\n#line 13 \"test/graph/Tree-diameter.test.cpp\"\
+    \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\tint N; cin\
+    \ >> N;\n\tGraph<long long> g(N);\n\tfor(int i=1;i<N;++i){\n\t\tint u,v,w; cin\
+    \ >> u >> v >> w;\n\t\tg.make_bidirectional_edge(u,v,w);\n\t}\n\tusing Op = TreeOperator<long\
+    \ long>;\n\tauto tree = Tree<Op>::builder(g).build();\n\tauto p = tree.diameter();\n\
+    \tcout << p.first << \" \" << p.second.size() << endl;\n\tfor(auto& e:p.second)\
+    \ cout << e << \" \";\n\tcout << endl;\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/tree_diameter\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n#include\
     \ <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n#include\
@@ -131,7 +161,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-diameter.test.cpp
   requiredBy: []
-  timestamp: '2021-04-22 21:48:31+09:00'
+  timestamp: '2021-04-23 02:13:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-diameter.test.cpp
