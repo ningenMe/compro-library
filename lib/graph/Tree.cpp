@@ -210,6 +210,27 @@ template<class Operator> class Tree {
 		if(type) path.front().first++;
 		return path;
 	}
+	pair<vector<pair<size_t,size_t>>,vector<pair<size_t,size_t>>> ordered_path_impl(size_t u,size_t v,int type = 0) {
+		vector<pair<size_t,size_t>> path_lca_to_u;
+		vector<pair<size_t,size_t>> path_lca_to_v;
+		while(1){
+			if(head[u] == head[v]) {
+                if(depth[u] < depth[v]) path_lca_to_v.emplace_back(hld[u]+type,hld[v]);
+                else path_lca_to_u.emplace_back(hld[v]+type,hld[u]);
+				break;
+			}
+            else if(hld[u] < hld[v]) {
+                path_lca_to_v.emplace_back(hld[head[v]],hld[v]);
+                v = parent[head[v]].first;
+            }
+            else if(hld[u] > hld[v]) {
+                path_lca_to_u.emplace_back(hld[head[u]],hld[u]);
+                u = parent[head[u]].first;
+            }
+		}
+		reverse(path_lca_to_v.begin(),path_lca_to_v.end());
+		return {path_lca_to_u,path_lca_to_v};
+	}
 	size_t lca_idx_impl(size_t u,size_t v){
 		while(1){
 			if(hld[u]>hld[v]) swap(u,v);
@@ -251,15 +272,23 @@ public:
 	template<class TypeReroot> vector<TypeReroot> rerooting(const vector<TypeReroot>& rerootdp,const vector<TypeReroot>& rerootparent) {return rerooting_impl(rerootdp,rerootparent);}
 	/**
 	 * O(logN) 
-	 * lca(u,v)=u あるいは lca(u,v)=v のときは、根側から順方向パスを返してくれる 
 	 */
 	vector<pair<size_t,size_t>> vertex_set_on_path(size_t u, size_t v) {return path_impl(u,v,0);}
 	/**
 	/**
 	 * O(logN) 
-	 * lca(u,v)=u あるいは lca(u,v)=v のときは、根側から順方向パスを返してくれる 
 	 */
 	vector<pair<size_t,size_t>> edge_set_on_path(size_t u, size_t v) {return path_impl(u,v,1);}
+	/**
+	 * O(logN) 
+     * {lca to u path,lca to v path}
+	 */
+	pair<vector<pair<size_t,size_t>>,vector<pair<size_t,size_t>>> vertex_ordered_set_on_path(size_t u, size_t v) {return ordered_path_impl(u,v,0);}
+	/**
+	 * O(logN) 
+     * {lca to u path,lca to v path}
+	 */
+	pair<vector<pair<size_t,size_t>>,vector<pair<size_t,size_t>>> edge_ordered_set_on_path(size_t u, size_t v) {return ordered_path_impl(u,v,1);}
 	/**
 	 * O(logN) ancestorのlcaより定数倍軽め。idxだけ
 	 */
