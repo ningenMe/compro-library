@@ -169,5 +169,4 @@ template<class T> struct TreeOperator{
 	inline static constexpr TypeEdge func_edge_merge(const TypeEdge& parent,const TypeEdge& w){return parent+w;}
 	inline static constexpr pair<size_t,TypeEdge> func_lca_edge_merge(const pair<size_t,TypeEdge>& l,const pair<size_t,TypeEdge>& r){return make_pair(l.first,l.second+r.second);}
 };
-//using Op = TreeOperator<int>;
-//Tree<Op> tree = Tree<Op>::builder(g).build();
+//auto tree = Tree<TreeOperator<int>>::builder(g).build();
