@@ -11,7 +11,7 @@
 using namespace std;
 #include "../../lib/graph/Graph.cpp"
 #include "../../lib/math/Matrix.cpp"
-#include "../../lib/graph/Tree2.cpp"
+#include "../../lib/graph/Tree.cpp"
 #include "../../lib/segment/SegmentTree.cpp"
 #include "../../lib/util/ModInt.cpp"
 

@@ -9,7 +9,7 @@
 #include <array>
 using namespace std;
 #include "../../lib/graph/Graph.cpp"
-#include "../../lib/graph/Tree2.cpp"
+#include "../../lib/graph/Tree.cpp"
 
 template<class T> void chmin(T& a,T b) {a=min(a,b);}
 

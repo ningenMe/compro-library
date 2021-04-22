@@ -10,7 +10,7 @@
 #include <array>
 using namespace std;
 #include "../../lib/graph/Graph.cpp"
-#include "../../lib/graph/Tree2.cpp"
+#include "../../lib/graph/Tree.cpp"
 #include "../../lib/segment/LazySegmentTree.cpp"
 
 int main(void){

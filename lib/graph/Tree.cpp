@@ -2,72 +2,27 @@
  * @title Tree - 木
  * @docs md/graph/Tree.md
  */
+template<class Operator> class TreeBuilder;
 template<class Operator> class Tree {
-	using TypeDist = typename Operator::TypeDist;
+	using TypeEdge = typename Operator::TypeEdge;
 	size_t num;
 	size_t ord;
-	enum METHODS{
-		MAKE_DEPTH,
-		MAKE_CHILD,
-		MAKE_PARENT,
-		MAKE_SIZE,
-		MAKE_SUBTREE,
-		MAKE_ANCESTOR,
-		MAKE_EOULERTOUR,
-		MAKE_HEAVY_LIGHT_DECOMPOSITION,
-		METHODS_SIZE,
-	};
-	array<int,METHODS_SIZE> executed_flag;
-public:
-	vector<vector<pair<size_t,TypeDist>>> edge;
-	vector<size_t> depth;
-	vector<size_t> order;
-	vector<size_t> reorder;
-	vector<TypeDist> dist;
-	vector<pair<size_t,TypeDist>> parent;
-	vector<vector<pair<size_t,TypeDist>>> child;
-	vector<array<pair<size_t,TypeDist>,Operator::bit>> ancestor;
-	vector<size_t> size;
-	vector<vector<size_t>> subtree;
-	vector<size_t> head;
-	vector<size_t> hldorder;
-	vector<size_t> eulertour;
-	vector<pair<size_t,size_t>> eulertour_range;
-	Tree(const int num):num(num),edge(num),depth(num,-1),order(num),dist(num),executed_flag(){}
-	//O(1) anytime
-	void make_edge(const int& from, const int& to, const TypeDist w = 1) {
-		edge[from].push_back({to,w});
-	}
-	//O(N) anytime
-	void make_depth(const int root) {
-		executed_flag[MAKE_DEPTH]++;
-		depth[root] = 0;
-		dist[root] = Operator::unit_dist;
-		ord = 0;
-		dfs(root,-1);
-		order[ord++] = root;
-		reverse_copy(order.begin(),order.end(),back_inserter(reorder));
-	}
-	//O(N) anytime for forest
-	void make_depth(void) {
-		executed_flag[MAKE_DEPTH]++;
-		ord = 0;
-		for(size_t root = 0; root < num; ++root) {
-			if(depth[root] != -1) continue;
-			depth[root] = 0;
-			dist[root] = Operator::unit_dist;
-			dfs(root,-1);
-			order[ord++] = root;
-		}
-		reverse_copy(order.begin(),order.end(),back_inserter(reorder));
+	Graph<TypeEdge>& g;
+	friend TreeBuilder<Operator>;
+	Tree(Graph<TypeEdge>& graph):
+		g(graph),
+		num(graph.size()),
+		depth(graph.size(),-1),
+		order(graph.size()),
+		edge_dist(graph.size()){
 	}
 	//for make_depth
 	void dfs(int curr, int prev){
-		for(auto& e:edge[curr]){
-			int next = e.first;
+		for(const auto& e:g.edges[curr]){
+			const int& next = e.first;
 			if(next==prev) continue;
 			depth[next] = depth[curr] + 1;
-			dist[next]  = Operator::func_dist(dist[curr],e.second);
+			edge_dist[next]  = Operator::func_edge_merge(edge_dist[curr],e.second);
 			dfs(next,curr);
 			order[ord++] = next;
 		}
@@ -81,99 +36,97 @@ public:
 			eulertour.push_back(from);
 		}
 	}
-	//O(N) after make_depth
-	void make_parent(const int root = 0) {
-		if(executed_flag[MAKE_PARENT]++) return;
-		if(!executed_flag[MAKE_DEPTH]) make_depth(root);
-		parent.resize(num,make_pair(num,Operator::unit_dist));
-		for (size_t i = 0; i < num; ++i) for (auto& e : edge[i]) if (depth[i] > depth[e.first]) parent[i] = e;
+	void make_root(const int root) {
+		depth[root] = 0;
+		edge_dist[root] = Operator::unit_edge;
+		ord = 0;
+		dfs(root,-1);
+		order[ord++] = root;
+		reverse_copy(order.begin(),order.end(),back_inserter(reorder));
 	}
-	//O(N) after make_depth
+	void make_root() {
+        ord = 0;
+        for(int i=0;i<num;++i) {
+            if(depth[i]!=-1) continue;
+            depth[i] = 0;
+            edge_dist[i] = Operator::unit_edge;
+            dfs(i,-1);
+            order[ord++] = i;
+        }
+		reverse_copy(order.begin(),order.end(),back_inserter(reorder));
+	}
 	void make_child(const int root = 0) {
-		if(executed_flag[MAKE_CHILD]++) return;
-		if(!executed_flag[MAKE_DEPTH]) make_depth(root);
 		child.resize(num);
-		for (size_t i = 0; i < num; ++i) for (auto& e : edge[i]) if (depth[i] < depth[e.first]) child[i].push_back(e);
+		for (size_t i = 0; i < num; ++i) for (auto& e : g.edges[i]) if (depth[i] < depth[e.first]) child[i].push_back(e);
 	}
-	//O(NlogN) after make_parent
-	void make_ancestor(const int root = 0) {
-		if(executed_flag[MAKE_ANCESTOR]++) return;
-		if(!executed_flag[MAKE_PARENT]) make_parent(root);
+	void make_subtree_size() {
+		subtree_size.resize(num,1);
+		for (size_t i:order) for (auto e : child[i]) subtree_size[i] += subtree_size[e.first];
+	}
+	void make_parent() {
+		parent.resize(num,make_pair(num,Operator::unit_edge));
+		for (size_t i = 0; i < num; ++i) for (auto& e : g.edges[i]) if (depth[i] > depth[e.first]) parent[i] = e;
+	}
+	void make_ancestor() {
 		ancestor.resize(num);
-		for (size_t i = 0; i < num; ++i) ancestor[i][0] = (parent[i].first!=num?parent[i]:make_pair(i,Operator::unit_lca));
+		for (size_t i = 0; i < num; ++i) ancestor[i][0] = (parent[i].first!=num?parent[i]:make_pair(i,Operator::unit_lca_edge));
 		for (size_t j = 1; j < Operator::bit; ++j) {
 			for (size_t i = 0; i < num; ++i) {
 				size_t k = ancestor[i][j - 1].first;
-				ancestor[i][j] = Operator::func_lca(ancestor[k][j - 1],ancestor[i][j - 1]);
+				ancestor[i][j] = Operator::func_lca_edge_merge(ancestor[k][j - 1],ancestor[i][j - 1]);
 			}
 		}
 	}
-	//O(logN) after make_ancestor
-	//return {lca,lca_dist} l and r must be connected
-	pair<size_t,TypeDist> lca(size_t l, size_t r) {
-		assert(executed_flag[MAKE_ANCESTOR]);
+	pair<size_t,TypeEdge> lca_impl(size_t l, size_t r) {
 		if (depth[l] < depth[r]) swap(l, r);
 		int diff = depth[l] - depth[r];
-		auto ancl = make_pair(l,Operator::unit_lca);
-		auto ancr = make_pair(r,Operator::unit_lca);
+		auto ancl = make_pair(l,Operator::unit_lca_edge);
+		auto ancr = make_pair(r,Operator::unit_lca_edge);
 		for (int j = 0; j < Operator::bit; ++j) {
-			if (diff & (1 << j)) {
-				ancl = Operator::func_lca(ancestor[ancl.first][j],ancl);
-			}
+			if (diff & (1 << j)) ancl = Operator::func_lca_edge_merge(ancestor[ancl.first][j],ancl);
 		}
 		if(ancl.first==ancr.first) return ancl;
 		for (int j = Operator::bit - 1; 0 <= j; --j) {
 			if(ancestor[ancl.first][j].first!=ancestor[ancr.first][j].first) {
-				ancl = Operator::func_lca(ancestor[ancl.first][j],ancl);
-				ancr = Operator::func_lca(ancestor[ancr.first][j],ancr);
+				ancl = Operator::func_lca_edge_merge(ancestor[ancl.first][j],ancl);
+				ancr = Operator::func_lca_edge_merge(ancestor[ancr.first][j],ancr);
 			}
 		}
-		ancl = Operator::func_lca(ancestor[ancl.first][0],ancl);
-		ancr = Operator::func_lca(ancestor[ancr.first][0],ancr);
-		return Operator::func_lca(ancl,ancr);
+		ancl = Operator::func_lca_edge_merge(ancestor[ancl.first][0],ancl);
+		ancr = Operator::func_lca_edge_merge(ancestor[ancr.first][0],ancr);
+		return Operator::func_lca_edge_merge(ancl,ancr);
 	}
-	//O(N) anytime
-	//pair<diameter,vertex_set>
-	pair<TypeDist,vector<int>> diameter(void){
-		make_depth(0);
-		int root = max_element(dist.begin(), dist.end()) - dist.begin();
-		make_depth(root);
-		int leaf = max_element(dist.begin(), dist.end()) - dist.begin();
-		make_parent();
-		TypeDist d = dist[leaf];
-		vector<int> v;
-		while (leaf != root) {
-			v.push_back(leaf);
-			leaf = parent[leaf].first;
+	pair<TypeEdge,vector<size_t>> diameter_impl() {
+		Tree tree = Tree::builder(g).build();
+		size_t root = 0;
+		{
+			tree.make_root(0);
 		}
-		v.push_back(root);
-		return make_pair(d,v);
+		root = max_element(tree.edge_dist.begin(),tree.edge_dist.end()) - tree.edge_dist.begin();
+		{
+			tree.make_root(root);
+		}
+		size_t leaf = max_element(tree.edge_dist.begin(),tree.edge_dist.end()) - tree.edge_dist.begin();
+		TypeEdge sz = tree.edge_dist[leaf];
+		vector<size_t> st;
+		{
+			tree.make_parent();
+			while(leaf != root) {
+				st.push_back(leaf);
+				leaf = tree.parent[leaf].first;
+			}
+			st.push_back(root);
+		}
+		return make_pair(sz,st);
 	}
-	//O(N^2) after make_depth
-	void make_subtree(const int root = 0) {
-		if(executed_flag[MAKE_SUBTREE]++) return;
-		if(!executed_flag[MAKE_DEPTH]) make_depth(root);
-		subtree.resize(num);
-		for (size_t i = 0; i < num; ++i) subtree[i].push_back(i);
-		for (size_t i = 0; i < num; ++i) for (auto& e : edge[order[i]]) if (depth[order[i]] < depth[e.first]) for(auto k: subtree[e.first]) subtree[order[i]].push_back(k);
-	}
-	//O(N) after make_child
-	void make_size(const int root = 0) {
-		if(executed_flag[MAKE_SIZE]++) return;
-		if(!executed_flag[MAKE_CHILD]) make_child(root);
-		size.resize(num,1);
-		for (size_t i:order) for (auto e : child[i]) size[i] += size[e.first];
-	}
-	//(N) after make_depth and make_child
-	template<class TypeReroot> vector<TypeReroot> rerooting(vector<TypeReroot> rerootdp,vector<TypeReroot> rerootparent) {
-		assert(executed_flag[MAKE_CHILD]);
-		for(size_t pa:order) for(auto& e:child[pa]) rerootdp[pa] = Operator::func_reroot(rerootdp[pa],rerootdp[e.first]);
+	template<class TypeReroot> vector<TypeReroot> rerooting_impl(vector<TypeReroot> rerootdp,vector<TypeReroot> rerootparent) {
+		for(size_t pa:order) for(auto& e:child[pa]) rerootdp[pa] = Operator::func_reroot_dp(rerootdp[pa],rerootdp[e.first]);
 		for(size_t pa:reorder) {
-			if(depth[pa]) rerootdp[pa] = Operator::func_reroot(rerootdp[pa],rerootparent[pa]);
+			if(depth[pa]) rerootdp[pa] = Operator::func_reroot_dp(rerootdp[pa],rerootparent[pa]);
 			size_t m = child[pa].size();
 			for(int j = 0; j < m && depth[pa]; ++j){
 				size_t ch = child[pa][j].first;
-				rerootparent[ch] = Operator::func_reroot(rerootparent[ch],rerootparent[pa]);
+				rerootparent[ch] = Operator::func_reroot_dp(rerootparent[ch],rerootparent[pa]);
 			}
 			if(m <= 1) continue;
 			vector<TypeReroot> l(m),r(m);
@@ -186,62 +139,70 @@ public:
 			for(int j = m-2; 0 <=j; --j) r[j] = Operator::func_reroot_merge(r[j],r[j+1]);
 			size_t chl = child[pa].front().first;
 			size_t chr = child[pa].back().first;
-			rerootparent[chl] = Operator::func_reroot(rerootparent[chl],r[1]);
-			rerootparent[chr] = Operator::func_reroot(rerootparent[chr],l[m-2]);
+			rerootparent[chl] = Operator::func_reroot_dp(rerootparent[chl],r[1]);
+			rerootparent[chr] = Operator::func_reroot_dp(rerootparent[chr],l[m-2]);
 			for(int j = 1; j+1 < m; ++j) {
 				size_t ch = child[pa][j].first;
-				rerootparent[ch] = Operator::func_reroot(rerootparent[ch],l[j-1]);
-				rerootparent[ch] = Operator::func_reroot(rerootparent[ch],r[j+1]);
+				rerootparent[ch] = Operator::func_reroot_dp(rerootparent[ch],l[j-1]);
+				rerootparent[ch] = Operator::func_reroot_dp(rerootparent[ch],r[j+1]);
 			}
 		}
 		return rerootdp;
 	}
-	//O(N) after make_depth,make_parent,make_child
-	void make_heavy_light_decomposition(const int root = 0){
-		if(executed_flag[MAKE_HEAVY_LIGHT_DECOMPOSITION]++) return;
-		if(!executed_flag[MAKE_SIZE]) make_size(root);
-		if(!executed_flag[MAKE_PARENT]) make_parent(root);
+	void make_eulertour() {
+		dfs(reorder.front());
+		eulertour_range.resize(num);
+		for(int i = 0; i < eulertour.size(); ++i) eulertour_range[eulertour[i]].second = i+1;
+		for(int i = eulertour.size()-1; 0 <= i; --i) eulertour_range[eulertour[i]].first = i;
+	}
+	void make_heavy_light_decomposition(){
 		head.resize(num);
-		hldorder.resize(num);
+		hld.resize(num);
 		iota(head.begin(),head.end(),0);
 		for(size_t& pa:reorder) {
 			pair<size_t,size_t> maxi = {0,num};
-			for(auto& e:child[pa]) maxi = max(maxi,{size[e.first],e.first});
+			for(auto& p:child[pa]) maxi = max(maxi,{subtree_size[p.first],p.first});
 			if(maxi.first) head[maxi.second] = head[pa];
 		}
 		stack<size_t> st_head,st_sub;
 		size_t cnt = 0;
+		//根に近い方から探索
 		for(size_t& root:reorder){
 			if(depth[root]) continue;
+			//根をpush
 			st_head.push(root);
 			while(st_head.size()){
 				size_t h = st_head.top();
 				st_head.pop();
+				//部分木の根をpush
 				st_sub.push(h);
 				while (st_sub.size()){
 					size_t pa = st_sub.top();
 					st_sub.pop();
-					hldorder[pa] = cnt++;
-					for(auto& e:child[pa]) {
-						if(head[e.first]==head[pa]) st_sub.push(e.first);
-						else st_head.push(e.first);
+					//部分木をカウントしていく
+					hld[pa] = cnt++;
+					//子を探索
+					for(auto& p:child[pa]) {
+						//子のheadが親と同じなら、そのまま進む
+						if(head[p.first]==head[pa]) st_sub.push(p.first);
+						//そうじゃない場合は、そこから新しく部分木としてみなす
+						else st_head.push(p.first);
 					}
 				}				
 			}
 		}
 	}
-	//after hld type 0: vertex, 1: edge
-	vector<pair<size_t,size_t>> path(size_t u,size_t v,int type = 0) {
-		assert(executed_flag[MAKE_HEAVY_LIGHT_DECOMPOSITION]);
+	//type 0: vertex, 1: edge
+	vector<pair<size_t,size_t>> path_impl(size_t u,size_t v,int type = 0) {
 		vector<pair<size_t,size_t>> path;
 		while(1){
-			if(hldorder[u]>hldorder[v]) swap(u,v);
+			if(hld[u]>hld[v]) swap(u,v);
 			if(head[u]!=head[v]) {
-				path.push_back({hldorder[head[v]],hldorder[v]});
+				path.push_back({hld[head[v]],hld[v]});
 				v=parent[head[v]].first;
 			}
 			else {
-				path.push_back({hldorder[u],hldorder[v]});
+				path.push_back({hld[u],hld[v]});
 				break;
 			}
 		}
@@ -249,58 +210,90 @@ public:
 		if(type) path.front().first++;
 		return path;
 	}
-	size_t hld_lca(size_t u,size_t v){
-		assert(executed_flag[MAKE_HEAVY_LIGHT_DECOMPOSITION]);
+	size_t lca_idx_impl(size_t u,size_t v){
 		while(1){
-			if(hldorder[u]>hldorder[v]) swap(u,v);
+			if(hld[u]>hld[v]) swap(u,v);
 			if(head[u]==head[v]) return u;
 			v=parent[head[v]].first;
 		}
 	}
-	//O(N) after make_child and make_parent
-	void make_eulertour(const int root = 0){
-		if(executed_flag[MAKE_EOULERTOUR]++) return;
-		if(!executed_flag[MAKE_CHILD]) make_child(root);
-		if(!executed_flag[MAKE_PARENT]) make_parent(root);
-		dfs(reorder.front());
-		eulertour_range.resize(num);
-		for(int i = 0; i < eulertour.size(); ++i) eulertour_range[eulertour[i]].second = i;
-		for(int i = eulertour.size()-1; 0 <= i; --i) eulertour_range[eulertour[i]].first = i;
-	}
+	vector<size_t> head;
+public:
+	vector<size_t> depth;
+	vector<size_t> order;
+	vector<size_t> reorder;
+	vector<size_t> subtree_size;
+	vector<pair<size_t,TypeEdge>> parent;
+	vector<vector<pair<size_t,TypeEdge>>> child;
+	vector<TypeEdge> edge_dist;
+	vector<array<pair<size_t,TypeEdge>,Operator::bit>> ancestor;
+	vector<size_t> eulertour;
+	vector<pair<size_t,size_t>> eulertour_range;
+	vector<size_t> hld;
+
+	/**
+	 * O(N) builder
+	 */
+	static TreeBuilder<Operator> builder(Graph<TypeEdge>& graph) { return TreeBuilder<Operator>(graph);}
+	/**
+	 * O(logN) after make_ancestor
+	 * return {lca,lca_dist} l and r must be connected 
+	 */
+	pair<size_t,TypeEdge> lca(size_t l, size_t r) {return lca_impl(l,r);}
+	/**
+	 * O(N) anytime
+	 * return {diameter size,diameter set} 
+	 */
+	pair<TypeEdge,vector<size_t>> diameter(void){return diameter_impl();}
+	/**
+	 * O(N) after make_child
+	 */
+	template<class TypeReroot> vector<TypeReroot> rerooting(const vector<TypeReroot>& rerootdp,const vector<TypeReroot>& rerootparent) {return rerooting_impl(rerootdp,rerootparent);}
+	/**
+	 * O(logN) 
+	 * lca(u,v)=u あるいは lca(u,v)=v のときは、根側から順方向パスを返してくれる 
+	 */
+	vector<pair<size_t,size_t>> vertex_set_on_path(size_t u, size_t v) {return path_impl(u,v,0);}
+	/**
+	/**
+	 * O(logN) 
+	 * lca(u,v)=u あるいは lca(u,v)=v のときは、根側から順方向パスを返してくれる 
+	 */
+	vector<pair<size_t,size_t>> edge_set_on_path(size_t u, size_t v) {return path_impl(u,v,1);}
+	/**
+	 * O(logN) ancestorのlcaより定数倍軽め。idxだけ
+	 */
+	size_t lca_idx(size_t u, size_t v) {return lca_idx_impl(u,v);}
 };
-//depth,dist
-//https://atcoder.jp/contests/abc126/tasks/abc126_d
-//child
-//https://atcoder.jp/contests/abc133/tasks/abc133_e
-//lca
-//https://atcoder.jp/contests/abc014/tasks/abc014_4
-//weighted lca
-//https://atcoder.jp/contests/code-thanks-festival-2017-open/tasks/code_thanks_festival_2017_h
-//https://atcoder.jp/contests/cf16-tournament-round1-open/tasks/asaporo_c
-//diameter
-//https://atcoder.jp/contests/agc033/tasks/agc033_c
-//subtree
-//https://atcoder.jp/contests/code-thanks-festival-2018/tasks/code_thanks_festival_2018_f
-//rerooting
-//https://yukicoder.me/problems/no/922
-//size
-//https://yukicoder.me/problems/no/872
-//eulerTour
-//https://yukicoder.me/problems/no/900
-//hld
-//https://yukicoder.me/problems/no/399
-//https://yukicoder.me/problems/no/650
+ 
+template<class Operator> class TreeBuilder {
+	bool is_root_made =false;
+	bool is_child_made =false;
+	bool is_parent_made=false;
+	bool is_subtree_size_made=false;
+public:
+	using TypeEdge = typename Operator::TypeEdge;
+	TreeBuilder(Graph<TypeEdge>& g):tree(g){}
+	TreeBuilder& root(const int rt) { is_root_made=true; tree.make_root(rt); return *this;}
+	TreeBuilder& root() { is_root_made=true; tree.make_root(); return *this;}
+	TreeBuilder& child() { assert(is_root_made); is_child_made=true;  tree.make_child();  return *this;}
+	TreeBuilder& parent() { assert(is_root_made); is_parent_made=true; tree.make_parent(); return *this;}
+	TreeBuilder& subtree_size() { assert(is_child_made); is_subtree_size_made=true; tree.make_subtree_size(); return *this;}
+	TreeBuilder& ancestor() { assert(is_parent_made); tree.make_ancestor(); return *this;}
+	TreeBuilder& eulertour() { assert(is_child_made); tree.make_eulertour(); return *this;}
+	TreeBuilder& heavy_light_decomposition() { assert(is_subtree_size_made); assert(is_parent_made); tree.make_heavy_light_decomposition(); return *this;}
+	Tree<Operator>&& build() {return move(tree);}
+private:
+	Tree<Operator> tree;
+}; 
 template<class T> struct TreeOperator{
-	using TypeDist = T;
+	using TypeEdge = T;
 	inline static constexpr size_t bit = 20;
-	inline static constexpr TypeDist unit_dist = 0;
-	inline static constexpr TypeDist unit_lca = 0;
-	inline static constexpr TypeDist func_dist(const TypeDist& parent,const TypeDist& w){return parent+w;}
-	inline static constexpr pair<size_t,TypeDist> func_lca(const pair<size_t,TypeDist>& l,const pair<size_t,TypeDist>& r){return make_pair(l.first,l.second+r.second);}
-	template<class TypeReroot> inline static constexpr TypeReroot func_reroot(const TypeReroot& l,const TypeReroot& r) {
-		return {l.first+r.first+r.second,l.second+r.second};
-	}
-	template<class TypeReroot> inline static constexpr TypeReroot func_reroot_merge(const TypeReroot& l,const TypeReroot& r) {
-		return {l.first+r.first,l.second+r.second};
-	}
+	inline static constexpr TypeEdge unit_edge = 0;
+	inline static constexpr TypeEdge unit_lca_edge = 0;
+	inline static constexpr TypeEdge func_edge_merge(const TypeEdge& parent,const TypeEdge& w){return parent+w;}
+	inline static constexpr pair<size_t,TypeEdge> func_lca_edge_merge(const pair<size_t,TypeEdge>& l,const pair<size_t,TypeEdge>& r){return make_pair(l.first,l.second+r.second);}
+	template<class TypeReroot> inline static constexpr TypeReroot func_reroot_dp(const TypeReroot& l,const TypeReroot& r) {return {l.first+r.first+r.second,l.second+r.second};}
+	template<class TypeReroot> inline static constexpr TypeReroot func_reroot_merge(const TypeReroot& l,const TypeReroot& r) {return {l.first+r.first,l.second+r.second};}
 };
+//auto tree = Tree<TreeOperator<int>>::builder(g).build();

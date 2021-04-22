@@ -10,7 +10,7 @@
 using namespace std;
 #include "../../lib/graph/UnionFindTree.cpp"
 #include "../../lib/graph/Graph.cpp"
-#include "../../lib/graph/Tree2.cpp"
+#include "../../lib/graph/Tree.cpp"
 
 int main(void){
     int N,M,Q; cin >> N >> M >> Q;

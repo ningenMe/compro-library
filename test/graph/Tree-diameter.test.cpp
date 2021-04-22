@@ -9,7 +9,7 @@
 #include <array>
 using namespace std;
 #include "../../lib/graph/Graph.cpp"
-#include "../../lib/graph/Tree2.cpp"
+#include "../../lib/graph/Tree.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);
