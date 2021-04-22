@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
     title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-diameter.test.cpp
+    title: test/graph/Tree-diameter.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -53,6 +56,7 @@ data:
   verifiedWith:
   - test/graph/MinimumDirectedClosedCircuit.test.cpp
   - test/graph/MinimumUndirectedClosedCircuit.test.cpp
+  - test/graph/Tree-diameter.test.cpp
 documentation_of: lib/graph/Graph.cpp
 layout: document
 redirect_from:

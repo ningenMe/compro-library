@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-diameter.test.cpp
+    title: test/graph/Tree-diameter.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/graph/Tree.md
     document_title: "Tree - \u6728"
@@ -163,8 +166,9 @@ data:
   path: lib/graph/Tree2.cpp
   requiredBy: []
   timestamp: '2021-04-22 21:27:41+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/graph/Tree-diameter.test.cpp
 documentation_of: lib/graph/Tree2.cpp
 layout: document
 redirect_from:

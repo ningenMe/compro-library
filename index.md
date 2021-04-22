@@ -50,7 +50,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/Tree.cpp
       title: "Tree - \u6728"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/graph/Tree2.cpp
       title: "Tree - \u6728"
     - icon: ':heavy_check_mark:'
