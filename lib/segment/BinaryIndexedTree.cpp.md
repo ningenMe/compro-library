@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/segment/BinaryIndexedTree-rsqraq.test.cpp
     title: test/segment/BinaryIndexedTree-rsqraq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/segment/RangeInversionQuery.test.cpp
+    title: test/segment/RangeInversionQuery.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -77,6 +80,7 @@ data:
   timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/segment/RangeInversionQuery.test.cpp
   - test/segment/BinaryIndexedTree-rsqraq.test.cpp
 documentation_of: lib/segment/BinaryIndexedTree.cpp
 layout: document

@@ -137,6 +137,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/LiChaoTree.cpp
       title: LiChaoTree
+    - icon: ':heavy_check_mark:'
+      path: lib/segment/RangeInversionQuery.cpp
+      title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
     - icon: ':warning:'
       path: lib/segment/RangeMexQuery.cpp
       title: "RangeMexQuery - \u533A\u9593mex"
@@ -480,6 +483,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/LiChaoTree-segment.test.cpp
       title: test/segment/LiChaoTree-segment.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/RangeInversionQuery.test.cpp
+      title: test/segment/RangeInversionQuery.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment/Rbst-get.test.cpp
       title: test/segment/Rbst-get.test.cpp
