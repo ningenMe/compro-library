@@ -60,6 +60,7 @@
 "test/segment/LazySegmentTree-rsqruq.test.cpp": "2020-09-27 22:47:01 +0900",
 "test/segment/LiChaoTree-line.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/segment/LiChaoTree-segment.test.cpp": "2020-09-26 17:01:19 +0900",
+"test/segment/RangeInversionQuery.test.cpp": "2021-04-23 18:33:08 +0900",
 "test/segment/Rbst-get.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/segment/Rbst-med.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/segment/Rbst-pair.test.cpp": "2020-09-26 17:01:19 +0900",
