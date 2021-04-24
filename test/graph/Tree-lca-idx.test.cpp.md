@@ -17,7 +17,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/lca
     links:
     - https://judge.yosupo.jp/problem/lca
-  bundledCode: "#line 1 \"test/graph/Tree-lca.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\
+  bundledCode: "#line 1 \"test/graph/Tree-lca-idx.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
     #include <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n\
     #line 1 \"lib/graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
@@ -185,12 +185,12 @@ data:
     \ TypeReroot& l,const TypeReroot& r) {return {l.first+r.first+r.second,l.second+r.second};}\n\
     \ttemplate<class TypeReroot> inline static constexpr TypeReroot func_reroot_merge(const\
     \ TypeReroot& l,const TypeReroot& r) {return {l.first+r.first,l.second+r.second};}\n\
-    };\n//auto tree = Tree<TreeOperator<int>>::builder(g).build();\n#line 13 \"test/graph/Tree-lca.test.cpp\"\
+    };\n//auto tree = Tree<TreeOperator<int>>::builder(g).build();\n#line 13 \"test/graph/Tree-lca-idx.test.cpp\"\
     \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q;\
     \ cin >> N >> Q;\n    Graph<int> g(N);\n    for(int i=1;i<N;++i) {\n        int\
     \ p; cin >> p;\n        g.make_bidirectional_edge(i,p,1);\n    }\n    auto tree\
-    \ = Tree<TreeOperator<int>>::builder(g).root(0).parent().ancestor().build();\n\
-    \    while(Q--) {\n        int u,v; cin >> u >> v;\n        cout << tree.lca(u,v).first\
+    \ = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();\n\
+    \    while(Q--) {\n        int u,v; cin >> u >> v;\n        cout << tree.lca_idx(u,v)\
     \ << \"\\n\";\n    }\n  \treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <algorithm>\n#include <stack>\n\
@@ -198,22 +198,22 @@ data:
     \n#include \"../../lib/graph/Tree.cpp\"\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\
     \    int N,Q; cin >> N >> Q;\n    Graph<int> g(N);\n    for(int i=1;i<N;++i) {\n\
     \        int p; cin >> p;\n        g.make_bidirectional_edge(i,p,1);\n    }\n\
-    \    auto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().ancestor().build();\n\
-    \    while(Q--) {\n        int u,v; cin >> u >> v;\n        cout << tree.lca(u,v).first\
+    \    auto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();\n\
+    \    while(Q--) {\n        int u,v; cin >> u >> v;\n        cout << tree.lca_idx(u,v)\
     \ << \"\\n\";\n    }\n  \treturn 0;\n}"
   dependsOn:
   - lib/graph/Graph.cpp
   - lib/graph/Tree.cpp
   isVerificationFile: true
-  path: test/graph/Tree-lca.test.cpp
+  path: test/graph/Tree-lca-idx.test.cpp
   requiredBy: []
   timestamp: '2021-04-24 14:25:05+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/graph/Tree-lca.test.cpp
+documentation_of: test/graph/Tree-lca-idx.test.cpp
 layout: document
 redirect_from:
-- /verify/test/graph/Tree-lca.test.cpp
-- /verify/test/graph/Tree-lca.test.cpp.html
-title: test/graph/Tree-lca.test.cpp
+- /verify/test/graph/Tree-lca-idx.test.cpp
+- /verify/test/graph/Tree-lca-idx.test.cpp.html
+title: test/graph/Tree-lca-idx.test.cpp
 ---

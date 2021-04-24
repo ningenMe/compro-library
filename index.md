@@ -368,11 +368,17 @@ data:
       path: test/graph/Tree-hld-vertex-3.test.cpp
       title: test/graph/Tree-hld-vertex-3.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/graph/Tree-lca-idx.test.cpp
+      title: test/graph/Tree-lca-idx.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-lca.test.cpp
       title: test/graph/Tree-lca.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/Tree-parent.test.cpp
       title: test/graph/Tree-parent.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/Tree-rerooting.test.cpp
+      title: test/graph/Tree-rerooting.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/Tree-size.test.cpp
       title: test/graph/Tree-size.test.cpp
