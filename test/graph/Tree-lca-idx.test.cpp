@@ -19,10 +19,10 @@ int main(void){
         int p; cin >> p;
         g.make_bidirectional_edge(i,p,1);
     }
-    auto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().ancestor().build();
+    auto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();
     while(Q--) {
         int u,v; cin >> u >> v;
-        cout << tree.lca(u,v).first << "\n";
+        cout << tree.lca_idx(u,v) << "\n";
     }
   	return 0;
 }
