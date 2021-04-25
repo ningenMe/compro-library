@@ -4,7 +4,8 @@
 #include <iostream>
 #include <cassert>
 using namespace std;
-#include "../../lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp"
+#include "../../../lib/operator/AbelPrefixSumPointAdd.cpp"
+#include "../../../lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp"
 
 int main(void){
     int N; cin >> N;
@@ -12,11 +13,11 @@ int main(void){
     for(int i = 1; i <= N; ++i) {
         cin >> A[i];
     }
-    BinaryIndexedTree<NodePrefixSumPointAdd<int>> bit(N+1);
+    BinaryIndexedTree<AbelPrefixSumPointAdd<int>> bit(N+1);
     int ans = 0;
     for(int i = N; 1 <= i; --i) {
-        ans += bit.get(A[i]);
-        bit.update(A[i],1);
+        ans += bit.fold(A[i]);
+        bit.operate(A[i],1);
     }
     cout << ans << endl;
 	return 0;

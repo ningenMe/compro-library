@@ -5,8 +5,8 @@
 #include <stack>
 #include <algorithm>
 using namespace std;
-#include "../../lib/operator/AbelNodePrefixSumPointAdd.cpp"
-#include "../../lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp"
+#include "../../../lib/operator/AbelPrefixSumPointAdd.cpp"
+#include "../../../lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp"
 
 int main(void){
     int N,Q;
@@ -19,7 +19,7 @@ int main(void){
         if(A[i]==0) scanf("%d %d %d",&X[i+N],&Y[i+N],&W[i+N]);
         else scanf("%d %d %d %d",&L[i],&D[i],&R[i],&U[i]);
     }
-    BinaryIndexedTreeOffline2D<AbelNodePrefixSumPointAdd<long long>> bit(X,Y);
+    BinaryIndexedTreeOffline2D<AbelPrefixSumPointAdd<long long>> bit(X,Y);
     for(int i=0;i<N;++i) bit.operate(X[i],Y[i],W[i]);
     for(int i=0;i<Q;++i) {
         if(A[i]==0) bit.operate(X[i+N],Y[i+N],W[i+N]);
