@@ -10,6 +10,9 @@ data:
       path: lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
       title: "BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F32\u6B21\u5143\
         BIT"
+    - icon: ':x:'
+      path: lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp
+      title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
   - name: lib/geometory
     pages:
     - icon: ':heavy_check_mark:'
@@ -118,7 +121,7 @@ data:
     - icon: ':warning:'
       path: lib/operator/AbelPrefixGcdPointUpdate.cpp
       title: lib/operator/AbelPrefixGcdPointUpdate.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/operator/AbelPrefixSumPointAdd.cpp
       title: AbelPrefixSumPointAdd
   - name: lib/optimize
@@ -144,9 +147,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/DisjointSparseTable.cpp
       title: DisjointSparseTable
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/DynamicBinaryIndexedTree.cpp
-      title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
     - icon: ':heavy_check_mark:'
       path: lib/segment/DynamicSegmentTree.cpp
       title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
@@ -318,6 +318,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
       title: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+    - icon: ':x:'
+      path: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
+      title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
@@ -506,9 +509,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/DisjointSparseTable.test.cpp
       title: test/segment/DisjointSparseTable.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/DynamicBinaryIndexedTree-rsqraq.test.cpp
-      title: test/segment/DynamicBinaryIndexedTree-rsqraq.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment/DynamicSegmentTree-rsq-1.test.cpp
       title: test/segment/DynamicSegmentTree-rsq-1.test.cpp
