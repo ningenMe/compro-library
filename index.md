@@ -104,6 +104,11 @@ data:
     - icon: ':warning:'
       path: lib/math/PrimitiveRoot.cpp
       title: "PrimitiveRoot - \u539F\u59CB\u6839"
+  - name: lib/operator
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/operator/AbelNodePrefixSumPointAdd.cpp
+      title: AbelNodePrefixSumPointAdd
   - name: lib/optimize
     pages:
     - icon: ':heavy_check_mark:'
@@ -117,6 +122,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/BinaryIndexedTree.cpp
       title: BinaryIndexedTree - BIT
+    - icon: ':heavy_check_mark:'
+      path: lib/segment/BinaryIndexedTreeOffline2D.cpp
+      title: BinaryIndexedTreeOffline2D - BIT
     - icon: ':heavy_check_mark:'
       path: lib/segment/BinaryTrie.cpp
       title: BinaryTrie
@@ -478,6 +486,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/BinaryIndexedTree-rsqraq.test.cpp
       title: test/segment/BinaryIndexedTree-rsqraq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/BinaryIndexedTreeOffline2D.test.cpp
+      title: test/segment/BinaryIndexedTreeOffline2D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment/BinaryTrie-set-xor-min.test.cpp
       title: test/segment/BinaryTrie-set-xor-min.test.cpp
