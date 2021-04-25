@@ -1,0 +1,35 @@
+---
+data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    links: []
+  bundledCode: "#line 1 \"lib/operator/AbelPrefixGcdPointUpdate.cpp\"\ntemplate<class\
+    \ TypeNode> struct AbelPrefixGcdPointUpdate {\n\tTypeNode unit_node = 0;\n\tTypeNode\
+    \ func_node(const TypeNode& l,const TypeNode& r){return ((r == 0) ? l : func_node(r,\
+    \ l % r));}\n\t// Binary Search for first index at where func_check is true\n\t\
+    bool func_check(const TypeNode nodeVal,const TypeNode& var){return var == nodeVal;}\n\
+    };\n"
+  code: "template<class TypeNode> struct AbelPrefixGcdPointUpdate {\n\tTypeNode unit_node\
+    \ = 0;\n\tTypeNode func_node(const TypeNode& l,const TypeNode& r){return ((r ==\
+    \ 0) ? l : func_node(r, l % r));}\n\t// Binary Search for first index at where\
+    \ func_check is true\n\tbool func_check(const TypeNode nodeVal,const TypeNode&\
+    \ var){return var == nodeVal;}\n};"
+  dependsOn: []
+  isVerificationFile: false
+  path: lib/operator/AbelPrefixGcdPointUpdate.cpp
+  requiredBy: []
+  timestamp: '2021-04-26 08:34:13+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: lib/operator/AbelPrefixGcdPointUpdate.cpp
+layout: document
+redirect_from:
+- /library/lib/operator/AbelPrefixGcdPointUpdate.cpp
+- /library/lib/operator/AbelPrefixGcdPointUpdate.cpp.html
+title: lib/operator/AbelPrefixGcdPointUpdate.cpp
+---

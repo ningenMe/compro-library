@@ -2,16 +2,24 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+    title: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+    title: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.md
-    document_title: BinaryIndexedTreeOffline2D - BIT
+    document_title: "BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F32\u6B21\
+      \u5143BIT"
     links: []
   bundledCode: "#line 1 \"lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp\"\
-    \n/*\n * @title BinaryIndexedTreeOffline2D - BIT\n * @docs md/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.md\n\
+    \n/*\n * @title BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F32\u6B21\
+    \u5143BIT\n * @docs md/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.md\n\
     \ */\ntemplate<class Abel> class BinaryIndexedTreeOffline2D {\n    using TypeNode\
     \ = typename Abel::TypeNode;\n    using i64 = long long;\n\n    class InternalBinaryIndexedTree\
     \ {\n        size_t length;\n        vector<TypeNode> node;\n    public:\n   \
@@ -45,7 +53,8 @@ data:
     \ ret;\n    }\n\n    // [l,r),[d,u) fold\n    TypeNode fold(i64 l, i64 r, i64\
     \ d, i64 u) {\n        return Abel::func_fold_inv(Abel::func_fold(fold(r,u),fold(l,d)),Abel::func_fold(fold(r,d),fold(l,u)));\n\
     \    }\n};\n"
-  code: "/*\n * @title BinaryIndexedTreeOffline2D - BIT\n * @docs md/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.md\n\
+  code: "/*\n * @title BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F3\
+    2\u6B21\u5143BIT\n * @docs md/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.md\n\
     \ */\ntemplate<class Abel> class BinaryIndexedTreeOffline2D {\n    using TypeNode\
     \ = typename Abel::TypeNode;\n    using i64 = long long;\n\n    class InternalBinaryIndexedTree\
     \ {\n        size_t length;\n        vector<TypeNode> node;\n    public:\n   \
@@ -83,13 +92,15 @@ data:
   isVerificationFile: false
   path: lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
   requiredBy: []
-  timestamp: '2021-04-26 08:25:53+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-04-26 08:35:50+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+  - test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
 documentation_of: lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
 layout: document
 redirect_from:
 - /library/lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
 - /library/lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp.html
-title: BinaryIndexedTreeOffline2D - BIT
+title: "BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F32\u6B21\u5143BIT"
 ---
