@@ -1,6 +1,6 @@
 /*
  * @title AbelPrefixSumPointAdd
- * @docs md/math/AbelPrefixSumPointAdd.md
+ * @docs md/operator/AbelPrefixSumPointAdd.md
  */
 template<class T> struct AbelPrefixSumPointAdd {
     using TypeNode = T;

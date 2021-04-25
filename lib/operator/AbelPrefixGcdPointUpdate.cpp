@@ -1,3 +1,7 @@
+/*
+ * @title AbelPrefixGcdPointUpdate
+ * @docs md/operator/AbelPrefixGcdPointUpdate.md
+ */
 template<class TypeNode> struct AbelPrefixGcdPointUpdate {
 	TypeNode unit_node = 0;
 	TypeNode func_node(const TypeNode& l,const TypeNode& r){return ((r == 0) ? l : func_node(r, l % r));}
