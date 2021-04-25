@@ -1,15 +1,15 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: lib/segment/DynamicSegmentTree.cpp
     title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\u30BB\
       \u30B0\u30E1\u30F3\u30C8\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
@@ -23,32 +23,29 @@ data:
     \u6728\n * @docs md/segment/DynamicSegmentTree.md\n */\ntemplate<class Operator>\
     \ class DynamicSegmentTree {\n    using TypeNode = typename Operator::TypeNode;\
     \ \n    using i64 = long long;\n\n    struct Node{\n        Node *left, *right;\n\
-    \        TypeNode val;\n        i64 l,r;\n        Node(i64 l,i64 r):left(nullptr),right(nullptr),val(Operator::unit_node),l(l),r(r)\
-    \ {}\n    };\n    \n    i64 length;\n    Node *root;\n    void print(Node *node)\
-    \ {\n        if (node==nullptr) return;\n        print(node->left);\n        cout\
-    \ << node->val << \" \";\n        print(node->right);\n    }\npublic:\n\n    //unit\u3067\
-    \u521D\u671F\u5316\n    DynamicSegmentTree(const i64 num) {\n        for (length\
-    \ = 1; length <= num; length *= 2);\n        root = new Node(0,length);\n    }\n\
-    \    ~DynamicSegmentTree() {\n        delete root;\n        root = nullptr;\n\
+    \        TypeNode val;\n        Node():left(nullptr),right(nullptr),val(Operator::unit_node)\
+    \ {}\n    };\n\n    TypeNode dfs(i64 l,i64 r,i64 nl,i64 nr,Node* node) {\n   \
+    \     if(l <= nl && nr <= r) return node->val;\n        if(nr <= l || r <= nl)\
+    \ return Operator::unit_node;\n        TypeNode vl=Operator::unit_node, vr=Operator::unit_node;\n\
+    \        i64 m = (nl+nr)>>1;\n        if(node->left)  vl = dfs(l,r,nl,m,node->left);\n\
+    \        if(node->right) vr = dfs(l,r,m,nr,node->right);\n        return Operator::func_node(vl,vr);\n\
+    \    }\n    \n    i64 length;\n    Node *root;\npublic:\n\n    //unit\u3067\u521D\
+    \u671F\u5316\n    DynamicSegmentTree() : length(1) {\n        root = new Node();\n\
+    \    }\n    ~DynamicSegmentTree() {\n        delete root;\n        root = nullptr;\n\
     \    }\n    \n    //[idx,idx+1)\n    void update(i64 idx, const TypeNode var)\
-    \ {\n        if(idx < 0 || length <= idx) return;\n        Node *node = root;\n\
-    \        node->val = Operator::func_merge(node->val,var);\n\n        i64 l = 0,\
-    \ r = length, m;\n        while(r-l>1) {\n            m = (r+l)>>1;\n        \
-    \    if(idx<m) {\n                r = m;\n                if(!node->left) node->left=new\
-    \ Node(l,r);\n                node = node->left;\n            }\n            else\
-    \ {\n                l = m;\n                if(!node->right) node->right = new\
-    \ Node(l,r);\n                node = node->right;\n            }\n           \
-    \ node->val = Operator::func_merge(node->val,var);\n        }\n    }\n\n    //[l,r)\n\
-    \    TypeNode get(i64 l, i64 r) {\n        if (l < 0 || length <= l || r < 0 ||\
-    \ length < r) return Operator::unit_node;\n        TypeNode val = Operator::unit_node;\n\
-    \        stack<Node*> st;\n        st.push(root);\n        while(st.size()) {\n\
-    \            Node *node = st.top(); st.pop();\n            if(l <= node->l &&\
-    \ node->r <= r) {\n                val = Operator::func_node(val,node->val);\n\
-    \            }\n            else if(!(node->r <= l) && !(r <= node->l)) {\n  \
-    \              if(node->right) st.push(node->right);\n                if(node->left)\
-    \ st.push(node->left);\n            }\n        }\n        return val;\n    }\n\
-    \n    void print() {\n        cout << \"{\";\n        print(this->root);\n   \
-    \     cout << \"}\" << endl;\n    }\n};\n\n//\u4E00\u70B9\u52A0\u7B97 \u533A\u9593\
+    \ {\n        if(idx < 0) return;\n        for (;length <= idx; length *= 2) {\n\
+    \            Node *new_root = new Node();\n            TypeNode val = root->val;\n\
+    \            new_root->left = root;\n            root = new_root;\n          \
+    \  root->val = val;\n        }\n\n        Node *node = root;\n        node->val\
+    \ = Operator::func_merge(node->val,var);\n\n        i64 l = 0, r = length, m;\n\
+    \        while(r-l>1) {\n            m = (r+l)>>1;\n            if(idx<m) {\n\
+    \                r = m;\n                if(!node->left) node->left=new Node();\n\
+    \                node = node->left;\n            }\n            else {\n     \
+    \           l = m;\n                if(!node->right) node->right = new Node();\n\
+    \                node = node->right;\n            }\n            node->val = Operator::func_merge(node->val,var);\n\
+    \        }\n    }\n\n    //[l,r)\n    TypeNode get(i64 l, i64 r) {\n        if\
+    \ (l < 0 || length <= l || r < 0) return Operator::unit_node;\n        return\
+    \ dfs(l,r,0,length,root);\n    }\n};\n\n//\u4E00\u70B9\u52A0\u7B97 \u533A\u9593\
     \u7DCF\u548C\ntemplate<class T> struct NodeSumPointAdd {\n    using TypeNode =\
     \ T;\n    inline static constexpr TypeNode unit_node = 0;\n    inline static constexpr\
     \ TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n    inline static constexpr\
@@ -72,8 +69,8 @@ data:
   isVerificationFile: true
   path: test/segment/DynamicSegmentTree-rsq-1.test.cpp
   requiredBy: []
-  timestamp: '2021-04-25 13:58:11+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2021-04-26 04:52:40+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/segment/DynamicSegmentTree-rsq-1.test.cpp
 layout: document
