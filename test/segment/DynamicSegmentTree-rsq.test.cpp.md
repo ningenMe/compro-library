@@ -44,16 +44,15 @@ data:
     \        stack<Node*> st;\n        st.push(root);\n        while(st.size()) {\n\
     \            Node *node = st.top(); st.pop();\n            if(l <= node->l &&\
     \ node->r <= r) {\n                val = Operator::func_node(val,node->val);\n\
-    \            }\n            else if(node->r <= l || r <= node->l) {\n        \
-    \        continue;\n            }\n            else {\n                if(node->right)\
-    \ st.push(node->right);\n                if(node->left) st.push(node->left);\n\
-    \            }\n        }\n        return val;\n    }\n\n    void print() {\n\
-    \        cout << \"{\";\n        print(this->root);\n        cout << \"}\" <<\
-    \ endl;\n    }\n};\n\n//\u4E00\u70B9\u52A0\u7B97 \u533A\u9593\u7DCF\u548C\ntemplate<class\
-    \ T> struct NodeSumPointAdd {\n    using TypeNode = T;\n    inline static constexpr\
-    \ TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_node(TypeNode\
-    \ l,TypeNode r){return l+r;}\n    inline static constexpr TypeNode func_merge(TypeNode\
-    \ l,TypeNode r){return l+r;}\n};\n#line 9 \"test/segment/DynamicSegmentTree-rsq.test.cpp\"\
+    \            }\n            else if(!(node->r <= l) && !(r <= node->l)) {\n  \
+    \              if(node->right) st.push(node->right);\n                if(node->left)\
+    \ st.push(node->left);\n            }\n        }\n        return val;\n    }\n\
+    \n    void print() {\n        cout << \"{\";\n        print(this->root);\n   \
+    \     cout << \"}\" << endl;\n    }\n};\n\n//\u4E00\u70B9\u52A0\u7B97 \u533A\u9593\
+    \u7DCF\u548C\ntemplate<class T> struct NodeSumPointAdd {\n    using TypeNode =\
+    \ T;\n    inline static constexpr TypeNode unit_node = 0;\n    inline static constexpr\
+    \ TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n    inline static constexpr\
+    \ TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}\n};\n#line 9 \"test/segment/DynamicSegmentTree-rsq.test.cpp\"\
     \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int len\
     \ = 500000;\n    DinamicSegmentTree<NodeSumPointAdd<long long>> dseg(len);\n \
     \   int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i) {\n        int a; cin >>\
@@ -73,7 +72,7 @@ data:
   isVerificationFile: true
   path: test/segment/DynamicSegmentTree-rsq.test.cpp
   requiredBy: []
-  timestamp: '2021-04-25 09:10:38+09:00'
+  timestamp: '2021-04-25 09:12:25+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment/DynamicSegmentTree-rsq.test.cpp
