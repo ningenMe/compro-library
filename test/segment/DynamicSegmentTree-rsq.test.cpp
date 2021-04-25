@@ -5,12 +5,12 @@
 #include <cassert>
 #include <stack>
 using namespace std;
-#include "../../lib/segment/DinamicSegmentTree.cpp"
+#include "../../lib/segment/DynamicSegmentTree.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);
     int len = 500000;
-    DinamicSegmentTree<NodeSumPointAdd<long long>> dseg(len);
+    DynamicSegmentTree<NodeSumPointAdd<long long>> dseg(len);
     int N,Q; cin >> N >> Q;
     for(int i=0;i<N;++i) {
         int a; cin >> a;

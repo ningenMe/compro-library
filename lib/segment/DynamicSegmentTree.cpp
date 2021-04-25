@@ -1,8 +1,8 @@
 /*
- * @title DinamicSegmentTree - 非再帰抽象化動的セグメント木
- * @docs md/segment/DinamicSegmentTree.md
+ * @title DynamicSegmentTree - 非再帰抽象化動的セグメント木
+ * @docs md/segment/DynamicSegmentTree.md
  */
-template<class Operator> class DinamicSegmentTree {
+template<class Operator> class DynamicSegmentTree {
     using TypeNode = typename Operator::TypeNode; 
     using i64 = long long;
 
@@ -24,11 +24,11 @@ template<class Operator> class DinamicSegmentTree {
 public:
 
     //unitで初期化
-    DinamicSegmentTree(const i64 num) {
+    DynamicSegmentTree(const i64 num) {
         for (length = 1; length <= num; length *= 2);
         root = new Node(0,length);
     }
-    ~DinamicSegmentTree() {
+    ~DynamicSegmentTree() {
         delete root;
         root = nullptr;
     }
