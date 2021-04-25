@@ -67,10 +67,7 @@ public:
             if(l <= node->l && node->r <= r) {
                 val = Operator::func_node(val,node->val);
             }
-            else if(node->r <= l || r <= node->l) {
-                continue;
-            }
-            else {
+            else if(!(node->r <= l) && !(r <= node->l)) {
                 if(node->right) st.push(node->right);
                 if(node->left) st.push(node->left);
             }
