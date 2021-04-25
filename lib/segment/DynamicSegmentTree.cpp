@@ -9,24 +9,26 @@ template<class Operator> class DynamicSegmentTree {
     struct Node{
         Node *left, *right;
         TypeNode val;
-        i64 l,r;
-        Node(i64 l,i64 r):left(nullptr),right(nullptr),val(Operator::unit_node),l(l),r(r) {}
+        Node():left(nullptr),right(nullptr),val(Operator::unit_node) {}
     };
+
+    TypeNode dfs(i64 l,i64 r,i64 nl,i64 nr,Node* node) {
+        if(l <= nl && nr <= r) return node->val;
+        if(nr <= l || r <= nl) return Operator::unit_node;
+        TypeNode vl=Operator::unit_node, vr=Operator::unit_node;
+        i64 m = (nl+nr)>>1;
+        if(node->left)  vl = dfs(l,r,nl,m,node->left);
+        if(node->right) vr = dfs(l,r,m,nr,node->right);
+        return Operator::func_node(vl,vr);
+    }
     
     i64 length;
     Node *root;
-    void print(Node *node) {
-        if (node==nullptr) return;
-        print(node->left);
-        cout << node->val << " ";
-        print(node->right);
-    }
 public:
 
     //unitで初期化
-    DynamicSegmentTree(const i64 num) {
-        for (length = 1; length <= num; length *= 2);
-        root = new Node(0,length);
+    DynamicSegmentTree() : length(1) {
+        root = new Node();
     }
     ~DynamicSegmentTree() {
         delete root;
@@ -35,7 +37,15 @@ public:
     
     //[idx,idx+1)
     void update(i64 idx, const TypeNode var) {
-        if(idx < 0 || length <= idx) return;
+        if(idx < 0) return;
+        for (;length <= idx; length *= 2) {
+            Node *new_root = new Node();
+            TypeNode val = root->val;
+            new_root->left = root;
+            root = new_root;
+            root->val = val;
+        }
+
         Node *node = root;
         node->val = Operator::func_merge(node->val,var);
 
@@ -44,12 +54,12 @@ public:
             m = (r+l)>>1;
             if(idx<m) {
                 r = m;
-                if(!node->left) node->left=new Node(l,r);
+                if(!node->left) node->left=new Node();
                 node = node->left;
             }
             else {
                 l = m;
-                if(!node->right) node->right = new Node(l,r);
+                if(!node->right) node->right = new Node();
                 node = node->right;
             }
             node->val = Operator::func_merge(node->val,var);
@@ -58,27 +68,8 @@ public:
 
     //[l,r)
     TypeNode get(i64 l, i64 r) {
-        if (l < 0 || length <= l || r < 0 || length < r) return Operator::unit_node;
-        TypeNode val = Operator::unit_node;
-        stack<Node*> st;
-        st.push(root);
-        while(st.size()) {
-            Node *node = st.top(); st.pop();
-            if(l <= node->l && node->r <= r) {
-                val = Operator::func_node(val,node->val);
-            }
-            else if(!(node->r <= l) && !(r <= node->l)) {
-                if(node->right) st.push(node->right);
-                if(node->left) st.push(node->left);
-            }
-        }
-        return val;
-    }
-
-    void print() {
-        cout << "{";
-        print(this->root);
-        cout << "}" << endl;
+        if (l < 0 || length <= l || r < 0) return Operator::unit_node;
+        return dfs(l,r,0,length,root);
     }
 };
 
