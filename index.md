@@ -1,6 +1,14 @@
 ---
 data:
   libraryCategories:
+  - name: lib/data-structure/binary-indexed-tree
+    pages:
+    - icon: ':warning:'
+      path: lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
+      title: BinaryIndexedTree - BIT
+    - icon: ':warning:'
+      path: lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
+      title: BinaryIndexedTreeOffline2D - BIT
   - name: lib/geometory
     pages:
     - icon: ':heavy_check_mark:'
@@ -106,7 +114,7 @@ data:
       title: "PrimitiveRoot - \u539F\u59CB\u6839"
   - name: lib/operator
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/operator/AbelNodePrefixSumPointAdd.cpp
       title: AbelNodePrefixSumPointAdd
   - name: lib/optimize
@@ -119,12 +127,6 @@ data:
       title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
   - name: lib/segment
     pages:
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/BinaryIndexedTree.cpp
-      title: BinaryIndexedTree - BIT
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/BinaryIndexedTreeOffline2D.cpp
-      title: BinaryIndexedTreeOffline2D - BIT
     - icon: ':heavy_check_mark:'
       path: lib/segment/BinaryTrie.cpp
       title: BinaryTrie
@@ -152,7 +154,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/LiChaoTree.cpp
       title: LiChaoTree
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/segment/RangeInversionQuery.cpp
       title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
     - icon: ':warning:'
@@ -301,6 +303,17 @@ data:
       path: non-verified/old-tree.cpp
       title: "Tree - \u6728"
   verificationCategories:
+  - name: test/data-structure/binary-indexed-tree
+    pages:
+    - icon: ':x:'
+      path: test/data-structure/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+      title: test/data-structure/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+    - icon: ':x:'
+      path: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+      title: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+    - icon: ':x:'
+      path: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+      title: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
@@ -484,15 +497,6 @@ data:
   - name: test/segment
     pages:
     - icon: ':heavy_check_mark:'
-      path: test/segment/BinaryIndexedTree-rsqraq.test.cpp
-      title: test/segment/BinaryIndexedTree-rsqraq.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
-      title: test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/BinaryIndexedTreeOffline2D-2.test.cpp
-      title: test/segment/BinaryIndexedTreeOffline2D-2.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/segment/BinaryTrie-set-xor-min.test.cpp
       title: test/segment/BinaryTrie-set-xor-min.test.cpp
     - icon: ':heavy_check_mark:'
@@ -519,7 +523,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/LiChaoTree-segment.test.cpp
       title: test/segment/LiChaoTree-segment.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment/RangeInversionQuery.test.cpp
       title: test/segment/RangeInversionQuery.test.cpp
     - icon: ':heavy_check_mark:'

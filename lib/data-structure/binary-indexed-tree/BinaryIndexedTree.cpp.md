@@ -2,30 +2,24 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/segment/BinaryIndexedTree-rsqraq.test.cpp
-    title: test/segment/BinaryIndexedTree-rsqraq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/RangeInversionQuery.test.cpp
-    title: test/segment/RangeInversionQuery.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    _deprecated_at_docs: md/segment/BinaryIndexedTree.md
+    _deprecated_at_docs: md/data-structure/binary-indexed-tree/BinaryIndexedTree.md
     document_title: BinaryIndexedTree - BIT
     links: []
-  bundledCode: "#line 1 \"lib/segment/BinaryIndexedTree.cpp\"\n/*\n * @title BinaryIndexedTree\
-    \ - BIT\n * @docs md/segment/BinaryIndexedTree.md\n */\ntemplate<class Operator>\
-    \ class BinaryIndexedTree {\n\tusing TypeNode = typename Operator::TypeNode;\n\
-    \tsize_t depth;         \n\tsize_t length;\n\tsize_t num;\n\tvector<TypeNode>\
-    \ node;\npublic:\n\t\n\t//[0,N) constructed, inplace [0,1) + [1,N+1)\n\t//you\
-    \ can ignore inplace offset\n\tBinaryIndexedTree(const size_t num) : num(num)\
-    \ {\n\t\tfor (depth = 1,length = 1; length < num; depth++,length *= 2);\n\t\t\
-    node.resize(length+1, Operator::unit_node);\n\t}\n \n\t//[idx,idx+1) update \n\
-    \tvoid update(size_t idx, TypeNode var) {\n\t\tassert(0 <= idx && idx < length);\n\
-    \t\tfor (++idx; idx <= length; idx += idx & -idx) node[idx] = Operator::func_node(node[idx],var);\n\
+  bundledCode: "#line 1 \"lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp\"\
+    \n/*\n * @title BinaryIndexedTree - BIT\n * @docs md/data-structure/binary-indexed-tree/BinaryIndexedTree.md\n\
+    \ */\ntemplate<class Operator> class BinaryIndexedTree {\n\tusing TypeNode = typename\
+    \ Operator::TypeNode;\n\tsize_t depth;         \n\tsize_t length;\n\tsize_t num;\n\
+    \tvector<TypeNode> node;\npublic:\n\t\n\t//[0,N) constructed, inplace [0,1) +\
+    \ [1,N+1)\n\t//you can ignore inplace offset\n\tBinaryIndexedTree(const size_t\
+    \ num) : num(num) {\n\t\tfor (depth = 1,length = 1; length < num; depth++,length\
+    \ *= 2);\n\t\tnode.resize(length+1, Operator::unit_node);\n\t}\n \n\t//[idx,idx+1)\
+    \ update \n\tvoid update(size_t idx, TypeNode var) {\n\t\tassert(0 <= idx && idx\
+    \ < length);\n\t\tfor (++idx; idx <= length; idx += idx & -idx) node[idx] = Operator::func_node(node[idx],var);\n\
     \t}\n\n\t//[0,idx) get\n\tTypeNode get(size_t idx) {\n\t\tTypeNode ret = Operator::unit_node;\n\
     \t\tfor (idx = min(length,idx); idx > 0; idx -= idx & -idx) ret = Operator::func_node(ret,node[idx]);\n\
     \t\treturn ret;\n\t}\n\n\t//return [0,length]\n\tint binary_search(TypeNode var)\
@@ -45,7 +39,7 @@ data:
     \ r){return ((r == 0) ? l : func_node(r, l % r));}\n\t// Binary Search for first\
     \ index at where func_check is true\n\tbool func_check(const TypeNode nodeVal,const\
     \ TypeNode& var){return var == nodeVal;}\n};\n"
-  code: "/*\n * @title BinaryIndexedTree - BIT\n * @docs md/segment/BinaryIndexedTree.md\n\
+  code: "/*\n * @title BinaryIndexedTree - BIT\n * @docs md/data-structure/binary-indexed-tree/BinaryIndexedTree.md\n\
     \ */\ntemplate<class Operator> class BinaryIndexedTree {\n\tusing TypeNode = typename\
     \ Operator::TypeNode;\n\tsize_t depth;         \n\tsize_t length;\n\tsize_t num;\n\
     \tvector<TypeNode> node;\npublic:\n\t\n\t//[0,N) constructed, inplace [0,1) +\
@@ -75,17 +69,15 @@ data:
     \ TypeNode& var){return var == nodeVal;}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: lib/segment/BinaryIndexedTree.cpp
+  path: lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
   requiredBy: []
-  timestamp: '2021-04-25 16:57:29+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/segment/RangeInversionQuery.test.cpp
-  - test/segment/BinaryIndexedTree-rsqraq.test.cpp
-documentation_of: lib/segment/BinaryIndexedTree.cpp
+  timestamp: '2021-04-26 08:25:53+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
 layout: document
 redirect_from:
-- /library/lib/segment/BinaryIndexedTree.cpp
-- /library/lib/segment/BinaryIndexedTree.cpp.html
+- /library/lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
+- /library/lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp.html
 title: BinaryIndexedTree - BIT
 ---

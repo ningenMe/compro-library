@@ -2,16 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
-    title: test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/BinaryIndexedTreeOffline2D-2.test.cpp
-    title: test/segment/BinaryIndexedTreeOffline2D-2.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     _deprecated_at_docs: md/math/AbelNodePrefixSumPointAdd.md
     document_title: AbelNodePrefixSumPointAdd
@@ -34,10 +28,8 @@ data:
   path: lib/operator/AbelNodePrefixSumPointAdd.cpp
   requiredBy: []
   timestamp: '2021-04-26 07:42:27+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
-  - test/segment/BinaryIndexedTreeOffline2D-2.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: lib/operator/AbelNodePrefixSumPointAdd.cpp
 layout: document
 redirect_from:

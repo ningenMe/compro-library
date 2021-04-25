@@ -2,22 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
-    title: test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/BinaryIndexedTreeOffline2D-2.test.cpp
-    title: test/segment/BinaryIndexedTreeOffline2D-2.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    _deprecated_at_docs: md/segment/BinaryIndexedTreeOffline2D.md
+    _deprecated_at_docs: md/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.md
     document_title: BinaryIndexedTreeOffline2D - BIT
     links: []
-  bundledCode: "#line 1 \"lib/segment/BinaryIndexedTreeOffline2D.cpp\"\n/*\n * @title\
-    \ BinaryIndexedTreeOffline2D - BIT\n * @docs md/segment/BinaryIndexedTreeOffline2D.md\n\
+  bundledCode: "#line 1 \"lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp\"\
+    \n/*\n * @title BinaryIndexedTreeOffline2D - BIT\n * @docs md/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.md\n\
     \ */\ntemplate<class Abel> class BinaryIndexedTreeOffline2D {\n    using TypeNode\
     \ = typename Abel::TypeNode;\n    using i64 = long long;\n\n    class InternalBinaryIndexedTree\
     \ {\n        size_t length;\n        vector<TypeNode> node;\n    public:\n   \
@@ -51,7 +45,7 @@ data:
     \ ret;\n    }\n\n    // [l,r),[d,u) fold\n    TypeNode fold(i64 l, i64 r, i64\
     \ d, i64 u) {\n        return Abel::func_fold_inv(Abel::func_fold(fold(r,u),fold(l,d)),Abel::func_fold(fold(r,d),fold(l,u)));\n\
     \    }\n};\n"
-  code: "/*\n * @title BinaryIndexedTreeOffline2D - BIT\n * @docs md/segment/BinaryIndexedTreeOffline2D.md\n\
+  code: "/*\n * @title BinaryIndexedTreeOffline2D - BIT\n * @docs md/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.md\n\
     \ */\ntemplate<class Abel> class BinaryIndexedTreeOffline2D {\n    using TypeNode\
     \ = typename Abel::TypeNode;\n    using i64 = long long;\n\n    class InternalBinaryIndexedTree\
     \ {\n        size_t length;\n        vector<TypeNode> node;\n    public:\n   \
@@ -87,17 +81,15 @@ data:
     \    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/segment/BinaryIndexedTreeOffline2D.cpp
+  path: lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
   requiredBy: []
-  timestamp: '2021-04-26 07:42:27+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
-  - test/segment/BinaryIndexedTreeOffline2D-2.test.cpp
-documentation_of: lib/segment/BinaryIndexedTreeOffline2D.cpp
+  timestamp: '2021-04-26 08:25:53+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
 layout: document
 redirect_from:
-- /library/lib/segment/BinaryIndexedTreeOffline2D.cpp
-- /library/lib/segment/BinaryIndexedTreeOffline2D.cpp.html
+- /library/lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
+- /library/lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp.html
 title: BinaryIndexedTreeOffline2D - BIT
 ---
