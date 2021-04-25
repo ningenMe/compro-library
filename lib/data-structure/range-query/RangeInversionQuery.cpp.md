@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/range-query/RangeInversionQuery.test.cpp
     title: test/data-structure/range-query/RangeInversionQuery.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/data-structure/range-query/RangeInversionQuery.md
     document_title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
@@ -43,7 +43,7 @@ data:
     \                    for(size_t j=l;j<r;++j) {\n                        bit.operate(compressed[j],-1);\n\
     \                    }\n                }\n                //suffix\n        \
     \        {\n                    long long inv = 0;\n                    for(int\
-    \ j=r-1;l<=j;--j) {\n                        inv += bit.get(compressed[j]);\n\
+    \ j=r-1;l<=j;--j) {\n                        inv += bit.fold(compressed[j]);\n\
     \                        suffix_inv[j]=inv;\n                        bit.operate(compressed[j],1);\n\
     \                    }\n                    for(size_t j=l;j<r;++j) {\n      \
     \                  bit.operate(compressed[j],-1);\n                    }\n   \
@@ -66,7 +66,7 @@ data:
     \                [&](size_t l,size_t r){return compressed[l]==compressed[r]?l<r:compressed[l]<compressed[r];});\n\
     \            }\n        }\n    }\n    //query [l,r)\n    //return {freq,mode}\
     \ ({\u983B\u5EA6,\u5143\u306E\u914D\u5217\u306B\u304A\u3051\u308B\u5024}) \n \
-    \   long long get(int l, int r) {\n        int bl = l/B + 1, br = (r-1)/B - 1;\n\
+    \   long long fold(int l, int r) {\n        int bl = l/B + 1, br = (r-1)/B - 1;\n\
     \        long long inv = 0;\n        //\u540C\u3058bucket\u306Bl,r\u304C\u3042\
     \u308B\u3068\u304D\n        if(bl > br + 1) {\n            inv += prefix_inv[r-1];\n\
     \            if(l%B) inv -= prefix_inv[l-1];\n            long long sum = 0;\n\
@@ -114,7 +114,7 @@ data:
     \                    for(size_t j=l;j<r;++j) {\n                        bit.operate(compressed[j],-1);\n\
     \                    }\n                }\n                //suffix\n        \
     \        {\n                    long long inv = 0;\n                    for(int\
-    \ j=r-1;l<=j;--j) {\n                        inv += bit.get(compressed[j]);\n\
+    \ j=r-1;l<=j;--j) {\n                        inv += bit.fold(compressed[j]);\n\
     \                        suffix_inv[j]=inv;\n                        bit.operate(compressed[j],1);\n\
     \                    }\n                    for(size_t j=l;j<r;++j) {\n      \
     \                  bit.operate(compressed[j],-1);\n                    }\n   \
@@ -137,7 +137,7 @@ data:
     \                [&](size_t l,size_t r){return compressed[l]==compressed[r]?l<r:compressed[l]<compressed[r];});\n\
     \            }\n        }\n    }\n    //query [l,r)\n    //return {freq,mode}\
     \ ({\u983B\u5EA6,\u5143\u306E\u914D\u5217\u306B\u304A\u3051\u308B\u5024}) \n \
-    \   long long get(int l, int r) {\n        int bl = l/B + 1, br = (r-1)/B - 1;\n\
+    \   long long fold(int l, int r) {\n        int bl = l/B + 1, br = (r-1)/B - 1;\n\
     \        long long inv = 0;\n        //\u540C\u3058bucket\u306Bl,r\u304C\u3042\
     \u308B\u3068\u304D\n        if(bl > br + 1) {\n            inv += prefix_inv[r-1];\n\
     \            if(l%B) inv -= prefix_inv[l-1];\n            long long sum = 0;\n\
@@ -160,8 +160,8 @@ data:
   isVerificationFile: false
   path: lib/data-structure/range-query/RangeInversionQuery.cpp
   requiredBy: []
-  timestamp: '2021-04-26 08:51:23+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-04-26 08:55:42+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/range-query/RangeInversionQuery.test.cpp
 documentation_of: lib/data-structure/range-query/RangeInversionQuery.cpp

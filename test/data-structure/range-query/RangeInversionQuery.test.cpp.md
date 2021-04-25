@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
     title: BinaryIndexedTree - BIT
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/data-structure/range-query/RangeInversionQuery.cpp
     title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/operator/AbelPrefixSumPointAdd.cpp
     title: AbelPrefixSumPointAdd
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_inversions_query
@@ -43,7 +43,7 @@ data:
     }\n\t\t}\n\t\treturn min(off,num);\n\t}\n\n\tvoid print() {\n\t\tcout << \"{ \"\
     \ << fold(1);\n\t\tfor(int i = 1; i < length; ++i) cout << \", \" << fold(i+1);\n\
     \t\tcout << \" }\" << endl;\n\t}\n};\n#line 1 \"lib/operator/AbelPrefixSumPointAdd.cpp\"\
-    \n/*\n * @title AbelPrefixSumPointAdd\n * @docs md/math/AbelPrefixSumPointAdd.md\n\
+    \n/*\n * @title AbelPrefixSumPointAdd\n * @docs md/operator/AbelPrefixSumPointAdd.md\n\
     \ */\ntemplate<class T> struct AbelPrefixSumPointAdd {\n    using TypeNode = T;\n\
     \    inline static constexpr TypeNode unit_node = 0;\n    inline static constexpr\
     \ TypeNode func_fold(const TypeNode& l,const TypeNode& r){return l+r;}\n    inline\
@@ -78,7 +78,7 @@ data:
     \                    for(size_t j=l;j<r;++j) {\n                        bit.operate(compressed[j],-1);\n\
     \                    }\n                }\n                //suffix\n        \
     \        {\n                    long long inv = 0;\n                    for(int\
-    \ j=r-1;l<=j;--j) {\n                        inv += bit.get(compressed[j]);\n\
+    \ j=r-1;l<=j;--j) {\n                        inv += bit.fold(compressed[j]);\n\
     \                        suffix_inv[j]=inv;\n                        bit.operate(compressed[j],1);\n\
     \                    }\n                    for(size_t j=l;j<r;++j) {\n      \
     \                  bit.operate(compressed[j],-1);\n                    }\n   \
@@ -101,7 +101,7 @@ data:
     \                [&](size_t l,size_t r){return compressed[l]==compressed[r]?l<r:compressed[l]<compressed[r];});\n\
     \            }\n        }\n    }\n    //query [l,r)\n    //return {freq,mode}\
     \ ({\u983B\u5EA6,\u5143\u306E\u914D\u5217\u306B\u304A\u3051\u308B\u5024}) \n \
-    \   long long get(int l, int r) {\n        int bl = l/B + 1, br = (r-1)/B - 1;\n\
+    \   long long fold(int l, int r) {\n        int bl = l/B + 1, br = (r-1)/B - 1;\n\
     \        long long inv = 0;\n        //\u540C\u3058bucket\u306Bl,r\u304C\u3042\
     \u308B\u3068\u304D\n        if(bl > br + 1) {\n            inv += prefix_inv[r-1];\n\
     \            if(l%B) inv -= prefix_inv[l-1];\n            long long sum = 0;\n\
@@ -124,7 +124,7 @@ data:
     \    cin.tie(0);ios::sync_with_stdio(false); \n    int N,Q; cin >> N >> Q;\n \
     \   vector<long long> A(N);\n    for(int i=0;i<N;++i) cin >> A[i];\n    RangeInversionQuery<long\
     \ long> riq(A);\n    while(Q--) {\n        int l,r; cin >> l >> r;\n        long\
-    \ long inv = riq.get(l,r);\n        cout << inv << \"\\n\";\n    }\n}\n"
+    \ long inv = riq.fold(l,r);\n        cout << inv << \"\\n\";\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_inversions_query\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
     #include <cmath>\nusing namespace std;\n#include \"../../../lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp\"\
@@ -132,7 +132,7 @@ data:
     \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false); \n    int N,Q;\
     \ cin >> N >> Q;\n    vector<long long> A(N);\n    for(int i=0;i<N;++i) cin >>\
     \ A[i];\n    RangeInversionQuery<long long> riq(A);\n    while(Q--) {\n      \
-    \  int l,r; cin >> l >> r;\n        long long inv = riq.get(l,r);\n        cout\
+    \  int l,r; cin >> l >> r;\n        long long inv = riq.fold(l,r);\n        cout\
     \ << inv << \"\\n\";\n    }\n}"
   dependsOn:
   - lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
@@ -141,8 +141,8 @@ data:
   isVerificationFile: true
   path: test/data-structure/range-query/RangeInversionQuery.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 08:51:23+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-04-26 08:55:42+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/range-query/RangeInversionQuery.test.cpp
 layout: document

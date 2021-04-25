@@ -7,14 +7,18 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
+    _deprecated_at_docs: md/operator/AbelPrefixGcdPointUpdate.md
+    document_title: AbelPrefixGcdPointUpdate
     links: []
-  bundledCode: "#line 1 \"lib/operator/AbelPrefixGcdPointUpdate.cpp\"\ntemplate<class\
-    \ TypeNode> struct AbelPrefixGcdPointUpdate {\n\tTypeNode unit_node = 0;\n\tTypeNode\
-    \ func_node(const TypeNode& l,const TypeNode& r){return ((r == 0) ? l : func_node(r,\
-    \ l % r));}\n\t// Binary Search for first index at where func_check is true\n\t\
-    bool func_check(const TypeNode nodeVal,const TypeNode& var){return var == nodeVal;}\n\
-    };\n"
-  code: "template<class TypeNode> struct AbelPrefixGcdPointUpdate {\n\tTypeNode unit_node\
+  bundledCode: "#line 1 \"lib/operator/AbelPrefixGcdPointUpdate.cpp\"\n/*\n * @title\
+    \ AbelPrefixGcdPointUpdate\n * @docs md/operator/AbelPrefixGcdPointUpdate.md\n\
+    \ */\ntemplate<class TypeNode> struct AbelPrefixGcdPointUpdate {\n\tTypeNode unit_node\
+    \ = 0;\n\tTypeNode func_node(const TypeNode& l,const TypeNode& r){return ((r ==\
+    \ 0) ? l : func_node(r, l % r));}\n\t// Binary Search for first index at where\
+    \ func_check is true\n\tbool func_check(const TypeNode nodeVal,const TypeNode&\
+    \ var){return var == nodeVal;}\n};\n"
+  code: "/*\n * @title AbelPrefixGcdPointUpdate\n * @docs md/operator/AbelPrefixGcdPointUpdate.md\n\
+    \ */\ntemplate<class TypeNode> struct AbelPrefixGcdPointUpdate {\n\tTypeNode unit_node\
     \ = 0;\n\tTypeNode func_node(const TypeNode& l,const TypeNode& r){return ((r ==\
     \ 0) ? l : func_node(r, l % r));}\n\t// Binary Search for first index at where\
     \ func_check is true\n\tbool func_check(const TypeNode nodeVal,const TypeNode&\
@@ -23,7 +27,7 @@ data:
   isVerificationFile: false
   path: lib/operator/AbelPrefixGcdPointUpdate.cpp
   requiredBy: []
-  timestamp: '2021-04-26 08:34:13+09:00'
+  timestamp: '2021-04-26 08:53:51+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/operator/AbelPrefixGcdPointUpdate.cpp
@@ -31,5 +35,5 @@ layout: document
 redirect_from:
 - /library/lib/operator/AbelPrefixGcdPointUpdate.cpp
 - /library/lib/operator/AbelPrefixGcdPointUpdate.cpp.html
-title: lib/operator/AbelPrefixGcdPointUpdate.cpp
+title: AbelPrefixGcdPointUpdate
 ---

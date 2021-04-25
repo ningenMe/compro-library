@@ -15,23 +15,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
     title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/range-query/RangeInversionQuery.test.cpp
     title: test/data-structure/range-query/RangeInversionQuery.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/math/AbelPrefixSumPointAdd.md
+    _deprecated_at_docs: md/operator/AbelPrefixSumPointAdd.md
     document_title: AbelPrefixSumPointAdd
     links: []
   bundledCode: "#line 1 \"lib/operator/AbelPrefixSumPointAdd.cpp\"\n/*\n * @title\
-    \ AbelPrefixSumPointAdd\n * @docs md/math/AbelPrefixSumPointAdd.md\n */\ntemplate<class\
-    \ T> struct AbelPrefixSumPointAdd {\n    using TypeNode = T;\n    inline static\
-    \ constexpr TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_fold(const\
-    \ TypeNode& l,const TypeNode& r){return l+r;}\n    inline static constexpr TypeNode\
-    \ func_fold_inv(const TypeNode& l,const TypeNode& r){return l-r;}\n};\n"
-  code: "/*\n * @title AbelPrefixSumPointAdd\n * @docs md/math/AbelPrefixSumPointAdd.md\n\
+    \ AbelPrefixSumPointAdd\n * @docs md/operator/AbelPrefixSumPointAdd.md\n */\n\
+    template<class T> struct AbelPrefixSumPointAdd {\n    using TypeNode = T;\n  \
+    \  inline static constexpr TypeNode unit_node = 0;\n    inline static constexpr\
+    \ TypeNode func_fold(const TypeNode& l,const TypeNode& r){return l+r;}\n    inline\
+    \ static constexpr TypeNode func_fold_inv(const TypeNode& l,const TypeNode& r){return\
+    \ l-r;}\n};\n"
+  code: "/*\n * @title AbelPrefixSumPointAdd\n * @docs md/operator/AbelPrefixSumPointAdd.md\n\
     \ */\ntemplate<class T> struct AbelPrefixSumPointAdd {\n    using TypeNode = T;\n\
     \    inline static constexpr TypeNode unit_node = 0;\n    inline static constexpr\
     \ TypeNode func_fold(const TypeNode& l,const TypeNode& r){return l+r;}\n    inline\
@@ -41,8 +42,8 @@ data:
   isVerificationFile: false
   path: lib/operator/AbelPrefixSumPointAdd.cpp
   requiredBy: []
-  timestamp: '2021-04-26 08:34:13+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2021-04-26 08:53:51+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/range-query/RangeInversionQuery.test.cpp
   - test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp

@@ -5,7 +5,7 @@ data:
     path: lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
     title: "BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F32\u6B21\u5143\
       BIT"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/operator/AbelPrefixSumPointAdd.cpp
     title: AbelPrefixSumPointAdd
   _extendedRequiredBy: []
@@ -22,7 +22,7 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_rectangle_sum\"\n\
     \n#include <vector>\n#include <iostream>\n#include <stack>\n#include <algorithm>\n\
     using namespace std;\n#line 1 \"lib/operator/AbelPrefixSumPointAdd.cpp\"\n/*\n\
-    \ * @title AbelPrefixSumPointAdd\n * @docs md/math/AbelPrefixSumPointAdd.md\n\
+    \ * @title AbelPrefixSumPointAdd\n * @docs md/operator/AbelPrefixSumPointAdd.md\n\
     \ */\ntemplate<class T> struct AbelPrefixSumPointAdd {\n    using TypeNode = T;\n\
     \    inline static constexpr TypeNode unit_node = 0;\n    inline static constexpr\
     \ TypeNode func_fold(const TypeNode& l,const TypeNode& r){return l+r;}\n    inline\
@@ -91,7 +91,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 08:35:50+09:00'
+  timestamp: '2021-04-26 08:53:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp

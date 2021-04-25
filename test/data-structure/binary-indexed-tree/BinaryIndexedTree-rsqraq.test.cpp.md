@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
     title: BinaryIndexedTree - BIT
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/operator/AbelPrefixSumPointAdd.cpp
     title: AbelPrefixSumPointAdd
   _extendedRequiredBy: []
@@ -20,7 +20,7 @@ data:
   bundledCode: "#line 1 \"test/data-structure/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp\"\
     \n#define PROBLEM \"https://yukicoder.me/problems/no/742\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\nusing namespace std;\n#line 1 \"lib/operator/AbelPrefixSumPointAdd.cpp\"\
-    \n/*\n * @title AbelPrefixSumPointAdd\n * @docs md/math/AbelPrefixSumPointAdd.md\n\
+    \n/*\n * @title AbelPrefixSumPointAdd\n * @docs md/operator/AbelPrefixSumPointAdd.md\n\
     \ */\ntemplate<class T> struct AbelPrefixSumPointAdd {\n    using TypeNode = T;\n\
     \    inline static constexpr TypeNode unit_node = 0;\n    inline static constexpr\
     \ TypeNode func_fold(const TypeNode& l,const TypeNode& r){return l+r;}\n    inline\
@@ -64,7 +64,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 08:34:13+09:00'
+  timestamp: '2021-04-26 08:53:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
