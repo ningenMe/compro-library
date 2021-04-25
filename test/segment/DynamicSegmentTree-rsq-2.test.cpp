@@ -9,7 +9,7 @@ using namespace std;
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);
-    DynamicSegmentTree<NodeSumPointAdd<long long>> seg(1000000010);
+    DynamicSegmentTree<NodeSumPointAdd<long long>> seg;
     int N; cin >> N;
     long long ans = 0;
     while(N--) {
