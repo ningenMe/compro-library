@@ -6,8 +6,9 @@
 #include <algorithm>
 #include <cmath>
 using namespace std;
-#include "../../lib/segment/BinaryIndexedTree.cpp"
-#include "../../lib/segment/RangeInversionQuery.cpp"
+#include "../../../lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp"
+#include "../../../lib/operator/AbelPrefixSumPointAdd.cpp"
+#include "../../../lib/data-structure/range-query/RangeInversionQuery.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false); 

@@ -1,6 +1,6 @@
 /*
  * @title RangeInversionQuery - 区間転倒数
- * @docs md/segment/RangeInversionQuery.md
+ * @docs md/data-structure/range-query/RangeInversionQuery.md
  */
 template<class T> class RangeInversionQuery {
     vector<size_t> compressed;
@@ -42,19 +42,19 @@ public:
         }
         //prefix,suffix inv
         {
-            BinaryIndexedTree<NodePrefixSumPointAdd<long long>> bit(N+1);
+            BinaryIndexedTree<AbelPrefixSumPointAdd<long long>> bit(N+1);
             for(size_t i=0;i<M;++i) {
                 int l = i*B, r = min((i+1)*B,N);
                 //prefix
                 {
                     long long inv = 0;
                     for(size_t j=l;j<r;++j) {
-                        inv += bit.get(N+1)-bit.get(compressed[j]+1);
+                        inv += bit.fold(N+1)-bit.fold(compressed[j]+1);
                         prefix_inv[j]=inv;
-                        bit.update(compressed[j],1);
+                        bit.operate(compressed[j],1);
                     }
                     for(size_t j=l;j<r;++j) {
-                        bit.update(compressed[j],-1);
+                        bit.operate(compressed[j],-1);
                     }
                 }
                 //suffix
@@ -63,10 +63,10 @@ public:
                     for(int j=r-1;l<=j;--j) {
                         inv += bit.get(compressed[j]);
                         suffix_inv[j]=inv;
-                        bit.update(compressed[j],1);
+                        bit.operate(compressed[j],1);
                     }
                     for(size_t j=l;j<r;++j) {
-                        bit.update(compressed[j],-1);
+                        bit.operate(compressed[j],-1);
                     }
                 }
             }
