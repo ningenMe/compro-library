@@ -31,7 +31,7 @@ public:
 
     //[l,r) fold
     TypeNode fold(i64 l, i64 r) {
-        return Abel::func_node_inv(fold(r),fold(l));
+        return Abel::func_fold_inv(fold(r),fold(l));
     }
 
     void print() {
