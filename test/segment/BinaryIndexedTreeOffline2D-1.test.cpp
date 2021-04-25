@@ -6,7 +6,7 @@
 #include <algorithm>
 using namespace std;
 #include "../../lib/operator/AbelNodePrefixSumPointAdd.cpp"
-#include "../../lib/segment/BinaryIndexedTreeOffline2D.cpp"
+#include "../../lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp"
 
 int main(void){
     int N,Q;
