@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
     title: BinaryIndexedTree - BIT
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/operator/AbelPrefixSumPointAdd.cpp
     title: AbelPrefixSumPointAdd
   _extendedRequiredBy: []

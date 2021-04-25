@@ -2,18 +2,22 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/data-structure/range-query/RangeInversionQuery.test.cpp
+    title: test/data-structure/range-query/RangeInversionQuery.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    _deprecated_at_docs: md/segment/RangeInversionQuery.md
+    _deprecated_at_docs: md/data-structure/range-query/RangeInversionQuery.md
     document_title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
     links: []
-  bundledCode: "#line 1 \"lib/segment/RangeInversionQuery.cpp\"\n/*\n * @title RangeInversionQuery\
-    \ - \u533A\u9593\u8EE2\u5012\u6570\n * @docs md/segment/RangeInversionQuery.md\n\
-    \ */\ntemplate<class T> class RangeInversionQuery {\n    vector<size_t> compressed;\n\
-    \    vector<long long> prefix_inv;\n    vector<long long> suffix_inv;\n    vector<vector<long\
+  bundledCode: "#line 1 \"lib/data-structure/range-query/RangeInversionQuery.cpp\"\
+    \n/*\n * @title RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570\n * @docs\
+    \ md/data-structure/range-query/RangeInversionQuery.md\n */\ntemplate<class T>\
+    \ class RangeInversionQuery {\n    vector<size_t> compressed;\n    vector<long\
+    \ long> prefix_inv;\n    vector<long long> suffix_inv;\n    vector<vector<long\
     \ long>> sqrt_bucket_freq;\n    vector<long long> sqrt_bucket_inv;\n    vector<vector<size_t>>\
     \ sqrt_bucket_sort_index;\n    vector<long long> sqrt_bucket_size;\n    size_t\
     \ N,B,M;\npublic:\n    RangeInversionQuery(const vector<T>& ar, T pre=-1)\n  \
@@ -30,21 +34,21 @@ data:
     \ j=l;j<r;++j) freq[compressed[j]]++;\n                sqrt_bucket_freq[i] = freq;\n\
     \                for(size_t j=1;j<=N;++j) sqrt_bucket_freq[i][j]+=sqrt_bucket_freq[i][j-1];\n\
     \            }\n        }\n        //prefix,suffix inv\n        {\n          \
-    \  BinaryIndexedTree<NodePrefixSumPointAdd<long long>> bit(N+1);\n           \
+    \  BinaryIndexedTree<AbelPrefixSumPointAdd<long long>> bit(N+1);\n           \
     \ for(size_t i=0;i<M;++i) {\n                int l = i*B, r = min((i+1)*B,N);\n\
     \                //prefix\n                {\n                    long long inv\
     \ = 0;\n                    for(size_t j=l;j<r;++j) {\n                      \
-    \  inv += bit.get(N+1)-bit.get(compressed[j]+1);\n                        prefix_inv[j]=inv;\n\
-    \                        bit.update(compressed[j],1);\n                    }\n\
-    \                    for(size_t j=l;j<r;++j) {\n                        bit.update(compressed[j],-1);\n\
+    \  inv += bit.fold(N+1)-bit.fold(compressed[j]+1);\n                        prefix_inv[j]=inv;\n\
+    \                        bit.operate(compressed[j],1);\n                    }\n\
+    \                    for(size_t j=l;j<r;++j) {\n                        bit.operate(compressed[j],-1);\n\
     \                    }\n                }\n                //suffix\n        \
     \        {\n                    long long inv = 0;\n                    for(int\
     \ j=r-1;l<=j;--j) {\n                        inv += bit.get(compressed[j]);\n\
-    \                        suffix_inv[j]=inv;\n                        bit.update(compressed[j],1);\n\
+    \                        suffix_inv[j]=inv;\n                        bit.operate(compressed[j],1);\n\
     \                    }\n                    for(size_t j=l;j<r;++j) {\n      \
-    \                  bit.update(compressed[j],-1);\n                    }\n    \
-    \            }\n            }\n        }\n        //sqrt bucket inv\n        {\n\
-    \            sqrt_bucket_inv.resize(M*M,0);\n            for(size_t i=0;i<M;++i)\
+    \                  bit.operate(compressed[j],-1);\n                    }\n   \
+    \             }\n            }\n        }\n        //sqrt bucket inv\n       \
+    \ {\n            sqrt_bucket_inv.resize(M*M,0);\n            for(size_t i=0;i<M;++i)\
     \ {\n                size_t l = i*B, r = min((i+1)*B,N);\n                if(l<r)\
     \ sqrt_bucket_inv[i*M+i] = prefix_inv[r-1];\n            }\n            for(size_t\
     \ k=1;k<M;++k) {\n                for(size_t i=0;i+k<M;++i) {\n              \
@@ -82,14 +86,15 @@ data:
     \ sum++;\n                    else break;\n                }\n               \
     \ inv += sum;\n            }\n        }\n        return inv;\n    }\n}; \n"
   code: "/*\n * @title RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570\n * @docs\
-    \ md/segment/RangeInversionQuery.md\n */\ntemplate<class T> class RangeInversionQuery\
-    \ {\n    vector<size_t> compressed;\n    vector<long long> prefix_inv;\n    vector<long\
-    \ long> suffix_inv;\n    vector<vector<long long>> sqrt_bucket_freq;\n    vector<long\
-    \ long> sqrt_bucket_inv;\n    vector<vector<size_t>> sqrt_bucket_sort_index;\n\
-    \    vector<long long> sqrt_bucket_size;\n    size_t N,B,M;\npublic:\n    RangeInversionQuery(const\
-    \ vector<T>& ar, T pre=-1)\n    : compressed(ar.size()),prefix_inv(ar.size()),suffix_inv(ar.size())\
-    \ {\n        N = ar.size();\n        B = sqrt(N) + 1; // bucket size\n       \
-    \ M = N / B + 1;   // bucket num\n        //zarts\n        {\n            vector<pair<T,size_t>>\
+    \ md/data-structure/range-query/RangeInversionQuery.md\n */\ntemplate<class T>\
+    \ class RangeInversionQuery {\n    vector<size_t> compressed;\n    vector<long\
+    \ long> prefix_inv;\n    vector<long long> suffix_inv;\n    vector<vector<long\
+    \ long>> sqrt_bucket_freq;\n    vector<long long> sqrt_bucket_inv;\n    vector<vector<size_t>>\
+    \ sqrt_bucket_sort_index;\n    vector<long long> sqrt_bucket_size;\n    size_t\
+    \ N,B,M;\npublic:\n    RangeInversionQuery(const vector<T>& ar, T pre=-1)\n  \
+    \  : compressed(ar.size()),prefix_inv(ar.size()),suffix_inv(ar.size()) {\n   \
+    \     N = ar.size();\n        B = sqrt(N) + 1; // bucket size\n        M = N /\
+    \ B + 1;   // bucket num\n        //zarts\n        {\n            vector<pair<T,size_t>>\
     \ ord(N);\n            for(size_t i=0;i<N;++i) ord[i]={ar[i],i};\n           \
     \ sort(ord.begin(),ord.end());\n            size_t inc=0;\n            for(size_t\
     \ i=0;i<N;++i) {\n                if(pre < ord[i].first) inc++;\n            \
@@ -100,21 +105,21 @@ data:
     \ j=l;j<r;++j) freq[compressed[j]]++;\n                sqrt_bucket_freq[i] = freq;\n\
     \                for(size_t j=1;j<=N;++j) sqrt_bucket_freq[i][j]+=sqrt_bucket_freq[i][j-1];\n\
     \            }\n        }\n        //prefix,suffix inv\n        {\n          \
-    \  BinaryIndexedTree<NodePrefixSumPointAdd<long long>> bit(N+1);\n           \
+    \  BinaryIndexedTree<AbelPrefixSumPointAdd<long long>> bit(N+1);\n           \
     \ for(size_t i=0;i<M;++i) {\n                int l = i*B, r = min((i+1)*B,N);\n\
     \                //prefix\n                {\n                    long long inv\
     \ = 0;\n                    for(size_t j=l;j<r;++j) {\n                      \
-    \  inv += bit.get(N+1)-bit.get(compressed[j]+1);\n                        prefix_inv[j]=inv;\n\
-    \                        bit.update(compressed[j],1);\n                    }\n\
-    \                    for(size_t j=l;j<r;++j) {\n                        bit.update(compressed[j],-1);\n\
+    \  inv += bit.fold(N+1)-bit.fold(compressed[j]+1);\n                        prefix_inv[j]=inv;\n\
+    \                        bit.operate(compressed[j],1);\n                    }\n\
+    \                    for(size_t j=l;j<r;++j) {\n                        bit.operate(compressed[j],-1);\n\
     \                    }\n                }\n                //suffix\n        \
     \        {\n                    long long inv = 0;\n                    for(int\
     \ j=r-1;l<=j;--j) {\n                        inv += bit.get(compressed[j]);\n\
-    \                        suffix_inv[j]=inv;\n                        bit.update(compressed[j],1);\n\
+    \                        suffix_inv[j]=inv;\n                        bit.operate(compressed[j],1);\n\
     \                    }\n                    for(size_t j=l;j<r;++j) {\n      \
-    \                  bit.update(compressed[j],-1);\n                    }\n    \
-    \            }\n            }\n        }\n        //sqrt bucket inv\n        {\n\
-    \            sqrt_bucket_inv.resize(M*M,0);\n            for(size_t i=0;i<M;++i)\
+    \                  bit.operate(compressed[j],-1);\n                    }\n   \
+    \             }\n            }\n        }\n        //sqrt bucket inv\n       \
+    \ {\n            sqrt_bucket_inv.resize(M*M,0);\n            for(size_t i=0;i<M;++i)\
     \ {\n                size_t l = i*B, r = min((i+1)*B,N);\n                if(l<r)\
     \ sqrt_bucket_inv[i*M+i] = prefix_inv[r-1];\n            }\n            for(size_t\
     \ k=1;k<M;++k) {\n                for(size_t i=0;i+k<M;++i) {\n              \
@@ -153,16 +158,17 @@ data:
     \ inv += sum;\n            }\n        }\n        return inv;\n    }\n}; \n"
   dependsOn: []
   isVerificationFile: false
-  path: lib/segment/RangeInversionQuery.cpp
+  path: lib/data-structure/range-query/RangeInversionQuery.cpp
   requiredBy: []
-  timestamp: '2021-04-23 18:33:08+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: lib/segment/RangeInversionQuery.cpp
+  timestamp: '2021-04-26 08:51:23+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/data-structure/range-query/RangeInversionQuery.test.cpp
+documentation_of: lib/data-structure/range-query/RangeInversionQuery.cpp
 layout: document
 redirect_from:
-- /library/lib/segment/RangeInversionQuery.cpp
-- /library/lib/segment/RangeInversionQuery.cpp.html
+- /library/lib/data-structure/range-query/RangeInversionQuery.cpp
+- /library/lib/data-structure/range-query/RangeInversionQuery.cpp.html
 title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
 ---
 ### RangeInversionQuery

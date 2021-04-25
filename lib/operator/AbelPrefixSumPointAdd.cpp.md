@@ -15,9 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
     title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/data-structure/range-query/RangeInversionQuery.test.cpp
+    title: test/data-structure/range-query/RangeInversionQuery.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/math/AbelPrefixSumPointAdd.md
     document_title: AbelPrefixSumPointAdd
@@ -39,8 +42,9 @@ data:
   path: lib/operator/AbelPrefixSumPointAdd.cpp
   requiredBy: []
   timestamp: '2021-04-26 08:34:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/data-structure/range-query/RangeInversionQuery.test.cpp
   - test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
   - test/data-structure/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
   - test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp

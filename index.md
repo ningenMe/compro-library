@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: lib/data-structure/binary-indexed-tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
       title: BinaryIndexedTree - BIT
     - icon: ':heavy_check_mark:'
@@ -13,6 +13,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp
       title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
+  - name: lib/data-structure/range-query
+    pages:
+    - icon: ':x:'
+      path: lib/data-structure/range-query/RangeInversionQuery.cpp
+      title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
+    - icon: ':warning:'
+      path: lib/data-structure/range-query/RangeMexQuery.cpp
+      title: "RangeMexQuery - \u533A\u9593mex"
+    - icon: ':warning:'
+      path: lib/data-structure/range-query/RangeModeQuery.cpp
+      title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
   - name: lib/geometory
     pages:
     - icon: ':heavy_check_mark:'
@@ -121,7 +132,7 @@ data:
     - icon: ':warning:'
       path: lib/operator/AbelPrefixGcdPointUpdate.cpp
       title: lib/operator/AbelPrefixGcdPointUpdate.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/operator/AbelPrefixSumPointAdd.cpp
       title: AbelPrefixSumPointAdd
   - name: lib/optimize
@@ -158,15 +169,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/LiChaoTree.cpp
       title: LiChaoTree
-    - icon: ':warning:'
-      path: lib/segment/RangeInversionQuery.cpp
-      title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
-    - icon: ':warning:'
-      path: lib/segment/RangeMexQuery.cpp
-      title: "RangeMexQuery - \u533A\u9593mex"
-    - icon: ':warning:'
-      path: lib/segment/RangeModeQuery.cpp
-      title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
     - icon: ':heavy_check_mark:'
       path: lib/segment/Rbst.cpp
       title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
@@ -321,6 +323,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
       title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
+  - name: test/data-structure/range-query
+    pages:
+    - icon: ':x:'
+      path: test/data-structure/range-query/RangeInversionQuery.test.cpp
+      title: test/data-structure/range-query/RangeInversionQuery.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
@@ -527,9 +534,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/LiChaoTree-segment.test.cpp
       title: test/segment/LiChaoTree-segment.test.cpp
-    - icon: ':x:'
-      path: test/segment/RangeInversionQuery.test.cpp
-      title: test/segment/RangeInversionQuery.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment/Rbst-get.test.cpp
       title: test/segment/Rbst-get.test.cpp
