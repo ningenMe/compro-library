@@ -15,12 +15,12 @@ template<class Operator> class DinamicSegmentTree {
     
     i64 length;
     Node *root;
-	void print(Node *node) {
-		if (node==nullptr) return;
-		print(node->left);
-		cout << node->val << " ";
-		print(node->right);
-	}
+    void print(Node *node) {
+        if (node==nullptr) return;
+        print(node->left);
+        cout << node->val << " ";
+        print(node->right);
+    }
 public:
 
     //unitで初期化
@@ -78,11 +78,11 @@ public:
         return val;
     }
 
-	void print() {
-		cout << "{";
-		print(this->root);
-		cout << "}" << endl;
-	}
+    void print() {
+        cout << "{";
+        print(this->root);
+        cout << "}" << endl;
+    }
 };
 
 //一点加算 区間総和
