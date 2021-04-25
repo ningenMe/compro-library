@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/segment/DinamicSegmentTree.cpp
-    title: "DinamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\u30BB\
+    path: lib/segment/DynamicSegmentTree.cpp
+    title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\u30BB\
       \u30B0\u30E1\u30F3\u30C8\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -18,18 +18,18 @@ data:
   bundledCode: "#line 1 \"test/segment/DynamicSegmentTree-rsq.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <stack>\nusing namespace std;\n\
-    #line 1 \"lib/segment/DinamicSegmentTree.cpp\"\n/*\n * @title DinamicSegmentTree\
+    #line 1 \"lib/segment/DynamicSegmentTree.cpp\"\n/*\n * @title DynamicSegmentTree\
     \ - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\u30BB\u30B0\u30E1\u30F3\u30C8\
-    \u6728\n * @docs md/segment/DinamicSegmentTree.md\n */\ntemplate<class Operator>\
-    \ class DinamicSegmentTree {\n    using TypeNode = typename Operator::TypeNode;\
+    \u6728\n * @docs md/segment/DynamicSegmentTree.md\n */\ntemplate<class Operator>\
+    \ class DynamicSegmentTree {\n    using TypeNode = typename Operator::TypeNode;\
     \ \n    using i64 = long long;\n\n    struct Node{\n        Node *left, *right;\n\
     \        TypeNode val;\n        i64 l,r;\n        Node(i64 l,i64 r):left(nullptr),right(nullptr),val(Operator::unit_node),l(l),r(r)\
     \ {}\n    };\n    \n    i64 length;\n    Node *root;\n    void print(Node *node)\
     \ {\n        if (node==nullptr) return;\n        print(node->left);\n        cout\
     \ << node->val << \" \";\n        print(node->right);\n    }\npublic:\n\n    //unit\u3067\
-    \u521D\u671F\u5316\n    DinamicSegmentTree(const i64 num) {\n        for (length\
+    \u521D\u671F\u5316\n    DynamicSegmentTree(const i64 num) {\n        for (length\
     \ = 1; length <= num; length *= 2);\n        root = new Node(0,length);\n    }\n\
-    \    ~DinamicSegmentTree() {\n        delete root;\n        root = nullptr;\n\
+    \    ~DynamicSegmentTree() {\n        delete root;\n        root = nullptr;\n\
     \    }\n    \n    //[idx,idx+1)\n    void update(i64 idx, const TypeNode var)\
     \ {\n        if(idx < 0 || length <= idx) return;\n        Node *node = root;\n\
     \        node->val = Operator::func_merge(node->val,var);\n\n        i64 l = 0,\
@@ -54,25 +54,25 @@ data:
     \ TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n    inline static constexpr\
     \ TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}\n};\n#line 9 \"test/segment/DynamicSegmentTree-rsq.test.cpp\"\
     \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int len\
-    \ = 500000;\n    DinamicSegmentTree<NodeSumPointAdd<long long>> dseg(len);\n \
+    \ = 500000;\n    DynamicSegmentTree<NodeSumPointAdd<long long>> dseg(len);\n \
     \   int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i) {\n        int a; cin >>\
     \ a;\n        dseg.update(i,a);\n    }\n    while(Q--) {\n        int l,r; cin\
     \ >> l >> r;\n        cout << dseg.get(l,r) << endl;\n    }\n    return 0;\n\n\
     }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n\
     #include <vector>\n#include <iostream>\n#include <cassert>\n#include <stack>\n\
-    using namespace std;\n#include \"../../lib/segment/DinamicSegmentTree.cpp\"\n\n\
+    using namespace std;\n#include \"../../lib/segment/DynamicSegmentTree.cpp\"\n\n\
     int main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int len = 500000;\n\
-    \    DinamicSegmentTree<NodeSumPointAdd<long long>> dseg(len);\n    int N,Q; cin\
+    \    DynamicSegmentTree<NodeSumPointAdd<long long>> dseg(len);\n    int N,Q; cin\
     \ >> N >> Q;\n    for(int i=0;i<N;++i) {\n        int a; cin >> a;\n        dseg.update(i,a);\n\
     \    }\n    while(Q--) {\n        int l,r; cin >> l >> r;\n        cout << dseg.get(l,r)\
     \ << endl;\n    }\n    return 0;\n\n}"
   dependsOn:
-  - lib/segment/DinamicSegmentTree.cpp
+  - lib/segment/DynamicSegmentTree.cpp
   isVerificationFile: true
   path: test/segment/DynamicSegmentTree-rsq.test.cpp
   requiredBy: []
-  timestamp: '2021-04-25 09:12:25+09:00'
+  timestamp: '2021-04-25 09:38:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment/DynamicSegmentTree-rsq.test.cpp

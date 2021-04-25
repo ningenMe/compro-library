@@ -128,12 +128,12 @@ data:
       title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\
         \u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
-      path: lib/segment/DinamicSegmentTree.cpp
-      title: "DinamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
-        \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':heavy_check_mark:'
       path: lib/segment/DisjointSparseTable.cpp
       title: DisjointSparseTable
+    - icon: ':heavy_check_mark:'
+      path: lib/segment/DynamicSegmentTree.cpp
+      title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
+        \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
       path: lib/segment/LazySegmentTree.cpp
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\

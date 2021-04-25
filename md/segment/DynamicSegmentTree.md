@@ -17,7 +17,7 @@ template<class T> struct NodeSumPointAdd {
 - モノイドのクラスは、get,updateに対する演算と単位元を必要とする。
 
 ### コンストラクタ
-- SegmentTree(const size_t num)
+- DynamicSegmentTree(const size_t num)
   - 単位元`unit_node`で初期化
   - $O(N)$
   - num:要素数(この大きさが、クエリの区間より大きくないといけない)
