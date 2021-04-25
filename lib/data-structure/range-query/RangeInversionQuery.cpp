@@ -61,7 +61,7 @@ public:
                 {
                     long long inv = 0;
                     for(int j=r-1;l<=j;--j) {
-                        inv += bit.get(compressed[j]);
+                        inv += bit.fold(compressed[j]);
                         suffix_inv[j]=inv;
                         bit.operate(compressed[j],1);
                     }
@@ -108,7 +108,7 @@ public:
     }
     //query [l,r)
     //return {freq,mode} ({頻度,元の配列における値}) 
-    long long get(int l, int r) {
+    long long fold(int l, int r) {
         int bl = l/B + 1, br = (r-1)/B - 1;
         long long inv = 0;
         //同じbucketにl,rがあるとき

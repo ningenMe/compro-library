@@ -18,7 +18,7 @@ int main(void){
     RangeInversionQuery<long long> riq(A);
     while(Q--) {
         int l,r; cin >> l >> r;
-        long long inv = riq.get(l,r);
+        long long inv = riq.fold(l,r);
         cout << inv << "\n";
     }
 }
