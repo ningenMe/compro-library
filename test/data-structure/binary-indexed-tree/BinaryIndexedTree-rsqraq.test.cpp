@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cassert>
 using namespace std;
-#include "../../lib/segment/BinaryIndexedTree.cpp"
+#include "../../lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp"
 
 int main(void){
     int N; cin >> N;

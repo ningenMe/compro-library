@@ -1,6 +1,6 @@
 /*
  * @title BinaryIndexedTreeOffline2D - BIT
- * @docs md/segment/BinaryIndexedTreeOffline2D.md
+ * @docs md/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.md
  */
 template<class Abel> class BinaryIndexedTreeOffline2D {
     using TypeNode = typename Abel::TypeNode;

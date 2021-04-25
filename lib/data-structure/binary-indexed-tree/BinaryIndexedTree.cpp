@@ -1,6 +1,6 @@
 /*
  * @title BinaryIndexedTree - BIT
- * @docs md/segment/BinaryIndexedTree.md
+ * @docs md/data-structure/binary-indexed-tree/BinaryIndexedTree.md
  */
 template<class Operator> class BinaryIndexedTree {
 	using TypeNode = typename Operator::TypeNode;
