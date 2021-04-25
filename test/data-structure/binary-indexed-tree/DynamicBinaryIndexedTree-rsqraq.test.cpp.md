@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp
     title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/operator/AbelPrefixSumPointAdd.cpp
     title: AbelPrefixSumPointAdd
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/789
@@ -38,7 +38,7 @@ data:
     \ fold\n    TypeNode fold(i64 idx) {\n        TypeNode ret = Abel::unit_node;\n\
     \        for (idx = min(length,idx); idx > 0; idx -= idx & -idx) ret = Abel::func_fold(ret,node[idx]);\n\
     \        return ret;\n    }\n\n    //[l,r) fold\n    TypeNode fold(i64 l, i64\
-    \ r) {\n        return Abel::func_node_inv(fold(r),fold(l));\n    }\n\n    void\
+    \ r) {\n        return Abel::func_fold_inv(fold(r),fold(l));\n    }\n\n    void\
     \ print() {\n        cout << \"{ \" << fold(1);\n        for(int i = 1; i < length;\
     \ ++i) cout << \", \" << fold(i+1);\n        cout << \" }\" << endl;\n    }\n\
     };\n#line 10 \"test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp\"\
@@ -62,8 +62,8 @@ data:
   isVerificationFile: true
   path: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 08:42:28+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-04-26 08:46:38+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
 layout: document
