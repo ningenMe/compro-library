@@ -487,8 +487,11 @@ data:
       path: test/segment/BinaryIndexedTree-rsqraq.test.cpp
       title: test/segment/BinaryIndexedTree-rsqraq.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/segment/BinaryIndexedTreeOffline2D.test.cpp
-      title: test/segment/BinaryIndexedTreeOffline2D.test.cpp
+      path: test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
+      title: test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/BinaryIndexedTreeOffline2D-2.test.cpp
+      title: test/segment/BinaryIndexedTreeOffline2D-2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment/BinaryTrie-set-xor-min.test.cpp
       title: test/segment/BinaryTrie-set-xor-min.test.cpp

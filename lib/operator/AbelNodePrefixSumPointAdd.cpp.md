@@ -4,8 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/segment/BinaryIndexedTreeOffline2D.test.cpp
-    title: test/segment/BinaryIndexedTreeOffline2D.test.cpp
+    path: test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
+    title: test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/segment/BinaryIndexedTreeOffline2D-2.test.cpp
+    title: test/segment/BinaryIndexedTreeOffline2D-2.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -33,7 +36,8 @@ data:
   timestamp: '2021-04-26 07:42:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment/BinaryIndexedTreeOffline2D.test.cpp
+  - test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
+  - test/segment/BinaryIndexedTreeOffline2D-2.test.cpp
 documentation_of: lib/operator/AbelNodePrefixSumPointAdd.cpp
 layout: document
 redirect_from:

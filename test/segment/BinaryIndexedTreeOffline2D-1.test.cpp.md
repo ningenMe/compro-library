@@ -17,7 +17,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/rectangle_sum
     links:
     - https://judge.yosupo.jp/problem/rectangle_sum
-  bundledCode: "#line 1 \"test/segment/BinaryIndexedTreeOffline2D.test.cpp\"\n#define\
+  bundledCode: "#line 1 \"test/segment/BinaryIndexedTreeOffline2D-1.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/rectangle_sum\"\n\n#include <vector>\n\
     #include <iostream>\n#include <stack>\n#include <algorithm>\nusing namespace std;\n\
     #line 1 \"lib/operator/AbelNodePrefixSumPointAdd.cpp\"\n/*\n * @title AbelNodePrefixSumPointAdd\n\
@@ -60,7 +60,7 @@ data:
     \            ret = Abel::func_fold(ret,node[x].fold(y));\n        }\n        return\
     \ ret;\n    }\n\n    // [l,r),[d,u) fold\n    TypeNode fold(i64 l, i64 r, i64\
     \ d, i64 u) {\n        return Abel::func_fold_inv(Abel::func_fold(fold(r,u),fold(l,d)),Abel::func_fold(fold(r,d),fold(l,u)));\n\
-    \    }\n};\n#line 10 \"test/segment/BinaryIndexedTreeOffline2D.test.cpp\"\n\n\
+    \    }\n};\n#line 10 \"test/segment/BinaryIndexedTreeOffline2D-1.test.cpp\"\n\n\
     int main(void){\n    int N,Q;\n    scanf(\"%d %d\",&N,&Q);\n    vector<long long>\
     \ X(N),Y(N),W(N);\n    for(int i=0;i<N;++i) scanf(\"%d %d %d\",&X[i],&Y[i],&W[i]);\n\
     \    BinaryIndexedTreeOffline2D<AbelNodePrefixSumPointAdd<long long>> bit(X,Y);\n\
@@ -81,15 +81,15 @@ data:
   - lib/operator/AbelNodePrefixSumPointAdd.cpp
   - lib/segment/BinaryIndexedTreeOffline2D.cpp
   isVerificationFile: true
-  path: test/segment/BinaryIndexedTreeOffline2D.test.cpp
+  path: test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 07:42:27+09:00'
+  timestamp: '2021-04-26 08:04:05+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/segment/BinaryIndexedTreeOffline2D.test.cpp
+documentation_of: test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
 layout: document
 redirect_from:
-- /verify/test/segment/BinaryIndexedTreeOffline2D.test.cpp
-- /verify/test/segment/BinaryIndexedTreeOffline2D.test.cpp.html
-title: test/segment/BinaryIndexedTreeOffline2D.test.cpp
+- /verify/test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
+- /verify/test/segment/BinaryIndexedTreeOffline2D-1.test.cpp.html
+title: test/segment/BinaryIndexedTreeOffline2D-1.test.cpp
 ---
