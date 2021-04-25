@@ -482,8 +482,11 @@ data:
       path: test/segment/DisjointSparseTable.test.cpp
       title: test/segment/DisjointSparseTable.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/segment/DynamicSegmentTree-rsq.test.cpp
-      title: test/segment/DynamicSegmentTree-rsq.test.cpp
+      path: test/segment/DynamicSegmentTree-rsq-1.test.cpp
+      title: test/segment/DynamicSegmentTree-rsq-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment/DynamicSegmentTree-rsq-2.test.cpp
+      title: test/segment/DynamicSegmentTree-rsq-2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment/LazySegmentTree-rmqraq.test.cpp
       title: test/segment/LazySegmentTree-rmqraq.test.cpp

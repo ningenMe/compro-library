@@ -4,8 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/segment/DynamicSegmentTree-rsq.test.cpp
-    title: test/segment/DynamicSegmentTree-rsq.test.cpp
+    path: test/segment/DynamicSegmentTree-rsq-1.test.cpp
+    title: test/segment/DynamicSegmentTree-rsq-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/segment/DynamicSegmentTree-rsq-2.test.cpp
+    title: test/segment/DynamicSegmentTree-rsq-2.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -91,7 +94,8 @@ data:
   timestamp: '2021-04-25 09:38:40+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment/DynamicSegmentTree-rsq.test.cpp
+  - test/segment/DynamicSegmentTree-rsq-1.test.cpp
+  - test/segment/DynamicSegmentTree-rsq-2.test.cpp
 documentation_of: lib/segment/DynamicSegmentTree.cpp
 layout: document
 redirect_from:

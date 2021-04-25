@@ -15,7 +15,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
     links:
     - https://judge.yosupo.jp/problem/static_range_sum
-  bundledCode: "#line 1 \"test/segment/DynamicSegmentTree-rsq.test.cpp\"\n#define\
+  bundledCode: "#line 1 \"test/segment/DynamicSegmentTree-rsq-1.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <stack>\nusing namespace std;\n\
     #line 1 \"lib/segment/DynamicSegmentTree.cpp\"\n/*\n * @title DynamicSegmentTree\
@@ -52,7 +52,7 @@ data:
     \u7DCF\u548C\ntemplate<class T> struct NodeSumPointAdd {\n    using TypeNode =\
     \ T;\n    inline static constexpr TypeNode unit_node = 0;\n    inline static constexpr\
     \ TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n    inline static constexpr\
-    \ TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}\n};\n#line 9 \"test/segment/DynamicSegmentTree-rsq.test.cpp\"\
+    \ TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}\n};\n#line 9 \"test/segment/DynamicSegmentTree-rsq-1.test.cpp\"\
     \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int len\
     \ = 500000;\n    DynamicSegmentTree<NodeSumPointAdd<long long>> dseg(len);\n \
     \   int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i) {\n        int a; cin >>\
@@ -70,15 +70,15 @@ data:
   dependsOn:
   - lib/segment/DynamicSegmentTree.cpp
   isVerificationFile: true
-  path: test/segment/DynamicSegmentTree-rsq.test.cpp
+  path: test/segment/DynamicSegmentTree-rsq-1.test.cpp
   requiredBy: []
-  timestamp: '2021-04-25 09:38:40+09:00'
+  timestamp: '2021-04-25 13:58:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/segment/DynamicSegmentTree-rsq.test.cpp
+documentation_of: test/segment/DynamicSegmentTree-rsq-1.test.cpp
 layout: document
 redirect_from:
-- /verify/test/segment/DynamicSegmentTree-rsq.test.cpp
-- /verify/test/segment/DynamicSegmentTree-rsq.test.cpp.html
-title: test/segment/DynamicSegmentTree-rsq.test.cpp
+- /verify/test/segment/DynamicSegmentTree-rsq-1.test.cpp
+- /verify/test/segment/DynamicSegmentTree-rsq-1.test.cpp.html
+title: test/segment/DynamicSegmentTree-rsq-1.test.cpp
 ---
