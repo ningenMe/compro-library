@@ -1,5 +1,5 @@
 /*
- * @title BinaryIndexedTreeOffline2D - BIT
+ * @title BinaryIndexedTreeOffline2D - オフライン2次元BIT
  * @docs md/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.md
  */
 template<class Abel> class BinaryIndexedTreeOffline2D {
