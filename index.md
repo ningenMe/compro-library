@@ -116,7 +116,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: lib/segment/BinaryIndexedTree.cpp
-      title: BinaryIndexedTree
+      title: BinaryIndexedTree - BIT
     - icon: ':heavy_check_mark:'
       path: lib/segment/BinaryTrie.cpp
       title: BinaryTrie
@@ -132,7 +132,7 @@ data:
       title: DisjointSparseTable
     - icon: ':heavy_check_mark:'
       path: lib/segment/DynamicBinaryIndexedTree.cpp
-      title: DynamicBinaryIndexedTree
+      title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
     - icon: ':heavy_check_mark:'
       path: lib/segment/DynamicSegmentTree.cpp
       title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\

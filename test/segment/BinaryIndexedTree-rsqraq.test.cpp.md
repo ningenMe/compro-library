@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/segment/BinaryIndexedTree.cpp
-    title: BinaryIndexedTree
+    title: BinaryIndexedTree - BIT
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,7 +17,7 @@ data:
   bundledCode: "#line 1 \"test/segment/BinaryIndexedTree-rsqraq.test.cpp\"\n#define\
     \ PROBLEM \"https://yukicoder.me/problems/no/742\"\n\n#include <vector>\n#include\
     \ <iostream>\n#include <cassert>\nusing namespace std;\n#line 1 \"lib/segment/BinaryIndexedTree.cpp\"\
-    \n/*\n * @title BinaryIndexedTree\n * @docs md/segment/BinaryIndexedTree.md\n\
+    \n/*\n * @title BinaryIndexedTree - BIT\n * @docs md/segment/BinaryIndexedTree.md\n\
     \ */\ntemplate<class Operator> class BinaryIndexedTree {\n\tusing TypeNode = typename\
     \ Operator::TypeNode;\n\tsize_t depth;         \n\tsize_t length;\n\tsize_t num;\n\
     \tvector<TypeNode> node;\npublic:\n\t\n\t//[0,N) constructed, inplace [0,1) +\
@@ -62,7 +62,7 @@ data:
   isVerificationFile: true
   path: test/segment/BinaryIndexedTree-rsqraq.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 17:01:19+09:00'
+  timestamp: '2021-04-25 16:57:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment/BinaryIndexedTree-rsqraq.test.cpp

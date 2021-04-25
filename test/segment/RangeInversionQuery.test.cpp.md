@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/segment/BinaryIndexedTree.cpp
-    title: BinaryIndexedTree
+    title: BinaryIndexedTree - BIT
   - icon: ':heavy_check_mark:'
     path: lib/segment/RangeInversionQuery.cpp
     title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
@@ -21,7 +21,7 @@ data:
     \ \"https://judge.yosupo.jp/problem/static_range_inversions_query\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n#include\
     \ <cmath>\nusing namespace std;\n#line 1 \"lib/segment/BinaryIndexedTree.cpp\"\
-    \n/*\n * @title BinaryIndexedTree\n * @docs md/segment/BinaryIndexedTree.md\n\
+    \n/*\n * @title BinaryIndexedTree - BIT\n * @docs md/segment/BinaryIndexedTree.md\n\
     \ */\ntemplate<class Operator> class BinaryIndexedTree {\n\tusing TypeNode = typename\
     \ Operator::TypeNode;\n\tsize_t depth;         \n\tsize_t length;\n\tsize_t num;\n\
     \tvector<TypeNode> node;\npublic:\n\t\n\t//[0,N) constructed, inplace [0,1) +\
@@ -138,7 +138,7 @@ data:
   isVerificationFile: true
   path: test/segment/RangeInversionQuery.test.cpp
   requiredBy: []
-  timestamp: '2021-04-23 18:33:08+09:00'
+  timestamp: '2021-04-25 16:57:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment/RangeInversionQuery.test.cpp
