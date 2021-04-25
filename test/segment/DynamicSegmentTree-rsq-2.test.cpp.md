@@ -1,15 +1,15 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/segment/DynamicSegmentTree.cpp
     title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\u30BB\
       \u30B0\u30E1\u30F3\u30C8\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/789
@@ -51,25 +51,25 @@ data:
     \ TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n    inline static constexpr\
     \ TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}\n};\n#line 9 \"test/segment/DynamicSegmentTree-rsq-2.test.cpp\"\
     \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    DynamicSegmentTree<NodeSumPointAdd<long\
-    \ long>> seg(1000000010);\n    int N; cin >> N;\n    long long ans = 0;\n    while(N--)\
-    \ {\n        int q,l,r; cin >> q >> l >> r;\n        if(q==0) seg.update(l,r);\n\
-    \        else ans += seg.get(l,r+1);\n    }\n    cout << ans << endl;\n    return\
+    \ long>> seg;\n    int N; cin >> N;\n    long long ans = 0;\n    while(N--) {\n\
+    \        int q,l,r; cin >> q >> l >> r;\n        if(q==0) seg.update(l,r);\n \
+    \       else ans += seg.get(l,r+1);\n    }\n    cout << ans << endl;\n    return\
     \ 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/789\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <stack>\nusing namespace std;\n\
     #include \"../../lib/segment/DynamicSegmentTree.cpp\"\n\nint main(void){\n   \
     \ cin.tie(0);ios::sync_with_stdio(false);\n    DynamicSegmentTree<NodeSumPointAdd<long\
-    \ long>> seg(1000000010);\n    int N; cin >> N;\n    long long ans = 0;\n    while(N--)\
-    \ {\n        int q,l,r; cin >> q >> l >> r;\n        if(q==0) seg.update(l,r);\n\
-    \        else ans += seg.get(l,r+1);\n    }\n    cout << ans << endl;\n    return\
+    \ long>> seg;\n    int N; cin >> N;\n    long long ans = 0;\n    while(N--) {\n\
+    \        int q,l,r; cin >> q >> l >> r;\n        if(q==0) seg.update(l,r);\n \
+    \       else ans += seg.get(l,r+1);\n    }\n    cout << ans << endl;\n    return\
     \ 0;\n}"
   dependsOn:
   - lib/segment/DynamicSegmentTree.cpp
   isVerificationFile: true
   path: test/segment/DynamicSegmentTree-rsq-2.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 04:52:40+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-04-26 04:55:54+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment/DynamicSegmentTree-rsq-2.test.cpp
 layout: document

@@ -133,7 +133,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/DynamicBinaryIndexedTree.cpp
       title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/segment/DynamicSegmentTree.cpp
       title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
         \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -487,10 +487,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/DynamicBinaryIndexedTree-rsqraq.test.cpp
       title: test/segment/DynamicBinaryIndexedTree-rsqraq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment/DynamicSegmentTree-rsq-1.test.cpp
       title: test/segment/DynamicSegmentTree-rsq-1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment/DynamicSegmentTree-rsq-2.test.cpp
       title: test/segment/DynamicSegmentTree-rsq-2.test.cpp
     - icon: ':heavy_check_mark:'

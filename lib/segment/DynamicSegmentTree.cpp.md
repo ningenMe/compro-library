@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment/DynamicSegmentTree-rsq-1.test.cpp
     title: test/segment/DynamicSegmentTree-rsq-1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment/DynamicSegmentTree-rsq-2.test.cpp
     title: test/segment/DynamicSegmentTree-rsq-2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/segment/DynamicSegmentTree.md
     document_title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\
@@ -85,7 +85,7 @@ data:
   path: lib/segment/DynamicSegmentTree.cpp
   requiredBy: []
   timestamp: '2021-04-26 04:52:40+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment/DynamicSegmentTree-rsq-1.test.cpp
   - test/segment/DynamicSegmentTree-rsq-2.test.cpp
@@ -116,10 +116,8 @@ template<class T> struct NodeSumPointAdd {
 - モノイドのクラスは、get,updateに対する演算と単位元を必要とする。
 
 ### コンストラクタ
-- DynamicSegmentTree(const size_t num)
+- DynamicSegmentTree()
   - 単位元`unit_node`で初期化
-  - $O(N)$
-  - num:要素数(この大きさが、クエリの区間より大きくないといけない)
 
 ### メソッド
 - void update(size_t idx, const TypeNode var)
