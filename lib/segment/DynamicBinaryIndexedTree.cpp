@@ -5,17 +5,15 @@
 template<class Operator> class DynamicBinaryIndexedTree {
     using TypeNode = typename Operator::TypeNode;
     using i64 = long long;
-    size_t depth;         
     i64 length;
-    i64 num;
 
     unordered_map<i64,TypeNode> node;
 public:
     
     //[0,N) constructed, inplace [0,1) + [1,N+1)
     //you can ignore inplace offset
-    DynamicBinaryIndexedTree(const i64 num) : num(num) {
-        for (depth = 1,length = 1; length < num; depth++,length *= 2);
+    DynamicBinaryIndexedTree(const i64 num) {
+        for (length = 1; length < num; length *= 2);
     }
  
     //[idx,idx+1) update 
