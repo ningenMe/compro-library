@@ -1,5 +1,5 @@
 /*
- * @title BinaryIndexedTree
+ * @title BinaryIndexedTree - BIT
  * @docs md/segment/BinaryIndexedTree.md
  */
 template<class Operator> class BinaryIndexedTree {

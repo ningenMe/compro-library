@@ -1,5 +1,5 @@
 /*
- * @title DynamicBinaryIndexedTree
+ * @title DynamicBinaryIndexedTree - 動的BIT
  * @docs md/segment/DynamicBinaryIndexedTree.md
  */
 template<class Operator> class DynamicBinaryIndexedTree {
