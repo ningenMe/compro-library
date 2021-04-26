@@ -6,6 +6,7 @@
 using namespace std;
 #include "../../../lib/data-structure/segment-tree/SegmentTree.cpp"
 #include "../../../lib/util/ModInt.cpp"
+#include "../../../lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp"
 
 using modint = ModInt<998244353>;
 int main(){
@@ -15,14 +16,14 @@ int main(){
     for(int i = 0; i < N; ++i) {
         cin >> A[i].first >> A[i].second;
     }
-    SegmentTree<NodeCompositePointUpdate<pair<modint,modint>>> seg(A);
+    SegmentTree<MonoidRangeCompositePointUpdate<pair<modint,modint>>> seg(A);
     while(Q--){
         long long q,l,r,x; cin >> q >> l >> r >> x;
         if(q) {
-			auto p = seg.get(l,r);
+			auto p = seg.fold(l,r);
 			cout << p.first*x+p.second << endl;
 		}
-        else seg.update(l,{r,x});
+        else seg.operate(l,{r,x});
     }
 }
 
