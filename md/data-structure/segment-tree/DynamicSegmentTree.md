@@ -21,13 +21,13 @@ template<class T> struct NodeSumPointAdd {
   - 単位元`unit_node`で初期化
 
 ### メソッド
-- void update(size_t idx, const TypeNode var)
-  - `idx`番目のデータに値`var`を与える
+- void operate(size_t idx, const TypeNode var)
+  - `idx`番目のデータに値`var`を作用させる
   - $O(logN)$
   - idx:添字 0-indexed
   - var:値
   - 更新や加算などが乗る
-- TypeNode get(int l, int r)
+- TypeNode fold(int l, int r)
   - 半開区間`[l,r)`をfoldした値を返す
   - $O(logN)$
   - l,r:添字 0-indexed
