@@ -4,6 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+    title: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+    title: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/Prime-miller-rabin.test.cpp
     title: test/math/Prime-miller-rabin.test.cpp
   - icon: ':heavy_check_mark:'
@@ -59,6 +65,8 @@ data:
   verifiedWith:
   - test/math/Prime-rho.test.cpp
   - test/math/Prime-miller-rabin.test.cpp
+  - test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+  - test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
 documentation_of: lib/math/Gcd.cpp
 layout: document
 redirect_from:

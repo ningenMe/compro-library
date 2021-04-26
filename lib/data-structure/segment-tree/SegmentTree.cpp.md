@@ -4,11 +4,20 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+    title: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
+    title: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
     title: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
     title: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+    title: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -165,6 +174,9 @@ data:
   verifiedWith:
   - test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
   - test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
+  - test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+  - test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
+  - test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
 documentation_of: lib/data-structure/segment-tree/SegmentTree.cpp
 layout: document
 redirect_from:

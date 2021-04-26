@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
+    title: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/CombinationMod-factorial.test.cpp
     title: test/math/CombinationMod-factorial.test.cpp
   - icon: ':heavy_check_mark:'
@@ -150,6 +153,7 @@ data:
   - test/math/NumberTheoreticalTransform-conv-fft.test.cpp
   - test/math/Matrix-det.test.cpp
   - test/math/FormalPowerSeries-exp.test.cpp
+  - test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
   - test/util/ModInt.test.cpp
 documentation_of: lib/util/ModInt.cpp
 layout: document

@@ -377,10 +377,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
       title: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
       title: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
       title: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
     - icon: ':heavy_check_mark:'
@@ -389,7 +389,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
       title: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
       title: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
     - icon: ':heavy_check_mark:'
