@@ -23,13 +23,13 @@ data:
     using namespace std;\nusing int128  = __int128_t;\nusing int64   = long long;\n\
     using int32   = int;\nusing uint128 = __uint128_t;\nusing uint64  = unsigned long\
     \ long;\nusing uint32  = unsigned int;\n\n#line 1 \"lib/data-structure/data-structure/BitVector.cpp\"\
-    \n/*\n * @title BitVector\n * @docs md/segment/BitVector.md\n */\nclass BitVector{\n\
-    \    inline static constexpr size_t BIT_BLOCK_SIZE = 5;\n    inline static constexpr\
-    \ size_t BIT_BLOCK_NUM  = 1<<BIT_BLOCK_SIZE;\n    inline static constexpr uint32\
-    \ popcount(uint32 x) {return __builtin_popcount(x);}\n    inline static constexpr\
-    \ uint32 popcount(uint64 x) {return __builtin_popcountll(x);}\n\n    vector<uint32>\
-    \ vec, acc;\n    bool is_builded = false;\npublic:\n    BitVector(uint32 N) {\n\
-    \        uint32 tmp = (N + BIT_BLOCK_NUM-1) / BIT_BLOCK_NUM;\n        vec.assign(tmp,\
+    \n/*\n * @title BitVector\n * @docs md/data-structure/data-structure/BitVector.md\n\
+    \ */\nclass BitVector{\n    inline static constexpr size_t BIT_BLOCK_SIZE = 5;\n\
+    \    inline static constexpr size_t BIT_BLOCK_NUM  = 1<<BIT_BLOCK_SIZE;\n    inline\
+    \ static constexpr uint32 popcount(uint32 x) {return __builtin_popcount(x);}\n\
+    \    inline static constexpr uint32 popcount(uint64 x) {return __builtin_popcountll(x);}\n\
+    \n    vector<uint32> vec, acc;\n    bool is_builded = false;\npublic:\n    BitVector(uint32\
+    \ N) {\n        uint32 tmp = (N + BIT_BLOCK_NUM-1) / BIT_BLOCK_NUM;\n        vec.assign(tmp,\
     \ 0);\n        acc.assign(tmp, 0);\n    }\n    void build() {\n        for (size_t\
     \ i = 0,sum = 0; i < acc.size(); ++i) acc[i] = (sum += popcount(vec[i]) );\n \
     \       is_builded = true;\n    }\n    //[0,r) count of bit\n    uint32 rank(uint32\
@@ -42,24 +42,25 @@ data:
     \ &= ~(1U << (l & (BIT_BLOCK_NUM-1)));\n    }\n    //[l,l+1)\n    bool operator[](uint32\
     \ l) const { \n        assert(is_builded);\n        return ((vec[l >> BIT_BLOCK_SIZE]\
     \ >> (l & (BIT_BLOCK_NUM-1))) & 1); \n    }\n};\n#line 1 \"lib/data-structure/data-structure/WaveletMatrix.cpp\"\
-    \n/*\n * @title WaveletMatrix\n * @docs md/segment/WaveletMatrix.md\n */\ntemplate<class\
-    \ T> class WaveletMatrix{\n    size_t length;\n    size_t depth;\n    vector<BitVector>\
-    \ multi_bit_vector;\n    vector<uint32> sum_bit_off;\n    vector<T> vec;\n   \
-    \ vector<uint32> zarts(const vector<T>& ar) {\n        vector<uint32> ord(ar.size()),compressed(ar.size());\n\
-    \        iota(ord.begin(),ord.end(),0);\n        sort(ord.begin(),ord.end(),[&](size_t\
-    \ l, size_t r){return ar[l]<ar[r];});\n        uint32 cnt = 0;\n        compressed.front()\
-    \ = 0;\n        T pre = ar[ord.front()];\n        for(size_t i=1;i<ord.size();++i)\
-    \ {\n            size_t j=ord[i];\n            if(pre < ar[j]) ++cnt;\n      \
-    \      compressed[j] = cnt;\n            pre = ar[j];\n        }\n        return\
-    \ compressed;\n    }\npublic:\n    WaveletMatrix(const vector<T> &arg_vec): vec(arg_vec)\
-    \ {\n        length = vec.size();\n        auto compressed = zarts(vec);\n   \
-    \     sort(vec.begin(),vec.end());\n        vec.erase(unique(vec.begin(),vec.end()),vec.end());\n\
-    \        uint32 maxi = *max_element(compressed.begin(),compressed.end()) + 1;\n\
-    \        for(depth=0; (1<<depth) <= maxi; ++depth );\n\n        multi_bit_vector.assign(depth,\
-    \ BitVector(length));\n        sum_bit_off.assign(depth, 0UL);\n        vector<uint32>\
-    \ prev = compressed, next = prev;\n        for(uint32 j = 0; j < depth; ++j,swap(prev,next))\
-    \ {\n            uint32 bit = 1UL << (depth - j - 1);\n            for(uint32\
-    \ i = 0; i < length; ++i) sum_bit_off[j] += !(prev[i] & bit);\n\n            uint32\
+    \n/*\n * @title WaveletMatrix\n * @docs md/data-structure/data-structure/WaveletMatrix.md\n\
+    \ */\ntemplate<class T> class WaveletMatrix{\n    size_t length;\n    size_t depth;\n\
+    \    vector<BitVector> multi_bit_vector;\n    vector<uint32> sum_bit_off;\n  \
+    \  vector<T> vec;\n    vector<uint32> zarts(const vector<T>& ar) {\n        vector<uint32>\
+    \ ord(ar.size()),compressed(ar.size());\n        iota(ord.begin(),ord.end(),0);\n\
+    \        sort(ord.begin(),ord.end(),[&](size_t l, size_t r){return ar[l]<ar[r];});\n\
+    \        uint32 cnt = 0;\n        compressed.front() = 0;\n        T pre = ar[ord.front()];\n\
+    \        for(size_t i=1;i<ord.size();++i) {\n            size_t j=ord[i];\n  \
+    \          if(pre < ar[j]) ++cnt;\n            compressed[j] = cnt;\n        \
+    \    pre = ar[j];\n        }\n        return compressed;\n    }\npublic:\n   \
+    \ WaveletMatrix(const vector<T> &arg_vec): vec(arg_vec) {\n        length = vec.size();\n\
+    \        auto compressed = zarts(vec);\n        sort(vec.begin(),vec.end());\n\
+    \        vec.erase(unique(vec.begin(),vec.end()),vec.end());\n        uint32 maxi\
+    \ = *max_element(compressed.begin(),compressed.end()) + 1;\n        for(depth=0;\
+    \ (1<<depth) <= maxi; ++depth );\n\n        multi_bit_vector.assign(depth, BitVector(length));\n\
+    \        sum_bit_off.assign(depth, 0UL);\n        vector<uint32> prev = compressed,\
+    \ next = prev;\n        for(uint32 j = 0; j < depth; ++j,swap(prev,next)) {\n\
+    \            uint32 bit = 1UL << (depth - j - 1);\n            for(uint32 i =\
+    \ 0; i < length; ++i) sum_bit_off[j] += !(prev[i] & bit);\n\n            uint32\
     \ idx_bit_off = 0, idx_bit_on = sum_bit_off[j];\n            for(uint32 i = 0;\
     \ i < length; ++i) {\n                if (prev[i] & bit) multi_bit_vector[j].update(i,1),\
     \ next[idx_bit_on++] = prev[i];\n                else next[idx_bit_off++] = prev[i];\n\
@@ -143,7 +144,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/data-structure/WaveletMatrix-quantile-2.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 18:11:15+09:00'
+  timestamp: '2021-04-26 22:51:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/data-structure/WaveletMatrix-quantile-2.test.cpp

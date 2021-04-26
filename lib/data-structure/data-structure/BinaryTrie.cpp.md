@@ -10,18 +10,19 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/segment/BinaryTrie.md
+    _deprecated_at_docs: md/data-structure/data-structure/BinaryTrie.md
     document_title: BinaryTrie
     links: []
   bundledCode: "#line 1 \"lib/data-structure/data-structure/BinaryTrie.cpp\"\n/*\n\
-    \ * @title BinaryTrie\n * @docs md/segment/BinaryTrie.md\n */\ntemplate<class\
-    \ Operator, int bit=60> class BinaryTrie{\n\tusing TypeNode = typename Operator::TypeNode;\
-    \ \npublic:\n\tvector<TypeNode> node;\n\tvector<vector<int>> ch;\n\tBinaryTrie():node(1),ch(1,vector<int>(2,-1)){}\n\
-    \tvoid operate(long long idx, const TypeNode var) {\n\t\tint curr=0;\n\t\tstack<int>\
-    \ st;\n\t\tfor(int i=bit-1; 0 <= i; --i) {\n\t\t\tst.push(curr);\n\t\t\tint f=(idx>>i)&1;\n\
-    \t\t\tif(ch[curr][f]==-1) {\n\t\t\t\tnode.push_back(Operator::unit_node);\n\t\t\
-    \t\tch.push_back(vector<int>(2,-1));\n\t\t\t\tch[curr][f] = (int)node.size()-1;\n\
-    \t\t\t}\n\t\t\tcurr = ch[curr][f];\n\t\t}\n\t\tnode[curr] = Operator::func_operate(node[curr],var);\n\
+    \ * @title BinaryTrie\n * @docs md/data-structure/data-structure/BinaryTrie.md\n\
+    \ */\ntemplate<class Operator, int bit=60> class BinaryTrie{\n\tusing TypeNode\
+    \ = typename Operator::TypeNode; \npublic:\n\tvector<TypeNode> node;\n\tvector<vector<int>>\
+    \ ch;\n\tBinaryTrie():node(1),ch(1,vector<int>(2,-1)){}\n\tvoid operate(long long\
+    \ idx, const TypeNode var) {\n\t\tint curr=0;\n\t\tstack<int> st;\n\t\tfor(int\
+    \ i=bit-1; 0 <= i; --i) {\n\t\t\tst.push(curr);\n\t\t\tint f=(idx>>i)&1;\n\t\t\
+    \tif(ch[curr][f]==-1) {\n\t\t\t\tnode.push_back(Operator::unit_node);\n\t\t\t\t\
+    ch.push_back(vector<int>(2,-1));\n\t\t\t\tch[curr][f] = (int)node.size()-1;\n\t\
+    \t\t}\n\t\t\tcurr = ch[curr][f];\n\t\t}\n\t\tnode[curr] = Operator::func_operate(node[curr],var);\n\
     \t\twhile(st.size()) {\n\t\t\tcurr = st.top(); st.pop();\n\t\t\tnode[curr]=Operator::unit_node;\n\
     \t\t\tif(ch[curr][0]!=-1)\tnode[curr] = Operator::func_fold(node[ch[curr][0]],node[curr]);\n\
     \t\t\tif(ch[curr][1]!=-1)\tnode[curr] = Operator::func_fold(node[curr],node[ch[curr][1]]);\n\
@@ -33,14 +34,15 @@ data:
     \ break;\n\t\t\tif(ch[curr][f]!=-1 && node[ch[curr][f]]) curr = ch[curr][f];\n\
     \t\t\telse curr = ch[curr][f^=1];\n\t\t\ty^=(f<<i);\n\t\t}\n\t\treturn y^x;\n\t\
     }\n};\n"
-  code: "/*\n * @title BinaryTrie\n * @docs md/segment/BinaryTrie.md\n */\ntemplate<class\
-    \ Operator, int bit=60> class BinaryTrie{\n\tusing TypeNode = typename Operator::TypeNode;\
-    \ \npublic:\n\tvector<TypeNode> node;\n\tvector<vector<int>> ch;\n\tBinaryTrie():node(1),ch(1,vector<int>(2,-1)){}\n\
-    \tvoid operate(long long idx, const TypeNode var) {\n\t\tint curr=0;\n\t\tstack<int>\
-    \ st;\n\t\tfor(int i=bit-1; 0 <= i; --i) {\n\t\t\tst.push(curr);\n\t\t\tint f=(idx>>i)&1;\n\
-    \t\t\tif(ch[curr][f]==-1) {\n\t\t\t\tnode.push_back(Operator::unit_node);\n\t\t\
-    \t\tch.push_back(vector<int>(2,-1));\n\t\t\t\tch[curr][f] = (int)node.size()-1;\n\
-    \t\t\t}\n\t\t\tcurr = ch[curr][f];\n\t\t}\n\t\tnode[curr] = Operator::func_operate(node[curr],var);\n\
+  code: "/*\n * @title BinaryTrie\n * @docs md/data-structure/data-structure/BinaryTrie.md\n\
+    \ */\ntemplate<class Operator, int bit=60> class BinaryTrie{\n\tusing TypeNode\
+    \ = typename Operator::TypeNode; \npublic:\n\tvector<TypeNode> node;\n\tvector<vector<int>>\
+    \ ch;\n\tBinaryTrie():node(1),ch(1,vector<int>(2,-1)){}\n\tvoid operate(long long\
+    \ idx, const TypeNode var) {\n\t\tint curr=0;\n\t\tstack<int> st;\n\t\tfor(int\
+    \ i=bit-1; 0 <= i; --i) {\n\t\t\tst.push(curr);\n\t\t\tint f=(idx>>i)&1;\n\t\t\
+    \tif(ch[curr][f]==-1) {\n\t\t\t\tnode.push_back(Operator::unit_node);\n\t\t\t\t\
+    ch.push_back(vector<int>(2,-1));\n\t\t\t\tch[curr][f] = (int)node.size()-1;\n\t\
+    \t\t}\n\t\t\tcurr = ch[curr][f];\n\t\t}\n\t\tnode[curr] = Operator::func_operate(node[curr],var);\n\
     \t\twhile(st.size()) {\n\t\t\tcurr = st.top(); st.pop();\n\t\t\tnode[curr]=Operator::unit_node;\n\
     \t\t\tif(ch[curr][0]!=-1)\tnode[curr] = Operator::func_fold(node[ch[curr][0]],node[curr]);\n\
     \t\t\tif(ch[curr][1]!=-1)\tnode[curr] = Operator::func_fold(node[curr],node[ch[curr][1]]);\n\
@@ -56,7 +58,7 @@ data:
   isVerificationFile: false
   path: lib/data-structure/data-structure/BinaryTrie.cpp
   requiredBy: []
-  timestamp: '2021-04-26 18:11:15+09:00'
+  timestamp: '2021-04-26 22:51:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/data-structure/BinaryTrie-set-xor-min.test.cpp

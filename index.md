@@ -40,6 +40,9 @@ data:
       path: lib/data-structure/data-structure/DisjointSparseTable.cpp
       title: DisjointSparseTable
     - icon: ':heavy_check_mark:'
+      path: lib/data-structure/data-structure/PersistentQueue.cpp
+      title: PersistentQueue
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/data-structure/Rbst.cpp
       title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
     - icon: ':heavy_check_mark:'
@@ -402,6 +405,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/data-structure/DisjointSparseTable.test.cpp
       title: test/data-structure/data-structure/DisjointSparseTable.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/data-structure/PerisitentQueue.test.cpp
+      title: test/data-structure/data-structure/PerisitentQueue.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/data-structure/Rbst-get.test.cpp
       title: test/data-structure/data-structure/Rbst-get.test.cpp

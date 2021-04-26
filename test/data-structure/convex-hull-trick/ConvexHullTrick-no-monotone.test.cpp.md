@@ -24,19 +24,19 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n#include\
     \ <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n#line\
     \ 1 \"lib/data-structure/data-structure/Rbst.cpp\"\n/*\n * @title Rbst - \u5E73\
-    \u8861\u4E8C\u5206\u63A2\u7D22\u6728\n * @docs md/segment/Rbst.md\n */\ntemplate<class\
-    \ Operator> class Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\t\
-    unsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\tunsigned\
-    \ int xor_shift() {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z; z = w;\n\
-    \t\treturn (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\t}\n\tstruct Node {\n\t\t\
-    Node *left, *right;\n\t\tTypeNode val;\n\t\tint size;\n\t\tTypeNode sum;\n\n\t\
-    \tNode() : val(Operator::unit_node), size(1), sum(Operator::unit_node) {\n\t\t\
-    \tleft = right = nullptr;\n\t\t}\n\t\tNode(TypeNode v) : val(v), size(1), sum(v)\
-    \ {\n\t\t\tleft = right = nullptr;\n\t\t}\n\t};\n\tNode* root;\n\tinline int size(Node\
-    \ *node) {\n\t\treturn node==nullptr ? 0 : node->size;\n\t}\n\tinline TypeNode\
-    \ sum(Node *node) {\n\t\treturn node==nullptr ? Operator::unit_node : node->sum;\n\
-    \t}\n\tinline Node* update(Node *node) {\n\t\tnode->size = size(node->left) +\
-    \ size(node->right) + 1;\n\t\tnode->sum = Operator::func_node(sum(node->left),sum(node->right),node->val);\n\
+    \u8861\u4E8C\u5206\u63A2\u7D22\u6728\n * @docs md/data-structure/data-structure/Rbst.md\n\
+    \ */\ntemplate<class Operator> class Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\
+    \tunsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\t\
+    unsigned int xor_shift() {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z;\
+    \ z = w;\n\t\treturn (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\t}\n\tstruct Node\
+    \ {\n\t\tNode *left, *right;\n\t\tTypeNode val;\n\t\tint size;\n\t\tTypeNode sum;\n\
+    \n\t\tNode() : val(Operator::unit_node), size(1), sum(Operator::unit_node) {\n\
+    \t\t\tleft = right = nullptr;\n\t\t}\n\t\tNode(TypeNode v) : val(v), size(1),\
+    \ sum(v) {\n\t\t\tleft = right = nullptr;\n\t\t}\n\t};\n\tNode* root;\n\tinline\
+    \ int size(Node *node) {\n\t\treturn node==nullptr ? 0 : node->size;\n\t}\n\t\
+    inline TypeNode sum(Node *node) {\n\t\treturn node==nullptr ? Operator::unit_node\
+    \ : node->sum;\n\t}\n\tinline Node* update(Node *node) {\n\t\tnode->size = size(node->left)\
+    \ + size(node->right) + 1;\n\t\tnode->sum = Operator::func_node(sum(node->left),sum(node->right),node->val);\n\
     \t\treturn node;\n\t}\n\tinline TypeNode get(Node *node, int k) {\n\t\tif (node==nullptr)\
     \ return Operator::unit_node;\n\t\tif (k == size(node->left)) return node->val;\n\
     \t\tif (k < size(node->left)) return get(node->left, k);\n\t\telse return get(node->right,\
@@ -147,7 +147,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 18:26:37+09:00'
+  timestamp: '2021-04-26 22:51:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp

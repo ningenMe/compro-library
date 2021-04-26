@@ -13,17 +13,17 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/segment/BitVector.md
+    _deprecated_at_docs: md/data-structure/data-structure/BitVector.md
     document_title: BitVector
     links: []
   bundledCode: "#line 1 \"lib/data-structure/data-structure/BitVector.cpp\"\n/*\n\
-    \ * @title BitVector\n * @docs md/segment/BitVector.md\n */\nclass BitVector{\n\
-    \    inline static constexpr size_t BIT_BLOCK_SIZE = 5;\n    inline static constexpr\
-    \ size_t BIT_BLOCK_NUM  = 1<<BIT_BLOCK_SIZE;\n    inline static constexpr uint32\
-    \ popcount(uint32 x) {return __builtin_popcount(x);}\n    inline static constexpr\
-    \ uint32 popcount(uint64 x) {return __builtin_popcountll(x);}\n\n    vector<uint32>\
-    \ vec, acc;\n    bool is_builded = false;\npublic:\n    BitVector(uint32 N) {\n\
-    \        uint32 tmp = (N + BIT_BLOCK_NUM-1) / BIT_BLOCK_NUM;\n        vec.assign(tmp,\
+    \ * @title BitVector\n * @docs md/data-structure/data-structure/BitVector.md\n\
+    \ */\nclass BitVector{\n    inline static constexpr size_t BIT_BLOCK_SIZE = 5;\n\
+    \    inline static constexpr size_t BIT_BLOCK_NUM  = 1<<BIT_BLOCK_SIZE;\n    inline\
+    \ static constexpr uint32 popcount(uint32 x) {return __builtin_popcount(x);}\n\
+    \    inline static constexpr uint32 popcount(uint64 x) {return __builtin_popcountll(x);}\n\
+    \n    vector<uint32> vec, acc;\n    bool is_builded = false;\npublic:\n    BitVector(uint32\
+    \ N) {\n        uint32 tmp = (N + BIT_BLOCK_NUM-1) / BIT_BLOCK_NUM;\n        vec.assign(tmp,\
     \ 0);\n        acc.assign(tmp, 0);\n    }\n    void build() {\n        for (size_t\
     \ i = 0,sum = 0; i < acc.size(); ++i) acc[i] = (sum += popcount(vec[i]) );\n \
     \       is_builded = true;\n    }\n    //[0,r) count of bit\n    uint32 rank(uint32\
@@ -36,13 +36,13 @@ data:
     \ &= ~(1U << (l & (BIT_BLOCK_NUM-1)));\n    }\n    //[l,l+1)\n    bool operator[](uint32\
     \ l) const { \n        assert(is_builded);\n        return ((vec[l >> BIT_BLOCK_SIZE]\
     \ >> (l & (BIT_BLOCK_NUM-1))) & 1); \n    }\n};\n"
-  code: "/*\n * @title BitVector\n * @docs md/segment/BitVector.md\n */\nclass BitVector{\n\
-    \    inline static constexpr size_t BIT_BLOCK_SIZE = 5;\n    inline static constexpr\
-    \ size_t BIT_BLOCK_NUM  = 1<<BIT_BLOCK_SIZE;\n    inline static constexpr uint32\
-    \ popcount(uint32 x) {return __builtin_popcount(x);}\n    inline static constexpr\
-    \ uint32 popcount(uint64 x) {return __builtin_popcountll(x);}\n\n    vector<uint32>\
-    \ vec, acc;\n    bool is_builded = false;\npublic:\n    BitVector(uint32 N) {\n\
-    \        uint32 tmp = (N + BIT_BLOCK_NUM-1) / BIT_BLOCK_NUM;\n        vec.assign(tmp,\
+  code: "/*\n * @title BitVector\n * @docs md/data-structure/data-structure/BitVector.md\n\
+    \ */\nclass BitVector{\n    inline static constexpr size_t BIT_BLOCK_SIZE = 5;\n\
+    \    inline static constexpr size_t BIT_BLOCK_NUM  = 1<<BIT_BLOCK_SIZE;\n    inline\
+    \ static constexpr uint32 popcount(uint32 x) {return __builtin_popcount(x);}\n\
+    \    inline static constexpr uint32 popcount(uint64 x) {return __builtin_popcountll(x);}\n\
+    \n    vector<uint32> vec, acc;\n    bool is_builded = false;\npublic:\n    BitVector(uint32\
+    \ N) {\n        uint32 tmp = (N + BIT_BLOCK_NUM-1) / BIT_BLOCK_NUM;\n        vec.assign(tmp,\
     \ 0);\n        acc.assign(tmp, 0);\n    }\n    void build() {\n        for (size_t\
     \ i = 0,sum = 0; i < acc.size(); ++i) acc[i] = (sum += popcount(vec[i]) );\n \
     \       is_builded = true;\n    }\n    //[0,r) count of bit\n    uint32 rank(uint32\
@@ -59,7 +59,7 @@ data:
   isVerificationFile: false
   path: lib/data-structure/data-structure/BitVector.cpp
   requiredBy: []
-  timestamp: '2021-04-26 18:11:15+09:00'
+  timestamp: '2021-04-26 22:51:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/data-structure/WaveletMatrix-quantile-2.test.cpp

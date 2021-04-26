@@ -10,11 +10,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/segment/DisjointSparseTable.md
+    _deprecated_at_docs: md/data-structure/data-structure/DisjointSparseTable.md
     document_title: DisjointSparseTable
     links: []
   bundledCode: "#line 1 \"lib/data-structure/data-structure/DisjointSparseTable.cpp\"\
-    \n/*\n * @title DisjointSparseTable\n * @docs md/segment/DisjointSparseTable.md\n\
+    \n/*\n * @title DisjointSparseTable\n * @docs md/data-structure/data-structure/DisjointSparseTable.md\n\
     \ */\ntemplate<class Operator> class DisjointSparseTable{\npublic:\n\tusing TypeNode\
     \ = typename Operator::TypeNode;\n\tsize_t depth;\n\tsize_t length;\n\tvector<TypeNode>\
     \ node;\n\tvector<size_t> msb;\n\n\tDisjointSparseTable(const vector<TypeNode>&\
@@ -33,7 +33,7 @@ data:
     \t}\n};\n\n//sum\ntemplate<class T> struct NodeSum {\n\tusing TypeNode = T;\n\t\
     inline static constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeNode\
     \ func_fold(TypeNode l,TypeNode r){return l+r;}\n};\n"
-  code: "/*\n * @title DisjointSparseTable\n * @docs md/segment/DisjointSparseTable.md\n\
+  code: "/*\n * @title DisjointSparseTable\n * @docs md/data-structure/data-structure/DisjointSparseTable.md\n\
     \ */\ntemplate<class Operator> class DisjointSparseTable{\npublic:\n\tusing TypeNode\
     \ = typename Operator::TypeNode;\n\tsize_t depth;\n\tsize_t length;\n\tvector<TypeNode>\
     \ node;\n\tvector<size_t> msb;\n\n\tDisjointSparseTable(const vector<TypeNode>&\
@@ -56,7 +56,7 @@ data:
   isVerificationFile: false
   path: lib/data-structure/data-structure/DisjointSparseTable.cpp
   requiredBy: []
-  timestamp: '2021-04-26 18:11:15+09:00'
+  timestamp: '2021-04-26 22:51:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/data-structure/DisjointSparseTable.test.cpp

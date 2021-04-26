@@ -17,7 +17,7 @@ data:
   bundledCode: "#line 1 \"test/data-structure/data-structure/DisjointSparseTable.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n#include\
     \ <vector>\n#include <iostream>\nusing namespace std;\n#line 1 \"lib/data-structure/data-structure/DisjointSparseTable.cpp\"\
-    \n/*\n * @title DisjointSparseTable\n * @docs md/segment/DisjointSparseTable.md\n\
+    \n/*\n * @title DisjointSparseTable\n * @docs md/data-structure/data-structure/DisjointSparseTable.md\n\
     \ */\ntemplate<class Operator> class DisjointSparseTable{\npublic:\n\tusing TypeNode\
     \ = typename Operator::TypeNode;\n\tsize_t depth;\n\tsize_t length;\n\tvector<TypeNode>\
     \ node;\n\tvector<size_t> msb;\n\n\tDisjointSparseTable(const vector<TypeNode>&\
@@ -53,7 +53,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/data-structure/DisjointSparseTable.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 18:11:15+09:00'
+  timestamp: '2021-04-26 22:51:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/data-structure/DisjointSparseTable.test.cpp

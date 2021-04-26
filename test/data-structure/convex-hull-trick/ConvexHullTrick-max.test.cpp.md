@@ -23,7 +23,7 @@ data:
   bundledCode: "#line 1 \"test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp\"\
     \n#define PROBLEM \"https://yukicoder.me/problems/no/409\"\n\n#include <iostream>\n\
     #include <vector>\n#include <queue>\nusing namespace std;\n#line 1 \"lib/data-structure/data-structure/Rbst.cpp\"\
-    \n/*\n * @title Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\n * @docs md/segment/Rbst.md\n\
+    \n/*\n * @title Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\n * @docs md/data-structure/data-structure/Rbst.md\n\
     \ */\ntemplate<class Operator> class Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\
     \tunsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\t\
     unsigned int xor_shift() {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z;\
@@ -155,7 +155,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 18:26:37+09:00'
+  timestamp: '2021-04-26 22:51:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp

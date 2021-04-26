@@ -17,13 +17,13 @@ data:
   bundledCode: "#line 1 \"test/data-structure/data-structure/Swag.test.cpp\"\n#define\
     \ PROBLEM \"https://yukicoder.me/problems/no/1036\"\n\n#include <vector>\n#include\
     \ <iostream>\n#include <stack>\nusing namespace std;\n#line 1 \"lib/data-structure/data-structure/Swag.cpp\"\
-    \n/*\n * @title Swag\n * @docs md/segment/Swag.md\n */\ntemplate<class Operator>\
-    \ class Swag{\npublic:\n\tusing TypeNode = typename Operator::TypeNode;\n\tstack<pair<TypeNode,TypeNode>>\
-    \ pre,suf;\n\n\tSwag() {\n\t\t// do nothing\n\t}\n\tTypeNode fold() {\n\t\tTypeNode\
-    \ res = Operator::unit_node;\n\t\tif(pre.size()) res = Operator::func_node(pre.top().second,res);\n\
-    \t\tif(suf.size()) res = Operator::func_node(res,suf.top().second);\n\t\treturn\
-    \ res;\n\t}\n\tvoid push(TypeNode val) {\n\t\tTypeNode acc = val;\n\t\tif(suf.size())\
-    \ acc = Operator::func_node(suf.top().second,acc);\n\t\tsuf.emplace(val,acc);\n\
+    \n/*\n * @title Swag\n * @docs md/data-structure/data-structure/Swag.md\n */\n\
+    template<class Operator> class Swag{\npublic:\n\tusing TypeNode = typename Operator::TypeNode;\n\
+    \tstack<pair<TypeNode,TypeNode>> pre,suf;\n\n\tSwag() {\n\t\t// do nothing\n\t\
+    }\n\tTypeNode fold() {\n\t\tTypeNode res = Operator::unit_node;\n\t\tif(pre.size())\
+    \ res = Operator::func_node(pre.top().second,res);\n\t\tif(suf.size()) res = Operator::func_node(res,suf.top().second);\n\
+    \t\treturn res;\n\t}\n\tvoid push(TypeNode val) {\n\t\tTypeNode acc = val;\n\t\
+    \tif(suf.size()) acc = Operator::func_node(suf.top().second,acc);\n\t\tsuf.emplace(val,acc);\n\
     \t}\n\tvoid pop() {\n\t\tif(pre.empty()) {\n\t\t\tTypeNode acc = Operator::unit_node;\n\
     \t\t\twhile(suf.size()) {\n\t\t\t\tauto [val,_] = suf.top();\n\t\t\t\tsuf.pop();\n\
     \t\t\t\tacc = Operator::func_node(val,acc);\n\t\t\t\tpre.emplace(val,acc);\n\t\
@@ -55,7 +55,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/data-structure/Swag.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 18:11:15+09:00'
+  timestamp: '2021-04-26 22:51:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/data-structure/Swag.test.cpp
