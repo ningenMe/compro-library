@@ -273,17 +273,8 @@ data:
   - name: non-verified
     pages:
     - icon: ':warning:'
-      path: non-verified/Accumulate2D.cpp
-      title: non-verified/Accumulate2D.cpp
-    - icon: ':warning:'
       path: non-verified/BinaryColumnEchelonFormalize.cpp
       title: non-verified/BinaryColumnEchelonFormalize.cpp
-    - icon: ':warning:'
-      path: non-verified/BinaryIndexedTree2D.cpp
-      title: non-verified/BinaryIndexedTree2D.cpp
-    - icon: ':warning:'
-      path: non-verified/BinaryIndexedTree2DRangeModSumQuery.cpp
-      title: non-verified/BinaryIndexedTree2DRangeModSumQuery.cpp
     - icon: ':warning:'
       path: non-verified/BipartiteMatching.cpp
       title: non-verified/BipartiteMatching.cpp
@@ -293,9 +284,6 @@ data:
     - icon: ':warning:'
       path: non-verified/CircleIntersection.cpp
       title: non-verified/CircleIntersection.cpp
-    - icon: ':warning:'
-      path: non-verified/Combination.cpp
-      title: non-verified/Combination.cpp
     - icon: ':warning:'
       path: non-verified/Divisor.cpp
       title: non-verified/Divisor.cpp
@@ -329,9 +317,6 @@ data:
     - icon: ':warning:'
       path: non-verified/Permutation_Mod.cpp
       title: non-verified/Permutation_Mod.cpp
-    - icon: ':warning:'
-      path: non-verified/PowMod.cpp
-      title: non-verified/PowMod.cpp
     - icon: ':warning:'
       path: non-verified/PrimeFactorization.cpp
       title: non-verified/PrimeFactorization.cpp
