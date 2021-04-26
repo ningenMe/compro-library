@@ -2,9 +2,9 @@
  * @title LazySegmentTree - 非再帰抽象化遅延評価セグメント木
  * @docs md/data-structure/segment-tree/LazySegmentTree.md
  */
-template<class Operator> class LazySegmentTree {
-	using TypeNode = typename Operator::TypeNode;          
-	using TypeLazy = typename Operator::TypeLazy;
+template<class Monoid> class LazySegmentTree {
+	using TypeNode = typename Monoid::TypeNode;          
+	using TypeLazy = typename Monoid::TypeLazy;
 	size_t num;      
 	size_t length;                                   
 	size_t height;                                   
@@ -13,87 +13,85 @@ template<class Operator> class LazySegmentTree {
 	vector<pair<size_t,size_t>> range;
 
 	void propagate(int k) {
-		if(lazy[k] == Operator::unit_lazy) return;
-        node[k] = Operator::func_merge(node[k],lazy[k],range[k].first,range[k].second);
-		if(k < length) lazy[2*k+0] = Operator::func_lazy(lazy[2*k+0],lazy[k]);
-		if(k < length) lazy[2*k+1] = Operator::func_lazy(lazy[2*k+1],lazy[k]);
-		lazy[k] = Operator::unit_lazy;
+		if(lazy[k] == Monoid::unit_lazy) return;
+        node[k] = Monoid::fucn_operate(node[k],lazy[k],range[k].first,range[k].second);
+		if(k < length) lazy[2*k+0] = Monoid::func_lazy(lazy[2*k+0],lazy[k]);
+		if(k < length) lazy[2*k+1] = Monoid::func_lazy(lazy[2*k+1],lazy[k]);
+		lazy[k] = Monoid::unit_lazy;
+	}
+
+	void build() {
+		for (int i = length - 1; i >= 0; --i) node[i] = Monoid::fucn_fold(node[(i<<1)+0],node[(i<<1)+1]);
+		range.resize(2 * length);
+		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
+		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
 	}
 public:
 
 	//unitで初期化
 	LazySegmentTree(const size_t num) : num(num) {
 		for (length = 1,height = 0; length <= num; length *= 2, height++);
-		node.resize(2 * length, Operator::unit_node);
-		lazy.resize(2 * length, Operator::unit_lazy);
-		for (int i = 0; i < num; ++i) node[i + length] = Operator::unit_node;
-		for (int i = length - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);
-		range.resize(2 * length);
-		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
-		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
+		node.resize(2 * length, Monoid::unit_node);
+		lazy.resize(2 * length, Monoid::unit_lazy);
+		for (int i = 0; i < num; ++i) node[i + length] = Monoid::unit_node;
+		build();
 	}
 
 	// //同じinitで初期化
 	LazySegmentTree(const size_t num, const TypeNode init) : num(num) {
 		for (length = 1,height = 0; length <= num; length *= 2, height++);
-		node.resize(2 * length, Operator::unit_node);
-		lazy.resize(2 * length, Operator::unit_lazy);
+		node.resize(2 * length, Monoid::unit_node);
+		lazy.resize(2 * length, Monoid::unit_lazy);
 		for (int i = 0; i < num; ++i) node[i + length] = init;
-		for (int i = length - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);
-		range.resize(2 * length);
-		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
-		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
+		build();
 	}
 
 	//vectorで初期化
 	LazySegmentTree(const vector<TypeNode>& vec) : num(vec.size()) {
 		for (length = 1,height = 0; length <= vec.size(); length *= 2, height++);
-		node.resize(2 * length, Operator::unit_node);
-		lazy.resize(2 * length, Operator::unit_lazy);
+		node.resize(2 * length, Monoid::unit_node);
+		lazy.resize(2 * length, Monoid::unit_lazy);
 		for (int i = 0; i < vec.size(); ++i) node[i + length] = vec[i];
-		for (int i = length - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);
-		range.resize(2 * length);
-		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
-		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
+		build();
 	}
 
-	//update [a,b)
-	void update(int a, int b, TypeLazy x) {
+	//operate [a,b)
+	void operate(int a, int b, TypeLazy x) {
 		int l = a + length, r = b + length - 1;
 		for (int i = height; 0 < i; --i) propagate(l >> i), propagate(r >> i);
 		for(r++; l < r; l >>=1, r >>=1) {
-			if(l&1) lazy[l] = Operator::func_lazy(lazy[l],x), propagate(l),l++;
-			if(r&1) --r,lazy[r] = Operator::func_lazy(lazy[r],x), propagate(r);
+			if(l&1) lazy[l] = Monoid::func_lazy(lazy[l],x), propagate(l),l++;
+			if(r&1) --r,lazy[r] = Monoid::func_lazy(lazy[r],x), propagate(r);
 		}
 		l = a + length, r = b + length - 1;
 		while ((l>>=1),(r>>=1),l) {
-            if(lazy[l] == Operator::unit_lazy) node[l] = Operator::func_node(Operator::func_merge(node[(l<<1)+0],lazy[(l<<1)+0],range[(l<<1)+0].first,range[(l<<1)+0].second),Operator::func_merge(node[(l<<1)+1],lazy[(l<<1)+1],range[(l<<1)+1].first,range[(l<<1)+1].second));
-            if(lazy[r] == Operator::unit_lazy) node[r] = Operator::func_node(Operator::func_merge(node[(r<<1)+0],lazy[(r<<1)+0],range[(r<<1)+0].first,range[(r<<1)+0].second),Operator::func_merge(node[(r<<1)+1],lazy[(r<<1)+1],range[(r<<1)+1].first,range[(r<<1)+1].second));
+            if(lazy[l] == Monoid::unit_lazy) node[l] = Monoid::fucn_fold(Monoid::fucn_operate(node[(l<<1)+0],lazy[(l<<1)+0],range[(l<<1)+0].first,range[(l<<1)+0].second),Monoid::fucn_operate(node[(l<<1)+1],lazy[(l<<1)+1],range[(l<<1)+1].first,range[(l<<1)+1].second));
+            if(lazy[r] == Monoid::unit_lazy) node[r] = Monoid::fucn_fold(Monoid::fucn_operate(node[(r<<1)+0],lazy[(r<<1)+0],range[(r<<1)+0].first,range[(r<<1)+0].second),Monoid::fucn_operate(node[(r<<1)+1],lazy[(r<<1)+1],range[(r<<1)+1].first,range[(r<<1)+1].second));
   		}
 	}
 
-	//get [a,b)
-	TypeNode get(int a, int b) {
+	//fold [a,b)
+	TypeNode fold(int a, int b) {
 		int l = a + length, r = b + length - 1;
 		for (int i = height; 0 < i; --i) propagate(l >> i), propagate(r >> i);
-		TypeNode vl = Operator::unit_node, vr = Operator::unit_node;
+		TypeNode vl = Monoid::unit_node, vr = Monoid::unit_node;
 		for(r++; l < r; l >>=1, r >>=1) {
-            if(l&1) vl = Operator::func_node(vl,Operator::func_merge(node[l],lazy[l],range[l].first,range[l].second)),l++;
-            if(r&1) r--,vr = Operator::func_node(Operator::func_merge(node[r],lazy[r],range[r].first,range[r].second),vr);
+            if(l&1) vl = Monoid::fucn_fold(vl,Monoid::fucn_operate(node[l],lazy[l],range[l].first,range[l].second)),l++;
+            if(r&1) r--,vr = Monoid::fucn_fold(Monoid::fucn_operate(node[r],lazy[r],range[r].first,range[r].second),vr);
  		}
-		return Operator::func_node(vl,vr);
+		return Monoid::fucn_fold(vl,vr);
 	}
 
 	//return [0,length]
 	int prefix_binary_search(TypeNode var) {
 		int l = length, r = 2*length - 1;
 		for (int i = height; 0 < i; --i) propagate(l >> i), propagate(r >> i);
-		if(!Operator::func_check(node[1],var)) return num;
-		TypeNode ret = Operator::unit_node;
+		if(!Monoid::func_check(node[1],var)) return num;
+		TypeNode ret = Monoid::unit_node;
 		size_t idx = 2;
 		for(; idx < 2*length; idx<<=1){
-            if(!Operator::func_check(Operator::func_node(ret,Operator::func_merge(node[idx],lazy[idx],range[idx].first,range[idx].second)),var)) {
-                ret = Operator::func_node(ret,Operator::func_merge(node[idx],lazy[idx],range[idx].first,range[idx].second));
+            if(!Monoid::func_check(Monoid::fucn_fold(ret,Monoid::fucn_operate(node[idx],lazy[idx],range[idx].first,range[idx].second)),var)) {
+                ret = Monoid::fucn_fold(ret,Monoid::fucn_operate(node[idx],lazy[idx],range[idx].first,range[idx].second));
                 idx++;
             }
 		}
@@ -104,11 +102,11 @@ public:
 	int binary_search(size_t l, size_t r, TypeNode var) {
 		if (l < 0 || length <= l || r < 0 || length < r) return -1;
 		for (int i = height; 0 < i; --i) propagate((l+length) >> i), propagate((r+length-1) >> i);
-		TypeNode ret = Operator::unit_node;
+		TypeNode ret = Monoid::unit_node;
 		size_t off = l;
 		for(size_t idx = l+length; idx < 2*length && off < r; ){
-            if(range[idx].second<=r && !Operator::func_check(Operator::func_node(ret,Operator::func_merge(node[idx],lazy[idx],range[idx].first,range[idx].second)),var)) {
-                ret = Operator::func_node(ret,Operator::func_merge(node[idx],lazy[idx],range[idx].first,range[idx].second));
+            if(range[idx].second<=r && !Monoid::func_check(Monoid::fucn_fold(ret,Monoid::fucn_operate(node[idx],lazy[idx],range[idx].first,range[idx].second)),var)) {
+                ret = Monoid::fucn_fold(ret,Monoid::fucn_operate(node[idx],lazy[idx],range[idx].first,range[idx].second));
                 off = range[idx++].second;
                 if(!(idx&1)) idx >>= 1;			
             }
@@ -131,58 +129,8 @@ public:
 		// 	if(i==((1<<j)-1) && ++j) cout << endl;
 		// }
 		cout << "vector" << endl;
-		cout << "{ " << get(0,1);
-		for(int i = 1; i < length; ++i) cout << ", " << get(i,i+1);
+		cout << "{ " << fold(0,1);
+		for(int i = 1; i < length; ++i) cout << ", " << fold(i,i+1);
 		cout << " }" << endl;
 	}
-};
-
-//node:最小　lazy:加算
-template<class T, class U> struct NodeMinRangeAdd {
-	using TypeNode = T;
-	using TypeLazy = U;
-	inline static constexpr TypeNode unit_node = 1234567890;
-	inline static constexpr TypeLazy unit_lazy = 0;
-	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return min(l,r);}
-	inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return old_lazy+new_lazy;}
-	inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l, int r){return node+lazy;}
-	// LazySegmentTree<NodeMinRangeAdd<ll,ll>> Seg(N,0);
-};
-
-//node:総和　lazy:更新
-template<class T, class U> struct NodeSumRangeUpdate {
-	using TypeNode = T;
-	using TypeLazy = U;
-	inline static constexpr TypeNode unit_node = 0;
-	inline static constexpr TypeLazy unit_lazy = -2000;
-	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
-	inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return new_lazy;}
-	inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l, int r){return lazy!=-2000?lazy*(r-l):node;}
-	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
-	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
-};
-
-//node:総和　lazy:加算
-template<class T, class U> struct NodeSumRangeAdd {
-	using TypeNode = T;
-	using TypeLazy = U;
-	inline static constexpr TypeNode unit_node = 0;
-	inline static constexpr TypeLazy unit_lazy = 0;
-	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
-	inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return old_lazy+new_lazy;}
-	inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l, int r){return node+lazy*(r-l);}
-	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
-	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
-};
-
-//node:最小　lazy:等差数列更新
-template<class T, class U> struct NodeMinRangeArithmeticUpdate {
-    using TypeNode = T;
-    using TypeLazy = U;
-    inline static constexpr TypeNode unit_node = 1234567;
-    inline static constexpr TypeLazy unit_lazy = {-2000,-2000};
-    inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return min(l,r);}
-    inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return new_lazy;}
-    inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l,int r){ return (lazy.first==-2000?node:lazy.first + (l-lazy.second));}
-    inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 };

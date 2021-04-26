@@ -4,20 +4,20 @@
 #include <iostream>
 using namespace std;
 #include "../../../lib/data-structure/segment-tree/LazySegmentTree.cpp"
-
+#include "../../../lib/operator/monoid/MonoidRangeSumRangeUpdate.cpp"
 int main(void){
 	int N,Q; cin >> N >> Q;
-	LazySegmentTree<NodeSumRangeUpdate<long long,long long>> Seg(N,0);
+	LazySegmentTree<MonoidRangeSumRangeUpdate<long long,long long>> Seg(N,0);
 	while(Q--) {
 		int q,s,t,x;
 		cin >> q >> s >> t;
 		t++;
 		if(q){
-			cout << Seg.get(s,t) << endl;
+			cout << Seg.fold(s,t) << endl;
 		}
 		else {
 			cin >> x;
-			Seg.update(s,t,x);
+			Seg.operate(s,t,x);
 		}
 	}
 	return 0;
