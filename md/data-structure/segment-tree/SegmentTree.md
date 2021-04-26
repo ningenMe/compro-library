@@ -2,18 +2,7 @@
 - 非再帰抽象化セグメント木
 - 0-indexed
 - モノイドのクラスをテンプレートで渡す必要がある
-  - 下記が一例
-```
-//一点加算 区間総和
-template<class T> struct NodeSumPointAdd {
-	using TypeNode = T;
-	inline static constexpr TypeNode unit_node = 0;
-	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
-	inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}
-	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}
-};
-```
-- モノイドのクラスは、get,updateに対する演算と単位元を必要とする。
+  - モノイドのクラスは、fold,operateに対する演算と単位元を必要とする。
 - 二分探索は任意始点で左右両向きにできる
 - 二分探索では`func_check`が初めてtrueになるようなindexを返す  
 
@@ -32,13 +21,13 @@ template<class T> struct NodeSumPointAdd {
   - init:初期化用の値
 
 ### メソッド
-- void update(size_t idx, const TypeNode var)
-  - `idx`番目のデータに値`var`を与える
+- void operate(size_t idx, const TypeNode var)
+  - `idx`番目のデータに値`var`を作用させる
   - $O(logN)$
   - idx:添字 0-indexed
   - var:値
   - 更新や加算などが乗る
-- TypeNode get(int l, int r)
+- TypeNode fold(int l, int r)
   - 半開区間`[l,r)`をfoldした値を返す
   - $O(logN)$
   - l,r:添字 0-indexed
