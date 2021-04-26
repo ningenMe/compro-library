@@ -15,7 +15,7 @@ data:
       title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
   - name: lib/data-structure/convex-hull-trick
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp
       title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
     - icon: ':heavy_check_mark:'
@@ -373,13 +373,13 @@ data:
       title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   - name: test/data-structure/convex-hull-trick
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
     - icon: ':heavy_check_mark:'

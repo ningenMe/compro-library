@@ -4,6 +4,15 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/data-structure/Rbst-get.test.cpp
     title: test/data-structure/data-structure/Rbst-get.test.cpp
   - icon: ':heavy_check_mark:'
@@ -152,6 +161,9 @@ data:
   - test/data-structure/data-structure/Rbst-pair.test.cpp
   - test/data-structure/data-structure/Rbst-get.test.cpp
   - test/data-structure/data-structure/Rbst-med.test.cpp
+  - test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
+  - test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
 documentation_of: lib/data-structure/data-structure/Rbst.cpp
 layout: document
 redirect_from:
