@@ -11,7 +11,8 @@
 using namespace std;
 #include "../../lib/graph/Graph.cpp"
 #include "../../lib/graph/Tree.cpp"
-#include "../../lib/segment/LazySegmentTree.cpp"
+#include "../../lib/data-structure/segment-tree/LazySegmentTree.cpp"
+#include "../../lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp"
 
 int main(void){
 	int N; cin >> N;
@@ -22,7 +23,7 @@ int main(void){
 		g.make_bidirectional_edge(u,v,1);
 	}
 	auto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();
-	LazySegmentTree<NodeSumRangeAdd<long long,long long>> seg(N);
+	LazySegmentTree<MonoidRangeSumRangeAdd<long long,long long>> seg(N);
 	int Q; cin >> Q;
 	long long ans = 0;
 	while(Q--) {
@@ -32,8 +33,8 @@ int main(void){
 		for(auto& p:vp) {
 			int l = p.first, r = p.second+1;
 			int n = r-l;
-			ans += seg.get(l,r)+n;
-			seg.update(l,r,1);
+			ans += seg.fold(l,r)+n;
+			seg.operate(l,r,1);
 		}
 	}
 	cout << ans << endl;

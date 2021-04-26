@@ -11,22 +11,8 @@
 using namespace std;
 #include "../../lib/graph/Graph.cpp"
 #include "../../lib/graph/Tree.cpp"
-#include "../../lib/segment/LazySegmentTree.cpp"
-
-
-//node:総和　lazy:加算
-template<class T, class U> struct NodeEulerTourSumRangeAdd {
-	using TypeNode = T;
-	using TypeLazy = U;
-	inline static constexpr TypeNode unit_node = {0,0};
-	inline static constexpr TypeLazy unit_lazy = 0;
-	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return {l.first+r.first,l.second+r.second};}
-	inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return old_lazy+new_lazy;}
-	inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int l, int r){return {node.first+node.second*lazy,node.second};}
-	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
-	// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);
-};
-
+#include "../../lib/data-structure/segment-tree/LazySegmentTree.cpp"
+#include "../../lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp"
 
 int main(void){
 	int N; cin >> N;
@@ -51,7 +37,7 @@ int main(void){
 		}
 		init[i] = {w*sgn,sgn};
 	}
-	LazySegmentTree<NodeEulerTourSumRangeAdd<pair<long long,long long>,long long>> seg(init);
+	LazySegmentTree<MonoidRangeEulerTourSumRangeAdd<pair<long long,long long>,long long>> seg(init);
 	int Q; cin >> Q;
 	while(Q--) {
 		int q; cin >> q;
@@ -60,10 +46,10 @@ int main(void){
 		int r = tree.eulertour_range[a].second;
 		if(q==1) {
 			long long x; cin >> x;
-			seg.update(l+1,r,x);
+			seg.operate(l+1,r,x);
 		}
 		else {
-			cout << seg.get(0,l+1).first << endl;
+			cout << seg.fold(0,l+1).first << endl;
 		}
 	}
 	return 0;
