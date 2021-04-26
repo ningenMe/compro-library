@@ -7,7 +7,7 @@
 #include <numeric>
 #include <cmath>
 using namespace std;
-#include "../../lib/segment/Rbst.cpp"
+#include "../../../lib/data-structure/data-structure/Rbst.cpp"
 
 template<class T> struct NodePair {
 	using TypeNode = T;

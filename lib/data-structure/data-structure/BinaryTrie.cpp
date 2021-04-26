@@ -8,7 +8,7 @@ public:
 	vector<TypeNode> node;
 	vector<vector<int>> ch;
 	BinaryTrie():node(1),ch(1,vector<int>(2,-1)){}
-	void update(long long idx, const TypeNode var) {
+	void operate(long long idx, const TypeNode var) {
 		int curr=0;
 		stack<int> st;
 		for(int i=bit-1; 0 <= i; --i) {
@@ -21,15 +21,15 @@ public:
 			}
 			curr = ch[curr][f];
 		}
-		node[curr] = Operator::func_merge(node[curr],var);
+		node[curr] = Operator::func_operate(node[curr],var);
 		while(st.size()) {
 			curr = st.top(); st.pop();
 			node[curr]=Operator::unit_node;
-			if(ch[curr][0]!=-1)	node[curr] = Operator::func_node(node[ch[curr][0]],node[curr]);
-			if(ch[curr][1]!=-1)	node[curr] = Operator::func_node(node[curr],node[ch[curr][1]]);
+			if(ch[curr][0]!=-1)	node[curr] = Operator::func_fold(node[ch[curr][0]],node[curr]);
+			if(ch[curr][1]!=-1)	node[curr] = Operator::func_fold(node[curr],node[ch[curr][1]]);
 		}
 	}
-	TypeNode get(long long idx) {
+	TypeNode fold(long long idx) {
 		int curr=0;
 		for(int i=bit-1; 0 <= i; --i) {
 			int f=(idx>>i)&1;
@@ -50,12 +50,4 @@ public:
 		}
 		return y^x;
 	}
-};
-
-//一点加算 区間和
-template<class T> struct NodeSumPointAdd {
-	using TypeNode = T;
-	inline static constexpr TypeNode unit_node = 0;
-	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
-	inline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}
 };

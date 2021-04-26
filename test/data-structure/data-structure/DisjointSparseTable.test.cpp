@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../lib/segment/DisjointSparseTable.cpp"
+#include "../../../lib/data-structure/data-structure/DisjointSparseTable.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);
@@ -15,6 +15,6 @@ int main(void){
     DisjointSparseTable<NodeSum<long long>> st(A);
     while(Q--){
         int l,r; cin >> l >> r;
-        cout << st.get(l,r) << endl;
+        cout << st.fold(l,r) << endl;
     }
 }

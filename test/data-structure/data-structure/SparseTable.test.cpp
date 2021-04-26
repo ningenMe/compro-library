@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../lib/segment/SparseTable.cpp"
+#include "../../../lib/data-structure/data-structure/SparseTable.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);

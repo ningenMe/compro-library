@@ -29,17 +29,17 @@ public:
 				node[i*length+r] = node[r];
 				//accumulate
 				for(int k = 1; k < (1<<i); ++k) {
-					node[i*length+l-k] = Operator::func_node(node[i*length+l-k+1],node[l-k]);
-					node[i*length+r+k] = Operator::func_node(node[i*length+r+k-1],node[r+k]);
+					node[i*length+l-k] = Operator::func_fold(node[i*length+l-k+1],node[l-k]);
+					node[i*length+r+k] = Operator::func_fold(node[i*length+r+k-1],node[r+k]);
 				}
 			}
 		}
 	}
 
 	//[l,r)
-	TypeNode get(int l,int r) {
+	TypeNode fold(int l,int r) {
 		r--;
-		return (l>r||l<0||length<=r) ? Operator::unit_node: (l==r ? node[l] : Operator::func_node(node[msb[l^r]*length+l],node[msb[l^r]*length+r]));
+		return (l>r||l<0||length<=r) ? Operator::unit_node: (l==r ? node[l] : Operator::func_fold(node[msb[l^r]*length+l],node[msb[l^r]*length+r]));
 	}
 };
 
@@ -47,5 +47,5 @@ public:
 template<class T> struct NodeSum {
 	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;
-	inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return l+r;}
+	inline static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return l+r;}
 };

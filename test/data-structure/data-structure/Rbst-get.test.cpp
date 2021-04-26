@@ -7,7 +7,7 @@
 #include <numeric>
 #include <cmath>
 using namespace std;
-#include "../../lib/segment/Rbst.cpp"
+#include "../../../lib/data-structure/data-structure/Rbst.cpp"
 
 int main(){
     cin.tie(0);ios::sync_with_stdio(false);
