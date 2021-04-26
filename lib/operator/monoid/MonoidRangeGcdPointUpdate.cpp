@@ -1,3 +1,7 @@
+/*
+ * @title MonoidRangeGcdPointUpdate - [区間gcd, 点更新]
+ * @docs md/operator/monoid/MonoidRangeGcdPointUpdate.md
+ */
 template<class T> struct MonoidRangeGcdPointUpdate {
 	using TypeNode = T;
 	inline static constexpr TypeNode unit_node = 0;

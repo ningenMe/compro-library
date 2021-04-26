@@ -1,4 +1,7 @@
-//一点更新 区間最小
+/*
+ * @title MonoidRangeMinPointUpdate - [区間min, 点更新]
+ * @docs md/operator/monoid/MonoidRangeMinPointUpdate.md
+ */
 template<class T> struct MonoidRangeMinPointUpdate {
     using TypeNode = T;
     inline static constexpr TypeNode unit_node = (1LL<<31)-1;

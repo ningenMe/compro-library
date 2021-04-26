@@ -1,4 +1,7 @@
-//一点加算 区間総和
+/*
+ * @title MonoidRangeSumPointAdd - [区間和, 一点更新]
+ * @docs md/operator/monoid/MonoidRangeSumPointAdd.md
+ */
 template<class T> struct MonoidRangeSumPointAdd {
     using TypeNode = T;
     inline static constexpr TypeNode unit_node = 0;

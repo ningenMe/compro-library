@@ -1,5 +1,7 @@
-
-//一次関数
+/*
+ * @title MonoidRangeCompositePointUpdate - [区間一次関数, 点更新]
+ * @docs md/operator/monoid/MonoidRangeCompositePointUpdate.md
+ */
 template<class T> struct MonoidRangeCompositePointUpdate {
     using TypeNode = T;
     inline static constexpr TypeNode unit_node = make_pair(1,0);
