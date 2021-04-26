@@ -161,6 +161,20 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/operator/abel/AbelPrefixSumPointAdd.cpp
       title: AbelPrefixSumPointAdd
+  - name: lib/operator/monoid
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp
+      title: lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp
+    - icon: ':heavy_check_mark:'
+      path: lib/operator/monoid/MonoidRangeGcdPointUpdate.cpp
+      title: lib/operator/monoid/MonoidRangeGcdPointUpdate.cpp
+    - icon: ':heavy_check_mark:'
+      path: lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
+      title: lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
+    - icon: ':heavy_check_mark:'
+      path: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
+      title: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
   - name: lib/operator/operator
     pages:
     - icon: ':heavy_check_mark:'
