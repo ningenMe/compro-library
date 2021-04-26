@@ -5,7 +5,7 @@
 #include <cassert>
 #include <unordered_map>
 using namespace std;
-#include "../../../lib/operator/AbelPrefixSumPointAdd.cpp"
+#include "../../../lib/operator/Abel/AbelPrefixSumPointAdd.cpp"
 #include "../../../lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp"
 
 int main(void){
