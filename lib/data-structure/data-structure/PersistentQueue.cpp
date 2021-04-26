@@ -1,5 +1,5 @@
 /*
- * @title PersistentQueue
+ * @title PersistentQueue - 永続queue
  * @docs md/data-structure/data-structure/PersistentQueue.md
  */
 template<class T,size_t bit=20> class PersistentQueue{
