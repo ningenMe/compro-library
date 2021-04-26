@@ -1,6 +1,6 @@
 /*
  * @title LiChaoTree
- * @docs md/segment/LiChaoTree.md
+ * @docs md/data-structure/segment/convex-hull-trick/LiChaoTree.md
  */
 template <typename Operator> class LiChaoTree{
 	using TypeValue = typename Operator::TypeValue;
@@ -67,11 +67,4 @@ public:
 		for(;1<=i;i>>=1) if(!Operator::func_compare(res,f(node[i],t))) res = f(node[i],t);
 		return res;
 	}
-};
-
-//最小値クエリ
-template<class T> struct ValueMin {
-	using TypeValue = T;
-	inline static constexpr TypeValue unit_value = 3e18;
-	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l<r;}
 };

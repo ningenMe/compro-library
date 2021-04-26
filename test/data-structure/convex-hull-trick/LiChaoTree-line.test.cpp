@@ -4,7 +4,9 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-#include "../../lib/segment/LiChaoTree.cpp"
+
+#include "../../../lib/operator/operator/ValueMin.cpp"
+#include "../../../lib/data-structure/convex-hull-trick/LiChaoTree.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);
