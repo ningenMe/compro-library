@@ -165,16 +165,18 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp
-      title: lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp
+      title: "MonoidRangeCompositePointUpdate - [\u533A\u9593\u4E00\u6B21\u95A2\u6570\
+        , \u70B9\u66F4\u65B0]"
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid/MonoidRangeGcdPointUpdate.cpp
-      title: lib/operator/monoid/MonoidRangeGcdPointUpdate.cpp
+      title: "MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0]"
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
-      title: lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
+      title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0]"
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
-      title: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
+      title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\u65B0\
+        ]"
   - name: lib/operator/operator
     pages:
     - icon: ':heavy_check_mark:'

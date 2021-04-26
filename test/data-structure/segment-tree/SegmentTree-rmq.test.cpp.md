@@ -7,7 +7,7 @@ data:
       \u30C8\u6728"
   - icon: ':heavy_check_mark:'
     path: lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
-    title: lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
+    title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0]"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -73,16 +73,18 @@ data:
     \     cout << \"vector\" << endl;\n        cout << \"{ \" << fold(0,1);\n    \
     \    for(int i = 1; i < length; ++i) cout << \", \" << fold(i,i+1);\n        cout\
     \ << \" }\" << endl;\n    }\n};\n#line 1 \"lib/operator/monoid/MonoidRangeMinPointUpdate.cpp\"\
-    \n//\u4E00\u70B9\u66F4\u65B0 \u533A\u9593\u6700\u5C0F\ntemplate<class T> struct\
-    \ MonoidRangeMinPointUpdate {\n    using TypeNode = T;\n    inline static constexpr\
-    \ TypeNode unit_node = (1LL<<31)-1;\n    inline static constexpr TypeNode func_fold(TypeNode\
-    \ l,TypeNode r){return min(l,r);}\n    inline static constexpr TypeNode func_operate(TypeNode\
-    \ l,TypeNode r){return r;}\n    inline static constexpr bool func_check(TypeNode\
-    \ nodeVal,TypeNode var){return var > nodeVal;}\n};\n#line 9 \"test/data-structure/segment-tree/SegmentTree-rmq.test.cpp\"\
-    \n\nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tint N,Q; cin\
-    \ >> N >> Q;\n\tSegmentTree<MonoidRangeMinPointUpdate<long long>> Seg(N);\n\t\
-    while(Q--){\n\t\tlong long q,a,b;\n\t\tcin >> q >> a >> b;\n\t\tif(q) cout <<\
-    \ Seg.fold(a,b+1) << endl;\n\t\telse Seg.operate(a,b);\n\t}\n\treturn 0;\n}\n"
+    \n/*\n * @title MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0\
+    ]\n * @docs md/operator/monoid/MonoidRangeMinPointUpdate.md\n */\ntemplate<class\
+    \ T> struct MonoidRangeMinPointUpdate {\n    using TypeNode = T;\n    inline static\
+    \ constexpr TypeNode unit_node = (1LL<<31)-1;\n    inline static constexpr TypeNode\
+    \ func_fold(TypeNode l,TypeNode r){return min(l,r);}\n    inline static constexpr\
+    \ TypeNode func_operate(TypeNode l,TypeNode r){return r;}\n    inline static constexpr\
+    \ bool func_check(TypeNode nodeVal,TypeNode var){return var > nodeVal;}\n};\n\
+    #line 9 \"test/data-structure/segment-tree/SegmentTree-rmq.test.cpp\"\n\nint main(void){\n\
+    \tcin.tie(0);ios::sync_with_stdio(false);\n\tint N,Q; cin >> N >> Q;\n\tSegmentTree<MonoidRangeMinPointUpdate<long\
+    \ long>> Seg(N);\n\twhile(Q--){\n\t\tlong long q,a,b;\n\t\tcin >> q >> a >> b;\n\
+    \t\tif(q) cout << Seg.fold(a,b+1) << endl;\n\t\telse Seg.operate(a,b);\n\t}\n\t\
+    return 0;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\nusing namespace\
     \ std;\n#include \"../../../lib/data-structure/segment-tree/SegmentTree.cpp\"\n\
@@ -97,7 +99,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 17:03:13+09:00'
+  timestamp: '2021-04-26 17:13:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp

@@ -10,7 +10,7 @@ data:
     title: "Gcd - \u9AD8\u901FGCD"
   - icon: ':heavy_check_mark:'
     path: lib/operator/monoid/MonoidRangeGcdPointUpdate.cpp
-    title: lib/operator/monoid/MonoidRangeGcdPointUpdate.cpp
+    title: "MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0]"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -91,12 +91,13 @@ data:
     \ constexpr long long extGcd(long long a, long long b, long long &x, long long\
     \ &y) {\n\t\tif (b == 0) return x = 1, y = 0, a;\n\t\tlong long d = extGcd(b,\
     \ a%b, y, x);\n\t\treturn y -= a / b * x, d;\n\t}\n};\n#line 1 \"lib/operator/monoid/MonoidRangeGcdPointUpdate.cpp\"\
-    \ntemplate<class T> struct MonoidRangeGcdPointUpdate {\n\tusing TypeNode = T;\n\
-    \tinline static constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeNode\
-    \ func_fold(TypeNode l,TypeNode r){return Gcd::gcd(l,r);}\n\tinline static constexpr\
-    \ TypeNode func_operate(TypeNode l,TypeNode r){return r;}\n\tinline static constexpr\
-    \ bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}\n};\n\
-    #line 10 \"test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp\"\
+    \n/*\n * @title MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0\
+    ]\n * @docs md/operator/monoid/MonoidRangeGcdPointUpdate.md\n */\ntemplate<class\
+    \ T> struct MonoidRangeGcdPointUpdate {\n\tusing TypeNode = T;\n\tinline static\
+    \ constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeNode func_fold(TypeNode\
+    \ l,TypeNode r){return Gcd::gcd(l,r);}\n\tinline static constexpr TypeNode func_operate(TypeNode\
+    \ l,TypeNode r){return r;}\n\tinline static constexpr bool func_check(TypeNode\
+    \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n#line 10 \"test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp\"\
     \n\n// solution by binary search in prefix range on segment tree \nint main()\
     \ {\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tlong long N; cin >> N;\n\tvector<long\
     \ long> A(N);\n\tfor(int i = 0; i < N; ++i) cin >> A[i];\n\tSegmentTree<MonoidRangeGcdPointUpdate<long\
@@ -117,7 +118,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 17:03:13+09:00'
+  timestamp: '2021-04-26 17:13:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp

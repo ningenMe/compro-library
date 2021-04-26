@@ -7,7 +7,8 @@ data:
       \u30C8\u6728"
   - icon: ':heavy_check_mark:'
     path: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
-    title: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
+    title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\u65B0\
+      ]"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -73,9 +74,10 @@ data:
     \     cout << \"vector\" << endl;\n        cout << \"{ \" << fold(0,1);\n    \
     \    for(int i = 1; i < length; ++i) cout << \", \" << fold(i,i+1);\n        cout\
     \ << \" }\" << endl;\n    }\n};\n#line 1 \"lib/operator/monoid/MonoidRangeSumPointAdd.cpp\"\
-    \n//\u4E00\u70B9\u52A0\u7B97 \u533A\u9593\u7DCF\u548C\ntemplate<class T> struct\
-    \ MonoidRangeSumPointAdd {\n    using TypeNode = T;\n    inline static constexpr\
-    \ TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_fold(TypeNode\
+    \n/*\n * @title MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\
+    \u65B0]\n * @docs md/operator/monoid/MonoidRangeSumPointAdd.md\n */\ntemplate<class\
+    \ T> struct MonoidRangeSumPointAdd {\n    using TypeNode = T;\n    inline static\
+    \ constexpr TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_fold(TypeNode\
     \ l,TypeNode r){return l+r;}\n    inline static constexpr TypeNode func_operate(TypeNode\
     \ l,TypeNode r){return l+r;}\n    inline static constexpr bool func_check(TypeNode\
     \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n#line 9 \"test/data-structure/segment-tree/SegmentTree-rsq.test.cpp\"\
@@ -99,7 +101,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 17:03:13+09:00'
+  timestamp: '2021-04-26 17:13:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp

@@ -7,7 +7,8 @@ data:
       \u30C8\u6728"
   - icon: ':heavy_check_mark:'
     path: lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp
-    title: lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp
+    title: "MonoidRangeCompositePointUpdate - [\u533A\u9593\u4E00\u6B21\u95A2\u6570\
+      , \u70B9\u66F4\u65B0]"
   - icon: ':heavy_check_mark:'
     path: lib/util/ModInt.cpp
     title: ModInt
@@ -113,14 +114,15 @@ data:
     \ &os, const ModInt &p) {return os << p.x;}\n    friend istream &operator>>(istream\
     \ &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}\n};\n\
     //using modint = ModInt<MOD>;\n#line 1 \"lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp\"\
-    \n\n//\u4E00\u6B21\u95A2\u6570\ntemplate<class T> struct MonoidRangeCompositePointUpdate\
-    \ {\n    using TypeNode = T;\n    inline static constexpr TypeNode unit_node =\
-    \ make_pair(1,0);\n    inline static constexpr TypeNode func_fold(TypeNode l,TypeNode\
-    \ r){return {r.first*l.first,r.first*l.second+r.second};}\n    inline static constexpr\
-    \ TypeNode func_operate(TypeNode l,TypeNode r){return r;}\n    inline static constexpr\
-    \ bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}\n};\n\
-    #line 10 \"test/data-structure/segment-tree/SegmentTree-rcq.test.cpp\"\n\nusing\
-    \ modint = ModInt<998244353>;\nint main(){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\
+    \n/*\n * @title MonoidRangeCompositePointUpdate - [\u533A\u9593\u4E00\u6B21\u95A2\
+    \u6570, \u70B9\u66F4\u65B0]\n * @docs md/operator/monoid/MonoidRangeCompositePointUpdate.md\n\
+    \ */\ntemplate<class T> struct MonoidRangeCompositePointUpdate {\n    using TypeNode\
+    \ = T;\n    inline static constexpr TypeNode unit_node = make_pair(1,0);\n   \
+    \ inline static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return {r.first*l.first,r.first*l.second+r.second};}\n\
+    \    inline static constexpr TypeNode func_operate(TypeNode l,TypeNode r){return\
+    \ r;}\n    inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
+    \ var == nodeVal;}\n};\n#line 10 \"test/data-structure/segment-tree/SegmentTree-rcq.test.cpp\"\
+    \n\nusing modint = ModInt<998244353>;\nint main(){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\
     \    int N,Q; cin >> N >> Q;\n    vector<pair<modint,modint>> A(N);\n    for(int\
     \ i = 0; i < N; ++i) {\n        cin >> A[i].first >> A[i].second;\n    }\n   \
     \ SegmentTree<MonoidRangeCompositePointUpdate<pair<modint,modint>>> seg(A);\n\
@@ -145,7 +147,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 17:03:13+09:00'
+  timestamp: '2021-04-26 17:13:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
