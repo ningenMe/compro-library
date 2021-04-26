@@ -4,8 +4,9 @@
 #include <vector>
 #include <queue>
 using namespace std;
-#include "../../lib/segment/Rbst.cpp"
-#include "../../lib/geometory/ConvexHullTrick.cpp"
+#include "../../../lib/segment/Rbst.cpp"
+#include "../../../lib/operator/operator/ValueMin.cpp"
+#include "../../../lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);

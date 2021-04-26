@@ -1,6 +1,6 @@
 /*
  * @title AbelPrefixGcdPointUpdate
- * @docs md/operator/Abel/AbelPrefixGcdPointUpdate.md
+ * @docs md/operator/abel/AbelPrefixGcdPointUpdate.md
  */
 template<class TypeNode> struct AbelPrefixGcdPointUpdate {
 	TypeNode unit_node = 0;

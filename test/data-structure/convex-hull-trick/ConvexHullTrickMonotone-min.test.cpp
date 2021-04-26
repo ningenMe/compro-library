@@ -5,7 +5,8 @@
 #include <queue>
 #include <cassert>
 using namespace std;
-#include "../../lib/geometory/ConvexHullTrickMonotone.cpp"
+#include "../../../lib/operator/operator/ValueMin.cpp"
+#include "../../../lib/data-structure/convex-hull-trick/ConvexHullTrickMonotone.cpp"
 using ll = long long;
 
 int main(void){

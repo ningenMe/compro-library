@@ -1,7 +1,6 @@
 /*
  * @title ConvexHullTrickSegmentTree - 非単調CHTセグメント木
- * @docs md/segment/ConvexHullTrickSegmentTree.md
- * @see 
+ * @docs md/data-structure/convex-hull-trick/ConvexHullTrickSegmentTree.md
  */
 template<class Operator> class ConvexHullTrickSegmentTree {
 	using TypeValue = typename Operator::TypeValue;

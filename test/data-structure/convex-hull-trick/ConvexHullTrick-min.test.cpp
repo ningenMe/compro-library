@@ -4,8 +4,9 @@
 #include <vector>
 #include <queue>
 using namespace std;
-#include "../../lib/segment/Rbst.cpp"
-#include "../../lib/geometory/ConvexHullTrick.cpp"
+#include "../../../lib/segment/Rbst.cpp"
+#include "../../../lib/operator/operator/ValueMinx.cpp"
+#include "../../../lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp"
 using ll = long long;
 
 int main(void){

@@ -1,6 +1,6 @@
 /*
  * @title ConvexHullTrick - 非単調CHT
- * @docs md/geometory/ConvexHullTrick.md
+ * @docs md/data-structure/convex-hull-trick/ConvexHullTrick.md
  */
 template<class Operator> class ConvexHullTrick {
 private:
@@ -79,18 +79,4 @@ public:
 	void print() {
 		lines.print();
 	}
-};
-
-//最小値クエリ
-template<class T> struct ValueMin {
-	using TypeValue = T;
-	inline static constexpr TypeValue unit_value = 3e18;
-	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l<r;}
-};
-
-//最大値クエリ
-template<class T> struct ValueMax {
-	using TypeValue = T;
-	inline static constexpr TypeValue unit_value = -3e18;
-	inline static constexpr bool func_compare(TypeValue l,TypeValue r){return l>r;}
 };
