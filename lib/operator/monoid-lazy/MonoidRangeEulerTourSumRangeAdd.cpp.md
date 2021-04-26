@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/graph/Tree-eulertour.test.cpp
     title: test/graph/Tree-eulertour.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp\"\
@@ -37,7 +37,7 @@ data:
   path: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
   requiredBy: []
   timestamp: '2021-04-26 17:56:28+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/Tree-eulertour.test.cpp
 documentation_of: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp

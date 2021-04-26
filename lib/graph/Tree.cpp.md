@@ -6,7 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-diameter.test.cpp
     title: test/graph/Tree-diameter.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/graph/Tree-eulertour.test.cpp
     title: test/graph/Tree-eulertour.test.cpp
   - icon: ':heavy_check_mark:'
@@ -36,9 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-size.test.cpp
     title: test/graph/Tree-size.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/graph/Tree.md
     document_title: "Tree - \u6728"
@@ -352,7 +352,7 @@ data:
   path: lib/graph/Tree.cpp
   requiredBy: []
   timestamp: '2021-04-23 06:36:49+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/Tree-eulertour.test.cpp
   - test/graph/Tree-hld-path.test.cpp

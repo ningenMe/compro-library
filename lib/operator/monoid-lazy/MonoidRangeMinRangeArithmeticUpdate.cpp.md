@@ -13,9 +13,9 @@ data:
     \ T, class U> struct MonoidRangeMinRangeArithmeticUpdate {\n    using TypeNode\
     \ = T;\n    using TypeLazy = U;\n    inline static constexpr TypeNode unit_node\
     \ = 1234567;\n    inline static constexpr TypeLazy unit_lazy = {-2000,-2000};\n\
-    \    inline static constexpr TypeNode fucn_fold(TypeNode l,TypeNode r){return\
+    \    inline static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return\
     \ min(l,r);}\n    inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy\
-    \ new_lazy){return new_lazy;}\n    inline static constexpr TypeNode fucn_operate(TypeNode\
+    \ new_lazy){return new_lazy;}\n    inline static constexpr TypeNode func_operate(TypeNode\
     \ node,TypeLazy lazy,int l,int r){ return (lazy.first==-2000?node:lazy.first +\
     \ (l-lazy.second));}\n    inline static constexpr bool func_check(TypeNode nodeVal,TypeNode\
     \ var){return var <= nodeVal;}\n};\n"
@@ -23,9 +23,9 @@ data:
     \ T, class U> struct MonoidRangeMinRangeArithmeticUpdate {\n    using TypeNode\
     \ = T;\n    using TypeLazy = U;\n    inline static constexpr TypeNode unit_node\
     \ = 1234567;\n    inline static constexpr TypeLazy unit_lazy = {-2000,-2000};\n\
-    \    inline static constexpr TypeNode fucn_fold(TypeNode l,TypeNode r){return\
+    \    inline static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return\
     \ min(l,r);}\n    inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy\
-    \ new_lazy){return new_lazy;}\n    inline static constexpr TypeNode fucn_operate(TypeNode\
+    \ new_lazy){return new_lazy;}\n    inline static constexpr TypeNode func_operate(TypeNode\
     \ node,TypeLazy lazy,int l,int r){ return (lazy.first==-2000?node:lazy.first +\
     \ (l-lazy.second));}\n    inline static constexpr bool func_check(TypeNode nodeVal,TypeNode\
     \ var){return var <= nodeVal;}\n};"
@@ -33,7 +33,7 @@ data:
   isVerificationFile: false
   path: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
   requiredBy: []
-  timestamp: '2021-04-26 17:33:59+09:00'
+  timestamp: '2021-04-26 18:07:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp

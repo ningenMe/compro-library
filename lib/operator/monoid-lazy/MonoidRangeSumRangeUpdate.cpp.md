@@ -15,18 +15,18 @@ data:
     \n//node:\u7DCF\u548C\u3000lazy:\u66F4\u65B0\ntemplate<class T, class U> struct\
     \ MonoidRangeSumRangeUpdate {\n\tusing TypeNode = T;\n\tusing TypeLazy = U;\n\t\
     inline static constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeLazy\
-    \ unit_lazy = -2000;\n\tinline static constexpr TypeNode fucn_fold(TypeNode l,TypeNode\
+    \ unit_lazy = -2000;\n\tinline static constexpr TypeNode func_fold(TypeNode l,TypeNode\
     \ r){return l+r;}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy\
-    \ new_lazy){return new_lazy;}\n\tinline static constexpr TypeNode fucn_operate(TypeNode\
+    \ new_lazy){return new_lazy;}\n\tinline static constexpr TypeNode func_operate(TypeNode\
     \ node,TypeLazy lazy,int l, int r){return lazy!=-2000?lazy*(r-l):node;}\n\tinline\
     \ static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <=\
     \ nodeVal;}\n};\n"
   code: "//node:\u7DCF\u548C\u3000lazy:\u66F4\u65B0\ntemplate<class T, class U> struct\
     \ MonoidRangeSumRangeUpdate {\n\tusing TypeNode = T;\n\tusing TypeLazy = U;\n\t\
     inline static constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeLazy\
-    \ unit_lazy = -2000;\n\tinline static constexpr TypeNode fucn_fold(TypeNode l,TypeNode\
+    \ unit_lazy = -2000;\n\tinline static constexpr TypeNode func_fold(TypeNode l,TypeNode\
     \ r){return l+r;}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy\
-    \ new_lazy){return new_lazy;}\n\tinline static constexpr TypeNode fucn_operate(TypeNode\
+    \ new_lazy){return new_lazy;}\n\tinline static constexpr TypeNode func_operate(TypeNode\
     \ node,TypeLazy lazy,int l, int r){return lazy!=-2000?lazy*(r-l):node;}\n\tinline\
     \ static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <=\
     \ nodeVal;}\n};"
@@ -34,7 +34,7 @@ data:
   isVerificationFile: false
   path: lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
   requiredBy: []
-  timestamp: '2021-04-26 17:33:59+09:00'
+  timestamp: '2021-04-26 18:07:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp

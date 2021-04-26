@@ -45,7 +45,7 @@ data:
       path: lib/data-structure/segment-tree/DynamicSegmentTree.cpp
       title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
         \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/segment-tree/LazySegmentTree.cpp
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -78,7 +78,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/Dinic.cpp
       title: "Dinic - Dinic\u30D5\u30ED\u30FC"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/graph/Graph.cpp
       title: Graph
     - icon: ':heavy_check_mark:'
@@ -96,7 +96,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/StronglyConnectedComponents.cpp
       title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/graph/Tree.cpp
       title: "Tree - \u6728"
     - icon: ':heavy_check_mark:'
@@ -182,7 +182,7 @@ data:
         ]"
   - name: lib/operator/monoid-lazy
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
       title: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
     - icon: ':heavy_check_mark:'
@@ -485,7 +485,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/Tree-diameter.test.cpp
       title: test/graph/Tree-diameter.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-eulertour.test.cpp
       title: test/graph/Tree-eulertour.test.cpp
     - icon: ':heavy_check_mark:'
