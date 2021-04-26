@@ -2,8 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/segment/LiChaoTree.cpp
+    path: lib/data-structure/convex-hull-trick/LiChaoTree.cpp
     title: LiChaoTree
+  - icon: ':heavy_check_mark:'
+    path: lib/operator/operator/ValueMin.cpp
+    title: lib/operator/operator/ValueMin.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -14,15 +17,19 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/line_add_get_min
     links:
     - https://judge.yosupo.jp/problem/line_add_get_min
-  bundledCode: "#line 1 \"test/segment/LiChaoTree-line.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <algorithm>\nusing namespace std;\n#line 1 \"lib/segment/LiChaoTree.cpp\"\
-    \n/*\n * @title LiChaoTree\n * @docs md/segment/LiChaoTree.md\n */\ntemplate <typename\
-    \ Operator> class LiChaoTree{\n\tusing TypeValue = typename Operator::TypeValue;\n\
-    \tusing Line = pair<TypeValue,TypeValue>;\n\tvector<TypeValue> x;\n\tvector<Line>\
-    \ node;\n\tvector<int> clz;\n\tsize_t length;\n\tconst size_t bit;\npublic:\t\n\
-    \tLiChaoTree(const size_t bit=30):bit(bit){\n\t\t//do nothing\n\t}\n\tinline void\
-    \ build(){\n\t\tsort(x.begin(),x.end());\n\t\tx.erase(unique(x.begin(),x.end()),x.end());\n\
+  bundledCode: "#line 1 \"test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n#include\
+    \ <vector>\n#include <iostream>\n#include <algorithm>\nusing namespace std;\n\n\
+    #line 1 \"lib/operator/operator/ValueMin.cpp\"\n//\u6700\u5C0F\u5024\u30AF\u30A8\
+    \u30EA\ntemplate<class T> struct ValueMin {\n\tusing TypeValue = T;\n\tinline\
+    \ static constexpr TypeValue unit_value = 3e18;\n\tinline static constexpr bool\
+    \ func_compare(TypeValue l,TypeValue r){return l<r;}\n};\n#line 1 \"lib/data-structure/convex-hull-trick/LiChaoTree.cpp\"\
+    \n/*\n * @title LiChaoTree\n * @docs md/data-structure/segment/convex-hull-trick/LiChaoTree.md\n\
+    \ */\ntemplate <typename Operator> class LiChaoTree{\n\tusing TypeValue = typename\
+    \ Operator::TypeValue;\n\tusing Line = pair<TypeValue,TypeValue>;\n\tvector<TypeValue>\
+    \ x;\n\tvector<Line> node;\n\tvector<int> clz;\n\tsize_t length;\n\tconst size_t\
+    \ bit;\npublic:\t\n\tLiChaoTree(const size_t bit=30):bit(bit){\n\t\t//do nothing\n\
+    \t}\n\tinline void build(){\n\t\tsort(x.begin(),x.end());\n\t\tx.erase(unique(x.begin(),x.end()),x.end());\n\
     \t\tTypeValue maxi = x.back() + 1;\n\t\tfor (length = 1; length < x.size(); length\
     \ *= 2);\n\t\tx.resize(length, maxi);\n\t\tnode.resize(2*length,make_pair(0,Operator::unit_value));\n\
     \t\tclz.resize(2*length,32);\n\t\tfor(size_t i = 1; i < 2*length; ++i) {\n\t\t\
@@ -42,10 +49,7 @@ data:
     \ l < r; l >>=1, r >>=1) {\n\t\t\tif(l&1) update(line,l),l++;\n\t\t\tif(r&1) --r,update(line,r);\n\
     \t\t}\n\t}\n\t\n\tinline TypeValue get(TypeValue t){\n\t\tint i = distance(x.begin(),lower_bound(x.begin(),x.end(),t))+length;\n\
     \t\tTypeValue res = Operator::unit_value;\n\t\tfor(;1<=i;i>>=1) if(!Operator::func_compare(res,f(node[i],t)))\
-    \ res = f(node[i],t);\n\t\treturn res;\n\t}\n};\n\n//\u6700\u5C0F\u5024\u30AF\u30A8\
-    \u30EA\ntemplate<class T> struct ValueMin {\n\tusing TypeValue = T;\n\tinline\
-    \ static constexpr TypeValue unit_value = 3e18;\n\tinline static constexpr bool\
-    \ func_compare(TypeValue l,TypeValue r){return l<r;}\n};\n#line 8 \"test/segment/LiChaoTree-line.test.cpp\"\
+    \ res = f(node[i],t);\n\t\treturn res;\n\t}\n};\n#line 10 \"test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp\"\
     \n\nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tint N,Q; cin\
     \ >> N >> Q;\n\tvector<long long> A(N),B(N),C(Q),D(Q),E(Q);\n\tfor(int i = 0;\
     \ i < N; ++i) cin >> A[i] >> B[i];\n\tLiChaoTree<ValueMin<long long>> lct;\n\t\
@@ -58,28 +62,30 @@ data:
     \t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n\
     #include <vector>\n#include <iostream>\n#include <algorithm>\nusing namespace\
-    \ std;\n#include \"../../lib/segment/LiChaoTree.cpp\"\n\nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\
-    \tint N,Q; cin >> N >> Q;\n\tvector<long long> A(N),B(N),C(Q),D(Q),E(Q);\n\tfor(int\
-    \ i = 0; i < N; ++i) cin >> A[i] >> B[i];\n\tLiChaoTree<ValueMin<long long>> lct;\n\
-    \tfor(int i = 0; i < Q; ++i) {\n\t\tcin >> C[i];\n\t\tif(C[i]) {\n\t\t\tcin >>\
-    \ D[i];\n\t\t\tlct.x_push_back(D[i]);\n\t\t}\n\t\telse {\n\t\t\tcin >> D[i] >>\
-    \ E[i];\n\t\t}\n\t}\n\tlct.build();\n\tfor(int i = 0; i < N; ++i) lct.update({A[i],B[i]});\n\
-    \tlong long inf = 3e18;\n\tfor(int i = 0; i < Q; ++i) {\n\t\tif(C[i]) {\n\t\t\t\
-    long long ans = lct.get(D[i]);\n\t\t\tif(ans!=inf) cout << ans << endl;\n\t\t\t\
-    else cout << \"INFINITY\" << endl;\n\t\t}\n\t\telse {\n\t\t\tlct.update({D[i],E[i]});\n\
-    \t\t}\n\t}\n}"
+    \ std;\n\n#include \"../../../lib/operator/operator/ValueMin.cpp\"\n#include \"\
+    ../../../lib/data-structure/convex-hull-trick/LiChaoTree.cpp\"\n\nint main(void){\n\
+    \tcin.tie(0);ios::sync_with_stdio(false);\n\tint N,Q; cin >> N >> Q;\n\tvector<long\
+    \ long> A(N),B(N),C(Q),D(Q),E(Q);\n\tfor(int i = 0; i < N; ++i) cin >> A[i] >>\
+    \ B[i];\n\tLiChaoTree<ValueMin<long long>> lct;\n\tfor(int i = 0; i < Q; ++i)\
+    \ {\n\t\tcin >> C[i];\n\t\tif(C[i]) {\n\t\t\tcin >> D[i];\n\t\t\tlct.x_push_back(D[i]);\n\
+    \t\t}\n\t\telse {\n\t\t\tcin >> D[i] >> E[i];\n\t\t}\n\t}\n\tlct.build();\n\t\
+    for(int i = 0; i < N; ++i) lct.update({A[i],B[i]});\n\tlong long inf = 3e18;\n\
+    \tfor(int i = 0; i < Q; ++i) {\n\t\tif(C[i]) {\n\t\t\tlong long ans = lct.get(D[i]);\n\
+    \t\t\tif(ans!=inf) cout << ans << endl;\n\t\t\telse cout << \"INFINITY\" << endl;\n\
+    \t\t}\n\t\telse {\n\t\t\tlct.update({D[i],E[i]});\n\t\t}\n\t}\n}"
   dependsOn:
-  - lib/segment/LiChaoTree.cpp
+  - lib/operator/operator/ValueMin.cpp
+  - lib/data-structure/convex-hull-trick/LiChaoTree.cpp
   isVerificationFile: true
-  path: test/segment/LiChaoTree-line.test.cpp
+  path: test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 17:01:19+09:00'
+  timestamp: '2021-04-26 09:17:40+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/segment/LiChaoTree-line.test.cpp
+documentation_of: test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
 layout: document
 redirect_from:
-- /verify/test/segment/LiChaoTree-line.test.cpp
-- /verify/test/segment/LiChaoTree-line.test.cpp.html
-title: test/segment/LiChaoTree-line.test.cpp
+- /verify/test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
+- /verify/test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp.html
+title: test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
 ---

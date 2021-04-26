@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp
     title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/operator/operator/ValueMin.cpp
     title: lib/operator/operator/ValueMin.cpp
   - icon: ':heavy_check_mark:'

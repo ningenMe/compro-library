@@ -18,13 +18,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp
       title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/convex-hull-trick/ConvexHullTrickMonotone.cpp
       title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
     - icon: ':warning:'
       path: lib/data-structure/convex-hull-trick/ConvexHullTrickSegmentTree.cpp
       title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\
         \u30F3\u30C8\u6728"
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/convex-hull-trick/LiChaoTree.cpp
+      title: LiChaoTree
   - name: lib/data-structure/range-query
     pages:
     - icon: ':heavy_check_mark:'
@@ -143,10 +146,10 @@ data:
       title: AbelPrefixSumPointAdd
   - name: lib/operator/operator
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/operator/operator/ValueMax.cpp
       title: lib/operator/operator/ValueMax.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/operator/operator/ValueMin.cpp
       title: lib/operator/operator/ValueMin.cpp
   - name: lib/optimize
@@ -176,9 +179,6 @@ data:
       path: lib/segment/LazySegmentTree.cpp
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/LiChaoTree.cpp
-      title: LiChaoTree
     - icon: ':heavy_check_mark:'
       path: lib/segment/Rbst.cpp
       title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
@@ -344,12 +344,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
+      title: test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/convex-hull-trick/LiChaoTree-segment.test.cpp
+      title: test/data-structure/convex-hull-trick/LiChaoTree-segment.test.cpp
   - name: test/data-structure/range-query
     pages:
     - icon: ':heavy_check_mark:'
@@ -540,12 +546,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/LazySegmentTree-rsqruq.test.cpp
       title: test/segment/LazySegmentTree-rsqruq.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/LiChaoTree-line.test.cpp
-      title: test/segment/LiChaoTree-line.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/LiChaoTree-segment.test.cpp
-      title: test/segment/LiChaoTree-segment.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment/Rbst-get.test.cpp
       title: test/segment/Rbst-get.test.cpp

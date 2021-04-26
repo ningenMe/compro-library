@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/data-structure/convex-hull-trick/ConvexHullTrickMonotone.cpp
     title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/operator/operator/ValueMin.cpp
     title: lib/operator/operator/ValueMin.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/409
@@ -62,13 +62,7 @@ data:
     \t\tint ng = -1, ok = (int)lines.size()-1, md;\n\t\twhile (ok - ng > 1) {\n\t\t\
     \tmd = (ok + ng) >> 1;\n\t\t\t( Operator::func_compare(y(lines[md],x),y(lines[md+1],x))\
     \ ?ok:ng)=md;\n\t\t}\n\t\treturn lines[ok];\n\t}\n\t//O(N)\n\tinline void clear(void)\
-    \ {\n\t\tlines.clear();\n\t}\n};\n\n//\u6700\u5C0F\u5024\u30AF\u30A8\u30EA\ntemplate<class\
-    \ T> struct ValueMin {\n\tusing TypeValue = T;\n\tinline static constexpr TypeValue\
-    \ unit_value = 3e18;\n\tinline static constexpr bool func_compare(TypeValue l,TypeValue\
-    \ r){return l<r;}\n};\n\n//\u6700\u5927\u5024\u30AF\u30A8\u30EA\ntemplate<class\
-    \ T> struct ValueMax {\n\tusing TypeValue = T;\n\tinline static constexpr TypeValue\
-    \ unit_value = -3e18;\n\tinline static constexpr bool func_compare(TypeValue l,TypeValue\
-    \ r){return l>r;}\n};\n#line 10 \"test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp\"\
+    \ {\n\t\tlines.clear();\n\t}\n};\n#line 10 \"test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp\"\
     \nusing ll = long long;\n\nint main(void){\n\tll N,A,B,W; cin >> N >> A >> B >>\
     \ W;\n\tvector<ll> D(N+2,0);\n\tfor(int i = 1; i <= N; ++i) cin >> D[i];\n\t//\
     \ dp[i]=min{j:[0,i)}-> dp[j]+B*k*(k+1)/2-k*A+D[i] (k=i-j-1)\n\t//            \
@@ -96,8 +90,8 @@ data:
   isVerificationFile: true
   path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 09:09:47+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-04-26 09:18:50+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
 layout: document

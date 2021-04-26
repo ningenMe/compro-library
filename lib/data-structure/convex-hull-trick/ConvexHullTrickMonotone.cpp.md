@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
     title: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
     title: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/data-structure/convex-hull-trick/ConvexHullTrickMonotone.md
     document_title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
@@ -55,13 +55,7 @@ data:
     \t\tint ng = -1, ok = (int)lines.size()-1, md;\n\t\twhile (ok - ng > 1) {\n\t\t\
     \tmd = (ok + ng) >> 1;\n\t\t\t( Operator::func_compare(y(lines[md],x),y(lines[md+1],x))\
     \ ?ok:ng)=md;\n\t\t}\n\t\treturn lines[ok];\n\t}\n\t//O(N)\n\tinline void clear(void)\
-    \ {\n\t\tlines.clear();\n\t}\n};\n\n//\u6700\u5C0F\u5024\u30AF\u30A8\u30EA\ntemplate<class\
-    \ T> struct ValueMin {\n\tusing TypeValue = T;\n\tinline static constexpr TypeValue\
-    \ unit_value = 3e18;\n\tinline static constexpr bool func_compare(TypeValue l,TypeValue\
-    \ r){return l<r;}\n};\n\n//\u6700\u5927\u5024\u30AF\u30A8\u30EA\ntemplate<class\
-    \ T> struct ValueMax {\n\tusing TypeValue = T;\n\tinline static constexpr TypeValue\
-    \ unit_value = -3e18;\n\tinline static constexpr bool func_compare(TypeValue l,TypeValue\
-    \ r){return l>r;}\n};\n"
+    \ {\n\t\tlines.clear();\n\t}\n};\n"
   code: "/*\n * @title ConvexHullTrickMonotone - \u5358\u8ABFCHT\n * @docs md/data-structure/convex-hull-trick/ConvexHullTrickMonotone.md\n\
     \ */\ntemplate<class Operator> class ConvexHullTrickMonotone {\nprivate:\n\tusing\
     \ TypeValue = typename Operator::TypeValue;\n\n\t//front->back\u306B\u5411\u304B\
@@ -100,19 +94,13 @@ data:
     \t\tint ng = -1, ok = (int)lines.size()-1, md;\n\t\twhile (ok - ng > 1) {\n\t\t\
     \tmd = (ok + ng) >> 1;\n\t\t\t( Operator::func_compare(y(lines[md],x),y(lines[md+1],x))\
     \ ?ok:ng)=md;\n\t\t}\n\t\treturn lines[ok];\n\t}\n\t//O(N)\n\tinline void clear(void)\
-    \ {\n\t\tlines.clear();\n\t}\n};\n\n//\u6700\u5C0F\u5024\u30AF\u30A8\u30EA\ntemplate<class\
-    \ T> struct ValueMin {\n\tusing TypeValue = T;\n\tinline static constexpr TypeValue\
-    \ unit_value = 3e18;\n\tinline static constexpr bool func_compare(TypeValue l,TypeValue\
-    \ r){return l<r;}\n};\n\n//\u6700\u5927\u5024\u30AF\u30A8\u30EA\ntemplate<class\
-    \ T> struct ValueMax {\n\tusing TypeValue = T;\n\tinline static constexpr TypeValue\
-    \ unit_value = -3e18;\n\tinline static constexpr bool func_compare(TypeValue l,TypeValue\
-    \ r){return l>r;}\n};"
+    \ {\n\t\tlines.clear();\n\t}\n};"
   dependsOn: []
   isVerificationFile: false
   path: lib/data-structure/convex-hull-trick/ConvexHullTrickMonotone.cpp
   requiredBy: []
-  timestamp: '2021-04-26 09:09:47+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-04-26 09:18:50+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
   - test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
