@@ -5,7 +5,7 @@ data:
     path: lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp
     title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
   - icon: ':heavy_check_mark:'
-    path: lib/operator/AbelPrefixSumPointAdd.cpp
+    path: lib/operator/Abel/AbelPrefixSumPointAdd.cpp
     title: AbelPrefixSumPointAdd
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -20,14 +20,14 @@ data:
   bundledCode: "#line 1 \"test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp\"\
     \n#define PROBLEM \"https://yukicoder.me/problems/no/789\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <unordered_map>\nusing namespace\
-    \ std;\n#line 1 \"lib/operator/AbelPrefixSumPointAdd.cpp\"\n/*\n * @title AbelPrefixSumPointAdd\n\
-    \ * @docs md/operator/AbelPrefixSumPointAdd.md\n */\ntemplate<class T> struct\
-    \ AbelPrefixSumPointAdd {\n    using TypeNode = T;\n    inline static constexpr\
-    \ TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_fold(const\
-    \ TypeNode& l,const TypeNode& r){return l+r;}\n    inline static constexpr TypeNode\
-    \ func_fold_inv(const TypeNode& l,const TypeNode& r){return l-r;}\n};\n#line 1\
-    \ \"lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp\"\n/*\n\
-    \ * @title DynamicBinaryIndexedTree - \u52D5\u7684BIT\n * @docs md/segment/DynamicBinaryIndexedTree.md\n\
+    \ std;\n#line 1 \"lib/operator/Abel/AbelPrefixSumPointAdd.cpp\"\n/*\n * @title\
+    \ AbelPrefixSumPointAdd\n * @docs md/operator/Abel/AbelPrefixSumPointAdd.md\n\
+    \ */\ntemplate<class T> struct AbelPrefixSumPointAdd {\n    using TypeNode = T;\n\
+    \    inline static constexpr TypeNode unit_node = 0;\n    inline static constexpr\
+    \ TypeNode func_fold(const TypeNode& l,const TypeNode& r){return l+r;}\n    inline\
+    \ static constexpr TypeNode func_fold_inv(const TypeNode& l,const TypeNode& r){return\
+    \ l-r;}\n};\n#line 1 \"lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp\"\
+    \n/*\n * @title DynamicBinaryIndexedTree - \u52D5\u7684BIT\n * @docs md/segment/DynamicBinaryIndexedTree.md\n\
     \ */\ntemplate<class Abel> class DynamicBinaryIndexedTree {\n    using TypeNode\
     \ = typename Abel::TypeNode;\n    using i64 = long long;\n    i64 length;\n\n\
     \    unordered_map<i64,TypeNode> node;\npublic:\n    \n    //[0,N) constructed,\
@@ -50,7 +50,7 @@ data:
     \ 0; \n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/789\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <unordered_map>\nusing namespace\
-    \ std;\n#include \"../../../lib/operator/AbelPrefixSumPointAdd.cpp\"\n#include\
+    \ std;\n#include \"../../../lib/operator/Abel/AbelPrefixSumPointAdd.cpp\"\n#include\
     \ \"../../../lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp\"\
     \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    DynamicBinaryIndexedTree<AbelPrefixSumPointAdd<long\
     \ long>> seg(1000000010);\n    int N; cin >> N;\n    long long ans = 0;\n    while(N--)\
@@ -58,12 +58,12 @@ data:
     \        else ans += seg.fold(l,r+1);\n    }\n    cout << ans << endl;\n    return\
     \ 0; \n}"
   dependsOn:
-  - lib/operator/AbelPrefixSumPointAdd.cpp
+  - lib/operator/Abel/AbelPrefixSumPointAdd.cpp
   - lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp
   isVerificationFile: true
   path: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 08:53:51+09:00'
+  timestamp: '2021-04-26 09:05:42+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp

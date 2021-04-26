@@ -5,7 +5,7 @@ data:
     path: lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
     title: BinaryIndexedTree - BIT
   - icon: ':heavy_check_mark:'
-    path: lib/operator/AbelPrefixSumPointAdd.cpp
+    path: lib/operator/Abel/AbelPrefixSumPointAdd.cpp
     title: AbelPrefixSumPointAdd
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -19,8 +19,8 @@ data:
     - https://yukicoder.me/problems/no/742
   bundledCode: "#line 1 \"test/data-structure/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp\"\
     \n#define PROBLEM \"https://yukicoder.me/problems/no/742\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <cassert>\nusing namespace std;\n#line 1 \"lib/operator/AbelPrefixSumPointAdd.cpp\"\
-    \n/*\n * @title AbelPrefixSumPointAdd\n * @docs md/operator/AbelPrefixSumPointAdd.md\n\
+    #include <iostream>\n#include <cassert>\nusing namespace std;\n#line 1 \"lib/operator/Abel/AbelPrefixSumPointAdd.cpp\"\
+    \n/*\n * @title AbelPrefixSumPointAdd\n * @docs md/operator/Abel/AbelPrefixSumPointAdd.md\n\
     \ */\ntemplate<class T> struct AbelPrefixSumPointAdd {\n    using TypeNode = T;\n\
     \    inline static constexpr TypeNode unit_node = 0;\n    inline static constexpr\
     \ TypeNode func_fold(const TypeNode& l,const TypeNode& r){return l+r;}\n    inline\
@@ -51,7 +51,7 @@ data:
     \ += bit.fold(A[i]);\n        bit.operate(A[i],1);\n    }\n    cout << ans <<\
     \ endl;\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/742\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <cassert>\nusing namespace std;\n#include \"../../../lib/operator/AbelPrefixSumPointAdd.cpp\"\
+    #include <iostream>\n#include <cassert>\nusing namespace std;\n#include \"../../../lib/operator/Abel/AbelPrefixSumPointAdd.cpp\"\
     \n#include \"../../../lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp\"\
     \n\nint main(void){\n    int N; cin >> N;\n    vector<int> A(N+1,0);\n    for(int\
     \ i = 1; i <= N; ++i) {\n        cin >> A[i];\n    }\n    BinaryIndexedTree<AbelPrefixSumPointAdd<int>>\
@@ -59,12 +59,12 @@ data:
     \ += bit.fold(A[i]);\n        bit.operate(A[i],1);\n    }\n    cout << ans <<\
     \ endl;\n\treturn 0;\n}"
   dependsOn:
-  - lib/operator/AbelPrefixSumPointAdd.cpp
+  - lib/operator/Abel/AbelPrefixSumPointAdd.cpp
   - lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
   isVerificationFile: true
   path: test/data-structure/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 08:53:51+09:00'
+  timestamp: '2021-04-26 09:05:42+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp

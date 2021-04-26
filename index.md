@@ -15,7 +15,7 @@ data:
       title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
   - name: lib/data-structure/range-query
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/data-structure/range-query/RangeInversionQuery.cpp
       title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
     - icon: ':warning:'
@@ -127,13 +127,13 @@ data:
     - icon: ':warning:'
       path: lib/math/PrimitiveRoot.cpp
       title: "PrimitiveRoot - \u539F\u59CB\u6839"
-  - name: lib/operator
+  - name: lib/operator/Abel
     pages:
     - icon: ':warning:'
-      path: lib/operator/AbelPrefixGcdPointUpdate.cpp
+      path: lib/operator/Abel/AbelPrefixGcdPointUpdate.cpp
       title: AbelPrefixGcdPointUpdate
     - icon: ':heavy_check_mark:'
-      path: lib/operator/AbelPrefixSumPointAdd.cpp
+      path: lib/operator/Abel/AbelPrefixSumPointAdd.cpp
       title: AbelPrefixSumPointAdd
   - name: lib/optimize
     pages:
@@ -325,7 +325,7 @@ data:
       title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   - name: test/data-structure/range-query
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/data-structure/range-query/RangeInversionQuery.test.cpp
       title: test/data-structure/range-query/RangeInversionQuery.test.cpp
   - name: test
