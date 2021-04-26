@@ -4,14 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/geometory/ConvexHullTrick-max.test.cpp
-    title: test/geometory/ConvexHullTrick-max.test.cpp
+    path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/geometory/ConvexHullTrick-min.test.cpp
-    title: test/geometory/ConvexHullTrick-min.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/geometory/ConvexHullTrick-no-monotone.test.cpp
-    title: test/geometory/ConvexHullTrick-no-monotone.test.cpp
+    path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/segment/Rbst-get.test.cpp
     title: test/segment/Rbst-get.test.cpp
@@ -161,9 +158,8 @@ data:
   - test/segment/Rbst-pair.test.cpp
   - test/segment/Rbst-get.test.cpp
   - test/segment/Rbst-med.test.cpp
-  - test/geometory/ConvexHullTrick-max.test.cpp
-  - test/geometory/ConvexHullTrick-min.test.cpp
-  - test/geometory/ConvexHullTrick-no-monotone.test.cpp
+  - test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
+  - test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
 documentation_of: lib/segment/Rbst.cpp
 layout: document
 redirect_from:

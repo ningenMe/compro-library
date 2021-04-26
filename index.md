@@ -13,9 +13,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp
       title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
+  - name: lib/data-structure/convex-hull-trick
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp
+      title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
+    - icon: ':x:'
+      path: lib/data-structure/convex-hull-trick/ConvexHullTrickMonotone.cpp
+      title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
+    - icon: ':warning:'
+      path: lib/data-structure/convex-hull-trick/ConvexHullTrickSegmentTree.cpp
+      title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\
+        \u30F3\u30C8\u6728"
   - name: lib/data-structure/range-query
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/range-query/RangeInversionQuery.cpp
       title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
     - icon: ':warning:'
@@ -29,12 +41,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/geometory/Argument.cpp
       title: "Argument - \u504F\u89D2"
-    - icon: ':heavy_check_mark:'
-      path: lib/geometory/ConvexHullTrick.cpp
-      title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
-    - icon: ':heavy_check_mark:'
-      path: lib/geometory/ConvexHullTrickMonotone.cpp
-      title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
     - icon: ':heavy_check_mark:'
       path: lib/geometory/Distance.cpp
       title: "Distance - \u8DDD\u96E2"
@@ -127,14 +133,22 @@ data:
     - icon: ':warning:'
       path: lib/math/PrimitiveRoot.cpp
       title: "PrimitiveRoot - \u539F\u59CB\u6839"
-  - name: lib/operator/Abel
+  - name: lib/operator/abel
     pages:
     - icon: ':warning:'
-      path: lib/operator/Abel/AbelPrefixGcdPointUpdate.cpp
+      path: lib/operator/abel/AbelPrefixGcdPointUpdate.cpp
       title: AbelPrefixGcdPointUpdate
     - icon: ':heavy_check_mark:'
-      path: lib/operator/Abel/AbelPrefixSumPointAdd.cpp
+      path: lib/operator/abel/AbelPrefixSumPointAdd.cpp
       title: AbelPrefixSumPointAdd
+  - name: lib/operator/operator
+    pages:
+    - icon: ':question:'
+      path: lib/operator/operator/ValueMax.cpp
+      title: lib/operator/operator/ValueMax.cpp
+    - icon: ':question:'
+      path: lib/operator/operator/ValueMin.cpp
+      title: lib/operator/operator/ValueMin.cpp
   - name: lib/optimize
     pages:
     - icon: ':heavy_check_mark:'
@@ -151,10 +165,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/segment/BitVector.cpp
       title: BitVector
-    - icon: ':warning:'
-      path: lib/segment/ConvexHullTrickSegmentTree.cpp
-      title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\
-        \u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
       path: lib/segment/DisjointSparseTable.cpp
       title: DisjointSparseTable
@@ -323,9 +333,26 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
       title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
+  - name: test/data-structure/convex-hull-trick
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
+      title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
+    - icon: ':x:'
+      path: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+      title: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+      title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+    - icon: ':x:'
+      path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
+      title: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
+    - icon: ':x:'
+      path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
+      title: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
   - name: test/data-structure/range-query
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/range-query/RangeInversionQuery.test.cpp
       title: test/data-structure/range-query/RangeInversionQuery.test.cpp
   - name: test
@@ -338,21 +365,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometory/Argument-sort-by-atan2l.test.cpp
       title: test/geometory/Argument-sort-by-atan2l.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/geometory/ConvexHullTrick-max.test.cpp
-      title: test/geometory/ConvexHullTrick-max.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/geometory/ConvexHullTrick-min.test.cpp
-      title: test/geometory/ConvexHullTrick-min.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/geometory/ConvexHullTrick-no-monotone.test.cpp
-      title: test/geometory/ConvexHullTrick-no-monotone.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/geometory/ConvexHullTrickMonotone-max.test.cpp
-      title: test/geometory/ConvexHullTrickMonotone-max.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/geometory/ConvexHullTrickMonotone-min.test.cpp
-      title: test/geometory/ConvexHullTrickMonotone-min.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/geometory/Distance-line.test.cpp
       title: test/geometory/Distance-line.test.cpp

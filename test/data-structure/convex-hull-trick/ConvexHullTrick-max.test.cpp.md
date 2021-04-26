@@ -2,8 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/geometory/ConvexHullTrick.cpp
+    path: lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp
     title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
+  - icon: ':question:'
+    path: lib/operator/operator/ValueMax.cpp
+    title: lib/operator/operator/ValueMax.cpp
   - icon: ':heavy_check_mark:'
     path: lib/segment/Rbst.cpp
     title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
@@ -14,26 +17,25 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/line_add_get_min
+    PROBLEM: https://yukicoder.me/problems/no/409
     links:
-    - https://judge.yosupo.jp/problem/line_add_get_min
-  bundledCode: "#line 1 \"test/geometory/ConvexHullTrick-no-monotone.test.cpp\"\n\
-    #define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n#include\
-    \ <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n#line\
-    \ 1 \"lib/segment/Rbst.cpp\"\n/*\n * @title Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\
-    \u7D22\u6728\n * @docs md/segment/Rbst.md\n */\ntemplate<class Operator> class\
-    \ Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\tunsigned int x =\
-    \ 123456789, y = 362436069, z = 521288629, w = 88675123;\n\tunsigned int xor_shift()\
-    \ {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z; z = w;\n\t\treturn (w\
-    \ = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\t}\n\tstruct Node {\n\t\tNode *left,\
-    \ *right;\n\t\tTypeNode val;\n\t\tint size;\n\t\tTypeNode sum;\n\n\t\tNode() :\
-    \ val(Operator::unit_node), size(1), sum(Operator::unit_node) {\n\t\t\tleft =\
-    \ right = nullptr;\n\t\t}\n\t\tNode(TypeNode v) : val(v), size(1), sum(v) {\n\t\
-    \t\tleft = right = nullptr;\n\t\t}\n\t};\n\tNode* root;\n\tinline int size(Node\
-    \ *node) {\n\t\treturn node==nullptr ? 0 : node->size;\n\t}\n\tinline TypeNode\
-    \ sum(Node *node) {\n\t\treturn node==nullptr ? Operator::unit_node : node->sum;\n\
-    \t}\n\tinline Node* update(Node *node) {\n\t\tnode->size = size(node->left) +\
-    \ size(node->right) + 1;\n\t\tnode->sum = Operator::func_node(sum(node->left),sum(node->right),node->val);\n\
+    - https://yukicoder.me/problems/no/409
+  bundledCode: "#line 1 \"test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp\"\
+    \n#define PROBLEM \"https://yukicoder.me/problems/no/409\"\n\n#include <iostream>\n\
+    #include <vector>\n#include <queue>\nusing namespace std;\n#line 1 \"lib/segment/Rbst.cpp\"\
+    \n/*\n * @title Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\n * @docs md/segment/Rbst.md\n\
+    \ */\ntemplate<class Operator> class Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\
+    \tunsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\t\
+    unsigned int xor_shift() {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z;\
+    \ z = w;\n\t\treturn (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\t}\n\tstruct Node\
+    \ {\n\t\tNode *left, *right;\n\t\tTypeNode val;\n\t\tint size;\n\t\tTypeNode sum;\n\
+    \n\t\tNode() : val(Operator::unit_node), size(1), sum(Operator::unit_node) {\n\
+    \t\t\tleft = right = nullptr;\n\t\t}\n\t\tNode(TypeNode v) : val(v), size(1),\
+    \ sum(v) {\n\t\t\tleft = right = nullptr;\n\t\t}\n\t};\n\tNode* root;\n\tinline\
+    \ int size(Node *node) {\n\t\treturn node==nullptr ? 0 : node->size;\n\t}\n\t\
+    inline TypeNode sum(Node *node) {\n\t\treturn node==nullptr ? Operator::unit_node\
+    \ : node->sum;\n\t}\n\tinline Node* update(Node *node) {\n\t\tnode->size = size(node->left)\
+    \ + size(node->right) + 1;\n\t\tnode->sum = Operator::func_node(sum(node->left),sum(node->right),node->val);\n\
     \t\treturn node;\n\t}\n\tinline TypeNode get(Node *node, int k) {\n\t\tif (node==nullptr)\
     \ return Operator::unit_node;\n\t\tif (k == size(node->left)) return node->val;\n\
     \t\tif (k < size(node->left)) return get(node->left, k);\n\t\telse return get(node->right,\
@@ -78,8 +80,12 @@ data:
     \ static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return\
     \ l+c+r;}\n};\n\ntemplate<class T> struct NodeSimple {\n\tusing TypeNode = T;\n\
     \tinline static constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeNode\
-    \ func_node(TypeNode l,TypeNode c,TypeNode r){return 0;}\n};\n#line 1 \"lib/geometory/ConvexHullTrick.cpp\"\
-    \n/*\n * @title ConvexHullTrick - \u975E\u5358\u8ABFCHT\n * @docs md/geometory/ConvexHullTrick.md\n\
+    \ func_node(TypeNode l,TypeNode c,TypeNode r){return 0;}\n};\n#line 1 \"lib/operator/operator/ValueMax.cpp\"\
+    \n//\u6700\u5927\u5024\u30AF\u30A8\u30EA\ntemplate<class T> struct ValueMax {\n\
+    \tusing TypeValue = T;\n\tinline static constexpr TypeValue unit_value = -3e18;\n\
+    \tinline static constexpr bool func_compare(TypeValue l,TypeValue r){return l>r;}\n\
+    };\n#line 1 \"lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp\"\n/*\n\
+    \ * @title ConvexHullTrick - \u975E\u5358\u8ABFCHT\n * @docs md/data-structure/convex-hull-trick/ConvexHullTrick.md\n\
     \ */\ntemplate<class Operator> class ConvexHullTrick {\nprivate:\n\tusing TypeValue\
     \ = typename Operator::TypeValue;\n\tstruct NodePair {\n\t\tusing TypeNode = pair<TypeValue,TypeValue>;\n\
     \t\tinline static constexpr TypeNode unit_node = {0,Operator::unit_value};\n\t\
@@ -116,41 +122,46 @@ data:
     \tpair<TypeValue,TypeValue> get_line(TypeValue x) {\n\t\tint ng = -1, ok = (int)lines.size()-1,\
     \ md;\n\t\twhile (ok - ng > 1) {\n\t\t\tmd = (ok + ng) >> 1;\n\t\t\t( Operator::func_compare(y(lines.get(md),x),y(lines.get(md+1),x))\
     \ ?ok:ng)=md;\n\t\t}\n\t\treturn lines.get(ok);\n\t}\n\n\tvoid print() {\n\t\t\
-    lines.print();\n\t}\n};\n\n//\u6700\u5C0F\u5024\u30AF\u30A8\u30EA\ntemplate<class\
-    \ T> struct ValueMin {\n\tusing TypeValue = T;\n\tinline static constexpr TypeValue\
-    \ unit_value = 3e18;\n\tinline static constexpr bool func_compare(TypeValue l,TypeValue\
-    \ r){return l<r;}\n};\n\n//\u6700\u5927\u5024\u30AF\u30A8\u30EA\ntemplate<class\
-    \ T> struct ValueMax {\n\tusing TypeValue = T;\n\tinline static constexpr TypeValue\
-    \ unit_value = -3e18;\n\tinline static constexpr bool func_compare(TypeValue l,TypeValue\
-    \ r){return l>r;}\n};\n#line 9 \"test/geometory/ConvexHullTrick-no-monotone.test.cpp\"\
-    \n\nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; cin\
-    \ >> N >> Q;\n\tConvexHullTrick<ValueMin<__int128_t>> cht;\n\twhile(N--){\n\t\t\
-    long long a,b; cin >> a >> b;\n\t\tcht.insert(a,b);\n\t}\n\twhile(Q--){\n\t\t\
-    int q; cin >> q;\n\t\tif(q){\n\t\t\tlong long p; cin >> p;\n\t\t\tlong long ans\
-    \ = cht.get(p);\n\t\t\tcout << ans << endl;\n\t\t}\n\t\telse{\n\t\t\tlong long\
-    \ a,b; cin >> a >> b;\n\t\t\tcht.insert(a,b);\n\t\t}\n\t}\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n\n\
-    #include <iostream>\n#include <vector>\n#include <queue>\nusing namespace std;\n\
-    #include \"../../lib/segment/Rbst.cpp\"\n#include \"../../lib/geometory/ConvexHullTrick.cpp\"\
-    \n\nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; cin\
-    \ >> N >> Q;\n\tConvexHullTrick<ValueMin<__int128_t>> cht;\n\twhile(N--){\n\t\t\
-    long long a,b; cin >> a >> b;\n\t\tcht.insert(a,b);\n\t}\n\twhile(Q--){\n\t\t\
-    int q; cin >> q;\n\t\tif(q){\n\t\t\tlong long p; cin >> p;\n\t\t\tlong long ans\
-    \ = cht.get(p);\n\t\t\tcout << ans << endl;\n\t\t}\n\t\telse{\n\t\t\tlong long\
-    \ a,b; cin >> a >> b;\n\t\t\tcht.insert(a,b);\n\t\t}\n\t}\n\treturn 0;\n}"
+    lines.print();\n\t}\n};\n#line 10 \"test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp\"\
+    \nusing ll = long long;\n\nint main(void){\n\tll N,A,B,W; cin >> N >> A >> B >>\
+    \ W;\n\tvector<ll> D(N+2,0);\n\tfor(int i = 1; i <= N; ++i) cin >> D[i];\n\t//\
+    \ dp[i]=min{j:[0,i)} -> dp[j]+B*k*(k+1)/2-k*A+D[i] (k=i-j-1)\n\t//           \
+    \         -> dp[j]+B*(i-j-1)*(i-j)/2-(i-j-1)*A+D[i]\n\t//                    ->\
+    \ dp[j]+B/2*(i*i-2*i*j+j*j-i+j)-A*(i-j-1)+D[i]\n\t//                    -> (-B*j)*i\
+    \  +  dp[j]+B/2*(j*j+j)+A*j  +  B/2*(i*i-i)-A*(i-1)+D[i] \n\t// dp[i]=-max{j:[0,i)}->\
+    \ (B*j)*i  +  -{dp[j]+B/2*(j*j+j)+A*j} \n\t//                    ->\n\tvector<ll>\
+    \ dp(N+2,1e15);\n\tdp[0]=W;\n\tConvexHullTrick<ValueMax<ll>> cht;\n\tcht.insert(0,-dp[0]);\n\
+    \tfor(ll i=1;i<=N+1;++i){\n\t\tdp[i]=-cht.get(i) + B*(i*i-i)/2-A*(i-1)+D[i];\n\
+    \t\tcht.insert(B*i,-(dp[i]+B*(i*i+i)/2+A*i));\n\t}\n\tcout << dp[N+1] << endl;\n\
+    \treturn 0;\n}\n"
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/409\"\n\n#include <iostream>\n\
+    #include <vector>\n#include <queue>\nusing namespace std;\n#include \"../../../lib/segment/Rbst.cpp\"\
+    \n#include \"../../../lib/operator/operator/ValueMax.cpp\"\n#include \"../../../lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp\"\
+    \nusing ll = long long;\n\nint main(void){\n\tll N,A,B,W; cin >> N >> A >> B >>\
+    \ W;\n\tvector<ll> D(N+2,0);\n\tfor(int i = 1; i <= N; ++i) cin >> D[i];\n\t//\
+    \ dp[i]=min{j:[0,i)} -> dp[j]+B*k*(k+1)/2-k*A+D[i] (k=i-j-1)\n\t//           \
+    \         -> dp[j]+B*(i-j-1)*(i-j)/2-(i-j-1)*A+D[i]\n\t//                    ->\
+    \ dp[j]+B/2*(i*i-2*i*j+j*j-i+j)-A*(i-j-1)+D[i]\n\t//                    -> (-B*j)*i\
+    \  +  dp[j]+B/2*(j*j+j)+A*j  +  B/2*(i*i-i)-A*(i-1)+D[i] \n\t// dp[i]=-max{j:[0,i)}->\
+    \ (B*j)*i  +  -{dp[j]+B/2*(j*j+j)+A*j} \n\t//                    ->\n\tvector<ll>\
+    \ dp(N+2,1e15);\n\tdp[0]=W;\n\tConvexHullTrick<ValueMax<ll>> cht;\n\tcht.insert(0,-dp[0]);\n\
+    \tfor(ll i=1;i<=N+1;++i){\n\t\tdp[i]=-cht.get(i) + B*(i*i-i)/2-A*(i-1)+D[i];\n\
+    \t\tcht.insert(B*i,-(dp[i]+B*(i*i+i)/2+A*i));\n\t}\n\tcout << dp[N+1] << endl;\n\
+    \treturn 0;\n}"
   dependsOn:
   - lib/segment/Rbst.cpp
-  - lib/geometory/ConvexHullTrick.cpp
+  - lib/operator/operator/ValueMax.cpp
+  - lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp
   isVerificationFile: true
-  path: test/geometory/ConvexHullTrick-no-monotone.test.cpp
+  path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 17:01:19+09:00'
+  timestamp: '2021-04-26 09:09:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/geometory/ConvexHullTrick-no-monotone.test.cpp
+documentation_of: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
 layout: document
 redirect_from:
-- /verify/test/geometory/ConvexHullTrick-no-monotone.test.cpp
-- /verify/test/geometory/ConvexHullTrick-no-monotone.test.cpp.html
-title: test/geometory/ConvexHullTrick-no-monotone.test.cpp
+- /verify/test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
+- /verify/test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp.html
+title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
 ---

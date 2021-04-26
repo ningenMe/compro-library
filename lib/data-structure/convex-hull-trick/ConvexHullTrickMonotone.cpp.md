@@ -3,21 +3,21 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/geometory/ConvexHullTrickMonotone-max.test.cpp
-    title: test/geometory/ConvexHullTrickMonotone-max.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/geometory/ConvexHullTrickMonotone-min.test.cpp
-    title: test/geometory/ConvexHullTrickMonotone-min.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
+  - icon: ':x:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    _deprecated_at_docs: md/geometory/ConvexHullTrickMonotone.md
+    _deprecated_at_docs: md/data-structure/convex-hull-trick/ConvexHullTrickMonotone.md
     document_title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
     links: []
-  bundledCode: "#line 1 \"lib/geometory/ConvexHullTrickMonotone.cpp\"\n/*\n * @title\
-    \ ConvexHullTrickMonotone - \u5358\u8ABFCHT\n * @docs md/geometory/ConvexHullTrickMonotone.md\n\
+  bundledCode: "#line 1 \"lib/data-structure/convex-hull-trick/ConvexHullTrickMonotone.cpp\"\
+    \n/*\n * @title ConvexHullTrickMonotone - \u5358\u8ABFCHT\n * @docs md/data-structure/convex-hull-trick/ConvexHullTrickMonotone.md\n\
     \ */\ntemplate<class Operator> class ConvexHullTrickMonotone {\nprivate:\n\tusing\
     \ TypeValue = typename Operator::TypeValue;\n\n\t//front->back\u306B\u5411\u304B\
     \u3063\u3066\u50BE\u304D\u304Ca1<a2<...<aN\n\tdeque<pair<TypeValue,TypeValue>>\
@@ -62,7 +62,7 @@ data:
     \ T> struct ValueMax {\n\tusing TypeValue = T;\n\tinline static constexpr TypeValue\
     \ unit_value = -3e18;\n\tinline static constexpr bool func_compare(TypeValue l,TypeValue\
     \ r){return l>r;}\n};\n"
-  code: "/*\n * @title ConvexHullTrickMonotone - \u5358\u8ABFCHT\n * @docs md/geometory/ConvexHullTrickMonotone.md\n\
+  code: "/*\n * @title ConvexHullTrickMonotone - \u5358\u8ABFCHT\n * @docs md/data-structure/convex-hull-trick/ConvexHullTrickMonotone.md\n\
     \ */\ntemplate<class Operator> class ConvexHullTrickMonotone {\nprivate:\n\tusing\
     \ TypeValue = typename Operator::TypeValue;\n\n\t//front->back\u306B\u5411\u304B\
     \u3063\u3066\u50BE\u304D\u304Ca1<a2<...<aN\n\tdeque<pair<TypeValue,TypeValue>>\
@@ -109,17 +109,17 @@ data:
     \ r){return l>r;}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/geometory/ConvexHullTrickMonotone.cpp
+  path: lib/data-structure/convex-hull-trick/ConvexHullTrickMonotone.cpp
   requiredBy: []
-  timestamp: '2020-09-26 16:13:14+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-04-26 09:09:47+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/geometory/ConvexHullTrickMonotone-min.test.cpp
-  - test/geometory/ConvexHullTrickMonotone-max.test.cpp
-documentation_of: lib/geometory/ConvexHullTrickMonotone.cpp
+  - test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
+  - test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
+documentation_of: lib/data-structure/convex-hull-trick/ConvexHullTrickMonotone.cpp
 layout: document
 redirect_from:
-- /library/lib/geometory/ConvexHullTrickMonotone.cpp
-- /library/lib/geometory/ConvexHullTrickMonotone.cpp.html
+- /library/lib/data-structure/convex-hull-trick/ConvexHullTrickMonotone.cpp
+- /library/lib/data-structure/convex-hull-trick/ConvexHullTrickMonotone.cpp.html
 title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
 ---

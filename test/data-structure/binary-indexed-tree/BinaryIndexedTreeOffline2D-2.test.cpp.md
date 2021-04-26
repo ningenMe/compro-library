@@ -6,7 +6,7 @@ data:
     title: "BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F32\u6B21\u5143\
       BIT"
   - icon: ':heavy_check_mark:'
-    path: lib/operator/Abel/AbelPrefixSumPointAdd.cpp
+    path: lib/operator/abel/AbelPrefixSumPointAdd.cpp
     title: AbelPrefixSumPointAdd
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -21,8 +21,8 @@ data:
   bundledCode: "#line 1 \"test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_rectangle_sum\"\n\
     \n#include <vector>\n#include <iostream>\n#include <stack>\n#include <algorithm>\n\
-    using namespace std;\n#line 1 \"lib/operator/Abel/AbelPrefixSumPointAdd.cpp\"\n\
-    /*\n * @title AbelPrefixSumPointAdd\n * @docs md/operator/Abel/AbelPrefixSumPointAdd.md\n\
+    using namespace std;\n#line 1 \"lib/operator/abel/AbelPrefixSumPointAdd.cpp\"\n\
+    /*\n * @title AbelPrefixSumPointAdd\n * @docs md/operator/abel/AbelPrefixSumPointAdd.md\n\
     \ */\ntemplate<class T> struct AbelPrefixSumPointAdd {\n    using TypeNode = T;\n\
     \    inline static constexpr TypeNode unit_node = 0;\n    inline static constexpr\
     \ TypeNode func_fold(const TypeNode& l,const TypeNode& r){return l+r;}\n    inline\
@@ -74,7 +74,7 @@ data:
     %lld\\n\",bit.fold(L[i],R[i],D[i],U[i]));\n    }\n    return 0; \n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_rectangle_sum\"\
     \n\n#include <vector>\n#include <iostream>\n#include <stack>\n#include <algorithm>\n\
-    using namespace std;\n#include \"../../../lib/operator/Abel/AbelPrefixSumPointAdd.cpp\"\
+    using namespace std;\n#include \"../../../lib/operator/abel/AbelPrefixSumPointAdd.cpp\"\
     \n#include \"../../../lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp\"\
     \n\nint main(void){\n    int N,Q;\n    scanf(\"%d %d\",&N,&Q);\n    vector<long\
     \ long> X(N+Q,0),Y(N+Q,0),W(N+Q,0);\n    vector<int> A(Q),L(Q),D(Q),R(Q),U(Q);\n\
@@ -86,12 +86,12 @@ data:
     \ {\n        if(A[i]==0) bit.operate(X[i+N],Y[i+N],W[i+N]);\n        else printf(\"\
     %lld\\n\",bit.fold(L[i],R[i],D[i],U[i]));\n    }\n    return 0; \n}"
   dependsOn:
-  - lib/operator/Abel/AbelPrefixSumPointAdd.cpp
+  - lib/operator/abel/AbelPrefixSumPointAdd.cpp
   - lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
   isVerificationFile: true
   path: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 09:05:42+09:00'
+  timestamp: '2021-04-26 09:09:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
