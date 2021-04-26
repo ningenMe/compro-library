@@ -1,6 +1,6 @@
 /*
  * @title DisjointSparseTable
- * @docs md/segment/DisjointSparseTable.md
+ * @docs md/data-structure/data-structure/DisjointSparseTable.md
  */
 template<class Operator> class DisjointSparseTable{
 public:

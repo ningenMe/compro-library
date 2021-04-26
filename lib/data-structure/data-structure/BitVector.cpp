@@ -1,6 +1,6 @@
 /*
  * @title BitVector
- * @docs md/segment/BitVector.md
+ * @docs md/data-structure/data-structure/BitVector.md
  */
 class BitVector{
     inline static constexpr size_t BIT_BLOCK_SIZE = 5;
