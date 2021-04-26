@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/segment/Rbst.cpp
+    path: lib/data-structure/data-structure/Rbst.cpp
     title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -14,23 +14,23 @@ data:
     PROBLEM: https://yukicoder.me/problems/no/822
     links:
     - https://yukicoder.me/problems/no/822
-  bundledCode: "#line 1 \"test/segment/Rbst-pair.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/822\"\
-    \n\n#include <vector>\n#include <iostream>\n#include <unordered_map>\n#include\
-    \ <algorithm>\n#include <numeric>\n#include <cmath>\nusing namespace std;\n#line\
-    \ 1 \"lib/segment/Rbst.cpp\"\n/*\n * @title Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\
-    \u7D22\u6728\n * @docs md/segment/Rbst.md\n */\ntemplate<class Operator> class\
-    \ Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\tunsigned int x =\
-    \ 123456789, y = 362436069, z = 521288629, w = 88675123;\n\tunsigned int xor_shift()\
-    \ {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z; z = w;\n\t\treturn (w\
-    \ = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\t}\n\tstruct Node {\n\t\tNode *left,\
-    \ *right;\n\t\tTypeNode val;\n\t\tint size;\n\t\tTypeNode sum;\n\n\t\tNode() :\
-    \ val(Operator::unit_node), size(1), sum(Operator::unit_node) {\n\t\t\tleft =\
-    \ right = nullptr;\n\t\t}\n\t\tNode(TypeNode v) : val(v), size(1), sum(v) {\n\t\
-    \t\tleft = right = nullptr;\n\t\t}\n\t};\n\tNode* root;\n\tinline int size(Node\
-    \ *node) {\n\t\treturn node==nullptr ? 0 : node->size;\n\t}\n\tinline TypeNode\
-    \ sum(Node *node) {\n\t\treturn node==nullptr ? Operator::unit_node : node->sum;\n\
-    \t}\n\tinline Node* update(Node *node) {\n\t\tnode->size = size(node->left) +\
-    \ size(node->right) + 1;\n\t\tnode->sum = Operator::func_node(sum(node->left),sum(node->right),node->val);\n\
+  bundledCode: "#line 1 \"test/data-structure/data-structure/Rbst-pair.test.cpp\"\n\
+    #define PROBLEM \"https://yukicoder.me/problems/no/822\"\n\n#include <vector>\n\
+    #include <iostream>\n#include <unordered_map>\n#include <algorithm>\n#include\
+    \ <numeric>\n#include <cmath>\nusing namespace std;\n#line 1 \"lib/data-structure/data-structure/Rbst.cpp\"\
+    \n/*\n * @title Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\n * @docs md/segment/Rbst.md\n\
+    \ */\ntemplate<class Operator> class Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\
+    \tunsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\t\
+    unsigned int xor_shift() {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z;\
+    \ z = w;\n\t\treturn (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\t}\n\tstruct Node\
+    \ {\n\t\tNode *left, *right;\n\t\tTypeNode val;\n\t\tint size;\n\t\tTypeNode sum;\n\
+    \n\t\tNode() : val(Operator::unit_node), size(1), sum(Operator::unit_node) {\n\
+    \t\t\tleft = right = nullptr;\n\t\t}\n\t\tNode(TypeNode v) : val(v), size(1),\
+    \ sum(v) {\n\t\t\tleft = right = nullptr;\n\t\t}\n\t};\n\tNode* root;\n\tinline\
+    \ int size(Node *node) {\n\t\treturn node==nullptr ? 0 : node->size;\n\t}\n\t\
+    inline TypeNode sum(Node *node) {\n\t\treturn node==nullptr ? Operator::unit_node\
+    \ : node->sum;\n\t}\n\tinline Node* update(Node *node) {\n\t\tnode->size = size(node->left)\
+    \ + size(node->right) + 1;\n\t\tnode->sum = Operator::func_node(sum(node->left),sum(node->right),node->val);\n\
     \t\treturn node;\n\t}\n\tinline TypeNode get(Node *node, int k) {\n\t\tif (node==nullptr)\
     \ return Operator::unit_node;\n\t\tif (k == size(node->left)) return node->val;\n\
     \t\tif (k < size(node->left)) return get(node->left, k);\n\t\telse return get(node->right,\
@@ -75,7 +75,7 @@ data:
     \ static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return\
     \ l+c+r;}\n};\n\ntemplate<class T> struct NodeSimple {\n\tusing TypeNode = T;\n\
     \tinline static constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeNode\
-    \ func_node(TypeNode l,TypeNode c,TypeNode r){return 0;}\n};\n#line 11 \"test/segment/Rbst-pair.test.cpp\"\
+    \ func_node(TypeNode l,TypeNode c,TypeNode r){return 0;}\n};\n#line 11 \"test/data-structure/data-structure/Rbst-pair.test.cpp\"\
     \n\ntemplate<class T> struct NodePair {\n\tusing TypeNode = T;\n\tinline static\
     \ constexpr TypeNode unit_node = {0,0};\n\tinline static constexpr TypeNode func_node(TypeNode\
     \ l,TypeNode c,TypeNode r){return {0,0};}\n};\n\nint main() {\n    int N,K; cin\
@@ -87,7 +87,7 @@ data:
     \       }\n    }\n    cout << st.size() << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/822\"\n\n#include <vector>\n\
     #include <iostream>\n#include <unordered_map>\n#include <algorithm>\n#include\
-    \ <numeric>\n#include <cmath>\nusing namespace std;\n#include \"../../lib/segment/Rbst.cpp\"\
+    \ <numeric>\n#include <cmath>\nusing namespace std;\n#include \"../../../lib/data-structure/data-structure/Rbst.cpp\"\
     \n\ntemplate<class T> struct NodePair {\n\tusing TypeNode = T;\n\tinline static\
     \ constexpr TypeNode unit_node = {0,0};\n\tinline static constexpr TypeNode func_node(TypeNode\
     \ l,TypeNode c,TypeNode r){return {0,0};}\n};\n\nint main() {\n    int N,K; cin\
@@ -98,17 +98,17 @@ data:
     \   if(0<=b && b-a<=K && ((a&b)==N) && !st.count({a,b})) st.insert({a,b});\n \
     \       }\n    }\n    cout << st.size() << endl;\n    return 0;\n}\n"
   dependsOn:
-  - lib/segment/Rbst.cpp
+  - lib/data-structure/data-structure/Rbst.cpp
   isVerificationFile: true
-  path: test/segment/Rbst-pair.test.cpp
+  path: test/data-structure/data-structure/Rbst-pair.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 17:01:19+09:00'
+  timestamp: '2021-04-26 18:11:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/segment/Rbst-pair.test.cpp
+documentation_of: test/data-structure/data-structure/Rbst-pair.test.cpp
 layout: document
 redirect_from:
-- /verify/test/segment/Rbst-pair.test.cpp
-- /verify/test/segment/Rbst-pair.test.cpp.html
-title: test/segment/Rbst-pair.test.cpp
+- /verify/test/data-structure/data-structure/Rbst-pair.test.cpp
+- /verify/test/data-structure/data-structure/Rbst-pair.test.cpp.html
+title: test/data-structure/data-structure/Rbst-pair.test.cpp
 ---

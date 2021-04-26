@@ -2,10 +2,10 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/segment/BitVector.cpp
+    path: lib/data-structure/data-structure/BitVector.cpp
     title: BitVector
   - icon: ':heavy_check_mark:'
-    path: lib/segment/WaveletMatrix.cpp
+    path: lib/data-structure/data-structure/WaveletMatrix.cpp
     title: WaveletMatrix
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -17,12 +17,12 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/range_kth_smallest
     links:
     - https://judge.yosupo.jp/problem/range_kth_smallest
-  bundledCode: "#line 1 \"test/segment/WaveletMatrix-quantile-1.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <cassert>\n#include <algorithm>\n#include <numeric>\n\
-    using namespace std;\nusing int128  = __int128_t;\nusing int64   = long long;\n\
-    using int32   = int;\nusing uint128 = __uint128_t;\nusing uint64  = unsigned long\
-    \ long;\nusing uint32  = unsigned int;\n\n#line 1 \"lib/segment/BitVector.cpp\"\
+  bundledCode: "#line 1 \"test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n#include\
+    \ <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n#include\
+    \ <numeric>\nusing namespace std;\nusing int128  = __int128_t;\nusing int64  \
+    \ = long long;\nusing int32   = int;\nusing uint128 = __uint128_t;\nusing uint64\
+    \  = unsigned long long;\nusing uint32  = unsigned int;\n\n#line 1 \"lib/data-structure/data-structure/BitVector.cpp\"\
     \n/*\n * @title BitVector\n * @docs md/segment/BitVector.md\n */\nclass BitVector{\n\
     \    inline static constexpr size_t BIT_BLOCK_SIZE = 5;\n    inline static constexpr\
     \ size_t BIT_BLOCK_NUM  = 1<<BIT_BLOCK_SIZE;\n    inline static constexpr uint32\
@@ -41,7 +41,7 @@ data:
     \ vec[bit_l] |=   1U << (l & (BIT_BLOCK_NUM-1));\n        else     vec[bit_l]\
     \ &= ~(1U << (l & (BIT_BLOCK_NUM-1)));\n    }\n    //[l,l+1)\n    bool operator[](uint32\
     \ l) const { \n        assert(is_builded);\n        return ((vec[l >> BIT_BLOCK_SIZE]\
-    \ >> (l & (BIT_BLOCK_NUM-1))) & 1); \n    }\n};\n#line 1 \"lib/segment/WaveletMatrix.cpp\"\
+    \ >> (l & (BIT_BLOCK_NUM-1))) & 1); \n    }\n};\n#line 1 \"lib/data-structure/data-structure/WaveletMatrix.cpp\"\
     \n/*\n * @title WaveletMatrix\n * @docs md/segment/WaveletMatrix.md\n */\ntemplate<class\
     \ T> class WaveletMatrix{\n    size_t length;\n    size_t depth;\n    vector<BitVector>\
     \ multi_bit_vector;\n    vector<uint32> sum_bit_off;\n    vector<T> vec;\n   \
@@ -84,7 +84,7 @@ data:
     \     const bool bit = (k >= cnt_bit_off);\n            val = ((val << 1) | bit);\n\
     \            l = multi_bit_vector[j].rank(l, bit);\n            r = multi_bit_vector[j].rank(r,\
     \ bit);\n            if (bit) l += sum_bit_off[j], r += sum_bit_off[j], k -= cnt_bit_off;\n\
-    \        }\n        return vec[val];\n    }\n};\n#line 18 \"test/segment/WaveletMatrix-quantile-1.test.cpp\"\
+    \        }\n        return vec[val];\n    }\n};\n#line 18 \"test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp\"\
     \n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\n\tint N, Q;\n\
     \tcin >> N >> Q;\n\tvector<uint32> A(N);\n    for(int i=0; i<N; ++i) cin >> A[i];\n\
     \tWaveletMatrix<uint32> wm(A);\n    while(Q--) {\n        int l,r; uint32 k;\n\
@@ -94,25 +94,26 @@ data:
     #include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
     #include <numeric>\nusing namespace std;\nusing int128  = __int128_t;\nusing int64\
     \   = long long;\nusing int32   = int;\nusing uint128 = __uint128_t;\nusing uint64\
-    \  = unsigned long long;\nusing uint32  = unsigned int;\n\n#include \"../../lib/segment/BitVector.cpp\"\
-    \n#include \"../../lib/segment/WaveletMatrix.cpp\"\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \n\tint N, Q;\n\tcin >> N >> Q;\n\tvector<uint32> A(N);\n    for(int i=0; i<N;\
-    \ ++i) cin >> A[i];\n\tWaveletMatrix<uint32> wm(A);\n    while(Q--) {\n      \
-    \  int l,r; uint32 k;\n\t\tcin >> l >> r >> k;\n\t\tcout << wm.quantile(l, r,\
-    \ k) << \"\\n\";\n\t}\n\n    return 0;\n}"
+    \  = unsigned long long;\nusing uint32  = unsigned int;\n\n#include \"../../../lib/data-structure/data-structure/BitVector.cpp\"\
+    \n#include \"../../../lib/data-structure/data-structure/WaveletMatrix.cpp\"\n\n\
+    int main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\n\tint N, Q;\n\tcin\
+    \ >> N >> Q;\n\tvector<uint32> A(N);\n    for(int i=0; i<N; ++i) cin >> A[i];\n\
+    \tWaveletMatrix<uint32> wm(A);\n    while(Q--) {\n        int l,r; uint32 k;\n\
+    \t\tcin >> l >> r >> k;\n\t\tcout << wm.quantile(l, r, k) << \"\\n\";\n\t}\n\n\
+    \    return 0;\n}"
   dependsOn:
-  - lib/segment/BitVector.cpp
-  - lib/segment/WaveletMatrix.cpp
+  - lib/data-structure/data-structure/BitVector.cpp
+  - lib/data-structure/data-structure/WaveletMatrix.cpp
   isVerificationFile: true
-  path: test/segment/WaveletMatrix-quantile-1.test.cpp
+  path: test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp
   requiredBy: []
-  timestamp: '2021-01-04 04:22:41+09:00'
+  timestamp: '2021-04-26 18:11:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/segment/WaveletMatrix-quantile-1.test.cpp
+documentation_of: test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp
 layout: document
 redirect_from:
-- /verify/test/segment/WaveletMatrix-quantile-1.test.cpp
-- /verify/test/segment/WaveletMatrix-quantile-1.test.cpp.html
-title: test/segment/WaveletMatrix-quantile-1.test.cpp
+- /verify/test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp
+- /verify/test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp.html
+title: test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp
 ---

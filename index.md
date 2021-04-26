@@ -15,7 +15,7 @@ data:
       title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
   - name: lib/data-structure/convex-hull-trick
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp
       title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
     - icon: ':heavy_check_mark:'
@@ -28,6 +28,32 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/convex-hull-trick/LiChaoTree.cpp
       title: LiChaoTree
+  - name: lib/data-structure/data-structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/data-structure/BinaryTrie.cpp
+      title: BinaryTrie
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/data-structure/BitVector.cpp
+      title: BitVector
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/data-structure/DisjointSparseTable.cpp
+      title: DisjointSparseTable
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/data-structure/Rbst.cpp
+      title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/data-structure/SlideMost.cpp
+      title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/data-structure/SparseTable.cpp
+      title: SparseTable
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/data-structure/Swag.cpp
+      title: Swag
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/data-structure/WaveletMatrix.cpp
+      title: WaveletMatrix
   - name: lib/data-structure/range-query
     pages:
     - icon: ':heavy_check_mark:'
@@ -213,32 +239,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/optimize/MaximumRectangle.cpp
       title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
-  - name: lib/segment
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/BinaryTrie.cpp
-      title: BinaryTrie
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/BitVector.cpp
-      title: BitVector
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/DisjointSparseTable.cpp
-      title: DisjointSparseTable
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/Rbst.cpp
-      title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/SlideMost.cpp
-      title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/SparseTable.cpp
-      title: SparseTable
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/Swag.cpp
-      title: Swag
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/WaveletMatrix.cpp
-      title: WaveletMatrix
   - name: lib/string
     pages:
     - icon: ':heavy_check_mark:'
@@ -373,13 +373,13 @@ data:
       title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   - name: test/data-structure/convex-hull-trick
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
     - icon: ':heavy_check_mark:'
@@ -394,6 +394,38 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/convex-hull-trick/LiChaoTree-segment.test.cpp
       title: test/data-structure/convex-hull-trick/LiChaoTree-segment.test.cpp
+  - name: test/data-structure/data-structure
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/data-structure/BinaryTrie-set-xor-min.test.cpp
+      title: test/data-structure/data-structure/BinaryTrie-set-xor-min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/data-structure/DisjointSparseTable.test.cpp
+      title: test/data-structure/data-structure/DisjointSparseTable.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/data-structure/Rbst-get.test.cpp
+      title: test/data-structure/data-structure/Rbst-get.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/data-structure/Rbst-med.test.cpp
+      title: test/data-structure/data-structure/Rbst-med.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/data-structure/Rbst-pair.test.cpp
+      title: test/data-structure/data-structure/Rbst-pair.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/data-structure/SlideMost.test.cpp
+      title: test/data-structure/data-structure/SlideMost.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/data-structure/SparseTable.test.cpp
+      title: test/data-structure/data-structure/SparseTable.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/data-structure/Swag.test.cpp
+      title: test/data-structure/data-structure/Swag.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp
+      title: test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/data-structure/WaveletMatrix-quantile-2.test.cpp
+      title: test/data-structure/data-structure/WaveletMatrix-quantile-2.test.cpp
   - name: test/data-structure/range-query
     pages:
     - icon: ':heavy_check_mark:'
@@ -599,38 +631,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/optimize/MaximumRectangle-2.test.cpp
       title: test/optimize/MaximumRectangle-2.test.cpp
-  - name: test/segment
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: test/segment/BinaryTrie-set-xor-min.test.cpp
-      title: test/segment/BinaryTrie-set-xor-min.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/DisjointSparseTable.test.cpp
-      title: test/segment/DisjointSparseTable.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/Rbst-get.test.cpp
-      title: test/segment/Rbst-get.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/Rbst-med.test.cpp
-      title: test/segment/Rbst-med.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/Rbst-pair.test.cpp
-      title: test/segment/Rbst-pair.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/SlideMost.test.cpp
-      title: test/segment/SlideMost.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/SparseTable.test.cpp
-      title: test/segment/SparseTable.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/Swag.test.cpp
-      title: test/segment/Swag.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/WaveletMatrix-quantile-1.test.cpp
-      title: test/segment/WaveletMatrix-quantile-1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/WaveletMatrix-quantile-2.test.cpp
-      title: test/segment/WaveletMatrix-quantile-2.test.cpp
   - name: test/string
     pages:
     - icon: ':heavy_check_mark:'

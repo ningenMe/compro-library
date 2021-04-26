@@ -4,23 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
-    title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
+    path: test/data-structure/data-structure/Rbst-get.test.cpp
+    title: test/data-structure/data-structure/Rbst-get.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
-    title: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+    path: test/data-structure/data-structure/Rbst-med.test.cpp
+    title: test/data-structure/data-structure/Rbst-med.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-    title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/Rbst-get.test.cpp
-    title: test/segment/Rbst-get.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/Rbst-med.test.cpp
-    title: test/segment/Rbst-med.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/Rbst-pair.test.cpp
-    title: test/segment/Rbst-pair.test.cpp
+    path: test/data-structure/data-structure/Rbst-pair.test.cpp
+    title: test/data-structure/data-structure/Rbst-pair.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -34,20 +25,20 @@ data:
     - https://yukicoder.me/problems/no/649
     - https://yukicoder.me/problems/no/822
     - https://yukicoder.me/problems/no/919
-  bundledCode: "#line 1 \"lib/segment/Rbst.cpp\"\n/*\n * @title Rbst - \u5E73\u8861\
-    \u4E8C\u5206\u63A2\u7D22\u6728\n * @docs md/segment/Rbst.md\n */\ntemplate<class\
-    \ Operator> class Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\t\
-    unsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\tunsigned\
-    \ int xor_shift() {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z; z = w;\n\
-    \t\treturn (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\t}\n\tstruct Node {\n\t\t\
-    Node *left, *right;\n\t\tTypeNode val;\n\t\tint size;\n\t\tTypeNode sum;\n\n\t\
-    \tNode() : val(Operator::unit_node), size(1), sum(Operator::unit_node) {\n\t\t\
-    \tleft = right = nullptr;\n\t\t}\n\t\tNode(TypeNode v) : val(v), size(1), sum(v)\
-    \ {\n\t\t\tleft = right = nullptr;\n\t\t}\n\t};\n\tNode* root;\n\tinline int size(Node\
-    \ *node) {\n\t\treturn node==nullptr ? 0 : node->size;\n\t}\n\tinline TypeNode\
-    \ sum(Node *node) {\n\t\treturn node==nullptr ? Operator::unit_node : node->sum;\n\
-    \t}\n\tinline Node* update(Node *node) {\n\t\tnode->size = size(node->left) +\
-    \ size(node->right) + 1;\n\t\tnode->sum = Operator::func_node(sum(node->left),sum(node->right),node->val);\n\
+  bundledCode: "#line 1 \"lib/data-structure/data-structure/Rbst.cpp\"\n/*\n * @title\
+    \ Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\n * @docs md/segment/Rbst.md\n\
+    \ */\ntemplate<class Operator> class Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\
+    \tunsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\t\
+    unsigned int xor_shift() {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z;\
+    \ z = w;\n\t\treturn (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\t}\n\tstruct Node\
+    \ {\n\t\tNode *left, *right;\n\t\tTypeNode val;\n\t\tint size;\n\t\tTypeNode sum;\n\
+    \n\t\tNode() : val(Operator::unit_node), size(1), sum(Operator::unit_node) {\n\
+    \t\t\tleft = right = nullptr;\n\t\t}\n\t\tNode(TypeNode v) : val(v), size(1),\
+    \ sum(v) {\n\t\t\tleft = right = nullptr;\n\t\t}\n\t};\n\tNode* root;\n\tinline\
+    \ int size(Node *node) {\n\t\treturn node==nullptr ? 0 : node->size;\n\t}\n\t\
+    inline TypeNode sum(Node *node) {\n\t\treturn node==nullptr ? Operator::unit_node\
+    \ : node->sum;\n\t}\n\tinline Node* update(Node *node) {\n\t\tnode->size = size(node->left)\
+    \ + size(node->right) + 1;\n\t\tnode->sum = Operator::func_node(sum(node->left),sum(node->right),node->val);\n\
     \t\treturn node;\n\t}\n\tinline TypeNode get(Node *node, int k) {\n\t\tif (node==nullptr)\
     \ return Operator::unit_node;\n\t\tif (k == size(node->left)) return node->val;\n\
     \t\tif (k < size(node->left)) return get(node->left, k);\n\t\telse return get(node->right,\
@@ -153,21 +144,18 @@ data:
     \ func_node(TypeNode l,TypeNode c,TypeNode r){return 0;}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/segment/Rbst.cpp
+  path: lib/data-structure/data-structure/Rbst.cpp
   requiredBy: []
-  timestamp: '2020-09-26 17:01:19+09:00'
+  timestamp: '2021-04-26 18:11:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment/Rbst-pair.test.cpp
-  - test/segment/Rbst-get.test.cpp
-  - test/segment/Rbst-med.test.cpp
-  - test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
-  - test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
-  - test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-documentation_of: lib/segment/Rbst.cpp
+  - test/data-structure/data-structure/Rbst-pair.test.cpp
+  - test/data-structure/data-structure/Rbst-get.test.cpp
+  - test/data-structure/data-structure/Rbst-med.test.cpp
+documentation_of: lib/data-structure/data-structure/Rbst.cpp
 layout: document
 redirect_from:
-- /library/lib/segment/Rbst.cpp
-- /library/lib/segment/Rbst.cpp.html
+- /library/lib/data-structure/data-structure/Rbst.cpp
+- /library/lib/data-structure/data-structure/Rbst.cpp.html
 title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
 ---

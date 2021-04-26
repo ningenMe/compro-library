@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/segment/WaveletMatrix-quantile-1.test.cpp
-    title: test/segment/WaveletMatrix-quantile-1.test.cpp
+    path: test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp
+    title: test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/segment/WaveletMatrix-quantile-2.test.cpp
-    title: test/segment/WaveletMatrix-quantile-2.test.cpp
+    path: test/data-structure/data-structure/WaveletMatrix-quantile-2.test.cpp
+    title: test/data-structure/data-structure/WaveletMatrix-quantile-2.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -16,11 +16,11 @@ data:
     _deprecated_at_docs: md/segment/WaveletMatrix.md
     document_title: WaveletMatrix
     links: []
-  bundledCode: "#line 1 \"lib/segment/WaveletMatrix.cpp\"\n/*\n * @title WaveletMatrix\n\
-    \ * @docs md/segment/WaveletMatrix.md\n */\ntemplate<class T> class WaveletMatrix{\n\
-    \    size_t length;\n    size_t depth;\n    vector<BitVector> multi_bit_vector;\n\
-    \    vector<uint32> sum_bit_off;\n    vector<T> vec;\n    vector<uint32> zarts(const\
-    \ vector<T>& ar) {\n        vector<uint32> ord(ar.size()),compressed(ar.size());\n\
+  bundledCode: "#line 1 \"lib/data-structure/data-structure/WaveletMatrix.cpp\"\n\
+    /*\n * @title WaveletMatrix\n * @docs md/segment/WaveletMatrix.md\n */\ntemplate<class\
+    \ T> class WaveletMatrix{\n    size_t length;\n    size_t depth;\n    vector<BitVector>\
+    \ multi_bit_vector;\n    vector<uint32> sum_bit_off;\n    vector<T> vec;\n   \
+    \ vector<uint32> zarts(const vector<T>& ar) {\n        vector<uint32> ord(ar.size()),compressed(ar.size());\n\
     \        iota(ord.begin(),ord.end(),0);\n        sort(ord.begin(),ord.end(),[&](size_t\
     \ l, size_t r){return ar[l]<ar[r];});\n        uint32 cnt = 0;\n        compressed.front()\
     \ = 0;\n        T pre = ar[ord.front()];\n        for(size_t i=1;i<ord.size();++i)\
@@ -106,17 +106,17 @@ data:
     \        }\n        return vec[val];\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/segment/WaveletMatrix.cpp
+  path: lib/data-structure/data-structure/WaveletMatrix.cpp
   requiredBy: []
-  timestamp: '2021-01-04 03:42:26+09:00'
+  timestamp: '2021-04-26 18:11:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment/WaveletMatrix-quantile-2.test.cpp
-  - test/segment/WaveletMatrix-quantile-1.test.cpp
-documentation_of: lib/segment/WaveletMatrix.cpp
+  - test/data-structure/data-structure/WaveletMatrix-quantile-2.test.cpp
+  - test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp
+documentation_of: lib/data-structure/data-structure/WaveletMatrix.cpp
 layout: document
 redirect_from:
-- /library/lib/segment/WaveletMatrix.cpp
-- /library/lib/segment/WaveletMatrix.cpp.html
+- /library/lib/data-structure/data-structure/WaveletMatrix.cpp
+- /library/lib/data-structure/data-structure/WaveletMatrix.cpp.html
 title: WaveletMatrix
 ---

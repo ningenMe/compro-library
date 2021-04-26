@@ -4,9 +4,6 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
-    title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
     title: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
   _isVerificationFailed: false
@@ -29,7 +26,6 @@ data:
   timestamp: '2021-04-26 09:09:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
   - test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
 documentation_of: lib/operator/operator/ValueMax.cpp
 layout: document
