@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/graph/Graph.cpp
     title: Graph
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/graph/Tree.cpp
     title: "Tree - \u6728"
   _extendedRequiredBy: []

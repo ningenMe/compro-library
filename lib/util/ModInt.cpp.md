@@ -7,6 +7,12 @@ data:
     path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
     title: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-path.test.cpp
+    title: test/graph/Tree-hld-path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-3.test.cpp
+    title: test/graph/Tree-hld-vertex-3.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/CombinationMod-factorial.test.cpp
     title: test/math/CombinationMod-factorial.test.cpp
   - icon: ':heavy_check_mark:'
@@ -155,6 +161,8 @@ data:
   - test/math/FormalPowerSeries-exp.test.cpp
   - test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
   - test/util/ModInt.test.cpp
+  - test/graph/Tree-hld-path.test.cpp
+  - test/graph/Tree-hld-vertex-3.test.cpp
 documentation_of: lib/util/ModInt.cpp
 layout: document
 redirect_from:

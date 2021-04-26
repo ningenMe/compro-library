@@ -45,7 +45,7 @@ data:
       path: lib/data-structure/segment-tree/DynamicSegmentTree.cpp
       title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
         \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/data-structure/segment-tree/LazySegmentTree.cpp
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -78,7 +78,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/Dinic.cpp
       title: "Dinic - Dinic\u30D5\u30ED\u30FC"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/graph/Graph.cpp
       title: Graph
     - icon: ':heavy_check_mark:'
@@ -96,7 +96,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/StronglyConnectedComponents.cpp
       title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/graph/Tree.cpp
       title: "Tree - \u6728"
     - icon: ':heavy_check_mark:'
@@ -174,18 +174,24 @@ data:
       path: lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
       title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0]"
     - icon: ':heavy_check_mark:'
+      path: lib/operator/monoid/MonoidRangeMulPointUpdate.cpp
+      title: lib/operator/monoid/MonoidRangeMulPointUpdate.cpp
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
       title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\u65B0\
         ]"
   - name: lib/operator/monoid-lazy
     pages:
+    - icon: ':x:'
+      path: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
+      title: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp
       title: lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp
     - icon: ':warning:'
       path: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
       title: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
       title: lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
     - icon: ':heavy_check_mark:'
@@ -482,16 +488,16 @@ data:
     - icon: ':x:'
       path: test/graph/Tree-eulertour.test.cpp
       title: test/graph/Tree-eulertour.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-hld-path.test.cpp
       title: test/graph/Tree-hld-path.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-hld-vertex-1.test.cpp
       title: test/graph/Tree-hld-vertex-1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-hld-vertex-2.test.cpp
       title: test/graph/Tree-hld-vertex-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-hld-vertex-3.test.cpp
       title: test/graph/Tree-hld-vertex-3.test.cpp
     - icon: ':heavy_check_mark:'

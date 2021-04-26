@@ -18,6 +18,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
     title: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-path.test.cpp
+    title: test/graph/Tree-hld-path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-2.test.cpp
+    title: test/graph/Tree-hld-vertex-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-3.test.cpp
+    title: test/graph/Tree-hld-vertex-3.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -141,6 +150,9 @@ data:
   - test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   - test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
   - test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+  - test/graph/Tree-hld-path.test.cpp
+  - test/graph/Tree-hld-vertex-3.test.cpp
+  - test/graph/Tree-hld-vertex-2.test.cpp
 documentation_of: lib/data-structure/segment-tree/SegmentTree.cpp
 layout: document
 redirect_from:
