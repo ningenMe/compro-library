@@ -7,6 +7,9 @@ data:
     path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
     title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
     title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
   - icon: ':heavy_check_mark:'
@@ -159,6 +162,7 @@ data:
   - test/segment/Rbst-get.test.cpp
   - test/segment/Rbst-med.test.cpp
   - test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
+  - test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
   - test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
 documentation_of: lib/segment/Rbst.cpp
 layout: document
