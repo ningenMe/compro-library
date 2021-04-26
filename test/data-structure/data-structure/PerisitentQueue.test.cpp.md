@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/data-structure/data-structure/PersistentQueue.cpp
-    title: PersistentQueue
+    title: "PersistentQueue - \u6C38\u7D9Aqueue"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -18,7 +18,7 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/persistent_queue\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <array>\n#include <cassert>\n#include\
     \ <unordered_map>\nusing namespace std;\n#line 1 \"lib/data-structure/data-structure/PersistentQueue.cpp\"\
-    \n/*\n * @title PersistentQueue\n * @docs md/data-structure/data-structure/PersistentQueue.md\n\
+    \n/*\n * @title PersistentQueue - \u6C38\u7D9Aqueue\n * @docs md/data-structure/data-structure/PersistentQueue.md\n\
     \ */\ntemplate<class T,size_t bit=20> class PersistentQueue{\nprivate:\n    struct\
     \ Node{\n        array<size_t,bit> parent;\n        T val;\n        size_t length;\n\
     \        Node(T val,size_t length):val(val),length(length){}\n    };\n    vector<Node>\
@@ -55,7 +55,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/data-structure/PerisitentQueue.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 22:51:12+09:00'
+  timestamp: '2021-04-26 23:05:25+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/data-structure/PerisitentQueue.test.cpp

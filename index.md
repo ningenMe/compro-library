@@ -41,7 +41,7 @@ data:
       title: DisjointSparseTable
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/data-structure/PersistentQueue.cpp
-      title: PersistentQueue
+      title: "PersistentQueue - \u6C38\u7D9Aqueue"
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/data-structure/Rbst.cpp
       title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"

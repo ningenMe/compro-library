@@ -11,10 +11,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/data-structure/data-structure/PersistentQueue.md
-    document_title: PersistentQueue
+    document_title: "PersistentQueue - \u6C38\u7D9Aqueue"
     links: []
   bundledCode: "#line 1 \"lib/data-structure/data-structure/PersistentQueue.cpp\"\n\
-    /*\n * @title PersistentQueue\n * @docs md/data-structure/data-structure/PersistentQueue.md\n\
+    /*\n * @title PersistentQueue - \u6C38\u7D9Aqueue\n * @docs md/data-structure/data-structure/PersistentQueue.md\n\
     \ */\ntemplate<class T,size_t bit=20> class PersistentQueue{\nprivate:\n    struct\
     \ Node{\n        array<size_t,bit> parent;\n        T val;\n        size_t length;\n\
     \        Node(T val,size_t length):val(val),length(length){}\n    };\n    vector<Node>\
@@ -30,7 +30,7 @@ data:
     \   assert(length > 0);\n        length-=1;\n        mp[pushed_id] = tree.size();\n\
     \        tree.push_back(node);\n        for(int i=bit-1; 0<=i; --i) if((length>>i)\
     \ & 1) idx = tree[idx].parent[i];\n        return tree[idx].val;\n    }\n};\n"
-  code: "/*\n * @title PersistentQueue\n * @docs md/data-structure/data-structure/PersistentQueue.md\n\
+  code: "/*\n * @title PersistentQueue - \u6C38\u7D9Aqueue\n * @docs md/data-structure/data-structure/PersistentQueue.md\n\
     \ */\ntemplate<class T,size_t bit=20> class PersistentQueue{\nprivate:\n    struct\
     \ Node{\n        array<size_t,bit> parent;\n        T val;\n        size_t length;\n\
     \        Node(T val,size_t length):val(val),length(length){}\n    };\n    vector<Node>\
@@ -50,7 +50,7 @@ data:
   isVerificationFile: false
   path: lib/data-structure/data-structure/PersistentQueue.cpp
   requiredBy: []
-  timestamp: '2021-04-26 22:51:12+09:00'
+  timestamp: '2021-04-26 23:05:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/data-structure/PerisitentQueue.test.cpp
@@ -59,5 +59,5 @@ layout: document
 redirect_from:
 - /library/lib/data-structure/data-structure/PersistentQueue.cpp
 - /library/lib/data-structure/data-structure/PersistentQueue.cpp.html
-title: PersistentQueue
+title: "PersistentQueue - \u6C38\u7D9Aqueue"
 ---
