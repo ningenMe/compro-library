@@ -4,25 +4,25 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/segment/DynamicSegmentTree-rsq-1.test.cpp
-    title: test/segment/DynamicSegmentTree-rsq-1.test.cpp
+    path: test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+    title: test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/segment/DynamicSegmentTree-rsq-2.test.cpp
-    title: test/segment/DynamicSegmentTree-rsq-2.test.cpp
+    path: test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+    title: test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/segment/DynamicSegmentTree.md
+    _deprecated_at_docs: md/data-structure/segment-tree/DynamicSegmentTree.md
     document_title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\
       \u7684\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     links: []
-  bundledCode: "#line 1 \"lib/segment/DynamicSegmentTree.cpp\"\n/*\n * @title DynamicSegmentTree\
-    \ - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\u30BB\u30B0\u30E1\u30F3\u30C8\
-    \u6728\n * @docs md/segment/DynamicSegmentTree.md\n */\ntemplate<class Operator>\
-    \ class DynamicSegmentTree {\n    using TypeNode = typename Operator::TypeNode;\
-    \ \n    using i64 = long long;\n\n    struct Node{\n        Node *left, *right;\n\
-    \        TypeNode val;\n        Node():left(nullptr),right(nullptr),val(Operator::unit_node)\
+  bundledCode: "#line 1 \"lib/data-structure/segment-tree/DynamicSegmentTree.cpp\"\
+    \n/*\n * @title DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\
+    \u7684\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @docs md/data-structure/segment-tree/DynamicSegmentTree.md\n\
+    \ */\ntemplate<class Operator> class DynamicSegmentTree {\n    using TypeNode\
+    \ = typename Operator::TypeNode; \n    using i64 = long long;\n\n    struct Node{\n\
+    \        Node *left, *right;\n        TypeNode val;\n        Node():left(nullptr),right(nullptr),val(Operator::unit_node)\
     \ {}\n    };\n\n    TypeNode dfs(i64 l,i64 r,i64 nl,i64 nr,Node* node) {\n   \
     \     if(l <= nl && nr <= r) return node->val;\n        if(nr <= l || r <= nl)\
     \ return Operator::unit_node;\n        TypeNode vl=Operator::unit_node, vr=Operator::unit_node;\n\
@@ -50,7 +50,7 @@ data:
     \ TypeNode func_node(TypeNode l,TypeNode r){return l+r;}\n    inline static constexpr\
     \ TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}\n};\n"
   code: "/*\n * @title DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\
-    \u7684\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @docs md/segment/DynamicSegmentTree.md\n\
+    \u7684\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @docs md/data-structure/segment-tree/DynamicSegmentTree.md\n\
     \ */\ntemplate<class Operator> class DynamicSegmentTree {\n    using TypeNode\
     \ = typename Operator::TypeNode; \n    using i64 = long long;\n\n    struct Node{\n\
     \        Node *left, *right;\n        TypeNode val;\n        Node():left(nullptr),right(nullptr),val(Operator::unit_node)\
@@ -82,18 +82,18 @@ data:
     \ TypeNode func_merge(TypeNode l,TypeNode r){return l+r;}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/segment/DynamicSegmentTree.cpp
+  path: lib/data-structure/segment-tree/DynamicSegmentTree.cpp
   requiredBy: []
-  timestamp: '2021-04-26 04:52:40+09:00'
+  timestamp: '2021-04-26 13:36:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment/DynamicSegmentTree-rsq-1.test.cpp
-  - test/segment/DynamicSegmentTree-rsq-2.test.cpp
-documentation_of: lib/segment/DynamicSegmentTree.cpp
+  - test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+  - test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+documentation_of: lib/data-structure/segment-tree/DynamicSegmentTree.cpp
 layout: document
 redirect_from:
-- /library/lib/segment/DynamicSegmentTree.cpp
-- /library/lib/segment/DynamicSegmentTree.cpp.html
+- /library/lib/data-structure/segment-tree/DynamicSegmentTree.cpp
+- /library/lib/data-structure/segment-tree/DynamicSegmentTree.cpp.html
 title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\u30BB\
   \u30B0\u30E1\u30F3\u30C8\u6728"
 ---

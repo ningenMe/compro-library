@@ -4,35 +4,29 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-eulertour.test.cpp
-    title: test/graph/Tree-eulertour.test.cpp
+    path: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
+    title: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-hld-vertex-1.test.cpp
-    title: test/graph/Tree-hld-vertex-1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/LazySegmentTree-rmqraq.test.cpp
-    title: test/segment/LazySegmentTree-rmqraq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/LazySegmentTree-rsqruq.test.cpp
-    title: test/segment/LazySegmentTree-rsqruq.test.cpp
+    path: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
+    title: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/segment/LazySegmentTree.md
+    _deprecated_at_docs: md/data-structure/segment-tree/LazySegmentTree.md
     document_title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\
       \u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     links: []
-  bundledCode: "#line 1 \"lib/segment/LazySegmentTree.cpp\"\n/*\n * @title LazySegmentTree\
-    \ - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\
-    \u30F3\u30C8\u6728\n * @docs md/segment/LazySegmentTree.md\n */\ntemplate<class\
-    \ Operator> class LazySegmentTree {\n\tusing TypeNode = typename Operator::TypeNode;\
-    \          \n\tusing TypeLazy = typename Operator::TypeLazy;\n\tsize_t num;  \
-    \    \n\tsize_t length;                                   \n\tsize_t height; \
-    \                                  \n\tvector<TypeNode> node;                \
-    \           \n\tvector<TypeLazy> lazy;                           \n\tvector<pair<size_t,size_t>>\
-    \ range;\n\n\tvoid propagate(int k) {\n\t\tif(lazy[k] == Operator::unit_lazy)\
-    \ return;\n        node[k] = Operator::func_merge(node[k],lazy[k],range[k].first,range[k].second);\n\
+  bundledCode: "#line 1 \"lib/data-structure/segment-tree/LazySegmentTree.cpp\"\n\
+    /*\n * @title LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\
+    \u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @docs md/data-structure/segment-tree/LazySegmentTree.md\n\
+    \ */\ntemplate<class Operator> class LazySegmentTree {\n\tusing TypeNode = typename\
+    \ Operator::TypeNode;          \n\tusing TypeLazy = typename Operator::TypeLazy;\n\
+    \tsize_t num;      \n\tsize_t length;                                   \n\tsize_t\
+    \ height;                                   \n\tvector<TypeNode> node;       \
+    \                    \n\tvector<TypeLazy> lazy;                           \n\t\
+    vector<pair<size_t,size_t>> range;\n\n\tvoid propagate(int k) {\n\t\tif(lazy[k]\
+    \ == Operator::unit_lazy) return;\n        node[k] = Operator::func_merge(node[k],lazy[k],range[k].first,range[k].second);\n\
     \t\tif(k < length) lazy[2*k+0] = Operator::func_lazy(lazy[2*k+0],lazy[k]);\n\t\
     \tif(k < length) lazy[2*k+1] = Operator::func_lazy(lazy[2*k+1],lazy[k]);\n\t\t\
     lazy[k] = Operator::unit_lazy;\n\t}\npublic:\n\n\t//unit\u3067\u521D\u671F\u5316\
@@ -132,7 +126,7 @@ data:
     \   inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
     \ var <= nodeVal;}\n};\n"
   code: "/*\n * @title LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\
-    \u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @docs md/segment/LazySegmentTree.md\n\
+    \u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @docs md/data-structure/segment-tree/LazySegmentTree.md\n\
     \ */\ntemplate<class Operator> class LazySegmentTree {\n\tusing TypeNode = typename\
     \ Operator::TypeNode;          \n\tusing TypeLazy = typename Operator::TypeLazy;\n\
     \tsize_t num;      \n\tsize_t length;                                   \n\tsize_t\
@@ -240,20 +234,18 @@ data:
     \ var <= nodeVal;}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/segment/LazySegmentTree.cpp
+  path: lib/data-structure/segment-tree/LazySegmentTree.cpp
   requiredBy: []
-  timestamp: '2020-09-27 22:47:01+09:00'
+  timestamp: '2021-04-26 13:36:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment/LazySegmentTree-rmqraq.test.cpp
-  - test/segment/LazySegmentTree-rsqruq.test.cpp
-  - test/graph/Tree-eulertour.test.cpp
-  - test/graph/Tree-hld-vertex-1.test.cpp
-documentation_of: lib/segment/LazySegmentTree.cpp
+  - test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
+  - test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
+documentation_of: lib/data-structure/segment-tree/LazySegmentTree.cpp
 layout: document
 redirect_from:
-- /library/lib/segment/LazySegmentTree.cpp
-- /library/lib/segment/LazySegmentTree.cpp.html
+- /library/lib/data-structure/segment-tree/LazySegmentTree.cpp
+- /library/lib/data-structure/segment-tree/LazySegmentTree.cpp.html
 title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\u4FA1\
   \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
 ---

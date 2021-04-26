@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/segment/LazySegmentTree.cpp
+    path: lib/data-structure/segment-tree/LazySegmentTree.cpp
     title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
       \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   _extendedRequiredBy: []
@@ -12,14 +12,14 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I
+    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H
     links:
-    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I
-  bundledCode: "#line 1 \"test/segment/LazySegmentTree-rsqruq.test.cpp\"\n#define\
-    \ PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
-    \n\n#include <vector>\n#include <iostream>\nusing namespace std;\n#line 1 \"lib/segment/LazySegmentTree.cpp\"\
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H
+  bundledCode: "#line 1 \"test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp\"\
+    \n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H\"\
+    \n\n#include <vector>\n#include <iostream>\nusing namespace std;\n#line 1 \"lib/data-structure/segment-tree/LazySegmentTree.cpp\"\
     \n/*\n * @title LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\
-    \u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @docs md/segment/LazySegmentTree.md\n\
+    \u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @docs md/data-structure/segment-tree/LazySegmentTree.md\n\
     \ */\ntemplate<class Operator> class LazySegmentTree {\n\tusing TypeNode = typename\
     \ Operator::TypeNode;          \n\tusing TypeLazy = typename Operator::TypeLazy;\n\
     \tsize_t num;      \n\tsize_t length;                                   \n\tsize_t\
@@ -124,31 +124,32 @@ data:
     \    inline static constexpr TypeNode func_merge(TypeNode node,TypeLazy lazy,int\
     \ l,int r){ return (lazy.first==-2000?node:lazy.first + (l-lazy.second));}\n \
     \   inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
-    \ var <= nodeVal;}\n};\n#line 7 \"test/segment/LazySegmentTree-rsqruq.test.cpp\"\
-    \n\nint main(void){\n\tint N,Q; cin >> N >> Q;\n\tLazySegmentTree<NodeSumRangeUpdate<long\
-    \ long,long long>> Seg(N,0);\n\twhile(Q--) {\n\t\tint q,s,t,x;\n\t\tcin >> q >>\
-    \ s >> t;\n\t\tt++;\n\t\tif(q){\n\t\t\tcout << Seg.get(s,t) << endl;\n\t\t}\n\t\
-    \telse {\n\t\t\tcin >> x;\n\t\t\tSeg.update(s,t,x);\n\t\t}\n\t}\n\treturn 0;\n\
-    }\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
+    \ var <= nodeVal;}\n};\n#line 7 \"test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp\"\
+    \n\nint main(void){\n\tint N,Q; cin >> N >> Q;\n\tlong inf = 1234567890LL;\n\t\
+    LazySegmentTree<NodeMinRangeAdd<long long,long long>> Seg(N,0LL);\n\twhile(Q--)\
+    \ {\n\t\tint q,s,t,x;\n\t\tcin >> q >> s >> t;\n\t\tt++;\n\t\tif(q){\n\t\t\tcout\
+    \ << Seg.get(s,t) << endl;\n\t\t}\n\t\telse {\n\t\t\tcin >> x;\n\t\t\tSeg.update(s,t,x);\n\
+    \t\t}\n\t}\n\treturn 0;\n}\n"
+  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H\"\
     \n\n#include <vector>\n#include <iostream>\nusing namespace std;\n#include \"\
-    ../../lib/segment/LazySegmentTree.cpp\"\n\nint main(void){\n\tint N,Q; cin >>\
-    \ N >> Q;\n\tLazySegmentTree<NodeSumRangeUpdate<long long,long long>> Seg(N,0);\n\
-    \twhile(Q--) {\n\t\tint q,s,t,x;\n\t\tcin >> q >> s >> t;\n\t\tt++;\n\t\tif(q){\n\
-    \t\t\tcout << Seg.get(s,t) << endl;\n\t\t}\n\t\telse {\n\t\t\tcin >> x;\n\t\t\t\
-    Seg.update(s,t,x);\n\t\t}\n\t}\n\treturn 0;\n}"
+    ../../../lib/data-structure/segment-tree/LazySegmentTree.cpp\"\n\nint main(void){\n\
+    \tint N,Q; cin >> N >> Q;\n\tlong inf = 1234567890LL;\n\tLazySegmentTree<NodeMinRangeAdd<long\
+    \ long,long long>> Seg(N,0LL);\n\twhile(Q--) {\n\t\tint q,s,t,x;\n\t\tcin >> q\
+    \ >> s >> t;\n\t\tt++;\n\t\tif(q){\n\t\t\tcout << Seg.get(s,t) << endl;\n\t\t\
+    }\n\t\telse {\n\t\t\tcin >> x;\n\t\t\tSeg.update(s,t,x);\n\t\t}\n\t}\n\treturn\
+    \ 0;\n}"
   dependsOn:
-  - lib/segment/LazySegmentTree.cpp
+  - lib/data-structure/segment-tree/LazySegmentTree.cpp
   isVerificationFile: true
-  path: test/segment/LazySegmentTree-rsqruq.test.cpp
+  path: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
   requiredBy: []
-  timestamp: '2020-09-27 22:47:01+09:00'
+  timestamp: '2021-04-26 13:36:55+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/segment/LazySegmentTree-rsqruq.test.cpp
+documentation_of: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
 layout: document
 redirect_from:
-- /verify/test/segment/LazySegmentTree-rsqruq.test.cpp
-- /verify/test/segment/LazySegmentTree-rsqruq.test.cpp.html
-title: test/segment/LazySegmentTree-rsqruq.test.cpp
+- /verify/test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
+- /verify/test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp.html
+title: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
 ---

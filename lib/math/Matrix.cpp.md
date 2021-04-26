@@ -4,9 +4,6 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-hld-path.test.cpp
-    title: test/graph/Tree-hld-path.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/math/Matrix-det.test.cpp
     title: test/math/Matrix-det.test.cpp
   - icon: ':heavy_check_mark:'
@@ -87,7 +84,6 @@ data:
   verifiedWith:
   - test/math/Matrix-pow.test.cpp
   - test/math/Matrix-det.test.cpp
-  - test/graph/Tree-hld-path.test.cpp
 documentation_of: lib/math/Matrix.cpp
 layout: document
 redirect_from:

@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/segment/SegmentTreeBeats.cpp
+    path: lib/data-structure/segment-tree/SegmentTreeBeats.cpp
     title: SegmentTreeBeats
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -11,15 +11,16 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://yukicoder.me/problems/no/1074
+    PROBLEM: https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum
     links:
-    - https://yukicoder.me/problems/no/1074
-  bundledCode: "#line 1 \"test/segment/SegmentTreeBeats-2.test.cpp\"\n#define PROBLEM\
-    \ \"https://yukicoder.me/problems/no/1074\"\n\n#include <vector>\n#include <iostream>\n\
-    #include <stack>\nusing namespace std;\n#line 1 \"lib/segment/SegmentTreeBeats.cpp\"\
-    \n/*\n * @title SegmentTreeBeats\n * @docs md/segment/SegmentTreeBeats.md\n */\n\
-    template<class T> class SegmentTreeBeats {\n\tT inf;\n\tsize_t length;\n\tvector<T>\n\
-    \tnode_max_first,node_max_second,count_max_first,\n\tnode_min_first,node_min_second,count_min_first,\n\
+    - https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum
+  bundledCode: "#line 1 \"test/data-structure/segment-tree/SegmentTreeBeats-1.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum\"\
+    \n\n#include <vector>\n#include <iostream>\n#include <stack>\nusing namespace\
+    \ std;\n#line 1 \"lib/data-structure/segment-tree/SegmentTreeBeats.cpp\"\n/*\n\
+    \ * @title SegmentTreeBeats\n * @docs md/data-structure/segment-tree/SegmentTreeBeats.md\n\
+    \ */\ntemplate<class T> class SegmentTreeBeats {\n\tT inf;\n\tsize_t length;\n\
+    \tvector<T>\n\tnode_max_first,node_max_second,count_max_first,\n\tnode_min_first,node_min_second,count_min_first,\n\
     \tnode_sum,lazy_add,lazy_update;\n\tvector<pair<int,int>> range;\n\tstack<int>\
     \ down,up;\n\tinline void internal_chmax(int k, long long x) {\n\t\tnode_sum[k]\
     \ += (x - node_max_first[k]) * count_max_first[k];\n\t\tif(node_max_first[k] ==\
@@ -124,33 +125,36 @@ data:
     \t\twhile(down.size()) {\n\t\t\tint k = down.top();\n\t\t\tdown.pop();\n\t\t\t\
     if(b <= range[k].first || range[k].second <= a) continue;\n\t\t\tif(a <= range[k].first\
     \ && range[k].second <= b) {\n\t\t\t\tv += node_sum[k];\n\t\t\t\tcontinue;\n\t\
-    \t\t}\n\t\t\tdown_propagate(k);\n\t\t}\n\t\treturn v;\n\t}\n};\n#line 8 \"test/segment/SegmentTreeBeats-2.test.cpp\"\
-    \n\nint main(void){\n    int N,M=20000; cin >> N;\n    SegmentTreeBeats<long long>\
-    \ seg1(M),seg2(M),seg3(M),seg4(M);\n    long long pre=0,sum=0;\n    while(N--){\n\
-    \        int lx,ly,rx,ry;\n        cin >> lx >> ly >> rx >> ry;\n        seg1.range_chmax(0,rx,ry);\n\
-    \        seg2.range_chmax(0,rx,-ly);\n        seg3.range_chmax(0,-lx,ry);\n  \
-    \      seg4.range_chmax(0,-lx,-ly);\n        sum=seg1.get_sum(0,M)+seg2.get_sum(0,M)+seg3.get_sum(0,M)+seg4.get_sum(0,M);\n\
-    \        cout << sum-pre << endl;\n        pre=sum;\n\t}\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/1074\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <stack>\nusing namespace std;\n#include \"../../lib/segment/SegmentTreeBeats.cpp\"\
-    \n\nint main(void){\n    int N,M=20000; cin >> N;\n    SegmentTreeBeats<long long>\
-    \ seg1(M),seg2(M),seg3(M),seg4(M);\n    long long pre=0,sum=0;\n    while(N--){\n\
-    \        int lx,ly,rx,ry;\n        cin >> lx >> ly >> rx >> ry;\n        seg1.range_chmax(0,rx,ry);\n\
-    \        seg2.range_chmax(0,rx,-ly);\n        seg3.range_chmax(0,-lx,ry);\n  \
-    \      seg4.range_chmax(0,-lx,-ly);\n        sum=seg1.get_sum(0,M)+seg2.get_sum(0,M)+seg3.get_sum(0,M)+seg4.get_sum(0,M);\n\
-    \        cout << sum-pre << endl;\n        pre=sum;\n\t}\n\treturn 0;\n}"
+    \t\t}\n\t\t\tdown_propagate(k);\n\t\t}\n\t\treturn v;\n\t}\n};\n#line 8 \"test/data-structure/segment-tree/SegmentTreeBeats-1.test.cpp\"\
+    \n\nint main(void){\n\tint N,Q; cin >> N >> Q;\n\tvector<long long> A(N);\n\t\
+    for(int i = 0; i < N; ++i) cin >> A[i];\n\tSegmentTreeBeats<long long> seg(A);\n\
+    \twhile(Q--){\n\t\tlong long q,l,r,b;\n\t\tcin >> q >> l >> r;\n\t\tif(q==3){\n\
+    \t\t\tcout << seg.get_sum(l,r) << endl;\n\t\t}\n\t\telse{\n\t\t\tcin >> b;\n\t\
+    \t\tif(q==0) {\n\t\t\t\tseg.range_chmin(l,r,b);\n\t\t\t}\n\t\t\tif(q==1) {\n\t\
+    \t\t\tseg.range_chmax(l,r,b);\n\t\t\t}\n\t\t\tif(q==2) {\n\t\t\t\tseg.range_add(l,r,b);\n\
+    \t\t\t}\n\t\t}\n\t}\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_chmin_chmax_add_range_sum\"\
+    \n\n#include <vector>\n#include <iostream>\n#include <stack>\nusing namespace\
+    \ std;\n#include \"../../../lib/data-structure/segment-tree/SegmentTreeBeats.cpp\"\
+    \n\nint main(void){\n\tint N,Q; cin >> N >> Q;\n\tvector<long long> A(N);\n\t\
+    for(int i = 0; i < N; ++i) cin >> A[i];\n\tSegmentTreeBeats<long long> seg(A);\n\
+    \twhile(Q--){\n\t\tlong long q,l,r,b;\n\t\tcin >> q >> l >> r;\n\t\tif(q==3){\n\
+    \t\t\tcout << seg.get_sum(l,r) << endl;\n\t\t}\n\t\telse{\n\t\t\tcin >> b;\n\t\
+    \t\tif(q==0) {\n\t\t\t\tseg.range_chmin(l,r,b);\n\t\t\t}\n\t\t\tif(q==1) {\n\t\
+    \t\t\tseg.range_chmax(l,r,b);\n\t\t\t}\n\t\t\tif(q==2) {\n\t\t\t\tseg.range_add(l,r,b);\n\
+    \t\t\t}\n\t\t}\n\t}\n    return 0;\n}"
   dependsOn:
-  - lib/segment/SegmentTreeBeats.cpp
+  - lib/data-structure/segment-tree/SegmentTreeBeats.cpp
   isVerificationFile: true
-  path: test/segment/SegmentTreeBeats-2.test.cpp
+  path: test/data-structure/segment-tree/SegmentTreeBeats-1.test.cpp
   requiredBy: []
-  timestamp: '2020-09-26 17:01:19+09:00'
+  timestamp: '2021-04-26 13:36:55+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/segment/SegmentTreeBeats-2.test.cpp
+documentation_of: test/data-structure/segment-tree/SegmentTreeBeats-1.test.cpp
 layout: document
 redirect_from:
-- /verify/test/segment/SegmentTreeBeats-2.test.cpp
-- /verify/test/segment/SegmentTreeBeats-2.test.cpp.html
-title: test/segment/SegmentTreeBeats-2.test.cpp
+- /verify/test/data-structure/segment-tree/SegmentTreeBeats-1.test.cpp
+- /verify/test/data-structure/segment-tree/SegmentTreeBeats-1.test.cpp.html
+title: test/data-structure/segment-tree/SegmentTreeBeats-1.test.cpp
 ---

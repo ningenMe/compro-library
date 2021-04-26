@@ -9,12 +9,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/Prime-rho.test.cpp
     title: test/math/Prime-rho.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/SegmentTree-prefix-binary-search.test.cpp
-    title: test/segment/SegmentTree-prefix-binary-search.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/SegmentTree-suffix-binary-search.test.cpp
-    title: test/segment/SegmentTree-suffix-binary-search.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -65,8 +59,6 @@ data:
   verifiedWith:
   - test/math/Prime-rho.test.cpp
   - test/math/Prime-miller-rabin.test.cpp
-  - test/segment/SegmentTree-suffix-binary-search.test.cpp
-  - test/segment/SegmentTree-prefix-binary-search.test.cpp
 documentation_of: lib/math/Gcd.cpp
 layout: document
 redirect_from:

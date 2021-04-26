@@ -2,10 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/math/Gcd.cpp
-    title: "Gcd - \u9AD8\u901FGCD"
-  - icon: ':heavy_check_mark:'
-    path: lib/segment/SegmentTree.cpp
+    path: lib/data-structure/segment-tree/SegmentTree.cpp
     title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
   _extendedRequiredBy: []
@@ -15,14 +12,15 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://yukicoder.me/problems/4072
+    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
     links:
-    - https://yukicoder.me/problems/4072
-  bundledCode: "#line 1 \"test/segment/SegmentTree-suffix-binary-search.test.cpp\"\
-    \n#define PROBLEM \"https://yukicoder.me/problems/4072\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <cassert>\nusing namespace std;\n#line 1 \"lib/segment/SegmentTree.cpp\"\
-    \n/*\n * @title SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\
-    \u30E1\u30F3\u30C8\u6728\n * @docs md/segment/SegmentTree.md\n */\ntemplate<class\
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
+  bundledCode: "#line 1 \"test/data-structure/segment-tree/SegmentTree-rsq.test.cpp\"\
+    \n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
+    \n\n#include <vector>\n#include <iostream>\n#include <cassert>\nusing namespace\
+    \ std;\n#line 1 \"lib/data-structure/segment-tree/SegmentTree.cpp\"\n/*\n * @title\
+    \ SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\u30C8\
+    \u6728\n * @docs md/data-structure/segment-tree/SegmentTree.md\n */\ntemplate<class\
     \ Operator> class SegmentTree {\n    using TypeNode = typename Operator::TypeNode;\
     \ \n    size_t length;\n    size_t num;\n    vector<TypeNode> node;\n    vector<pair<int,int>>\
     \ range;\n    inline void build() {\n        for (int i = length - 1; i >= 0;\
@@ -89,59 +87,32 @@ data:
     \ l,TypeNode r){return {r.first*l.first,r.first*l.second+r.second};}\n    inline\
     \ static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n   \
     \ inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
-    \ var == nodeVal;}\n};\n#line 1 \"lib/math/Gcd.cpp\"\n/*\n * @title Gcd - \u9AD8\
-    \u901FGCD\n * @docs md/math/Gcd.md\n */\nclass Gcd{\npublic:\n\tinline static\
-    \ long long impl(long long n, long long m) {\n\t\tstatic constexpr long long K\
-    \ = 5;\n\t\tlong long t,s;\n\t\tfor(int i = 0; t = n - m, s = n - m * K, i < 80;\
-    \ ++i) {\n\t\t\tif(t<m){\n\t\t\t\tif(!t) return m;\n\t\t\t\tn = m, m = t;\n\t\t\
-    \t}\n\t\t\telse{\n\t\t\t\tif(!m) return t;\n\t\t\t\tn=t;\n\t\t\t\tif(t >= m *\
-    \ K) n = s;\n\t\t\t}\n\t\t}\n\t\treturn impl(m, n % m);\n\t}\n\tinline static\
-    \ long long pre(long long n, long long m) {\n\t\tlong long t;\n\t\tfor(int i =\
-    \ 0; t = n - m, i < 4; ++i) {\n\t\t\t(t < m ? n=m,m=t : n=t);\n\t\t\tif(!m) return\
-    \ n;\n\t\t}\n\t\treturn impl(n, m);\n\t}\n\tinline static long long gcd(long long\
-    \ n, long long m) {\n\t\treturn (n>m ? pre(n,m) : pre(m,n));\n\t}\n\tinline static\
-    \ constexpr long long pureGcd(long long a, long long b) {\n\t\treturn (b ? pureGcd(b,\
-    \ a % b):a);\n\t}\n\tinline static constexpr long long lcm(long long a, long long\
-    \ b) {\n\t\treturn (a*b ? (a / gcd(a, b)*b): 0);\n\t}\n\tinline static constexpr\
-    \ long long extGcd(long long a, long long b, long long &x, long long &y) {\n\t\
-    \tif (b == 0) return x = 1, y = 0, a;\n\t\tlong long d = extGcd(b, a%b, y, x);\n\
-    \t\treturn y -= a / b * x, d;\n\t}\n};\n#line 9 \"test/segment/SegmentTree-suffix-binary-search.test.cpp\"\
-    \n\ntemplate<class T> struct NodeGcdPointUpdate {\n\tusing TypeNode = T;\n\tinline\
-    \ static constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeNode\
-    \ func_node(TypeNode l,TypeNode r){return Gcd::gcd(l,r);}\n\tinline static constexpr\
-    \ TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n\tinline static constexpr\
-    \ bool func_check(TypeNode nodeVal,TypeNode var){return var == nodeVal;}\n};\n\
-    \n// solution by binary search in prefix range on segment tree \nint main() {\n\
-    \tcin.tie(0);ios::sync_with_stdio(false);\n\tlong long N; cin >> N;\n\tvector<long\
-    \ long> A(N);\n\tfor(int i = 0; i < N; ++i) cin >> A[i];\n\tSegmentTree<NodeGcdPointUpdate<long\
-    \ long>> seg(A);\n\tlong long ans = 0;\n\tfor(int i = N-1; 0 <= i; --i) {\n\t\t\
-    ans += seg.suffix_binary_search(-1,i,1) + 1;\n\t}\n\tcout << ans << endl;\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/4072\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <cassert>\nusing namespace std;\n#include \"../../lib/segment/SegmentTree.cpp\"\
-    \n#include \"../../lib/math/Gcd.cpp\"\n\ntemplate<class T> struct NodeGcdPointUpdate\
-    \ {\n\tusing TypeNode = T;\n\tinline static constexpr TypeNode unit_node = 0;\n\
-    \tinline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return Gcd::gcd(l,r);}\n\
-    \tinline static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n\
-    \tinline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
-    \ var == nodeVal;}\n};\n\n// solution by binary search in prefix range on segment\
-    \ tree \nint main() {\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tlong long\
-    \ N; cin >> N;\n\tvector<long long> A(N);\n\tfor(int i = 0; i < N; ++i) cin >>\
-    \ A[i];\n\tSegmentTree<NodeGcdPointUpdate<long long>> seg(A);\n\tlong long ans\
-    \ = 0;\n\tfor(int i = N-1; 0 <= i; --i) {\n\t\tans += seg.suffix_binary_search(-1,i,1)\
-    \ + 1;\n\t}\n\tcout << ans << endl;\n}"
+    \ var == nodeVal;}\n};\n#line 8 \"test/data-structure/segment-tree/SegmentTree-rsq.test.cpp\"\
+    \n\nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tint N,Q; cin\
+    \ >> N >> Q;\n\tSegmentTree<NodeSumPointAdd<long long>> Seg(N,0);\n\twhile(Q--){\n\
+    \t\tint q; cin >> q;\n\t\tif(q==0){\n\t\t\tint x,y; cin >> x >> y;\n\t\t\tx--;\n\
+    \t\t\tSeg.update(x,y);\n\t\t}\n\t\telse{\n\t\t\tint x,y; cin >> x >> y;\n\t\t\t\
+    x--;\n\t\t\tcout << Seg.get(x,y) << endl;\n\t\t}\n\t}\n}\n"
+  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
+    \n\n#include <vector>\n#include <iostream>\n#include <cassert>\nusing namespace\
+    \ std;\n#include \"../../../lib/data-structure/segment-tree/SegmentTree.cpp\"\n\
+    \nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tint N,Q; cin >>\
+    \ N >> Q;\n\tSegmentTree<NodeSumPointAdd<long long>> Seg(N,0);\n\twhile(Q--){\n\
+    \t\tint q; cin >> q;\n\t\tif(q==0){\n\t\t\tint x,y; cin >> x >> y;\n\t\t\tx--;\n\
+    \t\t\tSeg.update(x,y);\n\t\t}\n\t\telse{\n\t\t\tint x,y; cin >> x >> y;\n\t\t\t\
+    x--;\n\t\t\tcout << Seg.get(x,y) << endl;\n\t\t}\n\t}\n}"
   dependsOn:
-  - lib/segment/SegmentTree.cpp
-  - lib/math/Gcd.cpp
+  - lib/data-structure/segment-tree/SegmentTree.cpp
   isVerificationFile: true
-  path: test/segment/SegmentTree-suffix-binary-search.test.cpp
+  path: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
   requiredBy: []
-  timestamp: '2020-10-25 02:58:24+09:00'
+  timestamp: '2021-04-26 13:36:55+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/segment/SegmentTree-suffix-binary-search.test.cpp
+documentation_of: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
 layout: document
 redirect_from:
-- /verify/test/segment/SegmentTree-suffix-binary-search.test.cpp
-- /verify/test/segment/SegmentTree-suffix-binary-search.test.cpp.html
-title: test/segment/SegmentTree-suffix-binary-search.test.cpp
+- /verify/test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
+- /verify/test/data-structure/segment-tree/SegmentTree-rsq.test.cpp.html
+title: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
 ---

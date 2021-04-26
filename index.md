@@ -39,6 +39,23 @@ data:
     - icon: ':warning:'
       path: lib/data-structure/range-query/RangeModeQuery.cpp
       title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
+  - name: lib/data-structure/segment-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/segment-tree/DynamicSegmentTree.cpp
+      title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
+        \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/segment-tree/LazySegmentTree.cpp
+      title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
+        \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/segment-tree/SegmentTree.cpp
+      title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
+        \u30F3\u30C8\u6728"
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/segment-tree/SegmentTreeBeats.cpp
+      title: SegmentTreeBeats
   - name: lib/geometory
     pages:
     - icon: ':heavy_check_mark:'
@@ -172,23 +189,8 @@ data:
       path: lib/segment/DisjointSparseTable.cpp
       title: DisjointSparseTable
     - icon: ':heavy_check_mark:'
-      path: lib/segment/DynamicSegmentTree.cpp
-      title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
-        \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/LazySegmentTree.cpp
-      title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
-        \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':heavy_check_mark:'
       path: lib/segment/Rbst.cpp
       title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/SegmentTree.cpp
-      title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
-        \u30F3\u30C8\u6728"
-    - icon: ':heavy_check_mark:'
-      path: lib/segment/SegmentTreeBeats.cpp
-      title: SegmentTreeBeats
     - icon: ':heavy_check_mark:'
       path: lib/segment/SlideMost.cpp
       title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
@@ -361,6 +363,41 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/range-query/RangeInversionQuery.test.cpp
       title: test/data-structure/range-query/RangeInversionQuery.test.cpp
+  - name: test/data-structure/segment-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+      title: test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+      title: test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
+      title: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
+      title: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
+    - icon: ':x:'
+      path: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+      title: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+    - icon: ':x:'
+      path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
+      title: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
+      title: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
+      title: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
+    - icon: ':x:'
+      path: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+      title: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/SegmentTreeBeats-1.test.cpp
+      title: test/data-structure/segment-tree/SegmentTreeBeats-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/SegmentTreeBeats-2.test.cpp
+      title: test/data-structure/segment-tree/SegmentTreeBeats-2.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
@@ -412,19 +449,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/Tree-diameter.test.cpp
       title: test/graph/Tree-diameter.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/graph/Tree-eulertour.test.cpp
       title: test/graph/Tree-eulertour.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/graph/Tree-hld-path.test.cpp
       title: test/graph/Tree-hld-path.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/graph/Tree-hld-vertex-1.test.cpp
       title: test/graph/Tree-hld-vertex-1.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/graph/Tree-hld-vertex-2.test.cpp
       title: test/graph/Tree-hld-vertex-2.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/graph/Tree-hld-vertex-3.test.cpp
       title: test/graph/Tree-hld-vertex-3.test.cpp
     - icon: ':heavy_check_mark:'
@@ -535,18 +572,6 @@ data:
       path: test/segment/DisjointSparseTable.test.cpp
       title: test/segment/DisjointSparseTable.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/segment/DynamicSegmentTree-rsq-1.test.cpp
-      title: test/segment/DynamicSegmentTree-rsq-1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/DynamicSegmentTree-rsq-2.test.cpp
-      title: test/segment/DynamicSegmentTree-rsq-2.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/LazySegmentTree-rmqraq.test.cpp
-      title: test/segment/LazySegmentTree-rmqraq.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/LazySegmentTree-rsqruq.test.cpp
-      title: test/segment/LazySegmentTree-rsqruq.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/segment/Rbst-get.test.cpp
       title: test/segment/Rbst-get.test.cpp
     - icon: ':heavy_check_mark:'
@@ -555,27 +580,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment/Rbst-pair.test.cpp
       title: test/segment/Rbst-pair.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/SegmentTree-prefix-binary-search.test.cpp
-      title: test/segment/SegmentTree-prefix-binary-search.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/SegmentTree-rcq.test.cpp
-      title: test/segment/SegmentTree-rcq.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/SegmentTree-rmq.test.cpp
-      title: test/segment/SegmentTree-rmq.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/SegmentTree-rsq.test.cpp
-      title: test/segment/SegmentTree-rsq.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/SegmentTree-suffix-binary-search.test.cpp
-      title: test/segment/SegmentTree-suffix-binary-search.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/SegmentTreeBeats-1.test.cpp
-      title: test/segment/SegmentTreeBeats-1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment/SegmentTreeBeats-2.test.cpp
-      title: test/segment/SegmentTreeBeats-2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment/SlideMost.test.cpp
       title: test/segment/SlideMost.test.cpp

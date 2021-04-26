@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/segment/SegmentTree.cpp
+    path: lib/data-structure/segment-tree/SegmentTree.cpp
     title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
   _extendedRequiredBy: []
@@ -15,16 +15,17 @@ data:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
-  bundledCode: "#line 1 \"test/segment/SegmentTree-rmq.test.cpp\"\n#define PROBLEM\
-    \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\n\n#include\
-    \ <vector>\n#include <iostream>\n#include <cassert>\nusing namespace std;\n#line\
-    \ 1 \"lib/segment/SegmentTree.cpp\"\n/*\n * @title SegmentTree - \u975E\u518D\u5E30\
-    \u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @docs md/segment/SegmentTree.md\n\
-    \ */\ntemplate<class Operator> class SegmentTree {\n    using TypeNode = typename\
-    \ Operator::TypeNode; \n    size_t length;\n    size_t num;\n    vector<TypeNode>\
-    \ node;\n    vector<pair<int,int>> range;\n    inline void build() {\n       \
-    \ for (int i = length - 1; i >= 0; --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);\n\
-    \        range.resize(2 * length);\n        for (int i = 0; i < length; ++i) range[i+length]\
+  bundledCode: "#line 1 \"test/data-structure/segment-tree/SegmentTree-rmq.test.cpp\"\
+    \n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\
+    \n\n#include <vector>\n#include <iostream>\n#include <cassert>\nusing namespace\
+    \ std;\n#line 1 \"lib/data-structure/segment-tree/SegmentTree.cpp\"\n/*\n * @title\
+    \ SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\u30C8\
+    \u6728\n * @docs md/data-structure/segment-tree/SegmentTree.md\n */\ntemplate<class\
+    \ Operator> class SegmentTree {\n    using TypeNode = typename Operator::TypeNode;\
+    \ \n    size_t length;\n    size_t num;\n    vector<TypeNode> node;\n    vector<pair<int,int>>\
+    \ range;\n    inline void build() {\n        for (int i = length - 1; i >= 0;\
+    \ --i) node[i] = Operator::func_node(node[(i<<1)+0],node[(i<<1)+1]);\n       \
+    \ range.resize(2 * length);\n        for (int i = 0; i < length; ++i) range[i+length]\
     \ = make_pair(i,i+1);\n        for (int i = length - 1; i >= 0; --i) range[i]\
     \ = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);\n    }\npublic:\n\
     \n    //unit\u3067\u521D\u671F\u5316\n    SegmentTree(const size_t num): num(num)\
@@ -86,30 +87,30 @@ data:
     \ l,TypeNode r){return {r.first*l.first,r.first*l.second+r.second};}\n    inline\
     \ static constexpr TypeNode func_merge(TypeNode l,TypeNode r){return r;}\n   \
     \ inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
-    \ var == nodeVal;}\n};\n#line 8 \"test/segment/SegmentTree-rmq.test.cpp\"\n\n\
-    int main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tint N,Q; cin >>\
-    \ N >> Q;\n\tSegmentTree<NodeMinPointUpdate<long long>> Seg(N);\n\twhile(Q--){\n\
+    \ var == nodeVal;}\n};\n#line 8 \"test/data-structure/segment-tree/SegmentTree-rmq.test.cpp\"\
+    \n\nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tint N,Q; cin\
+    \ >> N >> Q;\n\tSegmentTree<NodeMinPointUpdate<long long>> Seg(N);\n\twhile(Q--){\n\
     \t\tlong long q,a,b;\n\t\tcin >> q >> a >> b;\n\t\tif(q) cout << Seg.get(a,b+1)\
     \ << endl;\n\t\telse Seg.update(a,b);\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\nusing namespace\
-    \ std;\n#include \"../../lib/segment/SegmentTree.cpp\"\n\nint main(void){\n\t\
-    cin.tie(0);ios::sync_with_stdio(false);\n\tint N,Q; cin >> N >> Q;\n\tSegmentTree<NodeMinPointUpdate<long\
-    \ long>> Seg(N);\n\twhile(Q--){\n\t\tlong long q,a,b;\n\t\tcin >> q >> a >> b;\n\
-    \t\tif(q) cout << Seg.get(a,b+1) << endl;\n\t\telse Seg.update(a,b);\n\t}\n\t\
-    return 0;\n}"
+    \ std;\n#include \"../../../lib/data-structure/segment-tree/SegmentTree.cpp\"\n\
+    \nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tint N,Q; cin >>\
+    \ N >> Q;\n\tSegmentTree<NodeMinPointUpdate<long long>> Seg(N);\n\twhile(Q--){\n\
+    \t\tlong long q,a,b;\n\t\tcin >> q >> a >> b;\n\t\tif(q) cout << Seg.get(a,b+1)\
+    \ << endl;\n\t\telse Seg.update(a,b);\n\t}\n\treturn 0;\n}"
   dependsOn:
-  - lib/segment/SegmentTree.cpp
+  - lib/data-structure/segment-tree/SegmentTree.cpp
   isVerificationFile: true
-  path: test/segment/SegmentTree-rmq.test.cpp
+  path: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
   requiredBy: []
-  timestamp: '2020-10-25 02:58:24+09:00'
+  timestamp: '2021-04-26 13:36:55+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/segment/SegmentTree-rmq.test.cpp
+documentation_of: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
 layout: document
 redirect_from:
-- /verify/test/segment/SegmentTree-rmq.test.cpp
-- /verify/test/segment/SegmentTree-rmq.test.cpp.html
-title: test/segment/SegmentTree-rmq.test.cpp
+- /verify/test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
+- /verify/test/data-structure/segment-tree/SegmentTree-rmq.test.cpp.html
+title: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
 ---

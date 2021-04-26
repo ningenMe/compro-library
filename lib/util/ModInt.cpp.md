@@ -4,12 +4,6 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-hld-path.test.cpp
-    title: test/graph/Tree-hld-path.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-hld-vertex-3.test.cpp
-    title: test/graph/Tree-hld-vertex-3.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/math/CombinationMod-factorial.test.cpp
     title: test/math/CombinationMod-factorial.test.cpp
   - icon: ':heavy_check_mark:'
@@ -51,9 +45,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
     title: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment/SegmentTree-rcq.test.cpp
-    title: test/segment/SegmentTree-rcq.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/util/ModInt.test.cpp
     title: test/util/ModInt.test.cpp
@@ -159,10 +150,7 @@ data:
   - test/math/NumberTheoreticalTransform-conv-fft.test.cpp
   - test/math/Matrix-det.test.cpp
   - test/math/FormalPowerSeries-exp.test.cpp
-  - test/segment/SegmentTree-rcq.test.cpp
   - test/util/ModInt.test.cpp
-  - test/graph/Tree-hld-path.test.cpp
-  - test/graph/Tree-hld-vertex-3.test.cpp
 documentation_of: lib/util/ModInt.cpp
 layout: document
 redirect_from:
