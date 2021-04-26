@@ -5,7 +5,7 @@
 #include <cassert>
 using namespace std;
 #include "../../../lib/data-structure/segment-tree/SegmentTree.cpp"
-#include "../../lib/math/Gcd.cpp"
+#include "../../../lib/math/Gcd.cpp"
 
 template<class T> struct NodeGcdPointUpdate {
 	using TypeNode = T;
