@@ -1,6 +1,6 @@
 /*
  * @title LazySegmentTree - 非再帰抽象化遅延評価セグメント木
- * @docs md/segment/LazySegmentTree.md
+ * @docs md/data-structure/segment-tree/LazySegmentTree.md
  */
 template<class Operator> class LazySegmentTree {
 	using TypeNode = typename Operator::TypeNode;          

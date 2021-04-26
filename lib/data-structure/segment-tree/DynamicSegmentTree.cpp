@@ -1,6 +1,6 @@
 /*
  * @title DynamicSegmentTree - 非再帰抽象化動的セグメント木
- * @docs md/segment/DynamicSegmentTree.md
+ * @docs md/data-structure/segment-tree/DynamicSegmentTree.md
  */
 template<class Operator> class DynamicSegmentTree {
     using TypeNode = typename Operator::TypeNode; 

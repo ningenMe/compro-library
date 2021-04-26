@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cassert>
 using namespace std;
-#include "../../lib/segment/SegmentTree.cpp"
+#include "../../../lib/data-structure/segment-tree/SegmentTree.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);

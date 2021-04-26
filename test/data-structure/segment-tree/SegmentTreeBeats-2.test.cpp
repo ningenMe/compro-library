@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stack>
 using namespace std;
-#include "../../lib/segment/SegmentTreeBeats.cpp"
+#include "../../../lib/data-structure/segment-tree/SegmentTreeBeats.cpp"
 
 int main(void){
     int N,M=20000; cin >> N;

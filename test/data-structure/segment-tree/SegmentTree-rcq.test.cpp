@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cassert>
 using namespace std;
-#include "../../lib/segment/SegmentTree.cpp"
+#include "../../../lib/data-structure/segment-tree/SegmentTree.cpp"
 #include "../../lib/util/ModInt.cpp"
 
 using modint = ModInt<998244353>;

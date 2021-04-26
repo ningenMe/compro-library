@@ -1,6 +1,6 @@
 /*
  * @title SegmentTree - 非再帰抽象化セグメント木
- * @docs md/segment/SegmentTree.md
+ * @docs md/data-structure/segment-tree/SegmentTree.md
  */
 template<class Operator> class SegmentTree {
     using TypeNode = typename Operator::TypeNode; 

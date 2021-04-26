@@ -5,7 +5,7 @@
 #include <cassert>
 #include <stack>
 using namespace std;
-#include "../../lib/segment/DynamicSegmentTree.cpp"
+#include "../../../lib/data-structure/segment-tree/DynamicSegmentTree.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);

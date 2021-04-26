@@ -1,13 +1,14 @@
-#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I"
+#define PROBLEM "http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H"
 
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../lib/segment/LazySegmentTree.cpp"
+#include "../../../lib/data-structure/segment-tree/LazySegmentTree.cpp"
 
 int main(void){
 	int N,Q; cin >> N >> Q;
-	LazySegmentTree<NodeSumRangeUpdate<long long,long long>> Seg(N,0);
+	long inf = 1234567890LL;
+	LazySegmentTree<NodeMinRangeAdd<long long,long long>> Seg(N,0LL);
 	while(Q--) {
 		int q,s,t,x;
 		cin >> q >> s >> t;
