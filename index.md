@@ -174,21 +174,23 @@ data:
       path: lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
       title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0]"
     - icon: ':heavy_check_mark:'
-      path: lib/operator/monoid/MonoidRangeMinRangeAdd.cpp
-      title: lib/operator/monoid/MonoidRangeMinRangeAdd.cpp
-    - icon: ':warning:'
-      path: lib/operator/monoid/MonoidRangeMinRangeArithmeticUpdate.cpp
-      title: lib/operator/monoid/MonoidRangeMinRangeArithmeticUpdate.cpp
-    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
       title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\u65B0\
         ]"
-    - icon: ':warning:'
-      path: lib/operator/monoid/MonoidRangeSumRangeAdd.cpp
-      title: lib/operator/monoid/MonoidRangeSumRangeAdd.cpp
+  - name: lib/operator/monoid-lazy
+    pages:
     - icon: ':heavy_check_mark:'
-      path: lib/operator/monoid/MonoidRangeSumRangeUpdate.cpp
-      title: lib/operator/monoid/MonoidRangeSumRangeUpdate.cpp
+      path: lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp
+      title: lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp
+    - icon: ':warning:'
+      path: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
+      title: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
+    - icon: ':warning:'
+      path: lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
+      title: lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
+    - icon: ':heavy_check_mark:'
+      path: lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
+      title: lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
   - name: lib/operator/operator
     pages:
     - icon: ':heavy_check_mark:'

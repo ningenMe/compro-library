@@ -6,8 +6,8 @@ data:
     title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
       \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - icon: ':heavy_check_mark:'
-    path: lib/operator/monoid/MonoidRangeSumRangeUpdate.cpp
-    title: lib/operator/monoid/MonoidRangeSumRangeUpdate.cpp
+    path: lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
+    title: lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -85,7 +85,7 @@ data:
     // \tcout << lazy[i] << \" \";\n\t\t// \tif(i==((1<<j)-1) && ++j) cout << endl;\n\
     \t\t// }\n\t\tcout << \"vector\" << endl;\n\t\tcout << \"{ \" << fold(0,1);\n\t\
     \tfor(int i = 1; i < length; ++i) cout << \", \" << fold(i,i+1);\n\t\tcout <<\
-    \ \" }\" << endl;\n\t}\n};\n#line 1 \"lib/operator/monoid/MonoidRangeSumRangeUpdate.cpp\"\
+    \ \" }\" << endl;\n\t}\n};\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp\"\
     \n//node:\u7DCF\u548C\u3000lazy:\u66F4\u65B0\ntemplate<class T, class U> struct\
     \ MonoidRangeSumRangeUpdate {\n\tusing TypeNode = T;\n\tusing TypeLazy = U;\n\t\
     inline static constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeLazy\
@@ -102,7 +102,7 @@ data:
     }\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
     \n\n#include <vector>\n#include <iostream>\nusing namespace std;\n#include \"\
-    ../../../lib/data-structure/segment-tree/LazySegmentTree.cpp\"\n#include \"../../../lib/operator/monoid/MonoidRangeSumRangeUpdate.cpp\"\
+    ../../../lib/data-structure/segment-tree/LazySegmentTree.cpp\"\n#include \"../../../lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp\"\
     \nint main(void){\n\tint N,Q; cin >> N >> Q;\n\tLazySegmentTree<MonoidRangeSumRangeUpdate<long\
     \ long,long long>> Seg(N,0);\n\twhile(Q--) {\n\t\tint q,s,t,x;\n\t\tcin >> q >>\
     \ s >> t;\n\t\tt++;\n\t\tif(q){\n\t\t\tcout << Seg.fold(s,t) << endl;\n\t\t}\n\
@@ -110,11 +110,11 @@ data:
     }"
   dependsOn:
   - lib/data-structure/segment-tree/LazySegmentTree.cpp
-  - lib/operator/monoid/MonoidRangeSumRangeUpdate.cpp
+  - lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
   isVerificationFile: true
   path: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 17:23:13+09:00'
+  timestamp: '2021-04-26 17:33:59+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp

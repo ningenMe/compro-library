@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"lib/operator/monoid/MonoidRangeMinRangeArithmeticUpdate.cpp\"\
+  bundledCode: "#line 1 \"lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp\"\
     \n//node:\u6700\u5C0F\u3000lazy:\u7B49\u5DEE\u6570\u5217\u66F4\u65B0\ntemplate<class\
     \ T, class U> struct MonoidRangeMinRangeArithmeticUpdate {\n    using TypeNode\
     \ = T;\n    using TypeLazy = U;\n    inline static constexpr TypeNode unit_node\
@@ -31,15 +31,15 @@ data:
     \ var){return var <= nodeVal;}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/operator/monoid/MonoidRangeMinRangeArithmeticUpdate.cpp
+  path: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
   requiredBy: []
-  timestamp: '2021-04-26 17:23:13+09:00'
+  timestamp: '2021-04-26 17:33:59+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: lib/operator/monoid/MonoidRangeMinRangeArithmeticUpdate.cpp
+documentation_of: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
 layout: document
 redirect_from:
-- /library/lib/operator/monoid/MonoidRangeMinRangeArithmeticUpdate.cpp
-- /library/lib/operator/monoid/MonoidRangeMinRangeArithmeticUpdate.cpp.html
-title: lib/operator/monoid/MonoidRangeMinRangeArithmeticUpdate.cpp
+- /library/lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
+- /library/lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp.html
+title: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
 ---
