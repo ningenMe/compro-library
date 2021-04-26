@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 #include "../../../lib/data-structure/segment-tree/LazySegmentTree.cpp"
-#include "../../../lib/operator/monoid/MonoidRangeMinRangeAdd.cpp"
+#include "../../../lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp"
 
 int main(void){
 	int N,Q; cin >> N >> Q;

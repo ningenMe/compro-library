@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 #include "../../../lib/data-structure/segment-tree/LazySegmentTree.cpp"
-#include "../../../lib/operator/monoid/MonoidRangeSumRangeUpdate.cpp"
+#include "../../../lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp"
 int main(void){
 	int N,Q; cin >> N >> Q;
 	LazySegmentTree<MonoidRangeSumRangeUpdate<long long,long long>> Seg(N,0);

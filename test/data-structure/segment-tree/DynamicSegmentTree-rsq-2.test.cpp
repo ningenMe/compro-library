@@ -6,16 +6,17 @@
 #include <stack>
 using namespace std;
 #include "../../../lib/data-structure/segment-tree/DynamicSegmentTree.cpp"
+#include "../../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);
-    DynamicSegmentTree<NodeSumPointAdd<long long>> seg;
+    DynamicSegmentTree<MonoidRangeSumPointAdd<long long>> seg;
     int N; cin >> N;
     long long ans = 0;
     while(N--) {
         int q,l,r; cin >> q >> l >> r;
-        if(q==0) seg.update(l,r);
-        else ans += seg.get(l,r+1);
+        if(q==0) seg.operate(l,r);
+        else ans += seg.fold(l,r+1);
     }
     cout << ans << endl;
     return 0;
