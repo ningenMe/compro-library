@@ -4,6 +4,7 @@
 "test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp": "2021-04-26 09:09:47 +0900",
 "test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp": "2021-04-26 09:09:47 +0900",
 "test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp": "2021-04-26 09:09:47 +0900",
+"test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp": "2021-04-26 09:23:31 +0900",
 "test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp": "2021-04-26 09:09:47 +0900",
 "test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp": "2021-04-26 09:18:50 +0900",
 "test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp": "2021-04-26 09:18:50 +0900",
