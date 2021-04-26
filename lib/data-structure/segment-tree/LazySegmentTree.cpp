@@ -14,14 +14,14 @@ template<class Monoid> class LazySegmentTree {
 
 	void propagate(int k) {
 		if(lazy[k] == Monoid::unit_lazy) return;
-        node[k] = Monoid::fucn_operate(node[k],lazy[k],range[k].first,range[k].second);
+        node[k] = Monoid::func_operate(node[k],lazy[k],range[k].first,range[k].second);
 		if(k < length) lazy[2*k+0] = Monoid::func_lazy(lazy[2*k+0],lazy[k]);
 		if(k < length) lazy[2*k+1] = Monoid::func_lazy(lazy[2*k+1],lazy[k]);
 		lazy[k] = Monoid::unit_lazy;
 	}
 
 	void build() {
-		for (int i = length - 1; i >= 0; --i) node[i] = Monoid::fucn_fold(node[(i<<1)+0],node[(i<<1)+1]);
+		for (int i = length - 1; i >= 0; --i) node[i] = Monoid::func_fold(node[(i<<1)+0],node[(i<<1)+1]);
 		range.resize(2 * length);
 		for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);
 		for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);
@@ -65,8 +65,8 @@ public:
 		}
 		l = a + length, r = b + length - 1;
 		while ((l>>=1),(r>>=1),l) {
-            if(lazy[l] == Monoid::unit_lazy) node[l] = Monoid::fucn_fold(Monoid::fucn_operate(node[(l<<1)+0],lazy[(l<<1)+0],range[(l<<1)+0].first,range[(l<<1)+0].second),Monoid::fucn_operate(node[(l<<1)+1],lazy[(l<<1)+1],range[(l<<1)+1].first,range[(l<<1)+1].second));
-            if(lazy[r] == Monoid::unit_lazy) node[r] = Monoid::fucn_fold(Monoid::fucn_operate(node[(r<<1)+0],lazy[(r<<1)+0],range[(r<<1)+0].first,range[(r<<1)+0].second),Monoid::fucn_operate(node[(r<<1)+1],lazy[(r<<1)+1],range[(r<<1)+1].first,range[(r<<1)+1].second));
+            if(lazy[l] == Monoid::unit_lazy) node[l] = Monoid::func_fold(Monoid::func_operate(node[(l<<1)+0],lazy[(l<<1)+0],range[(l<<1)+0].first,range[(l<<1)+0].second),Monoid::func_operate(node[(l<<1)+1],lazy[(l<<1)+1],range[(l<<1)+1].first,range[(l<<1)+1].second));
+            if(lazy[r] == Monoid::unit_lazy) node[r] = Monoid::func_fold(Monoid::func_operate(node[(r<<1)+0],lazy[(r<<1)+0],range[(r<<1)+0].first,range[(r<<1)+0].second),Monoid::func_operate(node[(r<<1)+1],lazy[(r<<1)+1],range[(r<<1)+1].first,range[(r<<1)+1].second));
   		}
 	}
 
@@ -76,10 +76,10 @@ public:
 		for (int i = height; 0 < i; --i) propagate(l >> i), propagate(r >> i);
 		TypeNode vl = Monoid::unit_node, vr = Monoid::unit_node;
 		for(r++; l < r; l >>=1, r >>=1) {
-            if(l&1) vl = Monoid::fucn_fold(vl,Monoid::fucn_operate(node[l],lazy[l],range[l].first,range[l].second)),l++;
-            if(r&1) r--,vr = Monoid::fucn_fold(Monoid::fucn_operate(node[r],lazy[r],range[r].first,range[r].second),vr);
+            if(l&1) vl = Monoid::func_fold(vl,Monoid::func_operate(node[l],lazy[l],range[l].first,range[l].second)),l++;
+            if(r&1) r--,vr = Monoid::func_fold(Monoid::func_operate(node[r],lazy[r],range[r].first,range[r].second),vr);
  		}
-		return Monoid::fucn_fold(vl,vr);
+		return Monoid::func_fold(vl,vr);
 	}
 
 	//return [0,length]
@@ -90,8 +90,8 @@ public:
 		TypeNode ret = Monoid::unit_node;
 		size_t idx = 2;
 		for(; idx < 2*length; idx<<=1){
-            if(!Monoid::func_check(Monoid::fucn_fold(ret,Monoid::fucn_operate(node[idx],lazy[idx],range[idx].first,range[idx].second)),var)) {
-                ret = Monoid::fucn_fold(ret,Monoid::fucn_operate(node[idx],lazy[idx],range[idx].first,range[idx].second));
+            if(!Monoid::func_check(Monoid::func_fold(ret,Monoid::func_operate(node[idx],lazy[idx],range[idx].first,range[idx].second)),var)) {
+                ret = Monoid::func_fold(ret,Monoid::func_operate(node[idx],lazy[idx],range[idx].first,range[idx].second));
                 idx++;
             }
 		}
@@ -105,8 +105,8 @@ public:
 		TypeNode ret = Monoid::unit_node;
 		size_t off = l;
 		for(size_t idx = l+length; idx < 2*length && off < r; ){
-            if(range[idx].second<=r && !Monoid::func_check(Monoid::fucn_fold(ret,Monoid::fucn_operate(node[idx],lazy[idx],range[idx].first,range[idx].second)),var)) {
-                ret = Monoid::fucn_fold(ret,Monoid::fucn_operate(node[idx],lazy[idx],range[idx].first,range[idx].second));
+            if(range[idx].second<=r && !Monoid::func_check(Monoid::func_fold(ret,Monoid::func_operate(node[idx],lazy[idx],range[idx].first,range[idx].second)),var)) {
+                ret = Monoid::func_fold(ret,Monoid::func_operate(node[idx],lazy[idx],range[idx].first,range[idx].second));
                 off = range[idx++].second;
                 if(!(idx&1)) idx >>= 1;			
             }
