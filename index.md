@@ -204,10 +204,11 @@ data:
       title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0]"
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid/MonoidRangeMulPointUpdate.cpp
-      title: lib/operator/monoid/MonoidRangeMulPointUpdate.cpp
+      title: "MonoidRangeMulPointUpdate - [\u533A\u9593\u7A4D, \u4E00\u70B9\u66F4\u65B0\
+        ]"
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
-      title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\u65B0\
+      title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
         ]"
   - name: lib/operator/monoid-lazy
     pages:

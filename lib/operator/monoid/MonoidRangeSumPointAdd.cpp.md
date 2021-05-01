@@ -23,19 +23,19 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/operator/monoid/MonoidRangeSumPointAdd.md
-    document_title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\
-      \u65B0]"
+    document_title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\
+      \u7B97]"
     links: []
   bundledCode: "#line 1 \"lib/operator/monoid/MonoidRangeSumPointAdd.cpp\"\n/*\n *\
-    \ @title MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\u65B0\
+    \ @title MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
     ]\n * @docs md/operator/monoid/MonoidRangeSumPointAdd.md\n */\ntemplate<class\
     \ T> struct MonoidRangeSumPointAdd {\n    using TypeNode = T;\n    inline static\
     \ constexpr TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_fold(TypeNode\
     \ l,TypeNode r){return l+r;}\n    inline static constexpr TypeNode func_operate(TypeNode\
     \ l,TypeNode r){return l+r;}\n    inline static constexpr bool func_check(TypeNode\
     \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n"
-  code: "/*\n * @title MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\
-    \u65B0]\n * @docs md/operator/monoid/MonoidRangeSumPointAdd.md\n */\ntemplate<class\
+  code: "/*\n * @title MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\
+    \u7B97]\n * @docs md/operator/monoid/MonoidRangeSumPointAdd.md\n */\ntemplate<class\
     \ T> struct MonoidRangeSumPointAdd {\n    using TypeNode = T;\n    inline static\
     \ constexpr TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_fold(TypeNode\
     \ l,TypeNode r){return l+r;}\n    inline static constexpr TypeNode func_operate(TypeNode\
@@ -45,7 +45,7 @@ data:
   isVerificationFile: false
   path: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
   requiredBy: []
-  timestamp: '2021-04-26 17:13:35+09:00'
+  timestamp: '2021-05-01 14:31:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/data-structure/BinaryTrie-set-xor-min.test.cpp
@@ -58,5 +58,5 @@ layout: document
 redirect_from:
 - /library/lib/operator/monoid/MonoidRangeSumPointAdd.cpp
 - /library/lib/operator/monoid/MonoidRangeSumPointAdd.cpp.html
-title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\u65B0]"
+title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97]"
 ---

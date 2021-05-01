@@ -7,7 +7,7 @@ data:
       \u30B0\u30E1\u30F3\u30C8\u6728"
   - icon: ':heavy_check_mark:'
     path: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
-    title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\u65B0\
+    title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
       ]"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -49,7 +49,7 @@ data:
     \        }\n    }\n\n    //[l,r)\n    TypeNode fold(i64 l, i64 r) {\n        if\
     \ (l < 0 || length <= l || r < 0) return Monoid::unit_node;\n        return dfs(l,r,0,length,root);\n\
     \    }\n};\n#line 1 \"lib/operator/monoid/MonoidRangeSumPointAdd.cpp\"\n/*\n *\
-    \ @title MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\u65B0\
+    \ @title MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
     ]\n * @docs md/operator/monoid/MonoidRangeSumPointAdd.md\n */\ntemplate<class\
     \ T> struct MonoidRangeSumPointAdd {\n    using TypeNode = T;\n    inline static\
     \ constexpr TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_fold(TypeNode\
@@ -76,7 +76,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 17:33:59+09:00'
+  timestamp: '2021-05-01 14:31:59+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp

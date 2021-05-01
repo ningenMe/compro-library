@@ -6,7 +6,7 @@ data:
     title: BinaryTrie
   - icon: ':heavy_check_mark:'
     path: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
-    title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\u65B0\
+    title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
       ]"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -41,7 +41,7 @@ data:
     \ break;\n\t\t\tif(ch[curr][f]!=-1 && node[ch[curr][f]]) curr = ch[curr][f];\n\
     \t\t\telse curr = ch[curr][f^=1];\n\t\t\ty^=(f<<i);\n\t\t}\n\t\treturn y^x;\n\t\
     }\n};\n#line 1 \"lib/operator/monoid/MonoidRangeSumPointAdd.cpp\"\n/*\n * @title\
-    \ MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u66F4\u65B0]\n *\
+    \ MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97]\n *\
     \ @docs md/operator/monoid/MonoidRangeSumPointAdd.md\n */\ntemplate<class T> struct\
     \ MonoidRangeSumPointAdd {\n    using TypeNode = T;\n    inline static constexpr\
     \ TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_fold(TypeNode\
@@ -69,7 +69,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/data-structure/BinaryTrie-set-xor-min.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 22:51:12+09:00'
+  timestamp: '2021-05-01 14:31:59+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/data-structure/BinaryTrie-set-xor-min.test.cpp

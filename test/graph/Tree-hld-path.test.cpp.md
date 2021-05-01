@@ -16,7 +16,8 @@ data:
     title: "Matrix - \u884C\u5217\u6F14\u7B97"
   - icon: ':heavy_check_mark:'
     path: lib/operator/monoid/MonoidRangeMulPointUpdate.cpp
-    title: lib/operator/monoid/MonoidRangeMulPointUpdate.cpp
+    title: "MonoidRangeMulPointUpdate - [\u533A\u9593\u7A4D, \u4E00\u70B9\u66F4\u65B0\
+      ]"
   - icon: ':heavy_check_mark:'
     path: lib/util/ModInt.cpp
     title: ModInt
@@ -280,9 +281,10 @@ data:
     \     cout << \"vector\" << endl;\n        cout << \"{ \" << fold(0,1);\n    \
     \    for(int i = 1; i < length; ++i) cout << \", \" << fold(i,i+1);\n        cout\
     \ << \" }\" << endl;\n    }\n};\n#line 1 \"lib/operator/monoid/MonoidRangeMulPointUpdate.cpp\"\
-    \n//\u4E00\u70B9\u66F4\u65B0 \u533A\u9593\u6700\u5C0F\ntemplate<class T> struct\
-    \ MonoidRangeMulPointUpdate {\n    using TypeNode = T;\n    inline static TypeNode\
-    \ unit_node = TypeNode::E();\n    inline static constexpr TypeNode func_fold(TypeNode\
+    \n/*\n * @title MonoidRangeMulPointUpdate - [\u533A\u9593\u7A4D, \u4E00\u70B9\u66F4\
+    \u65B0]\n * @docs md/operator/monoid/MonoidRangeMulPointUpdate.md\n */\ntemplate<class\
+    \ T> struct MonoidRangeMulPointUpdate {\n    using TypeNode = T;\n    inline static\
+    \ TypeNode unit_node = TypeNode::E();\n    inline static constexpr TypeNode func_fold(TypeNode\
     \ l,TypeNode r){return l*r;}\n    inline static constexpr TypeNode func_operate(TypeNode\
     \ l,TypeNode r){return r;}\n    inline static constexpr bool func_check(TypeNode\
     \ nodeVal,TypeNode var){return var > nodeVal;}\n};\n#line 1 \"lib/util/ModInt.cpp\"\
@@ -371,7 +373,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-hld-path.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 17:56:28+09:00'
+  timestamp: '2021-05-01 14:31:59+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-hld-path.test.cpp
