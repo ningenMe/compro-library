@@ -1,4 +1,7 @@
-//一点更新 区間最小
+/*
+ * @title MonoidRangeMulPointUpdate - [区間積, 一点更新]
+ * @docs md/operator/monoid/MonoidRangeMulPointUpdate.md
+ */
 template<class T> struct MonoidRangeMulPointUpdate {
     using TypeNode = T;
     inline static TypeNode unit_node = TypeNode::E();

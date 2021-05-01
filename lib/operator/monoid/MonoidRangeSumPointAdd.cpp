@@ -1,5 +1,5 @@
 /*
- * @title MonoidRangeSumPointAdd - [区間和, 一点更新]
+ * @title MonoidRangeSumPointAdd - [区間和, 一点加算]
  * @docs md/operator/monoid/MonoidRangeSumPointAdd.md
  */
 template<class T> struct MonoidRangeSumPointAdd {
