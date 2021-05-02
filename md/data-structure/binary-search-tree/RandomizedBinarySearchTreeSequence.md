@@ -26,11 +26,12 @@
   - $O(\log N)$
 - erase(const size_t k)
   - k番目の値を削除する
+  - $O(\log N)$
 - get(size_t k) 
   - k番目の値を返す(単純に前からk番目。k番目に小さいものではない)
   - $O(\log N)$
 - operate(const int k, const TypeNode value)
-  - 半開区間[k,k+1)にlazyを作用させる
+  - 半開区間[k,k+1)にvalueを作用させる
   - $O(\log N)$
 - fold(int l, int r) 
   - 半開区間[l,r)をfoldした値を返す
