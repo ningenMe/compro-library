@@ -19,6 +19,9 @@ data:
       path: lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
       title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
         \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
+    - icon: ':warning:'
+      path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
+      title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
       title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
