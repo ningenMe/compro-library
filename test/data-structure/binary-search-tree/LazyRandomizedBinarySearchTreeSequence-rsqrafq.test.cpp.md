@@ -67,25 +67,25 @@ data:
     \        if(node->left !=nullptr) node->left->range_lazy  = Monoid::func_lazy(node->left->range_lazy,node->range_lazy),\
     \ node->left->rev ^= node->rev;\n        if(node->right!=nullptr) node->right->range_lazy\
     \ = Monoid::func_lazy(node->right->range_lazy,node->range_lazy), node->right->rev\
-    \ ^= node->rev;\n\t\tif(node->rev) swap(node->left,node->right), node->rev = 0;\n\
-    \        node->range_lazy = Monoid::unit_lazy;\n    }\n    inline Node* merge_impl(Node\
-    \ *left, Node *right) {\n        propagate(left);\n        propagate(right);\n\
+    \ ^= node->rev;\n        if(node->rev) swap(node->left,node->right), node->rev\
+    \ = 0;\n        node->range_lazy = Monoid::unit_lazy;\n    }\n    inline Node*\
+    \ merge_impl(Node *left, Node *right) {\n        propagate(left);\n        propagate(right);\n\
     \        if (left==nullptr)  return right;\n        if (right==nullptr) return\
     \ left;\n        if (xor_shift() % (left->size + right->size) < left->size) {\n\
     \            left->right = merge_impl(left->right, right);\n            return\
     \ update(left);\n        }\n        else {\n            right->left = merge_impl(left,\
     \ right->left);\n            return update(right);\n        }\n    }\n    inline\
     \ pair<Node*, Node*> split_impl(Node* node, int k) {\n        if (node==nullptr)\
-    \ return make_pair(nullptr, nullptr);\n\t\tpropagate(node);\n        if (k <=\
-    \ size(node->left)) {\n\t\t\tpropagate(node->right);\n            pair<Node*,\
+    \ return make_pair(nullptr, nullptr);\n        propagate(node);\n        if (k\
+    \ <= size(node->left)) {\n            propagate(node->right);\n            pair<Node*,\
     \ Node*> sub = split_impl(node->left, k);\n            node->left = sub.second;\n\
     \            return make_pair(sub.first, update(node));\n        }\n        else\
-    \ {\n\t\t\tpropagate(node->left);\n            pair<Node*, Node*> sub = split_impl(node->right,\
-    \ k - 1 - size(node->left));\n            node->right = sub.first;\n         \
-    \   return make_pair(update(node), sub.second);\n        }\n    }\n    inline\
-    \ void operate_impl(Node *node, int l, int r, TypeLazy lazy) {\n        if(l <\
-    \ 0 || size(node) <= l || r <= 0 || r-l <= 0) return;\n        if (l == 0 && r\
-    \ == size(node)) {\n            node->range_lazy = Monoid::func_lazy(node->range_lazy,lazy);\n\
+    \ {\n            propagate(node->left);\n            pair<Node*, Node*> sub =\
+    \ split_impl(node->right, k - 1 - size(node->left));\n            node->right\
+    \ = sub.first;\n            return make_pair(update(node), sub.second);\n    \
+    \    }\n    }\n    inline void operate_impl(Node *node, int l, int r, TypeLazy\
+    \ lazy) {\n        if(l < 0 || size(node) <= l || r <= 0 || r-l <= 0) return;\n\
+    \        if (l == 0 && r == size(node)) {\n            node->range_lazy = Monoid::func_lazy(node->range_lazy,lazy);\n\
     \            propagate(node);\n            return;\n        }\n        int sl\
     \ = size(node->left);\n        propagate(node->left);\n        propagate(node->right);\n\
     \        if(sl > l) operate_impl(node->left,l,min(sl,r),lazy);\n        l = max(l-sl,0),\
@@ -98,58 +98,59 @@ data:
     \        if(sl > l) value = Monoid::func_fold(value,fold_impl(node->left,l,min(sl,r)));\n\
     \        l = max(l-sl,0), r -= sl;\n        if(l == 0 && r > 0) value = Monoid::func_fold(value,node->value);\n\
     \        l = max(l-1,0), r -= 1;\n        if(l >= 0 && r > l) value = Monoid::func_fold(value,fold_impl(node->right,l,r));\n\
-    \        return value;\n    }\n\tinline void reverse_impl(int l, int r) {\n\t\t\
-    pair<Node*,Node*> tmp1 = split_impl(this->root,l);\n\t\tpair<Node*,Node*> tmp2\
-    \ = split_impl(tmp1.second,r-l);\n\t\tNode* nl = tmp1.first;\n\t\tNode* nc = tmp2.first;\n\
-    \t\tNode* nr = tmp2.second;\n\t\tnc->rev ^= 1;\n\t\tthis->root = merge_impl(merge_impl(nl,nc),nr);\n\
-    \t}\n    inline void insert_impl(const size_t k, const TypeNode value) {\n   \
-    \     pair<Node*, Node*> sub = split_impl(this->root, k); \n        this->root\
-    \ = this->merge_impl(this->merge_impl(sub.first, new Node(value)), sub.second);\n\
-    \    }\n    inline void erase_impl(const size_t k) {\n        if(size(this->root)\
-    \ <= k) return;\n        auto sub = split_impl(this->root,k);\n        this->root\
-    \ = merge_impl(sub.first, split_impl(sub.second, 1).second);\n    }\npublic:\n\
-    \    LazyRandomizedBinarySearchTreeSequence() : root(nullptr) {}\n    inline int\
-    \ size() {return size(this->root);}\n    inline int empty(void) {return bool(size()==0);}\n\
-    \    inline TypeNode get(size_t k) {return get(this->root, k);}\n    inline Node*\
-    \ merge(Node *left, Node *right) {return merge_impl(left,right);}\n    inline\
-    \ pair<Node*, Node*> split(int k) {return split_impl(this->root,k);}\n    inline\
-    \ void insert(const size_t k, const TypeNode value) {insert_impl(k,value);}\n\
-    \    inline TypeNode fold(int l, int r) {return fold_impl(this->root,l,r);}\n\
-    \    inline void operate(const int l, const int r, const TypeLazy lazy) {propagate(this->root);\
-    \ operate_impl(this->root,l,r,lazy);}\n    inline void erase(const size_t k) {erase_impl(k);}\n\
-    \tinline void reverse(int l, int r) {reverse_impl(l,r);}\n    void print() {int\
-    \ m = size(this->root); for(int i=0;i<m;++i) cout << get(i) << \" \\n\"[i==m-1];}\n\
-    };\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/util/ModInt.md\n\
-    \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
-    \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
-    \ (-y)%mod)%mod) {}\n    ModInt &operator+=(const ModInt &p) {if((x += p.x) >=\
-    \ mod) x -= mod;return *this;}\n    ModInt &operator+=(const long long y) {ModInt\
-    \ p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
-    \ int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt\
-    \ &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}\n\
-    \    ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >=\
-    \ mod) x -= mod;return *this;}\n    ModInt &operator-=(const int y) {ModInt p(y);if((x\
-    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator*=(const\
-    \ ModInt &p) {x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
-    \ long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator*=(const\
-    \ int y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    ModInt &operator^=(const\
-    \ ModInt &p) {x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
-    \ long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator^=(const\
-    \ int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    ModInt &operator/=(const\
-    \ ModInt &p) {*this *= p.inv();return *this;}\n    ModInt &operator/=(const long\
-    \ long y) {ModInt p(y);*this *= p.inv();return *this;}\n    ModInt &operator/=(const\
-    \ int y) {ModInt p(y);*this *= p.inv();return *this;}\n    ModInt operator=(const\
-    \ int y) {ModInt p(y);*this = p;return *this;}\n    ModInt operator=(const long\
-    \ long y) {ModInt p(y);*this = p;return *this;}\n    ModInt operator-() const\
-    \ {return ModInt(-x); }\n    ModInt operator++() {x++;if(x>=mod) x-=mod;return\
-    \ *this;}\n    ModInt operator--() {x--;if(x<0) x+=mod;return *this;}\n    ModInt\
-    \ operator+(const ModInt &p) const { return ModInt(*this) += p; }\n    ModInt\
-    \ operator-(const ModInt &p) const { return ModInt(*this) -= p; }\n    ModInt\
-    \ operator*(const ModInt &p) const { return ModInt(*this) *= p; }\n    ModInt\
-    \ operator/(const ModInt &p) const { return ModInt(*this) /= p; }\n    ModInt\
-    \ operator^(const ModInt &p) const { return ModInt(*this) ^= p; }\n    bool operator==(const\
-    \ ModInt &p) const { return x == p.x; }\n    bool operator!=(const ModInt &p)\
-    \ const { return x != p.x; }\n    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
+    \        return value;\n    }\n    inline void reverse_impl(int l, int r) {\n\
+    \        pair<Node*,Node*> tmp1 = split_impl(this->root,l);\n        pair<Node*,Node*>\
+    \ tmp2 = split_impl(tmp1.second,r-l);\n        Node* nl = tmp1.first;\n      \
+    \  Node* nc = tmp2.first;\n        Node* nr = tmp2.second;\n        nc->rev ^=\
+    \ 1;\n        this->root = merge_impl(merge_impl(nl,nc),nr);\n    }\n    inline\
+    \ void insert_impl(const size_t k, const TypeNode value) {\n        pair<Node*,\
+    \ Node*> sub = split_impl(this->root, k); \n        this->root = this->merge_impl(this->merge_impl(sub.first,\
+    \ new Node(value)), sub.second);\n    }\n    inline void erase_impl(const size_t\
+    \ k) {\n        if(size(this->root) <= k) return;\n        auto sub = split_impl(this->root,k);\n\
+    \        this->root = merge_impl(sub.first, split_impl(sub.second, 1).second);\n\
+    \    }\npublic:\n    LazyRandomizedBinarySearchTreeSequence() : root(nullptr)\
+    \ {}\n    inline int size() {return size(this->root);}\n    inline int empty(void)\
+    \ {return bool(size()==0);}\n    inline Node* merge(Node *left, Node *right) {return\
+    \ merge_impl(left,right);}\n    inline pair<Node*, Node*> split(int k) {return\
+    \ split_impl(this->root,k);}\n    inline void insert(const size_t k, const TypeNode\
+    \ value) {insert_impl(k,value);}\n    inline void erase(const size_t k) {erase_impl(k);}\n\
+    \    inline TypeNode get(size_t k) {return get(this->root, k);}\n    inline void\
+    \ operate(const int l, const int r, const TypeLazy lazy) {propagate(this->root);\
+    \ operate_impl(this->root,l,r,lazy);}\n    inline TypeNode fold(int l, int r)\
+    \ {return fold_impl(this->root,l,r);}\n    inline void reverse(int l, int r) {reverse_impl(l,r);}\n\
+    \    void print() {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i)\
+    \ << \" \\n\"[i==m-1];}\n};\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
+    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
+    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
+    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const\
+    \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
+    \ long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n  \
+    \  ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
+    \ *this;}\n    ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod)\
+    \ x -= mod;return *this;}\n    ModInt &operator-=(const long long y) {ModInt p(y);if((x\
+    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator-=(const\
+    \ int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}\n  \
+    \  ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}\n \
+    \   ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x % mod);return\
+    \ *this;}\n    ModInt &operator*=(const int y) {ModInt p(y);x = (x * p.x % mod);return\
+    \ *this;}\n    ModInt &operator^=(const ModInt &p) {x = (x ^ p.x) % mod;return\
+    \ *this;}\n    ModInt &operator^=(const long long y) {ModInt p(y);x = (x ^ p.x)\
+    \ % mod;return *this;}\n    ModInt &operator^=(const int y) {ModInt p(y);x = (x\
+    \ ^ p.x) % mod;return *this;}\n    ModInt &operator/=(const ModInt &p) {*this\
+    \ *= p.inv();return *this;}\n    ModInt &operator/=(const long long y) {ModInt\
+    \ p(y);*this *= p.inv();return *this;}\n    ModInt &operator/=(const int y) {ModInt\
+    \ p(y);*this *= p.inv();return *this;}\n    ModInt operator=(const int y) {ModInt\
+    \ p(y);*this = p;return *this;}\n    ModInt operator=(const long long y) {ModInt\
+    \ p(y);*this = p;return *this;}\n    ModInt operator-() const {return ModInt(-x);\
+    \ }\n    ModInt operator++() {x++;if(x>=mod) x-=mod;return *this;}\n    ModInt\
+    \ operator--() {x--;if(x<0) x+=mod;return *this;}\n    ModInt operator+(const\
+    \ ModInt &p) const { return ModInt(*this) += p; }\n    ModInt operator-(const\
+    \ ModInt &p) const { return ModInt(*this) -= p; }\n    ModInt operator*(const\
+    \ ModInt &p) const { return ModInt(*this) *= p; }\n    ModInt operator/(const\
+    \ ModInt &p) const { return ModInt(*this) /= p; }\n    ModInt operator^(const\
+    \ ModInt &p) const { return ModInt(*this) ^= p; }\n    bool operator==(const ModInt\
+    \ &p) const { return x == p.x; }\n    bool operator!=(const ModInt &p) const {\
+    \ return x != p.x; }\n    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
     \ > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}\n\
     \    ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul *= mul,n\
     \ >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream &operator<<(ostream\
@@ -185,7 +186,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   requiredBy: []
-  timestamp: '2021-05-02 18:27:40+09:00'
+  timestamp: '2021-05-02 18:38:45+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
