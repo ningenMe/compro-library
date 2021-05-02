@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+    title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
     title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -163,6 +166,7 @@ data:
   - test/math/Matrix-det.test.cpp
   - test/math/FormalPowerSeries-exp.test.cpp
   - test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+  - test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
   - test/util/ModInt.test.cpp
   - test/graph/Tree-hld-path.test.cpp
