@@ -6,12 +6,12 @@ template<class Operator> class ConvexHullTrick {
 private:
 	using TypeValue = typename Operator::TypeValue;
 	using Line = pair<TypeValue,TypeValue>;
-	struct NodePair {
+	struct Monoid {
 		using TypeNode = Line;
-		inline static constexpr TypeNode unit_node = {0,Operator::unit_value};
-		inline static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return {0,0};}
+		inline static constexpr TypeNode unit_node = {0,0};
+		inline static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return {0,0};}
 	};
-	Rbst<NodePair> lines;
+	RandomizedBinarySearchTree<Monoid> lines;
 
 	//3直線に関してline2が必要か確認 (このとき a1 < a2 < a3が必要=rbstの順そのまま)
 	inline int is_required(const Line& line1, const Line& line2, const Line& line3) {
