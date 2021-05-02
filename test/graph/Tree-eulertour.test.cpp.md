@@ -13,7 +13,8 @@ data:
     title: "Tree - \u6728"
   - icon: ':heavy_check_mark:'
     path: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
-    title: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
+    title: "MonoidRangeEulerTourSumRangeAdd - [\u533A\u9593\u30AA\u30A4\u30E9\u30FC\
+      \u30C4\u30A2\u30FC\u548C, \u533A\u9593\u52A0\u7B97]"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -259,19 +260,21 @@ data:
     \t\t// }\n\t\tcout << \"vector\" << endl;\n\t\tcout << \"{ \" << fold(0,1);\n\t\
     \tfor(int i = 1; i < length; ++i) cout << \", \" << fold(i,i+1);\n\t\tcout <<\
     \ \" }\" << endl;\n\t}\n};\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp\"\
-    \n//node:\u7DCF\u548C\u3000lazy:\u52A0\u7B97\ntemplate<class T, class U> struct\
-    \ MonoidRangeEulerTourSumRangeAdd {\n\tusing TypeNode = T;\n\tusing TypeLazy =\
-    \ U;\n\tinline static constexpr TypeNode unit_node = {0,0};\n\tinline static constexpr\
-    \ TypeLazy unit_lazy = 0;\n\tinline static constexpr TypeNode func_fold(TypeNode\
-    \ l,TypeNode r){return {l.first+r.first,l.second+r.second};}\n\tinline static\
-    \ constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return old_lazy+new_lazy;}\n\
-    \tinline static constexpr TypeNode func_operate(TypeNode node,TypeLazy lazy,int\
-    \ l, int r){return {node.first+node.second*lazy,node.second};}\n\tinline static\
-    \ constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}\n\
-    \t// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);\n};\n#line 16 \"test/graph/Tree-eulertour.test.cpp\"\
-    \n\nint main(void){\n\tint N; cin >> N;\n\tGraph<long long> g(N);\n\tfor(int i=0;i<N-1;++i)\
-    \ {\n\t\tint u,v,w; cin >> u >> v >> w;\n\t\tg.make_bidirectional_edge(u,v,w);\n\
-    \t}\n\tauto tree = Tree<TreeOperator<long long>>::builder(g).root(0).parent().child().eulertour().build();\n\
+    \n/*\n * @title MonoidRangeEulerTourSumRangeAdd - [\u533A\u9593\u30AA\u30A4\u30E9\
+    \u30FC\u30C4\u30A2\u30FC\u548C, \u533A\u9593\u52A0\u7B97]\n * @docs md/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.md\n\
+    \ */\ntemplate<class T, class U> struct MonoidRangeEulerTourSumRangeAdd {\n\t\
+    using TypeNode = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode\
+    \ unit_node = {0,0};\n\tinline static constexpr TypeLazy unit_lazy = 0;\n\tinline\
+    \ static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return {l.first+r.first,l.second+r.second};}\n\
+    \tinline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return\
+    \ old_lazy+new_lazy;}\n\tinline static constexpr TypeNode func_operate(TypeNode\
+    \ node,TypeLazy lazy,int l, int r){return {node.first+node.second*lazy,node.second};}\n\
+    \tinline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
+    \ var <= nodeVal;}\n\t// LazySegmentTree<NodeSumRangeUpdate<ll,ll>> Seg(N,0);\n\
+    };\n#line 16 \"test/graph/Tree-eulertour.test.cpp\"\n\nint main(void){\n\tint\
+    \ N; cin >> N;\n\tGraph<long long> g(N);\n\tfor(int i=0;i<N-1;++i) {\n\t\tint\
+    \ u,v,w; cin >> u >> v >> w;\n\t\tg.make_bidirectional_edge(u,v,w);\n\t}\n\tauto\
+    \ tree = Tree<TreeOperator<long long>>::builder(g).root(0).parent().child().eulertour().build();\n\
     \tint M = tree.eulertour.size();\n\tvector<pair<long long,long long>> init(M,{0,0});\n\
     \tfor(int i=1;i<M;++i) {\n\t\tint l=tree.eulertour[i-1], r = tree.eulertour[i],\
     \ sgn;\n\t\tlong long w;\n\t\tif(tree.depth[l]<tree.depth[r]) {\n\t\t\tw = tree.parent[r].second;\n\
@@ -309,7 +312,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-eulertour.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 18:07:52+09:00'
+  timestamp: '2021-05-02 12:04:02+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-eulertour.test.cpp

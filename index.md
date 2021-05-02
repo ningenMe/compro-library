@@ -219,22 +219,31 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
-      title: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
+      title: "MonoidRangeEulerTourSumRangeAdd - [\u533A\u9593\u30AA\u30A4\u30E9\u30FC\
+        \u30C4\u30A2\u30FC\u548C, \u533A\u9593\u52A0\u7B97]"
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp
-      title: lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp
+      title: "MonoidRangeMinRangeAdd - [\u533A\u9593min, \u533A\u9593\u52A0\u7B97]"
     - icon: ':warning:'
       path: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
-      title: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
+      title: "MonoidRangeMinRangeArithmeticUpdate - [\u533A\u9593min, \u533A\u9593\
+        \u7B49\u5DEE\u6570\u5217\u66F4\u65B0]"
+    - icon: ':heavy_check_mark:'
+      path: lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp
+      title: "MonoidRangeMinRangeUpdate - [\u533A\u9593min, \u533A\u9593\u66F4\u65B0\
+        ]"
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
-      title: lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
+      title: "MonoidRangeSumRangeAdd - [\u533A\u9593\u548C, \u533A\u9593\u52A0\u7B97\
+        ]"
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
-      title: lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
+      title: "MonoidRangeSumRangeAffine - [\u533A\u9593\u548C, \u533A\u9593\u30A2\u30D5\
+        \u30A3\u30F3\u5909\u63DB]"
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
-      title: lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
+      title: "MonoidRangeSumRangeUpdate - [\u533A\u9593\u548C, \u533A\u9593\u66F4\u65B0\
+        ]"
   - name: lib/operator/operator
     pages:
     - icon: ':heavy_check_mark:'
@@ -370,6 +379,9 @@ data:
       title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   - name: test/data-structure/binary-search-tree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/LazyBinarySearchTree-insert-erase.test.cpp
+      title: test/data-structure/binary-search-tree/LazyBinarySearchTree-insert-erase.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
       title: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp

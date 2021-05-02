@@ -7,7 +7,8 @@ data:
       \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - icon: ':heavy_check_mark:'
     path: lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
-    title: lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
+    title: "MonoidRangeSumRangeUpdate - [\u533A\u9593\u548C, \u533A\u9593\u66F4\u65B0\
+      ]"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -86,16 +87,18 @@ data:
     \t\t// }\n\t\tcout << \"vector\" << endl;\n\t\tcout << \"{ \" << fold(0,1);\n\t\
     \tfor(int i = 1; i < length; ++i) cout << \", \" << fold(i,i+1);\n\t\tcout <<\
     \ \" }\" << endl;\n\t}\n};\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp\"\
-    \n//node:\u7DCF\u548C\u3000lazy:\u66F4\u65B0\ntemplate<class T, class U> struct\
-    \ MonoidRangeSumRangeUpdate {\n\tusing TypeNode = T;\n\tusing TypeLazy = U;\n\t\
-    inline static constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeLazy\
-    \ unit_lazy = -2000;\n\tinline static constexpr TypeNode func_fold(TypeNode l,TypeNode\
-    \ r){return l+r;}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy\
-    \ new_lazy){return new_lazy;}\n\tinline static constexpr TypeNode func_operate(TypeNode\
-    \ node,TypeLazy lazy,int l, int r){return lazy!=-2000?lazy*(r-l):node;}\n\tinline\
-    \ static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <=\
-    \ nodeVal;}\n};\n#line 8 \"test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp\"\
-    \nint main(void){\n\tint N,Q; cin >> N >> Q;\n\tLazySegmentTree<MonoidRangeSumRangeUpdate<long\
+    \n/*\n * @title MonoidRangeSumRangeUpdate - [\u533A\u9593\u548C, \u533A\u9593\u66F4\
+    \u65B0]\n * @docs md/operator/monoid-lazy/MonoidRangeSumRangeUpdate.md\n */\n\
+    template<class T, class U> struct MonoidRangeSumRangeUpdate {\n\tusing TypeNode\
+    \ = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode unit_node =\
+    \ 0;\n\tinline static constexpr TypeLazy unit_lazy = -2000;\n\tinline static constexpr\
+    \ TypeNode func_fold(TypeNode l,TypeNode r){return l+r;}\n\tinline static constexpr\
+    \ TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return new_lazy;}\n\t\
+    inline static constexpr TypeNode func_operate(TypeNode node,TypeLazy lazy,int\
+    \ l, int r){return lazy!=-2000?lazy*(r-l):node;}\n\tinline static constexpr bool\
+    \ func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}\n};\n#line\
+    \ 8 \"test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp\"\nint\
+    \ main(void){\n\tint N,Q; cin >> N >> Q;\n\tLazySegmentTree<MonoidRangeSumRangeUpdate<long\
     \ long,long long>> Seg(N,0);\n\twhile(Q--) {\n\t\tint q,s,t,x;\n\t\tcin >> q >>\
     \ s >> t;\n\t\tt++;\n\t\tif(q){\n\t\t\tcout << Seg.fold(s,t) << endl;\n\t\t}\n\
     \t\telse {\n\t\t\tcin >> x;\n\t\t\tSeg.operate(s,t,x);\n\t\t}\n\t}\n\treturn 0;\n\
@@ -114,7 +117,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
   requiredBy: []
-  timestamp: '2021-04-26 18:07:52+09:00'
+  timestamp: '2021-05-02 12:04:02+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp

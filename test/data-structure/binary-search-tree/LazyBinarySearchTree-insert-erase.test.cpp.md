@@ -5,12 +5,9 @@ data:
     path: lib/data-structure/binary-search-tree/LazyBinarySearchTree.cpp
     title: "LazyBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
   - icon: ':heavy_check_mark:'
-    path: lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
-    title: "MonoidRangeSumRangeAffine - [\u533A\u9593\u548C, \u533A\u9593\u30A2\u30D5\
-      \u30A3\u30F3\u5909\u63DB]"
-  - icon: ':heavy_check_mark:'
-    path: lib/util/ModInt.cpp
-    title: ModInt
+    path: lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp
+    title: "MonoidRangeMinRangeUpdate - [\u533A\u9593min, \u533A\u9593\u66F4\u65B0\
+      ]"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -18,26 +15,25 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
+    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
     links:
-    - https://judge.yosupo.jp/problem/range_affine_range_sum
-  bundledCode: "#line 1 \"test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\n\
-    \n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
-    using namespace std;\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp\"\
-    \n/*\n * @title MonoidRangeSumRangeAffine - [\u533A\u9593\u548C, \u533A\u9593\u30A2\
-    \u30D5\u30A3\u30F3\u5909\u63DB]\n * @docs md/operator/monoid-lazy/MonoidRangeSumRangeAffine.md\n\
-    \ */\ntemplate<class T, class U> struct MonoidRangeSumRangeAffine {\n\tusing TypeNode\
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
+  bundledCode: "#line 1 \"test/data-structure/binary-search-tree/LazyBinarySearchTree-insert-erase.test.cpp\"\
+    \n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508\"\
+    \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
+    using namespace std;\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp\"\
+    \n/*\n * @title MonoidRangeMinRangeUpdate - [\u533A\u9593min, \u533A\u9593\u66F4\
+    \u65B0]\n * @docs md/operator/monoid-lazy/MonoidRangeMinRangeUpdate.md\n */\n\
+    template<class T, class U> struct MonoidRangeMinRangeUpdate {\n\tusing TypeNode\
     \ = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode unit_node =\
-    \ 0;\n\tinline static constexpr TypeLazy unit_lazy = {1,0};\n\tinline static constexpr\
-    \ TypeNode func_fold(TypeNode l,TypeNode r){return l+r;}\n\tinline static constexpr\
-    \ TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return {new_lazy.first*old_lazy.first,new_lazy.first*old_lazy.second+new_lazy.second};}\n\
-    \tinline static constexpr TypeNode func_operate(TypeNode node,TypeLazy lazy,int\
-    \ l, int r){return {node*lazy.first+lazy.second*(r-l)};}\n\tinline static constexpr\
-    \ bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}\n};\n\
-    #line 1 \"lib/data-structure/binary-search-tree/LazyBinarySearchTree.cpp\"\n/*\n\
-    \ * @title LazyBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\n\
-    \ * @docs md/data-structure/binary-search-tree/LazyBinarySearchTree.md\n */\n\
+    \ 123456789;\n\tinline static constexpr TypeLazy unit_lazy = 123456789;\n\tinline\
+    \ static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return min(l,r);}\n\
+    \tinline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return\
+    \ new_lazy;}\n\tinline static constexpr TypeNode func_operate(TypeNode node,TypeLazy\
+    \ lazy,int l, int r){return lazy;}\n\tinline static constexpr bool func_check(TypeNode\
+    \ nodeVal,TypeNode var){return var <= nodeVal;}\n};\n#line 1 \"lib/data-structure/binary-search-tree/LazyBinarySearchTree.cpp\"\
+    \n/*\n * @title LazyBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\
+    \n * @docs md/data-structure/binary-search-tree/LazyBinarySearchTree.md\n */\n\
     template<class Monoid> class LazyBinarySearchTree {\n\tusing TypeNode = typename\
     \ Monoid::TypeNode;\n\tusing TypeLazy = typename Monoid::TypeLazy;\n\tunsigned\
     \ int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\tunsigned int\
@@ -111,80 +107,40 @@ data:
     \                q1.push({node->left,offs});\n                    q1.push({node->right,offs\
     \ + size(node->left) + 1});\n                    flg &= 0;\n                }\n\
     \            }\n            cout << \"}\" << endl;\n            if(flg) break;\n\
-    \        }\n    }\n};\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
-    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
-    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
-    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    ModInt &operator+=(const\
-    \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator+=(const\
-    \ long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n  \
-    \  ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
-    \ *this;}\n    ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod)\
-    \ x -= mod;return *this;}\n    ModInt &operator-=(const long long y) {ModInt p(y);if((x\
-    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    ModInt &operator-=(const\
-    \ int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}\n  \
-    \  ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}\n \
-    \   ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x % mod);return\
-    \ *this;}\n    ModInt &operator*=(const int y) {ModInt p(y);x = (x * p.x % mod);return\
-    \ *this;}\n    ModInt &operator^=(const ModInt &p) {x = (x ^ p.x) % mod;return\
-    \ *this;}\n    ModInt &operator^=(const long long y) {ModInt p(y);x = (x ^ p.x)\
-    \ % mod;return *this;}\n    ModInt &operator^=(const int y) {ModInt p(y);x = (x\
-    \ ^ p.x) % mod;return *this;}\n    ModInt &operator/=(const ModInt &p) {*this\
-    \ *= p.inv();return *this;}\n    ModInt &operator/=(const long long y) {ModInt\
-    \ p(y);*this *= p.inv();return *this;}\n    ModInt &operator/=(const int y) {ModInt\
-    \ p(y);*this *= p.inv();return *this;}\n    ModInt operator=(const int y) {ModInt\
-    \ p(y);*this = p;return *this;}\n    ModInt operator=(const long long y) {ModInt\
-    \ p(y);*this = p;return *this;}\n    ModInt operator-() const {return ModInt(-x);\
-    \ }\n    ModInt operator++() {x++;if(x>=mod) x-=mod;return *this;}\n    ModInt\
-    \ operator--() {x--;if(x<0) x+=mod;return *this;}\n    ModInt operator+(const\
-    \ ModInt &p) const { return ModInt(*this) += p; }\n    ModInt operator-(const\
-    \ ModInt &p) const { return ModInt(*this) -= p; }\n    ModInt operator*(const\
-    \ ModInt &p) const { return ModInt(*this) *= p; }\n    ModInt operator/(const\
-    \ ModInt &p) const { return ModInt(*this) /= p; }\n    ModInt operator^(const\
-    \ ModInt &p) const { return ModInt(*this) ^= p; }\n    bool operator==(const ModInt\
-    \ &p) const { return x == p.x; }\n    bool operator!=(const ModInt &p) const {\
-    \ return x != p.x; }\n    ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
-    \ > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}\n\
-    \    ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul *= mul,n\
-    \ >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream &operator<<(ostream\
-    \ &os, const ModInt &p) {return os << p.x;}\n    friend istream &operator>>(istream\
-    \ &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}\n};\n\
-    //using modint = ModInt<MOD>;\n#line 11 \"test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp\"\
-    \n\nusing modint = ModInt<998244353>;\ntemplate <class T, class U>ostream &operator<<(ostream\
-    \ &o, const pair<T, U>&obj) {o << \"{\" << obj.first << \", \" << obj.second <<\
-    \ \"}\"; return o;} \n\nint main(void){\n    int N,Q;\n\tscanf(\"%d %d\",&N,&Q);\n\
-    \    LazyBinarySearchTree<MonoidRangeSumRangeAffine<modint,pair<modint,modint>>>\
-    \ A;\n    for(int i=0;i<N;++i) {\n\t\tint a;\n\t\tscanf(\"%d\",&a);\n\t\tA.insert(i,a);\n\
-    \    }\n    while(Q--) {\n        int q;\n\t\tscanf(\"%d\",&q);\n\t\tif(q==0)\
-    \ {\n\t\t\tint l,r,b,c;\n\t\t\tscanf(\"%d %d %d %d\",&l,&r,&b,&c);\n\t\t\tA.operate(l,r,{b,c});\n\
-    \t\t}\n\t\telse {\n\t\t\tint l,r;\n\t\t\tscanf(\"%d %d\",&l,&r);\n\t\t\tprintf(\"\
-    %lld\\n\",A.fold(l,r).x);\n\t\t}\n    }\n    return 0;\n}\n\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
+    \        }\n    }\n};\n#line 10 \"test/data-structure/binary-search-tree/LazyBinarySearchTree-insert-erase.test.cpp\"\
+    \n\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    LazyBinarySearchTree<MonoidRangeMinRangeUpdate<long\
+    \ long,long long>> lbst;\n    int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i)\
+    \ {\n        int a; cin >> a;\n        lbst.insert(i,a);\n    }\n    while(Q--)\
+    \ {\n        int x,y,z; cin >> x >> y >> z;\n        if(x==0) {\n            auto\
+    \ w = lbst.get(z);\n            lbst.erase(z);\n            lbst.insert(y,w);\n\
+    \        }\n        if(x==1) {\n            cout << lbst.fold(y,z+1) << \"\\n\"\
+    ;\n        }\n        if(x==2) {\n            lbst.operate(y,y+1,z);\n       \
+    \ }\n    }\n    return 0; \n}\n\n"
+  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
-    using namespace std;\n#include \"../../../lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp\"\
+    using namespace std;\n#include \"../../../lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp\"\
     \n#include \"../../../lib/data-structure/binary-search-tree/LazyBinarySearchTree.cpp\"\
-    \n#include \"../../../lib/util/ModInt.cpp\"\n\nusing modint = ModInt<998244353>;\n\
-    template <class T, class U>ostream &operator<<(ostream &o, const pair<T, U>&obj)\
-    \ {o << \"{\" << obj.first << \", \" << obj.second << \"}\"; return o;} \n\nint\
-    \ main(void){\n    int N,Q;\n\tscanf(\"%d %d\",&N,&Q);\n    LazyBinarySearchTree<MonoidRangeSumRangeAffine<modint,pair<modint,modint>>>\
-    \ A;\n    for(int i=0;i<N;++i) {\n\t\tint a;\n\t\tscanf(\"%d\",&a);\n\t\tA.insert(i,a);\n\
-    \    }\n    while(Q--) {\n        int q;\n\t\tscanf(\"%d\",&q);\n\t\tif(q==0)\
-    \ {\n\t\t\tint l,r,b,c;\n\t\t\tscanf(\"%d %d %d %d\",&l,&r,&b,&c);\n\t\t\tA.operate(l,r,{b,c});\n\
-    \t\t}\n\t\telse {\n\t\t\tint l,r;\n\t\t\tscanf(\"%d %d\",&l,&r);\n\t\t\tprintf(\"\
-    %lld\\n\",A.fold(l,r).x);\n\t\t}\n    }\n    return 0;\n}\n\n"
+    \n\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    LazyBinarySearchTree<MonoidRangeMinRangeUpdate<long\
+    \ long,long long>> lbst;\n    int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i)\
+    \ {\n        int a; cin >> a;\n        lbst.insert(i,a);\n    }\n    while(Q--)\
+    \ {\n        int x,y,z; cin >> x >> y >> z;\n        if(x==0) {\n            auto\
+    \ w = lbst.get(z);\n            lbst.erase(z);\n            lbst.insert(y,w);\n\
+    \        }\n        if(x==1) {\n            cout << lbst.fold(y,z+1) << \"\\n\"\
+    ;\n        }\n        if(x==2) {\n            lbst.operate(y,y+1,z);\n       \
+    \ }\n    }\n    return 0; \n}\n\n"
   dependsOn:
-  - lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
+  - lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp
   - lib/data-structure/binary-search-tree/LazyBinarySearchTree.cpp
-  - lib/util/ModInt.cpp
   isVerificationFile: true
-  path: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
+  path: test/data-structure/binary-search-tree/LazyBinarySearchTree-insert-erase.test.cpp
   requiredBy: []
   timestamp: '2021-05-02 12:04:02+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
+documentation_of: test/data-structure/binary-search-tree/LazyBinarySearchTree-insert-erase.test.cpp
 layout: document
 redirect_from:
-- /verify/test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
-- /verify/test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp.html
-title: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
+- /verify/test/data-structure/binary-search-tree/LazyBinarySearchTree-insert-erase.test.cpp
+- /verify/test/data-structure/binary-search-tree/LazyBinarySearchTree-insert-erase.test.cpp.html
+title: test/data-structure/binary-search-tree/LazyBinarySearchTree-insert-erase.test.cpp
 ---
