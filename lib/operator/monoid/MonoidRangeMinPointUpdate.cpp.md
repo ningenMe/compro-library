@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+    title: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
     title: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
   _isVerificationFailed: false
@@ -36,6 +39,7 @@ data:
   timestamp: '2021-04-26 17:13:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   - test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
 documentation_of: lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
 layout: document

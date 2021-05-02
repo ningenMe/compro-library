@@ -19,6 +19,10 @@ data:
       path: lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
       title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
         \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
+      title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
+        \u6728\u5217"
   - name: lib/data-structure/convex-hull-trick
     pages:
     - icon: ':heavy_check_mark:'
@@ -392,6 +396,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
       title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   - name: test/data-structure/convex-hull-trick
     pages:
     - icon: ':heavy_check_mark:'
