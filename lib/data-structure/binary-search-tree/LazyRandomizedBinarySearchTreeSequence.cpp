@@ -43,7 +43,7 @@ template<class Monoid> class LazyRandomizedBinarySearchTreeSequence {
         node->value = Monoid::func_operate(node->value,node->range_lazy,0,1);
         if(node->left !=nullptr) node->left->range_lazy  = Monoid::func_lazy(node->left->range_lazy,node->range_lazy), node->left->rev ^= node->rev;
         if(node->right!=nullptr) node->right->range_lazy = Monoid::func_lazy(node->right->range_lazy,node->range_lazy), node->right->rev ^= node->rev;
-		if(node->rev) swap(node->left,node->right), node->rev = 0;
+        if(node->rev) swap(node->left,node->right), node->rev = 0;
         node->range_lazy = Monoid::unit_lazy;
     }
     inline Node* merge_impl(Node *left, Node *right) {
@@ -62,15 +62,15 @@ template<class Monoid> class LazyRandomizedBinarySearchTreeSequence {
     }
     inline pair<Node*, Node*> split_impl(Node* node, int k) {
         if (node==nullptr) return make_pair(nullptr, nullptr);
-		propagate(node);
+        propagate(node);
         if (k <= size(node->left)) {
-			propagate(node->right);
+            propagate(node->right);
             pair<Node*, Node*> sub = split_impl(node->left, k);
             node->left = sub.second;
             return make_pair(sub.first, update(node));
         }
         else {
-			propagate(node->left);
+            propagate(node->left);
             pair<Node*, Node*> sub = split_impl(node->right, k - 1 - size(node->left));
             node->right = sub.first;
             return make_pair(update(node), sub.second);
@@ -106,15 +106,15 @@ template<class Monoid> class LazyRandomizedBinarySearchTreeSequence {
         if(l >= 0 && r > l) value = Monoid::func_fold(value,fold_impl(node->right,l,r));
         return value;
     }
-	inline void reverse_impl(int l, int r) {
-		pair<Node*,Node*> tmp1 = split_impl(this->root,l);
-		pair<Node*,Node*> tmp2 = split_impl(tmp1.second,r-l);
-		Node* nl = tmp1.first;
-		Node* nc = tmp2.first;
-		Node* nr = tmp2.second;
-		nc->rev ^= 1;
-		this->root = merge_impl(merge_impl(nl,nc),nr);
-	}
+    inline void reverse_impl(int l, int r) {
+        pair<Node*,Node*> tmp1 = split_impl(this->root,l);
+        pair<Node*,Node*> tmp2 = split_impl(tmp1.second,r-l);
+        Node* nl = tmp1.first;
+        Node* nc = tmp2.first;
+        Node* nr = tmp2.second;
+        nc->rev ^= 1;
+        this->root = merge_impl(merge_impl(nl,nc),nr);
+    }
     inline void insert_impl(const size_t k, const TypeNode value) {
         pair<Node*, Node*> sub = split_impl(this->root, k); 
         this->root = this->merge_impl(this->merge_impl(sub.first, new Node(value)), sub.second);
@@ -128,13 +128,13 @@ public:
     LazyRandomizedBinarySearchTreeSequence() : root(nullptr) {}
     inline int size() {return size(this->root);}
     inline int empty(void) {return bool(size()==0);}
-    inline TypeNode get(size_t k) {return get(this->root, k);}
     inline Node* merge(Node *left, Node *right) {return merge_impl(left,right);}
     inline pair<Node*, Node*> split(int k) {return split_impl(this->root,k);}
     inline void insert(const size_t k, const TypeNode value) {insert_impl(k,value);}
-    inline TypeNode fold(int l, int r) {return fold_impl(this->root,l,r);}
-    inline void operate(const int l, const int r, const TypeLazy lazy) {propagate(this->root); operate_impl(this->root,l,r,lazy);}
     inline void erase(const size_t k) {erase_impl(k);}
-	inline void reverse(int l, int r) {reverse_impl(l,r);}
+    inline TypeNode get(size_t k) {return get(this->root, k);}
+    inline void operate(const int l, const int r, const TypeLazy lazy) {propagate(this->root); operate_impl(this->root,l,r,lazy);}
+    inline TypeNode fold(int l, int r) {return fold_impl(this->root,l,r);}
+    inline void reverse(int l, int r) {reverse_impl(l,r);}
     void print() {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i) << " \n"[i==m-1];}
 };
