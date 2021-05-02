@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
     title: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+    title: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -144,6 +147,7 @@ data:
   timestamp: '2021-05-02 21:28:42+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
   - test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
 documentation_of: lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
 layout: document

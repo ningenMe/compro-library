@@ -399,6 +399,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
       title: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
   - name: test/data-structure/convex-hull-trick
     pages:
     - icon: ':heavy_check_mark:'
