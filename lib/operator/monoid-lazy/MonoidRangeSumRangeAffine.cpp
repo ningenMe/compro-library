@@ -1,3 +1,7 @@
+/*
+ * @title MonoidRangeSumRangeAffine - [区間和, 区間アフィン変換]
+ * @docs md/operator/monoid-lazy/MonoidRangeSumRangeAffine.md
+ */
 template<class T, class U> struct MonoidRangeSumRangeAffine {
 	using TypeNode = T;
 	using TypeLazy = U;

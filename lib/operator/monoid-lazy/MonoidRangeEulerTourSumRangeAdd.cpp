@@ -1,4 +1,7 @@
-//node:総和　lazy:加算
+/*
+ * @title MonoidRangeEulerTourSumRangeAdd - [区間オイラーツアー和, 区間加算]
+ * @docs md/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.md
+ */
 template<class T, class U> struct MonoidRangeEulerTourSumRangeAdd {
 	using TypeNode = T;
 	using TypeLazy = U;

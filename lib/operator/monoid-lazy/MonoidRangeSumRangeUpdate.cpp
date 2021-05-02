@@ -1,4 +1,7 @@
-//node:総和　lazy:更新
+/*
+ * @title MonoidRangeSumRangeUpdate - [区間和, 区間更新]
+ * @docs md/operator/monoid-lazy/MonoidRangeSumRangeUpdate.md
+ */
 template<class T, class U> struct MonoidRangeSumRangeUpdate {
 	using TypeNode = T;
 	using TypeLazy = U;

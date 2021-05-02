@@ -1,4 +1,7 @@
-//node:最小　lazy:加算
+/*
+ * @title MonoidRangeMinRangeAdd - [区間min, 区間加算]
+ * @docs md/operator/monoid-lazy/MonoidRangeMinRangeAdd.md
+ */
 template<class T, class U> struct MonoidRangeMinRangeAdd {
 	using TypeNode = T;
 	using TypeLazy = U;
