@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
+    title: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqraq.test.cpp
     title: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqraq.test.cpp
   _isVerificationFailed: false
@@ -184,6 +187,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqraq.test.cpp
+  - test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
 documentation_of: lib/data-structure/binary-search-tree/LazyBinarySearchTree.cpp
 layout: document
 redirect_from:

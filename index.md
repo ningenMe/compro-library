@@ -230,6 +230,9 @@ data:
       path: lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
       title: lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
     - icon: ':heavy_check_mark:'
+      path: lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
+      title: lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
       title: lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
   - name: lib/operator/operator
@@ -367,6 +370,9 @@ data:
       title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   - name: test/data-structure/binary-search-tree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
+      title: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqraq.test.cpp
       title: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqraq.test.cpp
