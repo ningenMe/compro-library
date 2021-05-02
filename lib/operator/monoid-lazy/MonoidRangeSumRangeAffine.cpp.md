@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
-    title: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
+    path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+    title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -42,7 +42,7 @@ data:
   timestamp: '2021-05-02 12:04:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
+  - test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
 documentation_of: lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
 layout: document
 redirect_from:

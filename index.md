@@ -16,8 +16,9 @@ data:
   - name: lib/data-structure/binary-search-tree
     pages:
     - icon: ':heavy_check_mark:'
-      path: lib/data-structure/binary-search-tree/LazyBinarySearchTree.cpp
-      title: "LazyBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
+      path: lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
+      title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
+        \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
   - name: lib/data-structure/convex-hull-trick
     pages:
     - icon: ':heavy_check_mark:'
@@ -380,14 +381,14 @@ data:
   - name: test/data-structure/binary-search-tree
     pages:
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/binary-search-tree/LazyBinarySearchTree-insert-erase.test.cpp
-      title: test/data-structure/binary-search-tree/LazyBinarySearchTree-insert-erase.test.cpp
+      path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+      title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
-      title: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqrafq.test.cpp
+      path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+      title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqraq.test.cpp
-      title: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqraq.test.cpp
+      path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+      title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
   - name: test/data-structure/convex-hull-trick
     pages:
     - icon: ':heavy_check_mark:'
