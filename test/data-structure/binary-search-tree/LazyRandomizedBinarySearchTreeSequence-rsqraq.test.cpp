@@ -6,12 +6,12 @@
 #include <queue>
 using namespace std;
 #include "../../../lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp"
-#include "../../../lib/data-structure/binary-search-tree/LazyBinarySearchTree.cpp"
+#include "../../../lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
 
 int main(void){
     int N,Q;
 	scanf("%d %d",&N,&Q);
-    LazyBinarySearchTree<MonoidRangeSumRangeAdd<long long,long long>> A;
+    LazyRandomizedBinarySearchTreeSequence<MonoidRangeSumRangeAdd<long long,long long>> A;
     for(int i=0;i<N;++i) {
 		A.insert(i,0);
     }

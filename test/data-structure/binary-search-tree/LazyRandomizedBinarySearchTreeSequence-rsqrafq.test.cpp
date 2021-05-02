@@ -6,7 +6,7 @@
 #include <queue>
 using namespace std;
 #include "../../../lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp"
-#include "../../../lib/data-structure/binary-search-tree/LazyBinarySearchTree.cpp"
+#include "../../../lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
 #include "../../../lib/util/ModInt.cpp"
 
 using modint = ModInt<998244353>;
@@ -15,7 +15,7 @@ template <class T, class U>ostream &operator<<(ostream &o, const pair<T, U>&obj)
 int main(void){
     int N,Q;
 	scanf("%d %d",&N,&Q);
-    LazyBinarySearchTree<MonoidRangeSumRangeAffine<modint,pair<modint,modint>>> A;
+    LazyRandomizedBinarySearchTreeSequence<MonoidRangeSumRangeAffine<modint,pair<modint,modint>>> A;
     for(int i=0;i<N;++i) {
 		int a;
 		scanf("%d",&a);

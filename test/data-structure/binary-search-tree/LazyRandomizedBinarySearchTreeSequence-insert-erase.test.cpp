@@ -6,12 +6,12 @@
 #include <queue>
 using namespace std;
 #include "../../../lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp"
-#include "../../../lib/data-structure/binary-search-tree/LazyBinarySearchTree.cpp"
+#include "../../../lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
 
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);
-    LazyBinarySearchTree<MonoidRangeMinRangeUpdate<long long,long long>> lbst;
+    LazyRandomizedBinarySearchTreeSequence<MonoidRangeMinRangeUpdate<long long,long long>> lbst;
     int N,Q; cin >> N >> Q;
     for(int i=0;i<N;++i) {
         int a; cin >> a;

@@ -1,8 +1,8 @@
 /*
- * @title LazyBinarySearchTree - 平衡二分探索木
- * @docs md/data-structure/binary-search-tree/LazyBinarySearchTree.md
+ * @title LazyRandomizedBinarySearchTreeSequence - 遅延評価平衡二分探索木列
+ * @docs md/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md
  */
-template<class Monoid> class LazyBinarySearchTree {
+template<class Monoid> class LazyRandomizedBinarySearchTreeSequence {
 	using TypeNode = typename Monoid::TypeNode;
 	using TypeLazy = typename Monoid::TypeLazy;
 	unsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;
@@ -104,9 +104,9 @@ template<class Monoid> class LazyBinarySearchTree {
 		return value;
 	}
 
-	LazyBinarySearchTree(Node* node):root(node){}
+	LazyRandomizedBinarySearchTreeSequence(Node* node):root(node){}
 public:
-	LazyBinarySearchTree() : root(nullptr) {}
+	LazyRandomizedBinarySearchTreeSequence() : root(nullptr) {}
 	inline int size() {return size(this->root);}
 	inline int empty(void) {return bool(size()==0);}
 	inline TypeNode get(size_t k) {return get(this->root, k);}
