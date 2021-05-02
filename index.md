@@ -13,6 +13,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp
       title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
+  - name: lib/data-structure/binary-search-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/binary-search-tree/LazyBinarySearchTree.cpp
+      title: "LazyBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
   - name: lib/data-structure/convex-hull-trick
     pages:
     - icon: ':heavy_check_mark:'
@@ -360,6 +365,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
       title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
+  - name: test/data-structure/binary-search-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqraq.test.cpp
+      title: test/data-structure/binary-search-tree/LazyBinarySearchTree-rsqraq.test.cpp
   - name: test/data-structure/convex-hull-trick
     pages:
     - icon: ':heavy_check_mark:'
