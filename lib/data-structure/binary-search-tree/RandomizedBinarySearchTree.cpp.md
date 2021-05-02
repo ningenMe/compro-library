@@ -2,10 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/data-structure/binary-search-tree/RandomizedBinarySearchTree.md
     document_title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
@@ -149,8 +158,11 @@ data:
   path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
   requiredBy: []
   timestamp: '2021-05-02 22:29:56+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
+  - test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
 documentation_of: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
 layout: document
 redirect_from:

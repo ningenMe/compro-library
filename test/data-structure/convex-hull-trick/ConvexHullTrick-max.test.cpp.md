@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
+    title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
+  - icon: ':heavy_check_mark:'
     path: lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp
     title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
-  - icon: ':heavy_check_mark:'
-    path: lib/data-structure/data-structure/Rbst.cpp
-    title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
   - icon: ':heavy_check_mark:'
     path: lib/operator/operator/ValueMax.cpp
     title: lib/operator/operator/ValueMax.cpp
@@ -22,79 +22,86 @@ data:
     - https://yukicoder.me/problems/no/409
   bundledCode: "#line 1 \"test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp\"\
     \n#define PROBLEM \"https://yukicoder.me/problems/no/409\"\n\n#include <iostream>\n\
-    #include <vector>\n#include <queue>\nusing namespace std;\n#line 1 \"lib/data-structure/data-structure/Rbst.cpp\"\
-    \n/*\n * @title Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\n * @docs md/data-structure/data-structure/Rbst.md\n\
-    \ */\ntemplate<class Operator> class Rbst {\n\tusing TypeNode = typename Operator::TypeNode;\n\
-    \tunsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\t\
-    unsigned int xor_shift() {\n\t\tunsigned int t = (x ^ (x << 11)); x = y; y = z;\
-    \ z = w;\n\t\treturn (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\t}\n\tstruct Node\
-    \ {\n\t\tNode *left, *right;\n\t\tTypeNode val;\n\t\tint size;\n\t\tTypeNode sum;\n\
-    \n\t\tNode() : val(Operator::unit_node), size(1), sum(Operator::unit_node) {\n\
-    \t\t\tleft = right = nullptr;\n\t\t}\n\t\tNode(TypeNode v) : val(v), size(1),\
-    \ sum(v) {\n\t\t\tleft = right = nullptr;\n\t\t}\n\t};\n\tNode* root;\n\tinline\
-    \ int size(Node *node) {\n\t\treturn node==nullptr ? 0 : node->size;\n\t}\n\t\
-    inline TypeNode sum(Node *node) {\n\t\treturn node==nullptr ? Operator::unit_node\
-    \ : node->sum;\n\t}\n\tinline Node* update(Node *node) {\n\t\tnode->size = size(node->left)\
-    \ + size(node->right) + 1;\n\t\tnode->sum = Operator::func_node(sum(node->left),sum(node->right),node->val);\n\
-    \t\treturn node;\n\t}\n\tinline TypeNode get(Node *node, int k) {\n\t\tif (node==nullptr)\
-    \ return Operator::unit_node;\n\t\tif (k == size(node->left)) return node->val;\n\
-    \t\tif (k < size(node->left)) return get(node->left, k);\n\t\telse return get(node->right,\
-    \ k-1 - size(node->left));\n\t}\n\tinline int lower_bound(Node *node, TypeNode\
-    \ val) {\n\t\tif (node==nullptr) return 0;\n\t\tif (val <= node->val) return lower_bound(node->left,\
-    \ val);\n\t\telse return size(node->left) + lower_bound(node->right, val) + 1;\n\
-    \t}\n\tinline int upper_bound(Node *node, TypeNode val) {\n\t\tif (node==nullptr)\
-    \ return 0;\n\t\tif (val >= node->val) return size(node->left) + upper_bound(node->right,\
-    \ val) + 1;\n\t\telse return upper_bound(node->left, val);\n\t}\n\tNode* merge(Node\
-    \ *left, Node *right) {\n\t\tif (left==nullptr)  return right;\n\t\tif (right==nullptr)\
-    \ return left;\n\t\tif (xor_shift() % (left->size + right->size) < left->size)\
-    \ {\n\t\t\tleft->right = merge(left->right, right);\n\t\t\treturn update(left);\n\
-    \t\t}\n\t\telse {\n\t\t\tright->left = merge(left, right->left);\n\t\t\treturn\
-    \ update(right);\n\t\t}\n\t}\n\tpair<Node*, Node*> split(Node* node, int k) {\n\
-    \t\tif (node==nullptr) return make_pair(node, node);\n\t\tif (k <= size(node->left))\
-    \ {\n\t\t\tpair<Node*, Node*> sub = split(node->left, k);\n\t\t\tnode->left =\
-    \ sub.second;\n\t\t\treturn make_pair(sub.first, update(node));\n\t\t}\n\t\telse\
-    \ {\n\t\t\tpair<Node*, Node*> sub = split(node->right, k-1 - size(node->left));\n\
-    \t\t\tnode->right = sub.first;\n\t\t\treturn make_pair(update(node), sub.second);\n\
-    \t\t}\n\t}\n\tvoid print(Node *node) {\n\t\tif (node==nullptr) return;\n\t\tprint(node->left);\n\
-    \t\tcout << node->val << \" \";\n\t\tprint(node->right);\n\t}\n\tRbst(Node* node):root(node){}\n\
-    public:\n\tRbst() : root(nullptr) {}\n\tinline int size() {\n\t\treturn size(this->root);\n\
-    \t}\n\tinline TypeNode sum() {\n\t\treturn sum(this->root);\n\t}\n\tinline int\
-    \ lower_bound(TypeNode val) {\n\t\treturn lower_bound(this->root, val);\n\t}\n\
-    \tinline int upper_bound(TypeNode val) {\n\t\treturn upper_bound(this->root, val);\n\
-    \t}\n\tinline int empty(void) {\n\t\treturn bool(size()==0);\n\t}\n\tinline int\
-    \ count(TypeNode val) {\n\t\treturn upper_bound(val) - lower_bound(val);\n\t}\n\
-    \tinline TypeNode get(int k) {\n\t\treturn get(this->root, k);\n\t}\n\tinline\
-    \ TypeNode get_median() {\n\t\t//\u5947\u6570\u306E\u6642N/2\n\t\treturn get(this->root,\
-    \ (size()-1)/2);\n\t}\n\tvoid merge(Rbst another) {\n\t\troot = merge(this->root,\
-    \ another.root);\n\t}\n\tvoid insert(const TypeNode val) {\n\t\tpair<Node*, Node*>\
-    \ sub = split(this->root, this->lower_bound(val));\n\t\tthis->root = this->merge(this->merge(sub.first,\
-    \ new Node(val)), sub.second);\n\t}\n\tvoid erase(const TypeNode val) {\n\t\t\
-    if (!this->count(val)) return;\n\t\tpair<Node*, Node*> sub = this->split(this->root,\
-    \ this->lower_bound(val));\n\t\tthis->root = this->merge(sub.first, this->split(sub.second,\
-    \ 1).second);\n\t}\n\tvoid print() {\n\t\tcout << \"{\";\n\t\tprint(this->root);\n\
-    \t\tcout << \"}\" << endl;\n\t}\n};\n//https://atcoder.jp/contests/abc154/tasks/abc154_c\n\
-    //https://atcoder.jp/contests/arc033/tasks/arc033_3\n//https://atcoder.jp/contests/m-solutions2020/tasks/m_solutions2020_c\n\
-    //https://yukicoder.me/problems/no/919\n//https://yukicoder.me/problems/no/649\n\
-    //https://yukicoder.me/problems/no/822\n\ntemplate<class T> struct NodeSum {\n\
-    \tusing TypeNode = T;\n\tinline static constexpr TypeNode unit_node = 0;\n\tinline\
-    \ static constexpr TypeNode func_node(TypeNode l,TypeNode c,TypeNode r){return\
-    \ l+c+r;}\n};\n\ntemplate<class T> struct NodeSimple {\n\tusing TypeNode = T;\n\
-    \tinline static constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeNode\
-    \ func_node(TypeNode l,TypeNode c,TypeNode r){return 0;}\n};\n#line 1 \"lib/operator/operator/ValueMax.cpp\"\
-    \n//\u6700\u5927\u5024\u30AF\u30A8\u30EA\ntemplate<class T> struct ValueMax {\n\
-    \tusing TypeValue = T;\n\tinline static constexpr TypeValue unit_value = -3e18;\n\
-    \tinline static constexpr bool func_compare(TypeValue l,TypeValue r){return l>r;}\n\
-    };\n#line 1 \"lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp\"\n/*\n\
-    \ * @title ConvexHullTrick - \u975E\u5358\u8ABFCHT\n * @docs md/data-structure/convex-hull-trick/ConvexHullTrick.md\n\
+    #include <vector>\n#include <queue>\nusing namespace std;\n#line 1 \"lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp\"\
+    \n/*\n * @title RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
+    \u6728\n * @docs md/data-structure/binary-search-tree/RandomizedBinarySearchTree.md\n\
+    \ */\ntemplate<class Monoid> class RandomizedBinarySearchTree {\n    using TypeNode\
+    \ = typename Monoid::TypeNode;\n    unsigned int x = 123456789, y = 362436069,\
+    \ z = 521288629, w = 88675123;\n    unsigned int xor_shift() {\n        unsigned\
+    \ int t = (x ^ (x << 11)); x = y; y = z; z = w;\n        return (w = (w ^ (w >>\
+    \ 19)) ^ (t ^ (t >> 8)));\n    }\n    struct Node {\n    private:\n        void\
+    \ build() {left = right = nullptr;size = 1;}\n    public:\n        Node *left,\
+    \ *right;\n        TypeNode value, range_value;\n        int size;\n        Node()\
+    \ : value(Monoid::unit_node), range_value(Monoid::unit_node) {build();}\n    \
+    \    Node(TypeNode v) : value(v), range_value(v) {build();}\n        friend ostream\
+    \ &operator<<(ostream &os, const Node* node) {return os << \"{\" << node->value\
+    \ << \", \" << node->range_value << \", \" << node->size << \"}\";}\n    };\n\
+    \    Node* root;\n    inline int size(Node *node) {return node==nullptr ? 0 :\
+    \ node->size;}\n    inline TypeNode range_value(Node *node) {return node==nullptr\
+    \ ? Monoid::unit_node : node->range_value;}\n    inline TypeNode get(Node *node,\
+    \ size_t k) {\n        if (node==nullptr) return Monoid::unit_node;\n        if\
+    \ (k == size(node->left)) return node->value;\n        if (k < size(node->left))\
+    \ return get(node->left, k);\n        else return get(node->right, k-1 - size(node->left));\n\
+    \    }\n    inline Node* update(Node *node) {\n        node->size = size(node->left)\
+    \ + size(node->right) + 1;\n        node->range_value = Monoid::func_fold(Monoid::func_fold(range_value(node->left),node->value),range_value(node->right));\n\
+    \        return node;\n    }\n    inline Node* merge_impl(Node *left, Node *right)\
+    \ {\n        if (left==nullptr)  return right;\n        if (right==nullptr) return\
+    \ left;\n        if (xor_shift() % (left->size + right->size) < left->size) {\n\
+    \            left->right = merge_impl(left->right, right);\n            return\
+    \ update(left);\n        }\n        else {\n            right->left = merge_impl(left,\
+    \ right->left);\n            return update(right);\n        }\n    }\n    inline\
+    \ pair<Node*, Node*> split_impl(Node* node, int k) {\n        if (node==nullptr)\
+    \ return make_pair(nullptr, nullptr);\n        if (k <= size(node->left)) {\n\
+    \            pair<Node*, Node*> sub = split_impl(node->left, k);\n           \
+    \ node->left = sub.second;\n            return make_pair(sub.first, update(node));\n\
+    \        }\n        else {\n            pair<Node*, Node*> sub = split_impl(node->right,\
+    \ k - 1 - size(node->left));\n            node->right = sub.first;\n         \
+    \   return make_pair(update(node), sub.second);\n        }\n    }\n    inline\
+    \ TypeNode fold_impl(Node *node, int l, int r) {\n        if (l < 0 || size(node)\
+    \ <= l || r<=0 || r-l <= 0) return Monoid::unit_node;\n        if (l == 0 && r\
+    \ == size(node)) return range_value(node);\n        TypeNode value = Monoid::unit_node;\n\
+    \        int sl = size(node->left);\n        if(sl > l) value = Monoid::func_fold(value,fold_impl(node->left,l,min(sl,r)));\n\
+    \        l = max(l-sl,0), r -= sl;\n        if(l == 0 && r > 0) value = Monoid::func_fold(value,node->value);\n\
+    \        l = max(l-1,0), r -= 1;\n        if(l >= 0 && r > l) value = Monoid::func_fold(value,fold_impl(node->right,l,r));\n\
+    \        return value;\n    }\n    inline int lower_bound(Node *node, TypeNode\
+    \ value) {\n        if (node==nullptr) return 0;\n        if (value <= node->value)\
+    \ return lower_bound(node->left, value);\n        else return size(node->left)\
+    \ + lower_bound(node->right, value) + 1;\n    }\n    inline int upper_bound(Node\
+    \ *node, TypeNode value) {\n        if (node==nullptr) return 0;\n        if (value\
+    \ < node->value) return upper_bound(node->left, value);\n        else return size(node->left)\
+    \ + upper_bound(node->right, value) + 1;\n    }\n    inline void insert_impl(const\
+    \ TypeNode value) {\n        pair<Node*, Node*> sub = split_impl(this->root, lower_bound(this->root,value));\
+    \ \n        this->root = this->merge_impl(this->merge_impl(sub.first, new Node(value)),\
+    \ sub.second);\n    }\n    inline void erase_impl(const TypeNode value) {\n  \
+    \      int k1 = lower_bound(value), k2 = upper_bound(value);\n        if(k1==k2)\
+    \ return;\n        auto sub = split_impl(this->root,k1);\n        this->root =\
+    \ merge_impl(sub.first, split_impl(sub.second, 1).second);\n    }\npublic:\n \
+    \   RandomizedBinarySearchTree() : root(nullptr) {}\n    inline int size() {return\
+    \ size(this->root);}\n    inline int empty(void) {return bool(size()==0);}\n \
+    \   inline Node* merge(Node *left, Node *right) {return merge_impl(left,right);}\n\
+    \    inline pair<Node*, Node*> split(int k) {return split_impl(this->root,k);}\n\
+    \    inline void insert(const TypeNode value) {insert_impl(value);}\n    inline\
+    \ void erase(const TypeNode value) {erase_impl(value);}\n    inline TypeNode get(size_t\
+    \ k) {return get(this->root, k);}\n    inline TypeNode fold(int l, int r) {return\
+    \ fold_impl(this->root,l,r);}\n    inline int lower_bound(TypeNode value) {return\
+    \ lower_bound(this->root,value);}\n    inline int upper_bound(TypeNode value)\
+    \ {return upper_bound(this->root,value);}\n    inline int count(TypeNode value)\
+    \ {return upper_bound(value) - lower_bound(value);}\n    void print() {int m =\
+    \ size(this->root); for(int i=0;i<m;++i) cout << get(i) << \" \\n\"[i==m-1];}\n\
+    };\n#line 1 \"lib/operator/operator/ValueMax.cpp\"\n//\u6700\u5927\u5024\u30AF\
+    \u30A8\u30EA\ntemplate<class T> struct ValueMax {\n\tusing TypeValue = T;\n\t\
+    inline static constexpr TypeValue unit_value = -3e18;\n\tinline static constexpr\
+    \ bool func_compare(TypeValue l,TypeValue r){return l>r;}\n};\n#line 1 \"lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp\"\
+    \n/*\n * @title ConvexHullTrick - \u975E\u5358\u8ABFCHT\n * @docs md/data-structure/convex-hull-trick/ConvexHullTrick.md\n\
     \ */\ntemplate<class Operator> class ConvexHullTrick {\nprivate:\n\tusing TypeValue\
     \ = typename Operator::TypeValue;\n\tusing Line = pair<TypeValue,TypeValue>;\n\
-    \tstruct NodePair {\n\t\tusing TypeNode = Line;\n\t\tinline static constexpr TypeNode\
-    \ unit_node = {0,Operator::unit_value};\n\t\tinline static constexpr TypeNode\
-    \ func_node(TypeNode l,TypeNode c,TypeNode r){return {0,0};}\n\t};\n\tRbst<NodePair>\
-    \ lines;\n\n\t//3\u76F4\u7DDA\u306B\u95A2\u3057\u3066line2\u304C\u5FC5\u8981\u304B\
-    \u78BA\u8A8D (\u3053\u306E\u3068\u304D a1 < a2 < a3\u304C\u5FC5\u8981=rbst\u306E\
-    \u9806\u305D\u306E\u307E\u307E)\n\tinline int is_required(const Line& line1, const\
-    \ Line& line2, const Line& line3) {\n\t\treturn Operator::func_compare((line2.second-line3.second)*(line2.first-line1.first),(line1.second-line2.second)*(line3.first-line2.first));\n\
+    \tstruct Monoid {\n\t\tusing TypeNode = Line;\n\t\tinline static constexpr TypeNode\
+    \ unit_node = {0,0};\n\t\tinline static constexpr TypeNode func_fold(TypeNode\
+    \ l,TypeNode r){return {0,0};}\n\t};\n\tRandomizedBinarySearchTree<Monoid> lines;\n\
+    \n\t//3\u76F4\u7DDA\u306B\u95A2\u3057\u3066line2\u304C\u5FC5\u8981\u304B\u78BA\
+    \u8A8D (\u3053\u306E\u3068\u304D a1 < a2 < a3\u304C\u5FC5\u8981=rbst\u306E\u9806\
+    \u305D\u306E\u307E\u307E)\n\tinline int is_required(const Line& line1, const Line&\
+    \ line2, const Line& line3) {\n\t\treturn Operator::func_compare((line2.second-line3.second)*(line2.first-line1.first),(line1.second-line2.second)*(line3.first-line2.first));\n\
     \t}\n\t\n\t//y=ax+b\u306E\u5024\n\tinline TypeValue y(const Line line, TypeValue\
     \ x) {\n\t\treturn line.first * x + line.second;\n\t}\n\npublic:\n\tConvexHullTrick()\
     \ {\n\t\t// do nothing\n\t} \n\n\t//ax+b\u3092\u8FFD\u52A0\n\tvoid insert(const\
@@ -134,7 +141,7 @@ data:
     \t\tcht.insert(B*i,-(dp[i]+B*(i*i+i)/2+A*i));\n\t}\n\tcout << dp[N+1] << endl;\n\
     \treturn 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/409\"\n\n#include <iostream>\n\
-    #include <vector>\n#include <queue>\nusing namespace std;\n#include \"../../../lib/data-structure/data-structure/Rbst.cpp\"\
+    #include <vector>\n#include <queue>\nusing namespace std;\n#include \"../../../lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp\"\
     \n#include \"../../../lib/operator/operator/ValueMax.cpp\"\n#include \"../../../lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp\"\
     \nusing ll = long long;\n\nint main(void){\n\tll N,A,B,W; cin >> N >> A >> B >>\
     \ W;\n\tvector<ll> D(N+2,0);\n\tfor(int i = 1; i <= N; ++i) cin >> D[i];\n\t//\
@@ -148,13 +155,13 @@ data:
     \t\tcht.insert(B*i,-(dp[i]+B*(i*i+i)/2+A*i));\n\t}\n\tcout << dp[N+1] << endl;\n\
     \treturn 0;\n}"
   dependsOn:
-  - lib/data-structure/data-structure/Rbst.cpp
+  - lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
   - lib/operator/operator/ValueMax.cpp
   - lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp
   isVerificationFile: true
   path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
   requiredBy: []
-  timestamp: '2021-05-03 04:35:52+09:00'
+  timestamp: '2021-05-03 04:46:42+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
