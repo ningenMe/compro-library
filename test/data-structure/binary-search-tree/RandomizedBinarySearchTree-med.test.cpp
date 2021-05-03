@@ -7,7 +7,8 @@
 #include <numeric>
 #include <cmath>
 using namespace std;
-#include "../../../lib/data-structure/data-structure/Rbst.cpp"
+#include "../../../lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp"
+#include "../../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp"
 
 template<class T> class Mo{
     unordered_map<long long,int> mp;
@@ -29,7 +30,7 @@ public:
     }
     
     //参照でvectorを渡したりすると良い
-    void solve(const vector<int>& A, Rbst<NodeSum<long long>>& med){
+    void solve(const vector<int>& A, RandomizedBinarySearchTree<MonoidRangeSumPointAdd<long long>>& med){
         int l = 0, r = 0;
         for(int& i:idx){
             auto& xl = range[i].first;
@@ -55,7 +56,7 @@ public:
 				med.erase(A[r]);
                 r--;
             }
-            mp[xl*N+xr] = med.get_median();
+            mp[xl*N+xr] = med.get((xr-xl)/2);
         }
     }
 
@@ -83,7 +84,7 @@ int main() {
 	
 	//Moで中央値列挙　O(N*sqrt(N)*(logN)^2)
     Mo<int> mo(N,range);
-    Rbst<NodeSum<long long>> med;
+    RandomizedBinarySearchTree<MonoidRangeSumPointAdd<long long>> med;
     med.insert(A[0]);
     mo.solve(A,med);
 

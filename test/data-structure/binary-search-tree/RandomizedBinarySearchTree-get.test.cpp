@@ -7,11 +7,12 @@
 #include <numeric>
 #include <cmath>
 using namespace std;
-#include "../../../lib/data-structure/data-structure/Rbst.cpp"
+#include "../../../lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp"
+#include "../../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp"
 
 int main(){
     cin.tie(0);ios::sync_with_stdio(false);
-	Rbst<NodeSimple<long long>> st;
+	RandomizedBinarySearchTree<MonoidRangeSumPointAdd<long long>> st;
 	int Q,K; cin >> Q >> K;
 	while (Q--){
 		int q; cin >> q;
