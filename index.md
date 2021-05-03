@@ -55,9 +55,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/data-structure/PersistentQueue.cpp
       title: "PersistentQueue - \u6C38\u7D9Aqueue"
-    - icon: ':warning:'
-      path: lib/data-structure/data-structure/Rbst.cpp
-      title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/data-structure/SlideMost.cpp
       title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
