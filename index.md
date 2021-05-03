@@ -55,7 +55,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/data-structure/PersistentQueue.cpp
       title: "PersistentQueue - \u6C38\u7D9Aqueue"
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/data-structure/data-structure/Rbst.cpp
       title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
     - icon: ':heavy_check_mark:'
@@ -400,6 +400,15 @@ data:
       path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
       title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
       title: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
     - icon: ':heavy_check_mark:'
@@ -439,15 +448,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/data-structure/PerisitentQueue.test.cpp
       title: test/data-structure/data-structure/PerisitentQueue.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/data-structure/Rbst-get.test.cpp
-      title: test/data-structure/data-structure/Rbst-get.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/data-structure/Rbst-med.test.cpp
-      title: test/data-structure/data-structure/Rbst-med.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/data-structure/Rbst-pair.test.cpp
-      title: test/data-structure/data-structure/Rbst-pair.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/data-structure/SlideMost.test.cpp
       title: test/data-structure/data-structure/SlideMost.test.cpp

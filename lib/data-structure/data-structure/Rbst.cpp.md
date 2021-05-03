@@ -2,19 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/data-structure/Rbst-get.test.cpp
-    title: test/data-structure/data-structure/Rbst-get.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/data-structure/Rbst-med.test.cpp
-    title: test/data-structure/data-structure/Rbst-med.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/data-structure/Rbst-pair.test.cpp
-    title: test/data-structure/data-structure/Rbst-pair.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     _deprecated_at_docs: md/data-structure/data-structure/Rbst.md
     document_title: "Rbst - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
@@ -148,11 +139,8 @@ data:
   path: lib/data-structure/data-structure/Rbst.cpp
   requiredBy: []
   timestamp: '2021-04-26 22:51:12+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/data-structure/data-structure/Rbst-pair.test.cpp
-  - test/data-structure/data-structure/Rbst-get.test.cpp
-  - test/data-structure/data-structure/Rbst-med.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: lib/data-structure/data-structure/Rbst.cpp
 layout: document
 redirect_from:
