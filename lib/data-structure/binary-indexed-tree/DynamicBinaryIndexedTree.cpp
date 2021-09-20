@@ -9,14 +9,14 @@ template<class Abel> class DynamicBinaryIndexedTree {
 
     unordered_map<i64,TypeNode> node;
 public:
-    
+
     //[0,N) constructed, inplace [0,1) + [1,N+1)
     //you can ignore inplace offset
     DynamicBinaryIndexedTree(const i64 num) {
         for (length = 1; length < num; length *= 2);
     }
- 
-    //[idx,idx+1) operate 
+
+    //[idx,idx+1) operate
     void operate(i64 idx, TypeNode var) {
         assert(0 <= idx && idx < length);
         for (++idx; idx <= length; idx += idx & -idx) node[idx] = Abel::func_fold(node[idx],var);

@@ -82,7 +82,7 @@ template<class Monoid> class RandomizedBinarySearchTree {
         else return size(node->left) + upper_bound(node->right, value) + 1;
     }
     inline void insert_impl(const TypeNode value) {
-        pair<Node*, Node*> sub = split_impl(this->root, lower_bound(this->root,value)); 
+        pair<Node*, Node*> sub = split_impl(this->root, lower_bound(this->root,value));
         this->root = this->merge_impl(this->merge_impl(sub.first, new Node(value)), sub.second);
     }
     inline void erase_impl(const TypeNode value) {

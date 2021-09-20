@@ -4,3 +4,4 @@ ZZZ*
 *.exe
 *.test
 .vscode/*
+.idea

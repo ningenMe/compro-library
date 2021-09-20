@@ -63,8 +63,8 @@ template<class Monoid> class RandomizedBinarySearchTreeSequence {
         if(k < 0 || size(node) <= k) return;
         int sl = size(node->left);
         if(k < sl) operate_impl(node->left,k,value);
-		else if(k==sl) node->value = Monoid::func_operate(node->value,value);
-		else operate_impl(node->right,k-1-sl,value);
+        else if(k==sl) node->value = Monoid::func_operate(node->value,value);
+        else operate_impl(node->right,k-1-sl,value);
         update(node);
     }
     inline TypeNode fold_impl(Node *node, int l, int r) {
@@ -80,7 +80,7 @@ template<class Monoid> class RandomizedBinarySearchTreeSequence {
         return value;
     }
     inline void insert_impl(const size_t k, const TypeNode value) {
-        pair<Node*, Node*> sub = split_impl(this->root, k); 
+        pair<Node*, Node*> sub = split_impl(this->root, k);
         this->root = this->merge_impl(this->merge_impl(sub.first, new Node(value)), sub.second);
     }
     inline void erase_impl(const size_t k) {
