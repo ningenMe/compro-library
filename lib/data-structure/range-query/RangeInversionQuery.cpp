@@ -13,7 +13,7 @@ template<class T> class RangeInversionQuery {
     size_t N,B,M;
 public:
     RangeInversionQuery(const vector<T>& ar, T pre=-1)
-    : compressed(ar.size()),prefix_inv(ar.size()),suffix_inv(ar.size()) {
+            : compressed(ar.size()),prefix_inv(ar.size()),suffix_inv(ar.size()) {
         N = ar.size();
         B = sqrt(N) + 1; // bucket size
         M = N / B + 1;   // bucket num
@@ -83,7 +83,7 @@ public:
                     sqrt_bucket_inv[i*M+i+k] += sqrt_bucket_inv[i*M+i]+sqrt_bucket_inv[(i+1)*M+i+k];
                     size_t l = i*B, r = min((i+1)*B,N);
                     for(size_t j=l;j<r;++j) {
-                        size_t& c = compressed[j]; 
+                        size_t& c = compressed[j];
                         sqrt_bucket_inv[i*M+i+k] += (sqrt_bucket_freq[i+k][c-1]-sqrt_bucket_freq[i][c-1]);
                     }
                 }
@@ -102,12 +102,12 @@ public:
                 sqrt_bucket_sort_index[i].resize(r-l);
                 for(size_t j=l;j<r;++j) sqrt_bucket_sort_index[i][j-l]=j;
                 sort(sqrt_bucket_sort_index[i].begin(),sqrt_bucket_sort_index[i].end(),
-                [&](size_t l,size_t r){return compressed[l]==compressed[r]?l<r:compressed[l]<compressed[r];});
+                     [&](size_t l,size_t r){return compressed[l]==compressed[r]?l<r:compressed[l]<compressed[r];});
             }
         }
     }
     //query [l,r)
-    //return {freq,mode} ({頻度,元の配列における値}) 
+    //return {freq,mode} ({頻度,元の配列における値})
     long long fold(int l, int r) {
         int bl = l/B + 1, br = (r-1)/B - 1;
         long long inv = 0;
@@ -151,4 +151,4 @@ public:
         }
         return inv;
     }
-}; 
+};
