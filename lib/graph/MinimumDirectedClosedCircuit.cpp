@@ -25,7 +25,7 @@ private:
             if(top.first > dist[curr]) continue;
             for(auto& edge:graph.edges[curr]){
                 size_t next = edge.first;
-                T w  = edge.second;                
+                T w  = edge.second;
                 if(dist[next] > dist[curr]+w) {
                     dist[next]   = dist[curr] + w;
                     parent[next] = curr;
@@ -35,14 +35,14 @@ private:
                 if(next == root && mini > dist[curr]+w) {
                     mini = dist[curr]+w;
                     last = curr;
-                }                
+                }
             }
         }
         return mini;
     }
 public:
     MinimumDirectedClosedCircuit(Graph<T>& graph, T inf)
-     : graph(graph),N(graph.size()),dist(graph.size()),parent(graph.size()),inf(inf) {
+            : graph(graph),N(graph.size()),dist(graph.size()),parent(graph.size()),inf(inf) {
     }
     //rootを含む最小閉路の集合を返す O(NlogN) 閉路がないときは空集合
     inline T solve(size_t rt){

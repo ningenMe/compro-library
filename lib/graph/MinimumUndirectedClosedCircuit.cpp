@@ -47,14 +47,14 @@ private:
                     mini = dist[l] + dist[r] + w;
                     last_l = l;
                     last_r = r;
-                }            
+                }
             }
         }
         return mini;
     }
 public:
     MinimumUndirectedClosedCircuit(Graph<T>& graph, T inf)
-     : graph(graph),N(graph.size()),dist(graph.size()),parent(graph.size()),label(graph.size()),inf(inf) {
+            : graph(graph),N(graph.size()),dist(graph.size()),parent(graph.size()),label(graph.size()),inf(inf) {
     }
     //rootを含む最小閉路の集合を返す O(NlogN) 閉路がないときは空集合
     inline T solve(size_t rt){
