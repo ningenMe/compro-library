@@ -25,13 +25,13 @@ template<class T> class NumberTheoreticalTransform {
         }
         ModInt<prime> acc = 1;
         if(!inv) for (int i = 0; i < log2n_max - 2; ++i) {
-            base[i] = es[i] * acc;
-            acc *= ies[i];
-        }
+                base[i] = es[i] * acc;
+                acc *= ies[i];
+            }
         else for (int i = 0; i < log2n_max - 2; ++i) {
-            base[i] = ies[i] * acc;
-            acc *= es[i];
-        }
+                base[i] = ies[i] * acc;
+                acc *= es[i];
+            }
         return base;
     }
     template<int prime> inline static void butterfly(vector<ModInt<prime>>& a, const array<ModInt<prime>,log2n_max>& base) {
@@ -89,7 +89,7 @@ template<class T> class NumberTheoreticalTransform {
         static array<ModInt<prime>,log2n_max> ibase;
         if(!ibase.front().x) ibase = get_base<prime>(1);
 
-        butterfly<prime>(g,base); 
+        butterfly<prime>(g,base);
         butterfly<prime>(h,base);
         for(int i = 0; i < N; ++i) g[i] *= h[i];
         ibutterfly<prime>(g,ibase);

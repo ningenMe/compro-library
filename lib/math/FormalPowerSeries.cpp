@@ -69,7 +69,7 @@ public:
         for(size_t i=2,m=(n<<1);i<m;i<<=1) {
             Fps h = mul(ret,(sub(this->prefix(i),ret.log(i))));
             ret.resize(i);
-            for(int j=i>>1;j<i;++j) ret[j] += h[j];            
+            for(int j=i>>1;j<i;++j) ret[j] += h[j];
         }
         return ret.prefix(n);
     }

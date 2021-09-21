@@ -32,5 +32,5 @@ public:
         for(int i=0;i<N;++i) f[i] = f[i]*g[i];
         mobius(f);
         return f;
-    } 
+    }
 };

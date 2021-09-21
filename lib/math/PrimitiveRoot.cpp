@@ -49,6 +49,6 @@ public:
                 }
             }
             if (ok) return g;
-        }        
+        }
     }
 };

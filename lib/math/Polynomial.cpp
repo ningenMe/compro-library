@@ -51,9 +51,9 @@ public:
         for(int i=0;i<n;++i) gx *= x-(a0 + d*i);
         for(int i=1;i<n;++i) gxi[0] *= (-d*i);
         for(int i=1;i<n;++i) gxi[i] = gxi[i-1] * (d*i) / (d*(i-n));
-        for(int i=0;i<n;++i) fx += (y[i] / gxi[i]) * (gx / (x - (a0 + d*i))); 
+        for(int i=0;i<n;++i) fx += (y[i] / gxi[i]) * (gx / (x - (a0 + d*i)));
         return fx;
-    } 
+    }
     //O(N)
     inline static T eval(const vector<T>& f,T x) {
         T base = 1, res = 0;
