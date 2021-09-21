@@ -10,11 +10,11 @@ template<class Abel> class BinaryIndexedTreeOffline2D {
         size_t length;
         vector<TypeNode> node;
     public:
-        InternalBinaryIndexedTree() {}    
+        InternalBinaryIndexedTree() {}
         InternalBinaryIndexedTree(const size_t num) {
             for (length = 1; length < num; length *= 2);
             node.resize(length+1, Abel::unit_node);
-        }    
+        }
         void operate(size_t idx, TypeNode var) {
             for (++idx; idx <= length; idx += idx & -idx) node[idx] = Abel::func_fold(node[idx],var);
         }
@@ -30,13 +30,13 @@ template<class Abel> class BinaryIndexedTreeOffline2D {
     vector<vector<i64>> oy;
 
 public:
-    
+
     BinaryIndexedTreeOffline2D(const vector<i64>& operator_x,const vector<i64>& operator_y):ox(operator_x) {
         sort(ox.begin(),ox.end());
         ox.erase(unique(ox.begin(),ox.end()),ox.end());
         size_t num = ox.size();
         for (length = 1; length < num; length *= 2);
-		node.resize(length+1);
+        node.resize(length+1);
         oy.resize(length+1);
         int n = operator_x.size();
         for(int i=0;i<n;++i) {
@@ -47,12 +47,12 @@ public:
         }
         for(int i=0;i<length+1;++i) {
             sort(oy[i].begin(),oy[i].end());
-            oy[i].erase(unique(oy[i].begin(),oy[i].end()),oy[i].end());            
+            oy[i].erase(unique(oy[i].begin(),oy[i].end()),oy[i].end());
             node[i]=InternalBinaryIndexedTree(oy[i].size());
         }
     }
- 
-    //[l,l+1),[d,d+1) operate 
+
+    //[l,l+1),[d,d+1) operate
     void operate(i64 l, i64 d, TypeNode var) {
         size_t x = (lower_bound(ox.begin(),ox.end(),l)-ox.begin());
         for (++x; x <= length; x += x & -x) {

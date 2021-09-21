@@ -3,7 +3,7 @@
  * @docs md/data-structure/segment-tree/DynamicSegmentTree.md
  */
 template<class Monoid> class DynamicSegmentTree {
-    using TypeNode = typename Monoid::TypeNode; 
+    using TypeNode = typename Monoid::TypeNode;
     using i64 = long long;
 
     struct Node{
@@ -21,7 +21,7 @@ template<class Monoid> class DynamicSegmentTree {
         if(node->right) vr = dfs(l,r,m,nr,node->right);
         return Monoid::func_fold(vl,vr);
     }
-    
+
     i64 length;
     Node *root;
 public:
@@ -30,7 +30,7 @@ public:
     DynamicSegmentTree() : length(1) {
         root = new Node();
     }
-    
+
     //[idx,idx+1)
     void operate(i64 idx, const TypeNode var) {
         if(idx < 0) return;

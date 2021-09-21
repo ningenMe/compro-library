@@ -116,7 +116,7 @@ template<class Monoid> class LazyRandomizedBinarySearchTreeSequence {
         this->root = merge_impl(merge_impl(nl,nc),nr);
     }
     inline void insert_impl(const size_t k, const TypeNode value) {
-        pair<Node*, Node*> sub = split_impl(this->root, k); 
+        pair<Node*, Node*> sub = split_impl(this->root, k);
         this->root = this->merge_impl(this->merge_impl(sub.first, new Node(value)), sub.second);
     }
     inline void erase_impl(const size_t k) {

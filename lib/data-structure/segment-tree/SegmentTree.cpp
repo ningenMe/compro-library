@@ -3,7 +3,7 @@
  * @docs md/data-structure/segment-tree/SegmentTree.md
  */
 template<class Monoid> class SegmentTree {
-    using TypeNode = typename Monoid::TypeNode; 
+    using TypeNode = typename Monoid::TypeNode;
     size_t length;
     size_t num;
     vector<TypeNode> node;
@@ -30,7 +30,7 @@ public:
         for (int i = 0; i < vec.size(); ++i) node[i + length] = vec[i];
         build();
     }
- 
+
     //同じinitで初期化
     SegmentTree(const size_t num, const TypeNode init) : num(num) {
         for (length = 1; length <= num; length *= 2);
@@ -38,7 +38,7 @@ public:
         for (int i = 0; i < length; ++i) node[i+length] = init;
         build();
     }
-    
+
     //[idx,idx+1)
     void operate(size_t idx, const TypeNode var) {
         if(idx < 0 || length <= idx) return;
@@ -67,7 +67,7 @@ public:
             if(range[idx].second<=r && !Monoid::func_check(Monoid::func_fold(ret,node[idx]),var)) {
                 ret = Monoid::func_fold(ret,node[idx]);
                 off = range[idx++].second;
-                if(!(idx&1)) idx >>= 1;			
+                if(!(idx&1)) idx >>= 1;
             }
             else{
                 idx <<=1;

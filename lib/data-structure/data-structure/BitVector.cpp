@@ -34,8 +34,8 @@ public:
         else     vec[bit_l] &= ~(1U << (l & (BIT_BLOCK_NUM-1)));
     }
     //[l,l+1)
-    bool operator[](uint32 l) const { 
+    bool operator[](uint32 l) const {
         assert(is_builded);
-        return ((vec[l >> BIT_BLOCK_SIZE] >> (l & (BIT_BLOCK_NUM-1))) & 1); 
+        return ((vec[l >> BIT_BLOCK_SIZE] >> (l & (BIT_BLOCK_NUM-1))) & 1);
     }
 };

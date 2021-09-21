@@ -12,7 +12,7 @@ template<class T> class RangeModeQuery {
     size_t N,B;
 public:
     RangeModeQuery(const vector<T>& ar, T pre=-1)
-    : compressed(ar.size()), origin(ar.size()), idx(ar.size()), pos(ar.size()) {
+            : compressed(ar.size()), origin(ar.size()), idx(ar.size()), pos(ar.size()) {
         N = ar.size();
         B = sqrt(N) + 1;
         //zarts
@@ -61,7 +61,7 @@ public:
         }
     }
     //query [l,r)
-    //return {freq,mode} ({頻度,元の配列における値}) 
+    //return {freq,mode} ({頻度,元の配列における値})
     pair<size_t,T> get(int l, int r) {
         int bl = l / B + !!(l%B), br = r / B;
         int ml = bl * B, mr = br * B;
@@ -92,4 +92,4 @@ public:
         }
         return {maxi_freq,origin[maxi_mode]};
     }
-}; 
+};
