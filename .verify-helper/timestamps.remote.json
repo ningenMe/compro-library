@@ -82,6 +82,9 @@
 "test/math/Matrix-det.test.cpp": "2021-09-21 19:35:58 +0900",
 "test/math/Matrix-pow.test.cpp": "2021-09-21 19:35:58 +0900",
 "test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp": "2021-09-21 19:35:58 +0900",
+"test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp": "2021-09-21 19:35:58 +0900",
+"test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp": "2021-09-21 19:35:58 +0900",
+"test/math/NumberTheoreticalTransform-conv-fft.test.cpp": "2021-09-21 19:35:58 +0900",
 "test/optimize/LongestIncreasingSubsequence.test.cpp": "2020-10-25 16:36:50 +0900",
 "test/optimize/MaximumRectangle-1.test.cpp": "2020-10-25 16:41:58 +0900",
 "test/optimize/MaximumRectangle-2.test.cpp": "2020-10-25 16:41:58 +0900",
@@ -91,6 +94,7 @@
 "test/string/Zalgorithm.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/util/ModInt.test.cpp": "2020-09-26 17:01:19 +0900",
 "test/util/NBase.test.cpp": "2020-09-26 17:01:19 +0900",
+"test/util/RangeIndex.test.cpp": "2021-09-21 09:57:46 +0900",
 "test/util/RuntimeModInt.test.cpp": "2020-10-04 04:28:01 +0900",
 "test/util/Zarts.test.cpp": "2020-10-30 09:51:16 +0900"
 }
