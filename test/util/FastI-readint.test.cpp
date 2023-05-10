@@ -9,7 +9,7 @@ int main() {
     int t; FastI::read(t);
     while(t--) {
         long long x,y; FastI::read(x);FastI::read(y);
-        cout << x+y << "\n";
+        cout << x + y << "\n";
     }
     return 0;
 }
