@@ -278,7 +278,7 @@ data:
       title: Zalgorithm
   - name: lib/util
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/util/FastIO.cpp
       title: FastIO
     - icon: ':question:'
@@ -635,10 +635,10 @@ data:
       title: test/string/Zalgorithm.test.cpp
   - name: test/util
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/util/FastIO-int128.test.cpp
       title: test/util/FastIO-int128.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/util/FastIO-int64.test.cpp
       title: test/util/FastIO-int64.test.cpp
     - icon: ':heavy_check_mark:'

@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/util/FastIO-int128.test.cpp
     title: test/util/FastIO-int128.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/util/FastIO-int64.test.cpp
     title: test/util/FastIO-int64.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/util/FastIO.md
     document_title: FastIO
@@ -47,13 +47,13 @@ data:
     \ void read(__int128_t &x) {read_integer<__int128_t>(x);}\n    inline static void\
     \ write(__int128_t x) {write_integer<__int128_t>(x);}\n    inline static void\
     \ write(char x) {putchar(x);}\n};\n#define read(arg) FastIO::read(arg)\n#define\
-    \ write(arg) FastIO::write(arg)"
+    \ write(arg) FastIO::write(arg)\n"
   dependsOn: []
   isVerificationFile: false
   path: lib/util/FastIO.cpp
   requiredBy: []
-  timestamp: '2023-05-12 03:38:28+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-05-12 03:56:01+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/util/FastIO-int128.test.cpp
   - test/util/FastIO-int64.test.cpp
