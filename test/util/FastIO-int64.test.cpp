@@ -2,13 +2,13 @@
 
 #include <iostream>
 using namespace std;
-#include "../../lib/util/FastI.cpp"
+#include "../../lib/util/FastIO.cpp"
 
 int main() {
     cin.tie(0)->sync_with_stdio(0);
-    int t; FastI::read(t);
+    int t; read(t);
     while(t--) {
-        long long x,y; FastI::read(x);FastI::read(y);
+        long long x,y; read(x);read(y);
         cout << x+y << "\n";
     }
     return 0;
