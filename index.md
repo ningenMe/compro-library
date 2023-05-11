@@ -167,7 +167,7 @@ data:
     - icon: ':question:'
       path: lib/math/FormalPowerSeries.cpp
       title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/math/Garner.cpp
       title: "Garner - \u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
     - icon: ':question:'
@@ -176,7 +176,7 @@ data:
     - icon: ':warning:'
       path: lib/math/GcdConvolution.cpp
       title: "GcdConvolution - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
     - icon: ':question:'
@@ -278,9 +278,9 @@ data:
       title: Zalgorithm
   - name: lib/util
     pages:
-    - icon: ':heavy_check_mark:'
-      path: lib/util/FastI.cpp
-      title: FastI
+    - icon: ':x:'
+      path: lib/util/FastIO.cpp
+      title: FastIO
     - icon: ':question:'
       path: lib/util/ModInt.cpp
       title: ModInt
@@ -569,37 +569,37 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-inv.test.cpp
       title: test/math/FormalPowerSeries-inv.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-log.test.cpp
       title: test/math/FormalPowerSeries-log.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-multi-eval.test.cpp
       title: test/math/FormalPowerSeries-multi-eval.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/FormalPowerSeries-nth.test.cpp
       title: test/math/FormalPowerSeries-nth.test.cpp
     - icon: ':x:'
       path: test/math/FormalPowerSeries-pow.test.cpp
       title: test/math/FormalPowerSeries-pow.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/Garner.test.cpp
       title: test/math/Garner.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/Matrix-det.test.cpp
       title: test/math/Matrix-det.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/Matrix-pow.test.cpp
       title: test/math/Matrix-pow.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
       title: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
       title: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
       title: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
       title: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
     - icon: ':x:'
@@ -635,9 +635,12 @@ data:
       title: test/string/Zalgorithm.test.cpp
   - name: test/util
     pages:
-    - icon: ':heavy_check_mark:'
-      path: test/util/FastI-readint.test.cpp
-      title: test/util/FastI-readint.test.cpp
+    - icon: ':x:'
+      path: test/util/FastIO-int128.test.cpp
+      title: test/util/FastIO-int128.test.cpp
+    - icon: ':x:'
+      path: test/util/FastIO-int64.test.cpp
+      title: test/util/FastIO-int64.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/util/ModInt.test.cpp
       title: test/util/ModInt.test.cpp

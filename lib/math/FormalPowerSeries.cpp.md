@@ -12,13 +12,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-inv.test.cpp
     title: test/math/FormalPowerSeries-inv.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-log.test.cpp
     title: test/math/FormalPowerSeries-log.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-multi-eval.test.cpp
     title: test/math/FormalPowerSeries-multi-eval.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-nth.test.cpp
     title: test/math/FormalPowerSeries-nth.test.cpp
   - icon: ':x:'

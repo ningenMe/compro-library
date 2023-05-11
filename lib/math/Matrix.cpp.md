@@ -6,15 +6,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-hld-path.test.cpp
     title: test/graph/Tree-hld-path.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Matrix-det.test.cpp
     title: test/math/Matrix-det.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Matrix-pow.test.cpp
     title: test/math/Matrix-pow.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/math/Matrix.md
     document_title: "Matrix - \u884C\u5217\u6F14\u7B97"
@@ -91,7 +91,7 @@ data:
   path: lib/math/Matrix.cpp
   requiredBy: []
   timestamp: '2021-09-21 19:35:58+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/Matrix-pow.test.cpp
   - test/math/Matrix-det.test.cpp

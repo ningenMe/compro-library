@@ -9,9 +9,9 @@ data:
     title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/1307
@@ -151,7 +151,7 @@ data:
   path: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
   requiredBy: []
   timestamp: '2023-05-12 02:44:17+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
 layout: document

@@ -1,0 +1,57 @@
+---
+data:
+  _extendedDependsOn:
+  - icon: ':x:'
+    path: lib/util/FastIO.cpp
+    title: FastIO
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: true
+  _pathExtension: cpp
+  _verificationStatusIcon: ':x:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/many_aplusb_128bit
+    links:
+    - https://judge.yosupo.jp/problem/many_aplusb_128bit
+  bundledCode: "#line 1 \"test/util/FastIO-int128.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\
+    \n\n#include <iostream>\nusing namespace std;\n#line 1 \"lib/util/FastIO.cpp\"\
+    \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
+    \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
+    \    inline static constexpr int ch_n='-';\n    template<typename T> inline static\
+    \ void read_integer(T &x) {\n        int neg=0; char ch; x=0;\n        ch=getchar();\n\
+    \        if(ch==ch_n) neg=1,ch=getchar();\n        for(;(ch_0 <= ch && ch <= ch_9);\
+    \ ch = getchar()) x = x*10 + (ch-ch_0);\n        if(neg) x*=-1;\n    }\n    inline\
+    \ static char ar[40];\n    inline static char *ch_ar;\n    template<typename T>\
+    \ inline static void write_integer(T x) {\n        ch_ar=ar;\n        if(x< 0)\
+    \ putchar(ch_n), x=-x;\n        if(x==0) putchar(ch_0);\n        for(;x;x/=10)\
+    \ *ch_ar++=(ch_0+x%10);\n        while(ch_ar--!=ar) putchar(*ch_ar);\n    }\n\
+    public:\n    inline static void read(int &x) {read_integer<int>(x);}\n    inline\
+    \ static void read(long long &x) {read_integer<long long>(x);}\n    inline static\
+    \ void read(__int128_t &x) {read_integer<__int128_t>(x);}\n    inline static void\
+    \ write(__int128_t x) {write_integer<__int128_t>(x);}\n    inline static void\
+    \ write(char x) {putchar(x);}\n};\n#define read(arg) FastIO::read(arg)\n#define\
+    \ write(arg) FastIO::write(arg)\n#line 6 \"test/util/FastIO-int128.test.cpp\"\n\
+    \nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int t; read(t);\n   \
+    \ while(t--) {\n        __int128 x,y; read(x);read(y);\n        write(x+y);write('\\\
+    n');\n    }\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\n\n\
+    #include <iostream>\nusing namespace std;\n#include \"../../lib/util/FastIO.cpp\"\
+    \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int t; read(t);\n \
+    \   while(t--) {\n        __int128 x,y; read(x);read(y);\n        write(x+y);write('\\\
+    n');\n    }\n    return 0;\n}\n"
+  dependsOn:
+  - lib/util/FastIO.cpp
+  isVerificationFile: true
+  path: test/util/FastIO-int128.test.cpp
+  requiredBy: []
+  timestamp: '2023-05-12 03:38:28+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
+  verifiedWith: []
+documentation_of: test/util/FastIO-int128.test.cpp
+layout: document
+redirect_from:
+- /verify/test/util/FastIO-int128.test.cpp
+- /verify/test/util/FastIO-int128.test.cpp.html
+title: test/util/FastIO-int128.test.cpp
+---

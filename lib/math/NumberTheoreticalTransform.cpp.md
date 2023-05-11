@@ -12,28 +12,28 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-inv.test.cpp
     title: test/math/FormalPowerSeries-inv.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-log.test.cpp
     title: test/math/FormalPowerSeries-log.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-multi-eval.test.cpp
     title: test/math/FormalPowerSeries-multi-eval.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/FormalPowerSeries-nth.test.cpp
     title: test/math/FormalPowerSeries-nth.test.cpp
   - icon: ':x:'
     path: test/math/FormalPowerSeries-pow.test.cpp
     title: test/math/FormalPowerSeries-pow.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
     title: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
     title: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
     title: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
   _isVerificationFailed: true
