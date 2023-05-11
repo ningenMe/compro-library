@@ -2,10 +2,25 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
+    title: test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/LiChaoTree-segment.test.cpp
+    title: test/data-structure/convex-hull-trick/LiChaoTree-segment.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/operator/operator/ValueMin.cpp\"\n//\u6700\u5C0F\u5024\
@@ -21,8 +36,13 @@ data:
   path: lib/operator/operator/ValueMin.cpp
   requiredBy: []
   timestamp: '2021-04-26 09:09:47+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+  - test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
+  - test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
+  - test/data-structure/convex-hull-trick/LiChaoTree-segment.test.cpp
+  - test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
 documentation_of: lib/operator/operator/ValueMin.cpp
 layout: document
 redirect_from:

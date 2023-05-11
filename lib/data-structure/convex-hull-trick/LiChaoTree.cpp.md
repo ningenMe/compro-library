@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
+    title: test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/LiChaoTree-segment.test.cpp
+    title: test/data-structure/convex-hull-trick/LiChaoTree-segment.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/data-structure/segment/convex-hull-trick/LiChaoTree.md
     document_title: LiChaoTree
@@ -76,8 +82,10 @@ data:
   path: lib/data-structure/convex-hull-trick/LiChaoTree.cpp
   requiredBy: []
   timestamp: '2021-09-21 03:50:44+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
+  - test/data-structure/convex-hull-trick/LiChaoTree-segment.test.cpp
 documentation_of: lib/data-structure/convex-hull-trick/LiChaoTree.cpp
 layout: document
 redirect_from:

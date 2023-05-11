@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/data-structure/PerisitentQueue.test.cpp
+    title: test/data-structure/data-structure/PerisitentQueue.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/data-structure/data-structure/PersistentQueue.md
     document_title: "PersistentQueue - \u6C38\u7D9Aqueue"
@@ -48,8 +51,9 @@ data:
   path: lib/data-structure/data-structure/PersistentQueue.cpp
   requiredBy: []
   timestamp: '2021-04-26 23:05:25+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data-structure/data-structure/PerisitentQueue.test.cpp
 documentation_of: lib/data-structure/data-structure/PersistentQueue.cpp
 layout: document
 redirect_from:

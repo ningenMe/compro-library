@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/data-structure/SlideMost.test.cpp
+    title: test/data-structure/data-structure/SlideMost.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/data-structure/data-structure/SlideMost.md
     document_title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\
@@ -47,8 +50,9 @@ data:
   path: lib/data-structure/data-structure/SlideMost.cpp
   requiredBy: []
   timestamp: '2021-04-26 22:51:12+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data-structure/data-structure/SlideMost.test.cpp
 documentation_of: lib/data-structure/data-structure/SlideMost.cpp
 layout: document
 redirect_from:
