@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/util/RangeIndex.test.cpp
+    title: test/util/RangeIndex.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/graph/UnionFindTree.md
     document_title: "UnionFindTree - Union Find \u6728"
@@ -46,9 +49,10 @@ data:
   isVerificationFile: false
   path: lib/graph/UnionFindTree.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-09-21 09:57:46+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/util/RangeIndex.test.cpp
 documentation_of: lib/graph/UnionFindTree.cpp
 layout: document
 redirect_from:

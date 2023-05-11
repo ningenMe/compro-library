@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/util/FastI-readint.test.cpp
+    title: test/util/FastI-readint.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/util/FastI.md
     document_title: FastI
@@ -29,9 +32,10 @@ data:
   isVerificationFile: false
   path: lib/util/FastI.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2023-05-11 03:51:52+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/util/FastI-readint.test.cpp
 documentation_of: lib/util/FastI.cpp
 layout: document
 redirect_from:

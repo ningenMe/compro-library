@@ -37,7 +37,7 @@ data:
   isVerificationFile: false
   path: lib/data-structure/range-query/RangeMexQuery.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
+  timestamp: '2021-04-26 08:51:23+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/data-structure/range-query/RangeMexQuery.cpp

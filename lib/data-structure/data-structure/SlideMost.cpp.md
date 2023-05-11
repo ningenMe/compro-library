@@ -46,7 +46,7 @@ data:
   isVerificationFile: false
   path: lib/data-structure/data-structure/SlideMost.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
+  timestamp: '2021-04-26 22:51:12+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/data-structure/data-structure/SlideMost.cpp

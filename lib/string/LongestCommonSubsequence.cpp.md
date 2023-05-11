@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/string/LongestCommonSubsequence.test.cpp
+    title: test/string/LongestCommonSubsequence.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/string/LongestCommonSubsequence.md
     document_title: LongestCommonSubsequence - LCS
@@ -31,9 +34,10 @@ data:
   isVerificationFile: false
   path: lib/string/LongestCommonSubsequence.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2020-10-27 04:08:47+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/string/LongestCommonSubsequence.test.cpp
 documentation_of: lib/string/LongestCommonSubsequence.cpp
 layout: document
 redirect_from:

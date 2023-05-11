@@ -34,7 +34,7 @@ data:
   isVerificationFile: false
   path: non-verified/Chinese_Remainder_Theorem.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
+  timestamp: '2020-04-26 16:29:01+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: non-verified/Chinese_Remainder_Theorem.cpp

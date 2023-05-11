@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/util/Zarts.test.cpp
+    title: test/util/Zarts.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/util/Zarts.md
     document_title: "Zarts - \u5EA7\u6A19\u5727\u7E2E"
@@ -48,9 +51,10 @@ data:
   isVerificationFile: false
   path: lib/util/Zarts.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2020-10-30 09:51:16+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/util/Zarts.test.cpp
 documentation_of: lib/util/Zarts.cpp
 layout: document
 redirect_from:

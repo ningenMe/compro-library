@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/util/ModInt.test.cpp
+    title: test/util/ModInt.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/util/ModInt.md
     document_title: ModInt
@@ -88,9 +91,10 @@ data:
   isVerificationFile: false
   path: lib/util/ModInt.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2020-09-26 17:01:19+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/util/ModInt.test.cpp
 documentation_of: lib/util/ModInt.cpp
 layout: document
 redirect_from:

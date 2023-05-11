@@ -148,7 +148,7 @@ data:
   isVerificationFile: false
   path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
+  timestamp: '2021-09-21 03:30:04+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp

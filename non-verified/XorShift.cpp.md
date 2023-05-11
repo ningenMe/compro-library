@@ -19,7 +19,7 @@ data:
   isVerificationFile: false
   path: non-verified/XorShift.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
+  timestamp: '2020-10-24 05:46:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: non-verified/XorShift.cpp

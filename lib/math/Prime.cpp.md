@@ -64,7 +64,7 @@ data:
   isVerificationFile: false
   path: lib/math/Prime.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
+  timestamp: '2020-09-26 16:29:44+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/math/Prime.cpp

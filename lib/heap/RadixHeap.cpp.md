@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/heap/RadixHeap.test.cpp
+    title: test/heap/RadixHeap.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/heap/RadixHeap.md
     document_title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
@@ -46,9 +49,10 @@ data:
   isVerificationFile: false
   path: lib/heap/RadixHeap.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-09-21 09:57:46+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/heap/RadixHeap.test.cpp
 documentation_of: lib/heap/RadixHeap.cpp
 layout: document
 redirect_from:

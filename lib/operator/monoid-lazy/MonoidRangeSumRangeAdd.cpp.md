@@ -36,7 +36,7 @@ data:
   isVerificationFile: false
   path: lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
+  timestamp: '2021-05-02 12:04:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp

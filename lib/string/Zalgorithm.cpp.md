@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/string/Zalgorithm.test.cpp
+    title: test/string/Zalgorithm.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/string/Zalgorithm.md
     document_title: Zalgorithm
@@ -39,9 +42,10 @@ data:
   isVerificationFile: false
   path: lib/string/Zalgorithm.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2020-09-26 17:01:19+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/string/Zalgorithm.test.cpp
 documentation_of: lib/string/Zalgorithm.cpp
 layout: document
 redirect_from:

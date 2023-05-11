@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/optimize/LongestIncreasingSubsequence.test.cpp
+    title: test/optimize/LongestIncreasingSubsequence.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/optimize/LongestIncreasingSubsequence.md
     document_title: LongestIncreasingSubsequence - LIS
@@ -25,9 +28,10 @@ data:
   isVerificationFile: false
   path: lib/optimize/LongestIncreasingSubsequence.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2020-10-25 16:36:50+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/optimize/LongestIncreasingSubsequence.test.cpp
 documentation_of: lib/optimize/LongestIncreasingSubsequence.cpp
 layout: document
 redirect_from:

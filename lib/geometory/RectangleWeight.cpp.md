@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/geometory/RectangleWeight.test.cpp
+    title: test/geometory/RectangleWeight.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/geometory/RectangleWeight.md
     document_title: "RectangleWeight - \u91CD\u307F\u3064\u304D\u77E9\u5F62"
@@ -46,9 +49,10 @@ data:
   isVerificationFile: false
   path: lib/geometory/RectangleWeight.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:06:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2020-10-25 05:38:36+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/geometory/RectangleWeight.test.cpp
 documentation_of: lib/geometory/RectangleWeight.cpp
 layout: document
 redirect_from:

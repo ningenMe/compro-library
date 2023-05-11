@@ -97,16 +97,16 @@ data:
       title: SegmentTreeBeats
   - name: lib/geometory
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/geometory/Argument.cpp
       title: "Argument - \u504F\u89D2"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/geometory/Distance.cpp
       title: "Distance - \u8DDD\u96E2"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/geometory/KdTree.cpp
       title: "KdTree - 2\u6B21\u5143\u9802\u70B9\u5206\u985E\u6728"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/geometory/RectangleWeight.cpp
       title: "RectangleWeight - \u91CD\u307F\u3064\u304D\u77E9\u5F62"
   - name: lib/graph
@@ -138,15 +138,15 @@ data:
     - icon: ':warning:'
       path: lib/graph/Tree.cpp
       title: "Tree - \u6728"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/graph/UnionFindTree.cpp
       title: "UnionFindTree - Union Find \u6728"
   - name: lib/heap
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/heap/RadixHeap.cpp
       title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/heap/RadixHeapInt.cpp
       title: "RadixHeapInt - 32bit\u578B\u975E\u8CA0\u6574\u6570heap"
   - name: lib/math
@@ -259,41 +259,41 @@ data:
       title: lib/operator/operator/ValueMin.cpp
   - name: lib/optimize
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/optimize/LongestIncreasingSubsequence.cpp
       title: LongestIncreasingSubsequence - LIS
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/optimize/MaximumRectangle.cpp
       title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
   - name: lib/string
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/string/LevenshteinDistance.cpp
       title: "LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/string/LongestCommonSubsequence.cpp
       title: LongestCommonSubsequence - LCS
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/string/Zalgorithm.cpp
       title: Zalgorithm
   - name: lib/util
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/util/FastI.cpp
       title: FastI
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/util/ModInt.cpp
       title: ModInt
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/util/NBase.cpp
       title: "NBase - N\u9032\u6570"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/util/RangeIndex.cpp
       title: "RangeIndex - \u533A\u9593index"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/util/RuntimeModInt.cpp
       title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/util/Zarts.cpp
       title: "Zarts - \u5EA7\u6A19\u5727\u7E2E"
   - name: non-verified
@@ -370,6 +370,78 @@ data:
     - icon: ':warning:'
       path: non-verified/old-tree.cpp
       title: "Tree - \u6728"
-  verificationCategories: []
+  verificationCategories:
+  - name: test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/example.test.cpp
+      title: test/example.test.cpp
+  - name: test/geometory
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/geometory/Argument-sort-by-atan2l.test.cpp
+      title: test/geometory/Argument-sort-by-atan2l.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometory/Distance-line.test.cpp
+      title: test/geometory/Distance-line.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometory/KdTree.test.cpp
+      title: test/geometory/KdTree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/geometory/RectangleWeight.test.cpp
+      title: test/geometory/RectangleWeight.test.cpp
+  - name: test/heap
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/heap/RadixHeap.test.cpp
+      title: test/heap/RadixHeap.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/heap/RadixHeapInt.test.cpp
+      title: test/heap/RadixHeapInt.test.cpp
+  - name: test/optimize
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/optimize/LongestIncreasingSubsequence.test.cpp
+      title: test/optimize/LongestIncreasingSubsequence.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/optimize/MaximumRectangle-1.test.cpp
+      title: test/optimize/MaximumRectangle-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/optimize/MaximumRectangle-2.test.cpp
+      title: test/optimize/MaximumRectangle-2.test.cpp
+  - name: test/string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/string/LevenshteinDistance-1.test.cpp
+      title: test/string/LevenshteinDistance-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/string/LevenshteinDistance-2.test.cpp
+      title: test/string/LevenshteinDistance-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/string/LongestCommonSubsequence.test.cpp
+      title: test/string/LongestCommonSubsequence.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/string/Zalgorithm.test.cpp
+      title: test/string/Zalgorithm.test.cpp
+  - name: test/util
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/util/FastI-readint.test.cpp
+      title: test/util/FastI-readint.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/util/ModInt.test.cpp
+      title: test/util/ModInt.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/util/NBase.test.cpp
+      title: test/util/NBase.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/util/RangeIndex.test.cpp
+      title: test/util/RangeIndex.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/util/RuntimeModInt.test.cpp
+      title: test/util/RuntimeModInt.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/util/Zarts.test.cpp
+      title: test/util/Zarts.test.cpp
 layout: toppage
 ---
