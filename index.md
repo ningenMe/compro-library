@@ -1,0 +1,375 @@
+---
+data:
+  libraryCategories:
+  - name: lib/data-structure/binary-indexed-tree
+    pages:
+    - icon: ':warning:'
+      path: lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
+      title: BinaryIndexedTree - BIT
+    - icon: ':warning:'
+      path: lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
+      title: "BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F32\u6B21\u5143\
+        BIT"
+    - icon: ':warning:'
+      path: lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp
+      title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
+  - name: lib/data-structure/binary-search-tree
+    pages:
+    - icon: ':warning:'
+      path: lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
+      title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
+        \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
+    - icon: ':warning:'
+      path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
+      title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
+    - icon: ':warning:'
+      path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
+      title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
+        \u6728\u5217"
+  - name: lib/data-structure/convex-hull-trick
+    pages:
+    - icon: ':warning:'
+      path: lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp
+      title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
+    - icon: ':warning:'
+      path: lib/data-structure/convex-hull-trick/ConvexHullTrickMonotone.cpp
+      title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
+    - icon: ':warning:'
+      path: lib/data-structure/convex-hull-trick/ConvexHullTrickSegmentTree.cpp
+      title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\
+        \u30F3\u30C8\u6728"
+    - icon: ':warning:'
+      path: lib/data-structure/convex-hull-trick/LiChaoTree.cpp
+      title: LiChaoTree
+  - name: lib/data-structure/data-structure
+    pages:
+    - icon: ':warning:'
+      path: lib/data-structure/data-structure/BinaryTrie.cpp
+      title: BinaryTrie
+    - icon: ':warning:'
+      path: lib/data-structure/data-structure/BitVector.cpp
+      title: BitVector
+    - icon: ':warning:'
+      path: lib/data-structure/data-structure/DisjointSparseTable.cpp
+      title: DisjointSparseTable
+    - icon: ':warning:'
+      path: lib/data-structure/data-structure/PersistentQueue.cpp
+      title: "PersistentQueue - \u6C38\u7D9Aqueue"
+    - icon: ':warning:'
+      path: lib/data-structure/data-structure/SlideMost.cpp
+      title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
+    - icon: ':warning:'
+      path: lib/data-structure/data-structure/SparseTable.cpp
+      title: SparseTable
+    - icon: ':warning:'
+      path: lib/data-structure/data-structure/Swag.cpp
+      title: Swag
+    - icon: ':warning:'
+      path: lib/data-structure/data-structure/WaveletMatrix.cpp
+      title: WaveletMatrix
+  - name: lib/data-structure/range-query
+    pages:
+    - icon: ':warning:'
+      path: lib/data-structure/range-query/RangeInversionQuery.cpp
+      title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
+    - icon: ':warning:'
+      path: lib/data-structure/range-query/RangeMexQuery.cpp
+      title: "RangeMexQuery - \u533A\u9593mex"
+    - icon: ':warning:'
+      path: lib/data-structure/range-query/RangeModeQuery.cpp
+      title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
+  - name: lib/data-structure/segment-tree
+    pages:
+    - icon: ':warning:'
+      path: lib/data-structure/segment-tree/DynamicSegmentTree.cpp
+      title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
+        \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+    - icon: ':warning:'
+      path: lib/data-structure/segment-tree/LazySegmentTree.cpp
+      title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
+        \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+    - icon: ':warning:'
+      path: lib/data-structure/segment-tree/SegmentTree.cpp
+      title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
+        \u30F3\u30C8\u6728"
+    - icon: ':warning:'
+      path: lib/data-structure/segment-tree/SegmentTreeBeats.cpp
+      title: SegmentTreeBeats
+  - name: lib/geometory
+    pages:
+    - icon: ':warning:'
+      path: lib/geometory/Argument.cpp
+      title: "Argument - \u504F\u89D2"
+    - icon: ':warning:'
+      path: lib/geometory/Distance.cpp
+      title: "Distance - \u8DDD\u96E2"
+    - icon: ':warning:'
+      path: lib/geometory/KdTree.cpp
+      title: "KdTree - 2\u6B21\u5143\u9802\u70B9\u5206\u985E\u6728"
+    - icon: ':warning:'
+      path: lib/geometory/RectangleWeight.cpp
+      title: "RectangleWeight - \u91CD\u307F\u3064\u304D\u77E9\u5F62"
+  - name: lib/graph
+    pages:
+    - icon: ':warning:'
+      path: lib/graph/Dijkstra.cpp
+      title: "Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9"
+    - icon: ':warning:'
+      path: lib/graph/Dinic.cpp
+      title: "Dinic - Dinic\u30D5\u30ED\u30FC"
+    - icon: ':warning:'
+      path: lib/graph/Graph.cpp
+      title: Graph
+    - icon: ':warning:'
+      path: lib/graph/MinimumDirectedClosedCircuit.cpp
+      title: "MinimumDirectedClosedCircuit - \u6709\u5411\u30B0\u30E9\u30D5\u306E\u6700\
+        \u5C0F\u9589\u8DEF\u691C\u51FA"
+    - icon: ':warning:'
+      path: lib/graph/MinimumUndirectedClosedCircuit.cpp
+      title: "MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\u306E\
+        \u6700\u5C0F\u9589\u8DEF\u691C\u51FA"
+    - icon: ':warning:'
+      path: lib/graph/PotentializedUnionFindTree.cpp
+      title: "PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\u4ED8\
+        \u304DUnionFind\u6728"
+    - icon: ':warning:'
+      path: lib/graph/StronglyConnectedComponents.cpp
+      title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
+    - icon: ':warning:'
+      path: lib/graph/Tree.cpp
+      title: "Tree - \u6728"
+    - icon: ':warning:'
+      path: lib/graph/UnionFindTree.cpp
+      title: "UnionFindTree - Union Find \u6728"
+  - name: lib/heap
+    pages:
+    - icon: ':warning:'
+      path: lib/heap/RadixHeap.cpp
+      title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
+    - icon: ':warning:'
+      path: lib/heap/RadixHeapInt.cpp
+      title: "RadixHeapInt - 32bit\u578B\u975E\u8CA0\u6574\u6570heap"
+  - name: lib/math
+    pages:
+    - icon: ':warning:'
+      path: lib/math/Combination.cpp
+      title: "Combination - \u4E8C\u9805\u4FC2\u6570"
+    - icon: ':warning:'
+      path: lib/math/CombinationMod.cpp
+      title: "CombinationMod - mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\u968E\
+        \u4E57"
+    - icon: ':warning:'
+      path: lib/math/Eratosthenes.cpp
+      title: "Eratosthenes - \u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
+    - icon: ':warning:'
+      path: lib/math/FloorSum.cpp
+      title: "FloorSum - \u76F4\u7DDA\u9818\u57DF\u306E\u683C\u5B50\u70B9\u6570"
+    - icon: ':warning:'
+      path: lib/math/FormalPowerSeries.cpp
+      title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
+    - icon: ':warning:'
+      path: lib/math/Garner.cpp
+      title: "Garner - \u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
+    - icon: ':warning:'
+      path: lib/math/Gcd.cpp
+      title: "Gcd - \u9AD8\u901FGCD"
+    - icon: ':warning:'
+      path: lib/math/GcdConvolution.cpp
+      title: "GcdConvolution - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F"
+    - icon: ':warning:'
+      path: lib/math/Matrix.cpp
+      title: "Matrix - \u884C\u5217\u6F14\u7B97"
+    - icon: ':warning:'
+      path: lib/math/NumberTheoreticalTransform.cpp
+      title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
+    - icon: ':warning:'
+      path: lib/math/Polynomial.cpp
+      title: "Polynomial - \u591A\u9805\u5F0F\u88DC\u9593"
+    - icon: ':warning:'
+      path: lib/math/Prime.cpp
+      title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\
+        \u30FC\u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A"
+    - icon: ':warning:'
+      path: lib/math/PrimitiveRoot.cpp
+      title: "PrimitiveRoot - \u539F\u59CB\u6839"
+  - name: lib/operator/abel
+    pages:
+    - icon: ':warning:'
+      path: lib/operator/abel/AbelPrefixGcdPointUpdate.cpp
+      title: AbelPrefixGcdPointUpdate
+    - icon: ':warning:'
+      path: lib/operator/abel/AbelPrefixSumPointAdd.cpp
+      title: AbelPrefixSumPointAdd
+  - name: lib/operator/monoid
+    pages:
+    - icon: ':warning:'
+      path: lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp
+      title: "MonoidRangeCompositePointUpdate - [\u533A\u9593\u4E00\u6B21\u95A2\u6570\
+        , \u70B9\u66F4\u65B0]"
+    - icon: ':warning:'
+      path: lib/operator/monoid/MonoidRangeGcdPointUpdate.cpp
+      title: "MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0]"
+    - icon: ':warning:'
+      path: lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
+      title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0]"
+    - icon: ':warning:'
+      path: lib/operator/monoid/MonoidRangeMulPointUpdate.cpp
+      title: "MonoidRangeMulPointUpdate - [\u533A\u9593\u7A4D, \u4E00\u70B9\u66F4\u65B0\
+        ]"
+    - icon: ':warning:'
+      path: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
+      title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
+        ]"
+  - name: lib/operator/monoid-lazy
+    pages:
+    - icon: ':warning:'
+      path: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
+      title: "MonoidRangeEulerTourSumRangeAdd - [\u533A\u9593\u30AA\u30A4\u30E9\u30FC\
+        \u30C4\u30A2\u30FC\u548C, \u533A\u9593\u52A0\u7B97]"
+    - icon: ':warning:'
+      path: lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp
+      title: "MonoidRangeMinRangeAdd - [\u533A\u9593min, \u533A\u9593\u52A0\u7B97]"
+    - icon: ':warning:'
+      path: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
+      title: "MonoidRangeMinRangeArithmeticUpdate - [\u533A\u9593min, \u533A\u9593\
+        \u7B49\u5DEE\u6570\u5217\u66F4\u65B0]"
+    - icon: ':warning:'
+      path: lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp
+      title: "MonoidRangeMinRangeUpdate - [\u533A\u9593min, \u533A\u9593\u66F4\u65B0\
+        ]"
+    - icon: ':warning:'
+      path: lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
+      title: "MonoidRangeSumRangeAdd - [\u533A\u9593\u548C, \u533A\u9593\u52A0\u7B97\
+        ]"
+    - icon: ':warning:'
+      path: lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
+      title: "MonoidRangeSumRangeAffine - [\u533A\u9593\u548C, \u533A\u9593\u30A2\u30D5\
+        \u30A3\u30F3\u5909\u63DB]"
+    - icon: ':warning:'
+      path: lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
+      title: "MonoidRangeSumRangeUpdate - [\u533A\u9593\u548C, \u533A\u9593\u66F4\u65B0\
+        ]"
+  - name: lib/operator/operator
+    pages:
+    - icon: ':warning:'
+      path: lib/operator/operator/ValueMax.cpp
+      title: lib/operator/operator/ValueMax.cpp
+    - icon: ':warning:'
+      path: lib/operator/operator/ValueMin.cpp
+      title: lib/operator/operator/ValueMin.cpp
+  - name: lib/optimize
+    pages:
+    - icon: ':warning:'
+      path: lib/optimize/LongestIncreasingSubsequence.cpp
+      title: LongestIncreasingSubsequence - LIS
+    - icon: ':warning:'
+      path: lib/optimize/MaximumRectangle.cpp
+      title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
+  - name: lib/string
+    pages:
+    - icon: ':warning:'
+      path: lib/string/LevenshteinDistance.cpp
+      title: "LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2"
+    - icon: ':warning:'
+      path: lib/string/LongestCommonSubsequence.cpp
+      title: LongestCommonSubsequence - LCS
+    - icon: ':warning:'
+      path: lib/string/Zalgorithm.cpp
+      title: Zalgorithm
+  - name: lib/util
+    pages:
+    - icon: ':warning:'
+      path: lib/util/FastI.cpp
+      title: FastI
+    - icon: ':warning:'
+      path: lib/util/ModInt.cpp
+      title: ModInt
+    - icon: ':warning:'
+      path: lib/util/NBase.cpp
+      title: "NBase - N\u9032\u6570"
+    - icon: ':warning:'
+      path: lib/util/RangeIndex.cpp
+      title: "RangeIndex - \u533A\u9593index"
+    - icon: ':warning:'
+      path: lib/util/RuntimeModInt.cpp
+      title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
+    - icon: ':warning:'
+      path: lib/util/Zarts.cpp
+      title: "Zarts - \u5EA7\u6A19\u5727\u7E2E"
+  - name: non-verified
+    pages:
+    - icon: ':warning:'
+      path: non-verified/BinaryColumnEchelonFormalize.cpp
+      title: non-verified/BinaryColumnEchelonFormalize.cpp
+    - icon: ':warning:'
+      path: non-verified/BipartiteMatching.cpp
+      title: non-verified/BipartiteMatching.cpp
+    - icon: ':warning:'
+      path: non-verified/Chinese_Remainder_Theorem.cpp
+      title: non-verified/Chinese_Remainder_Theorem.cpp
+    - icon: ':warning:'
+      path: non-verified/CircleIntersection.cpp
+      title: non-verified/CircleIntersection.cpp
+    - icon: ':warning:'
+      path: non-verified/Divisor.cpp
+      title: non-verified/Divisor.cpp
+    - icon: ':warning:'
+      path: non-verified/Ford_Fulkerson.cpp
+      title: non-verified/Ford_Fulkerson.cpp
+    - icon: ':warning:'
+      path: non-verified/Line_Intersection_Judge.cpp
+      title: non-verified/Line_Intersection_Judge.cpp
+    - icon: ':warning:'
+      path: non-verified/LowLink.cpp
+      title: non-verified/LowLink.cpp
+    - icon: ':warning:'
+      path: non-verified/MaximumSubarray.cpp
+      title: non-verified/MaximumSubarray.cpp
+    - icon: ':warning:'
+      path: non-verified/Maximum_Segment_Sum.cpp
+      title: non-verified/Maximum_Segment_Sum.cpp
+    - icon: ':warning:'
+      path: non-verified/Mo.cpp
+      title: non-verified/Mo.cpp
+    - icon: ':warning:'
+      path: non-verified/MontmortNumber.cpp
+      title: non-verified/MontmortNumber.cpp
+    - icon: ':warning:'
+      path: non-verified/Parser.cpp
+      title: non-verified/Parser.cpp
+    - icon: ':warning:'
+      path: non-verified/Partition_Number.cpp
+      title: non-verified/Partition_Number.cpp
+    - icon: ':warning:'
+      path: non-verified/Permutation_Mod.cpp
+      title: non-verified/Permutation_Mod.cpp
+    - icon: ':warning:'
+      path: non-verified/PrimeFactorization.cpp
+      title: non-verified/PrimeFactorization.cpp
+    - icon: ':warning:'
+      path: non-verified/Rarts.cpp
+      title: non-verified/Rarts.cpp
+    - icon: ':warning:'
+      path: non-verified/RollingHash.cpp
+      title: non-verified/RollingHash.cpp
+    - icon: ':warning:'
+      path: non-verified/SmallestEnclosingDisc.cpp
+      title: non-verified/SmallestEnclosingDisc.cpp
+    - icon: ':warning:'
+      path: non-verified/Union_Find_Tree_Persistence.cpp
+      title: non-verified/Union_Find_Tree_Persistence.cpp
+    - icon: ':warning:'
+      path: non-verified/XorShift.cpp
+      title: non-verified/XorShift.cpp
+    - icon: ':warning:'
+      path: non-verified/ZAlgorithm.cpp
+      title: non-verified/ZAlgorithm.cpp
+    - icon: ':warning:'
+      path: non-verified/ZArray.cpp
+      title: non-verified/ZArray.cpp
+    - icon: ':warning:'
+      path: non-verified/old-tree.cpp
+      title: "Tree - \u6728"
+  verificationCategories: []
+layout: toppage
+---

@@ -1,0 +1,7 @@
+ZZZ*
+*.bin
+*.ipch
+*.exe
+*.test
+.vscode/*
+.idea

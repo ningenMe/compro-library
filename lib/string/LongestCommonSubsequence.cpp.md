@@ -1,0 +1,50 @@
+---
+data:
+  _extendedDependsOn: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
+  _pathExtension: cpp
+  _verificationStatusIcon: ':warning:'
+  attributes:
+    _deprecated_at_docs: md/string/LongestCommonSubsequence.md
+    document_title: LongestCommonSubsequence - LCS
+    links: []
+  bundledCode: "#line 1 \"lib/string/LongestCommonSubsequence.cpp\"\n/*\n * @title\
+    \ LongestCommonSubsequence - LCS\n * @docs md/string/LongestCommonSubsequence.md\n\
+    \ */\nstring LongestCommonSubsequence(const string& S, const string& T){\n\tint\
+    \ N = S.size(), M = T.size();\n\tvector<int> dp((N+1)*(M+1),0);\n    for(size_t\
+    \ i = 0; i < N; i++) {\n        for(size_t j = 0; j < M; j++) {\n            dp[(i+1)*(M+1)+j+1]\
+    \ = (S[i] == T[j] ? dp[i*(M+1)+j] + 1 : max(dp[i*(M+1)+j + 1],dp[(i+1)*(M+1)+j])\
+    \ );\n        }\n    }\n    int a=N,b=M;\n\tstring res = \"\";\n\twhile(dp[a*(M+1)+b]>0)\
+    \ {\n\t\tif(S[a-1]==T[b-1]) res.push_back(S[a-1]),a--,b--;\n\t\telse (dp[(a-1)*(M+1)+b]>dp[a*(M+1)+b-1]?a:b)--;\n\
+    \t}\n    reverse(res.begin(),res.end());\n\treturn res;\n}\n"
+  code: "/*\n * @title LongestCommonSubsequence - LCS\n * @docs md/string/LongestCommonSubsequence.md\n\
+    \ */\nstring LongestCommonSubsequence(const string& S, const string& T){\n\tint\
+    \ N = S.size(), M = T.size();\n\tvector<int> dp((N+1)*(M+1),0);\n    for(size_t\
+    \ i = 0; i < N; i++) {\n        for(size_t j = 0; j < M; j++) {\n            dp[(i+1)*(M+1)+j+1]\
+    \ = (S[i] == T[j] ? dp[i*(M+1)+j] + 1 : max(dp[i*(M+1)+j + 1],dp[(i+1)*(M+1)+j])\
+    \ );\n        }\n    }\n    int a=N,b=M;\n\tstring res = \"\";\n\twhile(dp[a*(M+1)+b]>0)\
+    \ {\n\t\tif(S[a-1]==T[b-1]) res.push_back(S[a-1]),a--,b--;\n\t\telse (dp[(a-1)*(M+1)+b]>dp[a*(M+1)+b-1]?a:b)--;\n\
+    \t}\n    reverse(res.begin(),res.end());\n\treturn res;\n}\n"
+  dependsOn: []
+  isVerificationFile: false
+  path: lib/string/LongestCommonSubsequence.cpp
+  requiredBy: []
+  timestamp: '2023-05-12 01:06:13+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: lib/string/LongestCommonSubsequence.cpp
+layout: document
+redirect_from:
+- /library/lib/string/LongestCommonSubsequence.cpp
+- /library/lib/string/LongestCommonSubsequence.cpp.html
+title: LongestCommonSubsequence - LCS
+---
+### LongestCommonSubsequence
+- 文字列Sと文字列Tの最小共通部分列を求める
+- 
+
+### メソッド
+- string LongestCommonSubsequence(const string& S, const string& T)
+  - SのサイズをN,TのサイズをMとして $O(NM)$
