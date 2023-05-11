@@ -6,9 +6,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-hld-path.test.cpp
     title: test/graph/Tree-hld-path.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/math/Matrix-det.test.cpp
+    title: test/math/Matrix-det.test.cpp
+  - icon: ':x:'
+    path: test/math/Matrix-pow.test.cpp
+    title: test/math/Matrix-pow.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/math/Matrix.md
     document_title: "Matrix - \u884C\u5217\u6F14\u7B97"
@@ -85,8 +91,10 @@ data:
   path: lib/math/Matrix.cpp
   requiredBy: []
   timestamp: '2021-09-21 19:35:58+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/math/Matrix-pow.test.cpp
+  - test/math/Matrix-det.test.cpp
   - test/graph/Tree-hld-path.test.cpp
 documentation_of: lib/math/Matrix.cpp
 layout: document

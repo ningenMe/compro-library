@@ -43,7 +43,7 @@ redirect_from:
 - /library/lib/util/FastI.cpp.html
 title: FastI
 ---
-### ModInt
+### FastI
 - 自作の高速Input
 - cinより速いはずだけど、上位層に比べると全然速くない
 

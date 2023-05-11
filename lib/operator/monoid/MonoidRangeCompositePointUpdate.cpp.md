@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
+    title: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/Tree-hld-vertex-3.test.cpp
     title: test/graph/Tree-hld-vertex-3.test.cpp
   _isVerificationFailed: false
@@ -38,6 +41,7 @@ data:
   timestamp: '2021-04-26 17:13:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
   - test/graph/Tree-hld-vertex-3.test.cpp
 documentation_of: lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp
 layout: document

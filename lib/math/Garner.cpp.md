@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/math/Garner.test.cpp
+    title: test/math/Garner.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/math/Garner.md
     document_title: "Garner - \u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
@@ -72,8 +75,9 @@ data:
   path: lib/math/Garner.cpp
   requiredBy: []
   timestamp: '2021-09-21 19:35:58+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/math/Garner.test.cpp
 documentation_of: lib/math/Garner.cpp
 layout: document
 redirect_from:

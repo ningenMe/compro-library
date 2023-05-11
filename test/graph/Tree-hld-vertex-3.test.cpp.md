@@ -15,7 +15,7 @@ data:
     path: lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp
     title: "MonoidRangeCompositePointUpdate - [\u533A\u9593\u4E00\u6B21\u95A2\u6570\
       , \u70B9\u66F4\u65B0]"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []

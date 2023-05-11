@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
+    title: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/operator/monoid-lazy/MonoidRangeMinRangeAdd.md
     document_title: "MonoidRangeMinRangeAdd - [\u533A\u9593min, \u533A\u9593\u52A0\
@@ -35,8 +38,9 @@ data:
   path: lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp
   requiredBy: []
   timestamp: '2021-05-02 12:04:02+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
 documentation_of: lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp
 layout: document
 redirect_from:

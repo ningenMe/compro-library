@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: lib/data-structure/binary-indexed-tree
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
       title: BinaryIndexedTree - BIT
     - icon: ':warning:'
@@ -69,7 +69,7 @@ data:
       title: WaveletMatrix
   - name: lib/data-structure/range-query
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/range-query/RangeInversionQuery.cpp
       title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
     - icon: ':warning:'
@@ -80,7 +80,7 @@ data:
       title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
   - name: lib/data-structure/segment-tree
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/segment-tree/DynamicSegmentTree.cpp
       title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
         \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -92,7 +92,7 @@ data:
       path: lib/data-structure/segment-tree/SegmentTree.cpp
       title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
         \u30F3\u30C8\u6728"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/segment-tree/SegmentTreeBeats.cpp
       title: SegmentTreeBeats
   - name: lib/geometory
@@ -154,38 +154,38 @@ data:
     - icon: ':warning:'
       path: lib/math/Combination.cpp
       title: "Combination - \u4E8C\u9805\u4FC2\u6570"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/math/CombinationMod.cpp
       title: "CombinationMod - mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\u968E\
         \u4E57"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/math/Eratosthenes.cpp
       title: "Eratosthenes - \u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/math/FloorSum.cpp
       title: "FloorSum - \u76F4\u7DDA\u9818\u57DF\u306E\u683C\u5B50\u70B9\u6570"
-    - icon: ':warning:'
+    - icon: ':question:'
       path: lib/math/FormalPowerSeries.cpp
       title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: lib/math/Garner.cpp
       title: "Garner - \u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
-    - icon: ':warning:'
+    - icon: ':question:'
       path: lib/math/Gcd.cpp
       title: "Gcd - \u9AD8\u901FGCD"
     - icon: ':warning:'
       path: lib/math/GcdConvolution.cpp
       title: "GcdConvolution - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
-    - icon: ':warning:'
+    - icon: ':question:'
       path: lib/math/NumberTheoreticalTransform.cpp
       title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
     - icon: ':warning:'
       path: lib/math/Polynomial.cpp
       title: "Polynomial - \u591A\u9805\u5F0F\u88DC\u9593"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: lib/math/Prime.cpp
       title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\
         \u30FC\u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A"
@@ -197,7 +197,7 @@ data:
     - icon: ':warning:'
       path: lib/operator/abel/AbelPrefixGcdPointUpdate.cpp
       title: AbelPrefixGcdPointUpdate
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/operator/abel/AbelPrefixSumPointAdd.cpp
       title: AbelPrefixSumPointAdd
   - name: lib/operator/monoid
@@ -206,10 +206,10 @@ data:
       path: lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp
       title: "MonoidRangeCompositePointUpdate - [\u533A\u9593\u4E00\u6B21\u95A2\u6570\
         , \u70B9\u66F4\u65B0]"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid/MonoidRangeGcdPointUpdate.cpp
       title: "MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0]"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
       title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0]"
     - icon: ':heavy_check_mark:'
@@ -226,7 +226,7 @@ data:
       path: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
       title: "MonoidRangeEulerTourSumRangeAdd - [\u533A\u9593\u30AA\u30A4\u30E9\u30FC\
         \u30C4\u30A2\u30FC\u548C, \u533A\u9593\u52A0\u7B97]"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp
       title: "MonoidRangeMinRangeAdd - [\u533A\u9593min, \u533A\u9593\u52A0\u7B97]"
     - icon: ':warning:'
@@ -245,7 +245,7 @@ data:
       path: lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
       title: "MonoidRangeSumRangeAffine - [\u533A\u9593\u548C, \u533A\u9593\u30A2\u30D5\
         \u30A3\u30F3\u5909\u63DB]"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
       title: "MonoidRangeSumRangeUpdate - [\u533A\u9593\u548C, \u533A\u9593\u66F4\u65B0\
         ]"
@@ -281,7 +281,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/util/FastI.cpp
       title: FastI
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/util/ModInt.cpp
       title: ModInt
     - icon: ':heavy_check_mark:'
@@ -371,6 +371,46 @@ data:
       path: non-verified/old-tree.cpp
       title: "Tree - \u6728"
   verificationCategories:
+  - name: test/data-structure/range-query
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/range-query/RangeInversionQuery.test.cpp
+      title: test/data-structure/range-query/RangeInversionQuery.test.cpp
+  - name: test/data-structure/segment-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+      title: test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+      title: test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
+      title: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
+      title: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+      title: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
+      title: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
+      title: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
+      title: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+      title: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/SegmentTreeBeats-1.test.cpp
+      title: test/data-structure/segment-tree/SegmentTreeBeats-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/segment-tree/SegmentTreeBeats-2.test.cpp
+      title: test/data-structure/segment-tree/SegmentTreeBeats-2.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
@@ -463,6 +503,68 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/heap/RadixHeapInt.test.cpp
       title: test/heap/RadixHeapInt.test.cpp
+  - name: test/math
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/math/CombinationMod-binom.test.cpp
+      title: test/math/CombinationMod-binom.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/CombinationMod-factorial.test.cpp
+      title: test/math/CombinationMod-factorial.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/Eratosthenes.test.cpp
+      title: test/math/Eratosthenes.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FloorSum.test.cpp
+      title: test/math/FloorSum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FormalPowerSeries-exp.test.cpp
+      title: test/math/FormalPowerSeries-exp.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FormalPowerSeries-interpolation.test.cpp
+      title: test/math/FormalPowerSeries-interpolation.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/FormalPowerSeries-inv.test.cpp
+      title: test/math/FormalPowerSeries-inv.test.cpp
+    - icon: ':x:'
+      path: test/math/FormalPowerSeries-log.test.cpp
+      title: test/math/FormalPowerSeries-log.test.cpp
+    - icon: ':x:'
+      path: test/math/FormalPowerSeries-multi-eval.test.cpp
+      title: test/math/FormalPowerSeries-multi-eval.test.cpp
+    - icon: ':x:'
+      path: test/math/FormalPowerSeries-nth.test.cpp
+      title: test/math/FormalPowerSeries-nth.test.cpp
+    - icon: ':x:'
+      path: test/math/FormalPowerSeries-pow.test.cpp
+      title: test/math/FormalPowerSeries-pow.test.cpp
+    - icon: ':x:'
+      path: test/math/Garner.test.cpp
+      title: test/math/Garner.test.cpp
+    - icon: ':x:'
+      path: test/math/Matrix-det.test.cpp
+      title: test/math/Matrix-det.test.cpp
+    - icon: ':x:'
+      path: test/math/Matrix-pow.test.cpp
+      title: test/math/Matrix-pow.test.cpp
+    - icon: ':x:'
+      path: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
+      title: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
+    - icon: ':x:'
+      path: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
+      title: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
+    - icon: ':x:'
+      path: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
+      title: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
+    - icon: ':x:'
+      path: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
+      title: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
+    - icon: ':x:'
+      path: test/math/Prime-miller-rabin.test.cpp
+      title: test/math/Prime-miller-rabin.test.cpp
+    - icon: ':x:'
+      path: test/math/Prime-rho.test.cpp
+      title: test/math/Prime-rho.test.cpp
   - name: test/optimize
     pages:
     - icon: ':heavy_check_mark:'

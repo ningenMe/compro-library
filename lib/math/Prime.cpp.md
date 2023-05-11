@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/math/Prime-miller-rabin.test.cpp
+    title: test/math/Prime-miller-rabin.test.cpp
+  - icon: ':x:'
+    path: test/math/Prime-rho.test.cpp
+    title: test/math/Prime-rho.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/math/Prime.md
     document_title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\
@@ -65,8 +71,10 @@ data:
   path: lib/math/Prime.cpp
   requiredBy: []
   timestamp: '2020-09-26 16:29:44+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/math/Prime-rho.test.cpp
+  - test/math/Prime-miller-rabin.test.cpp
 documentation_of: lib/math/Prime.cpp
 layout: document
 redirect_from:

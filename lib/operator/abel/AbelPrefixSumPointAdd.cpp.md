@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/range-query/RangeInversionQuery.test.cpp
+    title: test/data-structure/range-query/RangeInversionQuery.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/operator/abel/AbelPrefixSumPointAdd.md
     document_title: AbelPrefixSumPointAdd
@@ -28,8 +31,9 @@ data:
   path: lib/operator/abel/AbelPrefixSumPointAdd.cpp
   requiredBy: []
   timestamp: '2021-04-26 09:09:47+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data-structure/range-query/RangeInversionQuery.test.cpp
 documentation_of: lib/operator/abel/AbelPrefixSumPointAdd.cpp
 layout: document
 redirect_from:

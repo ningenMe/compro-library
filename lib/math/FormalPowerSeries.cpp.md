@@ -2,10 +2,31 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-exp.test.cpp
+    title: test/math/FormalPowerSeries-exp.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-interpolation.test.cpp
+    title: test/math/FormalPowerSeries-interpolation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/FormalPowerSeries-inv.test.cpp
+    title: test/math/FormalPowerSeries-inv.test.cpp
+  - icon: ':x:'
+    path: test/math/FormalPowerSeries-log.test.cpp
+    title: test/math/FormalPowerSeries-log.test.cpp
+  - icon: ':x:'
+    path: test/math/FormalPowerSeries-multi-eval.test.cpp
+    title: test/math/FormalPowerSeries-multi-eval.test.cpp
+  - icon: ':x:'
+    path: test/math/FormalPowerSeries-nth.test.cpp
+    title: test/math/FormalPowerSeries-nth.test.cpp
+  - icon: ':x:'
+    path: test/math/FormalPowerSeries-pow.test.cpp
+    title: test/math/FormalPowerSeries-pow.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/math/FormalPowerSeries.md
     document_title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
@@ -199,8 +220,15 @@ data:
   path: lib/math/FormalPowerSeries.cpp
   requiredBy: []
   timestamp: '2021-09-21 19:35:58+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/math/FormalPowerSeries-exp.test.cpp
+  - test/math/FormalPowerSeries-pow.test.cpp
+  - test/math/FormalPowerSeries-interpolation.test.cpp
+  - test/math/FormalPowerSeries-multi-eval.test.cpp
+  - test/math/FormalPowerSeries-inv.test.cpp
+  - test/math/FormalPowerSeries-log.test.cpp
+  - test/math/FormalPowerSeries-nth.test.cpp
 documentation_of: lib/math/FormalPowerSeries.cpp
 layout: document
 redirect_from:

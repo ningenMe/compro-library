@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
+    title: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/operator/monoid/MonoidRangeMinPointUpdate.md
     document_title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0\
@@ -31,8 +34,9 @@ data:
   path: lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
   requiredBy: []
   timestamp: '2021-04-26 17:13:35+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
 documentation_of: lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
 layout: document
 redirect_from:

@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/math/CombinationMod-binom.test.cpp
+    title: test/math/CombinationMod-binom.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/math/CombinationMod-factorial.test.cpp
+    title: test/math/CombinationMod-factorial.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/math/CombinationMod.md
     document_title: "CombinationMod - mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\
@@ -39,8 +45,10 @@ data:
   path: lib/math/CombinationMod.cpp
   requiredBy: []
   timestamp: '2021-09-21 19:35:58+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/math/CombinationMod-binom.test.cpp
+  - test/math/CombinationMod-factorial.test.cpp
 documentation_of: lib/math/CombinationMod.cpp
 layout: document
 redirect_from:
