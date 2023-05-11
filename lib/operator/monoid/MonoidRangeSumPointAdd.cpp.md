@@ -4,6 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+    title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+    title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
     title: test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -48,6 +54,8 @@ data:
   - test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
   - test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
   - test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
+  - test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+  - test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
   - test/graph/Tree-hld-vertex-2.test.cpp
 documentation_of: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
 layout: document

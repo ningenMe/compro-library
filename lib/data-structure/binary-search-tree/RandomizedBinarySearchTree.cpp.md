@@ -2,10 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+    title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+    title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+    title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/data-structure/binary-search-tree/RandomizedBinarySearchTree.md
     document_title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
@@ -149,8 +158,11 @@ data:
   path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
   requiredBy: []
   timestamp: '2021-09-21 03:30:04+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/data-structure/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+  - test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+  - test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
 documentation_of: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
 layout: document
 redirect_from:

@@ -6,23 +6,23 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
       title: BinaryIndexedTree - BIT
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
       title: "BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F32\u6B21\u5143\
         BIT"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp
       title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
   - name: lib/data-structure/binary-search-tree
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
       title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
         \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
       title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
       title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
         \u6728\u5217"
@@ -233,7 +233,7 @@ data:
       path: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
       title: "MonoidRangeMinRangeArithmeticUpdate - [\u533A\u9593min, \u533A\u9593\
         \u7B49\u5DEE\u6570\u5217\u66F4\u65B0]"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp
       title: "MonoidRangeMinRangeUpdate - [\u533A\u9593min, \u533A\u9593\u66F4\u65B0\
         ]"
@@ -241,7 +241,7 @@ data:
       path: lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
       title: "MonoidRangeSumRangeAdd - [\u533A\u9593\u548C, \u533A\u9593\u52A0\u7B97\
         ]"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
       title: "MonoidRangeSumRangeAffine - [\u533A\u9593\u548C, \u533A\u9593\u30A2\u30D5\
         \u30A3\u30F3\u5909\u63DB]"
@@ -371,6 +371,49 @@ data:
       path: non-verified/old-tree.cpp
       title: "Tree - \u6728"
   verificationCategories:
+  - name: test/data-structure/binary-indexed-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+      title: test/data-structure/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+      title: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+      title: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
+      title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
+  - name: test/data-structure/binary-search-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+      title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+      title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+      title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+      title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
   - name: test/data-structure/range-query
     pages:
     - icon: ':heavy_check_mark:'
