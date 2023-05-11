@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/graph/PotentializedUnionFindTree.test.cpp
+    title: test/graph/PotentializedUnionFindTree.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/graph/PotentializedUnionFindTree.md
     document_title: "PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\
@@ -59,8 +62,9 @@ data:
   path: lib/graph/PotentializedUnionFindTree.cpp
   requiredBy: []
   timestamp: '2020-10-25 04:45:47+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/graph/PotentializedUnionFindTree.test.cpp
 documentation_of: lib/graph/PotentializedUnionFindTree.cpp
 layout: document
 redirect_from:

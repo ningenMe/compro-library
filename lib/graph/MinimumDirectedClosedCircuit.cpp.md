@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/graph/MinimumDirectedClosedCircuit.test.cpp
+    title: test/graph/MinimumDirectedClosedCircuit.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/graph/MinimumDirectedClosedCircuit.md
     document_title: "MinimumDirectedClosedCircuit - \u6709\u5411\u30B0\u30E9\u30D5\
@@ -75,8 +78,9 @@ data:
   path: lib/graph/MinimumDirectedClosedCircuit.cpp
   requiredBy: []
   timestamp: '2021-09-21 09:57:46+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/graph/MinimumDirectedClosedCircuit.test.cpp
 documentation_of: lib/graph/MinimumDirectedClosedCircuit.cpp
 layout: document
 redirect_from:

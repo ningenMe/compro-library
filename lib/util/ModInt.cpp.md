@@ -4,6 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-path.test.cpp
+    title: test/graph/Tree-hld-path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-3.test.cpp
+    title: test/graph/Tree-hld-vertex-3.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/util/ModInt.test.cpp
     title: test/util/ModInt.test.cpp
   _isVerificationFailed: false
@@ -94,6 +100,8 @@ data:
   timestamp: '2020-09-26 17:01:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/graph/Tree-hld-path.test.cpp
+  - test/graph/Tree-hld-vertex-3.test.cpp
   - test/util/ModInt.test.cpp
 documentation_of: lib/util/ModInt.cpp
 layout: document

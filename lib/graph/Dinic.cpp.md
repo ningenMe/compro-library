@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Dinic.test.cpp
+    title: test/graph/Dinic.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/graph/Dinic.md
     document_title: "Dinic - Dinic\u30D5\u30ED\u30FC"
@@ -68,8 +71,9 @@ data:
   path: lib/graph/Dinic.cpp
   requiredBy: []
   timestamp: '2021-09-21 09:57:46+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/graph/Dinic.test.cpp
 documentation_of: lib/graph/Dinic.cpp
 layout: document
 redirect_from:

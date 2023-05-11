@@ -2,10 +2,49 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/graph/MinimumDirectedClosedCircuit.test.cpp
+    title: test/graph/MinimumDirectedClosedCircuit.test.cpp
+  - icon: ':x:'
+    path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
+    title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-diameter.test.cpp
+    title: test/graph/Tree-diameter.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-eulertour.test.cpp
+    title: test/graph/Tree-eulertour.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-path.test.cpp
+    title: test/graph/Tree-hld-path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-1.test.cpp
+    title: test/graph/Tree-hld-vertex-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-2.test.cpp
+    title: test/graph/Tree-hld-vertex-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-3.test.cpp
+    title: test/graph/Tree-hld-vertex-3.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-lca-idx.test.cpp
+    title: test/graph/Tree-lca-idx.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-lca.test.cpp
+    title: test/graph/Tree-lca.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-parent.test.cpp
+    title: test/graph/Tree-parent.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-rerooting.test.cpp
+    title: test/graph/Tree-rerooting.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-size.test.cpp
+    title: test/graph/Tree-size.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/graph/Graph.md
     document_title: Graph
@@ -43,8 +82,21 @@ data:
   path: lib/graph/Graph.cpp
   requiredBy: []
   timestamp: '2020-11-27 17:19:55+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/graph/Tree-diameter.test.cpp
+  - test/graph/Tree-lca-idx.test.cpp
+  - test/graph/Tree-eulertour.test.cpp
+  - test/graph/Tree-rerooting.test.cpp
+  - test/graph/Tree-hld-path.test.cpp
+  - test/graph/Tree-hld-vertex-3.test.cpp
+  - test/graph/Tree-hld-vertex-2.test.cpp
+  - test/graph/MinimumUndirectedClosedCircuit.test.cpp
+  - test/graph/MinimumDirectedClosedCircuit.test.cpp
+  - test/graph/Tree-lca.test.cpp
+  - test/graph/Tree-size.test.cpp
+  - test/graph/Tree-parent.test.cpp
+  - test/graph/Tree-hld-vertex-1.test.cpp
 documentation_of: lib/graph/Graph.cpp
 layout: document
 redirect_from:

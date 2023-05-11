@@ -2,10 +2,43 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-diameter.test.cpp
+    title: test/graph/Tree-diameter.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-eulertour.test.cpp
+    title: test/graph/Tree-eulertour.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-path.test.cpp
+    title: test/graph/Tree-hld-path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-1.test.cpp
+    title: test/graph/Tree-hld-vertex-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-2.test.cpp
+    title: test/graph/Tree-hld-vertex-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-3.test.cpp
+    title: test/graph/Tree-hld-vertex-3.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-lca-idx.test.cpp
+    title: test/graph/Tree-lca-idx.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-lca.test.cpp
+    title: test/graph/Tree-lca.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-parent.test.cpp
+    title: test/graph/Tree-parent.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-rerooting.test.cpp
+    title: test/graph/Tree-rerooting.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-size.test.cpp
+    title: test/graph/Tree-size.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/graph/Tree.md
     document_title: "Tree - \u6728"
@@ -355,8 +388,19 @@ data:
   path: lib/graph/Tree.cpp
   requiredBy: []
   timestamp: '2021-09-21 09:57:46+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/graph/Tree-diameter.test.cpp
+  - test/graph/Tree-lca-idx.test.cpp
+  - test/graph/Tree-eulertour.test.cpp
+  - test/graph/Tree-rerooting.test.cpp
+  - test/graph/Tree-hld-path.test.cpp
+  - test/graph/Tree-hld-vertex-3.test.cpp
+  - test/graph/Tree-hld-vertex-2.test.cpp
+  - test/graph/Tree-lca.test.cpp
+  - test/graph/Tree-size.test.cpp
+  - test/graph/Tree-parent.test.cpp
+  - test/graph/Tree-hld-vertex-1.test.cpp
 documentation_of: lib/graph/Tree.cpp
 layout: document
 redirect_from:

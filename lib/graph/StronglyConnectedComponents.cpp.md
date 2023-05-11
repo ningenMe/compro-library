@@ -2,10 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/graph/StronglyConnectedComponents-1.test.cpp
+    title: test/graph/StronglyConnectedComponents-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/StronglyConnectedComponents-2.test.cpp
+    title: test/graph/StronglyConnectedComponents-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/StronglyConnectedComponents-2sat.test.cpp
+    title: test/graph/StronglyConnectedComponents-2sat.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/graph/StronglyConnectedComponents.md
     document_title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\
@@ -79,8 +88,11 @@ data:
   path: lib/graph/StronglyConnectedComponents.cpp
   requiredBy: []
   timestamp: '2021-09-21 09:57:46+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/graph/StronglyConnectedComponents-2sat.test.cpp
+  - test/graph/StronglyConnectedComponents-1.test.cpp
+  - test/graph/StronglyConnectedComponents-2.test.cpp
 documentation_of: lib/graph/StronglyConnectedComponents.cpp
 layout: document
 redirect_from:

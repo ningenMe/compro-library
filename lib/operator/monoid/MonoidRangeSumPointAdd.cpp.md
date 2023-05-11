@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-2.test.cpp
+    title: test/graph/Tree-hld-vertex-2.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/operator/monoid/MonoidRangeSumPointAdd.md
     document_title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\
@@ -31,8 +34,9 @@ data:
   path: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
   requiredBy: []
   timestamp: '2021-05-01 14:31:59+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/graph/Tree-hld-vertex-2.test.cpp
 documentation_of: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
 layout: document
 redirect_from:

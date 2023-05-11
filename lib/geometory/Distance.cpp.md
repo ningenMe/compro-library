@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/geometory/Distance-line.test.cpp
     title: test/geometory/Distance-line.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Dijkstra.test.cpp
+    title: test/graph/Dijkstra.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -44,6 +47,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/geometory/Distance-line.test.cpp
+  - test/graph/Dijkstra.test.cpp
 documentation_of: lib/geometory/Distance.cpp
 layout: document
 redirect_from:
