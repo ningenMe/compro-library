@@ -25,18 +25,18 @@ data:
     \    inline static void read(long long &x) {readint<long long>(x);}\n};\n#line\
     \ 6 \"test/util/FastI-readint.test.cpp\"\n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n\
     \    int t; FastI::read(t);\n    while(t--) {\n        long long x,y; FastI::read(x);FastI::read(y);\n\
-    \        cout << x + y << \"\\n\";\n    }\n    return 0;\n}\n"
+    \        cout << x+y << \"\\n\";\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\n\n#include\
     \ <iostream>\nusing namespace std;\n#include \"../../lib/util/FastI.cpp\"\n\n\
     int main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int t; FastI::read(t);\n\
     \    while(t--) {\n        long long x,y; FastI::read(x);FastI::read(y);\n   \
-    \     cout << x + y << \"\\n\";\n    }\n    return 0;\n}\n"
+    \     cout << x+y << \"\\n\";\n    }\n    return 0;\n}\n"
   dependsOn:
   - lib/util/FastI.cpp
   isVerificationFile: true
   path: test/util/FastI-readint.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:09:45+09:00'
+  timestamp: '2023-05-12 02:31:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/util/FastI-readint.test.cpp
