@@ -67,6 +67,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/data-structure/WaveletMatrix.cpp
       title: WaveletMatrix
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/data-structure/WordSizeTreeSet.cpp
+      title: WordSizeTreeSet
   - name: lib/data-structure/range-query
     pages:
     - icon: ':heavy_check_mark:'
@@ -463,6 +466,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/data-structure/WaveletMatrix-quantile-2.test.cpp
       title: test/data-structure/data-structure/WaveletMatrix-quantile-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/data-structure/WordSizeTreeSet.test.cpp
+      title: test/data-structure/data-structure/WordSizeTreeSet.test.cpp
   - name: test/data-structure/range-query
     pages:
     - icon: ':heavy_check_mark:'
