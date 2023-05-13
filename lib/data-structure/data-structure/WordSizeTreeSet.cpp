@@ -1,5 +1,5 @@
 /*
- * @title WordSizeTreeSet
+ * @title WordSizeTreeSet - 64分木
  * @docs md/data-structure/data-structure/WordSizeTreeSet.md
  */
 class WordSizeTreeSet {
