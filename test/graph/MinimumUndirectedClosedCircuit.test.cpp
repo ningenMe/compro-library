@@ -8,6 +8,7 @@
 #include <queue>
 #include <map>
 #include <stack>
+#include <array>
 
 using namespace std;
 #include "../../lib/graph/Graph.cpp"

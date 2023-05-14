@@ -7,6 +7,7 @@
 #include <set>
 #include <queue>
 #include <map>
+#include <array>
 
 using namespace std;
 #include "../../lib/graph/Graph.cpp"
