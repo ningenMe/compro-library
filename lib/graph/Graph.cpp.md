@@ -3,10 +3,10 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/graph/MinimumDirectedClosedCircuit.test.cpp
     title: test/graph/MinimumDirectedClosedCircuit.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
     title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
   - icon: ':heavy_check_mark:'
@@ -42,9 +42,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-size.test.cpp
     title: test/graph/Tree-size.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/graph/Graph.md
     document_title: Graph
@@ -82,7 +82,7 @@ data:
   path: lib/graph/Graph.cpp
   requiredBy: []
   timestamp: '2020-11-27 17:19:55+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/Tree-diameter.test.cpp
   - test/graph/Tree-lca-idx.test.cpp

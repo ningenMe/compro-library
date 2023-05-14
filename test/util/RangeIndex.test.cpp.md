@@ -32,26 +32,27 @@ data:
     \n/*\n * @title UnionFindTree - Union Find \u6728\n * @docs md/graph/UnionFindTree.md\n\
     \ */\nclass UnionFindTree {\n    vector<int> parent,maxi,mini;\n    inline int\
     \ root(int n) {\n        return (parent[n]<0?n:parent[n] = root(parent[n]));\n\
-    \    }\npublic:\n    UnionFindTree(int N = 1) : parent(N,-1),maxi(N),mini(N){\n\
+    \    }\npublic:\n    UnionFindTree(const int N = 1) : parent(N,-1),maxi(N),mini(N){\n\
     \        iota(maxi.begin(),maxi.end(),0);\n        iota(mini.begin(),mini.end(),0);\n\
-    \    }\n    inline bool connected(int n, int m) {\n        return root(n) == root(m);\n\
-    \    }\n    inline void merge(int n, int m) {\n        n = root(n);\n        m\
-    \ = root(m);\n        if (n == m) return;\n        if(parent[n]>parent[m]) swap(n,\
-    \ m);\n        parent[n] += parent[m];\n        parent[m] = n;\n        maxi[n]\
-    \ = std::max(maxi[n],maxi[m]);\n        mini[n] = std::min(mini[n],mini[m]);\n\
-    \    }\n    inline int min(int n) {\n        return mini[root(n)];\n    }\n  \
-    \  inline int max(int n) {\n        return maxi[root(n)];\n    }\n    inline int\
-    \ size(int n){\n        return (-parent[root(n)]);\n    }\n    inline int operator[](int\
-    \ n) {\n        return root(n);\n    }\n    inline void print() {\n        for(int\
-    \ i = 0; i < parent.size(); ++i) cout << root(i) << \" \";\n        cout << endl;\n\
-    \    }\n};\n#line 11 \"test/util/RangeIndex.test.cpp\"\n\n\nint main() {\n   \
-    \ cin.tie(0);ios::sync_with_stdio(false);\n    long long N,A,B; cin >> N >> A\
-    \ >> B;\n    vector<long long> X(N);\n    for(int i = 0; i < N; ++i) cin >> X[i];\n\
-    \    X.push_back(1e10);\n    RangeIndex ri(N);\n    UnionFindTree uf(ri.size());\n\
-    \    vector<int> st(ri.size(),0);\n    for(int i = 0; i < N; ++i) {\n        int\
-    \ l = lower_bound(X.begin(),X.end(),X[i]+A)-X.begin();\n        int r = upper_bound(X.begin(),X.end(),X[i]+B)-X.begin();\n\
-    \        for(auto& e:ri.range(l,r)) {\n            st[e]=1;\n            uf.merge(ri[i],e);\n\
-    \        }\n    }\n    for(int i = 0; i < N; ++i) {\n        for(auto& e:ri.include_range(i))\
+    \    }\n    inline bool connected(const int n, const int m) {\n        return\
+    \ root(n) == root(m);\n    }\n    inline void merge(int n,int m) {\n        n\
+    \ = root(n);\n        m = root(m);\n        if (n == m) return;\n        if(parent[n]>parent[m])\
+    \ swap(n, m);\n        parent[n] += parent[m];\n        parent[m] = n;\n     \
+    \   maxi[n] = std::max(maxi[n],maxi[m]);\n        mini[n] = std::min(mini[n],mini[m]);\n\
+    \    }\n    inline int min(const int n) {\n        return mini[root(n)];\n   \
+    \ }\n    inline int max(const int n) {\n        return maxi[root(n)];\n    }\n\
+    \    inline int size(const int n){\n        return (-parent[root(n)]);\n    }\n\
+    \    inline int operator[](const int n) {\n        return root(n);\n    }\n  \
+    \  inline void print() {\n        for(int i = 0; i < parent.size(); ++i) cout\
+    \ << root(i) << \" \";\n        cout << endl;\n    }\n};\n#line 11 \"test/util/RangeIndex.test.cpp\"\
+    \n\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    long long\
+    \ N,A,B; cin >> N >> A >> B;\n    vector<long long> X(N);\n    for(int i = 0;\
+    \ i < N; ++i) cin >> X[i];\n    X.push_back(1e10);\n    RangeIndex ri(N);\n  \
+    \  UnionFindTree uf(ri.size());\n    vector<int> st(ri.size(),0);\n    for(int\
+    \ i = 0; i < N; ++i) {\n        int l = lower_bound(X.begin(),X.end(),X[i]+A)-X.begin();\n\
+    \        int r = upper_bound(X.begin(),X.end(),X[i]+B)-X.begin();\n        for(auto&\
+    \ e:ri.range(l,r)) {\n            st[e]=1;\n            uf.merge(ri[i],e);\n \
+    \       }\n    }\n    for(int i = 0; i < N; ++i) {\n        for(auto& e:ri.include_range(i))\
     \ if(st[e]) uf.merge(ri[i],e);\n    }\n    vector<int> cnt(ri.size(),0);\n   \
     \ for(int i = 0; i < N; ++i) {\n        cnt[uf[ri[i]]]++;\n    }\n    for(int\
     \ i = 0; i < N; ++i) {\n        cout << cnt[uf[ri[i]]] << endl;\n    }\n\n   \
@@ -77,7 +78,7 @@ data:
   isVerificationFile: true
   path: test/util/RangeIndex.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 01:09:45+09:00'
+  timestamp: '2023-05-15 02:35:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/util/RangeIndex.test.cpp

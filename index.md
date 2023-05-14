@@ -69,7 +69,7 @@ data:
       title: WaveletMatrix
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/data-structure/WordSizeTreeSet.cpp
-      title: WordSizeTreeSet
+      title: "WordSizeTreeSet - 64\u5206\u6728"
   - name: lib/data-structure/range-query
     pages:
     - icon: ':heavy_check_mark:'
@@ -120,14 +120,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/graph/Dinic.cpp
       title: "Dinic - Dinic\u30D5\u30ED\u30FC"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/graph/Graph.cpp
       title: Graph
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/graph/MinimumDirectedClosedCircuit.cpp
       title: "MinimumDirectedClosedCircuit - \u6709\u5411\u30B0\u30E9\u30D5\u306E\u6700\
         \u5C0F\u9589\u8DEF\u691C\u51FA"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/graph/MinimumUndirectedClosedCircuit.cpp
       title: "MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\u306E\
         \u6700\u5C0F\u9589\u8DEF\u691C\u51FA"
@@ -146,7 +146,10 @@ data:
       title: "UnionFindTree - Union Find \u6728"
   - name: lib/heap
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
+      path: lib/heap/DoubleEndedPriorityQuere.cpp
+      title: "DoubleEndedPriorityQuere - \u4E21\u7AEFpriority queue"
+    - icon: ':heavy_check_mark:'
       path: lib/heap/RadixHeap.cpp
       title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
     - icon: ':heavy_check_mark:'
@@ -539,10 +542,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/Dinic.test.cpp
       title: test/graph/Dinic.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/MinimumDirectedClosedCircuit.test.cpp
       title: test/graph/MinimumDirectedClosedCircuit.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
       title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
     - icon: ':heavy_check_mark:'
@@ -595,6 +598,9 @@ data:
       title: test/graph/UnionFindTree.test.cpp
   - name: test/heap
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/heap/DoubleEndedPriorityQuere.test.cpp
+      title: test/heap/DoubleEndedPriorityQuere.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/heap/RadixHeap.test.cpp
       title: test/heap/RadixHeap.test.cpp

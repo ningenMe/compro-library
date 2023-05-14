@@ -23,21 +23,22 @@ data:
     \ namespace std;\n#line 1 \"lib/graph/UnionFindTree.cpp\"\n/*\n * @title UnionFindTree\
     \ - Union Find \u6728\n * @docs md/graph/UnionFindTree.md\n */\nclass UnionFindTree\
     \ {\n    vector<int> parent,maxi,mini;\n    inline int root(int n) {\n       \
-    \ return (parent[n]<0?n:parent[n] = root(parent[n]));\n    }\npublic:\n    UnionFindTree(int\
-    \ N = 1) : parent(N,-1),maxi(N),mini(N){\n        iota(maxi.begin(),maxi.end(),0);\n\
-    \        iota(mini.begin(),mini.end(),0);\n    }\n    inline bool connected(int\
-    \ n, int m) {\n        return root(n) == root(m);\n    }\n    inline void merge(int\
-    \ n, int m) {\n        n = root(n);\n        m = root(m);\n        if (n == m)\
-    \ return;\n        if(parent[n]>parent[m]) swap(n, m);\n        parent[n] += parent[m];\n\
-    \        parent[m] = n;\n        maxi[n] = std::max(maxi[n],maxi[m]);\n      \
-    \  mini[n] = std::min(mini[n],mini[m]);\n    }\n    inline int min(int n) {\n\
-    \        return mini[root(n)];\n    }\n    inline int max(int n) {\n        return\
-    \ maxi[root(n)];\n    }\n    inline int size(int n){\n        return (-parent[root(n)]);\n\
-    \    }\n    inline int operator[](int n) {\n        return root(n);\n    }\n \
-    \   inline void print() {\n        for(int i = 0; i < parent.size(); ++i) cout\
-    \ << root(i) << \" \";\n        cout << endl;\n    }\n};\n#line 1 \"lib/graph/StronglyConnectedComponents.cpp\"\
-    \n/*\n * @title StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\
-    \u89E3\n * @docs md/graph/StronglyConnectedComponents.md\n */\nclass StronglyConnectedComponents{\n\
+    \ return (parent[n]<0?n:parent[n] = root(parent[n]));\n    }\npublic:\n    UnionFindTree(const\
+    \ int N = 1) : parent(N,-1),maxi(N),mini(N){\n        iota(maxi.begin(),maxi.end(),0);\n\
+    \        iota(mini.begin(),mini.end(),0);\n    }\n    inline bool connected(const\
+    \ int n, const int m) {\n        return root(n) == root(m);\n    }\n    inline\
+    \ void merge(int n,int m) {\n        n = root(n);\n        m = root(m);\n    \
+    \    if (n == m) return;\n        if(parent[n]>parent[m]) swap(n, m);\n      \
+    \  parent[n] += parent[m];\n        parent[m] = n;\n        maxi[n] = std::max(maxi[n],maxi[m]);\n\
+    \        mini[n] = std::min(mini[n],mini[m]);\n    }\n    inline int min(const\
+    \ int n) {\n        return mini[root(n)];\n    }\n    inline int max(const int\
+    \ n) {\n        return maxi[root(n)];\n    }\n    inline int size(const int n){\n\
+    \        return (-parent[root(n)]);\n    }\n    inline int operator[](const int\
+    \ n) {\n        return root(n);\n    }\n    inline void print() {\n        for(int\
+    \ i = 0; i < parent.size(); ++i) cout << root(i) << \" \";\n        cout << endl;\n\
+    \    }\n};\n#line 1 \"lib/graph/StronglyConnectedComponents.cpp\"\n/*\n * @title\
+    \ StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\n *\
+    \ @docs md/graph/StronglyConnectedComponents.md\n */\nclass StronglyConnectedComponents{\n\
     \    int num,is_2sat,half,max_id,cnt;\n    vector<vector<int>> edge;\n    vector<int>\
     \ label,order,low;\n    stack<size_t> st;\n    inline int rev(int i) { return\
     \ i < half ? i + half : i - half; }\n    inline void dfs(int& from) {\n      \
@@ -105,7 +106,7 @@ data:
   isVerificationFile: true
   path: test/graph/StronglyConnectedComponents-1.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:35:32+09:00'
+  timestamp: '2023-05-15 02:35:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/StronglyConnectedComponents-1.test.cpp

@@ -1,21 +1,21 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/graph/Graph.cpp
     title: Graph
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/graph/MinimumDirectedClosedCircuit.cpp
     title: "MinimumDirectedClosedCircuit - \u6709\u5411\u30B0\u30E9\u30D5\u306E\u6700\
       \u5C0F\u9589\u8DEF\u691C\u51FA"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/heap/RadixHeap.cpp
     title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A
@@ -24,8 +24,8 @@ data:
   bundledCode: "#line 1 \"test/graph/MinimumDirectedClosedCircuit.test.cpp\"\n#define\
     \ PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <cassert>\n\
-    #include <set>\n#include <queue>\n#include <map>\n\nusing namespace std;\n#line\
-    \ 1 \"lib/graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
+    #include <set>\n#include <queue>\n#include <map>\n#include <array>\n\nusing namespace\
+    \ std;\n#line 1 \"lib/graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
     \ */\ntemplate<class T> class Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n\
     \    vector<vector<pair<size_t,T>>> edges;\n    Graph(const size_t N):H(-1),W(-1),N(N),\
     \ edges(N) {}\n    Graph(const size_t H, const size_t W):H(H),W(W),N(H*W), edges(H*W)\
@@ -83,7 +83,7 @@ data:
     \ restore() {\n        vector<int> res;\n        if(last == -1) return res;\n\
     \        int curr = last;\n        res.push_back(curr);\n        while(curr !=\
     \ root) res.push_back(curr = parent[curr]);\n        reverse(res.begin(),res.end());\n\
-    \        return res;\n    }\n};\n#line 15 \"test/graph/MinimumDirectedClosedCircuit.test.cpp\"\
+    \        return res;\n    }\n};\n#line 16 \"test/graph/MinimumDirectedClosedCircuit.test.cpp\"\
     \n\nint main(){\n    int N,M; cin >> N >> M;\n    Graph<int> graph(N);\n    for(int\
     \ i = 0; i < M; ++i){\n        int u,v; cin >> u >> v;\n        graph.make_edge(u,v,1);\n\
     \    }\n    MinimumDirectedClosedCircuit<int> mdcc(graph,1234567);\n    int ans\
@@ -92,13 +92,13 @@ data:
     \    cout << ans << endl;\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <cassert>\n\
-    #include <set>\n#include <queue>\n#include <map>\n\nusing namespace std;\n#include\
-    \ \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/heap/RadixHeap.cpp\"\n#include\
-    \ \"../../lib/graph/MinimumDirectedClosedCircuit.cpp\"\n\nint main(){\n    int\
-    \ N,M; cin >> N >> M;\n    Graph<int> graph(N);\n    for(int i = 0; i < M; ++i){\n\
-    \        int u,v; cin >> u >> v;\n        graph.make_edge(u,v,1);\n    }\n   \
-    \ MinimumDirectedClosedCircuit<int> mdcc(graph,1234567);\n    int ans = 0;\n \
-    \   int inf = 1234567;\n    for(int i = 0; i < N; ++i){\n        mdcc.solve(i);\n\
+    #include <set>\n#include <queue>\n#include <map>\n#include <array>\n\nusing namespace\
+    \ std;\n#include \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/heap/RadixHeap.cpp\"\
+    \n#include \"../../lib/graph/MinimumDirectedClosedCircuit.cpp\"\n\nint main(){\n\
+    \    int N,M; cin >> N >> M;\n    Graph<int> graph(N);\n    for(int i = 0; i <\
+    \ M; ++i){\n        int u,v; cin >> u >> v;\n        graph.make_edge(u,v,1);\n\
+    \    }\n    MinimumDirectedClosedCircuit<int> mdcc(graph,1234567);\n    int ans\
+    \ = 0;\n    int inf = 1234567;\n    for(int i = 0; i < N; ++i){\n        mdcc.solve(i);\n\
     \        auto tmp = mdcc.restore();\n        if(!tmp.empty()) ans = 1;\n    }\n\
     \    cout << ans << endl;\n\treturn 0;\n}\n"
   dependsOn:
@@ -108,8 +108,8 @@ data:
   isVerificationFile: true
   path: test/graph/MinimumDirectedClosedCircuit.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:35:32+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-05-15 02:16:48+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/MinimumDirectedClosedCircuit.test.cpp
 layout: document

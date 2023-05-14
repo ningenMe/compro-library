@@ -1,21 +1,21 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/graph/Graph.cpp
     title: Graph
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/graph/MinimumUndirectedClosedCircuit.cpp
     title: "MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\u306E\u6700\
       \u5C0F\u9589\u8DEF\u691C\u51FA"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/heap/RadixHeap.cpp
     title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/13
@@ -24,10 +24,10 @@ data:
   bundledCode: "#line 1 \"test/graph/MinimumUndirectedClosedCircuit.test.cpp\"\n#define\
     \ PROBLEM \"https://yukicoder.me/problems/no/13\"\n\n#include <vector>\n#include\
     \ <iostream>\n#include <algorithm>\n#include <cassert>\n#include <set>\n#include\
-    \ <queue>\n#include <map>\n#include <stack>\n\nusing namespace std;\n#line 1 \"\
-    lib/graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n */\n\
-    template<class T> class Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n \
-    \   vector<vector<pair<size_t,T>>> edges;\n    Graph(const size_t N):H(-1),W(-1),N(N),\
+    \ <queue>\n#include <map>\n#include <stack>\n#include <array>\n\nusing namespace\
+    \ std;\n#line 1 \"lib/graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
+    \ */\ntemplate<class T> class Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n\
+    \    vector<vector<pair<size_t,T>>> edges;\n    Graph(const size_t N):H(-1),W(-1),N(N),\
     \ edges(N) {}\n    Graph(const size_t H, const size_t W):H(H),W(W),N(H*W), edges(H*W)\
     \ {}\n    inline void make_edge(size_t from, size_t to, T w) {\n        edges[from].emplace_back(to,w);\n\
     \    }\n    //{from_y,from_x} -> {to_y,to_x} \n    inline void make_edge(pair<size_t,size_t>\
@@ -91,7 +91,7 @@ data:
     \ s.push(curr);\n            for(int curr = last_r; curr != root; curr = parent[curr])\
     \ q.push(curr);\n            while(s.size()) res.push_back(s.top())  ,s.pop();\n\
     \            while(q.size()) res.push_back(q.front()),q.pop();\n        }\n  \
-    \      return res;\n    }\n};\n#line 16 \"test/graph/MinimumUndirectedClosedCircuit.test.cpp\"\
+    \      return res;\n    }\n};\n#line 17 \"test/graph/MinimumUndirectedClosedCircuit.test.cpp\"\
     \n\nint main(){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int W,H; cin\
     \ >> W >> H;\n    Graph<int> g(H,W);\n    vector<int> a(W),b(W);\n    {\n    \
     \    for(int j=0;j  <W;++j) cin >> a[j];\n        for(int j=0;j+1<W;++j) if(a[j]==a[j+1])\
@@ -105,14 +105,14 @@ data:
     \ << (flg?\"possible\":\"impossible\") << endl;\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/13\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <cassert>\n#include <set>\n\
-    #include <queue>\n#include <map>\n#include <stack>\n\nusing namespace std;\n#include\
-    \ \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/heap/RadixHeap.cpp\"\n#include\
-    \ \"../../lib/graph/MinimumUndirectedClosedCircuit.cpp\"\n\nint main(){\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \    int W,H; cin >> W >> H;\n    Graph<int> g(H,W);\n    vector<int> a(W),b(W);\n\
-    \    {\n        for(int j=0;j  <W;++j) cin >> a[j];\n        for(int j=0;j+1<W;++j)\
-    \ if(a[j]==a[j+1]) g.make_bidirectional_edge({0,j},{0,j+1},1);        \n    }\n\
-    \    for(int i=1;i<H;++i) {\n        b=a;\n        for(int j=0;j  <W;++j) cin\
-    \ >> a[j];\n        for(int j=0;j  <W;++j) if(b[j]==a[j]) g.make_bidirectional_edge({i,j},{i-1,j},1);\n\
+    #include <queue>\n#include <map>\n#include <stack>\n#include <array>\n\nusing\
+    \ namespace std;\n#include \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/heap/RadixHeap.cpp\"\
+    \n#include \"../../lib/graph/MinimumUndirectedClosedCircuit.cpp\"\n\nint main(){\n\
+    \    cin.tie(0);ios::sync_with_stdio(false);\n    int W,H; cin >> W >> H;\n  \
+    \  Graph<int> g(H,W);\n    vector<int> a(W),b(W);\n    {\n        for(int j=0;j\
+    \  <W;++j) cin >> a[j];\n        for(int j=0;j+1<W;++j) if(a[j]==a[j+1]) g.make_bidirectional_edge({0,j},{0,j+1},1);\
+    \        \n    }\n    for(int i=1;i<H;++i) {\n        b=a;\n        for(int j=0;j\
+    \  <W;++j) cin >> a[j];\n        for(int j=0;j  <W;++j) if(b[j]==a[j]) g.make_bidirectional_edge({i,j},{i-1,j},1);\n\
     \        for(int j=0;j+1<W;++j) if(a[j]==a[j+1]) g.make_bidirectional_edge({i,j},{i,j+1},1);\n\
     \    }\n    int inf = 12345678;\n    MinimumUndirectedClosedCircuit<int> mucc(g,inf);\n\
     \    int flg = 0;\n    for(int i=0;i<H;++i) for(int j=0;j<W;++j) {\n        int\
@@ -125,8 +125,8 @@ data:
   isVerificationFile: true
   path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:35:32+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-05-15 02:16:48+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/MinimumUndirectedClosedCircuit.test.cpp
 layout: document

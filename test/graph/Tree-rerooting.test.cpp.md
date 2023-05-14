@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/graph/Graph.cpp
     title: Graph
   - icon: ':heavy_check_mark:'
@@ -27,24 +27,25 @@ data:
     \n/*\n * @title UnionFindTree - Union Find \u6728\n * @docs md/graph/UnionFindTree.md\n\
     \ */\nclass UnionFindTree {\n    vector<int> parent,maxi,mini;\n    inline int\
     \ root(int n) {\n        return (parent[n]<0?n:parent[n] = root(parent[n]));\n\
-    \    }\npublic:\n    UnionFindTree(int N = 1) : parent(N,-1),maxi(N),mini(N){\n\
+    \    }\npublic:\n    UnionFindTree(const int N = 1) : parent(N,-1),maxi(N),mini(N){\n\
     \        iota(maxi.begin(),maxi.end(),0);\n        iota(mini.begin(),mini.end(),0);\n\
-    \    }\n    inline bool connected(int n, int m) {\n        return root(n) == root(m);\n\
-    \    }\n    inline void merge(int n, int m) {\n        n = root(n);\n        m\
-    \ = root(m);\n        if (n == m) return;\n        if(parent[n]>parent[m]) swap(n,\
-    \ m);\n        parent[n] += parent[m];\n        parent[m] = n;\n        maxi[n]\
-    \ = std::max(maxi[n],maxi[m]);\n        mini[n] = std::min(mini[n],mini[m]);\n\
-    \    }\n    inline int min(int n) {\n        return mini[root(n)];\n    }\n  \
-    \  inline int max(int n) {\n        return maxi[root(n)];\n    }\n    inline int\
-    \ size(int n){\n        return (-parent[root(n)]);\n    }\n    inline int operator[](int\
-    \ n) {\n        return root(n);\n    }\n    inline void print() {\n        for(int\
-    \ i = 0; i < parent.size(); ++i) cout << root(i) << \" \";\n        cout << endl;\n\
-    \    }\n};\n#line 1 \"lib/graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
-    \ */\ntemplate<class T> class Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n\
-    \    vector<vector<pair<size_t,T>>> edges;\n    Graph(const size_t N):H(-1),W(-1),N(N),\
-    \ edges(N) {}\n    Graph(const size_t H, const size_t W):H(H),W(W),N(H*W), edges(H*W)\
-    \ {}\n    inline void make_edge(size_t from, size_t to, T w) {\n        edges[from].emplace_back(to,w);\n\
-    \    }\n    //{from_y,from_x} -> {to_y,to_x} \n    inline void make_edge(pair<size_t,size_t>\
+    \    }\n    inline bool connected(const int n, const int m) {\n        return\
+    \ root(n) == root(m);\n    }\n    inline void merge(int n,int m) {\n        n\
+    \ = root(n);\n        m = root(m);\n        if (n == m) return;\n        if(parent[n]>parent[m])\
+    \ swap(n, m);\n        parent[n] += parent[m];\n        parent[m] = n;\n     \
+    \   maxi[n] = std::max(maxi[n],maxi[m]);\n        mini[n] = std::min(mini[n],mini[m]);\n\
+    \    }\n    inline int min(const int n) {\n        return mini[root(n)];\n   \
+    \ }\n    inline int max(const int n) {\n        return maxi[root(n)];\n    }\n\
+    \    inline int size(const int n){\n        return (-parent[root(n)]);\n    }\n\
+    \    inline int operator[](const int n) {\n        return root(n);\n    }\n  \
+    \  inline void print() {\n        for(int i = 0; i < parent.size(); ++i) cout\
+    \ << root(i) << \" \";\n        cout << endl;\n    }\n};\n#line 1 \"lib/graph/Graph.cpp\"\
+    \n/*\n * @title Graph\n * @docs md/graph/Graph.md\n */\ntemplate<class T> class\
+    \ Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n    vector<vector<pair<size_t,T>>>\
+    \ edges;\n    Graph(const size_t N):H(-1),W(-1),N(N), edges(N) {}\n    Graph(const\
+    \ size_t H, const size_t W):H(H),W(W),N(H*W), edges(H*W) {}\n    inline void make_edge(size_t\
+    \ from, size_t to, T w) {\n        edges[from].emplace_back(to,w);\n    }\n  \
+    \  //{from_y,from_x} -> {to_y,to_x} \n    inline void make_edge(pair<size_t,size_t>\
     \ from, pair<size_t,size_t> to, T w) {\n        make_edge(from.first*W+from.second,to.first*W+to.second,w);\n\
     \    }\n    inline void make_bidirectional_edge(size_t from, size_t to, T w) {\n\
     \        make_edge(from,to,w);\n        make_edge(to,from,w);\n    }\n    inline\
@@ -262,7 +263,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-rerooting.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:35:32+09:00'
+  timestamp: '2023-05-15 02:35:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-rerooting.test.cpp

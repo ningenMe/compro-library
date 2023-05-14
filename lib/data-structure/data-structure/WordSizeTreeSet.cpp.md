@@ -11,10 +11,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/data-structure/data-structure/WordSizeTreeSet.md
-    document_title: WordSizeTreeSet
+    document_title: "WordSizeTreeSet - 64\u5206\u6728"
     links: []
   bundledCode: "#line 1 \"lib/data-structure/data-structure/WordSizeTreeSet.cpp\"\n\
-    /*\n * @title WordSizeTreeSet\n * @docs md/data-structure/data-structure/WordSizeTreeSet.md\n\
+    /*\n * @title WordSizeTreeSet - 64\u5206\u6728\n * @docs md/data-structure/data-structure/WordSizeTreeSet.md\n\
     \ */\nclass WordSizeTreeSet {\npublic:\n    using u64 = unsigned long long;\n\
     \    inline static constexpr u64 max_length=(1ULL<<24);\nprivate:\n    inline\
     \ static constexpr u64 word_size=(1ULL<<6);\n    inline static constexpr array<u64,word_size>\
@@ -146,7 +146,7 @@ data:
     \ inner.count_impl(value);}\n    u64 next_lower_bound(const u64& value) const\
     \ {return inner.next_lower_bound_impl(value);}\n    u64 prev_lower_bound(const\
     \ u64& value) const {return inner.prev_lower_bound_impl(value);}\n};\n"
-  code: "/*\n * @title WordSizeTreeSet\n * @docs md/data-structure/data-structure/WordSizeTreeSet.md\n\
+  code: "/*\n * @title WordSizeTreeSet - 64\u5206\u6728\n * @docs md/data-structure/data-structure/WordSizeTreeSet.md\n\
     \ */\nclass WordSizeTreeSet {\npublic:\n    using u64 = unsigned long long;\n\
     \    inline static constexpr u64 max_length=(1ULL<<24);\nprivate:\n    inline\
     \ static constexpr u64 word_size=(1ULL<<6);\n    inline static constexpr array<u64,word_size>\
@@ -282,7 +282,7 @@ data:
   isVerificationFile: false
   path: lib/data-structure/data-structure/WordSizeTreeSet.cpp
   requiredBy: []
-  timestamp: '2023-05-14 01:10:20+09:00'
+  timestamp: '2023-05-14 03:26:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/data-structure/data-structure/WordSizeTreeSet.test.cpp
@@ -291,7 +291,7 @@ layout: document
 redirect_from:
 - /library/lib/data-structure/data-structure/WordSizeTreeSet.cpp
 - /library/lib/data-structure/data-structure/WordSizeTreeSet.cpp.html
-title: WordSizeTreeSet
+title: "WordSizeTreeSet - 64\u5206\u6728"
 ---
 ### WordSizeTreeSet
 - 64分木
