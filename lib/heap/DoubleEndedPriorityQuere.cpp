@@ -3,12 +3,12 @@
  * @docs md/heap/DoubleEndedPriorityQuere.md
  */
 template<class T> class DoubleEndedPriorityQuere {
-	priority_queue<T> max_pq,poped_max_pq;
-	priority_queue<T, vector<T>, greater<T> > min_pq, poped_min_pq;
+	std::priority_queue<T> max_pq,poped_max_pq;
+	std::priority_queue<T, vector<T>, greater<T> > min_pq, poped_min_pq;
 public:
 	DoubleEndedPriorityQuere() {
     }
-	inline void push(T &v) {
+	inline void push(const T &v) {
 		max_pq.push(v);
 		min_pq.push(v);
 	}
@@ -30,5 +30,5 @@ public:
 		poped_min_pq.push(max_pq.top());
 		max_pq.pop();
 	}
-	inline size_t size() { return max_pq.size(); }
+	inline size_t size() const { return max_pq.size(); }
 };

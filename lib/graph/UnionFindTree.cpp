@@ -8,14 +8,14 @@ class UnionFindTree {
         return (parent[n]<0?n:parent[n] = root(parent[n]));
     }
 public:
-    UnionFindTree(int N = 1) : parent(N,-1),maxi(N),mini(N){
+    UnionFindTree(const int N = 1) : parent(N,-1),maxi(N),mini(N){
         iota(maxi.begin(),maxi.end(),0);
         iota(mini.begin(),mini.end(),0);
     }
-    inline bool connected(int n, int m) {
+    inline bool connected(const int n, const int m) {
         return root(n) == root(m);
     }
-    inline void merge(int n, int m) {
+    inline void merge(int n,int m) {
         n = root(n);
         m = root(m);
         if (n == m) return;
@@ -25,16 +25,16 @@ public:
         maxi[n] = std::max(maxi[n],maxi[m]);
         mini[n] = std::min(mini[n],mini[m]);
     }
-    inline int min(int n) {
+    inline int min(const int n) {
         return mini[root(n)];
     }
-    inline int max(int n) {
+    inline int max(const int n) {
         return maxi[root(n)];
     }
-    inline int size(int n){
+    inline int size(const int n){
         return (-parent[root(n)]);
     }
-    inline int operator[](int n) {
+    inline int operator[](const int n) {
         return root(n);
     }
     inline void print() {

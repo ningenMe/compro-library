@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/many_aplusb"
+#define PROBLEM "https://judge.yosupo.jp/problem/double_ended_priority_queue"
 
 #include <iostream>
 #include <queue>
