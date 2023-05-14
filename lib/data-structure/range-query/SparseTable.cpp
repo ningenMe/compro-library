@@ -1,6 +1,6 @@
 /*
  * @title SparseTable
- * @docs md/data-structure/data-structure/SparseTable.md
+ * @docs md/data-structure/range-query/SparseTable.md
  */
 template<class Operator> class SparseTable{
 public:

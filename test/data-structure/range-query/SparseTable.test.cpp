@@ -1,9 +1,9 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
+#define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
 
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../../lib/data-structure/data-structure/DisjointSparseTable.cpp"
+#include "../../../lib/data-structure/range-query/SparseTable.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);
@@ -12,9 +12,9 @@ int main(void){
     for(int i = 0; i < N; ++i) {
         cin >> A[i];
     }
-    DisjointSparseTable<NodeSum<long long>> st(A);
+    SparseTable<NodeMin<long long>> st(A);
     while(Q--){
         int l,r; cin >> l >> r;
-        cout << st.fold(l,r) << endl;
+        cout << st.get(l,r) << endl;
     }
 }
