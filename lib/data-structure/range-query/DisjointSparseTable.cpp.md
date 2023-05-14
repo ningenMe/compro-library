@@ -4,17 +4,17 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/data-structure/DisjointSparseTable.test.cpp
-    title: test/data-structure/data-structure/DisjointSparseTable.test.cpp
+    path: test/data-structure/range-query/DisjointSparseTable.test.cpp
+    title: test/data-structure/range-query/DisjointSparseTable.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/data-structure/data-structure/DisjointSparseTable.md
+    _deprecated_at_docs: md/data-structure/range-query/DisjointSparseTable.md
     document_title: DisjointSparseTable
     links: []
-  bundledCode: "#line 1 \"lib/data-structure/data-structure/DisjointSparseTable.cpp\"\
-    \n/*\n * @title DisjointSparseTable\n * @docs md/data-structure/data-structure/DisjointSparseTable.md\n\
+  bundledCode: "#line 1 \"lib/data-structure/range-query/DisjointSparseTable.cpp\"\
+    \n/*\n * @title DisjointSparseTable\n * @docs md/data-structure/range-query/DisjointSparseTable.md\n\
     \ */\ntemplate<class Operator> class DisjointSparseTable{\npublic:\n    using\
     \ TypeNode = typename Operator::TypeNode;\n    size_t depth;\n    size_t length;\n\
     \    vector<TypeNode> node;\n    vector<size_t> msb;\n\n    DisjointSparseTable(const\
@@ -35,7 +35,7 @@ data:
     \    }\n};\n\n//sum\ntemplate<class T> struct NodeSum {\n    using TypeNode =\
     \ T;\n    inline static constexpr TypeNode unit_node = 0;\n    inline static constexpr\
     \ TypeNode func_fold(TypeNode l,TypeNode r){return l+r;}\n};\n"
-  code: "/*\n * @title DisjointSparseTable\n * @docs md/data-structure/data-structure/DisjointSparseTable.md\n\
+  code: "/*\n * @title DisjointSparseTable\n * @docs md/data-structure/range-query/DisjointSparseTable.md\n\
     \ */\ntemplate<class Operator> class DisjointSparseTable{\npublic:\n    using\
     \ TypeNode = typename Operator::TypeNode;\n    size_t depth;\n    size_t length;\n\
     \    vector<TypeNode> node;\n    vector<size_t> msb;\n\n    DisjointSparseTable(const\
@@ -58,16 +58,16 @@ data:
     \ TypeNode func_fold(TypeNode l,TypeNode r){return l+r;}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: lib/data-structure/data-structure/DisjointSparseTable.cpp
+  path: lib/data-structure/range-query/DisjointSparseTable.cpp
   requiredBy: []
-  timestamp: '2021-09-21 03:50:44+09:00'
+  timestamp: '2023-05-15 02:45:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/data-structure/DisjointSparseTable.test.cpp
-documentation_of: lib/data-structure/data-structure/DisjointSparseTable.cpp
+  - test/data-structure/range-query/DisjointSparseTable.test.cpp
+documentation_of: lib/data-structure/range-query/DisjointSparseTable.cpp
 layout: document
 redirect_from:
-- /library/lib/data-structure/data-structure/DisjointSparseTable.cpp
-- /library/lib/data-structure/data-structure/DisjointSparseTable.cpp.html
+- /library/lib/data-structure/range-query/DisjointSparseTable.cpp
+- /library/lib/data-structure/range-query/DisjointSparseTable.cpp.html
 title: DisjointSparseTable
 ---

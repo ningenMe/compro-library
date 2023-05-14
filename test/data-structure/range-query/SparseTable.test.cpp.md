@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/data-structure/data-structure/SparseTable.cpp
+    path: lib/data-structure/range-query/SparseTable.cpp
     title: SparseTable
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -14,10 +14,10 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
     links:
     - https://judge.yosupo.jp/problem/staticrmq
-  bundledCode: "#line 1 \"test/data-structure/data-structure/SparseTable.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include <vector>\n\
-    #include <iostream>\nusing namespace std;\n#line 1 \"lib/data-structure/data-structure/SparseTable.cpp\"\
-    \n/*\n * @title SparseTable\n * @docs md/data-structure/data-structure/SparseTable.md\n\
+  bundledCode: "#line 1 \"test/data-structure/range-query/SparseTable.test.cpp\"\n\
+    #define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include <vector>\n\
+    #include <iostream>\nusing namespace std;\n#line 1 \"lib/data-structure/range-query/SparseTable.cpp\"\
+    \n/*\n * @title SparseTable\n * @docs md/data-structure/range-query/SparseTable.md\n\
     \ */\ntemplate<class Operator> class SparseTable{\npublic:\n    using TypeNode\
     \ = typename Operator::TypeNode;\n    vector<TypeNode> node;\n    vector<int>\
     \ idx;\n    size_t depth;\n    size_t length;\n\n    SparseTable(const vector<TypeNode>&\
@@ -31,30 +31,30 @@ data:
     \ - (1<<bit)]);\n    }\n};\n\ntemplate<class T> struct NodeMin {\n    using TypeNode\
     \ = T;\n    inline static constexpr TypeNode unitNode = 1LL<<31;\n    inline static\
     \ constexpr TypeNode func_node(TypeNode l,TypeNode r){return min(l,r);}\n};\n\
-    #line 7 \"test/data-structure/data-structure/SparseTable.test.cpp\"\n\nint main(void){\n\
+    #line 7 \"test/data-structure/range-query/SparseTable.test.cpp\"\n\nint main(void){\n\
     \tcin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; cin >> N >> Q;\n    vector<long\
     \ long> A(N);\n    for(int i = 0; i < N; ++i) {\n        cin >> A[i];\n    }\n\
     \    SparseTable<NodeMin<long long>> st(A);\n    while(Q--){\n        int l,r;\
     \ cin >> l >> r;\n        cout << st.get(l,r) << endl;\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
-    \ <vector>\n#include <iostream>\nusing namespace std;\n#include \"../../../lib/data-structure/data-structure/SparseTable.cpp\"\
+    \ <vector>\n#include <iostream>\nusing namespace std;\n#include \"../../../lib/data-structure/range-query/SparseTable.cpp\"\
     \n\nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; cin\
     \ >> N >> Q;\n    vector<long long> A(N);\n    for(int i = 0; i < N; ++i) {\n\
     \        cin >> A[i];\n    }\n    SparseTable<NodeMin<long long>> st(A);\n   \
     \ while(Q--){\n        int l,r; cin >> l >> r;\n        cout << st.get(l,r) <<\
     \ endl;\n    }\n}"
   dependsOn:
-  - lib/data-structure/data-structure/SparseTable.cpp
+  - lib/data-structure/range-query/SparseTable.cpp
   isVerificationFile: true
-  path: test/data-structure/data-structure/SparseTable.test.cpp
+  path: test/data-structure/range-query/SparseTable.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 04:20:51+09:00'
+  timestamp: '2023-05-15 02:45:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/data-structure/data-structure/SparseTable.test.cpp
+documentation_of: test/data-structure/range-query/SparseTable.test.cpp
 layout: document
 redirect_from:
-- /verify/test/data-structure/data-structure/SparseTable.test.cpp
-- /verify/test/data-structure/data-structure/SparseTable.test.cpp.html
-title: test/data-structure/data-structure/SparseTable.test.cpp
+- /verify/test/data-structure/range-query/SparseTable.test.cpp
+- /verify/test/data-structure/range-query/SparseTable.test.cpp.html
+title: test/data-structure/range-query/SparseTable.test.cpp
 ---

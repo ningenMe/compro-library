@@ -4,17 +4,17 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/data-structure/SparseTable.test.cpp
-    title: test/data-structure/data-structure/SparseTable.test.cpp
+    path: test/data-structure/range-query/SparseTable.test.cpp
+    title: test/data-structure/range-query/SparseTable.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/data-structure/data-structure/SparseTable.md
+    _deprecated_at_docs: md/data-structure/range-query/SparseTable.md
     document_title: SparseTable
     links: []
-  bundledCode: "#line 1 \"lib/data-structure/data-structure/SparseTable.cpp\"\n/*\n\
-    \ * @title SparseTable\n * @docs md/data-structure/data-structure/SparseTable.md\n\
+  bundledCode: "#line 1 \"lib/data-structure/range-query/SparseTable.cpp\"\n/*\n *\
+    \ @title SparseTable\n * @docs md/data-structure/range-query/SparseTable.md\n\
     \ */\ntemplate<class Operator> class SparseTable{\npublic:\n    using TypeNode\
     \ = typename Operator::TypeNode;\n    vector<TypeNode> node;\n    vector<int>\
     \ idx;\n    size_t depth;\n    size_t length;\n\n    SparseTable(const vector<TypeNode>&\
@@ -28,7 +28,7 @@ data:
     \ - (1<<bit)]);\n    }\n};\n\ntemplate<class T> struct NodeMin {\n    using TypeNode\
     \ = T;\n    inline static constexpr TypeNode unitNode = 1LL<<31;\n    inline static\
     \ constexpr TypeNode func_node(TypeNode l,TypeNode r){return min(l,r);}\n};\n"
-  code: "/*\n * @title SparseTable\n * @docs md/data-structure/data-structure/SparseTable.md\n\
+  code: "/*\n * @title SparseTable\n * @docs md/data-structure/range-query/SparseTable.md\n\
     \ */\ntemplate<class Operator> class SparseTable{\npublic:\n    using TypeNode\
     \ = typename Operator::TypeNode;\n    vector<TypeNode> node;\n    vector<int>\
     \ idx;\n    size_t depth;\n    size_t length;\n\n    SparseTable(const vector<TypeNode>&\
@@ -44,16 +44,16 @@ data:
     \ constexpr TypeNode func_node(TypeNode l,TypeNode r){return min(l,r);}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: lib/data-structure/data-structure/SparseTable.cpp
+  path: lib/data-structure/range-query/SparseTable.cpp
   requiredBy: []
-  timestamp: '2021-09-21 03:50:44+09:00'
+  timestamp: '2023-05-15 02:45:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/data-structure/SparseTable.test.cpp
-documentation_of: lib/data-structure/data-structure/SparseTable.cpp
+  - test/data-structure/range-query/SparseTable.test.cpp
+documentation_of: lib/data-structure/range-query/SparseTable.cpp
 layout: document
 redirect_from:
-- /library/lib/data-structure/data-structure/SparseTable.cpp
-- /library/lib/data-structure/data-structure/SparseTable.cpp.html
+- /library/lib/data-structure/range-query/SparseTable.cpp
+- /library/lib/data-structure/range-query/SparseTable.cpp.html
 title: SparseTable
 ---

@@ -50,17 +50,11 @@ data:
       path: lib/data-structure/data-structure/BitVector.cpp
       title: BitVector
     - icon: ':heavy_check_mark:'
-      path: lib/data-structure/data-structure/DisjointSparseTable.cpp
-      title: DisjointSparseTable
-    - icon: ':heavy_check_mark:'
       path: lib/data-structure/data-structure/PersistentQueue.cpp
       title: "PersistentQueue - \u6C38\u7D9Aqueue"
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/data-structure/SlideMost.cpp
       title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
-    - icon: ':heavy_check_mark:'
-      path: lib/data-structure/data-structure/SparseTable.cpp
-      title: SparseTable
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/data-structure/Swag.cpp
       title: Swag
@@ -73,6 +67,9 @@ data:
   - name: lib/data-structure/range-query
     pages:
     - icon: ':heavy_check_mark:'
+      path: lib/data-structure/range-query/DisjointSparseTable.cpp
+      title: DisjointSparseTable
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/range-query/RangeInversionQuery.cpp
       title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
     - icon: ':warning:'
@@ -81,6 +78,9 @@ data:
     - icon: ':warning:'
       path: lib/data-structure/range-query/RangeModeQuery.cpp
       title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
+    - icon: ':heavy_check_mark:'
+      path: lib/data-structure/range-query/SparseTable.cpp
+      title: SparseTable
   - name: lib/data-structure/segment-tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -449,17 +449,11 @@ data:
       path: test/data-structure/data-structure/BinaryTrie-set-xor-min.test.cpp
       title: test/data-structure/data-structure/BinaryTrie-set-xor-min.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/data-structure/DisjointSparseTable.test.cpp
-      title: test/data-structure/data-structure/DisjointSparseTable.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/data-structure/data-structure/PerisitentQueue.test.cpp
       title: test/data-structure/data-structure/PerisitentQueue.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/data-structure/SlideMost.test.cpp
       title: test/data-structure/data-structure/SlideMost.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/data-structure/SparseTable.test.cpp
-      title: test/data-structure/data-structure/SparseTable.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/data-structure/Swag.test.cpp
       title: test/data-structure/data-structure/Swag.test.cpp
@@ -475,8 +469,14 @@ data:
   - name: test/data-structure/range-query
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/data-structure/range-query/DisjointSparseTable.test.cpp
+      title: test/data-structure/range-query/DisjointSparseTable.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/range-query/RangeInversionQuery.test.cpp
       title: test/data-structure/range-query/RangeInversionQuery.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/data-structure/range-query/SparseTable.test.cpp
+      title: test/data-structure/range-query/SparseTable.test.cpp
   - name: test/data-structure/segment-tree
     pages:
     - icon: ':heavy_check_mark:'
