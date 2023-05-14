@@ -9,9 +9,13 @@ private:
     inline static constexpr int ch_n='-';
     inline static constexpr int ch_s=' ';
     inline static constexpr int ch_l='\n';
+    inline static void endline_skip(char& ch) {
+        while(ch==ch_l) ch=getchar();
+    }
     template<typename T> inline static void read_integer(T &x) {
         int neg=0; char ch; x=0;
         ch=getchar();
+        endline_skip(ch);
         if(ch==ch_n) neg=1,ch=getchar();
         for(;(ch_0 <= ch && ch <= ch_9); ch = getchar()) x = x*10 + (ch-ch_0);
         if(neg) x*=-1;
@@ -19,11 +23,13 @@ private:
     template<typename T> inline static void read_unsigned_integer(T &x) {
         char ch; x=0;
         ch=getchar();
+        endline_skip(ch);
         for(;(ch_0 <= ch && ch <= ch_9); ch = getchar()) x = x*10 + (ch-ch_0);
     }
     inline static void read_string(string &x) {
         char ch; x="";
         ch=getchar();
+        endline_skip(ch);
         for(;(ch != ch_s && ch!=ch_l); ch = getchar()) x.push_back(ch);
     }
     inline static char ar[40];
