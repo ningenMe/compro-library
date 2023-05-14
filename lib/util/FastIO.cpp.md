@@ -10,6 +10,9 @@ data:
     path: test/data-structure/range-query/DisjointSparseTable.test.cpp
     title: test/data-structure/range-query/DisjointSparseTable.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/range-query/SparseTable.test.cpp
+    title: test/data-structure/range-query/SparseTable.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/UnionFindTree.test.cpp
     title: test/graph/UnionFindTree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -90,6 +93,7 @@ data:
   verifiedWith:
   - test/heap/DoubleEndedPriorityQuere.test.cpp
   - test/data-structure/data-structure/WordSizeTreeSet.test.cpp
+  - test/data-structure/range-query/SparseTable.test.cpp
   - test/data-structure/range-query/DisjointSparseTable.test.cpp
   - test/graph/UnionFindTree.test.cpp
   - test/util/FastIO-int128.test.cpp
