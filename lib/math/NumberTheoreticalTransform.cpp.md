@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
-    title: test/polynomial/FormalPowerSeries-interpolation.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     _deprecated_at_docs: md/math/NumberTheoreticalTransform.md
     document_title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
@@ -163,9 +160,8 @@ data:
   path: lib/math/NumberTheoreticalTransform.cpp
   requiredBy: []
   timestamp: '2021-09-21 19:35:58+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/polynomial/FormalPowerSeries-interpolation.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: lib/math/NumberTheoreticalTransform.cpp
 layout: document
 redirect_from:

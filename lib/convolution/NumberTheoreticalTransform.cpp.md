@@ -19,6 +19,9 @@ data:
     path: test/polynomial/FormalPowerSeries-exp.test.cpp
     title: test/polynomial/FormalPowerSeries-exp.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
+    title: test/polynomial/FormalPowerSeries-interpolation.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-inv.test.cpp
     title: test/polynomial/FormalPowerSeries-inv.test.cpp
   - icon: ':heavy_check_mark:'
@@ -231,6 +234,7 @@ data:
   - test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - test/polynomial/FormalPowerSeries-exp.test.cpp
   - test/polynomial/FormalPowerSeries-pow.test.cpp
+  - test/polynomial/FormalPowerSeries-interpolation.test.cpp
   - test/polynomial/FormalPowerSeries-multi-eval.test.cpp
   - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-log.test.cpp
