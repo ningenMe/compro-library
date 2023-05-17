@@ -182,7 +182,7 @@ data:
     - icon: ':warning:'
       path: lib/math/GcdConvolution.cpp
       title: "GcdConvolution - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
     - icon: ':question:'
@@ -645,22 +645,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Garner.test.cpp
       title: test/math/Garner.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/math/Matrix-det.test.cpp
       title: test/math/Matrix-det.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/math/Matrix-pow.test.cpp
       title: test/math/Matrix-pow.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
       title: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
       title: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
       title: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
       title: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
     - icon: ':x:'
@@ -702,7 +702,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/util/FastIO-int64.test.cpp
       title: test/util/FastIO-int64.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/util/ModInt.test.cpp
       title: test/util/ModInt.test.cpp
     - icon: ':heavy_check_mark:'

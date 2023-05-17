@@ -24,16 +24,16 @@ data:
   - icon: ':x:'
     path: test/math/FormalPowerSeries-pow.test.cpp
     title: test/math/FormalPowerSeries-pow.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
     title: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
     title: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
     title: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
   _isVerificationFailed: true
