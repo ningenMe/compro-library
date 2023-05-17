@@ -9,7 +9,7 @@ using namespace std;
 #include "../../lib/util/FastIO.cpp"
 #include "../../lib/convolution/NumberTheoreticalTransform.cpp"
 
-constexpr long long MOD = 1000000000000000000;
+constexpr long long MOD = 1000000000000000000LL;
 
 int main() {
     cin.tie(0);ios::sync_with_stdio(false);
