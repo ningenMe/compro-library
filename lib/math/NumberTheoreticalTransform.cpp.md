@@ -4,29 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-exp.test.cpp
-    title: test/math/FormalPowerSeries-exp.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-interpolation.test.cpp
-    title: test/math/FormalPowerSeries-interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-inv.test.cpp
-    title: test/math/FormalPowerSeries-inv.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-log.test.cpp
-    title: test/math/FormalPowerSeries-log.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-multi-eval.test.cpp
-    title: test/math/FormalPowerSeries-multi-eval.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-nth.test.cpp
-    title: test/math/FormalPowerSeries-nth.test.cpp
-  - icon: ':x:'
-    path: test/math/FormalPowerSeries-pow.test.cpp
-    title: test/math/FormalPowerSeries-pow.test.cpp
-  _isVerificationFailed: true
+    path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
+    title: test/polynomial/FormalPowerSeries-interpolation.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/math/NumberTheoreticalTransform.md
     document_title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
@@ -181,15 +163,9 @@ data:
   path: lib/math/NumberTheoreticalTransform.cpp
   requiredBy: []
   timestamp: '2021-09-21 19:35:58+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/math/FormalPowerSeries-exp.test.cpp
-  - test/math/FormalPowerSeries-pow.test.cpp
-  - test/math/FormalPowerSeries-interpolation.test.cpp
-  - test/math/FormalPowerSeries-multi-eval.test.cpp
-  - test/math/FormalPowerSeries-inv.test.cpp
-  - test/math/FormalPowerSeries-log.test.cpp
-  - test/math/FormalPowerSeries-nth.test.cpp
+  - test/polynomial/FormalPowerSeries-interpolation.test.cpp
 documentation_of: lib/math/NumberTheoreticalTransform.cpp
 layout: document
 redirect_from:

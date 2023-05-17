@@ -15,9 +15,27 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
-  _isVerificationFailed: false
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-exp.test.cpp
+    title: test/polynomial/FormalPowerSeries-exp.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-inv.test.cpp
+    title: test/polynomial/FormalPowerSeries-inv.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-log.test.cpp
+    title: test/polynomial/FormalPowerSeries-log.test.cpp
+  - icon: ':x:'
+    path: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+    title: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-nth.test.cpp
+    title: test/polynomial/FormalPowerSeries-nth.test.cpp
+  - icon: ':x:'
+    path: test/polynomial/FormalPowerSeries-pow.test.cpp
+    title: test/polynomial/FormalPowerSeries-pow.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/convolution/NumberTheoreticalTransform.md
     document_title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
@@ -205,12 +223,18 @@ data:
   path: lib/convolution/NumberTheoreticalTransform.cpp
   requiredBy: []
   timestamp: '2023-05-18 00:55:32+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
+  - test/polynomial/FormalPowerSeries-exp.test.cpp
+  - test/polynomial/FormalPowerSeries-pow.test.cpp
+  - test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+  - test/polynomial/FormalPowerSeries-inv.test.cpp
+  - test/polynomial/FormalPowerSeries-log.test.cpp
+  - test/polynomial/FormalPowerSeries-nth.test.cpp
 documentation_of: lib/convolution/NumberTheoreticalTransform.cpp
 layout: document
 redirect_from:

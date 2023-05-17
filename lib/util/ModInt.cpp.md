@@ -34,32 +34,32 @@ data:
     path: test/math/CombinationMod-factorial.test.cpp
     title: test/math/CombinationMod-factorial.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-exp.test.cpp
-    title: test/math/FormalPowerSeries-exp.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-interpolation.test.cpp
-    title: test/math/FormalPowerSeries-interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-inv.test.cpp
-    title: test/math/FormalPowerSeries-inv.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-log.test.cpp
-    title: test/math/FormalPowerSeries-log.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-multi-eval.test.cpp
-    title: test/math/FormalPowerSeries-multi-eval.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/math/FormalPowerSeries-nth.test.cpp
-    title: test/math/FormalPowerSeries-nth.test.cpp
-  - icon: ':x:'
-    path: test/math/FormalPowerSeries-pow.test.cpp
-    title: test/math/FormalPowerSeries-pow.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/math/Matrix-det.test.cpp
     title: test/math/Matrix-det.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/Matrix-pow.test.cpp
     title: test/math/Matrix-pow.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-exp.test.cpp
+    title: test/polynomial/FormalPowerSeries-exp.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
+    title: test/polynomial/FormalPowerSeries-interpolation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-inv.test.cpp
+    title: test/polynomial/FormalPowerSeries-inv.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-log.test.cpp
+    title: test/polynomial/FormalPowerSeries-log.test.cpp
+  - icon: ':x:'
+    path: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+    title: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-nth.test.cpp
+    title: test/polynomial/FormalPowerSeries-nth.test.cpp
+  - icon: ':x:'
+    path: test/polynomial/FormalPowerSeries-pow.test.cpp
+    title: test/polynomial/FormalPowerSeries-pow.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/util/ModInt.test.cpp
     title: test/util/ModInt.test.cpp
@@ -167,16 +167,16 @@ data:
   - test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
-  - test/math/FormalPowerSeries-exp.test.cpp
-  - test/math/FormalPowerSeries-pow.test.cpp
-  - test/math/FormalPowerSeries-interpolation.test.cpp
-  - test/math/FormalPowerSeries-multi-eval.test.cpp
-  - test/math/FormalPowerSeries-inv.test.cpp
+  - test/polynomial/FormalPowerSeries-exp.test.cpp
+  - test/polynomial/FormalPowerSeries-pow.test.cpp
+  - test/polynomial/FormalPowerSeries-interpolation.test.cpp
+  - test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+  - test/polynomial/FormalPowerSeries-inv.test.cpp
+  - test/polynomial/FormalPowerSeries-log.test.cpp
+  - test/polynomial/FormalPowerSeries-nth.test.cpp
   - test/math/Matrix-pow.test.cpp
-  - test/math/FormalPowerSeries-log.test.cpp
   - test/math/CombinationMod-factorial.test.cpp
   - test/math/Matrix-det.test.cpp
-  - test/math/FormalPowerSeries-nth.test.cpp
   - test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
   - test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   - test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp

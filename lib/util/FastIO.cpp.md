@@ -31,14 +31,32 @@ data:
     path: test/heap/DoubleEndedPriorityQuere.test.cpp
     title: test/heap/DoubleEndedPriorityQuere.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-exp.test.cpp
+    title: test/polynomial/FormalPowerSeries-exp.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-inv.test.cpp
+    title: test/polynomial/FormalPowerSeries-inv.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-log.test.cpp
+    title: test/polynomial/FormalPowerSeries-log.test.cpp
+  - icon: ':x:'
+    path: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+    title: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-nth.test.cpp
+    title: test/polynomial/FormalPowerSeries-nth.test.cpp
+  - icon: ':x:'
+    path: test/polynomial/FormalPowerSeries-pow.test.cpp
+    title: test/polynomial/FormalPowerSeries-pow.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/util/FastIO-int128.test.cpp
     title: test/util/FastIO-int128.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/util/FastIO-int64.test.cpp
     title: test/util/FastIO-int64.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/util/FastIO.md
     document_title: FastIO
@@ -101,13 +119,19 @@ data:
   path: lib/util/FastIO.cpp
   requiredBy: []
   timestamp: '2023-05-14 12:34:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/heap/DoubleEndedPriorityQuere.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
+  - test/polynomial/FormalPowerSeries-exp.test.cpp
+  - test/polynomial/FormalPowerSeries-pow.test.cpp
+  - test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+  - test/polynomial/FormalPowerSeries-inv.test.cpp
+  - test/polynomial/FormalPowerSeries-log.test.cpp
+  - test/polynomial/FormalPowerSeries-nth.test.cpp
   - test/data-structure/data-structure/WordSizeTreeSet.test.cpp
   - test/data-structure/range-query/SparseTable.test.cpp
   - test/data-structure/range-query/DisjointSparseTable.test.cpp

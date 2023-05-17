@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/data-structure/range-query/DisjointSparseTable.cpp
     title: DisjointSparseTable
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/util/FastIO.cpp
     title: FastIO
   _extendedRequiredBy: []

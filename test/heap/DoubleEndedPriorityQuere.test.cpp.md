@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/heap/DoubleEndedPriorityQuere.cpp
     title: "DoubleEndedPriorityQuere - \u4E21\u7AEFpriority queue"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/util/FastIO.cpp
     title: FastIO
   _extendedRequiredBy: []

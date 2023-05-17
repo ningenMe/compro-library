@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/data-structure/data-structure/WordSizeTreeSet.cpp
     title: "WordSizeTreeSet - 64\u5206\u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/util/FastIO.cpp
     title: FastIO
   _extendedRequiredBy: []

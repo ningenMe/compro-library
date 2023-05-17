@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/graph/UnionFindTree.cpp
     title: "UnionFindTree - Union Find \u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/util/FastIO.cpp
     title: FastIO
   _extendedRequiredBy: []

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/math/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/math/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
   - icon: ':question:'
@@ -17,55 +17,55 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://yukicoder.me/problems/no/754
+    PROBLEM: https://judge.yosupo.jp/problem/polynomial_interpolation
     links:
-    - https://yukicoder.me/problems/no/754
-  bundledCode: "#line 1 \"test/math/FormalPowerSeries-nth.test.cpp\"\n#define PROBLEM\
-    \ \"https://yukicoder.me/problems/no/754\"\n\n#include <vector>\n#include <iostream>\n\
-    #include <numeric>\n#include <algorithm>\n#include <array>\n\nusing namespace\
-    \ std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/util/ModInt.md\n\
-    \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
-    \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
-    \ (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const ModInt &p) {if((x\
-    \ += p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator+=(const\
-    \ long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n  \
-    \  constexpr ModInt &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod)\
-    \ x -= mod;return *this;}\n    constexpr ModInt &operator-=(const ModInt &p) {if((x\
+    - https://judge.yosupo.jp/problem/polynomial_interpolation
+  bundledCode: "#line 1 \"test/polynomial/FormalPowerSeries-interpolation.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/polynomial_interpolation\"\
+    \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
+    #include <array>\n\nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n\
+    \ * @title ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class\
+    \ ModInt {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr\
+    \ ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr\
+    \ ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n\
+    \    constexpr ModInt &operator+=(const long long y) {ModInt p(y);if((x += p.x)\
+    \ >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator+=(const int\
+    \ y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr\
+    \ ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return\
+    \ *this;}\n    constexpr ModInt &operator-=(const long long y) {ModInt p(y);if((x\
     \ += mod - p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator-=(const\
-    \ long long y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}\n\
-    \    constexpr ModInt &operator-=(const int y) {ModInt p(y);if((x += mod - p.x)\
-    \ >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator*=(const ModInt\
-    \ &p) {x = (x * p.x % mod);return *this;}\n    constexpr ModInt &operator*=(const\
-    \ long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    constexpr\
-    \ ModInt &operator*=(const int y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n\
-    \    constexpr ModInt &operator^=(const ModInt &p) {x = (x ^ p.x) % mod;return\
-    \ *this;}\n    constexpr ModInt &operator^=(const long long y) {ModInt p(y);x\
-    \ = (x ^ p.x) % mod;return *this;}\n    constexpr ModInt &operator^=(const int\
-    \ y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    constexpr ModInt &operator/=(const\
-    \ ModInt &p) {*this *= p.inv();return *this;}\n    constexpr ModInt &operator/=(const\
-    \ long long y) {ModInt p(y);*this *= p.inv();return *this;}\n    constexpr ModInt\
-    \ &operator/=(const int y) {ModInt p(y);*this *= p.inv();return *this;}\n    constexpr\
-    \ ModInt operator=(const int y) {ModInt p(y);*this = p;return *this;}\n    constexpr\
-    \ ModInt operator=(const long long y) {ModInt p(y);*this = p;return *this;}\n\
-    \    constexpr ModInt operator-() const {return ModInt(-x); }\n    constexpr ModInt\
-    \ operator++() {x++;if(x>=mod) x-=mod;return *this;}\n    constexpr ModInt operator--()\
-    \ {x--;if(x<0) x+=mod;return *this;}\n    constexpr ModInt operator+(const ModInt\
-    \ &p) const { return ModInt(*this) += p; }\n    constexpr ModInt operator-(const\
-    \ ModInt &p) const { return ModInt(*this) -= p; }\n    constexpr ModInt operator*(const\
-    \ ModInt &p) const { return ModInt(*this) *= p; }\n    constexpr ModInt operator/(const\
-    \ ModInt &p) const { return ModInt(*this) /= p; }\n    constexpr ModInt operator^(const\
-    \ ModInt &p) const { return ModInt(*this) ^= p; }\n    constexpr bool operator==(const\
-    \ ModInt &p) const { return x == p.x; }\n    constexpr bool operator!=(const ModInt\
-    \ &p) const { return x != p.x; }\n    // ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
-    \ > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}\n\
-    \    constexpr ModInt inv() const {int a=x,b=mod,u=1,v=0,t=0,tmp=0;while(b > 0)\
-    \ {t = a / b;a-=t*b;tmp=a;a=b;b=tmp;u-=t*v;tmp=u;u=v;v=tmp;} return ModInt(u);}\n\
-    \    constexpr ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul\
-    \ *= mul,n >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream &operator<<(ostream\
-    \ &os, const ModInt &p) {return os << p.x;}\n    friend istream &operator>>(istream\
-    \ &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}\n};\n\
-    constexpr long long MOD_998244353 = 998244353;\nconstexpr long long MOD_1000000007\
-    \ = 1'000'000'000LL + 7; //'\n#line 1 \"lib/math/NumberTheoreticalTransform.cpp\"\
+    \ int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}\n  \
+    \  constexpr ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}\n\
+    \    constexpr ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x\
+    \ % mod);return *this;}\n    constexpr ModInt &operator*=(const int y) {ModInt\
+    \ p(y);x = (x * p.x % mod);return *this;}\n    constexpr ModInt &operator^=(const\
+    \ ModInt &p) {x = (x ^ p.x) % mod;return *this;}\n    constexpr ModInt &operator^=(const\
+    \ long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    constexpr\
+    \ ModInt &operator^=(const int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n\
+    \    constexpr ModInt &operator/=(const ModInt &p) {*this *= p.inv();return *this;}\n\
+    \    constexpr ModInt &operator/=(const long long y) {ModInt p(y);*this *= p.inv();return\
+    \ *this;}\n    constexpr ModInt &operator/=(const int y) {ModInt p(y);*this *=\
+    \ p.inv();return *this;}\n    constexpr ModInt operator=(const int y) {ModInt\
+    \ p(y);*this = p;return *this;}\n    constexpr ModInt operator=(const long long\
+    \ y) {ModInt p(y);*this = p;return *this;}\n    constexpr ModInt operator-() const\
+    \ {return ModInt(-x); }\n    constexpr ModInt operator++() {x++;if(x>=mod) x-=mod;return\
+    \ *this;}\n    constexpr ModInt operator--() {x--;if(x<0) x+=mod;return *this;}\n\
+    \    constexpr ModInt operator+(const ModInt &p) const { return ModInt(*this)\
+    \ += p; }\n    constexpr ModInt operator-(const ModInt &p) const { return ModInt(*this)\
+    \ -= p; }\n    constexpr ModInt operator*(const ModInt &p) const { return ModInt(*this)\
+    \ *= p; }\n    constexpr ModInt operator/(const ModInt &p) const { return ModInt(*this)\
+    \ /= p; }\n    constexpr ModInt operator^(const ModInt &p) const { return ModInt(*this)\
+    \ ^= p; }\n    constexpr bool operator==(const ModInt &p) const { return x ==\
+    \ p.x; }\n    constexpr bool operator!=(const ModInt &p) const { return x != p.x;\
+    \ }\n    // ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b > 0) {t = a /\
+    \ b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}\n    constexpr\
+    \ ModInt inv() const {int a=x,b=mod,u=1,v=0,t=0,tmp=0;while(b > 0) {t = a / b;a-=t*b;tmp=a;a=b;b=tmp;u-=t*v;tmp=u;u=v;v=tmp;}\
+    \ return ModInt(u);}\n    constexpr ModInt pow(long long n) const {ModInt ret(1),\
+    \ mul(x);for(;n > 0;mul *= mul,n >>= 1) if(n & 1) ret *= mul;return ret;}\n  \
+    \  friend ostream &operator<<(ostream &os, const ModInt &p) {return os << p.x;}\n\
+    \    friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a\
+    \ = ModInt<mod>(t);return (is);}\n};\nconstexpr long long MOD_998244353 = 998244353;\n\
+    constexpr long long MOD_1000000007 = 1'000'000'000LL + 7; //'\n#line 1 \"lib/math/NumberTheoreticalTransform.cpp\"\
     \n/*\n * @title NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB\n * @docs\
     \ md/math/NumberTheoreticalTransform.md\n */\ntemplate<class T> class NumberTheoreticalTransform\
     \ {\n    inline static constexpr int prime1 =1004535809;\n    inline static constexpr\
@@ -228,34 +228,35 @@ data:
     \      return numerator[0];\n    }\n\n    friend ostream &operator<<(ostream &os,\
     \ const Fps& fps) {os << \"{\" << fps[0];for(int i=1;i<fps.size();++i) os << \"\
     , \" << fps[i];return os << \"}\";}\n};\n//using fps = FormalPowerSeries<RuntimeModInt<mod>>;\n\
-    //using fps = FormalPowerSeries<ModInt<MOD>>;\n#line 13 \"test/math/FormalPowerSeries-nth.test.cpp\"\
-    \nconstexpr long long MOD = 1000'000'007;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
-    int main(void){\n    int N; cin >> N;\n    fps A(N+1),B(N+1);\n    for(int i =\
-    \ 0; i < N+1; ++i) cin >> A[i];\n    for(int i = 0; i < N+1; ++i) cin >> B[i];\n\
-    \    fps C = fps::mul(A,B), D({1,-1});\n    cout << fps::nth_term(N,C,D) << endl;\n\
-    \treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/754\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\
-    \nusing namespace std;\n#include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/math/NumberTheoreticalTransform.cpp\"\
-    \n#include \"../../lib/math/FormalPowerSeries.cpp\"\nconstexpr long long MOD =\
-    \ 1000'000'007;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\nint main(void){\n\
-    \    int N; cin >> N;\n    fps A(N+1),B(N+1);\n    for(int i = 0; i < N+1; ++i)\
-    \ cin >> A[i];\n    for(int i = 0; i < N+1; ++i) cin >> B[i];\n    fps C = fps::mul(A,B),\
-    \ D({1,-1});\n    cout << fps::nth_term(N,C,D) << endl;\n\treturn 0;\n}"
+    //using fps = FormalPowerSeries<ModInt<MOD>>;\n#line 13 \"test/polynomial/FormalPowerSeries-interpolation.test.cpp\"\
+    \nconstexpr long long MOD = 998244353;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
+    \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N; cin >>\
+    \ N;\n    vector<ModInt<MOD>> X(N),Y(N);\n    for(int i=0;i<N;++i) cin >> X[i];\n\
+    \    for(int i=0;i<N;++i) cin >> Y[i];\n    auto f = fps::interpolation(X,Y);\n\
+    \    for(int i=0;i<N;++i) cout << f[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/polynomial_interpolation\"\
+    \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
+    #include <array>\n\nusing namespace std;\n#include \"../../lib/util/ModInt.cpp\"\
+    \n#include \"../../lib/math/NumberTheoreticalTransform.cpp\"\n#include \"../../lib/math/FormalPowerSeries.cpp\"\
+    \nconstexpr long long MOD = 998244353;\nusing fps = FormalPowerSeries<ModInt<MOD>>;\n\
+    \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N; cin >>\
+    \ N;\n    vector<ModInt<MOD>> X(N),Y(N);\n    for(int i=0;i<N;++i) cin >> X[i];\n\
+    \    for(int i=0;i<N;++i) cin >> Y[i];\n    auto f = fps::interpolation(X,Y);\n\
+    \    for(int i=0;i<N;++i) cout << f[i] << \" \\n\"[i==N-1];\n    return 0;\n}"
   dependsOn:
   - lib/util/ModInt.cpp
   - lib/math/NumberTheoreticalTransform.cpp
   - lib/math/FormalPowerSeries.cpp
   isVerificationFile: true
-  path: test/math/FormalPowerSeries-nth.test.cpp
+  path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
   requiredBy: []
-  timestamp: '2023-05-18 00:39:49+09:00'
+  timestamp: '2023-05-18 02:25:01+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/math/FormalPowerSeries-nth.test.cpp
+documentation_of: test/polynomial/FormalPowerSeries-interpolation.test.cpp
 layout: document
 redirect_from:
-- /verify/test/math/FormalPowerSeries-nth.test.cpp
-- /verify/test/math/FormalPowerSeries-nth.test.cpp.html
-title: test/math/FormalPowerSeries-nth.test.cpp
+- /verify/test/polynomial/FormalPowerSeries-interpolation.test.cpp
+- /verify/test/polynomial/FormalPowerSeries-interpolation.test.cpp.html
+title: test/polynomial/FormalPowerSeries-interpolation.test.cpp
 ---
