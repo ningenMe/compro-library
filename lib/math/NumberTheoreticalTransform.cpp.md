@@ -24,18 +24,6 @@ data:
   - icon: ':x:'
     path: test/math/FormalPowerSeries-pow.test.cpp
     title: test/math/FormalPowerSeries-pow.test.cpp
-  - icon: ':x:'
-    path: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
-    title: test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
-  - icon: ':x:'
-    path: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
-    title: test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
-  - icon: ':x:'
-    path: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
-    title: test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
-  - icon: ':x:'
-    path: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
-    title: test/math/NumberTheoreticalTransform-conv-fft.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
@@ -199,13 +187,9 @@ data:
   - test/math/FormalPowerSeries-pow.test.cpp
   - test/math/FormalPowerSeries-interpolation.test.cpp
   - test/math/FormalPowerSeries-multi-eval.test.cpp
-  - test/math/NumberTheoreticalTransform-conv-998244353-2.test.cpp
-  - test/math/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/math/FormalPowerSeries-inv.test.cpp
   - test/math/FormalPowerSeries-log.test.cpp
-  - test/math/NumberTheoreticalTransform-conv-fft.test.cpp
   - test/math/FormalPowerSeries-nth.test.cpp
-  - test/math/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
 documentation_of: lib/math/NumberTheoreticalTransform.cpp
 layout: document
 redirect_from:
@@ -213,20 +197,3 @@ redirect_from:
 - /library/lib/math/NumberTheoreticalTransform.cpp.html
 title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
 ---
-### NumberTheoreticalTransform
-- 多項式の畳込みを行う
-
-### コンストラクタ
-- なし
-
-### メソッド
-- vector<long long> convolution(const vector<long long>& g,const vector<long long>& h)
-  - modを取らないときに、畳み込みを返すメソッド。大きいmodintで動作させると良い。内部的にはnttを行っていて、3回畳み込んでいるため定数倍は重め。
-- vector<ModInt<998244353>> convolution(const vector<ModInt<998244353>>& g,const vector<ModInt<998244353>>& h)
-  - mod 998244353で良いときに畳み込みを返すメソッド。定数倍はふつう。
-- vector<ModInt<1000000007>> convolution(const vector<ModInt<1000000007>>& g,const vector<ModInt<1000000007>>& h)
-  - mod 1000000007で良いときに畳み込みを返すメソッド。大きいmodintで動作させると良い。内部的にはnttを行っていて、3回畳み込んでいるため定数倍は重め。
-
-### 参考資料
-- [高速フーリエ変換](https://atcoder.jp/contests/atc001/tasks/fft_c)
-- [Convolution](https://atcoder.github.io/ac-library/production/document_ja/convolution.html)
