@@ -6,19 +6,23 @@
 #include <array>
 using namespace std;
 #include "../../lib/util/ModInt.cpp"
-#include "../../lib/math/NumberTheoreticalTransform.cpp"
+#include "../../lib/util/FastIO.cpp"
+#include "../../lib/convolution/NumberTheoreticalTransform.cpp"
 
-constexpr long long mod = 1000000000000000000;
+constexpr long long MOD = 1000000000000000000;
 
 int main() {
     cin.tie(0);ios::sync_with_stdio(false);
-    int N,Q; cin >> N >> Q;
-    vector<long long> A(N),B(N,0),D(N,0);
-    for(int i=0;i<N;++i) cin >> A[i];
-    while(Q--){
-        int r; cin >> r; B[N-1-r]+=1;
+    int N,Q; read(N); read(Q);
+    vector<ModInt<MOD>> A(N),B(N,0),D(N,0);
+    for(int i=0;i<N;++i) {
+        int a; read(a);
+        A[i]=a;
     }
-    auto C = NumberTheoreticalTransform<ModInt<mod>>::convolution(A,B);
+    while(Q--){
+        int r; read(r); B[N-1-r]+=1;
+    }
+    auto C = NumberTheoreticalTransform<MOD>::convolution(A,B);
     for(int i=0;i<2*N-1;++i) {
         D[(i+1)%N]+=C[i];
     }
