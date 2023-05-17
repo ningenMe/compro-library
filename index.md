@@ -175,9 +175,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/math/FloorSum.cpp
       title: "FloorSum - \u76F4\u7DDA\u9818\u57DF\u306E\u683C\u5B50\u70B9\u6570"
-    - icon: ':warning:'
-      path: lib/math/FormalPowerSeries.cpp
-      title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
     - icon: ':heavy_check_mark:'
       path: lib/math/Garner.cpp
       title: "Garner - \u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
@@ -190,9 +187,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
-    - icon: ':warning:'
-      path: lib/math/NumberTheoreticalTransform.cpp
-      title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
     - icon: ':warning:'
       path: lib/math/Polynomial.cpp
       title: "Polynomial - \u591A\u9805\u5F0F\u88DC\u9593"
