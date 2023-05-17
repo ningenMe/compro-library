@@ -7,17 +7,23 @@
 #include <array>
 
 using namespace std;
+#include "../../lib/util/FastIO.cpp"
 #include "../../lib/util/ModInt.cpp"
-#include "../../lib/math/NumberTheoreticalTransform.cpp"
-#include "../../lib/math/FormalPowerSeries.cpp"
-constexpr long long MOD = 1000'000'007;
-using fps = FormalPowerSeries<ModInt<MOD>>;
+#include "../../lib/convolution/NumberTheoreticalTransform.cpp"
+#include "../../lib/polynomial/FormalPowerSeries.cpp"
+
 int main(void){
-    int N; cin >> N;
-    fps A(N+1),B(N+1);
-    for(int i = 0; i < N+1; ++i) cin >> A[i];
-    for(int i = 0; i < N+1; ++i) cin >> B[i];
-    fps C = fps::mul(A,B), D({1,-1});
-    cout << fps::nth_term(N,C,D) << endl;
+    int N; read(N);
+    FormalPowerSeries<MOD_1000000007> A(N+1),B(N+1);
+    for(int i = 0; i < N+1; ++i) {
+        int a; read(a);
+        A[i]=a;
+    }
+    for(int i = 0; i < N+1; ++i) {
+        int a; read(a);
+        B[i]=a;
+    }
+    FormalPowerSeries<MOD_1000000007> C = FormalPowerSeries<MOD_1000000007>::mul(A,B), D({1,-1});
+    cout << FormalPowerSeries<MOD_1000000007>::nth_term(N,C,D) << "\n";
 	return 0;
 }
