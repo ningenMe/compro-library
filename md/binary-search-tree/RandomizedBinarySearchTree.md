@@ -1,5 +1,5 @@
 ### RandomizedBinarySearchTree
-- setベースの平衡二分探索木
+- setベースの、ランダム平衡二分探索木
   - 0-indexed
 
 ### コンストラクタ

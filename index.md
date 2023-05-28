@@ -238,6 +238,10 @@ data:
       path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
       title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
         \u9593\u66F4\u65B0"
+    - icon: ':warning:'
+      path: lib/operator/monoid-lazy/MonoidRangeFoldSumRangeOperateUpdate.cpp
+      title: "MonoidRangeFoldSumRangeOperateUpdate - fold:\u533A\u9593sum, operate:\u533A\
+        \u9593\u66F4\u65B0"
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp
       title: "MonoidRangeMinRangeAdd - [\u533A\u9593min, \u533A\u9593\u52A0\u7B97]"

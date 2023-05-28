@@ -264,3 +264,9 @@ title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
 ### TODO
 - まだバグがある
 - リファレンスをかく
+
+### 参考資料
+- [C - データ構造](https://atcoder.jp/contests/arc033/tasks/arc033_3)
+  - [提出](https://atcoder.jp/contests/arc033/submissions/41820033)
+
+

@@ -210,7 +210,7 @@ title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
   \u4E8C\u5206\u63A2\u7D22\u6728\u5217"
 ---
 ### LazyRandomizedBinarySearchTreeSequence
-- 列ベースの、遅延伝播平衡二分探索木
+- 列ベースの、遅延伝播ができるランダム平衡二分探索木 
   - 0-indexed
 
 ### コンストラクタ

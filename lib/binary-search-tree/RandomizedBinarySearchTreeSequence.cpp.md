@@ -158,7 +158,7 @@ title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D2
   \u5217"
 ---
 ### RandomizedBinarySearchTreeSequence
-- 列ベースの、平衡二分探索木
+- 列ベースの、ランダム平衡二分探索木
   - 0-indexed
 
 ### コンストラクタ

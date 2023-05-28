@@ -170,7 +170,7 @@ redirect_from:
 title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
 ---
 ### RandomizedBinarySearchTree
-- setベースの平衡二分探索木
+- setベースの、ランダム平衡二分探索木
   - 0-indexed
 
 ### コンストラクタ
