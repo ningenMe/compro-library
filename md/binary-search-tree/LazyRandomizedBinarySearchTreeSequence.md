@@ -1,5 +1,5 @@
 ### LazyRandomizedBinarySearchTreeSequence
-- 列ベースの、遅延伝播平衡二分探索木
+- 列ベースの、遅延伝播ができるランダム平衡二分探索木 
   - 0-indexed
 
 ### コンストラクタ

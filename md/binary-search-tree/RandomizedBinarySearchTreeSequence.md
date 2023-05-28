@@ -1,5 +1,5 @@
 ### RandomizedBinarySearchTreeSequence
-- 列ベースの、平衡二分探索木
+- 列ベースの、ランダム平衡二分探索木
   - 0-indexed
 
 ### コンストラクタ
