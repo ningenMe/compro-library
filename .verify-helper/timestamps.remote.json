@@ -33,7 +33,6 @@
 "test/data-structure/range-query/SparseTable.test.cpp": "2023-05-15 02:57:06 +0900",
 "test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp": "2023-05-12 02:44:17 +0900",
 "test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp": "2023-05-12 02:44:17 +0900",
-"test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp": "2023-05-12 02:44:17 +0900",
 "test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp": "2023-05-12 02:44:17 +0900",
 "test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp": "2023-05-12 02:44:17 +0900",
 "test/data-structure/segment-tree/SegmentTree-rcq.test.cpp": "2023-05-18 00:39:49 +0900",
