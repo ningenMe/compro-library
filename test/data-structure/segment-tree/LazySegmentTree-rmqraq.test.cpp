@@ -4,22 +4,22 @@
 #include <iostream>
 using namespace std;
 #include "../../../lib/data-structure/segment-tree/LazySegmentTree.cpp"
-#include "../../../lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp"
+#include "../../../lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp"
 
 int main(void){
 	int N,Q; cin >> N >> Q;
 	long inf = 1234567890LL;
-	LazySegmentTree<MonoidRangeMinRangeAdd<long long,long long>> Seg(N,0LL);
+	LazySegmentTree<MonoidRangeFoldMinRangeOperateUpdate<long long,long long>> seg(N,0LL);
 	while(Q--) {
 		int q,s,t,x;
 		cin >> q >> s >> t;
 		t++;
 		if(q){
-			cout << Seg.fold(s,t) << endl;
+			cout << seg.fold(s,t) << endl;
 		}
 		else {
 			cin >> x;
-			Seg.operate(s,t,x);
+			seg.operate(s,t,x);
 		}
 	}
 	return 0;

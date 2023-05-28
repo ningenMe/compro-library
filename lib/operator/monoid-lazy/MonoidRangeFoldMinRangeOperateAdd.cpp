@@ -1,8 +1,8 @@
 /*
- * @title MonoidRangeMinRangeAdd - [区間min, 区間加算]
- * @docs md/operator/monoid-lazy/MonoidRangeMinRangeAdd.md
+ * @title MonoidRangeFoldMinRangeOperateAdd - fold:区間min, operate:区間加算
+ * @docs md/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.md
  */
-template<class T, class U> struct MonoidRangeMinRangeAdd {
+template<class T, class U> struct MonoidRangeFoldMinRangeOperateAdd {
 	using TypeNode = T;
 	using TypeLazy = U;
 	inline static constexpr TypeNode unit_node = 1234567890;
