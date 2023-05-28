@@ -6,7 +6,7 @@
 #include <queue>
 using namespace std;
 #include "../../lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp"
-#include "../../lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
+#include "../../lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
 #include "../../lib/util/ModInt.cpp"
 
 using modint = ModInt<998244353>;

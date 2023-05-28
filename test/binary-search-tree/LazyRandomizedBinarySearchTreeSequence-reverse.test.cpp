@@ -7,7 +7,7 @@
 using namespace std;
 #include "../../lib/util/ModInt.cpp"
 #include "../../lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp"
-#include "../../lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
+#include "../../lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
 
 using modint = ModInt<998244353>;
 

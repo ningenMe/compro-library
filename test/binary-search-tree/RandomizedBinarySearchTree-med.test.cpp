@@ -7,7 +7,7 @@
 #include <numeric>
 #include <cmath>
 using namespace std;
-#include "../../lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp"
+#include "../../lib/binary-search-tree/RandomizedBinarySearchTree.cpp"
 #include "../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp"
 
 template<class T> class Mo{

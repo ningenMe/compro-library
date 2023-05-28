@@ -6,7 +6,7 @@
 #include <queue>
 using namespace std;
 #include "../../lib/operator/monoid/MonoidRangeMinPointUpdate.cpp"
-#include "../../lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp"
+#include "../../lib/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);

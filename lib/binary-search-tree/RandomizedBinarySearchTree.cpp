@@ -1,6 +1,6 @@
 /*
  * @title RandomizedBinarySearchTree - 平衡二分探索木
- * @docs md/data-structure/binary-search-tree/RandomizedBinarySearchTree.md
+ * @docs md/binary-search-tree/RandomizedBinarySearchTree.md
  */
 template<class Monoid> class RandomizedBinarySearchTree {
     using TypeNode = typename Monoid::TypeNode;

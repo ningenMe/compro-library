@@ -7,7 +7,7 @@
 #include <numeric>
 #include <cmath>
 using namespace std;
-#include "../../lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp"
+#include "../../lib/binary-search-tree/RandomizedBinarySearchTree.cpp"
 
 template<class T> struct Monoid {
 	using TypeNode = T;
