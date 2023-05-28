@@ -5,8 +5,8 @@
 #include <cassert>
 #include <queue>
 using namespace std;
-#include "../../../lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp"
-#include "../../../lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
+#include "../../lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp"
+#include "../../lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
 
 
 int main(void){
