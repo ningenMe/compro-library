@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: lib/binary-search-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/binary-search-tree/LazySplayTreeSequence.cpp
+      title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
   - name: lib/convolution
     pages:
     - icon: ':question:'
@@ -232,6 +237,10 @@ data:
       title: "MonoidRangeEulerTourSumRangeAdd - [\u533A\u9593\u30AA\u30A4\u30E9\u30FC\
         \u30C4\u30A2\u30FC\u548C, \u533A\u9593\u52A0\u7B97]"
     - icon: ':heavy_check_mark:'
+      path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
+      title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
+        \u9593\u66F4\u65B0"
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp
       title: "MonoidRangeMinRangeAdd - [\u533A\u9593min, \u533A\u9593\u52A0\u7B97]"
     - icon: ':warning:'
@@ -381,6 +390,11 @@ data:
       path: non-verified/old-tree.cpp
       title: "Tree - \u6728"
   verificationCategories:
+  - name: test/binary-search-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
+      title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - name: test/convolution
     pages:
     - icon: ':heavy_check_mark:'

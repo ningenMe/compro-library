@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
+    title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -139,6 +142,7 @@ data:
   - test/data-structure/data-structure/WordSizeTreeSet.test.cpp
   - test/data-structure/range-query/SparseTable.test.cpp
   - test/data-structure/range-query/DisjointSparseTable.test.cpp
+  - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - test/graph/UnionFindTree.test.cpp
   - test/util/FastIO-int128.test.cpp
   - test/util/FastIO-int64.test.cpp
