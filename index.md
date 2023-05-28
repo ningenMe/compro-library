@@ -95,7 +95,7 @@ data:
       path: lib/data-structure/segment-tree/DynamicSegmentTree.cpp
       title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
         \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/data-structure/segment-tree/LazySegmentTree.cpp
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -234,7 +234,11 @@ data:
       path: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
       title: "MonoidRangeEulerTourSumRangeAdd - [\u533A\u9593\u30AA\u30A4\u30E9\u30FC\
         \u30C4\u30A2\u30FC\u548C, \u533A\u9593\u52A0\u7B97]"
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
+      path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.cpp
+      title: "MonoidRangeFoldMinRangeOperateAdd - fold:\u533A\u9593min, operate:\u533A\
+        \u9593\u52A0\u7B97"
+    - icon: ':question:'
       path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
       title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
         \u9593\u66F4\u65B0"
@@ -242,9 +246,6 @@ data:
       path: lib/operator/monoid-lazy/MonoidRangeFoldSumRangeOperateUpdate.cpp
       title: "MonoidRangeFoldSumRangeOperateUpdate - fold:\u533A\u9593sum, operate:\u533A\
         \u9593\u66F4\u65B0"
-    - icon: ':heavy_check_mark:'
-      path: lib/operator/monoid-lazy/MonoidRangeMinRangeAdd.cpp
-      title: "MonoidRangeMinRangeAdd - [\u533A\u9593min, \u533A\u9593\u52A0\u7B97]"
     - icon: ':warning:'
       path: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
       title: "MonoidRangeMinRangeArithmeticUpdate - [\u533A\u9593min, \u533A\u9593\
@@ -517,7 +518,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
       title: test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
       title: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
     - icon: ':heavy_check_mark:'
