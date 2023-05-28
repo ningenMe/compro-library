@@ -393,8 +393,35 @@ data:
   - name: test/binary-search-tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+      title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+      title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+      title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+      title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
       title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+      title: test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+      title: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+      title: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+      title: test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+      title: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
   - name: test/convolution
     pages:
     - icon: ':heavy_check_mark:'
@@ -423,35 +450,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
       title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
-  - name: test/data-structure/binary-search-tree
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
-      title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
-      title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-      title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
-      title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
-      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
-      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
-      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
-      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
-      title: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
   - name: test/data-structure/convex-hull-trick
     pages:
     - icon: ':heavy_check_mark:'

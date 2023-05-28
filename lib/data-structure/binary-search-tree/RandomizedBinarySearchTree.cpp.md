@@ -4,14 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
-    title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+    path: test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+    title: test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
-    title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+    path: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+    title: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
-    title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+    path: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+    title: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
     title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
@@ -172,9 +172,9 @@ data:
   - test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
   - test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
   - test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
-  - test/data-structure/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
-  - test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
-  - test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
 documentation_of: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
 layout: document
 redirect_from:

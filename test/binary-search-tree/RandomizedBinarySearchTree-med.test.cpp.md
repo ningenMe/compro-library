@@ -18,7 +18,7 @@ data:
     PROBLEM: https://yukicoder.me/problems/no/919
     links:
     - https://yukicoder.me/problems/no/919
-  bundledCode: "#line 1 \"test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp\"\
+  bundledCode: "#line 1 \"test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp\"\
     \n#define PROBLEM \"https://yukicoder.me/problems/no/919\"\n\n#include <vector>\n\
     #include <iostream>\n#include <unordered_map>\n#include <algorithm>\n#include\
     \ <numeric>\n#include <cmath>\nusing namespace std;\n#line 1 \"lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp\"\
@@ -94,7 +94,7 @@ data:
     \ TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_fold(TypeNode\
     \ l,TypeNode r){return l+r;}\n    inline static constexpr TypeNode func_operate(TypeNode\
     \ l,TypeNode r){return l+r;}\n    inline static constexpr bool func_check(TypeNode\
-    \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n#line 12 \"test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp\"\
+    \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n#line 12 \"test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp\"\
     \n\ntemplate<class T> class Mo{\n    unordered_map<long long,int> mp;\n    long\
     \ long N;\n    int bucket;\n    vector<pair<int,int>> range;\n\tvector<int> idx;\n\
     public:\n\n    Mo(int N, const vector<pair<int,int>>& range) : N(N),range(range),idx(range.size()),bucket(sqrt(N))\
@@ -144,8 +144,8 @@ data:
     }\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/919\"\n\n#include <vector>\n\
     #include <iostream>\n#include <unordered_map>\n#include <algorithm>\n#include\
-    \ <numeric>\n#include <cmath>\nusing namespace std;\n#include \"../../../lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp\"\
-    \n#include \"../../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp\"\n\ntemplate<class\
+    \ <numeric>\n#include <cmath>\nusing namespace std;\n#include \"../../lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp\"\
+    \n#include \"../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp\"\n\ntemplate<class\
     \ T> class Mo{\n    unordered_map<long long,int> mp;\n    long long N;\n    int\
     \ bucket;\n    vector<pair<int,int>> range;\n\tvector<int> idx;\npublic:\n\n \
     \   Mo(int N, const vector<pair<int,int>>& range) : N(N),range(range),idx(range.size()),bucket(sqrt(N))\
@@ -197,15 +197,15 @@ data:
   - lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
   - lib/operator/monoid/MonoidRangeSumPointAdd.cpp
   isVerificationFile: true
-  path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+  path: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 03:08:31+09:00'
+  timestamp: '2023-05-29 03:17:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+documentation_of: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
 layout: document
 redirect_from:
-- /verify/test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
-- /verify/test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp.html
-title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+- /verify/test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+- /verify/test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp.html
+title: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
 ---

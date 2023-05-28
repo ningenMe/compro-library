@@ -4,10 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
     title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
-  - icon: ':heavy_check_mark:'
-    path: lib/operator/monoid/MonoidRangeSumPointAdd.cpp
-    title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
-      ]"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -15,11 +11,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://yukicoder.me/problems/no/649
+    PROBLEM: https://yukicoder.me/problems/no/822
     links:
-    - https://yukicoder.me/problems/no/649
-  bundledCode: "#line 1 \"test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp\"\
-    \n#define PROBLEM \"https://yukicoder.me/problems/no/649\"\n\n#include <vector>\n\
+    - https://yukicoder.me/problems/no/822
+  bundledCode: "#line 1 \"test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp\"\
+    \n#define PROBLEM \"https://yukicoder.me/problems/no/822\"\n\n#include <vector>\n\
     #include <iostream>\n#include <unordered_map>\n#include <algorithm>\n#include\
     \ <numeric>\n#include <cmath>\nusing namespace std;\n#line 1 \"lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp\"\
     \n/*\n * @title RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
@@ -87,43 +83,40 @@ data:
     \ {return upper_bound(this->root,value);}\n    inline int count(TypeNode value)\
     \ {return upper_bound(value) - lower_bound(value);}\n    void print() {int m =\
     \ size(this->root); for(int i=0;i<m;++i) cout << get(i) << \" \\n\"[i==m-1];}\n\
-    };\n#line 1 \"lib/operator/monoid/MonoidRangeSumPointAdd.cpp\"\n/*\n * @title\
-    \ MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97]\n *\
-    \ @docs md/operator/monoid/MonoidRangeSumPointAdd.md\n */\ntemplate<class T> struct\
-    \ MonoidRangeSumPointAdd {\n    using TypeNode = T;\n    inline static constexpr\
-    \ TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_fold(TypeNode\
-    \ l,TypeNode r){return l+r;}\n    inline static constexpr TypeNode func_operate(TypeNode\
-    \ l,TypeNode r){return l+r;}\n    inline static constexpr bool func_check(TypeNode\
-    \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n#line 12 \"test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp\"\
-    \n\nint main(){\n    cin.tie(0);ios::sync_with_stdio(false);\n\tRandomizedBinarySearchTree<MonoidRangeSumPointAdd<long\
-    \ long>> st;\n\tint Q,K; cin >> Q >> K;\n\twhile (Q--){\n\t\tint q; cin >> q;\n\
-    \t\tif(q==1){\n\t\t\tlong long x; cin >> x;\n\t\t\tst.insert(x);\n\t\t}\n\t\t\
-    else{\n\t\t\tlong long x=-1;\n\t\t\tif(st.size()>=K){\n\t\t\t\tx=st.get(K-1);\n\
-    \t\t\t\tst.erase(x);\n\t\t\t}\n\t\t\tcout << x << endl;\n\t\t}\n\t}\n\n    return\
-    \ 0;\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/649\"\n\n#include <vector>\n\
+    };\n#line 11 \"test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp\"\
+    \n\ntemplate<class T> struct Monoid {\n\tusing TypeNode = T;\n\tinline static\
+    \ constexpr TypeNode unit_node = {0,0};\n\tinline static constexpr TypeNode func_fold(TypeNode\
+    \ l,TypeNode r){return {0,0};}\n};\n\nint main() {\n    int N,K; cin >> N >> K;\n\
+    \    if(N+1 <= K){\n\t\tcout << \"INF\" << endl;\n\t\treturn 0;\n\t}\n    RandomizedBinarySearchTree<Monoid<pair<int,int>>>\
+    \ st;\n    for(int i = 0; i < (1<<20); ++i) {\n        if((i&N) != N) continue;\n\
+    \        for(int j = -K; j <= K; ++j) {\n            int a = i, b = i + j;\n \
+    \           if(a>b) swap(a,b);\n            if(0<=b && b-a<=K && ((a&b)==N) &&\
+    \ !st.count({a,b})) st.insert({a,b});\n        }\n    }\n    cout << st.size()\
+    \ << endl;\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/822\"\n\n#include <vector>\n\
     #include <iostream>\n#include <unordered_map>\n#include <algorithm>\n#include\
-    \ <numeric>\n#include <cmath>\nusing namespace std;\n#include \"../../../lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp\"\
-    \n#include \"../../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp\"\n\nint\
-    \ main(){\n    cin.tie(0);ios::sync_with_stdio(false);\n\tRandomizedBinarySearchTree<MonoidRangeSumPointAdd<long\
-    \ long>> st;\n\tint Q,K; cin >> Q >> K;\n\twhile (Q--){\n\t\tint q; cin >> q;\n\
-    \t\tif(q==1){\n\t\t\tlong long x; cin >> x;\n\t\t\tst.insert(x);\n\t\t}\n\t\t\
-    else{\n\t\t\tlong long x=-1;\n\t\t\tif(st.size()>=K){\n\t\t\t\tx=st.get(K-1);\n\
-    \t\t\t\tst.erase(x);\n\t\t\t}\n\t\t\tcout << x << endl;\n\t\t}\n\t}\n\n    return\
-    \ 0;\n}"
+    \ <numeric>\n#include <cmath>\nusing namespace std;\n#include \"../../lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp\"\
+    \n\ntemplate<class T> struct Monoid {\n\tusing TypeNode = T;\n\tinline static\
+    \ constexpr TypeNode unit_node = {0,0};\n\tinline static constexpr TypeNode func_fold(TypeNode\
+    \ l,TypeNode r){return {0,0};}\n};\n\nint main() {\n    int N,K; cin >> N >> K;\n\
+    \    if(N+1 <= K){\n\t\tcout << \"INF\" << endl;\n\t\treturn 0;\n\t}\n    RandomizedBinarySearchTree<Monoid<pair<int,int>>>\
+    \ st;\n    for(int i = 0; i < (1<<20); ++i) {\n        if((i&N) != N) continue;\n\
+    \        for(int j = -K; j <= K; ++j) {\n            int a = i, b = i + j;\n \
+    \           if(a>b) swap(a,b);\n            if(0<=b && b-a<=K && ((a&b)==N) &&\
+    \ !st.count({a,b})) st.insert({a,b});\n        }\n    }\n    cout << st.size()\
+    \ << endl;\n    return 0;\n}\n"
   dependsOn:
   - lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
-  - lib/operator/monoid/MonoidRangeSumPointAdd.cpp
   isVerificationFile: true
-  path: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+  path: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 03:08:31+09:00'
+  timestamp: '2023-05-29 03:17:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+documentation_of: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
 layout: document
 redirect_from:
-- /verify/test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
-- /verify/test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp.html
-title: test/data-structure/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+- /verify/test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+- /verify/test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp.html
+title: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
 ---

@@ -4,6 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -15,12 +21,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
-    title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-    title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
     title: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
@@ -178,8 +178,8 @@ data:
   - test/math/CombinationMod-factorial.test.cpp
   - test/math/Matrix-det.test.cpp
   - test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
-  - test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-  - test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/graph/Tree-hld-path.test.cpp
   - test/graph/Tree-hld-vertex-3.test.cpp
   - test/util/ModInt.test.cpp

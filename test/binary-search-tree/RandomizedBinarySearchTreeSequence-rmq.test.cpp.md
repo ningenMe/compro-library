@@ -18,7 +18,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
     links:
     - https://judge.yosupo.jp/problem/staticrmq
-  bundledCode: "#line 1 \"test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp\"\
+  bundledCode: "#line 1 \"test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <queue>\nusing namespace std;\n\
     #line 1 \"lib/operator/monoid/MonoidRangeMinPointUpdate.cpp\"\n/*\n * @title MonoidRangeMinPointUpdate\
@@ -89,7 +89,7 @@ data:
     \ k) {return get(this->root, k);}\n    inline void operate(const int k, const\
     \ TypeNode value) {operate_impl(this->root,k,value);}\n    inline TypeNode fold(int\
     \ l, int r) {return fold_impl(this->root,l,r);}\n    void print() {int m = size(this->root);\
-    \ for(int i=0;i<m;++i) cout << get(i) << \" \\n\"[i==m-1];}\n};\n#line 10 \"test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp\"\
+    \ for(int i=0;i<m;++i) cout << get(i) << \" \\n\"[i==m-1];}\n};\n#line 10 \"test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp\"\
     \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    RandomizedBinarySearchTreeSequence<MonoidRangeMinPointUpdate<long\
     \ long>> lbst;\n    int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i) {\n    \
     \    int a; cin >> a;\n        lbst.insert(i,a);\n    }\n    while(Q--) {\n  \
@@ -97,8 +97,8 @@ data:
     \   }\n    return 0; \n}\n\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\nusing namespace\
-    \ std;\n#include \"../../../lib/operator/monoid/MonoidRangeMinPointUpdate.cpp\"\
-    \n#include \"../../../lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp\"\
+    \ std;\n#include \"../../lib/operator/monoid/MonoidRangeMinPointUpdate.cpp\"\n\
+    #include \"../../lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp\"\
     \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    RandomizedBinarySearchTreeSequence<MonoidRangeMinPointUpdate<long\
     \ long>> lbst;\n    int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i) {\n    \
     \    int a; cin >> a;\n        lbst.insert(i,a);\n    }\n    while(Q--) {\n  \
@@ -108,15 +108,15 @@ data:
   - lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
   - lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
   isVerificationFile: true
-  path: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+  path: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 03:08:31+09:00'
+  timestamp: '2023-05-29 03:17:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+documentation_of: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
 layout: document
 redirect_from:
-- /verify/test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
-- /verify/test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp.html
-title: test/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+- /verify/test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+- /verify/test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp.html
+title: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
 ---

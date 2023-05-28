@@ -6,12 +6,9 @@ data:
     title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
       \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
   - icon: ':heavy_check_mark:'
-    path: lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
-    title: "MonoidRangeSumRangeAffine - [\u533A\u9593\u548C, \u533A\u9593\u30A2\u30D5\
-      \u30A3\u30F3\u5909\u63DB]"
-  - icon: ':question:'
-    path: lib/util/ModInt.cpp
-    title: ModInt
+    path: lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
+    title: "MonoidRangeSumRangeAdd - [\u533A\u9593\u548C, \u533A\u9593\u52A0\u7B97\
+      ]"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,24 +16,23 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
+    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
     links:
-    - https://judge.yosupo.jp/problem/range_affine_range_sum
-  bundledCode: "#line 1 \"test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\n\
-    \n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
-    using namespace std;\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp\"\
-    \n/*\n * @title MonoidRangeSumRangeAffine - [\u533A\u9593\u548C, \u533A\u9593\u30A2\
-    \u30D5\u30A3\u30F3\u5909\u63DB]\n * @docs md/operator/monoid-lazy/MonoidRangeSumRangeAffine.md\n\
-    \ */\ntemplate<class T, class U> struct MonoidRangeSumRangeAffine {\n\tusing TypeNode\
-    \ = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode unit_node =\
-    \ 0;\n\tinline static constexpr TypeLazy unit_lazy = {1,0};\n\tinline static constexpr\
-    \ TypeNode func_fold(TypeNode l,TypeNode r){return l+r;}\n\tinline static constexpr\
-    \ TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return {new_lazy.first*old_lazy.first,new_lazy.first*old_lazy.second+new_lazy.second};}\n\
-    \tinline static constexpr TypeNode func_operate(TypeNode node,TypeLazy lazy,int\
-    \ l, int r){return {node*lazy.first+lazy.second*(r-l)};}\n\tinline static constexpr\
-    \ bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}\n};\n\
-    #line 1 \"lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
+    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
+  bundledCode: "#line 1 \"test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp\"\
+    \n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\
+    \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
+    using namespace std;\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp\"\
+    \n/*\n * @title MonoidRangeSumRangeAdd - [\u533A\u9593\u548C, \u533A\u9593\u52A0\
+    \u7B97]\n * @docs md/operator/monoid-lazy/MonoidRangeSumRangeAdd.md\n */\ntemplate<class\
+    \ T, class U> struct MonoidRangeSumRangeAdd {\n\tusing TypeNode = T;\n\tusing\
+    \ TypeLazy = U;\n\tinline static constexpr TypeNode unit_node = 0;\n\tinline static\
+    \ constexpr TypeLazy unit_lazy = 0;\n\tinline static constexpr TypeNode func_fold(TypeNode\
+    \ l,TypeNode r){return l+r;}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy\
+    \ old_lazy,TypeLazy new_lazy){return old_lazy+new_lazy;}\n\tinline static constexpr\
+    \ TypeNode func_operate(TypeNode node,TypeLazy lazy,int l, int r){return node+lazy*(r-l);}\n\
+    \tinline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
+    \ var <= nodeVal;}\n};\n#line 1 \"lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
     \n/*\n * @title LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\
     \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217\n * @docs md/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md\n\
     \ */\ntemplate<class Monoid> class LazyRandomizedBinarySearchTreeSequence {\n\
@@ -119,85 +115,36 @@ data:
     \ operate_impl(this->root,l,r,lazy);}\n    inline TypeNode fold(int l, int r)\
     \ {return fold_impl(this->root,l,r);}\n    inline void reverse(int l, int r) {reverse_impl(l,r);}\n\
     \    void print() {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i)\
-    \ << \" \\n\"[i==m-1];}\n};\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
-    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
-    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
-    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const\
-    \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt\
-    \ &operator+=(const long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
-    \ *this;}\n    constexpr ModInt &operator+=(const int y) {ModInt p(y);if((x +=\
-    \ p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator-=(const\
-    \ ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}\n    constexpr\
-    \ ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >= mod)\
-    \ x -= mod;return *this;}\n    constexpr ModInt &operator-=(const int y) {ModInt\
-    \ p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt\
-    \ &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}\n    constexpr\
-    \ ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x % mod);return\
-    \ *this;}\n    constexpr ModInt &operator*=(const int y) {ModInt p(y);x = (x *\
-    \ p.x % mod);return *this;}\n    constexpr ModInt &operator^=(const ModInt &p)\
-    \ {x = (x ^ p.x) % mod;return *this;}\n    constexpr ModInt &operator^=(const\
-    \ long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    constexpr\
-    \ ModInt &operator^=(const int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n\
-    \    constexpr ModInt &operator/=(const ModInt &p) {*this *= p.inv();return *this;}\n\
-    \    constexpr ModInt &operator/=(const long long y) {ModInt p(y);*this *= p.inv();return\
-    \ *this;}\n    constexpr ModInt &operator/=(const int y) {ModInt p(y);*this *=\
-    \ p.inv();return *this;}\n    constexpr ModInt operator=(const int y) {ModInt\
-    \ p(y);*this = p;return *this;}\n    constexpr ModInt operator=(const long long\
-    \ y) {ModInt p(y);*this = p;return *this;}\n    constexpr ModInt operator-() const\
-    \ {return ModInt(-x); }\n    constexpr ModInt operator++() {x++;if(x>=mod) x-=mod;return\
-    \ *this;}\n    constexpr ModInt operator--() {x--;if(x<0) x+=mod;return *this;}\n\
-    \    constexpr ModInt operator+(const ModInt &p) const { return ModInt(*this)\
-    \ += p; }\n    constexpr ModInt operator-(const ModInt &p) const { return ModInt(*this)\
-    \ -= p; }\n    constexpr ModInt operator*(const ModInt &p) const { return ModInt(*this)\
-    \ *= p; }\n    constexpr ModInt operator/(const ModInt &p) const { return ModInt(*this)\
-    \ /= p; }\n    constexpr ModInt operator^(const ModInt &p) const { return ModInt(*this)\
-    \ ^= p; }\n    constexpr bool operator==(const ModInt &p) const { return x ==\
-    \ p.x; }\n    constexpr bool operator!=(const ModInt &p) const { return x != p.x;\
-    \ }\n    // ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b > 0) {t = a /\
-    \ b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}\n    constexpr\
-    \ ModInt inv() const {int a=x,b=mod,u=1,v=0,t=0,tmp=0;while(b > 0) {t = a / b;a-=t*b;tmp=a;a=b;b=tmp;u-=t*v;tmp=u;u=v;v=tmp;}\
-    \ return ModInt(u);}\n    constexpr ModInt pow(long long n) const {ModInt ret(1),\
-    \ mul(x);for(;n > 0;mul *= mul,n >>= 1) if(n & 1) ret *= mul;return ret;}\n  \
-    \  friend ostream &operator<<(ostream &os, const ModInt &p) {return os << p.x;}\n\
-    \    friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a\
-    \ = ModInt<mod>(t);return (is);}\n};\nconstexpr long long MOD_998244353 = 998244353;\n\
-    constexpr long long MOD_1000000007 = 1'000'000'000LL + 7; //'\n#line 11 \"test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp\"\
-    \n\nusing modint = ModInt<998244353>;\ntemplate <class T, class U>ostream &operator<<(ostream\
-    \ &o, const pair<T, U>&obj) {o << \"{\" << obj.first << \", \" << obj.second <<\
-    \ \"}\"; return o;} \n\nint main(void){\n    int N,Q;\n\tscanf(\"%d %d\",&N,&Q);\n\
-    \    LazyRandomizedBinarySearchTreeSequence<MonoidRangeSumRangeAffine<modint,pair<modint,modint>>>\
-    \ A;\n    for(int i=0;i<N;++i) {\n\t\tint a;\n\t\tscanf(\"%d\",&a);\n\t\tA.insert(i,a);\n\
-    \    }\n    while(Q--) {\n        int q;\n\t\tscanf(\"%d\",&q);\n\t\tif(q==0)\
-    \ {\n\t\t\tint l,r,b,c;\n\t\t\tscanf(\"%d %d %d %d\",&l,&r,&b,&c);\n\t\t\tA.operate(l,r,{b,c});\n\
-    \t\t}\n\t\telse {\n\t\t\tint l,r;\n\t\t\tscanf(\"%d %d\",&l,&r);\n\t\t\tprintf(\"\
-    %lld\\n\",A.fold(l,r).x);\n\t\t}\n    }\n    return 0;\n}\n\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
+    \ << \" \\n\"[i==m-1];}\n};\n#line 10 \"test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp\"\
+    \n\nint main(void){\n    int N,Q;\n\tscanf(\"%d %d\",&N,&Q);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeSumRangeAdd<long\
+    \ long,long long>> A;\n    for(int i=0;i<N;++i) {\n\t\tA.insert(i,0);\n    }\n\
+    \    while(Q--) {\n        int q;\n\t\tscanf(\"%d\",&q);\n\t\tif(q==0) {\n\t\t\
+    \tint l,r,x;\n\t\t\tscanf(\"%d %d %d\",&l,&r,&x);\n\t\t\tl--;\n\t\t\tA.operate(l,r,x);\n\
+    \t\t}\n\t\telse {\n\t\t\tint l,r;\n\t\t\tscanf(\"%d %d\",&l,&r);\n\t\t\tl--;\n\
+    \t\t\tprintf(\"%lld\\n\",A.fold(l,r));\n\t\t}\n    }\n    return 0;\n}\n"
+  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
-    using namespace std;\n#include \"../../../lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp\"\
-    \n#include \"../../../lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
-    \n#include \"../../../lib/util/ModInt.cpp\"\n\nusing modint = ModInt<998244353>;\n\
-    template <class T, class U>ostream &operator<<(ostream &o, const pair<T, U>&obj)\
-    \ {o << \"{\" << obj.first << \", \" << obj.second << \"}\"; return o;} \n\nint\
-    \ main(void){\n    int N,Q;\n\tscanf(\"%d %d\",&N,&Q);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeSumRangeAffine<modint,pair<modint,modint>>>\
-    \ A;\n    for(int i=0;i<N;++i) {\n\t\tint a;\n\t\tscanf(\"%d\",&a);\n\t\tA.insert(i,a);\n\
-    \    }\n    while(Q--) {\n        int q;\n\t\tscanf(\"%d\",&q);\n\t\tif(q==0)\
-    \ {\n\t\t\tint l,r,b,c;\n\t\t\tscanf(\"%d %d %d %d\",&l,&r,&b,&c);\n\t\t\tA.operate(l,r,{b,c});\n\
-    \t\t}\n\t\telse {\n\t\t\tint l,r;\n\t\t\tscanf(\"%d %d\",&l,&r);\n\t\t\tprintf(\"\
-    %lld\\n\",A.fold(l,r).x);\n\t\t}\n    }\n    return 0;\n}\n\n"
+    using namespace std;\n#include \"../../lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp\"\
+    \n#include \"../../lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
+    \n\nint main(void){\n    int N,Q;\n\tscanf(\"%d %d\",&N,&Q);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeSumRangeAdd<long\
+    \ long,long long>> A;\n    for(int i=0;i<N;++i) {\n\t\tA.insert(i,0);\n    }\n\
+    \    while(Q--) {\n        int q;\n\t\tscanf(\"%d\",&q);\n\t\tif(q==0) {\n\t\t\
+    \tint l,r,x;\n\t\t\tscanf(\"%d %d %d\",&l,&r,&x);\n\t\t\tl--;\n\t\t\tA.operate(l,r,x);\n\
+    \t\t}\n\t\telse {\n\t\t\tint l,r;\n\t\t\tscanf(\"%d %d\",&l,&r);\n\t\t\tl--;\n\
+    \t\t\tprintf(\"%lld\\n\",A.fold(l,r));\n\t\t}\n    }\n    return 0;\n}"
   dependsOn:
-  - lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
+  - lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
   - lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
-  - lib/util/ModInt.cpp
   isVerificationFile: true
-  path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+  path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
   requiredBy: []
-  timestamp: '2023-05-18 00:39:49+09:00'
+  timestamp: '2023-05-29 03:17:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+documentation_of: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
 layout: document
 redirect_from:
-- /verify/test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-- /verify/test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp.html
-title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+- /verify/test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+- /verify/test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp.html
+title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
 ---

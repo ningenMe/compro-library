@@ -257,3 +257,10 @@ redirect_from:
 - /library/lib/binary-search-tree/LazySplayTreeSequence.cpp.html
 title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
 ---
+### LazySplayTreeSequence
+- 列ベースの、遅延伝播ができるsplay tree
+  - 0-indexed
+
+### TODO
+- まだバグがある
+- リファレンスをかく

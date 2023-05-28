@@ -4,17 +4,17 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
-    title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
-    title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-    title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
-    title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -197,10 +197,10 @@ data:
   timestamp: '2021-09-21 03:30:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
-  - test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-  - test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
-  - test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
 documentation_of: lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
 layout: document
 redirect_from:

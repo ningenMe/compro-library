@@ -19,7 +19,7 @@ data:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
-  bundledCode: "#line 1 \"test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp\"\
+  bundledCode: "#line 1 \"test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp\"\
     \n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
     using namespace std;\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp\"\
@@ -115,7 +115,7 @@ data:
     \ operate_impl(this->root,l,r,lazy);}\n    inline TypeNode fold(int l, int r)\
     \ {return fold_impl(this->root,l,r);}\n    inline void reverse(int l, int r) {reverse_impl(l,r);}\n\
     \    void print() {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i)\
-    \ << \" \\n\"[i==m-1];}\n};\n#line 10 \"test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp\"\
+    \ << \" \\n\"[i==m-1];}\n};\n#line 10 \"test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp\"\
     \n\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeMinRangeUpdate<long\
     \ long,long long>> lbst;\n    int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i)\
     \ {\n        int a; cin >> a;\n        lbst.insert(i,a);\n    }\n    while(Q--)\
@@ -126,8 +126,8 @@ data:
     \ }\n    }\n    return 0; \n}\n\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
-    using namespace std;\n#include \"../../../lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp\"\
-    \n#include \"../../../lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
+    using namespace std;\n#include \"../../lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp\"\
+    \n#include \"../../lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
     \n\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeMinRangeUpdate<long\
     \ long,long long>> lbst;\n    int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i)\
     \ {\n        int a; cin >> a;\n        lbst.insert(i,a);\n    }\n    while(Q--)\
@@ -140,15 +140,15 @@ data:
   - lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp
   - lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
   isVerificationFile: true
-  path: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+  path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 03:08:31+09:00'
+  timestamp: '2023-05-29 03:17:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+documentation_of: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
 layout: document
 redirect_from:
-- /verify/test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
-- /verify/test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp.html
-title: test/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+- /verify/test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+- /verify/test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp.html
+title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
 ---
