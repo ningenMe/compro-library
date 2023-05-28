@@ -13,13 +13,13 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.md
+    _deprecated_at_docs: md/binary-search-tree/RandomizedBinarySearchTreeSequence.md
     document_title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\
       \u63A2\u7D22\u6728\u5217"
     links: []
-  bundledCode: "#line 1 \"lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp\"\
+  bundledCode: "#line 1 \"lib/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp\"\
     \n/*\n * @title RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\
-    \u7D22\u6728\u5217\n * @docs md/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.md\n\
+    \u7D22\u6728\u5217\n * @docs md/binary-search-tree/RandomizedBinarySearchTreeSequence.md\n\
     \ */\ntemplate<class Monoid> class RandomizedBinarySearchTreeSequence {\n    using\
     \ TypeNode = typename Monoid::TypeNode;\n    unsigned int x = 123456789, y = 362436069,\
     \ z = 521288629, w = 88675123;\n    unsigned int xor_shift() {\n        unsigned\
@@ -80,7 +80,7 @@ data:
     \ l, int r) {return fold_impl(this->root,l,r);}\n    void print() {int m = size(this->root);\
     \ for(int i=0;i<m;++i) cout << get(i) << \" \\n\"[i==m-1];}\n};\n"
   code: "/*\n * @title RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\
-    \u63A2\u7D22\u6728\u5217\n * @docs md/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.md\n\
+    \u63A2\u7D22\u6728\u5217\n * @docs md/binary-search-tree/RandomizedBinarySearchTreeSequence.md\n\
     \ */\ntemplate<class Monoid> class RandomizedBinarySearchTreeSequence {\n    using\
     \ TypeNode = typename Monoid::TypeNode;\n    unsigned int x = 123456789, y = 362436069,\
     \ z = 521288629, w = 88675123;\n    unsigned int xor_shift() {\n        unsigned\
@@ -142,18 +142,18 @@ data:
     \ for(int i=0;i<m;++i) cout << get(i) << \" \\n\"[i==m-1];}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
+  path: lib/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
   requiredBy: []
-  timestamp: '2021-09-21 03:30:04+09:00'
+  timestamp: '2023-05-29 03:23:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
-documentation_of: lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
+documentation_of: lib/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
 layout: document
 redirect_from:
-- /library/lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
-- /library/lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp.html
+- /library/lib/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
+- /library/lib/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp.html
 title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\
   \u5217"
 ---

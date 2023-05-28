@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
+    path: lib/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
     title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
       \u6728\u5217"
   - icon: ':heavy_check_mark:'
@@ -28,9 +28,9 @@ data:
     \ static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return min(l,r);}\n\
     \    inline static constexpr TypeNode func_operate(TypeNode l,TypeNode r){return\
     \ r;}\n    inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
-    \ var > nodeVal;}\n};\n#line 1 \"lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp\"\
+    \ var > nodeVal;}\n};\n#line 1 \"lib/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp\"\
     \n/*\n * @title RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\
-    \u7D22\u6728\u5217\n * @docs md/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.md\n\
+    \u7D22\u6728\u5217\n * @docs md/binary-search-tree/RandomizedBinarySearchTreeSequence.md\n\
     \ */\ntemplate<class Monoid> class RandomizedBinarySearchTreeSequence {\n    using\
     \ TypeNode = typename Monoid::TypeNode;\n    unsigned int x = 123456789, y = 362436069,\
     \ z = 521288629, w = 88675123;\n    unsigned int xor_shift() {\n        unsigned\
@@ -98,7 +98,7 @@ data:
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\nusing namespace\
     \ std;\n#include \"../../lib/operator/monoid/MonoidRangeMinPointUpdate.cpp\"\n\
-    #include \"../../lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp\"\
+    #include \"../../lib/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp\"\
     \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    RandomizedBinarySearchTreeSequence<MonoidRangeMinPointUpdate<long\
     \ long>> lbst;\n    int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i) {\n    \
     \    int a; cin >> a;\n        lbst.insert(i,a);\n    }\n    while(Q--) {\n  \
@@ -106,11 +106,11 @@ data:
     \   }\n    return 0; \n}\n\n"
   dependsOn:
   - lib/operator/monoid/MonoidRangeMinPointUpdate.cpp
-  - lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
+  - lib/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
   isVerificationFile: true
   path: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
   requiredBy: []
-  timestamp: '2023-05-29 03:17:52+09:00'
+  timestamp: '2023-05-29 03:23:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp

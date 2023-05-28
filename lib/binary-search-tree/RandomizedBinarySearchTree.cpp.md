@@ -12,42 +12,32 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
     title: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
-    title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
-    title: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-    title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/data-structure/binary-search-tree/RandomizedBinarySearchTree.md
+    _deprecated_at_docs: md/binary-search-tree/RandomizedBinarySearchTree.md
     document_title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
       \u6728"
     links: []
-  bundledCode: "#line 1 \"lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp\"\
-    \n/*\n * @title RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
-    \u6728\n * @docs md/data-structure/binary-search-tree/RandomizedBinarySearchTree.md\n\
-    \ */\ntemplate<class Monoid> class RandomizedBinarySearchTree {\n    using TypeNode\
-    \ = typename Monoid::TypeNode;\n    unsigned int x = 123456789, y = 362436069,\
-    \ z = 521288629, w = 88675123;\n    unsigned int xor_shift() {\n        unsigned\
-    \ int t = (x ^ (x << 11)); x = y; y = z; z = w;\n        return (w = (w ^ (w >>\
-    \ 19)) ^ (t ^ (t >> 8)));\n    }\n    struct Node {\n    private:\n        void\
-    \ build() {left = right = nullptr;size = 1;}\n    public:\n        Node *left,\
-    \ *right;\n        TypeNode value, range_value;\n        int size;\n        Node()\
-    \ : value(Monoid::unit_node), range_value(Monoid::unit_node) {build();}\n    \
-    \    Node(TypeNode v) : value(v), range_value(v) {build();}\n        friend ostream\
-    \ &operator<<(ostream &os, const Node* node) {return os << \"{\" << node->value\
-    \ << \", \" << node->range_value << \", \" << node->size << \"}\";}\n    };\n\
-    \    Node* root;\n    inline int size(Node *node) {return node==nullptr ? 0 :\
-    \ node->size;}\n    inline TypeNode range_value(Node *node) {return node==nullptr\
-    \ ? Monoid::unit_node : node->range_value;}\n    inline TypeNode get(Node *node,\
-    \ size_t k) {\n        if (node==nullptr) return Monoid::unit_node;\n        if\
-    \ (k == size(node->left)) return node->value;\n        if (k < size(node->left))\
+  bundledCode: "#line 1 \"lib/binary-search-tree/RandomizedBinarySearchTree.cpp\"\n\
+    /*\n * @title RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
+    \u6728\n * @docs md/binary-search-tree/RandomizedBinarySearchTree.md\n */\ntemplate<class\
+    \ Monoid> class RandomizedBinarySearchTree {\n    using TypeNode = typename Monoid::TypeNode;\n\
+    \    unsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\
+    \    unsigned int xor_shift() {\n        unsigned int t = (x ^ (x << 11)); x =\
+    \ y; y = z; z = w;\n        return (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n \
+    \   }\n    struct Node {\n    private:\n        void build() {left = right = nullptr;size\
+    \ = 1;}\n    public:\n        Node *left, *right;\n        TypeNode value, range_value;\n\
+    \        int size;\n        Node() : value(Monoid::unit_node), range_value(Monoid::unit_node)\
+    \ {build();}\n        Node(TypeNode v) : value(v), range_value(v) {build();}\n\
+    \        friend ostream &operator<<(ostream &os, const Node* node) {return os\
+    \ << \"{\" << node->value << \", \" << node->range_value << \", \" << node->size\
+    \ << \"}\";}\n    };\n    Node* root;\n    inline int size(Node *node) {return\
+    \ node==nullptr ? 0 : node->size;}\n    inline TypeNode range_value(Node *node)\
+    \ {return node==nullptr ? Monoid::unit_node : node->range_value;}\n    inline\
+    \ TypeNode get(Node *node, size_t k) {\n        if (node==nullptr) return Monoid::unit_node;\n\
+    \        if (k == size(node->left)) return node->value;\n        if (k < size(node->left))\
     \ return get(node->left, k);\n        else return get(node->right, k-1 - size(node->left));\n\
     \    }\n    inline Node* update(Node *node) {\n        node->size = size(node->left)\
     \ + size(node->right) + 1;\n        node->range_value = Monoid::func_fold(Monoid::func_fold(range_value(node->left),node->value),range_value(node->right));\n\
@@ -97,8 +87,8 @@ data:
     \ size(this->root); for(int i=0;i<m;++i) cout << get(i) << \" \\n\"[i==m-1];}\n\
     };\n"
   code: "/*\n * @title RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\
-    \u7D22\u6728\n * @docs md/data-structure/binary-search-tree/RandomizedBinarySearchTree.md\n\
-    \ */\ntemplate<class Monoid> class RandomizedBinarySearchTree {\n    using TypeNode\
+    \u7D22\u6728\n * @docs md/binary-search-tree/RandomizedBinarySearchTree.md\n */\n\
+    template<class Monoid> class RandomizedBinarySearchTree {\n    using TypeNode\
     \ = typename Monoid::TypeNode;\n    unsigned int x = 123456789, y = 362436069,\
     \ z = 521288629, w = 88675123;\n    unsigned int xor_shift() {\n        unsigned\
     \ int t = (x ^ (x << 11)); x = y; y = z; z = w;\n        return (w = (w ^ (w >>\
@@ -164,22 +154,19 @@ data:
     };"
   dependsOn: []
   isVerificationFile: false
-  path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
+  path: lib/binary-search-tree/RandomizedBinarySearchTree.cpp
   requiredBy: []
-  timestamp: '2021-09-21 03:30:04+09:00'
+  timestamp: '2023-05-29 03:23:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-  - test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
-  - test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
-documentation_of: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
+documentation_of: lib/binary-search-tree/RandomizedBinarySearchTree.cpp
 layout: document
 redirect_from:
-- /library/lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
-- /library/lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp.html
+- /library/lib/binary-search-tree/RandomizedBinarySearchTree.cpp
+- /library/lib/binary-search-tree/RandomizedBinarySearchTree.cpp.html
 title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
 ---
 ### RandomizedBinarySearchTree

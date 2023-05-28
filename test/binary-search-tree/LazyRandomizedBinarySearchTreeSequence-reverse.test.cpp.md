@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
+    path: lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
     title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
       \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
   - icon: ':heavy_check_mark:'
@@ -78,9 +78,9 @@ data:
     \tinline static constexpr TypeNode func_operate(TypeNode node,TypeLazy lazy,int\
     \ l, int r){return {node*lazy.first+lazy.second*(r-l)};}\n\tinline static constexpr\
     \ bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}\n};\n\
-    #line 1 \"lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
-    \n/*\n * @title LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\
-    \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217\n * @docs md/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md\n\
+    #line 1 \"lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\n\
+    /*\n * @title LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\
+    \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217\n * @docs md/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md\n\
     \ */\ntemplate<class Monoid> class LazyRandomizedBinarySearchTreeSequence {\n\
     \    using TypeNode = typename Monoid::TypeNode;\n    using TypeLazy = typename\
     \ Monoid::TypeLazy;\n    unsigned int x = 123456789, y = 362436069, z = 521288629,\
@@ -176,7 +176,7 @@ data:
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_sequence_range_affine_range_sum\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
     using namespace std;\n#include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp\"\
-    \n#include \"../../lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
+    \n#include \"../../lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
     \n\nusing modint = ModInt<998244353>;\n\nint main(void){\n    int N,Q;\n\tscanf(\"\
     %d %d\",&N,&Q);\n\tLazyRandomizedBinarySearchTreeSequence<MonoidRangeSumRangeAffine<modint,pair<modint,modint>>\
     \ > rbst;\n    for(int i=0;i<N;++i) {\n\t\tint a; cin >> a;\n\t\trbst.insert(i,a);\n\
@@ -191,11 +191,11 @@ data:
   dependsOn:
   - lib/util/ModInt.cpp
   - lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
-  - lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
+  - lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
   isVerificationFile: true
   path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   requiredBy: []
-  timestamp: '2023-05-29 03:17:52+09:00'
+  timestamp: '2023-05-29 03:23:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp

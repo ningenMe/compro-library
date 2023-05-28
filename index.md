@@ -4,8 +4,19 @@ data:
   - name: lib/binary-search-tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
+      title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
+        \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
+    - icon: ':heavy_check_mark:'
       path: lib/binary-search-tree/LazySplayTreeSequence.cpp
       title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
+    - icon: ':heavy_check_mark:'
+      path: lib/binary-search-tree/RandomizedBinarySearchTree.cpp
+      title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
+    - icon: ':heavy_check_mark:'
+      path: lib/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
+      title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
+        \u6728\u5217"
   - name: lib/convolution
     pages:
     - icon: ':question:'
@@ -23,22 +34,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp
       title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
-  - name: lib/data-structure/binary-search-tree
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
-      title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
-        \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
-    - icon: ':heavy_check_mark:'
-      path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTree.cpp
-      title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
-    - icon: ':heavy_check_mark:'
-      path: lib/data-structure/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
-      title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
-        \u6728\u5217"
   - name: lib/data-structure/convex-hull-trick
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp
       title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
     - icon: ':heavy_check_mark:'
@@ -452,13 +450,13 @@ data:
       title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   - name: test/data-structure/convex-hull-trick
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
     - icon: ':heavy_check_mark:'

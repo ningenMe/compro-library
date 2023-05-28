@@ -19,13 +19,13 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md
+    _deprecated_at_docs: md/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md
     document_title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\
       \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
     links: []
-  bundledCode: "#line 1 \"lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
+  bundledCode: "#line 1 \"lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
     \n/*\n * @title LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\
-    \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217\n * @docs md/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md\n\
+    \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217\n * @docs md/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md\n\
     \ */\ntemplate<class Monoid> class LazyRandomizedBinarySearchTreeSequence {\n\
     \    using TypeNode = typename Monoid::TypeNode;\n    using TypeLazy = typename\
     \ Monoid::TypeLazy;\n    unsigned int x = 123456789, y = 362436069, z = 521288629,\
@@ -108,7 +108,7 @@ data:
     \    void print() {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i)\
     \ << \" \\n\"[i==m-1];}\n};\n"
   code: "/*\n * @title LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\
-    \u4FA1\u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217\n * @docs md/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md\n\
+    \u4FA1\u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217\n * @docs md/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md\n\
     \ */\ntemplate<class Monoid> class LazyRandomizedBinarySearchTreeSequence {\n\
     \    using TypeNode = typename Monoid::TypeNode;\n    using TypeLazy = typename\
     \ Monoid::TypeLazy;\n    unsigned int x = 123456789, y = 362436069, z = 521288629,\
@@ -192,20 +192,20 @@ data:
     \ << \" \\n\"[i==m-1];}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
+  path: lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
   requiredBy: []
-  timestamp: '2021-09-21 03:30:04+09:00'
+  timestamp: '2023-05-29 03:23:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
-documentation_of: lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
+documentation_of: lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
 layout: document
 redirect_from:
-- /library/lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
-- /library/lib/data-structure/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp.html
+- /library/lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
+- /library/lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp.html
 title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\u8861\
   \u4E8C\u5206\u63A2\u7D22\u6728\u5217"
 ---
