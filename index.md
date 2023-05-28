@@ -36,7 +36,7 @@ data:
       title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
   - name: lib/data-structure/convex-hull-trick
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp
       title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
     - icon: ':heavy_check_mark:'
@@ -95,7 +95,7 @@ data:
       path: lib/data-structure/segment-tree/DynamicSegmentTree.cpp
       title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
         \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/data-structure/segment-tree/LazySegmentTree.cpp
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -234,11 +234,11 @@ data:
       path: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
       title: "MonoidRangeEulerTourSumRangeAdd - [\u533A\u9593\u30AA\u30A4\u30E9\u30FC\
         \u30C4\u30A2\u30FC\u548C, \u533A\u9593\u52A0\u7B97]"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.cpp
       title: "MonoidRangeFoldMinRangeOperateAdd - fold:\u533A\u9593min, operate:\u533A\
         \u9593\u52A0\u7B97"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
       title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
         \u9593\u66F4\u65B0"
@@ -455,13 +455,13 @@ data:
       title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   - name: test/data-structure/convex-hull-trick
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
       title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
     - icon: ':heavy_check_mark:'
@@ -518,7 +518,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
       title: test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
       title: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
     - icon: ':heavy_check_mark:'

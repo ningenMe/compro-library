@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/binary-search-tree/LazySplayTreeSequence.cpp
     title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
     title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
       \u9593\u66F4\u65B0"

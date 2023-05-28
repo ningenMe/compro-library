@@ -6,12 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
-  - icon: ':x:'
-    path: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
-    title: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.md
     document_title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min,\
@@ -45,9 +42,8 @@ data:
   path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
   requiredBy: []
   timestamp: '2023-05-29 02:57:48+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
 documentation_of: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
 layout: document

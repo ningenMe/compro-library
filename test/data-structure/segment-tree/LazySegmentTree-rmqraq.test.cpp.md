@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/data-structure/segment-tree/LazySegmentTree.cpp
     title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
       \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-  - icon: ':question:'
-    path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
-    title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
-      \u9593\u66F4\u65B0"
+  - icon: ':heavy_check_mark:'
+    path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.cpp
+    title: "MonoidRangeFoldMinRangeOperateAdd - fold:\u533A\u9593min, operate:\u533A\
+      \u9593\u52A0\u7B97"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H
@@ -91,39 +91,37 @@ data:
     \ << \" \";\n        // \tif(i==((1<<j)-1) && ++j) cout << endl;\n        // }\n\
     \        cout << \"vector\" << endl;\n        cout << \"{ \" << fold(0,1);\n \
     \       for(int i = 1; i < length; ++i) cout << \", \" << fold(i,i+1);\n     \
-    \   cout << \" }\" << endl;\n    }\n};\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp\"\
-    \n/*\n * @title MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
-    \u9593\u66F4\u65B0\n * @docs md/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.md\n\
-    \ */\ntemplate<class T, class U> struct MonoidRangeFoldMinRangeOperateUpdate {\n\
-    \tusing TypeNode = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode\
-    \ unit_node = 1000'000'001LL;\n\tinline static constexpr TypeLazy unit_lazy =\
-    \ 1000'000'001LL;\n\tinline static constexpr TypeNode func_fold(TypeNode l,TypeNode\
-    \ r){return min(l,r);}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy\
-    \ old_lazy,TypeLazy new_lazy){return new_lazy;}\n\tinline static constexpr TypeNode\
-    \ func_operate(TypeNode node,TypeLazy lazy,int l, int r){return min(node,lazy);}\n\
-    \tinline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
-    \ var <= nodeVal;}\n};\n\n#line 8 \"test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp\"\
+    \   cout << \" }\" << endl;\n    }\n};\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.cpp\"\
+    \n/*\n * @title MonoidRangeFoldMinRangeOperateAdd - fold:\u533A\u9593min, operate:\u533A\
+    \u9593\u52A0\u7B97\n * @docs md/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.md\n\
+    \ */\ntemplate<class T, class U> struct MonoidRangeFoldMinRangeOperateAdd {\n\t\
+    using TypeNode = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode\
+    \ unit_node = 1234567890;\n\tinline static constexpr TypeLazy unit_lazy = 0;\n\
+    \tinline static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return min(l,r);}\n\
+    \tinline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return\
+    \ old_lazy+new_lazy;}\n\tinline static constexpr TypeNode func_operate(TypeNode\
+    \ node,TypeLazy lazy,int l, int r){return node+lazy;}\n};\n#line 8 \"test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp\"\
     \n\nint main(void){\n\tint N,Q; cin >> N >> Q;\n\tlong inf = 1234567890LL;\n\t\
-    LazySegmentTree<MonoidRangeFoldMinRangeOperateUpdate<long long,long long>> seg(N,0LL);\n\
+    LazySegmentTree<MonoidRangeFoldMinRangeOperateAdd<long long,long long>> seg(N,0LL);\n\
     \twhile(Q--) {\n\t\tint q,s,t,x;\n\t\tcin >> q >> s >> t;\n\t\tt++;\n\t\tif(q){\n\
     \t\t\tcout << seg.fold(s,t) << endl;\n\t\t}\n\t\telse {\n\t\t\tcin >> x;\n\t\t\
     \tseg.operate(s,t,x);\n\t\t}\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H\"\
     \n\n#include <vector>\n#include <iostream>\nusing namespace std;\n#include \"\
-    ../../../lib/data-structure/segment-tree/LazySegmentTree.cpp\"\n#include \"../../../lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp\"\
+    ../../../lib/data-structure/segment-tree/LazySegmentTree.cpp\"\n#include \"../../../lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.cpp\"\
     \n\nint main(void){\n\tint N,Q; cin >> N >> Q;\n\tlong inf = 1234567890LL;\n\t\
-    LazySegmentTree<MonoidRangeFoldMinRangeOperateUpdate<long long,long long>> seg(N,0LL);\n\
+    LazySegmentTree<MonoidRangeFoldMinRangeOperateAdd<long long,long long>> seg(N,0LL);\n\
     \twhile(Q--) {\n\t\tint q,s,t,x;\n\t\tcin >> q >> s >> t;\n\t\tt++;\n\t\tif(q){\n\
     \t\t\tcout << seg.fold(s,t) << endl;\n\t\t}\n\t\telse {\n\t\t\tcin >> x;\n\t\t\
     \tseg.operate(s,t,x);\n\t\t}\n\t}\n\treturn 0;\n}"
   dependsOn:
   - lib/data-structure/segment-tree/LazySegmentTree.cpp
-  - lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
+  - lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.cpp
   isVerificationFile: true
   path: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
   requiredBy: []
-  timestamp: '2023-05-29 04:11:43+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-05-29 04:58:00+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
 layout: document

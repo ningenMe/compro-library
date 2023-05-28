@@ -4,6 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+    title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
     title: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
   - icon: ':heavy_check_mark:'
@@ -32,9 +38,11 @@ data:
   timestamp: '2021-04-26 09:09:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
   - test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
   - test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
   - test/data-structure/convex-hull-trick/LiChaoTree-segment.test.cpp
+  - test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
 documentation_of: lib/operator/operator/ValueMin.cpp
 layout: document
 redirect_from:
