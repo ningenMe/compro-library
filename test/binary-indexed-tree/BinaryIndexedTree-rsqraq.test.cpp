@@ -5,7 +5,7 @@
 #include <cassert>
 using namespace std;
 #include "../../../lib/operator/abel/AbelPrefixSumPointAdd.cpp"
-#include "../../../lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp"
+#include "../../lib/11-binary-indexed-tree/BinaryIndexedTree.cpp"
 
 int main(void){
     int N; cin >> N;

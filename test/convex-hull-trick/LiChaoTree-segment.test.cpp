@@ -5,7 +5,7 @@
 #include <algorithm>
 using namespace std;
 #include "../../../lib/operator/operator/ValueMin.cpp"
-#include "../../../lib/data-structure/convex-hull-trick/LiChaoTree.cpp"
+#include "../../lib/16-convex-hull-trick/LiChaoTree.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);

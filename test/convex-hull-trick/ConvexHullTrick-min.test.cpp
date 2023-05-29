@@ -4,9 +4,9 @@
 #include <vector>
 #include <queue>
 using namespace std;
-#include "../../../lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp"
+#include "../../lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp"
 #include "../../../lib/operator/operator/ValueMin.cpp"
-#include "../../../lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp"
+#include "../../lib/16-convex-hull-trick/ConvexHullTrick.cpp"
 using ll = long long;
 
 int main(void){

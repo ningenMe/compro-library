@@ -13,8 +13,8 @@ using uint128 = __uint128_t;
 using uint64  = unsigned long long;
 using uint32  = unsigned int;
 
-#include "../../../lib/data-structure/data-structure/BitVector.cpp"
-#include "../../../lib/data-structure/data-structure/WaveletMatrix.cpp"
+#include "../../lib/14-data-structure/BitVector.cpp"
+#include "../../lib/14-data-structure/WaveletMatrix.cpp"
 
 void chmax(int64& a,int64 b){a=max(a,b);}
 

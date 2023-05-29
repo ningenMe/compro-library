@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stack>
 using namespace std;
-#include "../../../lib/data-structure/data-structure/BinaryTrie.cpp"
+#include "../../lib/14-data-structure/BinaryTrie.cpp"
 #include "../../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp"
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);

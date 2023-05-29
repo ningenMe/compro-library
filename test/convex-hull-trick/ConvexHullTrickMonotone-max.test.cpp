@@ -6,7 +6,7 @@
 #include <cassert>
 using namespace std;
 #include "../../../lib/operator/operator/ValueMax.cpp"
-#include "../../../lib/data-structure/convex-hull-trick/ConvexHullTrickMonotone.cpp"
+#include "../../lib/16-convex-hull-trick/ConvexHullTrickMonotone.cpp"
 using ll = long long;
 
 int main(void){

@@ -6,7 +6,7 @@
 #include <unordered_map>
 using namespace std;
 #include "../../../lib/operator/abel/AbelPrefixSumPointAdd.cpp"
-#include "../../../lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp"
+#include "../../lib/11-binary-indexed-tree/DynamicBinaryIndexedTree.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);

@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <cmath>
 using namespace std;
-#include "../../../lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp"
+#include "../../../lib/11-binary-indexed-tree/BinaryIndexedTree.cpp"
 #include "../../../lib/operator/abel/AbelPrefixSumPointAdd.cpp"
 #include "../../../lib/data-structure/range-query/RangeInversionQuery.cpp"
 

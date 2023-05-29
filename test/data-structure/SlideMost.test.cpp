@@ -4,7 +4,7 @@
 #include <iostream>
 #include <deque>
 using namespace std;
-#include "../../../lib/data-structure/data-structure/SlideMost.cpp"
+#include "../../lib/14-data-structure/SlideMost.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);

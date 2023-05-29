@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stack>
 using namespace std;
-#include "../../../lib/data-structure/data-structure/Swag.cpp"
+#include "../../lib/14-data-structure/Swag.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);

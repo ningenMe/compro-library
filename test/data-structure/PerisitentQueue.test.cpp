@@ -6,7 +6,7 @@
 #include <cassert>
 #include <unordered_map>
 using namespace std;
-#include "../../../lib/data-structure/data-structure/PersistentQueue.cpp"
+#include "../../lib/14-data-structure/PersistentQueue.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false); 
