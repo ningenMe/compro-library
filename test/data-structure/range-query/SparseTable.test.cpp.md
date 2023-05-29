@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: lib/00-util/FastIO.cpp
+    title: FastIO
   - icon: ':heavy_check_mark:'
     path: lib/data-structure/range-query/SparseTable.cpp
     title: SparseTable
-  - icon: ':question:'
-    path: lib/util/FastIO.cpp
-    title: FastIO
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,8 +19,8 @@ data:
     - https://judge.yosupo.jp/problem/staticrmq
   bundledCode: "#line 1 \"test/data-structure/range-query/SparseTable.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include <vector>\n\
-    #include <iostream>\nusing namespace std;\n#line 1 \"lib/util/FastIO.cpp\"\n/*\n\
-    \ * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
+    #include <iostream>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n\
+    /*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
     \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
@@ -68,7 +68,7 @@ data:
     \    while(Q--){\n        int l,r; \n\t\tread(l);read(r);\n        cout << st.fold(l,r)\
     \ << \"\\n\";\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
-    \ <vector>\n#include <iostream>\nusing namespace std;\n#include \"../../../lib/util/FastIO.cpp\"\
+    \ <vector>\n#include <iostream>\nusing namespace std;\n#include \"../../../lib/00-util/FastIO.cpp\"\
     \n#include \"../../../lib/data-structure/range-query/SparseTable.cpp\"\n\nint\
     \ main(){\n\tcin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; \n\tread(N);\
     \ read(Q);\n    vector<long long> A(N);\n    for(int i = 0; i < N; ++i) {\n  \
@@ -76,12 +76,12 @@ data:
     \        int l,r; \n\t\tread(l);read(r);\n        cout << st.fold(l,r) << \"\\\
     n\";\n    }\n}"
   dependsOn:
-  - lib/util/FastIO.cpp
+  - lib/00-util/FastIO.cpp
   - lib/data-structure/range-query/SparseTable.cpp
   isVerificationFile: true
   path: test/data-structure/range-query/SparseTable.test.cpp
   requiredBy: []
-  timestamp: '2023-05-15 02:57:06+09:00'
+  timestamp: '2023-05-30 03:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/range-query/SparseTable.test.cpp

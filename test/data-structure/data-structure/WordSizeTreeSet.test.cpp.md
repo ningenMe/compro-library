@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: lib/00-util/FastIO.cpp
+    title: FastIO
   - icon: ':heavy_check_mark:'
     path: lib/data-structure/data-structure/WordSizeTreeSet.cpp
     title: "WordSizeTreeSet - 64\u5206\u6728"
-  - icon: ':question:'
-    path: lib/util/FastIO.cpp
-    title: FastIO
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,7 +19,7 @@ data:
     - https://judge.yosupo.jp/problem/predecessor_problem
   bundledCode: "#line 1 \"test/data-structure/data-structure/WordSizeTreeSet.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/predecessor_problem\"\n\n\
-    #include <iostream>\n#include <array>\nusing namespace std;\n#line 1 \"lib/util/FastIO.cpp\"\
+    #include <iostream>\n#include <array>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
     \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
@@ -193,7 +193,7 @@ data:
     \ (t==WordSizeTreeSet::max_length ? -1 : (long long)t);\n            cout << v\
     \ << \"\\n\";\n        }\n    }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/predecessor_problem\"\n\
-    \n#include <iostream>\n#include <array>\nusing namespace std;\n#include \"../../../lib/util/FastIO.cpp\"\
+    \n#include <iostream>\n#include <array>\nusing namespace std;\n#include \"../../../lib/00-util/FastIO.cpp\"\
     \n#include \"../../../lib/data-structure/data-structure/WordSizeTreeSet.cpp\"\n\
     \n/**\n * @url \n * @est\n */ \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
     \n    int N,Q; read(N);read(Q);\n    string T; read(T);\n    WordSizeTreeSet wsts;\n\
@@ -208,12 +208,12 @@ data:
     \ (t==WordSizeTreeSet::max_length ? -1 : (long long)t);\n            cout << v\
     \ << \"\\n\";\n        }\n    }\n\n    return 0;\n}\n"
   dependsOn:
-  - lib/util/FastIO.cpp
+  - lib/00-util/FastIO.cpp
   - lib/data-structure/data-structure/WordSizeTreeSet.cpp
   isVerificationFile: true
   path: test/data-structure/data-structure/WordSizeTreeSet.test.cpp
   requiredBy: []
-  timestamp: '2023-05-14 12:34:49+09:00'
+  timestamp: '2023-05-30 03:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/data-structure/WordSizeTreeSet.test.cpp

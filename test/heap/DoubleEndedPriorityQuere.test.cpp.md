@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: lib/00-util/FastIO.cpp
+    title: FastIO
   - icon: ':heavy_check_mark:'
     path: lib/heap/DoubleEndedPriorityQuere.cpp
     title: "DoubleEndedPriorityQuere - \u4E21\u7AEFpriority queue"
-  - icon: ':question:'
-    path: lib/util/FastIO.cpp
-    title: FastIO
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,7 +19,7 @@ data:
     - https://judge.yosupo.jp/problem/double_ended_priority_queue
   bundledCode: "#line 1 \"test/heap/DoubleEndedPriorityQuere.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/double_ended_priority_queue\"\n\n#include\
-    \ <iostream>\n#include <queue>\nusing namespace std;\n#line 1 \"lib/util/FastIO.cpp\"\
+    \ <iostream>\n#include <queue>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
     \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
@@ -71,7 +71,7 @@ data:
     \  long long x = pq.back(); pq.pop_back();\n            cout << x << \"\\n\";\n\
     \        }\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/double_ended_priority_queue\"\
-    \n\n#include <iostream>\n#include <queue>\nusing namespace std;\n#include \"../../lib/util/FastIO.cpp\"\
+    \n\n#include <iostream>\n#include <queue>\nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\
     \n#include \"../../lib/heap/DoubleEndedPriorityQuere.cpp\"\n\nint main() {\n \
     \   cin.tie(0)->sync_with_stdio(0);\n    int N,Q; read(N);read(Q);\n    DoubleEndedPriorityQuere<long\
     \ long> pq;\n    while(N--) {\n        long long s; read(s); pq.push(s);\n   \
@@ -82,12 +82,12 @@ data:
     \ pq.pop_back();\n            cout << x << \"\\n\";\n        }\n    }\n    return\
     \ 0;\n}\n"
   dependsOn:
-  - lib/util/FastIO.cpp
+  - lib/00-util/FastIO.cpp
   - lib/heap/DoubleEndedPriorityQuere.cpp
   isVerificationFile: true
   path: test/heap/DoubleEndedPriorityQuere.test.cpp
   requiredBy: []
-  timestamp: '2023-05-15 02:35:33+09:00'
+  timestamp: '2023-05-30 03:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/heap/DoubleEndedPriorityQuere.test.cpp

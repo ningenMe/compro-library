@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: lib/00-util
+    pages:
+    - icon: ':question:'
+      path: lib/00-util/FastIO.cpp
+      title: FastIO
   - name: lib/binary-search-tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -296,9 +301,6 @@ data:
       title: Zalgorithm
   - name: lib/util
     pages:
-    - icon: ':question:'
-      path: lib/util/FastIO.cpp
-      title: FastIO
     - icon: ':question:'
       path: lib/util/ModInt.cpp
       title: ModInt
@@ -715,10 +717,10 @@ data:
       title: test/string/Zalgorithm.test.cpp
   - name: test/util
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/util/FastIO-int128.test.cpp
       title: test/util/FastIO-int128.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/util/FastIO-int64.test.cpp
       title: test/util/FastIO-int64.test.cpp
     - icon: ':heavy_check_mark:'

@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: lib/00-util/FastIO.cpp
+    title: FastIO
+  - icon: ':question:'
     path: lib/convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
   - icon: ':question:'
     path: lib/polynomial/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
-  - icon: ':question:'
-    path: lib/util/FastIO.cpp
-    title: FastIO
   - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
@@ -26,9 +26,9 @@ data:
   bundledCode: "#line 1 \"test/polynomial/FormalPowerSeries-pow.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/pow_of_formal_power_series\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n#include\
-    \ <array>\n\nusing namespace std;\n#line 1 \"lib/util/FastIO.cpp\"\n/*\n * @title\
-    \ FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline\
-    \ static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
+    \ <array>\n\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n *\
+    \ @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n  \
+    \  inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
     \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
     \ ch) {\n        while(ch==ch_l) ch=getchar();\n    }\n    template<typename T>\
@@ -283,7 +283,7 @@ data:
     }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/pow_of_formal_power_series\"\
     \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
-    #include <array>\n\nusing namespace std;\n#include \"../../lib/util/FastIO.cpp\"\
+    #include <array>\n\nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\
     \n#include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\
     \n#include \"../../lib/polynomial/FormalPowerSeries.cpp\"\n\n\nint main() {\n\
     \    cin.tie(0);ios::sync_with_stdio(false);\n    int N,M; read(N);read(M);\n\
@@ -291,14 +291,14 @@ data:
     \    int a; read(a);\n        f[i]=a;\n    }\n    f = f.pow(M,N);\n    for(int\
     \ i=0;i<f.size();++i) cout << f[i] << \" \\n\"[i==N-1];\n    return 0;\n}"
   dependsOn:
-  - lib/util/FastIO.cpp
+  - lib/00-util/FastIO.cpp
   - lib/util/ModInt.cpp
   - lib/convolution/NumberTheoreticalTransform.cpp
   - lib/polynomial/FormalPowerSeries.cpp
   isVerificationFile: true
   path: test/polynomial/FormalPowerSeries-pow.test.cpp
   requiredBy: []
-  timestamp: '2023-05-18 02:31:33+09:00'
+  timestamp: '2023-05-30 03:51:53+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/polynomial/FormalPowerSeries-pow.test.cpp

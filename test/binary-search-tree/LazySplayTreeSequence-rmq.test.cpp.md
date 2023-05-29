@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: lib/00-util/FastIO.cpp
+    title: FastIO
   - icon: ':heavy_check_mark:'
     path: lib/binary-search-tree/LazySplayTreeSequence.cpp
     title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
@@ -8,9 +11,6 @@ data:
     path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
     title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
       \u9593\u66F4\u65B0"
-  - icon: ':question:'
-    path: lib/util/FastIO.cpp
-    title: FastIO
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -24,7 +24,7 @@ data:
   bundledCode: "#line 1 \"test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <queue>\nusing namespace std;\n\
-    #line 1 \"lib/util/FastIO.cpp\"\n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n\
+    #line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n\
     \ */\nclass FastIO{\nprivate:\n    inline static constexpr int ch_0='0';\n   \
     \ inline static constexpr int ch_9='9';\n    inline static constexpr int ch_n='-';\n\
     \    inline static constexpr int ch_s=' ';\n    inline static constexpr int ch_l='\\\
@@ -183,7 +183,7 @@ data:
     \ << st.fold(l,r) << \"\\n\";\n    }\n    return 0; \n}\n\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\nusing namespace\
-    \ std;\n#include \"../../lib/util/FastIO.cpp\"\n#include \"../../lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp\"\
+    \ std;\n#include \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp\"\
     \n#include \"../../lib/binary-search-tree/LazySplayTreeSequence.cpp\"\n\nint main(void){\n\
     \tcin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; \n\tread(N); read(Q);\n\
     \    LazySplayTreeSequence<MonoidRangeFoldMinRangeOperateUpdate<int,int>> st;\n\
@@ -191,13 +191,13 @@ data:
     \   }\n\n    while(Q--){\n        int l,r; \n\t\tread(l);read(r);\n        cout\
     \ << st.fold(l,r) << \"\\n\";\n    }\n    return 0; \n}\n\n"
   dependsOn:
-  - lib/util/FastIO.cpp
+  - lib/00-util/FastIO.cpp
   - lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
   - lib/binary-search-tree/LazySplayTreeSequence.cpp
   isVerificationFile: true
   path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 03:43:27+09:00'
+  timestamp: '2023-05-30 03:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp

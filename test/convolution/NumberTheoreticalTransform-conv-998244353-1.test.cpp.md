@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: lib/00-util/FastIO.cpp
+    title: FastIO
+  - icon: ':question:'
     path: lib/convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':question:'
-    path: lib/util/FastIO.cpp
-    title: FastIO
   - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
@@ -65,7 +65,7 @@ data:
     \  friend ostream &operator<<(ostream &os, const ModInt &p) {return os << p.x;}\n\
     \    friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a\
     \ = ModInt<mod>(t);return (is);}\n};\nconstexpr long long MOD_998244353 = 998244353;\n\
-    constexpr long long MOD_1000000007 = 1'000'000'000LL + 7; //'\n#line 1 \"lib/util/FastIO.cpp\"\
+    constexpr long long MOD_1000000007 = 1'000'000'000LL + 7; //'\n#line 1 \"lib/00-util/FastIO.cpp\"\
     \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
@@ -190,7 +190,7 @@ data:
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n#include\
     \ <array>\nusing namespace std;\n#include \"../../lib/util/ModInt.cpp\"\n#include\
-    \ \"../../lib/util/FastIO.cpp\"\n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\
+    \ \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\
     \n\nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n    int N,M; read(N),read(M);\n\
     \    vector<ModInt<MOD_998244353>> A(N),B(M);\n    for(int i = 0; i < N; ++i)\
     \ {\n        int a; read(a); A[i]=a;\n    }\n    for(int i = 0; i < M; ++i) {\n\
@@ -199,12 +199,12 @@ data:
     \ 0;\n}\n"
   dependsOn:
   - lib/util/ModInt.cpp
-  - lib/util/FastIO.cpp
+  - lib/00-util/FastIO.cpp
   - lib/convolution/NumberTheoreticalTransform.cpp
   isVerificationFile: true
   path: test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   requiredBy: []
-  timestamp: '2023-05-18 00:55:32+09:00'
+  timestamp: '2023-05-30 03:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp

@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: lib/00-util/FastIO.cpp
+    title: FastIO
+  - icon: ':question:'
     path: lib/convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':question:'
-    path: lib/util/FastIO.cpp
-    title: FastIO
   - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
@@ -65,11 +65,11 @@ data:
     \ &os, const ModInt &p) {return os << p.x;}\n    friend istream &operator>>(istream\
     \ &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}\n};\n\
     constexpr long long MOD_998244353 = 998244353;\nconstexpr long long MOD_1000000007\
-    \ = 1'000'000'000LL + 7; //'\n#line 1 \"lib/util/FastIO.cpp\"\n/*\n * @title FastIO\n\
-    \ * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline static constexpr\
-    \ int ch_0='0';\n    inline static constexpr int ch_9='9';\n    inline static\
-    \ constexpr int ch_n='-';\n    inline static constexpr int ch_s=' ';\n    inline\
-    \ static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
+    \ = 1'000'000'000LL + 7; //'\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title\
+    \ FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline\
+    \ static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
+    \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
+    \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
     \ ch) {\n        while(ch==ch_l) ch=getchar();\n    }\n    template<typename T>\
     \ inline static void read_integer(T &x) {\n        int neg=0; char ch; x=0;\n\
     \        ch=getchar();\n        endline_skip(ch);\n        if(ch==ch_n) neg=1,ch=getchar();\n\
@@ -189,7 +189,7 @@ data:
     \ i=0;i<N;++i) cout << D[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1307\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <array>\nusing namespace std;\n\
-    #include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/util/FastIO.cpp\"\
+    #include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/00-util/FastIO.cpp\"\
     \n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\n\nconstexpr\
     \ long long MOD = 1000000000000000000LL;\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
     \    int N,Q; read(N); read(Q);\n    vector<ModInt<MOD>> A(N),B(N,0),D(N,0);\n\
@@ -199,12 +199,12 @@ data:
     \ i=0;i<N;++i) cout << D[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
   dependsOn:
   - lib/util/ModInt.cpp
-  - lib/util/FastIO.cpp
+  - lib/00-util/FastIO.cpp
   - lib/convolution/NumberTheoreticalTransform.cpp
   isVerificationFile: true
   path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   requiredBy: []
-  timestamp: '2023-05-18 00:57:07+09:00'
+  timestamp: '2023-05-30 03:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp

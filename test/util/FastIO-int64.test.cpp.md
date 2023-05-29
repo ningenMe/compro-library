@@ -2,20 +2,20 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
-    path: lib/util/FastIO.cpp
+    path: lib/00-util/FastIO.cpp
     title: FastIO
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/many_aplusb
     links:
     - https://judge.yosupo.jp/problem/many_aplusb
   bundledCode: "#line 1 \"test/util/FastIO-int64.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\
-    \n\n#include <iostream>\nusing namespace std;\n#line 1 \"lib/util/FastIO.cpp\"\
+    \n\n#include <iostream>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
     \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
@@ -46,17 +46,17 @@ data:
     \    int t; read(t);\n    while(t--) {\n        long long x,y; read(x);read(y);\n\
     \        cout << x+y << \"\\n\";\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\n\n#include\
-    \ <iostream>\nusing namespace std;\n#include \"../../lib/util/FastIO.cpp\"\n\n\
-    int main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int t; read(t);\n    while(t--)\
-    \ {\n        long long x,y; read(x);read(y);\n        cout << x+y << \"\\n\";\n\
-    \    }\n    return 0;\n}\n"
+    \ <iostream>\nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\n\
+    \nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int t; read(t);\n   \
+    \ while(t--) {\n        long long x,y; read(x);read(y);\n        cout << x+y <<\
+    \ \"\\n\";\n    }\n    return 0;\n}\n"
   dependsOn:
-  - lib/util/FastIO.cpp
+  - lib/00-util/FastIO.cpp
   isVerificationFile: true
   path: test/util/FastIO-int64.test.cpp
   requiredBy: []
-  timestamp: '2023-05-14 12:34:49+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-05-30 03:51:53+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/util/FastIO-int64.test.cpp
 layout: document

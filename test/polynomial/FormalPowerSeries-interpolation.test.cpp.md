@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: lib/00-util/FastIO.cpp
+    title: FastIO
+  - icon: ':question:'
     path: lib/convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
   - icon: ':question:'
     path: lib/polynomial/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
-  - icon: ':question:'
-    path: lib/util/FastIO.cpp
-    title: FastIO
   - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
@@ -26,8 +26,8 @@ data:
   bundledCode: "#line 1 \"test/polynomial/FormalPowerSeries-interpolation.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/polynomial_interpolation\"\
     \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
-    #include <array>\n\nusing namespace std;\n\n#line 1 \"lib/util/FastIO.cpp\"\n\
-    /*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
+    #include <array>\n\nusing namespace std;\n\n#line 1 \"lib/00-util/FastIO.cpp\"\
+    \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
     \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
@@ -283,7 +283,7 @@ data:
     \    for(int i=0;i<N;++i) cout << f[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/polynomial_interpolation\"\
     \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
-    #include <array>\n\nusing namespace std;\n\n#include \"../../lib/util/FastIO.cpp\"\
+    #include <array>\n\nusing namespace std;\n\n#include \"../../lib/00-util/FastIO.cpp\"\
     \n#include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\
     \n#include \"../../lib/polynomial/FormalPowerSeries.cpp\"\n\nint main() {\n  \
     \  cin.tie(0);ios::sync_with_stdio(false);\n    int N; read(N);\n    vector<ModInt<MOD_998244353>>\
@@ -292,14 +292,14 @@ data:
     \    }\n    auto f = FormalPowerSeries<MOD_998244353>::interpolation(X,Y);\n \
     \   for(int i=0;i<N;++i) cout << f[i] << \" \\n\"[i==N-1];\n    return 0;\n}"
   dependsOn:
-  - lib/util/FastIO.cpp
+  - lib/00-util/FastIO.cpp
   - lib/util/ModInt.cpp
   - lib/convolution/NumberTheoreticalTransform.cpp
   - lib/polynomial/FormalPowerSeries.cpp
   isVerificationFile: true
   path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
   requiredBy: []
-  timestamp: '2023-05-18 02:51:13+09:00'
+  timestamp: '2023-05-30 03:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/polynomial/FormalPowerSeries-interpolation.test.cpp

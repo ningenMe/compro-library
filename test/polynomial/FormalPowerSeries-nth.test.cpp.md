@@ -2,14 +2,14 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: lib/00-util/FastIO.cpp
+    title: FastIO
+  - icon: ':question:'
     path: lib/convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
   - icon: ':question:'
     path: lib/polynomial/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
-  - icon: ':question:'
-    path: lib/util/FastIO.cpp
-    title: FastIO
   - icon: ':question:'
     path: lib/util/ModInt.cpp
     title: ModInt
@@ -26,8 +26,8 @@ data:
   bundledCode: "#line 1 \"test/polynomial/FormalPowerSeries-nth.test.cpp\"\n#define\
     \ PROBLEM \"https://yukicoder.me/problems/no/754\"\n\n#include <vector>\n#include\
     \ <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\nusing\
-    \ namespace std;\n#line 1 \"lib/util/FastIO.cpp\"\n/*\n * @title FastIO\n * @docs\
-    \ md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline static constexpr\
+    \ namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n *\
+    \ @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline static constexpr\
     \ int ch_0='0';\n    inline static constexpr int ch_9='9';\n    inline static\
     \ constexpr int ch_n='-';\n    inline static constexpr int ch_s=' ';\n    inline\
     \ static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
@@ -284,24 +284,24 @@ data:
     \ \"\\n\";\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/754\"\n\n#include <vector>\n\
     #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\
-    \nusing namespace std;\n#include \"../../lib/util/FastIO.cpp\"\n#include \"../../lib/util/ModInt.cpp\"\
-    \n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\n#include\
-    \ \"../../lib/polynomial/FormalPowerSeries.cpp\"\n\nint main(void){\n    int N;\
-    \ read(N);\n    FormalPowerSeries<MOD_1000000007> A(N+1),B(N+1);\n    for(int\
-    \ i = 0; i < N+1; ++i) {\n        int a; read(a);\n        A[i]=a;\n    }\n  \
-    \  for(int i = 0; i < N+1; ++i) {\n        int a; read(a);\n        B[i]=a;\n\
+    \nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\n#include \"\
+    ../../lib/util/ModInt.cpp\"\n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\
+    \n#include \"../../lib/polynomial/FormalPowerSeries.cpp\"\n\nint main(void){\n\
+    \    int N; read(N);\n    FormalPowerSeries<MOD_1000000007> A(N+1),B(N+1);\n \
+    \   for(int i = 0; i < N+1; ++i) {\n        int a; read(a);\n        A[i]=a;\n\
+    \    }\n    for(int i = 0; i < N+1; ++i) {\n        int a; read(a);\n        B[i]=a;\n\
     \    }\n    FormalPowerSeries<MOD_1000000007> C = FormalPowerSeries<MOD_1000000007>::mul(A,B),\
     \ D({1,-1});\n    cout << FormalPowerSeries<MOD_1000000007>::nth_term(N,C,D) <<\
     \ \"\\n\";\n\treturn 0;\n}"
   dependsOn:
-  - lib/util/FastIO.cpp
+  - lib/00-util/FastIO.cpp
   - lib/util/ModInt.cpp
   - lib/convolution/NumberTheoreticalTransform.cpp
   - lib/polynomial/FormalPowerSeries.cpp
   isVerificationFile: true
   path: test/polynomial/FormalPowerSeries-nth.test.cpp
   requiredBy: []
-  timestamp: '2023-05-18 02:31:33+09:00'
+  timestamp: '2023-05-30 03:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/polynomial/FormalPowerSeries-nth.test.cpp

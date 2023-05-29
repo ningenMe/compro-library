@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: lib/00-util/FastIO.cpp
+    title: FastIO
   - icon: ':heavy_check_mark:'
     path: lib/graph/UnionFindTree.cpp
     title: "UnionFindTree - Union Find \u6728"
-  - icon: ':question:'
-    path: lib/util/FastIO.cpp
-    title: FastIO
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,8 +19,8 @@ data:
     - https://judge.yosupo.jp/problem/unionfind
   bundledCode: "#line 1 \"test/graph/UnionFindTree.test.cpp\"\n#define PROBLEM \"\
     https://judge.yosupo.jp/problem/unionfind\"\n\n#include <vector>\n#include <iostream>\n\
-    #include <numeric>\nusing namespace std;\n#line 1 \"lib/util/FastIO.cpp\"\n/*\n\
-    \ * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
+    #include <numeric>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n\
+    /*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
     \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
@@ -69,18 +69,18 @@ data:
     \    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <numeric>\nusing namespace std;\n#include\
-    \ \"../../lib/util/FastIO.cpp\"\n#include \"../../lib/graph/UnionFindTree.cpp\"\
+    \ \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/graph/UnionFindTree.cpp\"\
     \n\n\nint main(){\n    cin.tie(0)->sync_with_stdio(0);\n    int N,Q; \n    read(N);\
     \ read(Q);\n    UnionFindTree uf(N);\n    while(Q--){\n        int q,a,b; \n \
     \       read(q);read(a);read(b);\n        if(q) cout << uf.connected(a,b) << \"\
     \\n\";\n        else uf.merge(a,b);\n    }\n}\n"
   dependsOn:
-  - lib/util/FastIO.cpp
+  - lib/00-util/FastIO.cpp
   - lib/graph/UnionFindTree.cpp
   isVerificationFile: true
   path: test/graph/UnionFindTree.test.cpp
   requiredBy: []
-  timestamp: '2023-05-15 02:35:33+09:00'
+  timestamp: '2023-05-30 03:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/UnionFindTree.test.cpp

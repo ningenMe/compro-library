@@ -54,10 +54,10 @@ data:
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-pow.test.cpp
     title: test/polynomial/FormalPowerSeries-pow.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/util/FastIO-int128.test.cpp
     title: test/util/FastIO-int128.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/util/FastIO-int64.test.cpp
     title: test/util/FastIO-int64.test.cpp
   _isVerificationFailed: true
@@ -67,33 +67,33 @@ data:
     _deprecated_at_docs: md/util/FastIO.md
     document_title: FastIO
     links: []
-  bundledCode: "#line 1 \"lib/util/FastIO.cpp\"\n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n\
-    \ */\nclass FastIO{\nprivate:\n    inline static constexpr int ch_0='0';\n   \
-    \ inline static constexpr int ch_9='9';\n    inline static constexpr int ch_n='-';\n\
-    \    inline static constexpr int ch_s=' ';\n    inline static constexpr int ch_l='\\\
-    n';\n    inline static void endline_skip(char& ch) {\n        while(ch==ch_l)\
-    \ ch=getchar();\n    }\n    template<typename T> inline static void read_integer(T\
-    \ &x) {\n        int neg=0; char ch; x=0;\n        ch=getchar();\n        endline_skip(ch);\n\
-    \        if(ch==ch_n) neg=1,ch=getchar();\n        for(;(ch_0 <= ch && ch <= ch_9);\
-    \ ch = getchar()) x = x*10 + (ch-ch_0);\n        if(neg) x*=-1;\n    }\n    template<typename\
-    \ T> inline static void read_unsigned_integer(T &x) {\n        char ch; x=0;\n\
-    \        ch=getchar();\n        endline_skip(ch);\n        for(;(ch_0 <= ch &&\
-    \ ch <= ch_9); ch = getchar()) x = x*10 + (ch-ch_0);\n    }\n    inline static\
-    \ void read_string(string &x) {\n        char ch; x=\"\";\n        ch=getchar();\n\
-    \        endline_skip(ch);\n        for(;(ch != ch_s && ch!=ch_l); ch = getchar())\
-    \ x.push_back(ch);\n    }\n    inline static char ar[40];\n    inline static char\
-    \ *ch_ar;\n    template<typename T> inline static void write_integer(T x) {\n\
-    \        ch_ar=ar;\n        if(x< 0) putchar(ch_n), x=-x;\n        if(x==0) putchar(ch_0);\n\
-    \        for(;x;x/=10) *ch_ar++=(ch_0+x%10);\n        while(ch_ar--!=ar) putchar(*ch_ar);\n\
-    \    }\npublic:\n    inline static void read(int &x) {read_integer<int>(x);}\n\
-    \    inline static void read(long long &x) {read_integer<long long>(x);}\n   \
-    \ inline static void read(unsigned int &x) {read_unsigned_integer<unsigned int>(x);}\n\
-    \    inline static void read(unsigned long long &x) {read_unsigned_integer<unsigned\
-    \ long long>(x);}\n    inline static void read(string &x) {read_string(x);}\n\
-    \    inline static void read(__int128_t &x) {read_integer<__int128_t>(x);}\n \
-    \   inline static void write(__int128_t x) {write_integer<__int128_t>(x);}\n \
-    \   inline static void write(char x) {putchar(x);}\n};\n#define read(arg) FastIO::read(arg)\n\
-    #define write(arg) FastIO::write(arg)\n"
+  bundledCode: "#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n * @docs\
+    \ md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline static constexpr\
+    \ int ch_0='0';\n    inline static constexpr int ch_9='9';\n    inline static\
+    \ constexpr int ch_n='-';\n    inline static constexpr int ch_s=' ';\n    inline\
+    \ static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
+    \ ch) {\n        while(ch==ch_l) ch=getchar();\n    }\n    template<typename T>\
+    \ inline static void read_integer(T &x) {\n        int neg=0; char ch; x=0;\n\
+    \        ch=getchar();\n        endline_skip(ch);\n        if(ch==ch_n) neg=1,ch=getchar();\n\
+    \        for(;(ch_0 <= ch && ch <= ch_9); ch = getchar()) x = x*10 + (ch-ch_0);\n\
+    \        if(neg) x*=-1;\n    }\n    template<typename T> inline static void read_unsigned_integer(T\
+    \ &x) {\n        char ch; x=0;\n        ch=getchar();\n        endline_skip(ch);\n\
+    \        for(;(ch_0 <= ch && ch <= ch_9); ch = getchar()) x = x*10 + (ch-ch_0);\n\
+    \    }\n    inline static void read_string(string &x) {\n        char ch; x=\"\
+    \";\n        ch=getchar();\n        endline_skip(ch);\n        for(;(ch != ch_s\
+    \ && ch!=ch_l); ch = getchar()) x.push_back(ch);\n    }\n    inline static char\
+    \ ar[40];\n    inline static char *ch_ar;\n    template<typename T> inline static\
+    \ void write_integer(T x) {\n        ch_ar=ar;\n        if(x< 0) putchar(ch_n),\
+    \ x=-x;\n        if(x==0) putchar(ch_0);\n        for(;x;x/=10) *ch_ar++=(ch_0+x%10);\n\
+    \        while(ch_ar--!=ar) putchar(*ch_ar);\n    }\npublic:\n    inline static\
+    \ void read(int &x) {read_integer<int>(x);}\n    inline static void read(long\
+    \ long &x) {read_integer<long long>(x);}\n    inline static void read(unsigned\
+    \ int &x) {read_unsigned_integer<unsigned int>(x);}\n    inline static void read(unsigned\
+    \ long long &x) {read_unsigned_integer<unsigned long long>(x);}\n    inline static\
+    \ void read(string &x) {read_string(x);}\n    inline static void read(__int128_t\
+    \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
+    \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
+    };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n"
   code: "/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
@@ -122,9 +122,9 @@ data:
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)"
   dependsOn: []
   isVerificationFile: false
-  path: lib/util/FastIO.cpp
+  path: lib/00-util/FastIO.cpp
   requiredBy: []
-  timestamp: '2023-05-14 12:34:49+09:00'
+  timestamp: '2023-05-30 03:51:53+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/heap/DoubleEndedPriorityQuere.test.cpp
@@ -146,11 +146,11 @@ data:
   - test/graph/UnionFindTree.test.cpp
   - test/util/FastIO-int128.test.cpp
   - test/util/FastIO-int64.test.cpp
-documentation_of: lib/util/FastIO.cpp
+documentation_of: lib/00-util/FastIO.cpp
 layout: document
 redirect_from:
-- /library/lib/util/FastIO.cpp
-- /library/lib/util/FastIO.cpp.html
+- /library/lib/00-util/FastIO.cpp
+- /library/lib/00-util/FastIO.cpp.html
 title: FastIO
 ---
 ### FastIO
