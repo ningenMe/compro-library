@@ -7,7 +7,7 @@
 #include <algorithm>
 using namespace std;
 #include "../../lib/graph/Dijkstra.cpp"
-#include "../../lib/geometory/Distance.cpp"
+#include "../../lib/70-geometory/Distance.cpp"
 
 int main() {
     int N,M; cin >> N >> M;

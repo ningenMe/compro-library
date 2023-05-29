@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <array>
 using namespace std;
-#include "../../lib/heap/RadixHeapInt.cpp"
+#include "../../lib/15-heap/RadixHeapInt.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);

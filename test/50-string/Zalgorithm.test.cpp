@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../lib/string/Zalgorithm.cpp"
+#include "../../lib/50-string/Zalgorithm.cpp"
 
 int main() {
     cin.tie(0);ios::sync_with_stdio(false);

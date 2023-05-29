@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stack>
 using namespace std;
-#include "../../lib/optimize/MaximumRectangle.cpp"
+#include "../../lib/60-optimize/MaximumRectangle.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);

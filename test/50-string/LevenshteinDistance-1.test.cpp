@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include "../../lib/string/LevenshteinDistance.cpp"
+#include "../../lib/50-string/LevenshteinDistance.cpp"
 
 int main() {
     cin.tie(0);ios::sync_with_stdio(false);

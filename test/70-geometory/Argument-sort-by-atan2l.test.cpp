@@ -7,7 +7,7 @@
 #include <numeric>
 
 using namespace std;
-#include "../../lib/geometory/Argument.cpp"
+#include "../../lib/70-geometory/Argument.cpp"
 
 int main(void){
     int N; cin >> N;

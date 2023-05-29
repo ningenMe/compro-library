@@ -4,7 +4,7 @@
 #include <vector>
 #include <cmath>
 using namespace std;
-#include "../../lib/geometory/Distance.cpp"
+#include "../../lib/70-geometory/Distance.cpp"
 
 int main(void){
     int N; cin >> N;

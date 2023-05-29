@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <array>
 using namespace std;
-#include "../../lib/heap/RadixHeap.cpp"
+#include "../../lib/15-heap/RadixHeap.cpp"
 
 //Dijkstra
 template<class T> class Dijkstra {

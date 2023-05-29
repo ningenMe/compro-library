@@ -4,7 +4,7 @@
 #include <vector>
 #include <tuple>
 using namespace std;
-#include "../../lib/geometory/RectangleWeight.cpp"
+#include "../../lib/70-geometory/RectangleWeight.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);

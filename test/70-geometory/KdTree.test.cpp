@@ -5,7 +5,7 @@
 #include <stack>
 #include <algorithm>
 using namespace std;
-#include "../../lib/geometory/KdTree.cpp"
+#include "../../lib/70-geometory/KdTree.cpp"
 
 int main(void){
     int N; 

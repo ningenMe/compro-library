@@ -5,7 +5,7 @@
 #include <string>
 #include <algorithm>
 using namespace std;
-#include "../../lib/string/LongestCommonSubsequence.cpp"
+#include "../../lib/50-string/LongestCommonSubsequence.cpp"
 
 int main() {
     cin.tie(0);ios::sync_with_stdio(false);
