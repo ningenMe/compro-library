@@ -15,9 +15,9 @@ data:
     title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/754
@@ -27,10 +27,10 @@ data:
     \ PROBLEM \"https://yukicoder.me/problems/no/754\"\n\n#include <vector>\n#include\
     \ <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\nusing\
     \ namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n *\
-    \ @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline static constexpr\
-    \ int ch_0='0';\n    inline static constexpr int ch_9='9';\n    inline static\
-    \ constexpr int ch_n='-';\n    inline static constexpr int ch_s=' ';\n    inline\
-    \ static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
+    \ @docs md/00-util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline static\
+    \ constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n    inline\
+    \ static constexpr int ch_n='-';\n    inline static constexpr int ch_s=' ';\n\
+    \    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
     \ ch) {\n        while(ch==ch_l) ch=getchar();\n    }\n    template<typename T>\
     \ inline static void read_integer(T &x) {\n        int neg=0; char ch; x=0;\n\
     \        ch=getchar();\n        endline_skip(ch);\n        if(ch==ch_n) neg=1,ch=getchar();\n\
@@ -301,8 +301,8 @@ data:
   isVerificationFile: true
   path: test/polynomial/FormalPowerSeries-nth.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 03:51:53+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-05-30 03:54:34+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/polynomial/FormalPowerSeries-nth.test.cpp
 layout: document

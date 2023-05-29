@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/00-util/ModInt.test.cpp
+    title: test/00-util/ModInt.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - icon: ':heavy_check_mark:'
@@ -54,15 +57,12 @@ data:
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
     title: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-nth.test.cpp
     title: test/polynomial/FormalPowerSeries-nth.test.cpp
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-pow.test.cpp
     title: test/polynomial/FormalPowerSeries-pow.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/util/ModInt.test.cpp
-    title: test/util/ModInt.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
@@ -180,9 +180,9 @@ data:
   - test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+  - test/00-util/ModInt.test.cpp
   - test/graph/Tree-hld-path.test.cpp
   - test/graph/Tree-hld-vertex-3.test.cpp
-  - test/util/ModInt.test.cpp
 documentation_of: lib/util/ModInt.cpp
 layout: document
 redirect_from:

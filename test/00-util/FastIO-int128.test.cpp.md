@@ -6,20 +6,21 @@ data:
     title: FastIO
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/many_aplusb_128bit
     links:
     - https://judge.yosupo.jp/problem/many_aplusb_128bit
-  bundledCode: "#line 1 \"test/util/FastIO-int128.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\
-    \n\n#include <iostream>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
-    \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
-    \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
-    \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
-    \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
+  bundledCode: "#line 1 \"test/00-util/FastIO-int128.test.cpp\"\n#define PROBLEM \"\
+    https://judge.yosupo.jp/problem/many_aplusb_128bit\"\n\n#include <iostream>\n\
+    using namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n\
+    \ * @docs md/00-util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline static\
+    \ constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n    inline\
+    \ static constexpr int ch_n='-';\n    inline static constexpr int ch_s=' ';\n\
+    \    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
     \ ch) {\n        while(ch==ch_l) ch=getchar();\n    }\n    template<typename T>\
     \ inline static void read_integer(T &x) {\n        int neg=0; char ch; x=0;\n\
     \        ch=getchar();\n        endline_skip(ch);\n        if(ch==ch_n) neg=1,ch=getchar();\n\
@@ -42,7 +43,7 @@ data:
     \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
-    #line 6 \"test/util/FastIO-int128.test.cpp\"\n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n\
+    #line 6 \"test/00-util/FastIO-int128.test.cpp\"\n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n\
     \    int t; read(t);\n    while(t--) {\n        __int128 x,y; read(x);read(y);\n\
     \        write(x+y);write('\\n');\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb_128bit\"\n\n\
@@ -53,15 +54,15 @@ data:
   dependsOn:
   - lib/00-util/FastIO.cpp
   isVerificationFile: true
-  path: test/util/FastIO-int128.test.cpp
+  path: test/00-util/FastIO-int128.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 03:51:53+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-05-30 03:54:34+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/util/FastIO-int128.test.cpp
+documentation_of: test/00-util/FastIO-int128.test.cpp
 layout: document
 redirect_from:
-- /verify/test/util/FastIO-int128.test.cpp
-- /verify/test/util/FastIO-int128.test.cpp.html
-title: test/util/FastIO-int128.test.cpp
+- /verify/test/00-util/FastIO-int128.test.cpp
+- /verify/test/00-util/FastIO-int128.test.cpp.html
+title: test/00-util/FastIO-int128.test.cpp
 ---

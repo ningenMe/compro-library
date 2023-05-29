@@ -20,7 +20,7 @@ data:
   bundledCode: "#line 1 \"test/data-structure/data-structure/WordSizeTreeSet.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/predecessor_problem\"\n\n\
     #include <iostream>\n#include <array>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
-    \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
+    \n/*\n * @title FastIO\n * @docs md/00-util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
     \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
@@ -213,7 +213,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/data-structure/WordSizeTreeSet.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 03:51:53+09:00'
+  timestamp: '2023-05-30 03:54:34+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/data-structure/WordSizeTreeSet.test.cpp

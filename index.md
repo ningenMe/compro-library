@@ -6,6 +6,18 @@ data:
     - icon: ':question:'
       path: lib/00-util/FastIO.cpp
       title: FastIO
+    - icon: ':heavy_check_mark:'
+      path: lib/00-util/NBase.cpp
+      title: "NBase - N\u9032\u6570"
+    - icon: ':heavy_check_mark:'
+      path: lib/00-util/RangeIndex.cpp
+      title: "RangeIndex - \u533A\u9593index"
+    - icon: ':heavy_check_mark:'
+      path: lib/00-util/RuntimeModInt.cpp
+      title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
+    - icon: ':heavy_check_mark:'
+      path: lib/00-util/Zarts.cpp
+      title: "Zarts - \u5EA7\u6A19\u5727\u7E2E"
   - name: lib/binary-search-tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -304,18 +316,6 @@ data:
     - icon: ':question:'
       path: lib/util/ModInt.cpp
       title: ModInt
-    - icon: ':heavy_check_mark:'
-      path: lib/util/NBase.cpp
-      title: "NBase - N\u9032\u6570"
-    - icon: ':heavy_check_mark:'
-      path: lib/util/RangeIndex.cpp
-      title: "RangeIndex - \u533A\u9593index"
-    - icon: ':heavy_check_mark:'
-      path: lib/util/RuntimeModInt.cpp
-      title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
-    - icon: ':heavy_check_mark:'
-      path: lib/util/Zarts.cpp
-      title: "Zarts - \u5EA7\u6A19\u5727\u7E2E"
   - name: non-verified
     pages:
     - icon: ':warning:'
@@ -391,6 +391,29 @@ data:
       path: non-verified/old-tree.cpp
       title: "Tree - \u6728"
   verificationCategories:
+  - name: test/00-util
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/00-util/FastIO-int128.test.cpp
+      title: test/00-util/FastIO-int128.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/00-util/FastIO-int64.test.cpp
+      title: test/00-util/FastIO-int64.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/00-util/ModInt.test.cpp
+      title: test/00-util/ModInt.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/00-util/NBase.test.cpp
+      title: test/00-util/NBase.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/00-util/RangeIndex.test.cpp
+      title: test/00-util/RangeIndex.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/00-util/RuntimeModInt.test.cpp
+      title: test/00-util/RuntimeModInt.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/00-util/Zarts.test.cpp
+      title: test/00-util/Zarts.test.cpp
   - name: test/binary-search-tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -695,7 +718,7 @@ data:
     - icon: ':x:'
       path: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
       title: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/polynomial/FormalPowerSeries-nth.test.cpp
       title: test/polynomial/FormalPowerSeries-nth.test.cpp
     - icon: ':x:'
@@ -715,28 +738,5 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/string/Zalgorithm.test.cpp
       title: test/string/Zalgorithm.test.cpp
-  - name: test/util
-    pages:
-    - icon: ':x:'
-      path: test/util/FastIO-int128.test.cpp
-      title: test/util/FastIO-int128.test.cpp
-    - icon: ':x:'
-      path: test/util/FastIO-int64.test.cpp
-      title: test/util/FastIO-int64.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/util/ModInt.test.cpp
-      title: test/util/ModInt.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/util/NBase.test.cpp
-      title: test/util/NBase.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/util/RangeIndex.test.cpp
-      title: test/util/RangeIndex.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/util/RuntimeModInt.test.cpp
-      title: test/util/RuntimeModInt.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/util/Zarts.test.cpp
-      title: test/util/Zarts.test.cpp
 layout: toppage
 ---

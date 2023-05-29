@@ -14,7 +14,7 @@ data:
     PROBLEM: https://yukicoder.me/problems/no/1067
     links:
     - https://yukicoder.me/problems/no/1067
-  bundledCode: "#line 1 \"test/util/ModInt.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1067\"\
+  bundledCode: "#line 1 \"test/00-util/ModInt.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1067\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <map>\n\
     #include <queue>\nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n\
     \ * @title ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class\
@@ -58,7 +58,7 @@ data:
     \  friend ostream &operator<<(ostream &os, const ModInt &p) {return os << p.x;}\n\
     \    friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a\
     \ = ModInt<mod>(t);return (is);}\n};\nconstexpr long long MOD_998244353 = 998244353;\n\
-    constexpr long long MOD_1000000007 = 1'000'000'000LL + 7; //'\n#line 10 \"test/util/ModInt.test.cpp\"\
+    constexpr long long MOD_1000000007 = 1'000'000'000LL + 7; //'\n#line 10 \"test/00-util/ModInt.test.cpp\"\
     \n\nconstexpr long long MOD2 = 998244353;\nusing modint = ModInt<MOD2>;\nint main()\
     \ {\n    long long N,Q; cin >> N >> Q;\n    vector<long long> A(N+1,1234567890LL);\n\
     \    for(int i = 1; i <= N; ++i) cin >> A[i];\n\tsort(A.begin(),A.end(),greater<>());\n\
@@ -101,15 +101,15 @@ data:
   dependsOn:
   - lib/util/ModInt.cpp
   isVerificationFile: true
-  path: test/util/ModInt.test.cpp
+  path: test/00-util/ModInt.test.cpp
   requiredBy: []
-  timestamp: '2023-05-18 00:39:49+09:00'
+  timestamp: '2023-05-30 04:03:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/util/ModInt.test.cpp
+documentation_of: test/00-util/ModInt.test.cpp
 layout: document
 redirect_from:
-- /verify/test/util/ModInt.test.cpp
-- /verify/test/util/ModInt.test.cpp.html
-title: test/util/ModInt.test.cpp
+- /verify/test/00-util/ModInt.test.cpp
+- /verify/test/00-util/ModInt.test.cpp.html
+title: test/00-util/ModInt.test.cpp
 ---

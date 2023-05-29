@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: lib/00-util/RangeIndex.cpp
+    title: "RangeIndex - \u533A\u9593index"
+  - icon: ':heavy_check_mark:'
     path: lib/graph/UnionFindTree.cpp
     title: "UnionFindTree - Union Find \u6728"
-  - icon: ':heavy_check_mark:'
-    path: lib/util/RangeIndex.cpp
-    title: "RangeIndex - \u533A\u9593index"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,10 +17,10 @@ data:
     PROBLEM: https://yukicoder.me/problems/no/1170
     links:
     - https://yukicoder.me/problems/no/1170
-  bundledCode: "#line 1 \"test/util/RangeIndex.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1170\"\
+  bundledCode: "#line 1 \"test/00-util/RangeIndex.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1170\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <cassert>\n\
-    #include <numeric>\nusing namespace std;\n#line 1 \"lib/util/RangeIndex.cpp\"\n\
-    /*\n * @title RangeIndex - \u533A\u9593index\n * @docs md/util/RangeIndex.md\n\
+    #include <numeric>\nusing namespace std;\n#line 1 \"lib/00-util/RangeIndex.cpp\"\
+    \n/*\n * @title RangeIndex - \u533A\u9593index\n * @docs md/00-util/RangeIndex.md\n\
     \ */\nclass RangeIndex{\n\tint length;\npublic:\n\tRangeIndex(const int N) {\n\
     \t\tfor (length = 1; length <= N; length *= 2);\n\t}\n\t//[l,r)\n\tvector<int>\
     \ range(int l,int r) {\n\t\tvector<int> res;\n\t\tfor(l += length, r += length;\
@@ -44,7 +44,7 @@ data:
     \    inline int size(const int n){\n        return (-parent[root(n)]);\n    }\n\
     \    inline int operator[](const int n) {\n        return root(n);\n    }\n  \
     \  inline void print() {\n        for(int i = 0; i < parent.size(); ++i) cout\
-    \ << root(i) << \" \";\n        cout << endl;\n    }\n};\n#line 11 \"test/util/RangeIndex.test.cpp\"\
+    \ << root(i) << \" \";\n        cout << endl;\n    }\n};\n#line 11 \"test/00-util/RangeIndex.test.cpp\"\
     \n\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    long long\
     \ N,A,B; cin >> N >> A >> B;\n    vector<long long> X(N);\n    for(int i = 0;\
     \ i < N; ++i) cin >> X[i];\n    X.push_back(1e10);\n    RangeIndex ri(N);\n  \
@@ -59,8 +59,8 @@ data:
     \ return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1170\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <cassert>\n#include <numeric>\n\
-    using namespace std;\n#include \"../../lib/util/RangeIndex.cpp\"\n#include \"\
-    ../../lib/graph/UnionFindTree.cpp\"\n\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
+    using namespace std;\n#include \"../../lib/00-util/RangeIndex.cpp\"\n#include\
+    \ \"../../lib/graph/UnionFindTree.cpp\"\n\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
     \    long long N,A,B; cin >> N >> A >> B;\n    vector<long long> X(N);\n    for(int\
     \ i = 0; i < N; ++i) cin >> X[i];\n    X.push_back(1e10);\n    RangeIndex ri(N);\n\
     \    UnionFindTree uf(ri.size());\n    vector<int> st(ri.size(),0);\n    for(int\
@@ -73,18 +73,18 @@ data:
     \ i = 0; i < N; ++i) {\n        cout << cnt[uf[ri[i]]] << endl;\n    }\n\n   \
     \ return 0;\n}\n"
   dependsOn:
-  - lib/util/RangeIndex.cpp
+  - lib/00-util/RangeIndex.cpp
   - lib/graph/UnionFindTree.cpp
   isVerificationFile: true
-  path: test/util/RangeIndex.test.cpp
+  path: test/00-util/RangeIndex.test.cpp
   requiredBy: []
-  timestamp: '2023-05-15 02:35:33+09:00'
+  timestamp: '2023-05-30 04:03:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/util/RangeIndex.test.cpp
+documentation_of: test/00-util/RangeIndex.test.cpp
 layout: document
 redirect_from:
-- /verify/test/util/RangeIndex.test.cpp
-- /verify/test/util/RangeIndex.test.cpp.html
-title: test/util/RangeIndex.test.cpp
+- /verify/test/00-util/RangeIndex.test.cpp
+- /verify/test/00-util/RangeIndex.test.cpp.html
+title: test/00-util/RangeIndex.test.cpp
 ---

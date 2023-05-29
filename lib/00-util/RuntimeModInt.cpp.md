@@ -4,17 +4,17 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/util/RuntimeModInt.test.cpp
-    title: test/util/RuntimeModInt.test.cpp
+    path: test/00-util/RuntimeModInt.test.cpp
+    title: test/00-util/RuntimeModInt.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/util/RuntimeModInt.md
+    _deprecated_at_docs: md/00-util/RuntimeModInt.md
     document_title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
     links: []
-  bundledCode: "#line 1 \"lib/util/RuntimeModInt.cpp\"\n/*\n * @title RuntimeModInt\
-    \ - \u5B9F\u884C\u6642ModInt\n * @docs md/util/RuntimeModInt.md\n */\ntemplate<long\
+  bundledCode: "#line 1 \"lib/00-util/RuntimeModInt.cpp\"\n/*\n * @title RuntimeModInt\
+    \ - \u5B9F\u884C\u6642ModInt\n * @docs md/00-util/RuntimeModInt.md\n */\ntemplate<long\
     \ long& mod> class RuntimeModInt {\npublic:\n    long long x;\n    constexpr RuntimeModInt():x(0)\
     \ {}\n    constexpr RuntimeModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod)\
     \ {}\n    RuntimeModInt &operator+=(const RuntimeModInt &p) {if((x += p.x) >=\
@@ -56,7 +56,7 @@ data:
     \ istream &operator>>(istream &is, RuntimeModInt &a) {long long t;is >> t;a =\
     \ RuntimeModInt<mod>(t);return (is);}\n};\nlong long runtime_mod;\n// using modint\
     \ = RuntimeModInt<mod>;\n"
-  code: "/*\n * @title RuntimeModInt - \u5B9F\u884C\u6642ModInt\n * @docs md/util/RuntimeModInt.md\n\
+  code: "/*\n * @title RuntimeModInt - \u5B9F\u884C\u6642ModInt\n * @docs md/00-util/RuntimeModInt.md\n\
     \ */\ntemplate<long long& mod> class RuntimeModInt {\npublic:\n    long long x;\n\
     \    constexpr RuntimeModInt():x(0) {}\n    constexpr RuntimeModInt(long long\
     \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    RuntimeModInt &operator+=(const\
@@ -100,17 +100,17 @@ data:
     \ (is);}\n};\nlong long runtime_mod;\n// using modint = RuntimeModInt<mod>;"
   dependsOn: []
   isVerificationFile: false
-  path: lib/util/RuntimeModInt.cpp
+  path: lib/00-util/RuntimeModInt.cpp
   requiredBy: []
-  timestamp: '2020-10-04 04:28:01+09:00'
+  timestamp: '2023-05-30 04:03:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/util/RuntimeModInt.test.cpp
-documentation_of: lib/util/RuntimeModInt.cpp
+  - test/00-util/RuntimeModInt.test.cpp
+documentation_of: lib/00-util/RuntimeModInt.cpp
 layout: document
 redirect_from:
-- /library/lib/util/RuntimeModInt.cpp
-- /library/lib/util/RuntimeModInt.cpp.html
+- /library/lib/00-util/RuntimeModInt.cpp
+- /library/lib/00-util/RuntimeModInt.cpp.html
 title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
 ---
 ### ModInt
