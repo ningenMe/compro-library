@@ -1,6 +1,6 @@
 /*
  * @title SegmentTreeBeats
- * @docs md/data-structure/segment-tree/SegmentTreeBeats.md
+ * @docs md/segment-tree/SegmentTreeBeats.md
  */
 template<class T> class SegmentTreeBeats {
     T inf;

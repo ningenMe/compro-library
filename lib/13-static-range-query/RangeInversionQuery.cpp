@@ -1,6 +1,6 @@
 /*
  * @title RangeInversionQuery - 区間転倒数
- * @docs md/data-structure/range-query/RangeInversionQuery.md
+ * @docs md/static-range-query/RangeInversionQuery.md
  */
 template<class T> class RangeInversionQuery {
     vector<size_t> compressed;

@@ -4,8 +4,8 @@
 #include <iostream>
 #include <cassert>
 using namespace std;
-#include "../../../lib/data-structure/segment-tree/SegmentTree.cpp"
-#include "../../../lib/00-util/ModInt.cpp"
+#include "../../lib/10-segment-tree/SegmentTree.cpp"
+#include "../../lib/00-util/ModInt.cpp"
 #include "../../../lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp"
 
 using modint = ModInt<998244353>;

@@ -1,6 +1,6 @@
 /*
  * @title ConvexHullTrick - 非単調CHT
- * @docs md/data-structure/convex-hull-trick/ConvexHullTrick.md
+ * @docs md/convex-hull-trick/ConvexHullTrick.md
  */
 template<class Operator> class ConvexHullTrick {
 private:

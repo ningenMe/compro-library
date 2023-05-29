@@ -1,6 +1,6 @@
 /*
  * @title WaveletMatrix
- * @docs md/data-structure/data-structure/WaveletMatrix.md
+ * @docs md/data-structure/WaveletMatrix.md
  */
 template<class T> class WaveletMatrix{
     size_t length;

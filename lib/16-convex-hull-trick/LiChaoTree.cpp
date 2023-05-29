@@ -1,6 +1,6 @@
 /*
  * @title LiChaoTree
- * @docs md/data-structure/segment/convex-hull-trick/LiChaoTree.md
+ * @docs md/segment/convex-hull-trick/LiChaoTree.md
  */
 template <typename Operator> class LiChaoTree{
     using TypeValue = typename Operator::TypeValue;

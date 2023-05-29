@@ -1,6 +1,6 @@
 /*
  * @title LazySegmentTree - 非再帰抽象化遅延評価セグメント木
- * @docs md/data-structure/segment-tree/LazySegmentTree.md
+ * @docs md/segment-tree/LazySegmentTree.md
  */
 template<class Monoid> class LazySegmentTree {
     using TypeNode = typename Monoid::TypeNode;

@@ -1,6 +1,6 @@
 /*
  * @title DynamicBinaryIndexedTree - 動的BIT
- * @docs md/segment/DynamicBinaryIndexedTree.md
+ * @docs md/binary-indexed-tree/DynamicBinaryIndexedTree.md
  */
 template<class Abel> class DynamicBinaryIndexedTree {
     using TypeNode = typename Abel::TypeNode;

@@ -11,7 +11,7 @@
 using namespace std;
 #include "../../lib/40-graph/Graph.cpp"
 #include "../../lib/40-graph/Tree.cpp"
-#include "../../lib/data-structure/segment-tree/LazySegmentTree.cpp"
+#include "../../lib/10-segment-tree/LazySegmentTree.cpp"
 #include "../../lib/operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp"
 
 int main(void){

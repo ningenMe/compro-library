@@ -3,8 +3,8 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../../lib/00-util/FastIO.cpp"
-#include "../../../lib/data-structure/range-query/DisjointSparseTable.cpp"
+#include "../../lib/00-util/FastIO.cpp"
+#include "../../lib/13-static-range-query/DisjointSparseTable.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);

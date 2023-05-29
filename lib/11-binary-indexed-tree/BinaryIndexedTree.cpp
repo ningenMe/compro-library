@@ -1,6 +1,6 @@
 /*
  * @title BinaryIndexedTree - BIT
- * @docs md/data-structure/binary-indexed-tree/BinaryIndexedTree.md
+ * @docs md/binary-indexed-tree/BinaryIndexedTree.md
  */
 template<class Abel> class BinaryIndexedTree {
     using TypeNode = typename Abel::TypeNode;

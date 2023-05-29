@@ -1,6 +1,6 @@
 /*
  * @title RangeModeQuery - 区間最頻値
- * @docs md/segment/RangeModeQuery.md
+ * @docs md/static-range-query/RangeModeQuery.md
  */
 template<class T> class RangeModeQuery {
     vector<size_t> compressed;

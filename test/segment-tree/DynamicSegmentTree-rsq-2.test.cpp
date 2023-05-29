@@ -5,7 +5,7 @@
 #include <cassert>
 #include <stack>
 using namespace std;
-#include "../../../lib/data-structure/segment-tree/DynamicSegmentTree.cpp"
+#include "../../lib/10-segment-tree/DynamicSegmentTree.cpp"
 #include "../../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp"
 
 int main(void){

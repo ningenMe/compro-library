@@ -1,6 +1,6 @@
 /*
  * @title RangeMexQuery - 区間mex
- * @docs md/segment/RangeMexQuery.md
+ * @docs md/static-range-query/RangeMexQuery.md
  */
 template<class T> map<pair<int,int>,int> RangeMexQuery(const vector<T>& A, const vector<pair<int,int>>& ranges, T offset = 0) {
     int N = A.size();

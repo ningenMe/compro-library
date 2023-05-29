@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../../lib/data-structure/segment-tree/LazySegmentTree.cpp"
+#include "../../lib/10-segment-tree/LazySegmentTree.cpp"
 #include "../../../lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.cpp"
 
 int main(void){

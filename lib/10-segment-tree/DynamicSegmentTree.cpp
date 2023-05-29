@@ -1,6 +1,6 @@
 /*
  * @title DynamicSegmentTree - 非再帰抽象化動的セグメント木
- * @docs md/data-structure/segment-tree/DynamicSegmentTree.md
+ * @docs md/segment-tree/DynamicSegmentTree.md
  */
 template<class Monoid> class DynamicSegmentTree {
     using TypeNode = typename Monoid::TypeNode;

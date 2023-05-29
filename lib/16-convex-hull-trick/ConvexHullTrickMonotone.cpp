@@ -1,6 +1,6 @@
 /*
  * @title ConvexHullTrickMonotone - 単調CHT
- * @docs md/data-structure/convex-hull-trick/ConvexHullTrickMonotone.md
+ * @docs md/convex-hull-trick/ConvexHullTrickMonotone.md
  */
 template<class Operator> class ConvexHullTrickMonotone {
 private:

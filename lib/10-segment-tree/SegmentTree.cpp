@@ -1,6 +1,6 @@
 /*
  * @title SegmentTree - 非再帰抽象化セグメント木
- * @docs md/data-structure/segment-tree/SegmentTree.md
+ * @docs md/segment-tree/SegmentTree.md
  */
 template<class Monoid> class SegmentTree {
     using TypeNode = typename Monoid::TypeNode;
