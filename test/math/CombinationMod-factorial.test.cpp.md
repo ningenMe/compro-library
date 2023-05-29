@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: lib/00-util/ModInt.cpp
+    title: ModInt
   - icon: ':heavy_check_mark:'
     path: lib/math/CombinationMod.cpp
     title: "CombinationMod - mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\u968E\u4E57"
-  - icon: ':question:'
-    path: lib/util/ModInt.cpp
-    title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -30,7 +30,7 @@ data:
     \ k) {\n        return ((n < 0 || k < 0 || n < k) ? 0 : fac[n] * (finv[k] * finv[n\
     \ - k] % mod) % mod);\n    }\n    inline long long factorial(int n) {\n      \
     \  return fac[n];\n    }\n};\n\n//verify https://atcoder.jp/contests/abc021/tasks/abc021_d\n\
-    #line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/util/ModInt.md\n\
+    #line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/00-util/ModInt.md\n\
     \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
     \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
     \ (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const ModInt &p) {if((x\
@@ -88,7 +88,7 @@ data:
     \ *= 2;\n\n\tcout << ans << endl;\n\treturn 0;}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/916\"\n\n#include <vector>\n\
     #include <iostream>\nusing namespace std;\n#include \"../../lib/math/CombinationMod.cpp\"\
-    \n#include \"../../lib/util/ModInt.cpp\"\nconstexpr long long MOD = 1000'000'007;\n\
+    \n#include \"../../lib/00-util/ModInt.cpp\"\nconstexpr long long MOD = 1000'000'007;\n\
     using modint = ModInt<MOD>;\n\nint main(void){\n\tint d, l, r, k;\n    int MAX_d\
     \ = 20;\n\tcin >> d >> l >> r >> k;\n    CombinationMod<MOD> CM((1<<MAX_d));\n\
     \    vector<int> sum(MAX_d + 1, 0);\n\tvector<long long> pow2(MAX_d + 1,1);\n\t\
@@ -103,11 +103,11 @@ data:
     \tans *= pow2[r - lca];\n\tans *= 2;\n\n\tcout << ans << endl;\n\treturn 0;}"
   dependsOn:
   - lib/math/CombinationMod.cpp
-  - lib/util/ModInt.cpp
+  - lib/00-util/ModInt.cpp
   isVerificationFile: true
   path: test/math/CombinationMod-factorial.test.cpp
   requiredBy: []
-  timestamp: '2023-05-18 00:39:49+09:00'
+  timestamp: '2023-05-30 04:12:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/CombinationMod-factorial.test.cpp

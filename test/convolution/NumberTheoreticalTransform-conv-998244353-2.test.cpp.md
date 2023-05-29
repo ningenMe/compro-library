@@ -5,11 +5,11 @@ data:
     path: lib/00-util/FastIO.cpp
     title: FastIO
   - icon: ':question:'
+    path: lib/00-util/ModInt.cpp
+    title: ModInt
+  - icon: ':question:'
     path: lib/convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':question:'
-    path: lib/util/ModInt.cpp
-    title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -23,10 +23,10 @@ data:
   bundledCode: "#line 1 \"test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp\"\
     \n#define PROBLEM \"https://yukicoder.me/problems/no/1068\"\n\n#include <vector>\n\
     #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\
-    \nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
-    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
-    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
-    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const\
+    \nusing namespace std;\n#line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n\
+    \ * @docs md/00-util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\n\
+    public:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long\
+    \ long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const\
     \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt\
     \ &operator+=(const long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
     \ *this;}\n    constexpr ModInt &operator+=(const int y) {ModInt p(y);if((x +=\
@@ -193,10 +193,11 @@ data:
     \\n\";\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1068\"\n\n#include <vector>\n\
     #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\
-    \nusing namespace std;\n#include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/00-util/FastIO.cpp\"\
-    \n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\nusing modint\
-    \ = ModInt<MOD_998244353>;\n\nvector<vector<ModInt<MOD_998244353>>> v;\nvector<ModInt<MOD_998244353>>\
-    \ rec(int l, int r) {\n    if(r-l==1) return v[l];\n    if(r-l==2) return NumberTheoreticalTransform<MOD_998244353>::convolution(v[l],v[l+1]);\n\
+    \nusing namespace std;\n#include \"../../lib/00-util/ModInt.cpp\"\n#include \"\
+    ../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\
+    \nusing modint = ModInt<MOD_998244353>;\n\nvector<vector<ModInt<MOD_998244353>>>\
+    \ v;\nvector<ModInt<MOD_998244353>> rec(int l, int r) {\n    if(r-l==1) return\
+    \ v[l];\n    if(r-l==2) return NumberTheoreticalTransform<MOD_998244353>::convolution(v[l],v[l+1]);\n\
     \    return NumberTheoreticalTransform<MOD_998244353>::convolution(rec(l,(l+r)/2),rec((l+r)/2,r));\n\
     }\n\nint main() {\n    int N,Q; read(N),read(Q);\n    vector<ModInt<MOD_998244353>>\
     \ A(N);\n    vector<int> B(Q);\n    for(int i = 0; i < N; ++i) {\n        long\
@@ -205,13 +206,13 @@ data:
     \ = rec(0,N);\n    for(int i = 0; i < Q; ++i) {\n        cout << c[B[i]] << \"\
     \\n\";\n    }\n    return 0;\n}\n"
   dependsOn:
-  - lib/util/ModInt.cpp
+  - lib/00-util/ModInt.cpp
   - lib/00-util/FastIO.cpp
   - lib/convolution/NumberTheoreticalTransform.cpp
   isVerificationFile: true
   path: test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 03:54:34+09:00'
+  timestamp: '2023-05-30 04:12:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp

@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/geometory/KdTree.test.cpp
-    title: test/geometory/KdTree.test.cpp
+    path: test/70-geometory/KdTree.test.cpp
+    title: test/70-geometory/KdTree.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -13,7 +13,7 @@ data:
     _deprecated_at_docs: md/geometory/KdTree.md
     document_title: "KdTree - 2\u6B21\u5143\u9802\u70B9\u5206\u985E\u6728"
     links: []
-  bundledCode: "#line 1 \"lib/geometory/KdTree.cpp\"\n/*\n * @title KdTree - 2\u6B21\
+  bundledCode: "#line 1 \"lib/70-geometory/KdTree.cpp\"\n/*\n * @title KdTree - 2\u6B21\
     \u5143\u9802\u70B9\u5206\u985E\u6728\n * @docs md/geometory/KdTree.md\n */\ntemplate<class\
     \ T> class KdTree{\n    struct Point{\n        T x,y;\n        int idx;\n    \
     \    friend ostream &operator<<(ostream &os, const Point& point) {return os <<\
@@ -84,34 +84,16 @@ data:
     \ l,Point r){return l.idx < r.idx;});\n        return ret;\n    }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: lib/geometory/KdTree.cpp
+  path: lib/70-geometory/KdTree.cpp
   requiredBy: []
-  timestamp: '2020-10-26 04:31:11+09:00'
+  timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/geometory/KdTree.test.cpp
-documentation_of: lib/geometory/KdTree.cpp
+  - test/70-geometory/KdTree.test.cpp
+documentation_of: lib/70-geometory/KdTree.cpp
 layout: document
 redirect_from:
-- /library/lib/geometory/KdTree.cpp
-- /library/lib/geometory/KdTree.cpp.html
+- /library/lib/70-geometory/KdTree.cpp
+- /library/lib/70-geometory/KdTree.cpp.html
 title: "KdTree - 2\u6B21\u5143\u9802\u70B9\u5206\u985E\u6728"
 ---
-### KdTree
-- 2次元頂点分類木
-- staticなクエリのみに対応
-- 2次元座標の特定の領域に含まれる頂点集合を求めることができる
-- これは他のライブラリと違って(x,y)で与える
-
-### コンストラクタ
-- KdTree(const vector<pair<T,T>>& arg_points)
-  - arg_pointsは頂点集合のvector。(x,y)がたくさんある感じ
-  - 計算量は$O(N(\logN)^2)
-  
-### メソッド
-- vector<Point> points_in_range(const T& x1,const T& x2,const T& y1,const T& y2) 
-  - x区間[x1,x2],y区間[y1,y2]両方に囲まれる領域内の頂点集合を返す x1<=x2 && y1 <= y2 を要請する。
-  - Pointは{x,y,idx}の構造体。idxはコンストラクタに渡したときのindex
-  - 計算量は頂点集合の個数を$K$としてO(\sqrt(N)+K)
-- void print() 
-  - デバッグ用

@@ -5,11 +5,11 @@ data:
     path: lib/00-util/FastIO.cpp
     title: FastIO
   - icon: ':question:'
+    path: lib/00-util/ModInt.cpp
+    title: ModInt
+  - icon: ':question:'
     path: lib/convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':question:'
-    path: lib/util/ModInt.cpp
-    title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -23,8 +23,8 @@ data:
   bundledCode: "#line 1 \"test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n#include\
-    \ <array>\nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title\
-    \ ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt\
+    \ <array>\nusing namespace std;\n#line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title\
+    \ ModInt\n * @docs md/00-util/ModInt.md\n */\ntemplate<long long mod> class ModInt\
     \ {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr\
     \ ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr\
     \ ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n\
@@ -189,7 +189,7 @@ data:
     \ 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n#include\
-    \ <array>\nusing namespace std;\n#include \"../../lib/util/ModInt.cpp\"\n#include\
+    \ <array>\nusing namespace std;\n#include \"../../lib/00-util/ModInt.cpp\"\n#include\
     \ \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\
     \n\nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n    int N,M; read(N),read(M);\n\
     \    vector<ModInt<MOD_998244353>> A(N),B(M);\n    for(int i = 0; i < N; ++i)\
@@ -198,13 +198,13 @@ data:
     \    for(int i = 0; i < N+M-1; ++i) cout << C[i] << \" \\n\"[i==N+M-2];\n\treturn\
     \ 0;\n}\n"
   dependsOn:
-  - lib/util/ModInt.cpp
+  - lib/00-util/ModInt.cpp
   - lib/00-util/FastIO.cpp
   - lib/convolution/NumberTheoreticalTransform.cpp
   isVerificationFile: true
   path: test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 03:54:34+09:00'
+  timestamp: '2023-05-30 04:12:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp

@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/string/LongestCommonSubsequence.test.cpp
-    title: test/string/LongestCommonSubsequence.test.cpp
+    path: test/50-string/LongestCommonSubsequence.test.cpp
+    title: test/50-string/LongestCommonSubsequence.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -13,7 +13,7 @@ data:
     _deprecated_at_docs: md/string/LongestCommonSubsequence.md
     document_title: LongestCommonSubsequence - LCS
     links: []
-  bundledCode: "#line 1 \"lib/string/LongestCommonSubsequence.cpp\"\n/*\n * @title\
+  bundledCode: "#line 1 \"lib/50-string/LongestCommonSubsequence.cpp\"\n/*\n * @title\
     \ LongestCommonSubsequence - LCS\n * @docs md/string/LongestCommonSubsequence.md\n\
     \ */\nstring LongestCommonSubsequence(const string& S, const string& T){\n\tint\
     \ N = S.size(), M = T.size();\n\tvector<int> dp((N+1)*(M+1),0);\n    for(size_t\
@@ -32,23 +32,16 @@ data:
     \t}\n    reverse(res.begin(),res.end());\n\treturn res;\n}\n"
   dependsOn: []
   isVerificationFile: false
-  path: lib/string/LongestCommonSubsequence.cpp
+  path: lib/50-string/LongestCommonSubsequence.cpp
   requiredBy: []
-  timestamp: '2020-10-27 04:08:47+09:00'
+  timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/string/LongestCommonSubsequence.test.cpp
-documentation_of: lib/string/LongestCommonSubsequence.cpp
+  - test/50-string/LongestCommonSubsequence.test.cpp
+documentation_of: lib/50-string/LongestCommonSubsequence.cpp
 layout: document
 redirect_from:
-- /library/lib/string/LongestCommonSubsequence.cpp
-- /library/lib/string/LongestCommonSubsequence.cpp.html
+- /library/lib/50-string/LongestCommonSubsequence.cpp
+- /library/lib/50-string/LongestCommonSubsequence.cpp.html
 title: LongestCommonSubsequence - LCS
 ---
-### LongestCommonSubsequence
-- 文字列Sと文字列Tの最小共通部分列を求める
-- 
-
-### メソッド
-- string LongestCommonSubsequence(const string& S, const string& T)
-  - SのサイズをN,TのサイズをMとして $O(NM)$

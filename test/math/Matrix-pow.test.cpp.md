@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: lib/00-util/ModInt.cpp
+    title: ModInt
   - icon: ':heavy_check_mark:'
     path: lib/math/Matrix.cpp
     title: "Matrix - \u884C\u5217\u6F14\u7B97"
-  - icon: ':question:'
-    path: lib/util/ModInt.cpp
-    title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,10 +19,10 @@ data:
     - https://yukicoder.me/problems/no/718
   bundledCode: "#line 1 \"test/math/Matrix-pow.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/718\"\
     \n\n#include <vector>\n#include <iostream>\n#include <array>\n#include <cassert>\n\
-    using namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
-    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
-    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
-    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const\
+    using namespace std;\n#line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n\
+    \ * @docs md/00-util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\n\
+    public:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long\
+    \ long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const\
     \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt\
     \ &operator+=(const long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
     \ *this;}\n    constexpr ModInt &operator+=(const int y) {ModInt p(y);if((x +=\
@@ -105,7 +105,7 @@ data:
     \treturn 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/718\"\n\n#include <vector>\n\
     #include <iostream>\n#include <array>\n#include <cassert>\nusing namespace std;\n\
-    #include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/math/Matrix.cpp\"\
+    #include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/math/Matrix.cpp\"\
     \nconstexpr long long MOD = 1000'000'007;\n\nint main(void){\n    using modint\
     \ = ModInt<MOD>;\n    vector<vector<modint>> a(4,vector<modint>(4));\n    a[0]\
     \ = {1,2,2,-1};\n    a[1] = {0,2,2,-1};\n    a[2] = {0,1,0,0};\n    a[3] = {0,0,1,0};\n\
@@ -114,12 +114,12 @@ data:
     \ 0;\n    }\n    Matrix<modint,4> b(a);\n    auto s = b.pow(N-2);\n    cout <<\
     \ s.a[0][0]*2+s.a[0][1]+s.a[0][2] << endl;\n\treturn 0;\n}"
   dependsOn:
-  - lib/util/ModInt.cpp
+  - lib/00-util/ModInt.cpp
   - lib/math/Matrix.cpp
   isVerificationFile: true
   path: test/math/Matrix-pow.test.cpp
   requiredBy: []
-  timestamp: '2023-05-18 00:39:49+09:00'
+  timestamp: '2023-05-30 04:12:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/Matrix-pow.test.cpp

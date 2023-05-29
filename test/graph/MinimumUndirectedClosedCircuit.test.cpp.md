@@ -2,15 +2,15 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: lib/15-heap/RadixHeap.cpp
+    title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
+  - icon: ':heavy_check_mark:'
     path: lib/graph/Graph.cpp
     title: Graph
   - icon: ':heavy_check_mark:'
     path: lib/graph/MinimumUndirectedClosedCircuit.cpp
     title: "MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\u306E\u6700\
       \u5C0F\u9589\u8DEF\u691C\u51FA"
-  - icon: ':heavy_check_mark:'
-    path: lib/heap/RadixHeap.cpp
-    title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -38,30 +38,30 @@ data:
     \ T w) {\n        make_edge(from.first*W+from.second,to.first*W+to.second,w);\n\
     \        make_edge(to.first*W+to.second,from.first*W+from.second,w);\n    }\n\
     \    inline size_t size(){return N;}\n    inline size_t idx(pair<size_t,size_t>\
-    \ yx){return yx.first*W+yx.second;}\n};\n#line 1 \"lib/heap/RadixHeap.cpp\"\n\
-    /*\n * @title RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap\n * @docs md/heap/RadixHeap.md\n\
-    \ */\ntemplate<class T> class RadixHeap{\n    using TypeNode = pair<unsigned long\
-    \ long, T>;\n    array<vector<TypeNode>,65> vq;\n    unsigned long long size_num;\n\
-    \    TypeNode last;\n    inline int bit(unsigned long long a) {\n        return\
-    \ a ? 64 - __builtin_clzll(a) : 0;\n    }\npublic:\n    RadixHeap(T mini) : size_num(0),\
-    \ last(make_pair(0,mini)) {\n        // do nothing\n    }\n    inline bool empty()\
-    \ {\n        return size_num == 0;\n    }\n    inline size_t size(){\n       \
-    \ return size_num;\n    }\n    inline void push(TypeNode x){\n        ++size_num;\n\
-    \        vq[bit(x.first^last.first)].push_back(x);\n    }\n    inline void emplace(unsigned\
-    \ long long key,T val){\n        ++size_num;\n        vq[bit(key^last.first)].emplace_back(key,val);\n\
-    \    }\n    inline TypeNode pop() {\n        if(vq[0].empty()) {\n           \
-    \ int i = 1;\n            while(vq[i].empty()) ++i;\n            last = *min_element(vq[i].begin(),vq[i].end());\n\
-    \            for(auto &p : vq[i]) vq[bit(p.first ^ last.first)].push_back(p);\n\
-    \            vq[i].clear();\n        }\n        --size_num;\n        auto res\
-    \ = vq[0].back();\n        vq[0].pop_back();\n        return res;\n    }\n};\n\
-    #line 1 \"lib/graph/MinimumUndirectedClosedCircuit.cpp\"\n\n/*\n * @title MinimumUndirectedClosedCircuit\
-    \ - \u7121\u5411\u30B0\u30E9\u30D5\u306E\u6700\u5C0F\u9589\u8DEF\u691C\u51FA\n\
-    \ * @docs md/graph/MinimumUndirectedClosedCircuit.md\n */\ntemplate<class T> class\
-    \ MinimumUndirectedClosedCircuit {\n    //T\u306F\u6574\u6570\u578B\u306E\u307F\
-    \n    static_assert(std::is_integral<T>::value, \"template parameter T must be\
-    \ integral type\");\n    Graph<T> graph;\n    vector<T> dist;\n    vector<int>\
-    \ parent,label;\n    size_t N;\n    T inf;\n    int last_l,last_r,root;\nprivate:\n\
-    \    void solve_impl() {\n        RadixHeap<int> q(0);\n        q.push({0,root});\n\
+    \ yx){return yx.first*W+yx.second;}\n};\n#line 1 \"lib/15-heap/RadixHeap.cpp\"\
+    \n/*\n * @title RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap\n * @docs\
+    \ md/heap/RadixHeap.md\n */\ntemplate<class T> class RadixHeap{\n    using TypeNode\
+    \ = pair<unsigned long long, T>;\n    array<vector<TypeNode>,65> vq;\n    unsigned\
+    \ long long size_num;\n    TypeNode last;\n    inline int bit(unsigned long long\
+    \ a) {\n        return a ? 64 - __builtin_clzll(a) : 0;\n    }\npublic:\n    RadixHeap(T\
+    \ mini) : size_num(0), last(make_pair(0,mini)) {\n        // do nothing\n    }\n\
+    \    inline bool empty() {\n        return size_num == 0;\n    }\n    inline size_t\
+    \ size(){\n        return size_num;\n    }\n    inline void push(TypeNode x){\n\
+    \        ++size_num;\n        vq[bit(x.first^last.first)].push_back(x);\n    }\n\
+    \    inline void emplace(unsigned long long key,T val){\n        ++size_num;\n\
+    \        vq[bit(key^last.first)].emplace_back(key,val);\n    }\n    inline TypeNode\
+    \ pop() {\n        if(vq[0].empty()) {\n            int i = 1;\n            while(vq[i].empty())\
+    \ ++i;\n            last = *min_element(vq[i].begin(),vq[i].end());\n        \
+    \    for(auto &p : vq[i]) vq[bit(p.first ^ last.first)].push_back(p);\n      \
+    \      vq[i].clear();\n        }\n        --size_num;\n        auto res = vq[0].back();\n\
+    \        vq[0].pop_back();\n        return res;\n    }\n};\n#line 1 \"lib/graph/MinimumUndirectedClosedCircuit.cpp\"\
+    \n\n/*\n * @title MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\
+    \u306E\u6700\u5C0F\u9589\u8DEF\u691C\u51FA\n * @docs md/graph/MinimumUndirectedClosedCircuit.md\n\
+    \ */\ntemplate<class T> class MinimumUndirectedClosedCircuit {\n    //T\u306F\u6574\
+    \u6570\u578B\u306E\u307F\n    static_assert(std::is_integral<T>::value, \"template\
+    \ parameter T must be integral type\");\n    Graph<T> graph;\n    vector<T> dist;\n\
+    \    vector<int> parent,label;\n    size_t N;\n    T inf;\n    int last_l,last_r,root;\n\
+    private:\n    void solve_impl() {\n        RadixHeap<int> q(0);\n        q.push({0,root});\n\
     \        dist[root] = 0;\n        while (q.size()) {\n            auto top = \
     \ q.pop();\n            size_t curr = top.second;\n            if(top.first >\
     \ dist[curr]) continue;\n            for(auto& edge:graph.edges[curr]){\n    \
@@ -106,7 +106,7 @@ data:
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/13\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <cassert>\n#include <set>\n\
     #include <queue>\n#include <map>\n#include <stack>\n#include <array>\n\nusing\
-    \ namespace std;\n#include \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/heap/RadixHeap.cpp\"\
+    \ namespace std;\n#include \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/15-heap/RadixHeap.cpp\"\
     \n#include \"../../lib/graph/MinimumUndirectedClosedCircuit.cpp\"\n\nint main(){\n\
     \    cin.tie(0);ios::sync_with_stdio(false);\n    int W,H; cin >> W >> H;\n  \
     \  Graph<int> g(H,W);\n    vector<int> a(W),b(W);\n    {\n        for(int j=0;j\
@@ -120,12 +120,12 @@ data:
     \ << (flg?\"possible\":\"impossible\") << endl;\n\treturn 0;\n}\n"
   dependsOn:
   - lib/graph/Graph.cpp
-  - lib/heap/RadixHeap.cpp
+  - lib/15-heap/RadixHeap.cpp
   - lib/graph/MinimumUndirectedClosedCircuit.cpp
   isVerificationFile: true
   path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
   requiredBy: []
-  timestamp: '2023-05-15 02:16:48+09:00'
+  timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/MinimumUndirectedClosedCircuit.test.cpp

@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
-    path: lib/util/ModInt.cpp
+    path: lib/00-util/ModInt.cpp
     title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -16,14 +16,14 @@ data:
     - https://yukicoder.me/problems/no/1067
   bundledCode: "#line 1 \"test/00-util/ModInt.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1067\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <map>\n\
-    #include <queue>\nusing namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n\
-    \ * @title ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class\
-    \ ModInt {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr\
-    \ ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr\
-    \ ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n\
-    \    constexpr ModInt &operator+=(const long long y) {ModInt p(y);if((x += p.x)\
-    \ >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator+=(const int\
-    \ y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr\
+    #include <queue>\nusing namespace std;\n#line 1 \"lib/00-util/ModInt.cpp\"\n/*\n\
+    \ * @title ModInt\n * @docs md/00-util/ModInt.md\n */\ntemplate<long long mod>\
+    \ class ModInt {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n\
+    \    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n\
+    \    constexpr ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -=\
+    \ mod;return *this;}\n    constexpr ModInt &operator+=(const long long y) {ModInt\
+    \ p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator+=(const\
+    \ int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr\
     \ ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return\
     \ *this;}\n    constexpr ModInt &operator-=(const long long y) {ModInt p(y);if((x\
     \ += mod - p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator-=(const\
@@ -79,7 +79,7 @@ data:
     \ return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1067\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <map>\n#include <queue>\n\
-    using namespace std;\n#include \"../../lib/util/ModInt.cpp\"\n\nconstexpr long\
+    using namespace std;\n#include \"../../lib/00-util/ModInt.cpp\"\n\nconstexpr long\
     \ long MOD2 = 998244353;\nusing modint = ModInt<MOD2>;\nint main() {\n    long\
     \ long N,Q; cin >> N >> Q;\n    vector<long long> A(N+1,1234567890LL);\n    for(int\
     \ i = 1; i <= N; ++i) cin >> A[i];\n\tsort(A.begin(),A.end(),greater<>());\n \
@@ -99,11 +99,11 @@ data:
     \   ans ^= mp[{j,P[i]}];\n        }\n        cout << ans << endl;\n    }\n   \
     \ return 0;\n}\n"
   dependsOn:
-  - lib/util/ModInt.cpp
+  - lib/00-util/ModInt.cpp
   isVerificationFile: true
   path: test/00-util/ModInt.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:03:52+09:00'
+  timestamp: '2023-05-30 04:12:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/00-util/ModInt.test.cpp

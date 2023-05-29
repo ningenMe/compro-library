@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/string/LevenshteinDistance.cpp
+    path: lib/50-string/LevenshteinDistance.cpp
     title: "LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -14,10 +14,10 @@ data:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E
-  bundledCode: "#line 1 \"test/string/LevenshteinDistance-2.test.cpp\"\n#define PROBLEM\
-    \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E\"\n\n#include\
-    \ <vector>\n#include <iostream>\n#include <string>\nusing namespace std;\n#line\
-    \ 1 \"lib/string/LevenshteinDistance.cpp\"\n/*\n * @title LevenshteinDistance\
+  bundledCode: "#line 1 \"test/50-string/LevenshteinDistance-2.test.cpp\"\n#define\
+    \ PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E\"\
+    \n\n#include <vector>\n#include <iostream>\n#include <string>\nusing namespace\
+    \ std;\n#line 1 \"lib/50-string/LevenshteinDistance.cpp\"\n/*\n * @title LevenshteinDistance\
     \ - \u7DE8\u96C6\u8DDD\u96E2\n * @docs md/string/LevenshteinDistance.md\n */\n\
     int LevenshteinDistance(string S, string T,char dummy='#') {\n    int N = S.size();\n\
     \    int M = T.size();\n    S.push_back(dummy);T.push_back(dummy);\n    vector<vector<int>>\
@@ -26,27 +26,27 @@ data:
     \ = min(dp[i+1][j+1],dp[i][j]+(S[i]!=T[j]));            \n            //delete\n\
     \            dp[i+1][j]   = min(dp[i+1][j],dp[i][j]+1);            \n        \
     \    //insert\n            dp[i][j+1]   = min(dp[i][j+1],dp[i][j]+1);        \
-    \    \n        }\n    }\n    return dp[N][M];\n}\n#line 8 \"test/string/LevenshteinDistance-2.test.cpp\"\
+    \    \n        }\n    }\n    return dp[N][M];\n}\n#line 8 \"test/50-string/LevenshteinDistance-2.test.cpp\"\
     \n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    string S,T;\
     \ cin >> S >> T;\n    cout << LevenshteinDistance(S,T) << endl;\n    return 0;\n\
     }\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_1_E\"\
     \n\n#include <vector>\n#include <iostream>\n#include <string>\nusing namespace\
-    \ std;\n#include \"../../lib/string/LevenshteinDistance.cpp\"\n\nint main() {\n\
-    \    cin.tie(0);ios::sync_with_stdio(false);\n    string S,T; cin >> S >> T;\n\
-    \    cout << LevenshteinDistance(S,T) << endl;\n    return 0;\n}\n"
+    \ std;\n#include \"../../lib/50-string/LevenshteinDistance.cpp\"\n\nint main()\
+    \ {\n    cin.tie(0);ios::sync_with_stdio(false);\n    string S,T; cin >> S >>\
+    \ T;\n    cout << LevenshteinDistance(S,T) << endl;\n    return 0;\n}\n"
   dependsOn:
-  - lib/string/LevenshteinDistance.cpp
+  - lib/50-string/LevenshteinDistance.cpp
   isVerificationFile: true
-  path: test/string/LevenshteinDistance-2.test.cpp
+  path: test/50-string/LevenshteinDistance-2.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:04:26+09:00'
+  timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/string/LevenshteinDistance-2.test.cpp
+documentation_of: test/50-string/LevenshteinDistance-2.test.cpp
 layout: document
 redirect_from:
-- /verify/test/string/LevenshteinDistance-2.test.cpp
-- /verify/test/string/LevenshteinDistance-2.test.cpp.html
-title: test/string/LevenshteinDistance-2.test.cpp
+- /verify/test/50-string/LevenshteinDistance-2.test.cpp
+- /verify/test/50-string/LevenshteinDistance-2.test.cpp.html
+title: test/50-string/LevenshteinDistance-2.test.cpp
 ---

@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/geometory/RectangleWeight.test.cpp
-    title: test/geometory/RectangleWeight.test.cpp
+    path: test/70-geometory/RectangleWeight.test.cpp
+    title: test/70-geometory/RectangleWeight.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -13,7 +13,7 @@ data:
     _deprecated_at_docs: md/geometory/RectangleWeight.md
     document_title: "RectangleWeight - \u91CD\u307F\u3064\u304D\u77E9\u5F62"
     links: []
-  bundledCode: "#line 1 \"lib/geometory/RectangleWeight.cpp\"\n/*\n * @title RectangleWeight\
+  bundledCode: "#line 1 \"lib/70-geometory/RectangleWeight.cpp\"\n/*\n * @title RectangleWeight\
     \ - \u91CD\u307F\u3064\u304D\u77E9\u5F62\n * @docs md/geometory/RectangleWeight.md\n\
     \ */\ntemplate<class T> class RectangleWeight{\n    int H,W;\n    vector<tuple<int,int,int,int,T>>\
     \ query;\n    vector<T> grid;\npublic:\n    RectangleWeight(int H,int W):H(H),W(W),grid(H*W){\n\
@@ -47,33 +47,16 @@ data:
     \    }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: lib/geometory/RectangleWeight.cpp
+  path: lib/70-geometory/RectangleWeight.cpp
   requiredBy: []
-  timestamp: '2020-10-25 05:38:36+09:00'
+  timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/geometory/RectangleWeight.test.cpp
-documentation_of: lib/geometory/RectangleWeight.cpp
+  - test/70-geometory/RectangleWeight.test.cpp
+documentation_of: lib/70-geometory/RectangleWeight.cpp
 layout: document
 redirect_from:
-- /library/lib/geometory/RectangleWeight.cpp
-- /library/lib/geometory/RectangleWeight.cpp.html
+- /library/lib/70-geometory/RectangleWeight.cpp
+- /library/lib/70-geometory/RectangleWeight.cpp.html
 title: "RectangleWeight - \u91CD\u307F\u3064\u304D\u77E9\u5F62"
 ---
-### RectangleOverlapsWeight
-- 重み付き矩形
-- staticなクエリのみに対応
-- 長方形区間に重み付けをして和を計算できる
-- 0-indexed
-
-### コンストラクタ
-- RectangleWeight(int H,int W)
-  - H,W グリッドの大きさ。
-  
-### メソッド
-- void make_query(int y1,int x1,int y2,int x2,T w=1) 
-  - 半開区間矩形[y1,y2)*[x1,x2)に一律重みwを加える。
-- void solve() 
-  - 実行
-- T get(int y,int x) 
-  - grid[y][x]の値を返す

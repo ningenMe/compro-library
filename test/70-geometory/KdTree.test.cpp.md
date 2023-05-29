@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/geometory/KdTree.cpp
+    path: lib/70-geometory/KdTree.cpp
     title: "KdTree - 2\u6B21\u5143\u9802\u70B9\u5206\u985E\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -14,9 +14,10 @@ data:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C
-  bundledCode: "#line 1 \"test/geometory/KdTree.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C\"\
-    \n\n#include <iostream>\n#include <vector>\n#include <stack>\n#include <algorithm>\n\
-    using namespace std;\n#line 1 \"lib/geometory/KdTree.cpp\"\n/*\n * @title KdTree\
+  bundledCode: "#line 1 \"test/70-geometory/KdTree.test.cpp\"\n#define PROBLEM \"\
+    http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C\"\n\n#include\
+    \ <iostream>\n#include <vector>\n#include <stack>\n#include <algorithm>\nusing\
+    \ namespace std;\n#line 1 \"lib/70-geometory/KdTree.cpp\"\n/*\n * @title KdTree\
     \ - 2\u6B21\u5143\u9802\u70B9\u5206\u985E\u6728\n * @docs md/geometory/KdTree.md\n\
     \ */\ntemplate<class T> class KdTree{\n    struct Point{\n        T x,y;\n   \
     \     int idx;\n        friend ostream &operator<<(ostream &os, const Point& point)\
@@ -51,7 +52,7 @@ data:
     \ x2) st.push(tree[p].ch_r);\n                if(tree[p].ch_l!=-1 && x1 <= tree[p].point.x)\
     \ st.push(tree[p].ch_l);\n            }\n        }\n        sort(ret.begin(),ret.end(),[&](Point\
     \ l,Point r){return l.idx < r.idx;});\n        return ret;\n    }\n};\n#line 9\
-    \ \"test/geometory/KdTree.test.cpp\"\n\nint main(void){\n    int N; \n    scanf(\"\
+    \ \"test/70-geometory/KdTree.test.cpp\"\n\nint main(void){\n    int N; \n    scanf(\"\
     %d\",&N);\n    vector<pair<int,int>> points(N);\n    for(int i=0;i<N;++i) {\n\
     \        int x,y;\n        scanf(\"%d%d\",&x,&y);\n        points[i]={x,y};\n\
     \    }\n    KdTree<int> kdtree(points);\n    int Q;\n    scanf(\"%d\",&Q);\n \
@@ -61,7 +62,7 @@ data:
     }\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_C\"\
     \n\n#include <iostream>\n#include <vector>\n#include <stack>\n#include <algorithm>\n\
-    using namespace std;\n#include \"../../lib/geometory/KdTree.cpp\"\n\nint main(void){\n\
+    using namespace std;\n#include \"../../lib/70-geometory/KdTree.cpp\"\n\nint main(void){\n\
     \    int N; \n    scanf(\"%d\",&N);\n    vector<pair<int,int>> points(N);\n  \
     \  for(int i=0;i<N;++i) {\n        int x,y;\n        scanf(\"%d%d\",&x,&y);\n\
     \        points[i]={x,y};\n    }\n    KdTree<int> kdtree(points);\n    int Q;\n\
@@ -70,17 +71,17 @@ data:
     \        for(auto& e:v) cout << e.idx << \"\\n\";\n        cout << \"\\n\";\n\
     \    }\n    return 0;\n}"
   dependsOn:
-  - lib/geometory/KdTree.cpp
+  - lib/70-geometory/KdTree.cpp
   isVerificationFile: true
-  path: test/geometory/KdTree.test.cpp
+  path: test/70-geometory/KdTree.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:04:26+09:00'
+  timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/geometory/KdTree.test.cpp
+documentation_of: test/70-geometory/KdTree.test.cpp
 layout: document
 redirect_from:
-- /verify/test/geometory/KdTree.test.cpp
-- /verify/test/geometory/KdTree.test.cpp.html
-title: test/geometory/KdTree.test.cpp
+- /verify/test/70-geometory/KdTree.test.cpp
+- /verify/test/70-geometory/KdTree.test.cpp.html
+title: test/70-geometory/KdTree.test.cpp
 ---

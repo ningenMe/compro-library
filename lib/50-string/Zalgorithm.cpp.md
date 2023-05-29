@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/string/Zalgorithm.test.cpp
-    title: test/string/Zalgorithm.test.cpp
+    path: test/50-string/Zalgorithm.test.cpp
+    title: test/50-string/Zalgorithm.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -13,7 +13,7 @@ data:
     _deprecated_at_docs: md/string/Zalgorithm.md
     document_title: Zalgorithm
     links: []
-  bundledCode: "#line 1 \"lib/string/Zalgorithm.cpp\"\n/*\n * @title Zalgorithm\n\
+  bundledCode: "#line 1 \"lib/50-string/Zalgorithm.cpp\"\n/*\n * @title Zalgorithm\n\
     \ * @docs md/string/Zalgorithm.md\n */\nclass Zalgorithm{\n    vector<int> zarray;\n\
     \    template<class T> void init(const vector<T>& ar) {\n        int N = ar.size();\n\
     \        for(int i = 1, j = 0; i < N; ++i) {\n            if(i + zarray[i - j]\
@@ -40,16 +40,16 @@ data:
     \ int operator[](int idx) {\n\t\treturn zarray[idx];\n\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: lib/string/Zalgorithm.cpp
+  path: lib/50-string/Zalgorithm.cpp
   requiredBy: []
-  timestamp: '2020-09-26 17:01:19+09:00'
+  timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/string/Zalgorithm.test.cpp
-documentation_of: lib/string/Zalgorithm.cpp
+  - test/50-string/Zalgorithm.test.cpp
+documentation_of: lib/50-string/Zalgorithm.cpp
 layout: document
 redirect_from:
-- /library/lib/string/Zalgorithm.cpp
-- /library/lib/string/Zalgorithm.cpp.html
+- /library/lib/50-string/Zalgorithm.cpp
+- /library/lib/50-string/Zalgorithm.cpp.html
 title: Zalgorithm
 ---

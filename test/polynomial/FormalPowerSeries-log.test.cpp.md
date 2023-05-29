@@ -5,19 +5,19 @@ data:
     path: lib/00-util/FastIO.cpp
     title: FastIO
   - icon: ':question:'
+    path: lib/00-util/ModInt.cpp
+    title: ModInt
+  - icon: ':question:'
     path: lib/convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':question:'
+  - icon: ':x:'
     path: lib/polynomial/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
-  - icon: ':question:'
-    path: lib/util/ModInt.cpp
-    title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/log_of_formal_power_series
@@ -53,7 +53,7 @@ data:
     \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
-    #line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/util/ModInt.md\n\
+    #line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/00-util/ModInt.md\n\
     \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
     \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
     \ (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const ModInt &p) {if((x\
@@ -283,7 +283,7 @@ data:
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/log_of_formal_power_series\"\
     \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
     #include <array>\n\nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\
-    \n#include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\
+    \n#include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\
     \n#include \"../../lib/polynomial/FormalPowerSeries.cpp\"\n\n\nint main() {\n\
     \    cin.tie(0);ios::sync_with_stdio(false);\n    int N; read(N);\n    FormalPowerSeries<MOD_998244353>\
     \ f(N);\n    for(int i=0;i<N;++i) {\n        int a; read(a); f[i]=a;\n    }\n\
@@ -291,14 +291,14 @@ data:
     \    return 0;\n}"
   dependsOn:
   - lib/00-util/FastIO.cpp
-  - lib/util/ModInt.cpp
+  - lib/00-util/ModInt.cpp
   - lib/convolution/NumberTheoreticalTransform.cpp
   - lib/polynomial/FormalPowerSeries.cpp
   isVerificationFile: true
   path: test/polynomial/FormalPowerSeries-log.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 03:54:34+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-05-30 04:12:03+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/polynomial/FormalPowerSeries-log.test.cpp
 layout: document

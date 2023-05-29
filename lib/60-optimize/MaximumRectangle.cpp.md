@@ -3,20 +3,20 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/optimize/MaximumRectangle-1.test.cpp
     title: test/optimize/MaximumRectangle-1.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/optimize/MaximumRectangle-2.test.cpp
     title: test/optimize/MaximumRectangle-2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/optimize/MaximumRectangle.md
     document_title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
     links: []
-  bundledCode: "#line 1 \"lib/optimize/MaximumRectangle.cpp\"\n/*\n * @title MaximumRectangle\
+  bundledCode: "#line 1 \"lib/60-optimize/MaximumRectangle.cpp\"\n/*\n * @title MaximumRectangle\
     \ - \u6700\u5927\u9577\u65B9\u5F62\n * @docs md/optimize/MaximumRectangle.md\n\
     \ */\ntemplate<class T> long long MaximumRectangle(vector<T> ar){\n\tar.push_back(0);\n\
     \tstack<pair<long long,long long>> st;\n\tlong long res = 0;\n\tfor(long long\
@@ -39,27 +39,17 @@ data:
     \tst.push({vr,l});\n\t}\n\tar.pop_back();\n\treturn res;\n}\n"
   dependsOn: []
   isVerificationFile: false
-  path: lib/optimize/MaximumRectangle.cpp
+  path: lib/60-optimize/MaximumRectangle.cpp
   requiredBy: []
-  timestamp: '2020-10-25 16:36:50+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-05-30 04:23:09+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/optimize/MaximumRectangle-1.test.cpp
   - test/optimize/MaximumRectangle-2.test.cpp
-documentation_of: lib/optimize/MaximumRectangle.cpp
+documentation_of: lib/60-optimize/MaximumRectangle.cpp
 layout: document
 redirect_from:
-- /library/lib/optimize/MaximumRectangle.cpp
-- /library/lib/optimize/MaximumRectangle.cpp.html
+- /library/lib/60-optimize/MaximumRectangle.cpp
+- /library/lib/60-optimize/MaximumRectangle.cpp.html
 title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
 ---
-### MaximumRectangle
-- 最大長方形
-- ヒストグラムの最大長方形を求める
-
-### メソッド
-- long long MaximumRectangle(vector<T> ar)
-- 計算量はarのサイズを$N$として$O(N)$
-
-### 参考資料
-- [Flip and Rectangles](https://atcoder.jp/contests/arc081/tasks/arc081_d)

@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/string/LevenshteinDistance-1.test.cpp
-    title: test/string/LevenshteinDistance-1.test.cpp
+    path: test/50-string/LevenshteinDistance-1.test.cpp
+    title: test/50-string/LevenshteinDistance-1.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/string/LevenshteinDistance-2.test.cpp
-    title: test/string/LevenshteinDistance-2.test.cpp
+    path: test/50-string/LevenshteinDistance-2.test.cpp
+    title: test/50-string/LevenshteinDistance-2.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -16,7 +16,7 @@ data:
     _deprecated_at_docs: md/string/LevenshteinDistance.md
     document_title: "LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2"
     links: []
-  bundledCode: "#line 1 \"lib/string/LevenshteinDistance.cpp\"\n/*\n * @title LevenshteinDistance\
+  bundledCode: "#line 1 \"lib/50-string/LevenshteinDistance.cpp\"\n/*\n * @title LevenshteinDistance\
     \ - \u7DE8\u96C6\u8DDD\u96E2\n * @docs md/string/LevenshteinDistance.md\n */\n\
     int LevenshteinDistance(string S, string T,char dummy='#') {\n    int N = S.size();\n\
     \    int M = T.size();\n    S.push_back(dummy);T.push_back(dummy);\n    vector<vector<int>>\
@@ -37,25 +37,17 @@ data:
     \            \n        }\n    }\n    return dp[N][M];\n}"
   dependsOn: []
   isVerificationFile: false
-  path: lib/string/LevenshteinDistance.cpp
+  path: lib/50-string/LevenshteinDistance.cpp
   requiredBy: []
-  timestamp: '2020-10-25 16:15:38+09:00'
+  timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/string/LevenshteinDistance-2.test.cpp
-  - test/string/LevenshteinDistance-1.test.cpp
-documentation_of: lib/string/LevenshteinDistance.cpp
+  - test/50-string/LevenshteinDistance-2.test.cpp
+  - test/50-string/LevenshteinDistance-1.test.cpp
+documentation_of: lib/50-string/LevenshteinDistance.cpp
 layout: document
 redirect_from:
-- /library/lib/string/LevenshteinDistance.cpp
-- /library/lib/string/LevenshteinDistance.cpp.html
+- /library/lib/50-string/LevenshteinDistance.cpp
+- /library/lib/50-string/LevenshteinDistance.cpp.html
 title: "LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2"
 ---
-### LevenshteinDistance
-- 文字列Sを文字列Tに変換するときの編集距離を求める
-- 
-
-### メソッド
-- int LevenshteinDistance(string S, string T,char dummy='#')
-  - dummyはS,Tに含まれない文字列が良い。
-  - SのサイズをN,TのサイズをMとして $O(NM)$

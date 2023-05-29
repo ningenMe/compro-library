@@ -5,11 +5,11 @@ data:
     path: lib/00-util/FastIO.cpp
     title: FastIO
   - icon: ':question:'
+    path: lib/00-util/ModInt.cpp
+    title: ModInt
+  - icon: ':question:'
     path: lib/convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':question:'
-    path: lib/util/ModInt.cpp
-    title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -23,7 +23,7 @@ data:
   bundledCode: "#line 1 \"test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp\"\
     \n#define PROBLEM \"https://yukicoder.me/problems/no/1307\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <array>\nusing namespace std;\n\
-    #line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/util/ModInt.md\n\
+    #line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/00-util/ModInt.md\n\
     \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
     \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
     \ (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const ModInt &p) {if((x\
@@ -189,7 +189,7 @@ data:
     \ i=0;i<N;++i) cout << D[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1307\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <array>\nusing namespace std;\n\
-    #include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/00-util/FastIO.cpp\"\
+    #include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/00-util/FastIO.cpp\"\
     \n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\n\nconstexpr\
     \ long long MOD = 1000000000000000000LL;\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
     \    int N,Q; read(N); read(Q);\n    vector<ModInt<MOD>> A(N),B(N,0),D(N,0);\n\
@@ -198,13 +198,13 @@ data:
     \    for(int i=0;i<2*N-1;++i) {\n        D[(i+1)%N]+=C[i];\n    }\n    for(int\
     \ i=0;i<N;++i) cout << D[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
   dependsOn:
-  - lib/util/ModInt.cpp
+  - lib/00-util/ModInt.cpp
   - lib/00-util/FastIO.cpp
   - lib/convolution/NumberTheoreticalTransform.cpp
   isVerificationFile: true
   path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 03:54:34+09:00'
+  timestamp: '2023-05-30 04:12:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp

@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: lib/00-util/ModInt.cpp
+    title: ModInt
   - icon: ':heavy_check_mark:'
     path: lib/data-structure/segment-tree/SegmentTree.cpp
     title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\
@@ -9,9 +12,6 @@ data:
     path: lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp
     title: "MonoidRangeCompositePointUpdate - [\u533A\u9593\u4E00\u6B21\u95A2\u6570\
       , \u70B9\u66F4\u65B0]"
-  - icon: ':question:'
-    path: lib/util/ModInt.cpp
-    title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -76,8 +76,8 @@ data:
     \ \";\n        // \tif(i==((1<<j)-1) && ++j) cout << endl;\n        // }\n   \
     \     cout << \"vector\" << endl;\n        cout << \"{ \" << fold(0,1);\n    \
     \    for(int i = 1; i < length; ++i) cout << \", \" << fold(i,i+1);\n        cout\
-    \ << \" }\" << endl;\n    }\n};\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title\
-    \ ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt\
+    \ << \" }\" << endl;\n    }\n};\n#line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title\
+    \ ModInt\n * @docs md/00-util/ModInt.md\n */\ntemplate<long long mod> class ModInt\
     \ {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr\
     \ ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr\
     \ ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n\
@@ -137,7 +137,7 @@ data:
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\nusing namespace\
     \ std;\n#include \"../../../lib/data-structure/segment-tree/SegmentTree.cpp\"\n\
-    #include \"../../../lib/util/ModInt.cpp\"\n#include \"../../../lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp\"\
+    #include \"../../../lib/00-util/ModInt.cpp\"\n#include \"../../../lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp\"\
     \n\nusing modint = ModInt<998244353>;\nint main(){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\
     \    int N,Q; cin >> N >> Q;\n    vector<pair<modint,modint>> A(N);\n    for(int\
     \ i = 0; i < N; ++i) {\n        cin >> A[i].first >> A[i].second;\n    }\n   \
@@ -147,12 +147,12 @@ data:
     \ endl;\n\t\t}\n        else seg.operate(l,{r,x});\n    }\n}\n\n"
   dependsOn:
   - lib/data-structure/segment-tree/SegmentTree.cpp
-  - lib/util/ModInt.cpp
+  - lib/00-util/ModInt.cpp
   - lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp
   isVerificationFile: true
   path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
   requiredBy: []
-  timestamp: '2023-05-18 00:39:49+09:00'
+  timestamp: '2023-05-30 04:12:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp

@@ -13,8 +13,8 @@ data:
     _deprecated_at_docs: md/heap/DoubleEndedPriorityQuere.md
     document_title: "DoubleEndedPriorityQuere - \u4E21\u7AEFpriority queue"
     links: []
-  bundledCode: "#line 1 \"lib/heap/DoubleEndedPriorityQuere.cpp\"\n/*\n * @title DoubleEndedPriorityQuere\
-    \ - \u4E21\u7AEFpriority queue\n * @docs md/heap/DoubleEndedPriorityQuere.md\n\
+  bundledCode: "#line 1 \"lib/15-heap/DoubleEndedPriorityQuere.cpp\"\n/*\n * @title\
+    \ DoubleEndedPriorityQuere - \u4E21\u7AEFpriority queue\n * @docs md/heap/DoubleEndedPriorityQuere.md\n\
     \ */\ntemplate<class T> class DoubleEndedPriorityQuere {\n\tstd::priority_queue<T>\
     \ max_pq,poped_max_pq;\n\tstd::priority_queue<T, vector<T>, greater<T> > min_pq,\
     \ poped_min_pq;\npublic:\n\tDoubleEndedPriorityQuere() {\n    }\n\tinline void\
@@ -46,17 +46,17 @@ data:
     \ const { return max_pq.size(); }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: lib/heap/DoubleEndedPriorityQuere.cpp
+  path: lib/15-heap/DoubleEndedPriorityQuere.cpp
   requiredBy: []
-  timestamp: '2023-05-15 02:35:33+09:00'
+  timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/heap/DoubleEndedPriorityQuere.test.cpp
-documentation_of: lib/heap/DoubleEndedPriorityQuere.cpp
+documentation_of: lib/15-heap/DoubleEndedPriorityQuere.cpp
 layout: document
 redirect_from:
-- /library/lib/heap/DoubleEndedPriorityQuere.cpp
-- /library/lib/heap/DoubleEndedPriorityQuere.cpp.html
+- /library/lib/15-heap/DoubleEndedPriorityQuere.cpp
+- /library/lib/15-heap/DoubleEndedPriorityQuere.cpp.html
 title: "DoubleEndedPriorityQuere - \u4E21\u7AEFpriority queue"
 ---
 ### DoubleEndedPriorityQuere

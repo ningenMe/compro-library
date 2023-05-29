@@ -1,6 +1,9 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: lib/00-util/ModInt.cpp
+    title: ModInt
   - icon: ':heavy_check_mark:'
     path: lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
     title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
@@ -9,9 +12,6 @@ data:
     path: lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
     title: "MonoidRangeSumRangeAffine - [\u533A\u9593\u548C, \u533A\u9593\u30A2\u30D5\
       \u30A3\u30F3\u5909\u63DB]"
-  - icon: ':question:'
-    path: lib/util/ModInt.cpp
-    title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -119,23 +119,23 @@ data:
     \ operate_impl(this->root,l,r,lazy);}\n    inline TypeNode fold(int l, int r)\
     \ {return fold_impl(this->root,l,r);}\n    inline void reverse(int l, int r) {reverse_impl(l,r);}\n\
     \    void print() {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i)\
-    \ << \" \\n\"[i==m-1];}\n};\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
-    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
-    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
-    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const\
-    \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt\
-    \ &operator+=(const long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
-    \ *this;}\n    constexpr ModInt &operator+=(const int y) {ModInt p(y);if((x +=\
-    \ p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator-=(const\
-    \ ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return *this;}\n    constexpr\
-    \ ModInt &operator-=(const long long y) {ModInt p(y);if((x += mod - p.x) >= mod)\
-    \ x -= mod;return *this;}\n    constexpr ModInt &operator-=(const int y) {ModInt\
-    \ p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt\
-    \ &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}\n    constexpr\
-    \ ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x % mod);return\
-    \ *this;}\n    constexpr ModInt &operator*=(const int y) {ModInt p(y);x = (x *\
-    \ p.x % mod);return *this;}\n    constexpr ModInt &operator^=(const ModInt &p)\
-    \ {x = (x ^ p.x) % mod;return *this;}\n    constexpr ModInt &operator^=(const\
+    \ << \" \\n\"[i==m-1];}\n};\n#line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title\
+    \ ModInt\n * @docs md/00-util/ModInt.md\n */\ntemplate<long long mod> class ModInt\
+    \ {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr\
+    \ ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr\
+    \ ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n\
+    \    constexpr ModInt &operator+=(const long long y) {ModInt p(y);if((x += p.x)\
+    \ >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator+=(const int\
+    \ y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr\
+    \ ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return\
+    \ *this;}\n    constexpr ModInt &operator-=(const long long y) {ModInt p(y);if((x\
+    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator-=(const\
+    \ int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}\n  \
+    \  constexpr ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}\n\
+    \    constexpr ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x\
+    \ % mod);return *this;}\n    constexpr ModInt &operator*=(const int y) {ModInt\
+    \ p(y);x = (x * p.x % mod);return *this;}\n    constexpr ModInt &operator^=(const\
+    \ ModInt &p) {x = (x ^ p.x) % mod;return *this;}\n    constexpr ModInt &operator^=(const\
     \ long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    constexpr\
     \ ModInt &operator^=(const int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n\
     \    constexpr ModInt &operator/=(const ModInt &p) {*this *= p.inv();return *this;}\n\
@@ -175,7 +175,7 @@ data:
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
     using namespace std;\n#include \"../../lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp\"\
     \n#include \"../../lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
-    \n#include \"../../lib/util/ModInt.cpp\"\n\nusing modint = ModInt<998244353>;\n\
+    \n#include \"../../lib/00-util/ModInt.cpp\"\n\nusing modint = ModInt<998244353>;\n\
     template <class T, class U>ostream &operator<<(ostream &o, const pair<T, U>&obj)\
     \ {o << \"{\" << obj.first << \", \" << obj.second << \"}\"; return o;} \n\nint\
     \ main(void){\n    int N,Q;\n\tscanf(\"%d %d\",&N,&Q);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeSumRangeAffine<modint,pair<modint,modint>>>\
@@ -187,11 +187,11 @@ data:
   dependsOn:
   - lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
   - lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
-  - lib/util/ModInt.cpp
+  - lib/00-util/ModInt.cpp
   isVerificationFile: true
   path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   requiredBy: []
-  timestamp: '2023-05-29 03:23:57+09:00'
+  timestamp: '2023-05-30 04:12:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp

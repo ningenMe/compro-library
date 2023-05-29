@@ -1,12 +1,12 @@
 ---
 data:
   _extendedDependsOn:
+  - icon: ':question:'
+    path: lib/00-util/ModInt.cpp
+    title: ModInt
   - icon: ':heavy_check_mark:'
     path: lib/math/Matrix.cpp
     title: "Matrix - \u884C\u5217\u6F14\u7B97"
-  - icon: ':question:'
-    path: lib/util/ModInt.cpp
-    title: ModInt
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,10 +19,10 @@ data:
     - https://judge.yosupo.jp/problem/matrix_det
   bundledCode: "#line 1 \"test/math/Matrix-det.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_det\"\
     \n\n#include <vector>\n#include <iostream>\n#include <array>\n#include <cassert>\n\
-    using namespace std;\n#line 1 \"lib/util/ModInt.cpp\"\n/*\n * @title ModInt\n\
-    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
-    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
-    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const\
+    using namespace std;\n#line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n\
+    \ * @docs md/00-util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\n\
+    public:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long\
+    \ long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const\
     \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt\
     \ &operator+=(const long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
     \ *this;}\n    constexpr ModInt &operator+=(const int y) {ModInt p(y);if((x +=\
@@ -102,19 +102,19 @@ data:
     \ << endl;\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_det\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <array>\n#include <cassert>\nusing namespace\
-    \ std;\n#include \"../../lib/util/ModInt.cpp\"\n#include \"../../lib/math/Matrix.cpp\"\
+    \ std;\n#include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/math/Matrix.cpp\"\
     \nconstexpr long long MOD = 998'244'353;\n\nint main(void){\n    using modint\
     \ = ModInt<MOD>;\n    Matrix<modint,500> m=Matrix<modint,500>::E();\n    int N;\
     \ cin >> N;\n    for(int i = 0; i < N; ++i) {\n        for(int j = 0; j < N; ++j)\
     \ {\n            cin >> m[i][j];\n        }\n    }\n    cout << m.determinant()\
     \ << endl;\n\treturn 0;\n}"
   dependsOn:
-  - lib/util/ModInt.cpp
+  - lib/00-util/ModInt.cpp
   - lib/math/Matrix.cpp
   isVerificationFile: true
   path: test/math/Matrix-det.test.cpp
   requiredBy: []
-  timestamp: '2023-05-18 00:39:49+09:00'
+  timestamp: '2023-05-30 04:12:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/Matrix-det.test.cpp

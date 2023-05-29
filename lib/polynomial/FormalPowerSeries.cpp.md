@@ -3,16 +3,16 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-exp.test.cpp
     title: test/polynomial/FormalPowerSeries-exp.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
     title: test/polynomial/FormalPowerSeries-interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-inv.test.cpp
     title: test/polynomial/FormalPowerSeries-inv.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-log.test.cpp
     title: test/polynomial/FormalPowerSeries-log.test.cpp
   - icon: ':x:'
@@ -26,7 +26,7 @@ data:
     title: test/polynomial/FormalPowerSeries-pow.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/polynomial/FormalPowerSeries.md
     document_title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
@@ -219,7 +219,7 @@ data:
   path: lib/polynomial/FormalPowerSeries.cpp
   requiredBy: []
   timestamp: '2023-05-18 02:25:01+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/polynomial/FormalPowerSeries-exp.test.cpp
   - test/polynomial/FormalPowerSeries-pow.test.cpp

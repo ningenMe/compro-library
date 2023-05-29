@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/geometory/RectangleWeight.cpp
+    path: lib/70-geometory/RectangleWeight.cpp
     title: "RectangleWeight - \u91CD\u307F\u3064\u304D\u77E9\u5F62"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -14,12 +14,12 @@ data:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_5_B
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_5_B
-  bundledCode: "#line 1 \"test/geometory/RectangleWeight.test.cpp\"\n#define PROBLEM\
+  bundledCode: "#line 1 \"test/70-geometory/RectangleWeight.test.cpp\"\n#define PROBLEM\
     \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_5_B\"\n\n#include\
     \ <iostream>\n#include <vector>\n#include <tuple>\nusing namespace std;\n#line\
-    \ 1 \"lib/geometory/RectangleWeight.cpp\"\n/*\n * @title RectangleWeight - \u91CD\
-    \u307F\u3064\u304D\u77E9\u5F62\n * @docs md/geometory/RectangleWeight.md\n */\n\
-    template<class T> class RectangleWeight{\n    int H,W;\n    vector<tuple<int,int,int,int,T>>\
+    \ 1 \"lib/70-geometory/RectangleWeight.cpp\"\n/*\n * @title RectangleWeight -\
+    \ \u91CD\u307F\u3064\u304D\u77E9\u5F62\n * @docs md/geometory/RectangleWeight.md\n\
+    \ */\ntemplate<class T> class RectangleWeight{\n    int H,W;\n    vector<tuple<int,int,int,int,T>>\
     \ query;\n    vector<T> grid;\npublic:\n    RectangleWeight(int H,int W):H(H),W(W),grid(H*W){\n\
     \    }\n    //[y1,y2)*[x1,x2)\u306E\u77E9\u5F62\u3001\u5747\u8CEA\u91CD\u307F\
     w\n    void make_query(int y1,int x1,int y2,int x2,T w=1) {\n        query.emplace_back(y1,x1,y2,x2,w);\n\
@@ -32,7 +32,7 @@ data:
     \                grid[y*W+x+1] += grid[y*W+x];\n            }\n        }\n   \
     \     for(int x=0;x<W;++x) {\n            for(int y=0;y+1<H;++y) {\n         \
     \       grid[(y+1)*W+x] += grid[y*W+x];\n            }\n        }\n    }\n   \
-    \ T get(int y,int x) {\n        return grid[y*W+x];\n    }\n};\n#line 8 \"test/geometory/RectangleWeight.test.cpp\"\
+    \ T get(int y,int x) {\n        return grid[y*W+x];\n    }\n};\n#line 8 \"test/70-geometory/RectangleWeight.test.cpp\"\
     \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N; cin\
     \ >> N;\n    int L = 1010;\n    RectangleWeight<int> rol(L,L);\n    while(N--)\
     \ {\n        int x1,y1,x2,y2; cin >> x1 >> y1 >> x2 >> y2;\n        rol.make_query(y1,x1,y2,x2,1);\n\
@@ -40,24 +40,24 @@ data:
     \ ans=max(ans,rol.get(i,j));\n    cout << ans << endl;\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_5_B\"\
     \n\n#include <iostream>\n#include <vector>\n#include <tuple>\nusing namespace\
-    \ std;\n#include \"../../lib/geometory/RectangleWeight.cpp\"\n\nint main(void){\n\
+    \ std;\n#include \"../../lib/70-geometory/RectangleWeight.cpp\"\n\nint main(void){\n\
     \    cin.tie(0);ios::sync_with_stdio(false);\n    int N; cin >> N;\n    int L\
     \ = 1010;\n    RectangleWeight<int> rol(L,L);\n    while(N--) {\n        int x1,y1,x2,y2;\
     \ cin >> x1 >> y1 >> x2 >> y2;\n        rol.make_query(y1,x1,y2,x2,1);\n    }\n\
     \    rol.solve();\n    int ans = 0;\n    for(int i=0;i<L;++i) for(int j=0;j<L;++j)\
     \ ans=max(ans,rol.get(i,j));\n    cout << ans << endl;\n\treturn 0;\n}"
   dependsOn:
-  - lib/geometory/RectangleWeight.cpp
+  - lib/70-geometory/RectangleWeight.cpp
   isVerificationFile: true
-  path: test/geometory/RectangleWeight.test.cpp
+  path: test/70-geometory/RectangleWeight.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:04:26+09:00'
+  timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/geometory/RectangleWeight.test.cpp
+documentation_of: test/70-geometory/RectangleWeight.test.cpp
 layout: document
 redirect_from:
-- /verify/test/geometory/RectangleWeight.test.cpp
-- /verify/test/geometory/RectangleWeight.test.cpp.html
-title: test/geometory/RectangleWeight.test.cpp
+- /verify/test/70-geometory/RectangleWeight.test.cpp
+- /verify/test/70-geometory/RectangleWeight.test.cpp.html
+title: test/70-geometory/RectangleWeight.test.cpp
 ---

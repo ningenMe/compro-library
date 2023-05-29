@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/geometory/Distance.cpp
+    path: lib/70-geometory/Distance.cpp
     title: "Distance - \u8DDD\u96E2"
   - icon: ':heavy_check_mark:'
     path: lib/graph/Dijkstra.cpp
@@ -60,7 +60,7 @@ data:
     \    vector<int> restore(int idx) {\n        vector<int> res = {idx};\n      \
     \  while(dp[idx] != -1) {\n            idx = dp[idx];\n            res.push_back(idx);\n\
     \        }\n        reverse(res.begin(),res.end());\n        return res;\n   \
-    \ }\n};\n#line 1 \"lib/geometory/Distance.cpp\"\n/*\n * @title Distance - \u8DDD\
+    \ }\n};\n#line 1 \"lib/70-geometory/Distance.cpp\"\n/*\n * @title Distance - \u8DDD\
     \u96E2\n * @docs md/geometory/Distance.md\n */\ntemplate<class T> class Distance{\n\
     public:\n    //Euclidean distance\n    inline static constexpr T euclid(const\
     \ T& x1, const T& y1, const T& x2, const T& y2) {\n        return sqrt((x1 - x2)*(x1\
@@ -82,7 +82,7 @@ data:
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1065\"\n#define ERROR\
     \ 0.0001\n#include <vector>\n#include <iostream>\n#include <queue>\n#include <cmath>\n\
     #include <algorithm>\nusing namespace std;\n#include \"../../lib/graph/Dijkstra.cpp\"\
-    \n#include \"../../lib/geometory/Distance.cpp\"\n\nint main() {\n    int N,M;\
+    \n#include \"../../lib/70-geometory/Distance.cpp\"\n\nint main() {\n    int N,M;\
     \ cin >> N >> M;\n    Dijkstra<double> dij(N,1e15);\n    int s,t; cin >> s >>\
     \ t; s--,t--;\n    vector<double> p(N),q(N); \n    for(int i = 0; i < N; ++i)\
     \ {\n        cin >> p[i] >> q[i];\n    }\n    for(int i = 0; i < M; ++i) {\n \
@@ -91,11 +91,11 @@ data:
     \   dij.solve(s);\n    printf(\"%.10f\\n\",dij.get(t));    \n    return 0;\n}"
   dependsOn:
   - lib/graph/Dijkstra.cpp
-  - lib/geometory/Distance.cpp
+  - lib/70-geometory/Distance.cpp
   isVerificationFile: true
   path: test/graph/Dijkstra.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:35:32+09:00'
+  timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Dijkstra.test.cpp
