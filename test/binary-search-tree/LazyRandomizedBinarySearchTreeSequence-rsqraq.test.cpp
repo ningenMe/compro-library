@@ -6,7 +6,7 @@
 #include <queue>
 using namespace std;
 #include "../../lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp"
-#include "../../lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
+#include "../../lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
 
 int main(void){
     int N,Q;
