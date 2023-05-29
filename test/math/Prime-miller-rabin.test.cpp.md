@@ -1,11 +1,11 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
-    path: lib/math/Gcd.cpp
+  - icon: ':x:'
+    path: lib/30-math/Gcd.cpp
     title: "Gcd - \u9AD8\u901FGCD"
   - icon: ':x:'
-    path: lib/math/Prime.cpp
+    path: lib/30-math/Prime.cpp
     title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\u30FC\
       \u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A"
   _extendedRequiredBy: []
@@ -20,26 +20,26 @@ data:
     - https://yukicoder.me/problems/no/3030
   bundledCode: "#line 1 \"test/math/Prime-miller-rabin.test.cpp\"\n#define PROBLEM\
     \ \"https://yukicoder.me/problems/no/3030\"\n\n#include <iostream>\n#include <vector>\n\
-    #include <algorithm>\nusing namespace std;\n#line 1 \"lib/math/Gcd.cpp\"\n/*\n\
-    \ * @title Gcd - \u9AD8\u901FGCD\n * @docs md/math/Gcd.md\n */\nclass Gcd{\npublic:\n\
-    \    inline static long long impl(long long n, long long m) {\n        static\
-    \ constexpr long long K = 5;\n        long long t,s;\n        for(int i = 0; t\
-    \ = n - m, s = n - m * K, i < 80; ++i) {\n            if(t<m){\n             \
-    \   if(!t) return m;\n                n = m, m = t;\n            }\n         \
-    \   else{\n                if(!m) return t;\n                n=t;\n          \
-    \      if(t >= m * K) n = s;\n            }\n        }\n        return impl(m,\
-    \ n % m);\n    }\n    inline static long long pre(long long n, long long m) {\n\
-    \        long long t;\n        for(int i = 0; t = n - m, i < 4; ++i) {\n     \
-    \       (t < m ? n=m,m=t : n=t);\n            if(!m) return n;\n        }\n  \
-    \      return impl(n, m);\n    }\n    inline static long long gcd(long long n,\
-    \ long long m) {\n        return (n>m ? pre(n,m) : pre(m,n));\n    }\n    inline\
+    #include <algorithm>\nusing namespace std;\n#line 1 \"lib/30-math/Gcd.cpp\"\n\
+    /*\n * @title Gcd - \u9AD8\u901FGCD\n * @docs md/math/Gcd.md\n */\nclass Gcd{\n\
+    public:\n    inline static long long impl(long long n, long long m) {\n      \
+    \  static constexpr long long K = 5;\n        long long t,s;\n        for(int\
+    \ i = 0; t = n - m, s = n - m * K, i < 80; ++i) {\n            if(t<m){\n    \
+    \            if(!t) return m;\n                n = m, m = t;\n            }\n\
+    \            else{\n                if(!m) return t;\n                n=t;\n \
+    \               if(t >= m * K) n = s;\n            }\n        }\n        return\
+    \ impl(m, n % m);\n    }\n    inline static long long pre(long long n, long long\
+    \ m) {\n        long long t;\n        for(int i = 0; t = n - m, i < 4; ++i) {\n\
+    \            (t < m ? n=m,m=t : n=t);\n            if(!m) return n;\n        }\n\
+    \        return impl(n, m);\n    }\n    inline static long long gcd(long long\
+    \ n, long long m) {\n        return (n>m ? pre(n,m) : pre(m,n));\n    }\n    inline\
     \ static constexpr long long pureGcd(long long a, long long b) {\n        return\
     \ (b ? pureGcd(b, a % b):a);\n    }\n    inline static constexpr long long lcm(long\
     \ long a, long long b) {\n        return (a*b ? (a / gcd(a, b)*b): 0);\n    }\n\
     \    inline static constexpr long long extGcd(long long a, long long b, long long\
     \ &x, long long &y) {\n        if (b == 0) return x = 1, y = 0, a;\n        long\
     \ long d = extGcd(b, a%b, y, x);\n        return y -= a / b * x, d;\n    }\n};\n\
-    #line 1 \"lib/math/Prime.cpp\"\n/*\n * @title Prime - \u9AD8\u901F\u7D20\u56E0\
+    #line 1 \"lib/30-math/Prime.cpp\"\n/*\n * @title Prime - \u9AD8\u901F\u7D20\u56E0\
     \u6570\u5206\u89E3\u30FB\u30DF\u30E9\u30FC\u30E9\u30D3\u30F3\u7D20\u6570\u5224\
     \u5B9A\n * @docs md/math/Prime.md\n */\nclass Prime{\n    using int128 = __int128_t;\n\
     \    using int64  = long long;\n    long long pow(long long x, long long n, long\
@@ -69,18 +69,18 @@ data:
     \ cin >> A;\n\t\tcout << A << \" \" << p.miller_rabin(A) << \"\\n\";\n\t}\n\t\
     return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/3030\"\n\n#include <iostream>\n\
-    #include <vector>\n#include <algorithm>\nusing namespace std;\n#include \"../../lib/math/Gcd.cpp\"\
-    \n#include \"../../lib/math/Prime.cpp\"\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\
+    #include <vector>\n#include <algorithm>\nusing namespace std;\n#include \"../../lib/30-math/Gcd.cpp\"\
+    \n#include \"../../lib/30-math/Prime.cpp\"\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\
     \    long long N; cin >> N;\n\tPrime p;\n    for(int i = 0; i < N; ++i) {\n\t\t\
     long long A; cin >> A;\n\t\tcout << A << \" \" << p.miller_rabin(A) << \"\\n\"\
     ;\n\t}\n\treturn 0;\n}"
   dependsOn:
-  - lib/math/Gcd.cpp
-  - lib/math/Prime.cpp
+  - lib/30-math/Gcd.cpp
+  - lib/30-math/Prime.cpp
   isVerificationFile: true
   path: test/math/Prime-miller-rabin.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:44:17+09:00'
+  timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/math/Prime-miller-rabin.test.cpp

@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/binary-search-tree/RandomizedBinarySearchTree.cpp
+    path: lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp
     title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -17,7 +17,7 @@ data:
   bundledCode: "#line 1 \"test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp\"\
     \n#define PROBLEM \"https://yukicoder.me/problems/no/822\"\n\n#include <vector>\n\
     #include <iostream>\n#include <unordered_map>\n#include <algorithm>\n#include\
-    \ <numeric>\n#include <cmath>\nusing namespace std;\n#line 1 \"lib/binary-search-tree/RandomizedBinarySearchTree.cpp\"\
+    \ <numeric>\n#include <cmath>\nusing namespace std;\n#line 1 \"lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp\"\
     \n/*\n * @title RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
     \u6728\n * @docs md/binary-search-tree/RandomizedBinarySearchTree.md\n */\ntemplate<class\
     \ Monoid> class RandomizedBinarySearchTree {\n    using TypeNode = typename Monoid::TypeNode;\n\
@@ -94,7 +94,7 @@ data:
     \ << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/822\"\n\n#include <vector>\n\
     #include <iostream>\n#include <unordered_map>\n#include <algorithm>\n#include\
-    \ <numeric>\n#include <cmath>\nusing namespace std;\n#include \"../../lib/binary-search-tree/RandomizedBinarySearchTree.cpp\"\
+    \ <numeric>\n#include <cmath>\nusing namespace std;\n#include \"../../lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp\"\
     \n\ntemplate<class T> struct Monoid {\n\tusing TypeNode = T;\n\tinline static\
     \ constexpr TypeNode unit_node = {0,0};\n\tinline static constexpr TypeNode func_fold(TypeNode\
     \ l,TypeNode r){return {0,0};}\n};\n\nint main() {\n    int N,K; cin >> N >> K;\n\
@@ -105,11 +105,11 @@ data:
     \ !st.count({a,b})) st.insert({a,b});\n        }\n    }\n    cout << st.size()\
     \ << endl;\n    return 0;\n}\n"
   dependsOn:
-  - lib/binary-search-tree/RandomizedBinarySearchTree.cpp
+  - lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp
   isVerificationFile: true
   path: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
   requiredBy: []
-  timestamp: '2023-05-29 03:23:57+09:00'
+  timestamp: '2023-05-30 04:39:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp

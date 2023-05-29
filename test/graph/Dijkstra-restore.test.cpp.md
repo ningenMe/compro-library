@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/graph/Dijkstra.cpp
+    path: lib/40-graph/Dijkstra.cpp
     title: "Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -17,8 +17,8 @@ data:
   bundledCode: "#line 1 \"test/graph/Dijkstra-restore.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/shortest_path\"\n#include <vector>\n#include\
     \ <iostream>\n#include <queue>\n#include <cmath>\n#include <algorithm>\nusing\
-    \ namespace std;\n#line 1 \"lib/graph/Dijkstra.cpp\"\n/*\n * @title Dijkstra -\
-    \ \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\n * @docs md/graph/Dijkstra.md\n\
+    \ namespace std;\n#line 1 \"lib/40-graph/Dijkstra.cpp\"\n/*\n * @title Dijkstra\
+    \ - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\n * @docs md/graph/Dijkstra.md\n\
     \ */\ntemplate<class T> class Dijkstra {\n    vector<long long> num_list;\n  \
     \  vector<long long> sum;\n    int N;\n    T inf;\n    vector<vector<pair<T,int>>>\
     \ edge;\n    vector<T> cost;\n    vector<int> dp;\n    void resize(const int N)\
@@ -67,7 +67,7 @@ data:
     \ << v[i+1] << endl;\n\t}\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\n#include\
     \ <vector>\n#include <iostream>\n#include <queue>\n#include <cmath>\n#include\
-    \ <algorithm>\nusing namespace std;\n#include \"../../lib/graph/Dijkstra.cpp\"\
+    \ <algorithm>\nusing namespace std;\n#include \"../../lib/40-graph/Dijkstra.cpp\"\
     \n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\tint N,M,s,t;\n\
     \tcin >> N >> M >> s >> t;\n\tlong long inf = 1e15;\n\tDijkstra<long long> dijk(N,inf);\n\
     \twhile(M--) {\n\t\tint u,v,w; cin >> u >> v >> w;\n\t\tdijk.make_edge(u,v,w);\n\
@@ -76,11 +76,11 @@ data:
     \ << cost << \" \" << (int)v.size()-1 << endl;\n\tfor(int i = 0; i+1 < v.size();\
     \ ++i) {\n\t\tcout << v[i] << \" \" << v[i+1] << endl;\n\t}\n    return 0;\n}"
   dependsOn:
-  - lib/graph/Dijkstra.cpp
+  - lib/40-graph/Dijkstra.cpp
   isVerificationFile: true
   path: test/graph/Dijkstra-restore.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:35:32+09:00'
+  timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Dijkstra-restore.test.cpp

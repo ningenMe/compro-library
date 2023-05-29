@@ -2,16 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
-    title: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
-    title: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     _deprecated_at_docs: md/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.md
     document_title: "BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F32\u6B21\
@@ -93,10 +87,8 @@ data:
   path: lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
   requiredBy: []
   timestamp: '2021-09-21 03:30:04+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
-  - test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
 layout: document
 redirect_from:

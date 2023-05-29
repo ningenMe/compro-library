@@ -5,7 +5,7 @@ data:
     path: lib/00-util/RangeIndex.cpp
     title: "RangeIndex - \u533A\u9593index"
   - icon: ':heavy_check_mark:'
-    path: lib/graph/UnionFindTree.cpp
+    path: lib/40-graph/UnionFindTree.cpp
     title: "UnionFindTree - Union Find \u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -28,7 +28,7 @@ data:
     \t\t}\n\t\treturn res;\n\t}\n\t// ranges that include x\n\tvector<int> include_range(int\
     \ x) {\n\t\tvector<int> res;\n        for(int i=x+length; i; i >>= 1) res.push_back(i);\n\
     \t\treturn res;\n\t}\n\tinline int operator[](int idx) {\n\t\treturn idx+length;\n\
-    \t}\n\tinline size_t size(void){\n\t\treturn 2*length;\n\t}\n};\n#line 1 \"lib/graph/UnionFindTree.cpp\"\
+    \t}\n\tinline size_t size(void){\n\t\treturn 2*length;\n\t}\n};\n#line 1 \"lib/40-graph/UnionFindTree.cpp\"\
     \n/*\n * @title UnionFindTree - Union Find \u6728\n * @docs md/graph/UnionFindTree.md\n\
     \ */\nclass UnionFindTree {\n    vector<int> parent,maxi,mini;\n    inline int\
     \ root(int n) {\n        return (parent[n]<0?n:parent[n] = root(parent[n]));\n\
@@ -60,7 +60,7 @@ data:
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1170\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <cassert>\n#include <numeric>\n\
     using namespace std;\n#include \"../../lib/00-util/RangeIndex.cpp\"\n#include\
-    \ \"../../lib/graph/UnionFindTree.cpp\"\n\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
+    \ \"../../lib/40-graph/UnionFindTree.cpp\"\n\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
     \    long long N,A,B; cin >> N >> A >> B;\n    vector<long long> X(N);\n    for(int\
     \ i = 0; i < N; ++i) cin >> X[i];\n    X.push_back(1e10);\n    RangeIndex ri(N);\n\
     \    UnionFindTree uf(ri.size());\n    vector<int> st(ri.size(),0);\n    for(int\
@@ -74,11 +74,11 @@ data:
     \ return 0;\n}\n"
   dependsOn:
   - lib/00-util/RangeIndex.cpp
-  - lib/graph/UnionFindTree.cpp
+  - lib/40-graph/UnionFindTree.cpp
   isVerificationFile: true
   path: test/00-util/RangeIndex.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:32:15+09:00'
+  timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/00-util/RangeIndex.test.cpp

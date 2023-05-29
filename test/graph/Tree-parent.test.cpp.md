@@ -2,10 +2,10 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/graph/Graph.cpp
+    path: lib/40-graph/Graph.cpp
     title: Graph
   - icon: ':heavy_check_mark:'
-    path: lib/graph/Tree.cpp
+    path: lib/40-graph/Tree.cpp
     title: "Tree - \u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -20,7 +20,7 @@ data:
   bundledCode: "#line 1 \"test/graph/Tree-parent.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1308\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
     #include <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n\
-    #line 1 \"lib/graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
+    #line 1 \"lib/40-graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
     \ */\ntemplate<class T> class Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n\
     \    vector<vector<pair<size_t,T>>> edges;\n    Graph(const size_t N):H(-1),W(-1),N(N),\
     \ edges(N) {}\n    Graph(const size_t H, const size_t W):H(H),W(W),N(H*W), edges(H*W)\
@@ -33,7 +33,7 @@ data:
     \ T w) {\n        make_edge(from.first*W+from.second,to.first*W+to.second,w);\n\
     \        make_edge(to.first*W+to.second,from.first*W+from.second,w);\n    }\n\
     \    inline size_t size(){return N;}\n    inline size_t idx(pair<size_t,size_t>\
-    \ yx){return yx.first*W+yx.second;}\n};\n#line 1 \"lib/graph/Tree.cpp\"\n/*\n\
+    \ yx){return yx.first*W+yx.second;}\n};\n#line 1 \"lib/40-graph/Tree.cpp\"\n/*\n\
     \ * @title Tree - \u6728\n * @docs md/graph/Tree.md\n */\ntemplate<class Operator>\
     \ class TreeBuilder;\ntemplate<class Operator> class Tree {\nprivate:\n    using\
     \ TypeEdge = typename Operator::TypeEdge;\n    size_t num;\n    size_t ord;\n\
@@ -237,11 +237,11 @@ data:
     \ << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1308\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <algorithm>\n#include <stack>\n\
-    #include <numeric>\n#include <array>\nusing namespace std;\n#include \"../../lib/graph/Graph.cpp\"\
-    \n#include \"../../lib/graph/Tree.cpp\"\n\ntemplate<class T> void chmin(T& a,T\
-    \ b) {a=min(a,b);}\n\nint main(void){\n    long long N,Q,C; cin >> N >> Q >> C;\n\
-    \    Graph<long long> g(N);\n    for(int i=0;i+1<N;++i) {\n        int u,v,w;\
-    \ cin >> u >> v >> w;\n        u--,v--;\n        g.make_bidirectional_edge(u,v,w);\n\
+    #include <numeric>\n#include <array>\nusing namespace std;\n#include \"../../lib/40-graph/Graph.cpp\"\
+    \n#include \"../../lib/40-graph/Tree.cpp\"\n\ntemplate<class T> void chmin(T&\
+    \ a,T b) {a=min(a,b);}\n\nint main(void){\n    long long N,Q,C; cin >> N >> Q\
+    \ >> C;\n    Graph<long long> g(N);\n    for(int i=0;i+1<N;++i) {\n        int\
+    \ u,v,w; cin >> u >> v >> w;\n        u--,v--;\n        g.make_bidirectional_edge(u,v,w);\n\
     \    }\n    vector<int> X(Q);\n    for(int i=0;i<Q;++i) cin >> X[i],X[i]--;\n\n\
     \    //dp_i,j := x_i\u306B\u3044\u3066\u3001\u30B8\u30E3\u30F3\u30D7\u30D3\u30FC\
     \u30B3\u30F3\u304Cj\u306B\u3042\u308B\u3068\u304D\u306E\u6700\u5C0F\u5024\u3002\
@@ -270,12 +270,12 @@ data:
     \        }\n    }\n    cout << *min_element(dp.back().begin(),dp.back().end())\
     \ << endl;\n    return 0;\n}"
   dependsOn:
-  - lib/graph/Graph.cpp
-  - lib/graph/Tree.cpp
+  - lib/40-graph/Graph.cpp
+  - lib/40-graph/Tree.cpp
   isVerificationFile: true
   path: test/graph/Tree-parent.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:35:32+09:00'
+  timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-parent.test.cpp

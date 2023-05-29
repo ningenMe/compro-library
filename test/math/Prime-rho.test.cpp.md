@@ -1,11 +1,11 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
-    path: lib/math/Gcd.cpp
+  - icon: ':x:'
+    path: lib/30-math/Gcd.cpp
     title: "Gcd - \u9AD8\u901FGCD"
   - icon: ':x:'
-    path: lib/math/Prime.cpp
+    path: lib/30-math/Prime.cpp
     title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\u30FC\
       \u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A"
   _extendedRequiredBy: []
@@ -20,8 +20,8 @@ data:
     - https://judge.yosupo.jp/problem/factorize
   bundledCode: "#line 1 \"test/math/Prime-rho.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/factorize\"\
     \n\n#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace\
-    \ std;\n#line 1 \"lib/math/Gcd.cpp\"\n/*\n * @title Gcd - \u9AD8\u901FGCD\n *\
-    \ @docs md/math/Gcd.md\n */\nclass Gcd{\npublic:\n    inline static long long\
+    \ std;\n#line 1 \"lib/30-math/Gcd.cpp\"\n/*\n * @title Gcd - \u9AD8\u901FGCD\n\
+    \ * @docs md/math/Gcd.md\n */\nclass Gcd{\npublic:\n    inline static long long\
     \ impl(long long n, long long m) {\n        static constexpr long long K = 5;\n\
     \        long long t,s;\n        for(int i = 0; t = n - m, s = n - m * K, i <\
     \ 80; ++i) {\n            if(t<m){\n                if(!t) return m;\n       \
@@ -38,7 +38,7 @@ data:
     \ ? (a / gcd(a, b)*b): 0);\n    }\n    inline static constexpr long long extGcd(long\
     \ long a, long long b, long long &x, long long &y) {\n        if (b == 0) return\
     \ x = 1, y = 0, a;\n        long long d = extGcd(b, a%b, y, x);\n        return\
-    \ y -= a / b * x, d;\n    }\n};\n#line 1 \"lib/math/Prime.cpp\"\n/*\n * @title\
+    \ y -= a / b * x, d;\n    }\n};\n#line 1 \"lib/30-math/Prime.cpp\"\n/*\n * @title\
     \ Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\u30FC\u30E9\
     \u30D3\u30F3\u7D20\u6570\u5224\u5B9A\n * @docs md/math/Prime.md\n */\nclass Prime{\n\
     \    using int128 = __int128_t;\n    using int64  = long long;\n    long long\
@@ -71,20 +71,20 @@ data:
     \ \"\\n\";\n    }\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/factorize\"\n\n#include\
     \ <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\
-    #include \"../../lib/math/Gcd.cpp\"\n#include \"../../lib/math/Prime.cpp\"\n\n\
-    int main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int Q; cin >>\
-    \ Q;\n\tPrime P;\n    while(Q--) {\n        long long a,sum=0; cin >> a;\n   \
-    \     auto pf = P.factorization(a);\n        string ans = \"\";\n        for(auto\
+    #include \"../../lib/30-math/Gcd.cpp\"\n#include \"../../lib/30-math/Prime.cpp\"\
+    \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int Q; cin\
+    \ >> Q;\n\tPrime P;\n    while(Q--) {\n        long long a,sum=0; cin >> a;\n\
+    \        auto pf = P.factorization(a);\n        string ans = \"\";\n        for(auto\
     \ pa:pf) {\n            sum += pa.second;\n            for(int i=0;i<pa.second;++i)\
     \ ans += \" \" + to_string(pa.first);\n        }\n        cout << sum << ans <<\
     \ \"\\n\";\n    }\n\treturn 0;\n}"
   dependsOn:
-  - lib/math/Gcd.cpp
-  - lib/math/Prime.cpp
+  - lib/30-math/Gcd.cpp
+  - lib/30-math/Prime.cpp
   isVerificationFile: true
   path: test/math/Prime-rho.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:44:17+09:00'
+  timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/math/Prime-rho.test.cpp

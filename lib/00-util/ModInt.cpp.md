@@ -7,12 +7,6 @@ data:
     path: test/00-util/ModInt.test.cpp
     title: test/00-util/ModInt.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
-    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -24,15 +18,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
-    title: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-hld-path.test.cpp
-    title: test/graph/Tree-hld-path.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-hld-vertex-3.test.cpp
-    title: test/graph/Tree-hld-vertex-3.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/CombinationMod-factorial.test.cpp
     title: test/math/CombinationMod-factorial.test.cpp
@@ -177,12 +162,7 @@ data:
   - test/math/Matrix-pow.test.cpp
   - test/math/CombinationMod-factorial.test.cpp
   - test/math/Matrix-det.test.cpp
-  - test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
-  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/00-util/ModInt.test.cpp
-  - test/graph/Tree-hld-path.test.cpp
-  - test/graph/Tree-hld-vertex-3.test.cpp
 documentation_of: lib/00-util/ModInt.cpp
 layout: document
 redirect_from:

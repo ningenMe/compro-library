@@ -4,8 +4,8 @@ data:
   - icon: ':question:'
     path: lib/00-util/ModInt.cpp
     title: ModInt
-  - icon: ':question:'
-    path: lib/math/Matrix.cpp
+  - icon: ':x:'
+    path: lib/30-math/Matrix.cpp
     title: "Matrix - \u884C\u5217\u6F14\u7B97"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -61,7 +61,7 @@ data:
     \  friend ostream &operator<<(ostream &os, const ModInt &p) {return os << p.x;}\n\
     \    friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a\
     \ = ModInt<mod>(t);return (is);}\n};\nconstexpr long long MOD_998244353 = 998244353;\n\
-    constexpr long long MOD_1000000007 = 1'000'000'000LL + 7; //'\n#line 1 \"lib/math/Matrix.cpp\"\
+    constexpr long long MOD_1000000007 = 1'000'000'000LL + 7; //'\n#line 1 \"lib/30-math/Matrix.cpp\"\
     \n/*\n * @title Matrix - \u884C\u5217\u6F14\u7B97\n * @docs md/math/Matrix.md\n\
     \ */\ntemplate <class T, int H, int W = H> class Matrix {\npublic:\n    int h,w;\n\
     \    array<array<T,W>,H> a;\n    Matrix():h(H),w(W){\n        // do nothing\n\
@@ -105,7 +105,7 @@ data:
     \treturn 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/718\"\n\n#include <vector>\n\
     #include <iostream>\n#include <array>\n#include <cassert>\nusing namespace std;\n\
-    #include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/math/Matrix.cpp\"\
+    #include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/30-math/Matrix.cpp\"\
     \nconstexpr long long MOD = 1000'000'007;\n\nint main(void){\n    using modint\
     \ = ModInt<MOD>;\n    vector<vector<modint>> a(4,vector<modint>(4));\n    a[0]\
     \ = {1,2,2,-1};\n    a[1] = {0,2,2,-1};\n    a[2] = {0,1,0,0};\n    a[3] = {0,0,1,0};\n\
@@ -115,11 +115,11 @@ data:
     \ s.a[0][0]*2+s.a[0][1]+s.a[0][2] << endl;\n\treturn 0;\n}"
   dependsOn:
   - lib/00-util/ModInt.cpp
-  - lib/math/Matrix.cpp
+  - lib/30-math/Matrix.cpp
   isVerificationFile: true
   path: test/math/Matrix-pow.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:32:15+09:00'
+  timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/math/Matrix-pow.test.cpp

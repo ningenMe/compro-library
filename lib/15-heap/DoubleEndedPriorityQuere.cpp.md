@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/15-heap/DoubleEndedPriorityQuere.test.cpp
-    title: test/15-heap/DoubleEndedPriorityQuere.test.cpp
+    path: test/heap/DoubleEndedPriorityQuere.test.cpp
+    title: test/heap/DoubleEndedPriorityQuere.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -51,7 +51,7 @@ data:
   timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/15-heap/DoubleEndedPriorityQuere.test.cpp
+  - test/heap/DoubleEndedPriorityQuere.test.cpp
 documentation_of: lib/15-heap/DoubleEndedPriorityQuere.cpp
 layout: document
 redirect_from:

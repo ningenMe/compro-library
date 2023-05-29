@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: lib/40-graph/Dijkstra.cpp
+    title: "Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9"
+  - icon: ':heavy_check_mark:'
     path: lib/70-geometory/Distance.cpp
     title: "Distance - \u8DDD\u96E2"
-  - icon: ':heavy_check_mark:'
-    path: lib/graph/Dijkstra.cpp
-    title: "Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -20,7 +20,7 @@ data:
     - https://yukicoder.me/problems/no/1065
   bundledCode: "#line 1 \"test/graph/Dijkstra.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1065\"\
     \n#define ERROR 0.0001\n#include <vector>\n#include <iostream>\n#include <queue>\n\
-    #include <cmath>\n#include <algorithm>\nusing namespace std;\n#line 1 \"lib/graph/Dijkstra.cpp\"\
+    #include <cmath>\n#include <algorithm>\nusing namespace std;\n#line 1 \"lib/40-graph/Dijkstra.cpp\"\
     \n/*\n * @title Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9\
     \n * @docs md/graph/Dijkstra.md\n */\ntemplate<class T> class Dijkstra {\n   \
     \ vector<long long> num_list;\n    vector<long long> sum;\n    int N;\n    T inf;\n\
@@ -81,7 +81,7 @@ data:
     n\",dij.get(t));    \n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1065\"\n#define ERROR\
     \ 0.0001\n#include <vector>\n#include <iostream>\n#include <queue>\n#include <cmath>\n\
-    #include <algorithm>\nusing namespace std;\n#include \"../../lib/graph/Dijkstra.cpp\"\
+    #include <algorithm>\nusing namespace std;\n#include \"../../lib/40-graph/Dijkstra.cpp\"\
     \n#include \"../../lib/70-geometory/Distance.cpp\"\n\nint main() {\n    int N,M;\
     \ cin >> N >> M;\n    Dijkstra<double> dij(N,1e15);\n    int s,t; cin >> s >>\
     \ t; s--,t--;\n    vector<double> p(N),q(N); \n    for(int i = 0; i < N; ++i)\
@@ -90,12 +90,12 @@ data:
     \        dij.make_edge(u,v,cost);\n        dij.make_edge(v,u,cost);\n    }\n \
     \   dij.solve(s);\n    printf(\"%.10f\\n\",dij.get(t));    \n    return 0;\n}"
   dependsOn:
-  - lib/graph/Dijkstra.cpp
+  - lib/40-graph/Dijkstra.cpp
   - lib/70-geometory/Distance.cpp
   isVerificationFile: true
   path: test/graph/Dijkstra.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:23:09+09:00'
+  timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Dijkstra.test.cpp

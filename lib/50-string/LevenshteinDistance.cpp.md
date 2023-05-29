@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/50-string/LevenshteinDistance-1.test.cpp
-    title: test/50-string/LevenshteinDistance-1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/50-string/LevenshteinDistance-2.test.cpp
-    title: test/50-string/LevenshteinDistance-2.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/string/LevenshteinDistance-1.test.cpp
+    title: test/string/LevenshteinDistance-1.test.cpp
+  - icon: ':x:'
+    path: test/string/LevenshteinDistance-2.test.cpp
+    title: test/string/LevenshteinDistance-2.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/string/LevenshteinDistance.md
     document_title: "LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2"
@@ -40,10 +40,10 @@ data:
   path: lib/50-string/LevenshteinDistance.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:23:09+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/50-string/LevenshteinDistance-2.test.cpp
-  - test/50-string/LevenshteinDistance-1.test.cpp
+  - test/string/LevenshteinDistance-2.test.cpp
+  - test/string/LevenshteinDistance-1.test.cpp
 documentation_of: lib/50-string/LevenshteinDistance.cpp
 layout: document
 redirect_from:

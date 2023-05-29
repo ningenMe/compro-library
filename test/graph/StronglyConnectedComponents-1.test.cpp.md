@@ -2,10 +2,10 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/graph/StronglyConnectedComponents.cpp
+    path: lib/40-graph/StronglyConnectedComponents.cpp
     title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
   - icon: ':heavy_check_mark:'
-    path: lib/graph/UnionFindTree.cpp
+    path: lib/40-graph/UnionFindTree.cpp
     title: "UnionFindTree - Union Find \u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -20,7 +20,7 @@ data:
   bundledCode: "#line 1 \"test/graph/StronglyConnectedComponents-1.test.cpp\"\n#define\
     \ PROBLEM \"https://yukicoder.me/problems/no/1023\"\n\n#include <vector>\n#include\
     \ <iostream>\n#include <numeric>\n#include <algorithm>\n#include <stack>\nusing\
-    \ namespace std;\n#line 1 \"lib/graph/UnionFindTree.cpp\"\n/*\n * @title UnionFindTree\
+    \ namespace std;\n#line 1 \"lib/40-graph/UnionFindTree.cpp\"\n/*\n * @title UnionFindTree\
     \ - Union Find \u6728\n * @docs md/graph/UnionFindTree.md\n */\nclass UnionFindTree\
     \ {\n    vector<int> parent,maxi,mini;\n    inline int root(int n) {\n       \
     \ return (parent[n]<0?n:parent[n] = root(parent[n]));\n    }\npublic:\n    UnionFindTree(const\
@@ -36,7 +36,7 @@ data:
     \        return (-parent[root(n)]);\n    }\n    inline int operator[](const int\
     \ n) {\n        return root(n);\n    }\n    inline void print() {\n        for(int\
     \ i = 0; i < parent.size(); ++i) cout << root(i) << \" \";\n        cout << endl;\n\
-    \    }\n};\n#line 1 \"lib/graph/StronglyConnectedComponents.cpp\"\n/*\n * @title\
+    \    }\n};\n#line 1 \"lib/40-graph/StronglyConnectedComponents.cpp\"\n/*\n * @title\
     \ StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\n *\
     \ @docs md/graph/StronglyConnectedComponents.md\n */\nclass StronglyConnectedComponents{\n\
     \    int num,is_2sat,half,max_id,cnt;\n    vector<vector<int>> edge;\n    vector<int>\
@@ -84,8 +84,8 @@ data:
     \ \n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1023\"\n\n#include <vector>\n\
     #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <stack>\n\
-    using namespace std;\n#include \"../../lib/graph/UnionFindTree.cpp\"\n#include\
-    \ \"../../lib/graph/StronglyConnectedComponents.cpp\"\n\nint main(){\n    int\
+    using namespace std;\n#include \"../../lib/40-graph/UnionFindTree.cpp\"\n#include\
+    \ \"../../lib/40-graph/StronglyConnectedComponents.cpp\"\n\nint main(){\n    int\
     \ N,M; cin >> N >> M;\n    vector<pair<int,int>> edge;\n    vector<pair<int,int>>\
     \ bedge;\n    for(int i = 0; i < M; ++i) {\n        int a,b; cin >> a >> b;\n\
     \        a--,b--;\n        int c; cin >> c;\n        if(c==1){\n            bedge.push_back({a,b});\n\
@@ -101,12 +101,12 @@ data:
     \  cout << \"Yes\" << endl;\n        return 0;\n    }\n    cout << \"No\" << endl;\
     \ \n    return 0;\n}\n"
   dependsOn:
-  - lib/graph/UnionFindTree.cpp
-  - lib/graph/StronglyConnectedComponents.cpp
+  - lib/40-graph/UnionFindTree.cpp
+  - lib/40-graph/StronglyConnectedComponents.cpp
   isVerificationFile: true
   path: test/graph/StronglyConnectedComponents-1.test.cpp
   requiredBy: []
-  timestamp: '2023-05-15 02:35:33+09:00'
+  timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/StronglyConnectedComponents-1.test.cpp

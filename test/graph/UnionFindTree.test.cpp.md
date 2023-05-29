@@ -5,7 +5,7 @@ data:
     path: lib/00-util/FastIO.cpp
     title: FastIO
   - icon: ':heavy_check_mark:'
-    path: lib/graph/UnionFindTree.cpp
+    path: lib/40-graph/UnionFindTree.cpp
     title: "UnionFindTree - Union Find \u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -46,9 +46,9 @@ data:
     \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
-    #line 1 \"lib/graph/UnionFindTree.cpp\"\n/*\n * @title UnionFindTree - Union Find\
-    \ \u6728\n * @docs md/graph/UnionFindTree.md\n */\nclass UnionFindTree {\n   \
-    \ vector<int> parent,maxi,mini;\n    inline int root(int n) {\n        return\
+    #line 1 \"lib/40-graph/UnionFindTree.cpp\"\n/*\n * @title UnionFindTree - Union\
+    \ Find \u6728\n * @docs md/graph/UnionFindTree.md\n */\nclass UnionFindTree {\n\
+    \    vector<int> parent,maxi,mini;\n    inline int root(int n) {\n        return\
     \ (parent[n]<0?n:parent[n] = root(parent[n]));\n    }\npublic:\n    UnionFindTree(const\
     \ int N = 1) : parent(N,-1),maxi(N),mini(N){\n        iota(maxi.begin(),maxi.end(),0);\n\
     \        iota(mini.begin(),mini.end(),0);\n    }\n    inline bool connected(const\
@@ -69,18 +69,18 @@ data:
     \    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <numeric>\nusing namespace std;\n#include\
-    \ \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/graph/UnionFindTree.cpp\"\
+    \ \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/40-graph/UnionFindTree.cpp\"\
     \n\n\nint main(){\n    cin.tie(0)->sync_with_stdio(0);\n    int N,Q; \n    read(N);\
     \ read(Q);\n    UnionFindTree uf(N);\n    while(Q--){\n        int q,a,b; \n \
     \       read(q);read(a);read(b);\n        if(q) cout << uf.connected(a,b) << \"\
     \\n\";\n        else uf.merge(a,b);\n    }\n}\n"
   dependsOn:
   - lib/00-util/FastIO.cpp
-  - lib/graph/UnionFindTree.cpp
+  - lib/40-graph/UnionFindTree.cpp
   isVerificationFile: true
   path: test/graph/UnionFindTree.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:32:15+09:00'
+  timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/UnionFindTree.test.cpp

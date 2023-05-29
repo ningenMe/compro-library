@@ -2,22 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
-    title: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
-    title: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-eulertour.test.cpp
-    title: test/graph/Tree-eulertour.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-hld-vertex-1.test.cpp
-    title: test/graph/Tree-hld-vertex-1.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     _deprecated_at_docs: md/data-structure/segment-tree/LazySegmentTree.md
     document_title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\
@@ -169,12 +157,8 @@ data:
   path: lib/data-structure/segment-tree/LazySegmentTree.cpp
   requiredBy: []
   timestamp: '2021-09-21 03:50:44+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
-  - test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
-  - test/graph/Tree-eulertour.test.cpp
-  - test/graph/Tree-hld-vertex-1.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: lib/data-structure/segment-tree/LazySegmentTree.cpp
 layout: document
 redirect_from:

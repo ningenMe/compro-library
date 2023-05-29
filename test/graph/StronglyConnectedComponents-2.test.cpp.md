@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/graph/StronglyConnectedComponents.cpp
+    path: lib/40-graph/StronglyConnectedComponents.cpp
     title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -17,7 +17,7 @@ data:
   bundledCode: "#line 1 \"test/graph/StronglyConnectedComponents-2.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#include <vector>\n#include\
     \ <iostream>\n#include <numeric>\n#include <algorithm>\n#include <stack>\nusing\
-    \ namespace std;\n#line 1 \"lib/graph/StronglyConnectedComponents.cpp\"\n/*\n\
+    \ namespace std;\n#line 1 \"lib/40-graph/StronglyConnectedComponents.cpp\"\n/*\n\
     \ * @title StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3\
     \n * @docs md/graph/StronglyConnectedComponents.md\n */\nclass StronglyConnectedComponents{\n\
     \    int num,is_2sat,half,max_id,cnt;\n    vector<vector<int>> edge;\n    vector<int>\
@@ -57,7 +57,7 @@ data:
     \ e;\n        cout << \"\\n\";\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\n\n#include <vector>\n\
     #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <stack>\n\
-    using namespace std;\n#include \"../../lib/graph/StronglyConnectedComponents.cpp\"\
+    using namespace std;\n#include \"../../lib/40-graph/StronglyConnectedComponents.cpp\"\
     \n\nint main(){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,M; cin\
     \ >> N >> M;\n    StronglyConnectedComponents scc(N);\n    while(M--) {\n    \
     \    int u,v; cin >> u >> v;\n        scc.make_edge(u,v);\n    }\n    scc.solve();\n\
@@ -65,11 +65,11 @@ data:
     \ v:vv) {\n        cout << v.size();\n        for(auto& e:v) cout << \" \" <<\
     \ e;\n        cout << \"\\n\";\n    }\n    return 0;\n}\n"
   dependsOn:
-  - lib/graph/StronglyConnectedComponents.cpp
+  - lib/40-graph/StronglyConnectedComponents.cpp
   isVerificationFile: true
   path: test/graph/StronglyConnectedComponents-2.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:35:32+09:00'
+  timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/StronglyConnectedComponents-2.test.cpp

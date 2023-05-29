@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/70-geometory/Distance-line.test.cpp
-    title: test/70-geometory/Distance-line.test.cpp
+    path: test/geometory/Distance-line.test.cpp
+    title: test/geometory/Distance-line.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/Dijkstra.test.cpp
     title: test/graph/Dijkstra.test.cpp
@@ -46,7 +46,7 @@ data:
   timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/70-geometory/Distance-line.test.cpp
+  - test/geometory/Distance-line.test.cpp
   - test/graph/Dijkstra.test.cpp
 documentation_of: lib/70-geometory/Distance.cpp
 layout: document

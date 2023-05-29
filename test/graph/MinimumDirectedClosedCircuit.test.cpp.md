@@ -5,10 +5,10 @@ data:
     path: lib/15-heap/RadixHeap.cpp
     title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
   - icon: ':heavy_check_mark:'
-    path: lib/graph/Graph.cpp
+    path: lib/40-graph/Graph.cpp
     title: Graph
   - icon: ':heavy_check_mark:'
-    path: lib/graph/MinimumDirectedClosedCircuit.cpp
+    path: lib/40-graph/MinimumDirectedClosedCircuit.cpp
     title: "MinimumDirectedClosedCircuit - \u6709\u5411\u30B0\u30E9\u30D5\u306E\u6700\
       \u5C0F\u9589\u8DEF\u691C\u51FA"
   _extendedRequiredBy: []
@@ -25,7 +25,7 @@ data:
     \ PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <cassert>\n\
     #include <set>\n#include <queue>\n#include <map>\n#include <array>\n\nusing namespace\
-    \ std;\n#line 1 \"lib/graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
+    \ std;\n#line 1 \"lib/40-graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
     \ */\ntemplate<class T> class Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n\
     \    vector<vector<pair<size_t,T>>> edges;\n    Graph(const size_t N):H(-1),W(-1),N(N),\
     \ edges(N) {}\n    Graph(const size_t H, const size_t W):H(H),W(W),N(H*W), edges(H*W)\
@@ -54,7 +54,7 @@ data:
     \ ++i;\n            last = *min_element(vq[i].begin(),vq[i].end());\n        \
     \    for(auto &p : vq[i]) vq[bit(p.first ^ last.first)].push_back(p);\n      \
     \      vq[i].clear();\n        }\n        --size_num;\n        auto res = vq[0].back();\n\
-    \        vq[0].pop_back();\n        return res;\n    }\n};\n#line 1 \"lib/graph/MinimumDirectedClosedCircuit.cpp\"\
+    \        vq[0].pop_back();\n        return res;\n    }\n};\n#line 1 \"lib/40-graph/MinimumDirectedClosedCircuit.cpp\"\
     \n/*\n * @title MinimumDirectedClosedCircuit - \u6709\u5411\u30B0\u30E9\u30D5\u306E\
     \u6700\u5C0F\u9589\u8DEF\u691C\u51FA\n * @docs md/graph/MinimumDirectedClosedCircuit.md\n\
     \ */\ntemplate<class T> class MinimumDirectedClosedCircuit {\n    //T\u306F\u6574\
@@ -93,8 +93,8 @@ data:
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <cassert>\n\
     #include <set>\n#include <queue>\n#include <map>\n#include <array>\n\nusing namespace\
-    \ std;\n#include \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/15-heap/RadixHeap.cpp\"\
-    \n#include \"../../lib/graph/MinimumDirectedClosedCircuit.cpp\"\n\nint main(){\n\
+    \ std;\n#include \"../../lib/40-graph/Graph.cpp\"\n#include \"../../lib/15-heap/RadixHeap.cpp\"\
+    \n#include \"../../lib/40-graph/MinimumDirectedClosedCircuit.cpp\"\n\nint main(){\n\
     \    int N,M; cin >> N >> M;\n    Graph<int> graph(N);\n    for(int i = 0; i <\
     \ M; ++i){\n        int u,v; cin >> u >> v;\n        graph.make_edge(u,v,1);\n\
     \    }\n    MinimumDirectedClosedCircuit<int> mdcc(graph,1234567);\n    int ans\
@@ -102,13 +102,13 @@ data:
     \        auto tmp = mdcc.restore();\n        if(!tmp.empty()) ans = 1;\n    }\n\
     \    cout << ans << endl;\n\treturn 0;\n}\n"
   dependsOn:
-  - lib/graph/Graph.cpp
+  - lib/40-graph/Graph.cpp
   - lib/15-heap/RadixHeap.cpp
-  - lib/graph/MinimumDirectedClosedCircuit.cpp
+  - lib/40-graph/MinimumDirectedClosedCircuit.cpp
   isVerificationFile: true
   path: test/graph/MinimumDirectedClosedCircuit.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:23:09+09:00'
+  timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/MinimumDirectedClosedCircuit.test.cpp

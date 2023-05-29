@@ -2,13 +2,13 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/graph/Graph.cpp
+    path: lib/40-graph/Graph.cpp
     title: Graph
   - icon: ':heavy_check_mark:'
-    path: lib/graph/Tree.cpp
+    path: lib/40-graph/Tree.cpp
     title: "Tree - \u6728"
   - icon: ':heavy_check_mark:'
-    path: lib/graph/UnionFindTree.cpp
+    path: lib/40-graph/UnionFindTree.cpp
     title: "UnionFindTree - Union Find \u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -23,7 +23,7 @@ data:
   bundledCode: "#line 1 \"test/graph/Tree-rerooting.test.cpp\"\n#define PROBLEM \"\
     https://yukicoder.me/problems/no/922\"\n\n#include <vector>\n#include <iostream>\n\
     #include <cassert>\n#include <algorithm>\n#include <stack>\n#include <numeric>\n\
-    #include <array>\nusing namespace std;\n#line 1 \"lib/graph/UnionFindTree.cpp\"\
+    #include <array>\nusing namespace std;\n#line 1 \"lib/40-graph/UnionFindTree.cpp\"\
     \n/*\n * @title UnionFindTree - Union Find \u6728\n * @docs md/graph/UnionFindTree.md\n\
     \ */\nclass UnionFindTree {\n    vector<int> parent,maxi,mini;\n    inline int\
     \ root(int n) {\n        return (parent[n]<0?n:parent[n] = root(parent[n]));\n\
@@ -39,7 +39,7 @@ data:
     \    inline int size(const int n){\n        return (-parent[root(n)]);\n    }\n\
     \    inline int operator[](const int n) {\n        return root(n);\n    }\n  \
     \  inline void print() {\n        for(int i = 0; i < parent.size(); ++i) cout\
-    \ << root(i) << \" \";\n        cout << endl;\n    }\n};\n#line 1 \"lib/graph/Graph.cpp\"\
+    \ << root(i) << \" \";\n        cout << endl;\n    }\n};\n#line 1 \"lib/40-graph/Graph.cpp\"\
     \n/*\n * @title Graph\n * @docs md/graph/Graph.md\n */\ntemplate<class T> class\
     \ Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n    vector<vector<pair<size_t,T>>>\
     \ edges;\n    Graph(const size_t N):H(-1),W(-1),N(N), edges(N) {}\n    Graph(const\
@@ -53,7 +53,7 @@ data:
     \ T w) {\n        make_edge(from.first*W+from.second,to.first*W+to.second,w);\n\
     \        make_edge(to.first*W+to.second,from.first*W+from.second,w);\n    }\n\
     \    inline size_t size(){return N;}\n    inline size_t idx(pair<size_t,size_t>\
-    \ yx){return yx.first*W+yx.second;}\n};\n#line 1 \"lib/graph/Tree.cpp\"\n/*\n\
+    \ yx){return yx.first*W+yx.second;}\n};\n#line 1 \"lib/40-graph/Tree.cpp\"\n/*\n\
     \ * @title Tree - \u6728\n * @docs md/graph/Tree.md\n */\ntemplate<class Operator>\
     \ class TreeBuilder;\ntemplate<class Operator> class Tree {\nprivate:\n    using\
     \ TypeEdge = typename Operator::TypeEdge;\n    size_t num;\n    size_t ord;\n\
@@ -240,8 +240,8 @@ data:
     }\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/922\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <algorithm>\n#include <stack>\n\
-    #include <numeric>\n#include <array>\nusing namespace std;\n#include \"../../lib/graph/UnionFindTree.cpp\"\
-    \n#include \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/graph/Tree.cpp\"\
+    #include <numeric>\n#include <array>\nusing namespace std;\n#include \"../../lib/40-graph/UnionFindTree.cpp\"\
+    \n#include \"../../lib/40-graph/Graph.cpp\"\n#include \"../../lib/40-graph/Tree.cpp\"\
     \n\nint main(void){\n    int N,M,Q; cin >> N >> M >> Q;\n    UnionFindTree uf(N);\n\
     \    Graph<long long> g(N);\n    for(int i=0;i<M;++i) {\n        int u,v; cin\
     \ >> u >> v;\n        u--,v--;\n\t\tuf.merge(u,v);\n        g.make_bidirectional_edge(u,v,1);\n\
@@ -257,13 +257,13 @@ data:
     \ ++i) if(sum[i] != inf) ans += sum[i];\n\tcout << ans << endl;\t\n\treturn 0;\n\
     }"
   dependsOn:
-  - lib/graph/UnionFindTree.cpp
-  - lib/graph/Graph.cpp
-  - lib/graph/Tree.cpp
+  - lib/40-graph/UnionFindTree.cpp
+  - lib/40-graph/Graph.cpp
+  - lib/40-graph/Tree.cpp
   isVerificationFile: true
   path: test/graph/Tree-rerooting.test.cpp
   requiredBy: []
-  timestamp: '2023-05-15 02:35:33+09:00'
+  timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-rerooting.test.cpp

@@ -10,12 +10,6 @@ data:
     path: test/00-util/FastIO-int64.test.cpp
     title: test/00-util/FastIO-int64.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/15-heap/DoubleEndedPriorityQuere.test.cpp
-    title: test/15-heap/DoubleEndedPriorityQuere.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
-    title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -39,6 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/UnionFindTree.test.cpp
     title: test/graph/UnionFindTree.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/heap/DoubleEndedPriorityQuere.test.cpp
+    title: test/heap/DoubleEndedPriorityQuere.test.cpp
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-exp.test.cpp
     title: test/polynomial/FormalPowerSeries-exp.test.cpp
@@ -127,6 +124,7 @@ data:
   timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/heap/DoubleEndedPriorityQuere.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
@@ -141,8 +139,6 @@ data:
   - test/data-structure/data-structure/WordSizeTreeSet.test.cpp
   - test/data-structure/range-query/SparseTable.test.cpp
   - test/data-structure/range-query/DisjointSparseTable.test.cpp
-  - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
-  - test/15-heap/DoubleEndedPriorityQuere.test.cpp
   - test/00-util/FastIO-int128.test.cpp
   - test/00-util/FastIO-int64.test.cpp
   - test/graph/UnionFindTree.test.cpp

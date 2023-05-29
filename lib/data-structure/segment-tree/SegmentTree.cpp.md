@@ -2,34 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-    title: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
-    title: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
-    title: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
-    title: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
-    title: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-hld-path.test.cpp
-    title: test/graph/Tree-hld-path.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-hld-vertex-2.test.cpp
-    title: test/graph/Tree-hld-vertex-2.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-hld-vertex-3.test.cpp
-    title: test/graph/Tree-hld-vertex-3.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     _deprecated_at_docs: md/data-structure/segment-tree/SegmentTree.md
     document_title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\
@@ -143,16 +119,8 @@ data:
   path: lib/data-structure/segment-tree/SegmentTree.cpp
   requiredBy: []
   timestamp: '2021-09-21 03:50:44+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
-  - test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
-  - test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
-  - test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-  - test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
-  - test/graph/Tree-hld-path.test.cpp
-  - test/graph/Tree-hld-vertex-3.test.cpp
-  - test/graph/Tree-hld-vertex-2.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: lib/data-structure/segment-tree/SegmentTree.cpp
 layout: document
 redirect_from:

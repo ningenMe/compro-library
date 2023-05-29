@@ -5,10 +5,10 @@ data:
     path: lib/15-heap/RadixHeap.cpp
     title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
   - icon: ':heavy_check_mark:'
-    path: lib/graph/Graph.cpp
+    path: lib/40-graph/Graph.cpp
     title: Graph
   - icon: ':heavy_check_mark:'
-    path: lib/graph/MinimumUndirectedClosedCircuit.cpp
+    path: lib/40-graph/MinimumUndirectedClosedCircuit.cpp
     title: "MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\u306E\u6700\
       \u5C0F\u9589\u8DEF\u691C\u51FA"
   _extendedRequiredBy: []
@@ -25,7 +25,7 @@ data:
     \ PROBLEM \"https://yukicoder.me/problems/no/13\"\n\n#include <vector>\n#include\
     \ <iostream>\n#include <algorithm>\n#include <cassert>\n#include <set>\n#include\
     \ <queue>\n#include <map>\n#include <stack>\n#include <array>\n\nusing namespace\
-    \ std;\n#line 1 \"lib/graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
+    \ std;\n#line 1 \"lib/40-graph/Graph.cpp\"\n/*\n * @title Graph\n * @docs md/graph/Graph.md\n\
     \ */\ntemplate<class T> class Graph{\nprivate:\n    const size_t N,H,W;\npublic:\n\
     \    vector<vector<pair<size_t,T>>> edges;\n    Graph(const size_t N):H(-1),W(-1),N(N),\
     \ edges(N) {}\n    Graph(const size_t H, const size_t W):H(H),W(W),N(H*W), edges(H*W)\
@@ -54,7 +54,7 @@ data:
     \ ++i;\n            last = *min_element(vq[i].begin(),vq[i].end());\n        \
     \    for(auto &p : vq[i]) vq[bit(p.first ^ last.first)].push_back(p);\n      \
     \      vq[i].clear();\n        }\n        --size_num;\n        auto res = vq[0].back();\n\
-    \        vq[0].pop_back();\n        return res;\n    }\n};\n#line 1 \"lib/graph/MinimumUndirectedClosedCircuit.cpp\"\
+    \        vq[0].pop_back();\n        return res;\n    }\n};\n#line 1 \"lib/40-graph/MinimumUndirectedClosedCircuit.cpp\"\
     \n\n/*\n * @title MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\
     \u306E\u6700\u5C0F\u9589\u8DEF\u691C\u51FA\n * @docs md/graph/MinimumUndirectedClosedCircuit.md\n\
     \ */\ntemplate<class T> class MinimumUndirectedClosedCircuit {\n    //T\u306F\u6574\
@@ -106,8 +106,8 @@ data:
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/13\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <cassert>\n#include <set>\n\
     #include <queue>\n#include <map>\n#include <stack>\n#include <array>\n\nusing\
-    \ namespace std;\n#include \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/15-heap/RadixHeap.cpp\"\
-    \n#include \"../../lib/graph/MinimumUndirectedClosedCircuit.cpp\"\n\nint main(){\n\
+    \ namespace std;\n#include \"../../lib/40-graph/Graph.cpp\"\n#include \"../../lib/15-heap/RadixHeap.cpp\"\
+    \n#include \"../../lib/40-graph/MinimumUndirectedClosedCircuit.cpp\"\n\nint main(){\n\
     \    cin.tie(0);ios::sync_with_stdio(false);\n    int W,H; cin >> W >> H;\n  \
     \  Graph<int> g(H,W);\n    vector<int> a(W),b(W);\n    {\n        for(int j=0;j\
     \  <W;++j) cin >> a[j];\n        for(int j=0;j+1<W;++j) if(a[j]==a[j+1]) g.make_bidirectional_edge({0,j},{0,j+1},1);\
@@ -119,13 +119,13 @@ data:
     \ sz = mucc.solve(g.idx({i,j}));\n        if(sz < inf) flg = 1;\n    }\n    cout\
     \ << (flg?\"possible\":\"impossible\") << endl;\n\treturn 0;\n}\n"
   dependsOn:
-  - lib/graph/Graph.cpp
+  - lib/40-graph/Graph.cpp
   - lib/15-heap/RadixHeap.cpp
-  - lib/graph/MinimumUndirectedClosedCircuit.cpp
+  - lib/40-graph/MinimumUndirectedClosedCircuit.cpp
   isVerificationFile: true
   path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:23:09+09:00'
+  timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/MinimumUndirectedClosedCircuit.test.cpp

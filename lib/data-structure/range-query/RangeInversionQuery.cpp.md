@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/range-query/RangeInversionQuery.test.cpp
-    title: test/data-structure/range-query/RangeInversionQuery.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     _deprecated_at_docs: md/data-structure/range-query/RangeInversionQuery.md
     document_title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
@@ -161,9 +158,8 @@ data:
   path: lib/data-structure/range-query/RangeInversionQuery.cpp
   requiredBy: []
   timestamp: '2021-09-21 03:50:44+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/data-structure/range-query/RangeInversionQuery.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: lib/data-structure/range-query/RangeInversionQuery.cpp
 layout: document
 redirect_from:

@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/70-geometory/Argument-sort-by-atan2l.test.cpp
-    title: test/70-geometory/Argument-sort-by-atan2l.test.cpp
+    path: test/geometory/Argument-sort-by-atan2l.test.cpp
+    title: test/geometory/Argument-sort-by-atan2l.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -35,7 +35,7 @@ data:
   timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/70-geometory/Argument-sort-by-atan2l.test.cpp
+  - test/geometory/Argument-sort-by-atan2l.test.cpp
 documentation_of: lib/70-geometory/Argument.cpp
 layout: document
 redirect_from:
