@@ -1,6 +1,6 @@
 /*
  * @title Zarts - 座標圧縮
- * @docs md/00-util/Zarts.md
+ * @docs md/util/Zarts.md
  */
 template<class T> class Zarts{
     vector<T> value;

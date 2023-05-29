@@ -1,6 +1,6 @@
 /*
  * @title RangeIndex - 区間index
- * @docs md/00-util/RangeIndex.md
+ * @docs md/util/RangeIndex.md
  */
 class RangeIndex{
 	int length;

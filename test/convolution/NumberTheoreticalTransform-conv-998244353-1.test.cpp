@@ -8,7 +8,7 @@
 using namespace std;
 #include "../../lib/00-util/ModInt.cpp"
 #include "../../lib/00-util/FastIO.cpp"
-#include "../../lib/convolution/NumberTheoreticalTransform.cpp"
+#include "../../lib/31-convolution/NumberTheoreticalTransform.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);

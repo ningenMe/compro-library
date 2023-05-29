@@ -7,7 +7,7 @@
 using namespace std;
 #include "../../lib/00-util/ModInt.cpp"
 #include "../../lib/00-util/FastIO.cpp"
-#include "../../lib/convolution/NumberTheoreticalTransform.cpp"
+#include "../../lib/31-convolution/NumberTheoreticalTransform.cpp"
 
 constexpr long long MOD = 1000000000000000000LL;
 

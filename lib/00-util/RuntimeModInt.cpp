@@ -1,6 +1,6 @@
 /*
  * @title RuntimeModInt - 実行時ModInt
- * @docs md/00-util/RuntimeModInt.md
+ * @docs md/util/RuntimeModInt.md
  */
 template<long long& mod> class RuntimeModInt {
 public:

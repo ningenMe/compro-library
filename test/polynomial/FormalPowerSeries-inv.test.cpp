@@ -9,8 +9,8 @@
 using namespace std;
 #include "../../lib/00-util/FastIO.cpp"
 #include "../../lib/00-util/ModInt.cpp"
-#include "../../lib/convolution/NumberTheoreticalTransform.cpp"
-#include "../../lib/polynomial/FormalPowerSeries.cpp"
+#include "../../lib/31-convolution/NumberTheoreticalTransform.cpp"
+#include "../../lib/32-polynomial/FormalPowerSeries.cpp"
 
 int main() {
     cin.tie(0);ios::sync_with_stdio(false);
