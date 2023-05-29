@@ -1,6 +1,6 @@
 /*
  * @title FastIO
- * @docs md/util/FastIO.md
+ * @docs md/00-util/FastIO.md
  */
 class FastIO{
 private:
