@@ -9,6 +9,6 @@ template<class T, class U> struct MonoidRangeFoldSumRangeOperateUpdate {
 	inline static constexpr TypeLazy unit_lazy = -1;
 	inline static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return l+r;}
 	inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return new_lazy;}
-	inline static constexpr TypeNode func_operate(TypeNode node,TypeLazy lazy,int l, int r){return lazy;}
+	inline static constexpr TypeNode func_operate(TypeNode node,TypeLazy lazy,int l, int r){return lazy==unit_lazy?node:lazy*(r-l);}
 	inline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}
 };
