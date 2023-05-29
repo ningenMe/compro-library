@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
     title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
       \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
-  - icon: ':heavy_check_mark:'
-    path: lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp
-    title: "MonoidRangeMinRangeUpdate - [\u533A\u9593min, \u533A\u9593\u66F4\u65B0\
-      ]"
+  - icon: ':question:'
+    path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
+    title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
+      \u9593\u66F4\u65B0"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
@@ -22,17 +22,18 @@ data:
   bundledCode: "#line 1 \"test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp\"\
     \n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
-    using namespace std;\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp\"\
-    \n/*\n * @title MonoidRangeMinRangeUpdate - [\u533A\u9593min, \u533A\u9593\u66F4\
-    \u65B0]\n * @docs md/operator/monoid-lazy/MonoidRangeMinRangeUpdate.md\n */\n\
-    template<class T, class U> struct MonoidRangeMinRangeUpdate {\n\tusing TypeNode\
-    \ = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode unit_node =\
-    \ 123456789;\n\tinline static constexpr TypeLazy unit_lazy = 123456789;\n\tinline\
-    \ static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return min(l,r);}\n\
-    \tinline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return\
-    \ new_lazy;}\n\tinline static constexpr TypeNode func_operate(TypeNode node,TypeLazy\
-    \ lazy,int l, int r){return lazy;}\n\tinline static constexpr bool func_check(TypeNode\
-    \ nodeVal,TypeNode var){return var <= nodeVal;}\n};\n#line 1 \"lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
+    using namespace std;\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp\"\
+    \n/*\n * @title MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
+    \u9593\u66F4\u65B0\n * @docs md/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.md\n\
+    \ */\ntemplate<class T, class U> struct MonoidRangeFoldMinRangeOperateUpdate {\n\
+    \tusing TypeNode = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode\
+    \ unit_node = 1000'000'001LL;\n\tinline static constexpr TypeLazy unit_lazy =\
+    \ 1000'000'001LL;\n\tinline static constexpr TypeNode func_fold(TypeNode l,TypeNode\
+    \ r){return min(l,r);}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy\
+    \ old_lazy,TypeLazy new_lazy){return new_lazy;}\n\tinline static constexpr TypeNode\
+    \ func_operate(TypeNode node,TypeLazy lazy,int l, int r){return min(node,lazy);}\n\
+    \tinline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
+    \ var <= nodeVal;}\n};\n\n#line 1 \"lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
     \n/*\n * @title LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\
     \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217\n * @docs md/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md\n\
     \ */\ntemplate<class Monoid> class LazyRandomizedBinarySearchTreeSequence {\n\
@@ -116,7 +117,7 @@ data:
     \ {return fold_impl(this->root,l,r);}\n    inline void reverse(int l, int r) {reverse_impl(l,r);}\n\
     \    void print() {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i)\
     \ << \" \\n\"[i==m-1];}\n};\n#line 10 \"test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp\"\
-    \n\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeMinRangeUpdate<long\
+    \n\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldMinRangeOperateUpdate<long\
     \ long,long long>> lbst;\n    int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i)\
     \ {\n        int a; cin >> a;\n        lbst.insert(i,a);\n    }\n    while(Q--)\
     \ {\n        int x,y,z; cin >> x >> y >> z;\n        if(x==0) {\n            auto\
@@ -126,9 +127,9 @@ data:
     \ }\n    }\n    return 0; \n}\n\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
-    using namespace std;\n#include \"../../lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp\"\
+    using namespace std;\n#include \"../../lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp\"\
     \n#include \"../../lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
-    \n\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeMinRangeUpdate<long\
+    \n\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldMinRangeOperateUpdate<long\
     \ long,long long>> lbst;\n    int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i)\
     \ {\n        int a; cin >> a;\n        lbst.insert(i,a);\n    }\n    while(Q--)\
     \ {\n        int x,y,z; cin >> x >> y >> z;\n        if(x==0) {\n            auto\
@@ -137,13 +138,13 @@ data:
     ;\n        }\n        if(x==2) {\n            lbst.operate(y,y+1,z);\n       \
     \ }\n    }\n    return 0; \n}\n\n"
   dependsOn:
-  - lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp
+  - lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
   - lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
   isVerificationFile: true
   path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   requiredBy: []
-  timestamp: '2023-05-29 03:23:57+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-05-30 03:18:26+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
 layout: document

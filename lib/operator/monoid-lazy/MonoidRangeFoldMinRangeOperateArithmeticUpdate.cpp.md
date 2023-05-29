@@ -11,7 +11,7 @@ data:
     document_title: "MonoidRangeMinRangeArithmeticUpdate - [\u533A\u9593min, \u533A\
       \u9593\u7B49\u5DEE\u6570\u5217\u66F4\u65B0]"
     links: []
-  bundledCode: "#line 1 \"lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp\"\
+  bundledCode: "#line 1 \"lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateArithmeticUpdate.cpp\"\
     \n/*\n * @title MonoidRangeMinRangeArithmeticUpdate - [\u533A\u9593min, \u533A\
     \u9593\u7B49\u5DEE\u6570\u5217\u66F4\u65B0]\n * @docs md/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.md\n\
     \ */template<class T, class U> struct MonoidRangeMinRangeArithmeticUpdate {\n\
@@ -36,16 +36,16 @@ data:
     \ var){return var <= nodeVal;}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
+  path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateArithmeticUpdate.cpp
   requiredBy: []
-  timestamp: '2021-05-02 12:04:02+09:00'
+  timestamp: '2023-05-30 03:18:26+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
+documentation_of: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateArithmeticUpdate.cpp
 layout: document
 redirect_from:
-- /library/lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp
-- /library/lib/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.cpp.html
+- /library/lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateArithmeticUpdate.cpp
+- /library/lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateArithmeticUpdate.cpp.html
 title: "MonoidRangeMinRangeArithmeticUpdate - [\u533A\u9593min, \u533A\u9593\u7B49\
   \u5DEE\u6570\u5217\u66F4\u65B0]"
 ---
