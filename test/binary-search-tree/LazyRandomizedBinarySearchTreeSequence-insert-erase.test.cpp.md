@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
     title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
       \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
     title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
       \u9593\u66F4\u65B0"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
@@ -31,7 +31,7 @@ data:
     \ 1000'000'001LL;\n\tinline static constexpr TypeNode func_fold(TypeNode l,TypeNode\
     \ r){return min(l,r);}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy\
     \ old_lazy,TypeLazy new_lazy){return new_lazy;}\n\tinline static constexpr TypeNode\
-    \ func_operate(TypeNode node,TypeLazy lazy,int l, int r){return min(node,lazy);}\n\
+    \ func_operate(TypeNode node,TypeLazy lazy,int l, int r){return lazy==unit_lazy?node:lazy;}\n\
     \tinline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
     \ var <= nodeVal;}\n};\n\n#line 1 \"lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
     \n/*\n * @title LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\
@@ -143,8 +143,8 @@ data:
   isVerificationFile: true
   path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 03:18:26+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-05-30 03:43:27+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
 layout: document

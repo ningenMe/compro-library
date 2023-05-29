@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/binary-search-tree/LazySplayTreeSequence.cpp
     title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
     title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
       \u9593\u66F4\u65B0"
@@ -59,7 +59,7 @@ data:
     \ 1000'000'001LL;\n\tinline static constexpr TypeNode func_fold(TypeNode l,TypeNode\
     \ r){return min(l,r);}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy\
     \ old_lazy,TypeLazy new_lazy){return new_lazy;}\n\tinline static constexpr TypeNode\
-    \ func_operate(TypeNode node,TypeLazy lazy,int l, int r){return min(node,lazy);}\n\
+    \ func_operate(TypeNode node,TypeLazy lazy,int l, int r){return lazy==unit_lazy?node:lazy;}\n\
     \tinline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
     \ var <= nodeVal;}\n};\n\n#line 1 \"lib/binary-search-tree/LazySplayTreeSequence.cpp\"\
     \n/*\n * @title LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217\
@@ -197,7 +197,7 @@ data:
   isVerificationFile: true
   path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   requiredBy: []
-  timestamp: '2023-05-29 02:57:48+09:00'
+  timestamp: '2023-05-30 03:43:27+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp

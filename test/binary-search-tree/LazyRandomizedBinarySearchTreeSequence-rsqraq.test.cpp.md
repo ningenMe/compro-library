@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
     title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
       \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"

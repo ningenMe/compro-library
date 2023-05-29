@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: lib/binary-search-tree
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
       title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
         \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
@@ -232,17 +232,17 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp
-      title: "MonoidRangeEulerTourSumRangeAdd - [\u533A\u9593\u30AA\u30A4\u30E9\u30FC\
-        \u30C4\u30A2\u30FC\u548C, \u533A\u9593\u52A0\u7B97]"
+      title: "MonoidRangeEulerTourSumRangeAdd - fold:\u533A\u9593\u30AA\u30A4\u30E9\
+        \u30FC\u30C4\u30A2\u30FC\u548C, operate:\u533A\u9593\u52A0\u7B97"
     - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.cpp
       title: "MonoidRangeFoldMinRangeOperateAdd - fold:\u533A\u9593min, operate:\u533A\
         \u9593\u52A0\u7B97"
     - icon: ':warning:'
       path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateArithmeticUpdate.cpp
-      title: "MonoidRangeMinRangeArithmeticUpdate - [\u533A\u9593min, \u533A\u9593\
-        \u7B49\u5DEE\u6570\u5217\u66F4\u65B0]"
-    - icon: ':question:'
+      title: "MonoidRangeMinRangeArithmeticUpdate - fold:\u533A\u9593min, operate:\u533A\
+        \u9593\u7B49\u5DEE\u6570\u5217\u66F4\u65B0]"
+    - icon: ':heavy_check_mark:'
       path: lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
       title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
         \u9593\u66F4\u65B0"
@@ -391,7 +391,7 @@ data:
   verificationCategories:
   - name: test/binary-search-tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
       title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
     - icon: ':heavy_check_mark:'
