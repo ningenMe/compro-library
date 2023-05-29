@@ -4,7 +4,7 @@
 #include <iostream>
 #include <numeric>
 using namespace std;
-#include "../../lib/graph/PotentializedUnionFindTree.cpp"
+#include "../../lib/40-graph/PotentializedUnionFindTree.cpp"
 
 int main(){
     cin.tie(0);ios::sync_with_stdio(false);

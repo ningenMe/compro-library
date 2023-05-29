@@ -8,8 +8,8 @@
 #include <numeric>
 #include <array>
 using namespace std;
-#include "../../lib/graph/Graph.cpp"
-#include "../../lib/graph/Tree.cpp"
+#include "../../lib/40-graph/Graph.cpp"
+#include "../../lib/40-graph/Tree.cpp"
 
 int main(void){
     int N;

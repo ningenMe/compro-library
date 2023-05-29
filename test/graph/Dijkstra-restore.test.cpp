@@ -5,7 +5,7 @@
 #include <cmath>
 #include <algorithm>
 using namespace std;
-#include "../../lib/graph/Dijkstra.cpp"
+#include "../../lib/40-graph/Dijkstra.cpp"
 
 int main() {
     cin.tie(0);ios::sync_with_stdio(false);

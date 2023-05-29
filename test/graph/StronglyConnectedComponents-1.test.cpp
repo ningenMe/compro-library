@@ -6,8 +6,8 @@
 #include <algorithm>
 #include <stack>
 using namespace std;
-#include "../../lib/graph/UnionFindTree.cpp"
-#include "../../lib/graph/StronglyConnectedComponents.cpp"
+#include "../../lib/40-graph/UnionFindTree.cpp"
+#include "../../lib/40-graph/StronglyConnectedComponents.cpp"
 
 int main(){
     int N,M; cin >> N >> M;

@@ -4,8 +4,8 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-#include "../../lib/math/Gcd.cpp"
-#include "../../lib/math/Prime.cpp"
+#include "../../lib/30-math/Gcd.cpp"
+#include "../../lib/30-math/Prime.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);

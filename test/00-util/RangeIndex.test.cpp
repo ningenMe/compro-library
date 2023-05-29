@@ -7,7 +7,7 @@
 #include <numeric>
 using namespace std;
 #include "../../lib/00-util/RangeIndex.cpp"
-#include "../../lib/graph/UnionFindTree.cpp"
+#include "../../lib/40-graph/UnionFindTree.cpp"
 
 
 int main() {

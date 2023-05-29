@@ -4,7 +4,7 @@
 #include <iostream>
 #include <numeric>
 using namespace std;
-#include "../../lib/math/Garner.cpp"
+#include "../../lib/30-math/Garner.cpp"
 constexpr long long MOD = 1000'000'007;
 
 int main(void){

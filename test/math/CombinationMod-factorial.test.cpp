@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../lib/math/CombinationMod.cpp"
+#include "../../lib/30-math/CombinationMod.cpp"
 #include "../../lib/00-util/ModInt.cpp"
 constexpr long long MOD = 1000'000'007;
 using modint = ModInt<MOD>;

@@ -10,9 +10,9 @@
 #include <array>
 
 using namespace std;
-#include "../../lib/graph/Graph.cpp"
+#include "../../lib/40-graph/Graph.cpp"
 #include "../../lib/15-heap/RadixHeap.cpp"
-#include "../../lib/graph/MinimumDirectedClosedCircuit.cpp"
+#include "../../lib/40-graph/MinimumDirectedClosedCircuit.cpp"
 
 int main(){
     int N,M; cin >> N >> M;

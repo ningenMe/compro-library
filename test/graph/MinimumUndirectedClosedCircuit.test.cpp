@@ -11,9 +11,9 @@
 #include <array>
 
 using namespace std;
-#include "../../lib/graph/Graph.cpp"
+#include "../../lib/40-graph/Graph.cpp"
 #include "../../lib/15-heap/RadixHeap.cpp"
-#include "../../lib/graph/MinimumUndirectedClosedCircuit.cpp"
+#include "../../lib/40-graph/MinimumUndirectedClosedCircuit.cpp"
 
 int main(){
     cin.tie(0);ios::sync_with_stdio(false);

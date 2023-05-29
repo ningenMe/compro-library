@@ -2,7 +2,7 @@
 
 #include <iostream>
 using namespace std;
-#include "../../lib/math/FloorSum.cpp"
+#include "../../lib/30-math/FloorSum.cpp"
 
 int main() {
     cin.tie(nullptr);ios::sync_with_stdio(false);

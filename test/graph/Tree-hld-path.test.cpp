@@ -9,9 +9,9 @@
 #include <numeric>
 #include <array>
 using namespace std;
-#include "../../lib/graph/Graph.cpp"
-#include "../../lib/math/Matrix.cpp"
-#include "../../lib/graph/Tree.cpp"
+#include "../../lib/40-graph/Graph.cpp"
+#include "../../lib/30-math/Matrix.cpp"
+#include "../../lib/40-graph/Tree.cpp"
 #include "../../lib/data-structure/segment-tree/SegmentTree.cpp"
 #include "../../lib/operator/monoid/MonoidRangeMulPointUpdate.cpp"
 #include "../../lib/00-util/ModInt.cpp"

@@ -4,7 +4,7 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-#include "../../lib/math/Eratosthenes.cpp"
+#include "../../lib/30-math/Eratosthenes.cpp"
 
 int main() {
     long long N;

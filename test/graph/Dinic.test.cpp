@@ -4,7 +4,7 @@
 #include <iostream>
 #include <queue>
 using namespace std;
-#include "../../lib/graph/Dinic.cpp"
+#include "../../lib/40-graph/Dinic.cpp"
 
 int main() {
 	int N; cin >> N;

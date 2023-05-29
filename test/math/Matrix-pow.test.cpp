@@ -6,7 +6,7 @@
 #include <cassert>
 using namespace std;
 #include "../../lib/00-util/ModInt.cpp"
-#include "../../lib/math/Matrix.cpp"
+#include "../../lib/30-math/Matrix.cpp"
 constexpr long long MOD = 1000'000'007;
 
 int main(void){

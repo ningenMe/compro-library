@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <stack>
 using namespace std;
-#include "../../lib/graph/StronglyConnectedComponents.cpp"
+#include "../../lib/40-graph/StronglyConnectedComponents.cpp"
 
 int main(){
     cin.tie(0);ios::sync_with_stdio(false);

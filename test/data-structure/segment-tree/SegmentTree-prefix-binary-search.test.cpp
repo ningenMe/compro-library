@@ -5,7 +5,7 @@
 #include <cassert>
 using namespace std;
 #include "../../../lib/data-structure/segment-tree/SegmentTree.cpp"
-#include "../../../lib/math/Gcd.cpp"
+#include "../../../lib/30-math/Gcd.cpp"
 #include "../../../lib/operator/monoid/MonoidRangeGcdPointUpdate.cpp"
 
 // solution by binary search in prefix range on segment tree 
