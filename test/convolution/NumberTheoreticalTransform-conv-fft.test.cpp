@@ -6,7 +6,7 @@
 #include <array>
 using namespace std;
 #include "../../lib/util/ModInt.cpp"
-#include "../../lib/util/FastIO.cpp"
+#include "../../lib/00-util/FastIO.cpp"
 #include "../../lib/convolution/NumberTheoreticalTransform.cpp"
 
 constexpr long long MOD = 1000000000000000000LL;

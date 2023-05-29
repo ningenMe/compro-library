@@ -7,7 +7,7 @@
 #include <array>
 
 using namespace std;
-#include "../../lib/util/FastIO.cpp"
+#include "../../lib/00-util/FastIO.cpp"
 #include "../../lib/util/ModInt.cpp"
 #include "../../lib/convolution/NumberTheoreticalTransform.cpp"
 #include "../../lib/polynomial/FormalPowerSeries.cpp"

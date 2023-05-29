@@ -2,7 +2,7 @@
 
 #include <iostream>
 using namespace std;
-#include "../../lib/util/FastIO.cpp"
+#include "../../lib/00-util/FastIO.cpp"
 
 int main() {
     cin.tie(0)->sync_with_stdio(0);

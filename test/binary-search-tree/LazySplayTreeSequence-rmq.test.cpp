@@ -5,7 +5,7 @@
 #include <cassert>
 #include <queue>
 using namespace std;
-#include "../../lib/util/FastIO.cpp"
+#include "../../lib/00-util/FastIO.cpp"
 #include "../../lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp"
 #include "../../lib/binary-search-tree/LazySplayTreeSequence.cpp"
 

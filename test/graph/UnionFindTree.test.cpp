@@ -4,7 +4,7 @@
 #include <iostream>
 #include <numeric>
 using namespace std;
-#include "../../lib/util/FastIO.cpp"
+#include "../../lib/00-util/FastIO.cpp"
 #include "../../lib/graph/UnionFindTree.cpp"
 
 

@@ -7,7 +7,7 @@
 #include <array>
 using namespace std;
 #include "../../lib/util/ModInt.cpp"
-#include "../../lib/util/FastIO.cpp"
+#include "../../lib/00-util/FastIO.cpp"
 #include "../../lib/convolution/NumberTheoreticalTransform.cpp"
 
 int main(void){

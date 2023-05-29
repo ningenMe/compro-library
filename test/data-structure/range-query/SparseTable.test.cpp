@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-#include "../../../lib/util/FastIO.cpp"
+#include "../../../lib/00-util/FastIO.cpp"
 #include "../../../lib/data-structure/range-query/SparseTable.cpp"
 
 int main(){
