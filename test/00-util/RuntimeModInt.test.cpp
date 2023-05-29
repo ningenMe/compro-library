@@ -5,7 +5,7 @@
 #include <array>
 #include <numeric>
 using namespace std;
-#include "../../lib/util/RuntimeModInt.cpp"
+#include "../../lib/00-util/RuntimeModInt.cpp"
 
 using modint = RuntimeModInt<runtime_mod>;
 

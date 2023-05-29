@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <cassert>
 using namespace std;
-#include "../../lib/util/NBase.cpp"
+#include "../../lib/00-util/NBase.cpp"
 
 int main(void){
 	int N; cin >> N;

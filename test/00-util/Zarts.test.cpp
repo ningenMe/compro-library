@@ -6,7 +6,7 @@
 #include <cassert>
 #include <map>
 using namespace std;
-#include "../../lib/util/Zarts.cpp"
+#include "../../lib/00-util/Zarts.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);

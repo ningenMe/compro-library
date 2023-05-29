@@ -1,6 +1,6 @@
 /*
  * @title NBase - N進数
- * @docs md/util/NBase.md
+ * @docs md/00-util/NBase.md
  */
 class NBase{
 public:

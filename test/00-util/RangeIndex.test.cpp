@@ -6,7 +6,7 @@
 #include <cassert>
 #include <numeric>
 using namespace std;
-#include "../../lib/util/RangeIndex.cpp"
+#include "../../lib/00-util/RangeIndex.cpp"
 #include "../../lib/graph/UnionFindTree.cpp"
 
 
