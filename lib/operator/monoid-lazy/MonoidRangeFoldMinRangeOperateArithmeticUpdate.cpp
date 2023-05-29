@@ -1,7 +1,7 @@
 /*
- * @title MonoidRangeMinRangeArithmeticUpdate - [区間min, 区間等差数列更新]
+ * @title MonoidRangeMinRangeArithmeticUpdate - fold:区間min, operate:区間等差数列更新]
  * @docs md/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.md
- */template<class T, class U> struct MonoidRangeMinRangeArithmeticUpdate {
+ */template<class T, class U> struct MonoidRangeFoldMinRangeOperateArithmeticUpdate {
     using TypeNode = T;
     using TypeLazy = U;
     inline static constexpr TypeNode unit_node = 1234567;

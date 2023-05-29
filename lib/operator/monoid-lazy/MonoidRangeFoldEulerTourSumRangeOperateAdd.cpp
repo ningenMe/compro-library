@@ -1,5 +1,5 @@
 /*
- * @title MonoidRangeEulerTourSumRangeAdd - [区間オイラーツアー和, 区間加算]
+ * @title MonoidRangeEulerTourSumRangeAdd - fold:区間オイラーツアー和, operate:区間加算
  * @docs md/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.md
  */
 template<class T, class U> struct MonoidRangeFoldEulerTourSumRangeOperateAdd {
