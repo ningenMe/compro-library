@@ -12,7 +12,7 @@ data:
     path: lib/graph/Tree.cpp
     title: "Tree - \u6728"
   - icon: ':heavy_check_mark:'
-    path: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
+    path: lib/operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp
     title: "MonoidRangeEulerTourSumRangeAdd - [\u533A\u9593\u30AA\u30A4\u30E9\u30FC\
       \u30C4\u30A2\u30FC\u548C, \u533A\u9593\u52A0\u7B97]"
   _extendedRequiredBy: []
@@ -282,11 +282,11 @@ data:
     \ << \" \";\n        // \tif(i==((1<<j)-1) && ++j) cout << endl;\n        // }\n\
     \        cout << \"vector\" << endl;\n        cout << \"{ \" << fold(0,1);\n \
     \       for(int i = 1; i < length; ++i) cout << \", \" << fold(i,i+1);\n     \
-    \   cout << \" }\" << endl;\n    }\n};\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp\"\
+    \   cout << \" }\" << endl;\n    }\n};\n#line 1 \"lib/operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp\"\
     \n/*\n * @title MonoidRangeEulerTourSumRangeAdd - [\u533A\u9593\u30AA\u30A4\u30E9\
     \u30FC\u30C4\u30A2\u30FC\u548C, \u533A\u9593\u52A0\u7B97]\n * @docs md/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.md\n\
-    \ */\ntemplate<class T, class U> struct MonoidRangeEulerTourSumRangeAdd {\n\t\
-    using TypeNode = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode\
+    \ */\ntemplate<class T, class U> struct MonoidRangeFoldEulerTourSumRangeOperateAdd\
+    \ {\n\tusing TypeNode = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode\
     \ unit_node = {0,0};\n\tinline static constexpr TypeLazy unit_lazy = 0;\n\tinline\
     \ static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return {l.first+r.first,l.second+r.second};}\n\
     \tinline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return\
@@ -302,7 +302,7 @@ data:
     \tfor(int i=1;i<M;++i) {\n\t\tint l=tree.eulertour[i-1], r = tree.eulertour[i],\
     \ sgn;\n\t\tlong long w;\n\t\tif(tree.depth[l]<tree.depth[r]) {\n\t\t\tw = tree.parent[r].second;\n\
     \t\t\tsgn = 1;\n\t\t}\n\t\telse {\n\t\t\tw = tree.parent[l].second;\n\t\t\tsgn\
-    \ = -1;\n\t\t}\n\t\tinit[i] = {w*sgn,sgn};\n\t}\n\tLazySegmentTree<MonoidRangeEulerTourSumRangeAdd<pair<long\
+    \ = -1;\n\t\t}\n\t\tinit[i] = {w*sgn,sgn};\n\t}\n\tLazySegmentTree<MonoidRangeFoldEulerTourSumRangeOperateAdd<pair<long\
     \ long,long long>,long long>> seg(init);\n\tint Q; cin >> Q;\n\twhile(Q--) {\n\
     \t\tint q; cin >> q;\n\t\tint a; cin >> a;\n\t\tint l = tree.eulertour_range[a].first;\n\
     \t\tint r = tree.eulertour_range[a].second;\n\t\tif(q==1) {\n\t\t\tlong long x;\
@@ -313,15 +313,15 @@ data:
     #include <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n\
     #include \"../../lib/graph/Graph.cpp\"\n#include \"../../lib/graph/Tree.cpp\"\n\
     #include \"../../lib/data-structure/segment-tree/LazySegmentTree.cpp\"\n#include\
-    \ \"../../lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp\"\n\nint\
-    \ main(void){\n\tint N; cin >> N;\n\tGraph<long long> g(N);\n\tfor(int i=0;i<N-1;++i)\
+    \ \"../../lib/operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp\"\
+    \n\nint main(void){\n\tint N; cin >> N;\n\tGraph<long long> g(N);\n\tfor(int i=0;i<N-1;++i)\
     \ {\n\t\tint u,v,w; cin >> u >> v >> w;\n\t\tg.make_bidirectional_edge(u,v,w);\n\
     \t}\n\tauto tree = Tree<TreeOperator<long long>>::builder(g).root(0).parent().child().eulertour().build();\n\
     \tint M = tree.eulertour.size();\n\tvector<pair<long long,long long>> init(M,{0,0});\n\
     \tfor(int i=1;i<M;++i) {\n\t\tint l=tree.eulertour[i-1], r = tree.eulertour[i],\
     \ sgn;\n\t\tlong long w;\n\t\tif(tree.depth[l]<tree.depth[r]) {\n\t\t\tw = tree.parent[r].second;\n\
     \t\t\tsgn = 1;\n\t\t}\n\t\telse {\n\t\t\tw = tree.parent[l].second;\n\t\t\tsgn\
-    \ = -1;\n\t\t}\n\t\tinit[i] = {w*sgn,sgn};\n\t}\n\tLazySegmentTree<MonoidRangeEulerTourSumRangeAdd<pair<long\
+    \ = -1;\n\t\t}\n\t\tinit[i] = {w*sgn,sgn};\n\t}\n\tLazySegmentTree<MonoidRangeFoldEulerTourSumRangeOperateAdd<pair<long\
     \ long,long long>,long long>> seg(init);\n\tint Q; cin >> Q;\n\twhile(Q--) {\n\
     \t\tint q; cin >> q;\n\t\tint a; cin >> a;\n\t\tint l = tree.eulertour_range[a].first;\n\
     \t\tint r = tree.eulertour_range[a].second;\n\t\tif(q==1) {\n\t\t\tlong long x;\
@@ -331,11 +331,11 @@ data:
   - lib/graph/Graph.cpp
   - lib/graph/Tree.cpp
   - lib/data-structure/segment-tree/LazySegmentTree.cpp
-  - lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
+  - lib/operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp
   isVerificationFile: true
   path: test/graph/Tree-eulertour.test.cpp
   requiredBy: []
-  timestamp: '2023-05-12 02:35:32+09:00'
+  timestamp: '2023-05-30 02:29:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-eulertour.test.cpp

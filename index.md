@@ -231,7 +231,7 @@ data:
   - name: lib/operator/monoid-lazy
     pages:
     - icon: ':heavy_check_mark:'
-      path: lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp
+      path: lib/operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp
       title: "MonoidRangeEulerTourSumRangeAdd - [\u533A\u9593\u30AA\u30A4\u30E9\u30FC\
         \u30C4\u30A2\u30FC\u548C, \u533A\u9593\u52A0\u7B97]"
     - icon: ':heavy_check_mark:'
