@@ -6,7 +6,7 @@
 #include <map>
 #include <queue>
 using namespace std;
-#include "../../lib/util/ModInt.cpp"
+#include "../../lib/00-util/ModInt.cpp"
 
 constexpr long long MOD2 = 998244353;
 using modint = ModInt<MOD2>;

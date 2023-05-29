@@ -7,7 +7,7 @@
 using namespace std;
 #include "../../lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp"
 #include "../../lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
-#include "../../lib/util/ModInt.cpp"
+#include "../../lib/00-util/ModInt.cpp"
 
 using modint = ModInt<998244353>;
 template <class T, class U>ostream &operator<<(ostream &o, const pair<T, U>&obj) {o << "{" << obj.first << ", " << obj.second << "}"; return o;} 

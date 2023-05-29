@@ -5,7 +5,7 @@
 #include <cassert>
 #include <queue>
 using namespace std;
-#include "../../lib/util/ModInt.cpp"
+#include "../../lib/00-util/ModInt.cpp"
 #include "../../lib/operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp"
 #include "../../lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
 

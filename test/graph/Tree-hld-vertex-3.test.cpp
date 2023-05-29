@@ -11,7 +11,7 @@
 using namespace std;
 #include "../../lib/graph/Graph.cpp"
 #include "../../lib/graph/Tree.cpp"
-#include "../../lib/util/ModInt.cpp"
+#include "../../lib/00-util/ModInt.cpp"
 #include "../../lib/data-structure/segment-tree/SegmentTree.cpp"
 #include "../../lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp"
 

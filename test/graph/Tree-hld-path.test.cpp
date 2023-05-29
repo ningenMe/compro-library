@@ -14,7 +14,7 @@ using namespace std;
 #include "../../lib/graph/Tree.cpp"
 #include "../../lib/data-structure/segment-tree/SegmentTree.cpp"
 #include "../../lib/operator/monoid/MonoidRangeMulPointUpdate.cpp"
-#include "../../lib/util/ModInt.cpp"
+#include "../../lib/00-util/ModInt.cpp"
 
 constexpr long long MOD = 1'000'000'007LL;
 using modint = ModInt<MOD>;

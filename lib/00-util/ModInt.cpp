@@ -1,6 +1,6 @@
 /*
  * @title ModInt
- * @docs md/util/ModInt.md
+ * @docs md/00-util/ModInt.md
  */
 template<long long mod> class ModInt {
 public:

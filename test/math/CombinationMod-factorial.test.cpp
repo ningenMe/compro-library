@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 #include "../../lib/math/CombinationMod.cpp"
-#include "../../lib/util/ModInt.cpp"
+#include "../../lib/00-util/ModInt.cpp"
 constexpr long long MOD = 1000'000'007;
 using modint = ModInt<MOD>;
 
