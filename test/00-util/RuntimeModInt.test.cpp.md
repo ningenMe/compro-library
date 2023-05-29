@@ -17,7 +17,7 @@ data:
   bundledCode: "#line 1 \"test/00-util/RuntimeModInt.test.cpp\"\n#define PROBLEM \"\
     https://yukicoder.me/problems/no/1161\"\n\n#include <vector>\n#include <iostream>\n\
     #include <array>\n#include <numeric>\nusing namespace std;\n#line 1 \"lib/00-util/RuntimeModInt.cpp\"\
-    \n/*\n * @title RuntimeModInt - \u5B9F\u884C\u6642ModInt\n * @docs md/00-util/RuntimeModInt.md\n\
+    \n/*\n * @title RuntimeModInt - \u5B9F\u884C\u6642ModInt\n * @docs md/util/RuntimeModInt.md\n\
     \ */\ntemplate<long long& mod> class RuntimeModInt {\npublic:\n    long long x;\n\
     \    constexpr RuntimeModInt():x(0) {}\n    constexpr RuntimeModInt(long long\
     \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    RuntimeModInt &operator+=(const\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: true
   path: test/00-util/RuntimeModInt.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:03:52+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/00-util/RuntimeModInt.test.cpp

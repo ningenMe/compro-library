@@ -8,10 +8,10 @@ data:
     path: lib/00-util/ModInt.cpp
     title: ModInt
   - icon: ':question:'
-    path: lib/convolution/NumberTheoreticalTransform.cpp
+    path: lib/31-convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
   - icon: ':x:'
-    path: lib/polynomial/FormalPowerSeries.cpp
+    path: lib/32-polynomial/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -27,8 +27,8 @@ data:
     \ PROBLEM \"https://judge.yosupo.jp/problem/inv_of_formal_power_series\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n#include\
     \ <array>\n\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n *\
-    \ @title FastIO\n * @docs md/00-util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
-    \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
+    \ @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n  \
+    \  inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
     \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
     \ ch) {\n        while(ch==ch_l) ch=getchar();\n    }\n    template<typename T>\
@@ -53,7 +53,7 @@ data:
     \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
-    #line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/00-util/ModInt.md\n\
+    #line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/util/ModInt.md\n\
     \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
     \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
     \ (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const ModInt &p) {if((x\
@@ -95,7 +95,7 @@ data:
     \ &os, const ModInt &p) {return os << p.x;}\n    friend istream &operator>>(istream\
     \ &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}\n};\n\
     constexpr long long MOD_998244353 = 998244353;\nconstexpr long long MOD_1000000007\
-    \ = 1'000'000'000LL + 7; //'\n#line 1 \"lib/convolution/NumberTheoreticalTransform.cpp\"\
+    \ = 1'000'000'000LL + 7; //'\n#line 1 \"lib/31-convolution/NumberTheoreticalTransform.cpp\"\
     \n/*\n * @title NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB\n * @docs\
     \ md/convolution/NumberTheoreticalTransform.md\n */\ntemplate<long long mod> class\
     \ NumberTheoreticalTransform {\n    inline static constexpr int prime_1004535809\
@@ -184,7 +184,7 @@ data:
     \ convolution_friendrymod<prime>(g,h,base_998244353,ibase_998244353,pow2_inv_998244353);\n\
     \        }\n    }; \npublic:\n    inline static vector<ModInt<mod>> convolution(const\
     \ vector<ModInt<mod>>& g,const vector<ModInt<mod>>& h){return Inner<mod,mod>::convolution_impl(g,h);}\n\
-    };\n#line 1 \"lib/polynomial/FormalPowerSeries.cpp\"\n\n/*\n * @title FormalPowerSeries\
+    };\n#line 1 \"lib/32-polynomial/FormalPowerSeries.cpp\"\n\n/*\n * @title FormalPowerSeries\
     \ - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n * @docs md/polynomial/FormalPowerSeries.md\n\
     \ */\ntemplate<long long prime, class T = ModInt<prime>> struct FormalPowerSeries\
     \ : public vector<T> {\n    using vector<T>::vector;\n    using Mint  = T;\n \
@@ -283,21 +283,21 @@ data:
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/inv_of_formal_power_series\"\
     \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
     #include <array>\n\nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\
-    \n#include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\
-    \n#include \"../../lib/polynomial/FormalPowerSeries.cpp\"\n\nint main() {\n  \
-    \  cin.tie(0);ios::sync_with_stdio(false);\n    int N; read(N);\n    FormalPowerSeries<MOD_998244353>\
+    \n#include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/31-convolution/NumberTheoreticalTransform.cpp\"\
+    \n#include \"../../lib/32-polynomial/FormalPowerSeries.cpp\"\n\nint main() {\n\
+    \    cin.tie(0);ios::sync_with_stdio(false);\n    int N; read(N);\n    FormalPowerSeries<MOD_998244353>\
     \ f(N);\n    for(int i=0;i<N;++i) {\n        int a; read(a); f[i]=a;\n    }\n\
     \    f = f.inv();\n    for(int i=0;i<f.size();++i) cout << f[i] << \" \\n\"[i==N-1];\n\
     \    return 0;\n}\n"
   dependsOn:
   - lib/00-util/FastIO.cpp
   - lib/00-util/ModInt.cpp
-  - lib/convolution/NumberTheoreticalTransform.cpp
-  - lib/polynomial/FormalPowerSeries.cpp
+  - lib/31-convolution/NumberTheoreticalTransform.cpp
+  - lib/32-polynomial/FormalPowerSeries.cpp
   isVerificationFile: true
   path: test/polynomial/FormalPowerSeries-inv.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:12:03+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/polynomial/FormalPowerSeries-inv.test.cpp

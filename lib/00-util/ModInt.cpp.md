@@ -36,10 +36,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/CombinationMod-factorial.test.cpp
     title: test/math/CombinationMod-factorial.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/Matrix-det.test.cpp
     title: test/math/Matrix-det.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/Matrix-pow.test.cpp
     title: test/math/Matrix-pow.test.cpp
   - icon: ':x:'
@@ -67,12 +67,12 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
   attributes:
-    _deprecated_at_docs: md/00-util/ModInt.md
+    _deprecated_at_docs: md/util/ModInt.md
     document_title: ModInt
     links: []
   bundledCode: "#line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs\
-    \ md/00-util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
-    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
+    \ md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n  \
+    \  long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
     \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const\
     \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt\
     \ &operator+=(const long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
@@ -113,7 +113,7 @@ data:
     \    friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a\
     \ = ModInt<mod>(t);return (is);}\n};\nconstexpr long long MOD_998244353 = 998244353;\n\
     constexpr long long MOD_1000000007 = 1'000'000'000LL + 7; //'\n"
-  code: "/*\n * @title ModInt\n * @docs md/00-util/ModInt.md\n */\ntemplate<long long\
+  code: "/*\n * @title ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long\
     \ mod> class ModInt {\npublic:\n    long long x;\n    constexpr ModInt():x(0)\
     \ {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod)\
     \ {}\n    constexpr ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod)\
@@ -160,7 +160,7 @@ data:
   isVerificationFile: false
   path: lib/00-util/ModInt.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:12:03+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp

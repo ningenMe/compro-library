@@ -77,7 +77,7 @@ data:
     \     cout << \"vector\" << endl;\n        cout << \"{ \" << fold(0,1);\n    \
     \    for(int i = 1; i < length; ++i) cout << \", \" << fold(i,i+1);\n        cout\
     \ << \" }\" << endl;\n    }\n};\n#line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title\
-    \ ModInt\n * @docs md/00-util/ModInt.md\n */\ntemplate<long long mod> class ModInt\
+    \ ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt\
     \ {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr\
     \ ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr\
     \ ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n\
@@ -152,7 +152,7 @@ data:
   isVerificationFile: true
   path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:12:03+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp

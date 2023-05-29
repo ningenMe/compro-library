@@ -8,7 +8,7 @@ data:
     path: lib/00-util/ModInt.cpp
     title: ModInt
   - icon: ':question:'
-    path: lib/convolution/NumberTheoreticalTransform.cpp
+    path: lib/31-convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -23,7 +23,7 @@ data:
   bundledCode: "#line 1 \"test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp\"\
     \n#define PROBLEM \"https://yukicoder.me/problems/no/1307\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <array>\nusing namespace std;\n\
-    #line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/00-util/ModInt.md\n\
+    #line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/util/ModInt.md\n\
     \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
     \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
     \ (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const ModInt &p) {if((x\
@@ -66,7 +66,7 @@ data:
     \ &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}\n};\n\
     constexpr long long MOD_998244353 = 998244353;\nconstexpr long long MOD_1000000007\
     \ = 1'000'000'000LL + 7; //'\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title\
-    \ FastIO\n * @docs md/00-util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline\
+    \ FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline\
     \ static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
     \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
@@ -92,7 +92,7 @@ data:
     \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
-    #line 1 \"lib/convolution/NumberTheoreticalTransform.cpp\"\n/*\n * @title NumberTheoreticalTransform\
+    #line 1 \"lib/31-convolution/NumberTheoreticalTransform.cpp\"\n/*\n * @title NumberTheoreticalTransform\
     \ - \u6570\u8AD6\u5909\u63DB\n * @docs md/convolution/NumberTheoreticalTransform.md\n\
     \ */\ntemplate<long long mod> class NumberTheoreticalTransform {\n    inline static\
     \ constexpr int prime_1004535809 =1004535809;\n    inline static constexpr int\
@@ -190,7 +190,7 @@ data:
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1307\"\n\n#include <vector>\n\
     #include <iostream>\n#include <algorithm>\n#include <array>\nusing namespace std;\n\
     #include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/00-util/FastIO.cpp\"\
-    \n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\n\nconstexpr\
+    \n#include \"../../lib/31-convolution/NumberTheoreticalTransform.cpp\"\n\nconstexpr\
     \ long long MOD = 1000000000000000000LL;\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
     \    int N,Q; read(N); read(Q);\n    vector<ModInt<MOD>> A(N),B(N,0),D(N,0);\n\
     \    for(int i=0;i<N;++i) {\n        int a; read(a);\n        A[i]=a;\n    }\n\
@@ -200,11 +200,11 @@ data:
   dependsOn:
   - lib/00-util/ModInt.cpp
   - lib/00-util/FastIO.cpp
-  - lib/convolution/NumberTheoreticalTransform.cpp
+  - lib/31-convolution/NumberTheoreticalTransform.cpp
   isVerificationFile: true
   path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:12:03+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp

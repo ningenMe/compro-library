@@ -30,7 +30,7 @@ data:
     \ k) {\n        return ((n < 0 || k < 0 || n < k) ? 0 : fac[n] * (finv[k] * finv[n\
     \ - k] % mod) % mod);\n    }\n    inline long long factorial(int n) {\n      \
     \  return fac[n];\n    }\n};\n\n//verify https://atcoder.jp/contests/abc021/tasks/abc021_d\n\
-    #line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/00-util/ModInt.md\n\
+    #line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n * @docs md/util/ModInt.md\n\
     \ */\ntemplate<long long mod> class ModInt {\npublic:\n    long long x;\n    constexpr\
     \ ModInt():x(0) {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod -\
     \ (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const ModInt &p) {if((x\
@@ -107,7 +107,7 @@ data:
   isVerificationFile: true
   path: test/math/CombinationMod-factorial.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:12:03+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/CombinationMod-factorial.test.cpp

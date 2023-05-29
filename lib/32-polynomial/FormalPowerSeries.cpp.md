@@ -31,7 +31,7 @@ data:
     _deprecated_at_docs: md/polynomial/FormalPowerSeries.md
     document_title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
     links: []
-  bundledCode: "#line 1 \"lib/polynomial/FormalPowerSeries.cpp\"\n\n/*\n * @title\
+  bundledCode: "#line 1 \"lib/32-polynomial/FormalPowerSeries.cpp\"\n\n/*\n * @title\
     \ FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n * @docs md/polynomial/FormalPowerSeries.md\n\
     \ */\ntemplate<long long prime, class T = ModInt<prime>> struct FormalPowerSeries\
     \ : public vector<T> {\n    using vector<T>::vector;\n    using Mint  = T;\n \
@@ -216,9 +216,9 @@ data:
     , \" << fps[i];return os << \"}\";}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/polynomial/FormalPowerSeries.cpp
+  path: lib/32-polynomial/FormalPowerSeries.cpp
   requiredBy: []
-  timestamp: '2023-05-18 02:25:01+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/polynomial/FormalPowerSeries-exp.test.cpp
@@ -228,11 +228,11 @@ data:
   - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-log.test.cpp
   - test/polynomial/FormalPowerSeries-nth.test.cpp
-documentation_of: lib/polynomial/FormalPowerSeries.cpp
+documentation_of: lib/32-polynomial/FormalPowerSeries.cpp
 layout: document
 redirect_from:
-- /library/lib/polynomial/FormalPowerSeries.cpp
-- /library/lib/polynomial/FormalPowerSeries.cpp.html
+- /library/lib/32-polynomial/FormalPowerSeries.cpp
+- /library/lib/32-polynomial/FormalPowerSeries.cpp.html
 title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
 ---
 ### FormalPowerSeries

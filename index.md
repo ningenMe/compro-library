@@ -32,6 +32,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/15-heap/RadixHeapInt.cpp
       title: "RadixHeapInt - 32bit\u578B\u975E\u8CA0\u6574\u6570heap"
+  - name: lib/31-convolution
+    pages:
+    - icon: ':question:'
+      path: lib/31-convolution/NumberTheoreticalTransform.cpp
+      title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
+  - name: lib/32-polynomial
+    pages:
+    - icon: ':x:'
+      path: lib/32-polynomial/FormalPowerSeries.cpp
+      title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   - name: lib/50-string
     pages:
     - icon: ':heavy_check_mark:'
@@ -81,11 +91,6 @@ data:
       path: lib/binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
       title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
         \u6728\u5217"
-  - name: lib/convolution
-    pages:
-    - icon: ':question:'
-      path: lib/convolution/NumberTheoreticalTransform.cpp
-      title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
   - name: lib/data-structure/binary-indexed-tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -226,7 +231,7 @@ data:
     - icon: ':warning:'
       path: lib/math/GcdConvolution.cpp
       title: "GcdConvolution - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
     - icon: ':warning:'
@@ -309,11 +314,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/operator/operator/ValueMin.cpp
       title: lib/operator/operator/ValueMin.cpp
-  - name: lib/polynomial
-    pages:
-    - icon: ':x:'
-      path: lib/polynomial/FormalPowerSeries.cpp
-      title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   - name: non-verified
     pages:
     - icon: ':warning:'
@@ -412,6 +412,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/00-util/Zarts.test.cpp
       title: test/00-util/Zarts.test.cpp
+  - name: test/15-heap
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/15-heap/DoubleEndedPriorityQuere.test.cpp
+      title: test/15-heap/DoubleEndedPriorityQuere.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/15-heap/RadixHeap.test.cpp
+      title: test/15-heap/RadixHeap.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/15-heap/RadixHeapInt.test.cpp
+      title: test/15-heap/RadixHeapInt.test.cpp
   - name: test/50-string
     pages:
     - icon: ':heavy_check_mark:'
@@ -662,17 +673,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/UnionFindTree.test.cpp
       title: test/graph/UnionFindTree.test.cpp
-  - name: test/heap
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: test/heap/DoubleEndedPriorityQuere.test.cpp
-      title: test/heap/DoubleEndedPriorityQuere.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/heap/RadixHeap.test.cpp
-      title: test/heap/RadixHeap.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/heap/RadixHeapInt.test.cpp
-      title: test/heap/RadixHeapInt.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'
@@ -690,10 +690,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Garner.test.cpp
       title: test/math/Garner.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/math/Matrix-det.test.cpp
       title: test/math/Matrix-det.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/math/Matrix-pow.test.cpp
       title: test/math/Matrix-pow.test.cpp
     - icon: ':x:'

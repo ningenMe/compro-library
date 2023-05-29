@@ -51,3 +51,11 @@ redirect_from:
 - /library/lib/50-string/LevenshteinDistance.cpp.html
 title: "LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2"
 ---
+### LevenshteinDistance
+- 文字列Sを文字列Tに変換するときの編集距離を求める
+- 
+
+### メソッド
+- int LevenshteinDistance(string S, string T,char dummy='#')
+  - dummyはS,Tに含まれない文字列が良い。
+  - SのサイズをN,TのサイズをMとして $O(NM)$

@@ -43,8 +43,8 @@ data:
     _deprecated_at_docs: md/convolution/NumberTheoreticalTransform.md
     document_title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
     links: []
-  bundledCode: "#line 1 \"lib/convolution/NumberTheoreticalTransform.cpp\"\n/*\n *\
-    \ @title NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB\n * @docs md/convolution/NumberTheoreticalTransform.md\n\
+  bundledCode: "#line 1 \"lib/31-convolution/NumberTheoreticalTransform.cpp\"\n/*\n\
+    \ * @title NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB\n * @docs md/convolution/NumberTheoreticalTransform.md\n\
     \ */\ntemplate<long long mod> class NumberTheoreticalTransform {\n    inline static\
     \ constexpr int prime_1004535809 =1004535809;\n    inline static constexpr int\
     \ prime_998244353  =998244353;\n    inline static constexpr int prime_985661441\
@@ -223,9 +223,9 @@ data:
     };"
   dependsOn: []
   isVerificationFile: false
-  path: lib/convolution/NumberTheoreticalTransform.cpp
+  path: lib/31-convolution/NumberTheoreticalTransform.cpp
   requiredBy: []
-  timestamp: '2023-05-18 00:55:32+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
@@ -239,11 +239,11 @@ data:
   - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-log.test.cpp
   - test/polynomial/FormalPowerSeries-nth.test.cpp
-documentation_of: lib/convolution/NumberTheoreticalTransform.cpp
+documentation_of: lib/31-convolution/NumberTheoreticalTransform.cpp
 layout: document
 redirect_from:
-- /library/lib/convolution/NumberTheoreticalTransform.cpp
-- /library/lib/convolution/NumberTheoreticalTransform.cpp.html
+- /library/lib/31-convolution/NumberTheoreticalTransform.cpp
+- /library/lib/31-convolution/NumberTheoreticalTransform.cpp.html
 title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
 ---
 ### NumberTheoreticalTransform

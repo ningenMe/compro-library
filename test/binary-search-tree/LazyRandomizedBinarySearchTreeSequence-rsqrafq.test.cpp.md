@@ -120,7 +120,7 @@ data:
     \ {return fold_impl(this->root,l,r);}\n    inline void reverse(int l, int r) {reverse_impl(l,r);}\n\
     \    void print() {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i)\
     \ << \" \\n\"[i==m-1];}\n};\n#line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title\
-    \ ModInt\n * @docs md/00-util/ModInt.md\n */\ntemplate<long long mod> class ModInt\
+    \ ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt\
     \ {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr\
     \ ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr\
     \ ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n\
@@ -191,7 +191,7 @@ data:
   isVerificationFile: true
   path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:12:03+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp

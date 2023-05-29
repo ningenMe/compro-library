@@ -14,7 +14,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/graph/Tree.cpp
     title: "Tree - \u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/math/Matrix.cpp
     title: "Matrix - \u884C\u5217\u6F14\u7B97"
   - icon: ':heavy_check_mark:'
@@ -310,54 +310,53 @@ data:
     \ l,TypeNode r){return l*r;}\n    inline static constexpr TypeNode func_operate(TypeNode\
     \ l,TypeNode r){return r;}\n    inline static constexpr bool func_check(TypeNode\
     \ nodeVal,TypeNode var){return var > nodeVal;}\n};\n#line 1 \"lib/00-util/ModInt.cpp\"\
-    \n/*\n * @title ModInt\n * @docs md/00-util/ModInt.md\n */\ntemplate<long long\
-    \ mod> class ModInt {\npublic:\n    long long x;\n    constexpr ModInt():x(0)\
-    \ {}\n    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod)\
-    \ {}\n    constexpr ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod)\
-    \ x -= mod;return *this;}\n    constexpr ModInt &operator+=(const long long y)\
-    \ {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt\
-    \ &operator+=(const int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
-    \ *this;}\n    constexpr ModInt &operator-=(const ModInt &p) {if((x += mod - p.x)\
-    \ >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator-=(const long\
-    \ long y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}\n \
-    \   constexpr ModInt &operator-=(const int y) {ModInt p(y);if((x += mod - p.x)\
-    \ >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator*=(const ModInt\
-    \ &p) {x = (x * p.x % mod);return *this;}\n    constexpr ModInt &operator*=(const\
-    \ long long y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n    constexpr\
-    \ ModInt &operator*=(const int y) {ModInt p(y);x = (x * p.x % mod);return *this;}\n\
-    \    constexpr ModInt &operator^=(const ModInt &p) {x = (x ^ p.x) % mod;return\
-    \ *this;}\n    constexpr ModInt &operator^=(const long long y) {ModInt p(y);x\
-    \ = (x ^ p.x) % mod;return *this;}\n    constexpr ModInt &operator^=(const int\
-    \ y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    constexpr ModInt &operator/=(const\
-    \ ModInt &p) {*this *= p.inv();return *this;}\n    constexpr ModInt &operator/=(const\
-    \ long long y) {ModInt p(y);*this *= p.inv();return *this;}\n    constexpr ModInt\
-    \ &operator/=(const int y) {ModInt p(y);*this *= p.inv();return *this;}\n    constexpr\
-    \ ModInt operator=(const int y) {ModInt p(y);*this = p;return *this;}\n    constexpr\
-    \ ModInt operator=(const long long y) {ModInt p(y);*this = p;return *this;}\n\
-    \    constexpr ModInt operator-() const {return ModInt(-x); }\n    constexpr ModInt\
-    \ operator++() {x++;if(x>=mod) x-=mod;return *this;}\n    constexpr ModInt operator--()\
-    \ {x--;if(x<0) x+=mod;return *this;}\n    constexpr ModInt operator+(const ModInt\
-    \ &p) const { return ModInt(*this) += p; }\n    constexpr ModInt operator-(const\
-    \ ModInt &p) const { return ModInt(*this) -= p; }\n    constexpr ModInt operator*(const\
-    \ ModInt &p) const { return ModInt(*this) *= p; }\n    constexpr ModInt operator/(const\
-    \ ModInt &p) const { return ModInt(*this) /= p; }\n    constexpr ModInt operator^(const\
-    \ ModInt &p) const { return ModInt(*this) ^= p; }\n    constexpr bool operator==(const\
-    \ ModInt &p) const { return x == p.x; }\n    constexpr bool operator!=(const ModInt\
-    \ &p) const { return x != p.x; }\n    // ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b\
-    \ > 0) {t = a / b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}\n\
-    \    constexpr ModInt inv() const {int a=x,b=mod,u=1,v=0,t=0,tmp=0;while(b > 0)\
-    \ {t = a / b;a-=t*b;tmp=a;a=b;b=tmp;u-=t*v;tmp=u;u=v;v=tmp;} return ModInt(u);}\n\
-    \    constexpr ModInt pow(long long n) const {ModInt ret(1), mul(x);for(;n > 0;mul\
-    \ *= mul,n >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream &operator<<(ostream\
-    \ &os, const ModInt &p) {return os << p.x;}\n    friend istream &operator>>(istream\
-    \ &is, ModInt &a) {long long t;is >> t;a = ModInt<mod>(t);return (is);}\n};\n\
-    constexpr long long MOD_998244353 = 998244353;\nconstexpr long long MOD_1000000007\
-    \ = 1'000'000'000LL + 7; //'\n#line 18 \"test/graph/Tree-hld-path.test.cpp\"\n\
-    \nconstexpr long long MOD = 1'000'000'007LL;\nusing modint = ModInt<MOD>;\nusing\
-    \ matrix = Matrix<modint,2,2>;\n\nint main(void){\n\tint N; cin >> N;\n\tGraph<int>\
-    \ g(N);\n\tvector<pair<size_t,size_t>> vp(N-1);\n\tfor(int i = 0; i < N-1; ++i)\
-    \ {\n\t\tint u,v; cin >> u >> v;\n\t\tg.make_bidirectional_edge(u,v,1);\n\t\t\
-    vp[i]={u,v};\n\t}\n\tauto tree = Tree<TreeOperator<int>>::builder(g).root(0).child().subtree_size().parent().heavy_light_decomposition().build();\n\
+    \n/*\n * @title ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod>\
+    \ class ModInt {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n\
+    \    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n\
+    \    constexpr ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -=\
+    \ mod;return *this;}\n    constexpr ModInt &operator+=(const long long y) {ModInt\
+    \ p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator+=(const\
+    \ int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr\
+    \ ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return\
+    \ *this;}\n    constexpr ModInt &operator-=(const long long y) {ModInt p(y);if((x\
+    \ += mod - p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator-=(const\
+    \ int y) {ModInt p(y);if((x += mod - p.x) >= mod) x -= mod;return *this;}\n  \
+    \  constexpr ModInt &operator*=(const ModInt &p) {x = (x * p.x % mod);return *this;}\n\
+    \    constexpr ModInt &operator*=(const long long y) {ModInt p(y);x = (x * p.x\
+    \ % mod);return *this;}\n    constexpr ModInt &operator*=(const int y) {ModInt\
+    \ p(y);x = (x * p.x % mod);return *this;}\n    constexpr ModInt &operator^=(const\
+    \ ModInt &p) {x = (x ^ p.x) % mod;return *this;}\n    constexpr ModInt &operator^=(const\
+    \ long long y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n    constexpr\
+    \ ModInt &operator^=(const int y) {ModInt p(y);x = (x ^ p.x) % mod;return *this;}\n\
+    \    constexpr ModInt &operator/=(const ModInt &p) {*this *= p.inv();return *this;}\n\
+    \    constexpr ModInt &operator/=(const long long y) {ModInt p(y);*this *= p.inv();return\
+    \ *this;}\n    constexpr ModInt &operator/=(const int y) {ModInt p(y);*this *=\
+    \ p.inv();return *this;}\n    constexpr ModInt operator=(const int y) {ModInt\
+    \ p(y);*this = p;return *this;}\n    constexpr ModInt operator=(const long long\
+    \ y) {ModInt p(y);*this = p;return *this;}\n    constexpr ModInt operator-() const\
+    \ {return ModInt(-x); }\n    constexpr ModInt operator++() {x++;if(x>=mod) x-=mod;return\
+    \ *this;}\n    constexpr ModInt operator--() {x--;if(x<0) x+=mod;return *this;}\n\
+    \    constexpr ModInt operator+(const ModInt &p) const { return ModInt(*this)\
+    \ += p; }\n    constexpr ModInt operator-(const ModInt &p) const { return ModInt(*this)\
+    \ -= p; }\n    constexpr ModInt operator*(const ModInt &p) const { return ModInt(*this)\
+    \ *= p; }\n    constexpr ModInt operator/(const ModInt &p) const { return ModInt(*this)\
+    \ /= p; }\n    constexpr ModInt operator^(const ModInt &p) const { return ModInt(*this)\
+    \ ^= p; }\n    constexpr bool operator==(const ModInt &p) const { return x ==\
+    \ p.x; }\n    constexpr bool operator!=(const ModInt &p) const { return x != p.x;\
+    \ }\n    // ModInt inv() const {int a=x,b=mod,u=1,v=0,t;while(b > 0) {t = a /\
+    \ b;swap(a -= t * b, b);swap(u -= t * v, v);} return ModInt(u);}\n    constexpr\
+    \ ModInt inv() const {int a=x,b=mod,u=1,v=0,t=0,tmp=0;while(b > 0) {t = a / b;a-=t*b;tmp=a;a=b;b=tmp;u-=t*v;tmp=u;u=v;v=tmp;}\
+    \ return ModInt(u);}\n    constexpr ModInt pow(long long n) const {ModInt ret(1),\
+    \ mul(x);for(;n > 0;mul *= mul,n >>= 1) if(n & 1) ret *= mul;return ret;}\n  \
+    \  friend ostream &operator<<(ostream &os, const ModInt &p) {return os << p.x;}\n\
+    \    friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a\
+    \ = ModInt<mod>(t);return (is);}\n};\nconstexpr long long MOD_998244353 = 998244353;\n\
+    constexpr long long MOD_1000000007 = 1'000'000'000LL + 7; //'\n#line 18 \"test/graph/Tree-hld-path.test.cpp\"\
+    \n\nconstexpr long long MOD = 1'000'000'007LL;\nusing modint = ModInt<MOD>;\n\
+    using matrix = Matrix<modint,2,2>;\n\nint main(void){\n\tint N; cin >> N;\n\t\
+    Graph<int> g(N);\n\tvector<pair<size_t,size_t>> vp(N-1);\n\tfor(int i = 0; i <\
+    \ N-1; ++i) {\n\t\tint u,v; cin >> u >> v;\n\t\tg.make_bidirectional_edge(u,v,1);\n\
+    \t\tvp[i]={u,v};\n\t}\n\tauto tree = Tree<TreeOperator<int>>::builder(g).root(0).child().subtree_size().parent().heavy_light_decomposition().build();\n\
     \    SegmentTree<MonoidRangeMulPointUpdate<matrix>> seg(N);\n    int Q; cin >>\
     \ Q;\n    while(Q--) {\n        char c; cin >> c;\n        if(c == 'x'){\n   \
     \         int i; cin >> i;\n            modint a,b,c,d; cin >> a >> b >> c >>\
@@ -401,7 +400,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-hld-path.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:12:03+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-hld-path.test.cpp

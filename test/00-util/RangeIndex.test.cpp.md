@@ -20,7 +20,7 @@ data:
   bundledCode: "#line 1 \"test/00-util/RangeIndex.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1170\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <cassert>\n\
     #include <numeric>\nusing namespace std;\n#line 1 \"lib/00-util/RangeIndex.cpp\"\
-    \n/*\n * @title RangeIndex - \u533A\u9593index\n * @docs md/00-util/RangeIndex.md\n\
+    \n/*\n * @title RangeIndex - \u533A\u9593index\n * @docs md/util/RangeIndex.md\n\
     \ */\nclass RangeIndex{\n\tint length;\npublic:\n\tRangeIndex(const int N) {\n\
     \t\tfor (length = 1; length <= N; length *= 2);\n\t}\n\t//[l,r)\n\tvector<int>\
     \ range(int l,int r) {\n\t\tvector<int> res;\n\t\tfor(l += length, r += length;\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: true
   path: test/00-util/RangeIndex.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:03:52+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/00-util/RangeIndex.test.cpp

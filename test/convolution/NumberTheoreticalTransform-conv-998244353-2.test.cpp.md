@@ -8,7 +8,7 @@ data:
     path: lib/00-util/ModInt.cpp
     title: ModInt
   - icon: ':question:'
-    path: lib/convolution/NumberTheoreticalTransform.cpp
+    path: lib/31-convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -24,9 +24,9 @@ data:
     \n#define PROBLEM \"https://yukicoder.me/problems/no/1068\"\n\n#include <vector>\n\
     #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\
     \nusing namespace std;\n#line 1 \"lib/00-util/ModInt.cpp\"\n/*\n * @title ModInt\n\
-    \ * @docs md/00-util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\n\
-    public:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long\
-    \ long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const\
+    \ * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class ModInt {\npublic:\n\
+    \    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr ModInt(long long\
+    \ y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr ModInt &operator+=(const\
     \ ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt\
     \ &operator+=(const long long y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return\
     \ *this;}\n    constexpr ModInt &operator+=(const int y) {ModInt p(y);if((x +=\
@@ -66,7 +66,7 @@ data:
     \    friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a\
     \ = ModInt<mod>(t);return (is);}\n};\nconstexpr long long MOD_998244353 = 998244353;\n\
     constexpr long long MOD_1000000007 = 1'000'000'000LL + 7; //'\n#line 1 \"lib/00-util/FastIO.cpp\"\
-    \n/*\n * @title FastIO\n * @docs md/00-util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
+    \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
     \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
@@ -92,7 +92,7 @@ data:
     \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
-    #line 1 \"lib/convolution/NumberTheoreticalTransform.cpp\"\n/*\n * @title NumberTheoreticalTransform\
+    #line 1 \"lib/31-convolution/NumberTheoreticalTransform.cpp\"\n/*\n * @title NumberTheoreticalTransform\
     \ - \u6570\u8AD6\u5909\u63DB\n * @docs md/convolution/NumberTheoreticalTransform.md\n\
     \ */\ntemplate<long long mod> class NumberTheoreticalTransform {\n    inline static\
     \ constexpr int prime_1004535809 =1004535809;\n    inline static constexpr int\
@@ -194,7 +194,7 @@ data:
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/1068\"\n\n#include <vector>\n\
     #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\
     \nusing namespace std;\n#include \"../../lib/00-util/ModInt.cpp\"\n#include \"\
-    ../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/convolution/NumberTheoreticalTransform.cpp\"\
+    ../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/31-convolution/NumberTheoreticalTransform.cpp\"\
     \nusing modint = ModInt<MOD_998244353>;\n\nvector<vector<ModInt<MOD_998244353>>>\
     \ v;\nvector<ModInt<MOD_998244353>> rec(int l, int r) {\n    if(r-l==1) return\
     \ v[l];\n    if(r-l==2) return NumberTheoreticalTransform<MOD_998244353>::convolution(v[l],v[l+1]);\n\
@@ -208,11 +208,11 @@ data:
   dependsOn:
   - lib/00-util/ModInt.cpp
   - lib/00-util/FastIO.cpp
-  - lib/convolution/NumberTheoreticalTransform.cpp
+  - lib/31-convolution/NumberTheoreticalTransform.cpp
   isVerificationFile: true
   path: test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:12:03+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp

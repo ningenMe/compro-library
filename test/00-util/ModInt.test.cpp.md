@@ -17,13 +17,13 @@ data:
   bundledCode: "#line 1 \"test/00-util/ModInt.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/1067\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <map>\n\
     #include <queue>\nusing namespace std;\n#line 1 \"lib/00-util/ModInt.cpp\"\n/*\n\
-    \ * @title ModInt\n * @docs md/00-util/ModInt.md\n */\ntemplate<long long mod>\
-    \ class ModInt {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n\
-    \    constexpr ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n\
-    \    constexpr ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -=\
-    \ mod;return *this;}\n    constexpr ModInt &operator+=(const long long y) {ModInt\
-    \ p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator+=(const\
-    \ int y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr\
+    \ * @title ModInt\n * @docs md/util/ModInt.md\n */\ntemplate<long long mod> class\
+    \ ModInt {\npublic:\n    long long x;\n    constexpr ModInt():x(0) {}\n    constexpr\
+    \ ModInt(long long y) : x(y>=0?(y%mod): (mod - (-y)%mod)%mod) {}\n    constexpr\
+    \ ModInt &operator+=(const ModInt &p) {if((x += p.x) >= mod) x -= mod;return *this;}\n\
+    \    constexpr ModInt &operator+=(const long long y) {ModInt p(y);if((x += p.x)\
+    \ >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator+=(const int\
+    \ y) {ModInt p(y);if((x += p.x) >= mod) x -= mod;return *this;}\n    constexpr\
     \ ModInt &operator-=(const ModInt &p) {if((x += mod - p.x) >= mod) x -= mod;return\
     \ *this;}\n    constexpr ModInt &operator-=(const long long y) {ModInt p(y);if((x\
     \ += mod - p.x) >= mod) x -= mod;return *this;}\n    constexpr ModInt &operator-=(const\
@@ -103,7 +103,7 @@ data:
   isVerificationFile: true
   path: test/00-util/ModInt.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:12:03+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/00-util/ModInt.test.cpp

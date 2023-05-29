@@ -17,7 +17,7 @@ data:
   bundledCode: "#line 1 \"test/00-util/Zarts.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_4_A\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <cassert>\n\
     #include <map>\nusing namespace std;\n#line 1 \"lib/00-util/Zarts.cpp\"\n/*\n\
-    \ * @title Zarts - \u5EA7\u6A19\u5727\u7E2E\n * @docs md/00-util/Zarts.md\n */\n\
+    \ * @title Zarts - \u5EA7\u6A19\u5727\u7E2E\n * @docs md/util/Zarts.md\n */\n\
     template<class T> class Zarts{\n    vector<T> value;\n    map<T,int> key;\n  \
     \  size_t sz;\npublic:\n    vector<int> compressed;\n    Zarts(const vector<T>\
     \ & ar, int light_flag = 0, T pre=-1) : compressed(ar.size()) {\n        if(!light_flag)\
@@ -69,7 +69,7 @@ data:
   isVerificationFile: true
   path: test/00-util/Zarts.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:03:52+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/00-util/Zarts.test.cpp

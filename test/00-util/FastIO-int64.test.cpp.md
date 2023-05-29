@@ -16,7 +16,7 @@ data:
     - https://judge.yosupo.jp/problem/many_aplusb
   bundledCode: "#line 1 \"test/00-util/FastIO-int64.test.cpp\"\n#define PROBLEM \"\
     https://judge.yosupo.jp/problem/many_aplusb\"\n\n#include <iostream>\nusing namespace\
-    \ std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n * @docs md/00-util/FastIO.md\n\
+    \ std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n\
     \ */\nclass FastIO{\nprivate:\n    inline static constexpr int ch_0='0';\n   \
     \ inline static constexpr int ch_9='9';\n    inline static constexpr int ch_n='-';\n\
     \    inline static constexpr int ch_s=' ';\n    inline static constexpr int ch_l='\\\
@@ -56,7 +56,7 @@ data:
   isVerificationFile: true
   path: test/00-util/FastIO-int64.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 03:54:34+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/00-util/FastIO-int64.test.cpp

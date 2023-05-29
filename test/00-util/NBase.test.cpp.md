@@ -17,8 +17,8 @@ data:
   bundledCode: "#line 1 \"test/00-util/NBase.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/699\"\
     \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <cassert>\n\
     using namespace std;\n#line 1 \"lib/00-util/NBase.cpp\"\n/*\n * @title NBase -\
-    \ N\u9032\u6570\n * @docs md/00-util/NBase.md\n */\nclass NBase{\npublic:\n\t\
-    inline static vector<long long> translate(long long X,long long N) {\n\t\tassert(abs(N)>1);\n\
+    \ N\u9032\u6570\n * @docs md/util/NBase.md\n */\nclass NBase{\npublic:\n\tinline\
+    \ static vector<long long> translate(long long X,long long N) {\n\t\tassert(abs(N)>1);\n\
     \t\tvector<long long> res;\n\t\twhile(1) {\n\t\t\tlong long b = (X%abs(N)+abs(N))\
     \ % abs(N);\n\t\t\tres.push_back(b);\n\t\t\t(X -= b) /= N;\n\t\t\tif(X==0) break;\n\
     \t\t}\n\t\treturn res;\n\t}\n\t//Digit Sum\n\tinline static constexpr long long\
@@ -50,7 +50,7 @@ data:
   isVerificationFile: true
   path: test/00-util/NBase.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:03:52+09:00'
+  timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/00-util/NBase.test.cpp

@@ -53,3 +53,13 @@ redirect_from:
 - /library/lib/60-optimize/MaximumRectangle.cpp.html
 title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
 ---
+### MaximumRectangle
+- 最大長方形
+- ヒストグラムの最大長方形を求める
+
+### メソッド
+- long long MaximumRectangle(vector<T> ar)
+- 計算量はarのサイズを$N$として$O(N)$
+
+### 参考資料
+- [Flip and Rectangles](https://atcoder.jp/contests/arc081/tasks/arc081_d)
