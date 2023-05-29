@@ -5,13 +5,13 @@
 #include <cassert>
 #include <queue>
 using namespace std;
-#include "../../lib/operator/monoid-lazy/MonoidRangeMinRangeUpdate.cpp"
+#include "../../lib/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp"
 #include "../../lib/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
 
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);
-    LazyRandomizedBinarySearchTreeSequence<MonoidRangeMinRangeUpdate<long long,long long>> lbst;
+    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldMinRangeOperateUpdate<long long,long long>> lbst;
     int N,Q; cin >> N >> Q;
     for(int i=0;i<N;++i) {
         int a; cin >> a;
