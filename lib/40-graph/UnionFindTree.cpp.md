@@ -4,9 +4,6 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/00-util/RangeIndex.test.cpp
-    title: test/00-util/RangeIndex.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/StronglyConnectedComponents-1.test.cpp
     title: test/graph/StronglyConnectedComponents-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -15,9 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/UnionFindTree.test.cpp
     title: test/graph/UnionFindTree.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/util/RangeIndex.test.cpp
+    title: test/util/RangeIndex.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/graph/UnionFindTree.md
     document_title: "UnionFindTree - Union Find \u6728"
@@ -60,12 +60,12 @@ data:
   path: lib/40-graph/UnionFindTree.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:49:31+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/00-util/RangeIndex.test.cpp
   - test/graph/StronglyConnectedComponents-1.test.cpp
   - test/graph/Tree-rerooting.test.cpp
   - test/graph/UnionFindTree.test.cpp
+  - test/util/RangeIndex.test.cpp
 documentation_of: lib/40-graph/UnionFindTree.cpp
 layout: document
 redirect_from:

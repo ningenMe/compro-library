@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/40-graph/Tree.cpp
     title: "Tree - \u6728"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/40-graph/UnionFindTree.cpp
     title: "UnionFindTree - Union Find \u6728"
   _extendedRequiredBy: []

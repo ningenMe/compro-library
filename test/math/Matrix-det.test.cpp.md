@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: lib/00-util/ModInt.cpp
     title: ModInt
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/30-math/Matrix.cpp
     title: "Matrix - \u884C\u5217\u6F14\u7B97"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/matrix_det
@@ -115,7 +115,7 @@ data:
   path: test/math/Matrix-det.test.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:49:31+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/Matrix-det.test.cpp
 layout: document

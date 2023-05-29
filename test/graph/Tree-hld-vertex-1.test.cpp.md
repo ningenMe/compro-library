@@ -20,11 +20,10 @@ data:
     #include <iostream>\n#include <cassert>\n#include <map>\n#include <algorithm>\n\
     #include <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n\
     #include \"../../lib/40-graph/Graph.cpp\"\n#include \"../../lib/40-graph/Tree.cpp\"\
-    \n#include \"../../lib/data-structure/segment-tree/LazySegmentTree.cpp\"\n#include\
-    \ \"../../lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp\"\n\nint main(void){\n\
-    \tint N; cin >> N;\n\tGraph<int> g(N);\n\tfor(int i=0;i<N-1;++i) {\n\t\tint u,v;\
-    \ cin >> u >> v;\n\t\tu--,v--;\n\t\tg.make_bidirectional_edge(u,v,1);\n\t}\n\t\
-    auto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();\n\
+    \n#include \"../../lib/10-segment-tree/LazySegmentTree.cpp\"\n#include \"../../lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp\"\
+    \n\nint main(void){\n\tint N; cin >> N;\n\tGraph<int> g(N);\n\tfor(int i=0;i<N-1;++i)\
+    \ {\n\t\tint u,v; cin >> u >> v;\n\t\tu--,v--;\n\t\tg.make_bidirectional_edge(u,v,1);\n\
+    \t}\n\tauto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();\n\
     \tLazySegmentTree<MonoidRangeSumRangeAdd<long long,long long>> seg(N);\n\tint\
     \ Q; cin >> Q;\n\tlong long ans = 0;\n\twhile(Q--) {\n\t\tint a,b; cin >> a >>\
     \ b;\n\t\ta--,b--;\n\t\tauto vp = tree.vertex_set_on_path(a,b);\n\t\tfor(auto&\

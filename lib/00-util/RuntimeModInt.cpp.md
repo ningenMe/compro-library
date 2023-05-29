@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/00-util/RuntimeModInt.test.cpp
-    title: test/00-util/RuntimeModInt.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/util/RuntimeModInt.test.cpp
+    title: test/util/RuntimeModInt.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/util/RuntimeModInt.md
     document_title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
@@ -103,9 +103,9 @@ data:
   path: lib/00-util/RuntimeModInt.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:32:15+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/00-util/RuntimeModInt.test.cpp
+  - test/util/RuntimeModInt.test.cpp
 documentation_of: lib/00-util/RuntimeModInt.cpp
 layout: document
 redirect_from:

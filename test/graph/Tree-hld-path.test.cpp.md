@@ -20,7 +20,7 @@ data:
     #include <iostream>\n#include <cassert>\n#include <map>\n#include <algorithm>\n\
     #include <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n\
     #include \"../../lib/40-graph/Graph.cpp\"\n#include \"../../lib/30-math/Matrix.cpp\"\
-    \n#include \"../../lib/40-graph/Tree.cpp\"\n#include \"../../lib/data-structure/segment-tree/SegmentTree.cpp\"\
+    \n#include \"../../lib/40-graph/Tree.cpp\"\n#include \"../../lib/10-segment-tree/SegmentTree.cpp\"\
     \n#include \"../../lib/operator/monoid/MonoidRangeMulPointUpdate.cpp\"\n#include\
     \ \"../../lib/00-util/ModInt.cpp\"\n\nconstexpr long long MOD = 1'000'000'007LL;\n\
     using modint = ModInt<MOD>;\nusing matrix = Matrix<modint,2,2>;\n\nint main(void){\n\

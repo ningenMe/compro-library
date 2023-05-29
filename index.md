@@ -9,18 +9,47 @@ data:
     - icon: ':question:'
       path: lib/00-util/ModInt.cpp
       title: ModInt
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/00-util/NBase.cpp
       title: "NBase - N\u9032\u6570"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/00-util/RangeIndex.cpp
       title: "RangeIndex - \u533A\u9593index"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/00-util/RuntimeModInt.cpp
       title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/00-util/Zarts.cpp
       title: "Zarts - \u5EA7\u6A19\u5727\u7E2E"
+  - name: lib/10-segment-tree
+    pages:
+    - icon: ':warning:'
+      path: lib/10-segment-tree/DynamicSegmentTree.cpp
+      title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
+        \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+    - icon: ':warning:'
+      path: lib/10-segment-tree/LazySegmentTree.cpp
+      title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
+        \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+    - icon: ':warning:'
+      path: lib/10-segment-tree/SegmentTree.cpp
+      title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
+        \u30F3\u30C8\u6728"
+    - icon: ':x:'
+      path: lib/10-segment-tree/SegmentTreeBeats.cpp
+      title: SegmentTreeBeats
+  - name: lib/11-binary-indexed-tree
+    pages:
+    - icon: ':warning:'
+      path: lib/11-binary-indexed-tree/BinaryIndexedTree.cpp
+      title: BinaryIndexedTree - BIT
+    - icon: ':warning:'
+      path: lib/11-binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
+      title: "BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F32\u6B21\u5143\
+        BIT"
+    - icon: ':warning:'
+      path: lib/11-binary-indexed-tree/DynamicBinaryIndexedTree.cpp
+      title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
   - name: lib/12-binary-search-tree
     pages:
     - icon: ':warning:'
@@ -37,6 +66,46 @@ data:
       path: lib/12-binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
       title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
         \u6728\u5217"
+  - name: lib/13-static-range-query
+    pages:
+    - icon: ':x:'
+      path: lib/13-static-range-query/DisjointSparseTable.cpp
+      title: DisjointSparseTable
+    - icon: ':warning:'
+      path: lib/13-static-range-query/RangeInversionQuery.cpp
+      title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
+    - icon: ':warning:'
+      path: lib/13-static-range-query/RangeMexQuery.cpp
+      title: "RangeMexQuery - \u533A\u9593mex"
+    - icon: ':warning:'
+      path: lib/13-static-range-query/RangeModeQuery.cpp
+      title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
+    - icon: ':x:'
+      path: lib/13-static-range-query/SparseTable.cpp
+      title: SparseTable
+  - name: lib/14-data-structure
+    pages:
+    - icon: ':warning:'
+      path: lib/14-data-structure/BinaryTrie.cpp
+      title: BinaryTrie
+    - icon: ':heavy_check_mark:'
+      path: lib/14-data-structure/BitVector.cpp
+      title: BitVector
+    - icon: ':heavy_check_mark:'
+      path: lib/14-data-structure/PersistentQueue.cpp
+      title: "PersistentQueue - \u6C38\u7D9Aqueue"
+    - icon: ':heavy_check_mark:'
+      path: lib/14-data-structure/SlideMost.cpp
+      title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
+    - icon: ':heavy_check_mark:'
+      path: lib/14-data-structure/Swag.cpp
+      title: Swag
+    - icon: ':heavy_check_mark:'
+      path: lib/14-data-structure/WaveletMatrix.cpp
+      title: WaveletMatrix
+    - icon: ':heavy_check_mark:'
+      path: lib/14-data-structure/WordSizeTreeSet.cpp
+      title: "WordSizeTreeSet - 64\u5206\u6728"
   - name: lib/15-heap
     pages:
     - icon: ':heavy_check_mark:'
@@ -48,6 +117,21 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/15-heap/RadixHeapInt.cpp
       title: "RadixHeapInt - 32bit\u578B\u975E\u8CA0\u6574\u6570heap"
+  - name: lib/16-convex-hull-trick
+    pages:
+    - icon: ':warning:'
+      path: lib/16-convex-hull-trick/ConvexHullTrick.cpp
+      title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
+    - icon: ':warning:'
+      path: lib/16-convex-hull-trick/ConvexHullTrickMonotone.cpp
+      title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
+    - icon: ':warning:'
+      path: lib/16-convex-hull-trick/ConvexHullTrickSegmentTree.cpp
+      title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\
+        \u30F3\u30C8\u6728"
+    - icon: ':warning:'
+      path: lib/16-convex-hull-trick/LiChaoTree.cpp
+      title: LiChaoTree
   - name: lib/30-math
     pages:
     - icon: ':warning:'
@@ -57,13 +141,13 @@ data:
       path: lib/30-math/CombinationMod.cpp
       title: "CombinationMod - mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\u968E\
         \u4E57"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/30-math/Eratosthenes.cpp
       title: "Eratosthenes - \u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/30-math/FloorSum.cpp
       title: "FloorSum - \u76F4\u7DDA\u9818\u57DF\u306E\u683C\u5B50\u70B9\u6570"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/30-math/Garner.cpp
       title: "Garner - \u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
     - icon: ':x:'
@@ -72,7 +156,7 @@ data:
     - icon: ':warning:'
       path: lib/30-math/GcdConvolution.cpp
       title: "GcdConvolution - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/30-math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
     - icon: ':warning:'
@@ -92,7 +176,7 @@ data:
       title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
   - name: lib/32-polynomial
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: lib/32-polynomial/FormalPowerSeries.cpp
       title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   - name: lib/40-graph
@@ -124,7 +208,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/40-graph/Tree.cpp
       title: "Tree - \u6728"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/40-graph/UnionFindTree.cpp
       title: "UnionFindTree - Union Find \u6728"
   - name: lib/50-string
@@ -140,10 +224,10 @@ data:
       title: Zalgorithm
   - name: lib/60-optimize
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/60-optimize/LongestIncreasingSubsequence.cpp
       title: LongestIncreasingSubsequence - LIS
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/60-optimize/MaximumRectangle.cpp
       title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
   - name: lib/70-geometory
@@ -230,90 +314,6 @@ data:
     - icon: ':warning:'
       path: lib/99-operator/operator/ValueMin.cpp
       title: lib/99-operator/operator/ValueMin.cpp
-  - name: lib/data-structure/binary-indexed-tree
-    pages:
-    - icon: ':warning:'
-      path: lib/data-structure/binary-indexed-tree/BinaryIndexedTree.cpp
-      title: BinaryIndexedTree - BIT
-    - icon: ':warning:'
-      path: lib/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
-      title: "BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F32\u6B21\u5143\
-        BIT"
-    - icon: ':warning:'
-      path: lib/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree.cpp
-      title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
-  - name: lib/data-structure/convex-hull-trick
-    pages:
-    - icon: ':warning:'
-      path: lib/data-structure/convex-hull-trick/ConvexHullTrick.cpp
-      title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
-    - icon: ':warning:'
-      path: lib/data-structure/convex-hull-trick/ConvexHullTrickMonotone.cpp
-      title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
-    - icon: ':warning:'
-      path: lib/data-structure/convex-hull-trick/ConvexHullTrickSegmentTree.cpp
-      title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\
-        \u30F3\u30C8\u6728"
-    - icon: ':warning:'
-      path: lib/data-structure/convex-hull-trick/LiChaoTree.cpp
-      title: LiChaoTree
-  - name: lib/data-structure/data-structure
-    pages:
-    - icon: ':warning:'
-      path: lib/data-structure/data-structure/BinaryTrie.cpp
-      title: BinaryTrie
-    - icon: ':heavy_check_mark:'
-      path: lib/data-structure/data-structure/BitVector.cpp
-      title: BitVector
-    - icon: ':heavy_check_mark:'
-      path: lib/data-structure/data-structure/PersistentQueue.cpp
-      title: "PersistentQueue - \u6C38\u7D9Aqueue"
-    - icon: ':heavy_check_mark:'
-      path: lib/data-structure/data-structure/SlideMost.cpp
-      title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
-    - icon: ':heavy_check_mark:'
-      path: lib/data-structure/data-structure/Swag.cpp
-      title: Swag
-    - icon: ':heavy_check_mark:'
-      path: lib/data-structure/data-structure/WaveletMatrix.cpp
-      title: WaveletMatrix
-    - icon: ':heavy_check_mark:'
-      path: lib/data-structure/data-structure/WordSizeTreeSet.cpp
-      title: "WordSizeTreeSet - 64\u5206\u6728"
-  - name: lib/data-structure/range-query
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: lib/data-structure/range-query/DisjointSparseTable.cpp
-      title: DisjointSparseTable
-    - icon: ':warning:'
-      path: lib/data-structure/range-query/RangeInversionQuery.cpp
-      title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
-    - icon: ':warning:'
-      path: lib/data-structure/range-query/RangeMexQuery.cpp
-      title: "RangeMexQuery - \u533A\u9593mex"
-    - icon: ':warning:'
-      path: lib/data-structure/range-query/RangeModeQuery.cpp
-      title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
-    - icon: ':heavy_check_mark:'
-      path: lib/data-structure/range-query/SparseTable.cpp
-      title: SparseTable
-  - name: lib/data-structure/segment-tree
-    pages:
-    - icon: ':warning:'
-      path: lib/data-structure/segment-tree/DynamicSegmentTree.cpp
-      title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
-        \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':warning:'
-      path: lib/data-structure/segment-tree/LazySegmentTree.cpp
-      title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
-        \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':warning:'
-      path: lib/data-structure/segment-tree/SegmentTree.cpp
-      title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
-        \u30F3\u30C8\u6728"
-    - icon: ':heavy_check_mark:'
-      path: lib/data-structure/segment-tree/SegmentTreeBeats.cpp
-      title: SegmentTreeBeats
   - name: non-verified
     pages:
     - icon: ':warning:'
@@ -389,29 +389,20 @@ data:
       path: non-verified/old-tree.cpp
       title: "Tree - \u6728"
   verificationCategories:
-  - name: test/00-util
+  - name: test/binary-indexed-tree
     pages:
-    - icon: ':heavy_check_mark:'
-      path: test/00-util/FastIO-int128.test.cpp
-      title: test/00-util/FastIO-int128.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/00-util/FastIO-int64.test.cpp
-      title: test/00-util/FastIO-int64.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/00-util/ModInt.test.cpp
-      title: test/00-util/ModInt.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/00-util/NBase.test.cpp
-      title: test/00-util/NBase.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/00-util/RangeIndex.test.cpp
-      title: test/00-util/RangeIndex.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/00-util/RuntimeModInt.test.cpp
-      title: test/00-util/RuntimeModInt.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/00-util/Zarts.test.cpp
-      title: test/00-util/Zarts.test.cpp
+    - icon: ':x:'
+      path: test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+      title: test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+    - icon: ':x:'
+      path: test/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+      title: test/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+    - icon: ':x:'
+      path: test/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+      title: test/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+    - icon: ':x:'
+      path: test/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
+      title: test/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   - name: test/binary-search-tree
     pages:
     - icon: ':x:'
@@ -444,6 +435,29 @@ data:
     - icon: ':x:'
       path: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
       title: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+  - name: test/convex-hull-trick
+    pages:
+    - icon: ':x:'
+      path: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
+      title: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
+    - icon: ':x:'
+      path: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
+      title: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
+    - icon: ':x:'
+      path: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+      title: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+    - icon: ':x:'
+      path: test/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
+      title: test/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
+    - icon: ':x:'
+      path: test/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
+      title: test/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
+    - icon: ':x:'
+      path: test/convex-hull-trick/LiChaoTree-line.test.cpp
+      title: test/convex-hull-trick/LiChaoTree-line.test.cpp
+    - icon: ':x:'
+      path: test/convex-hull-trick/LiChaoTree-segment.test.cpp
+      title: test/convex-hull-trick/LiChaoTree-segment.test.cpp
   - name: test/convolution
     pages:
     - icon: ':heavy_check_mark:'
@@ -458,112 +472,29 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
       title: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
-  - name: test/data-structure/binary-indexed-tree
+  - name: test/data-structure
     pages:
     - icon: ':x:'
-      path: test/data-structure/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
-      title: test/data-structure/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
-      title: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
-      title: test/data-structure/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
-      title: test/data-structure/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
-  - name: test/data-structure/convex-hull-trick
-    pages:
-    - icon: ':x:'
-      path: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
-      title: test/data-structure/convex-hull-trick/ConvexHullTrick-max.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
-      title: test/data-structure/convex-hull-trick/ConvexHullTrick-min.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-      title: test/data-structure/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
-      title: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
-      title: test/data-structure/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
-      title: test/data-structure/convex-hull-trick/LiChaoTree-line.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/convex-hull-trick/LiChaoTree-segment.test.cpp
-      title: test/data-structure/convex-hull-trick/LiChaoTree-segment.test.cpp
-  - name: test/data-structure/data-structure
-    pages:
-    - icon: ':x:'
-      path: test/data-structure/data-structure/BinaryTrie-set-xor-min.test.cpp
-      title: test/data-structure/data-structure/BinaryTrie-set-xor-min.test.cpp
+      path: test/data-structure/BinaryTrie-set-xor-min.test.cpp
+      title: test/data-structure/BinaryTrie-set-xor-min.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/data-structure/PerisitentQueue.test.cpp
-      title: test/data-structure/data-structure/PerisitentQueue.test.cpp
+      path: test/data-structure/PerisitentQueue.test.cpp
+      title: test/data-structure/PerisitentQueue.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/data-structure/SlideMost.test.cpp
-      title: test/data-structure/data-structure/SlideMost.test.cpp
+      path: test/data-structure/SlideMost.test.cpp
+      title: test/data-structure/SlideMost.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/data-structure/Swag.test.cpp
-      title: test/data-structure/data-structure/Swag.test.cpp
+      path: test/data-structure/Swag.test.cpp
+      title: test/data-structure/Swag.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp
-      title: test/data-structure/data-structure/WaveletMatrix-quantile-1.test.cpp
+      path: test/data-structure/WaveletMatrix-quantile-1.test.cpp
+      title: test/data-structure/WaveletMatrix-quantile-1.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/data-structure/WaveletMatrix-quantile-2.test.cpp
-      title: test/data-structure/data-structure/WaveletMatrix-quantile-2.test.cpp
+      path: test/data-structure/WaveletMatrix-quantile-2.test.cpp
+      title: test/data-structure/WaveletMatrix-quantile-2.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/data-structure/WordSizeTreeSet.test.cpp
-      title: test/data-structure/data-structure/WordSizeTreeSet.test.cpp
-  - name: test/data-structure/range-query
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/range-query/DisjointSparseTable.test.cpp
-      title: test/data-structure/range-query/DisjointSparseTable.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/range-query/RangeInversionQuery.test.cpp
-      title: test/data-structure/range-query/RangeInversionQuery.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/range-query/SparseTable.test.cpp
-      title: test/data-structure/range-query/SparseTable.test.cpp
-  - name: test/data-structure/segment-tree
-    pages:
-    - icon: ':x:'
-      path: test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
-      title: test/data-structure/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
-      title: test/data-structure/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
-      title: test/data-structure/segment-tree/LazySegmentTree-rmqraq.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
-      title: test/data-structure/segment-tree/LazySegmentTree-rsqruq.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-      title: test/data-structure/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
-      title: test/data-structure/segment-tree/SegmentTree-rcq.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
-      title: test/data-structure/segment-tree/SegmentTree-rmq.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
-      title: test/data-structure/segment-tree/SegmentTree-rsq.test.cpp
-    - icon: ':x:'
-      path: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
-      title: test/data-structure/segment-tree/SegmentTree-suffix-binary-search.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/segment-tree/SegmentTreeBeats-1.test.cpp
-      title: test/data-structure/segment-tree/SegmentTreeBeats-1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/segment-tree/SegmentTreeBeats-2.test.cpp
-      title: test/data-structure/segment-tree/SegmentTreeBeats-2.test.cpp
+      path: test/data-structure/WordSizeTreeSet.test.cpp
+      title: test/data-structure/WordSizeTreeSet.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
@@ -667,19 +598,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/CombinationMod-factorial.test.cpp
       title: test/math/CombinationMod-factorial.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/Eratosthenes.test.cpp
       title: test/math/Eratosthenes.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/FloorSum.test.cpp
       title: test/math/FloorSum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/Garner.test.cpp
       title: test/math/Garner.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/Matrix-det.test.cpp
       title: test/math/Matrix-det.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/Matrix-pow.test.cpp
       title: test/math/Matrix-pow.test.cpp
     - icon: ':x:'
@@ -690,27 +621,27 @@ data:
       title: test/math/Prime-rho.test.cpp
   - name: test/optimize
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/optimize/LongestIncreasingSubsequence.test.cpp
       title: test/optimize/LongestIncreasingSubsequence.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/optimize/MaximumRectangle-1.test.cpp
       title: test/optimize/MaximumRectangle-1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/optimize/MaximumRectangle-2.test.cpp
       title: test/optimize/MaximumRectangle-2.test.cpp
   - name: test/polynomial
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/polynomial/FormalPowerSeries-exp.test.cpp
       title: test/polynomial/FormalPowerSeries-exp.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
       title: test/polynomial/FormalPowerSeries-interpolation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/polynomial/FormalPowerSeries-inv.test.cpp
       title: test/polynomial/FormalPowerSeries-inv.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/polynomial/FormalPowerSeries-log.test.cpp
       title: test/polynomial/FormalPowerSeries-log.test.cpp
     - icon: ':x:'
@@ -722,6 +653,52 @@ data:
     - icon: ':x:'
       path: test/polynomial/FormalPowerSeries-pow.test.cpp
       title: test/polynomial/FormalPowerSeries-pow.test.cpp
+  - name: test/segment-tree
+    pages:
+    - icon: ':x:'
+      path: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+      title: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+    - icon: ':x:'
+      path: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+      title: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+    - icon: ':x:'
+      path: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
+      title: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
+    - icon: ':x:'
+      path: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
+      title: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
+    - icon: ':x:'
+      path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+      title: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+    - icon: ':x:'
+      path: test/segment-tree/SegmentTree-rcq.test.cpp
+      title: test/segment-tree/SegmentTree-rcq.test.cpp
+    - icon: ':x:'
+      path: test/segment-tree/SegmentTree-rmq.test.cpp
+      title: test/segment-tree/SegmentTree-rmq.test.cpp
+    - icon: ':x:'
+      path: test/segment-tree/SegmentTree-rsq.test.cpp
+      title: test/segment-tree/SegmentTree-rsq.test.cpp
+    - icon: ':x:'
+      path: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+      title: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+    - icon: ':x:'
+      path: test/segment-tree/SegmentTreeBeats-1.test.cpp
+      title: test/segment-tree/SegmentTreeBeats-1.test.cpp
+    - icon: ':x:'
+      path: test/segment-tree/SegmentTreeBeats-2.test.cpp
+      title: test/segment-tree/SegmentTreeBeats-2.test.cpp
+  - name: test/static-range-query
+    pages:
+    - icon: ':x:'
+      path: test/static-range-query/DisjointSparseTable.test.cpp
+      title: test/static-range-query/DisjointSparseTable.test.cpp
+    - icon: ':x:'
+      path: test/static-range-query/RangeInversionQuery.test.cpp
+      title: test/static-range-query/RangeInversionQuery.test.cpp
+    - icon: ':x:'
+      path: test/static-range-query/SparseTable.test.cpp
+      title: test/static-range-query/SparseTable.test.cpp
   - name: test/string
     pages:
     - icon: ':x:'
@@ -736,5 +713,28 @@ data:
     - icon: ':x:'
       path: test/string/Zalgorithm.test.cpp
       title: test/string/Zalgorithm.test.cpp
+  - name: test/util
+    pages:
+    - icon: ':x:'
+      path: test/util/FastIO-int128.test.cpp
+      title: test/util/FastIO-int128.test.cpp
+    - icon: ':x:'
+      path: test/util/FastIO-int64.test.cpp
+      title: test/util/FastIO-int64.test.cpp
+    - icon: ':x:'
+      path: test/util/ModInt.test.cpp
+      title: test/util/ModInt.test.cpp
+    - icon: ':x:'
+      path: test/util/NBase.test.cpp
+      title: test/util/NBase.test.cpp
+    - icon: ':x:'
+      path: test/util/RangeIndex.test.cpp
+      title: test/util/RangeIndex.test.cpp
+    - icon: ':x:'
+      path: test/util/RuntimeModInt.test.cpp
+      title: test/util/RuntimeModInt.test.cpp
+    - icon: ':x:'
+      path: test/util/Zarts.test.cpp
+      title: test/util/Zarts.test.cpp
 layout: toppage
 ---

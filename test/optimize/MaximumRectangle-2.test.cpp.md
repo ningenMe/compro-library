@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/60-optimize/MaximumRectangle.cpp
     title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C
@@ -43,7 +43,7 @@ data:
   path: test/optimize/MaximumRectangle-2.test.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:23:09+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/optimize/MaximumRectangle-2.test.cpp
 layout: document

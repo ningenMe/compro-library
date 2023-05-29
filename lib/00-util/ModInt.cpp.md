@@ -4,9 +4,6 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/00-util/ModInt.test.cpp
-    title: test/00-util/ModInt.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -21,22 +18,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/CombinationMod-factorial.test.cpp
     title: test/math/CombinationMod-factorial.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Matrix-det.test.cpp
     title: test/math/Matrix-det.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Matrix-pow.test.cpp
     title: test/math/Matrix-pow.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-exp.test.cpp
     title: test/polynomial/FormalPowerSeries-exp.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
     title: test/polynomial/FormalPowerSeries-interpolation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-inv.test.cpp
     title: test/polynomial/FormalPowerSeries-inv.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-log.test.cpp
     title: test/polynomial/FormalPowerSeries-log.test.cpp
   - icon: ':x:'
@@ -48,6 +45,9 @@ data:
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-pow.test.cpp
     title: test/polynomial/FormalPowerSeries-pow.test.cpp
+  - icon: ':x:'
+    path: test/util/ModInt.test.cpp
+    title: test/util/ModInt.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
@@ -162,7 +162,7 @@ data:
   - test/math/Matrix-pow.test.cpp
   - test/math/CombinationMod-factorial.test.cpp
   - test/math/Matrix-det.test.cpp
-  - test/00-util/ModInt.test.cpp
+  - test/util/ModInt.test.cpp
 documentation_of: lib/00-util/ModInt.cpp
 layout: document
 redirect_from:

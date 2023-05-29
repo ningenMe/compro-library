@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/00-util/RangeIndex.test.cpp
-    title: test/00-util/RangeIndex.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/util/RangeIndex.test.cpp
+    title: test/util/RangeIndex.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/util/RangeIndex.md
     document_title: "RangeIndex - \u533A\u9593index"
@@ -37,9 +37,9 @@ data:
   path: lib/00-util/RangeIndex.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:32:15+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - test/00-util/RangeIndex.test.cpp
+  - test/util/RangeIndex.test.cpp
 documentation_of: lib/00-util/RangeIndex.cpp
 layout: document
 redirect_from:

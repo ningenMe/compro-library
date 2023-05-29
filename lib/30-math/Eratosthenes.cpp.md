@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Eratosthenes.test.cpp
     title: test/math/Eratosthenes.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/math/Eratosthenes.md
     document_title: "Eratosthenes - \u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\
@@ -30,7 +30,7 @@ data:
   path: lib/30-math/Eratosthenes.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:49:31+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/Eratosthenes.test.cpp
 documentation_of: lib/30-math/Eratosthenes.cpp

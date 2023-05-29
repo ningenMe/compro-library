@@ -20,12 +20,11 @@ data:
     \n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <map>\n\
     #include <algorithm>\n#include <stack>\n#include <numeric>\n#include <array>\n\
     using namespace std;\n#include \"../../lib/40-graph/Graph.cpp\"\n#include \"../../lib/40-graph/Tree.cpp\"\
-    \n#include \"../../lib/data-structure/segment-tree/SegmentTree.cpp\"\n#include\
-    \ \"../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp\"\n\nint main(void){\n\
-    \    cin.tie(0);ios::sync_with_stdio(false);\n\tint N,Q; cin >> N >> Q;\n\tGraph<int>\
-    \ g(N);\n\tvector<long long> a(N);\n\tfor(int i=0;i<N;++i) cin >> a[i];\n\tfor(int\
-    \ i=0;i<(N-1);++i){\n\t\tint u,v; cin >> u >> v;\n\t\tg.make_bidirectional_edge(u,v,1);\n\
-    \t}\n\tauto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();\n\
+    \n#include \"../../lib/10-segment-tree/SegmentTree.cpp\"\n#include \"../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp\"\
+    \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\tint N,Q; cin\
+    \ >> N >> Q;\n\tGraph<int> g(N);\n\tvector<long long> a(N);\n\tfor(int i=0;i<N;++i)\
+    \ cin >> a[i];\n\tfor(int i=0;i<(N-1);++i){\n\t\tint u,v; cin >> u >> v;\n\t\t\
+    g.make_bidirectional_edge(u,v,1);\n\t}\n\tauto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();\n\
     \tSegmentTree<MonoidRangeSumPointAdd<long long>> seg(N);\n\tfor(int i=0;i<N;++i)\
     \ seg.operate(tree.hld[i],a[i]);\n\twhile(Q--){\n\t\tint q,s,t; cin >> q >> s\
     \ >> t;\n\t\tif(q) {\n\t\t\tlong long ans=0;\n\t\t\tauto v = tree.vertex_set_on_path(s,t);\n\

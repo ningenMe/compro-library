@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Matrix-det.test.cpp
     title: test/math/Matrix-det.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Matrix-pow.test.cpp
     title: test/math/Matrix-pow.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/math/Matrix.md
     document_title: "Matrix - \u884C\u5217\u6F14\u7B97"
@@ -88,7 +88,7 @@ data:
   path: lib/30-math/Matrix.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:49:31+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/Matrix-pow.test.cpp
   - test/math/Matrix-det.test.cpp

@@ -20,8 +20,7 @@ data:
     #include <iostream>\n#include <cassert>\n#include <map>\n#include <algorithm>\n\
     #include <stack>\n#include <numeric>\n#include <array>\nusing namespace std;\n\
     #include \"../../lib/40-graph/Graph.cpp\"\n#include \"../../lib/40-graph/Tree.cpp\"\
-    \n#include \"../../lib/data-structure/segment-tree/LazySegmentTree.cpp\"\n#include\
-    \ \"../../lib/operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp\"\
+    \n#include \"../../lib/10-segment-tree/LazySegmentTree.cpp\"\n#include \"../../lib/operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp\"\
     \n\nint main(void){\n\tint N; cin >> N;\n\tGraph<long long> g(N);\n\tfor(int i=0;i<N-1;++i)\
     \ {\n\t\tint u,v,w; cin >> u >> v >> w;\n\t\tg.make_bidirectional_edge(u,v,w);\n\
     \t}\n\tauto tree = Tree<TreeOperator<long long>>::builder(g).root(0).parent().child().eulertour().build();\n\

@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: lib/31-convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':x:'
+  - icon: ':question:'
     path: lib/32-polynomial/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   _extendedRequiredBy: []

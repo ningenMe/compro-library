@@ -20,7 +20,7 @@ data:
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <map>\n\
     #include <algorithm>\n#include <stack>\n#include <numeric>\n#include <array>\n\
     using namespace std;\n#include \"../../lib/40-graph/Graph.cpp\"\n#include \"../../lib/40-graph/Tree.cpp\"\
-    \n#include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/data-structure/segment-tree/SegmentTree.cpp\"\
+    \n#include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/10-segment-tree/SegmentTree.cpp\"\
     \n#include \"../../lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp\"\n\
     \n//\u4E00\u6B21\u95A2\u6570\ntemplate<class T> struct MonoidRangeRevCompositePointUpdate\
     \ {\n    using TypeNode = T;\n    inline static constexpr TypeNode unit_node =\

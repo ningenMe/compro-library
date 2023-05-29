@@ -10,14 +10,14 @@ data:
   - icon: ':question:'
     path: lib/31-convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':x:'
+  - icon: ':question:'
     path: lib/32-polynomial/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/inv_of_formal_power_series
@@ -298,7 +298,7 @@ data:
   path: test/polynomial/FormalPowerSeries-inv.test.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:32:15+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/polynomial/FormalPowerSeries-inv.test.cpp
 layout: document

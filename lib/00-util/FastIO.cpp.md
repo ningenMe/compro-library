@@ -4,12 +4,6 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/00-util/FastIO-int128.test.cpp
-    title: test/00-util/FastIO-int128.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/00-util/FastIO-int64.test.cpp
-    title: test/00-util/FastIO-int64.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -22,30 +16,24 @@ data:
     path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/data-structure/WordSizeTreeSet.test.cpp
-    title: test/data-structure/data-structure/WordSizeTreeSet.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/range-query/DisjointSparseTable.test.cpp
-    title: test/data-structure/range-query/DisjointSparseTable.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/range-query/SparseTable.test.cpp
-    title: test/data-structure/range-query/SparseTable.test.cpp
+    path: test/data-structure/WordSizeTreeSet.test.cpp
+    title: test/data-structure/WordSizeTreeSet.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/UnionFindTree.test.cpp
     title: test/graph/UnionFindTree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/heap/DoubleEndedPriorityQuere.test.cpp
     title: test/heap/DoubleEndedPriorityQuere.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-exp.test.cpp
     title: test/polynomial/FormalPowerSeries-exp.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
     title: test/polynomial/FormalPowerSeries-interpolation.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-inv.test.cpp
     title: test/polynomial/FormalPowerSeries-inv.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-log.test.cpp
     title: test/polynomial/FormalPowerSeries-log.test.cpp
   - icon: ':x:'
@@ -57,6 +45,18 @@ data:
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-pow.test.cpp
     title: test/polynomial/FormalPowerSeries-pow.test.cpp
+  - icon: ':x:'
+    path: test/static-range-query/DisjointSparseTable.test.cpp
+    title: test/static-range-query/DisjointSparseTable.test.cpp
+  - icon: ':x:'
+    path: test/static-range-query/SparseTable.test.cpp
+    title: test/static-range-query/SparseTable.test.cpp
+  - icon: ':x:'
+    path: test/util/FastIO-int128.test.cpp
+    title: test/util/FastIO-int128.test.cpp
+  - icon: ':x:'
+    path: test/util/FastIO-int64.test.cpp
+    title: test/util/FastIO-int64.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
@@ -136,12 +136,12 @@ data:
   - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-log.test.cpp
   - test/polynomial/FormalPowerSeries-nth.test.cpp
-  - test/data-structure/data-structure/WordSizeTreeSet.test.cpp
-  - test/data-structure/range-query/SparseTable.test.cpp
-  - test/data-structure/range-query/DisjointSparseTable.test.cpp
-  - test/00-util/FastIO-int128.test.cpp
-  - test/00-util/FastIO-int64.test.cpp
+  - test/data-structure/WordSizeTreeSet.test.cpp
   - test/graph/UnionFindTree.test.cpp
+  - test/static-range-query/SparseTable.test.cpp
+  - test/static-range-query/DisjointSparseTable.test.cpp
+  - test/util/FastIO-int128.test.cpp
+  - test/util/FastIO-int64.test.cpp
 documentation_of: lib/00-util/FastIO.cpp
 layout: document
 redirect_from:

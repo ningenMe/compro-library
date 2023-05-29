@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/FloorSum.test.cpp
     title: test/math/FloorSum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/math/FloorSum.md
     document_title: "FloorSum - \u76F4\u7DDA\u9818\u57DF\u306E\u683C\u5B50\u70B9\u6570"
@@ -32,7 +32,7 @@ data:
   path: lib/30-math/FloorSum.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:49:31+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/FloorSum.test.cpp
 documentation_of: lib/30-math/FloorSum.cpp
