@@ -12,7 +12,7 @@ using namespace std;
 #include "../../lib/graph/Graph.cpp"
 #include "../../lib/graph/Tree.cpp"
 #include "../../lib/data-structure/segment-tree/LazySegmentTree.cpp"
-#include "../../lib/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.cpp"
+#include "../../lib/operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp"
 
 int main(void){
 	int N; cin >> N;
@@ -37,7 +37,7 @@ int main(void){
 		}
 		init[i] = {w*sgn,sgn};
 	}
-	LazySegmentTree<MonoidRangeEulerTourSumRangeAdd<pair<long long,long long>,long long>> seg(init);
+	LazySegmentTree<MonoidRangeFoldEulerTourSumRangeOperateAdd<pair<long long,long long>,long long>> seg(init);
 	int Q; cin >> Q;
 	while(Q--) {
 		int q; cin >> q;

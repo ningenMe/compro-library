@@ -2,7 +2,7 @@
  * @title MonoidRangeEulerTourSumRangeAdd - [区間オイラーツアー和, 区間加算]
  * @docs md/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.md
  */
-template<class T, class U> struct MonoidRangeEulerTourSumRangeAdd {
+template<class T, class U> struct MonoidRangeFoldEulerTourSumRangeOperateAdd {
 	using TypeNode = T;
 	using TypeLazy = U;
 	inline static constexpr TypeNode unit_node = {0,0};
