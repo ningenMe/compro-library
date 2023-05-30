@@ -113,10 +113,7 @@ data:
       title: "DoubleEndedPriorityQuere - \u4E21\u7AEFpriority queue"
     - icon: ':heavy_check_mark:'
       path: lib/15-heap/RadixHeap.cpp
-      title: "RadixHeap - 64bit\u578B\u975E\u8CA0\u6574\u6570heap"
-    - icon: ':heavy_check_mark:'
-      path: lib/15-heap/RadixHeapInt.cpp
-      title: "RadixHeapInt - 32bit\u578B\u975E\u8CA0\u6574\u6570heap"
+      title: "RadixHeap - \u975E\u8CA0\u6574\u6570heap"
   - name: lib/16-convex-hull-trick
     pages:
     - icon: ':heavy_check_mark:'
@@ -588,11 +585,11 @@ data:
       path: test/heap/DoubleEndedPriorityQuere.test.cpp
       title: test/heap/DoubleEndedPriorityQuere.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/heap/RadixHeap.test.cpp
-      title: test/heap/RadixHeap.test.cpp
+      path: test/heap/RadixHeap-32bit.test.cpp
+      title: test/heap/RadixHeap-32bit.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/heap/RadixHeapInt.test.cpp
-      title: test/heap/RadixHeapInt.test.cpp
+      path: test/heap/RadixHeap-64bit.test.cpp
+      title: test/heap/RadixHeap-64bit.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'

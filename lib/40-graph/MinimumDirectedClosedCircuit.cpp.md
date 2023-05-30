@@ -21,19 +21,19 @@ data:
     \u6570\u578B\u306E\u307F\n    static_assert(std::is_integral<T>::value, \"template\
     \ parameter T must be integral type\");\n    Graph<T>& graph;\n    vector<T> dist;\n\
     \    vector<int> parent;\n    size_t N;\n    T inf;\n    int last,root;\nprivate:\n\
-    \n    T solve_impl() {\n        T mini = inf;\n        last = -1;\n        RadixHeap<int>\
-    \ q(0);\n        q.push({0,root});\n        dist[root] = 0;\n        while (q.size())\
-    \ {\n            auto top =  q.pop();\n            size_t curr = top.second;\n\
-    \            if(top.first > dist[curr]) continue;\n            for(auto& edge:graph.edges[curr]){\n\
-    \                size_t next = edge.first;\n                T w  = edge.second;\n\
-    \                if(dist[next] > dist[curr]+w) {\n                    dist[next]\
-    \   = dist[curr] + w;\n                    parent[next] = curr;\n            \
-    \        q.push({dist[next],next});\n                }\n                //\u6839\
-    \u306B\u8FD4\u3063\u3066\u6765\u3066\u308B\u306A\u3089\u9589\u8DEF\u5019\u88DC\
-    \n                if(next == root && mini > dist[curr]+w) {\n                \
-    \    mini = dist[curr]+w;\n                    last = curr;\n                }\n\
-    \            }\n        }\n        return mini;\n    }\npublic:\n    MinimumDirectedClosedCircuit(Graph<T>&\
-    \ graph, T inf)\n            : graph(graph),N(graph.size()),dist(graph.size()),parent(graph.size()),inf(inf)\
+    \n    T solve_impl() {\n        T mini = inf;\n        last = -1;\n        RadixHeap<int,\
+    \ unsigned int> q(0);\n        q.push({0,root});\n        dist[root] = 0;\n  \
+    \      while (q.size()) {\n            auto top =  q.pop();\n            size_t\
+    \ curr = top.second;\n            if(top.first > dist[curr]) continue;\n     \
+    \       for(auto& edge:graph.edges[curr]){\n                size_t next = edge.first;\n\
+    \                T w  = edge.second;\n                if(dist[next] > dist[curr]+w)\
+    \ {\n                    dist[next]   = dist[curr] + w;\n                    parent[next]\
+    \ = curr;\n                    q.push({dist[next],next});\n                }\n\
+    \                //\u6839\u306B\u8FD4\u3063\u3066\u6765\u3066\u308B\u306A\u3089\
+    \u9589\u8DEF\u5019\u88DC\n                if(next == root && mini > dist[curr]+w)\
+    \ {\n                    mini = dist[curr]+w;\n                    last = curr;\n\
+    \                }\n            }\n        }\n        return mini;\n    }\npublic:\n\
+    \    MinimumDirectedClosedCircuit(Graph<T>& graph, T inf)\n            : graph(graph),N(graph.size()),dist(graph.size()),parent(graph.size()),inf(inf)\
     \ {\n    }\n    //root\u3092\u542B\u3080\u6700\u5C0F\u9589\u8DEF\u306E\u96C6\u5408\
     \u3092\u8FD4\u3059 O(NlogN) \u9589\u8DEF\u304C\u306A\u3044\u3068\u304D\u306F\u7A7A\
     \u96C6\u5408\n    inline T solve(size_t rt){\n        root = rt;\n        //\u521D\
@@ -50,19 +50,19 @@ data:
     \u6570\u578B\u306E\u307F\n    static_assert(std::is_integral<T>::value, \"template\
     \ parameter T must be integral type\");\n    Graph<T>& graph;\n    vector<T> dist;\n\
     \    vector<int> parent;\n    size_t N;\n    T inf;\n    int last,root;\nprivate:\n\
-    \n    T solve_impl() {\n        T mini = inf;\n        last = -1;\n        RadixHeap<int>\
-    \ q(0);\n        q.push({0,root});\n        dist[root] = 0;\n        while (q.size())\
-    \ {\n            auto top =  q.pop();\n            size_t curr = top.second;\n\
-    \            if(top.first > dist[curr]) continue;\n            for(auto& edge:graph.edges[curr]){\n\
-    \                size_t next = edge.first;\n                T w  = edge.second;\n\
-    \                if(dist[next] > dist[curr]+w) {\n                    dist[next]\
-    \   = dist[curr] + w;\n                    parent[next] = curr;\n            \
-    \        q.push({dist[next],next});\n                }\n                //\u6839\
-    \u306B\u8FD4\u3063\u3066\u6765\u3066\u308B\u306A\u3089\u9589\u8DEF\u5019\u88DC\
-    \n                if(next == root && mini > dist[curr]+w) {\n                \
-    \    mini = dist[curr]+w;\n                    last = curr;\n                }\n\
-    \            }\n        }\n        return mini;\n    }\npublic:\n    MinimumDirectedClosedCircuit(Graph<T>&\
-    \ graph, T inf)\n            : graph(graph),N(graph.size()),dist(graph.size()),parent(graph.size()),inf(inf)\
+    \n    T solve_impl() {\n        T mini = inf;\n        last = -1;\n        RadixHeap<int,\
+    \ unsigned int> q(0);\n        q.push({0,root});\n        dist[root] = 0;\n  \
+    \      while (q.size()) {\n            auto top =  q.pop();\n            size_t\
+    \ curr = top.second;\n            if(top.first > dist[curr]) continue;\n     \
+    \       for(auto& edge:graph.edges[curr]){\n                size_t next = edge.first;\n\
+    \                T w  = edge.second;\n                if(dist[next] > dist[curr]+w)\
+    \ {\n                    dist[next]   = dist[curr] + w;\n                    parent[next]\
+    \ = curr;\n                    q.push({dist[next],next});\n                }\n\
+    \                //\u6839\u306B\u8FD4\u3063\u3066\u6765\u3066\u308B\u306A\u3089\
+    \u9589\u8DEF\u5019\u88DC\n                if(next == root && mini > dist[curr]+w)\
+    \ {\n                    mini = dist[curr]+w;\n                    last = curr;\n\
+    \                }\n            }\n        }\n        return mini;\n    }\npublic:\n\
+    \    MinimumDirectedClosedCircuit(Graph<T>& graph, T inf)\n            : graph(graph),N(graph.size()),dist(graph.size()),parent(graph.size()),inf(inf)\
     \ {\n    }\n    //root\u3092\u542B\u3080\u6700\u5C0F\u9589\u8DEF\u306E\u96C6\u5408\
     \u3092\u8FD4\u3059 O(NlogN) \u9589\u8DEF\u304C\u306A\u3044\u3068\u304D\u306F\u7A7A\
     \u96C6\u5408\n    inline T solve(size_t rt){\n        root = rt;\n        //\u521D\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: false
   path: lib/40-graph/MinimumDirectedClosedCircuit.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:49:31+09:00'
+  timestamp: '2023-05-31 03:07:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/MinimumDirectedClosedCircuit.test.cpp

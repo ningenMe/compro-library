@@ -28,6 +28,9 @@ data:
     path: test/heap/DoubleEndedPriorityQuere.test.cpp
     title: test/heap/DoubleEndedPriorityQuere.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/heap/RadixHeap-64bit.test.cpp
+    title: test/heap/RadixHeap-64bit.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-exp.test.cpp
     title: test/polynomial/FormalPowerSeries-exp.test.cpp
   - icon: ':heavy_check_mark:'
@@ -127,6 +130,7 @@ data:
   timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/heap/RadixHeap-64bit.test.cpp
   - test/heap/DoubleEndedPriorityQuere.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp

@@ -21,11 +21,11 @@ data:
     \u6570\u578B\u306E\u307F\n    static_assert(std::is_integral<T>::value, \"template\
     \ parameter T must be integral type\");\n    Graph<T> graph;\n    vector<T> dist;\n\
     \    vector<int> parent,label;\n    size_t N;\n    T inf;\n    int last_l,last_r,root;\n\
-    private:\n    void solve_impl() {\n        RadixHeap<int> q(0);\n        q.push({0,root});\n\
-    \        dist[root] = 0;\n        while (q.size()) {\n            auto top = \
-    \ q.pop();\n            size_t curr = top.second;\n            if(top.first >\
-    \ dist[curr]) continue;\n            for(auto& edge:graph.edges[curr]){\n    \
-    \            size_t next = edge.first;\n                T w  = edge.second;\n\
+    private:\n    void solve_impl() {\n        RadixHeap<int, unsigned int> q(0);\n\
+    \        q.push({0,root});\n        dist[root] = 0;\n        while (q.size())\
+    \ {\n            auto top =  q.pop();\n            size_t curr = top.second;\n\
+    \            if(top.first > dist[curr]) continue;\n            for(auto& edge:graph.edges[curr]){\n\
+    \                size_t next = edge.first;\n                T w  = edge.second;\n\
     \                if(parent[curr] == next) continue;\n                if(dist[next]\
     \ > dist[curr] + w) {\n                    dist[next]   = dist[curr] + w;\n  \
     \                  parent[next] = curr;\n                    label[next]  = (curr==root?next:label[curr]);\n\
@@ -58,11 +58,11 @@ data:
     \u6570\u578B\u306E\u307F\n    static_assert(std::is_integral<T>::value, \"template\
     \ parameter T must be integral type\");\n    Graph<T> graph;\n    vector<T> dist;\n\
     \    vector<int> parent,label;\n    size_t N;\n    T inf;\n    int last_l,last_r,root;\n\
-    private:\n    void solve_impl() {\n        RadixHeap<int> q(0);\n        q.push({0,root});\n\
-    \        dist[root] = 0;\n        while (q.size()) {\n            auto top = \
-    \ q.pop();\n            size_t curr = top.second;\n            if(top.first >\
-    \ dist[curr]) continue;\n            for(auto& edge:graph.edges[curr]){\n    \
-    \            size_t next = edge.first;\n                T w  = edge.second;\n\
+    private:\n    void solve_impl() {\n        RadixHeap<int, unsigned int> q(0);\n\
+    \        q.push({0,root});\n        dist[root] = 0;\n        while (q.size())\
+    \ {\n            auto top =  q.pop();\n            size_t curr = top.second;\n\
+    \            if(top.first > dist[curr]) continue;\n            for(auto& edge:graph.edges[curr]){\n\
+    \                size_t next = edge.first;\n                T w  = edge.second;\n\
     \                if(parent[curr] == next) continue;\n                if(dist[next]\
     \ > dist[curr] + w) {\n                    dist[next]   = dist[curr] + w;\n  \
     \                  parent[next] = curr;\n                    label[next]  = (curr==root?next:label[curr]);\n\
@@ -93,7 +93,7 @@ data:
   isVerificationFile: false
   path: lib/40-graph/MinimumUndirectedClosedCircuit.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:49:31+09:00'
+  timestamp: '2023-05-31 03:07:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/MinimumUndirectedClosedCircuit.test.cpp
