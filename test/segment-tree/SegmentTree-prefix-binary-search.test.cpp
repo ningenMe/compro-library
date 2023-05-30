@@ -3,9 +3,12 @@
 #include <vector>
 #include <iostream>
 #include <cassert>
+#include <array>
+#include <algorithm>
+
 using namespace std;
 #include "../../lib/10-segment-tree/SegmentTree.cpp"
-#include "../../lib/30-math/Gcd.cpp"
+#include "../../lib/30-math/Prime.cpp"
 #include "../../lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp"
 
 // solution by binary search in prefix range on segment tree 
