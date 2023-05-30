@@ -13,7 +13,7 @@ using namespace std;
 #include "../../lib/40-graph/Tree.cpp"
 #include "../../lib/00-util/ModInt.cpp"
 #include "../../lib/10-segment-tree/SegmentTree.cpp"
-#include "../../lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp"
+#include "../../lib/99-operator/monoid/MonoidRangeCompositePointUpdate.cpp"
 
 //一次関数
 template<class T> struct MonoidRangeRevCompositePointUpdate {

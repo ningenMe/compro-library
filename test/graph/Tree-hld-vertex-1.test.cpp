@@ -12,7 +12,7 @@ using namespace std;
 #include "../../lib/40-graph/Graph.cpp"
 #include "../../lib/40-graph/Tree.cpp"
 #include "../../lib/10-segment-tree/LazySegmentTree.cpp"
-#include "../../lib/operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp"
+#include "../../lib/99-operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp"
 
 int main(void){
 	int N; cin >> N;

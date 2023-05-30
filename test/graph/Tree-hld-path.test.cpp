@@ -13,7 +13,7 @@ using namespace std;
 #include "../../lib/30-math/Matrix.cpp"
 #include "../../lib/40-graph/Tree.cpp"
 #include "../../lib/10-segment-tree/SegmentTree.cpp"
-#include "../../lib/operator/monoid/MonoidRangeMulPointUpdate.cpp"
+#include "../../lib/99-operator/monoid/MonoidRangeMulPointUpdate.cpp"
 #include "../../lib/00-util/ModInt.cpp"
 
 constexpr long long MOD = 1'000'000'007LL;

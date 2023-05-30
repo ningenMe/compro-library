@@ -12,7 +12,7 @@ using namespace std;
 #include "../../lib/40-graph/Graph.cpp"
 #include "../../lib/40-graph/Tree.cpp"
 #include "../../lib/10-segment-tree/SegmentTree.cpp"
-#include "../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp"
+#include "../../lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);
