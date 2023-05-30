@@ -3,6 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-eulertour.test.cpp
+    title: test/graph/Tree-eulertour.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-1.test.cpp
+    title: test/graph/Tree-hld-vertex-1.test.cpp
   - icon: ':x:'
     path: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
     title: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
@@ -11,7 +17,7 @@ data:
     title: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/segment-tree/LazySegmentTree.md
     document_title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\
@@ -163,10 +169,12 @@ data:
   path: lib/10-segment-tree/LazySegmentTree.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/segment-tree/LazySegmentTree-rsqruq.test.cpp
   - test/segment-tree/LazySegmentTree-rmqraq.test.cpp
+  - test/graph/Tree-eulertour.test.cpp
+  - test/graph/Tree-hld-vertex-1.test.cpp
 documentation_of: lib/10-segment-tree/LazySegmentTree.cpp
 layout: document
 redirect_from:

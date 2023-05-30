@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp
     title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/16-convex-hull-trick/ConvexHullTrick.cpp
     title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/99-operator/operator/ValueMax.cpp
     title: lib/99-operator/operator/ValueMax.cpp
   _extendedRequiredBy: []

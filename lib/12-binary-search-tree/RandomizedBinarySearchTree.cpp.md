@@ -15,15 +15,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
     title: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
     title: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
     title: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/binary-search-tree/RandomizedBinarySearchTree.md
     document_title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
@@ -166,7 +166,7 @@ data:
   path: lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
   - test/convex-hull-trick/ConvexHullTrick-min.test.cpp

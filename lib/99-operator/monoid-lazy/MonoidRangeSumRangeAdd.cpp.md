@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-1.test.cpp
+    title: test/graph/Tree-hld-vertex-1.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -43,6 +46,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+  - test/graph/Tree-hld-vertex-1.test.cpp
 documentation_of: lib/99-operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
 layout: document
 redirect_from:

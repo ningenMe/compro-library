@@ -13,6 +13,21 @@ data:
     path: test/graph/Tree-diameter.test.cpp
     title: test/graph/Tree-diameter.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-eulertour.test.cpp
+    title: test/graph/Tree-eulertour.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-path.test.cpp
+    title: test/graph/Tree-hld-path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-1.test.cpp
+    title: test/graph/Tree-hld-vertex-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-2.test.cpp
+    title: test/graph/Tree-hld-vertex-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-3.test.cpp
+    title: test/graph/Tree-hld-vertex-3.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/Tree-lca-idx.test.cpp
     title: test/graph/Tree-lca-idx.test.cpp
   - icon: ':heavy_check_mark:'
@@ -72,12 +87,17 @@ data:
   verifiedWith:
   - test/graph/Tree-diameter.test.cpp
   - test/graph/Tree-lca-idx.test.cpp
+  - test/graph/Tree-eulertour.test.cpp
   - test/graph/Tree-rerooting.test.cpp
+  - test/graph/Tree-hld-path.test.cpp
+  - test/graph/Tree-hld-vertex-3.test.cpp
+  - test/graph/Tree-hld-vertex-2.test.cpp
   - test/graph/MinimumUndirectedClosedCircuit.test.cpp
   - test/graph/MinimumDirectedClosedCircuit.test.cpp
   - test/graph/Tree-lca.test.cpp
   - test/graph/Tree-size.test.cpp
   - test/graph/Tree-parent.test.cpp
+  - test/graph/Tree-hld-vertex-1.test.cpp
 documentation_of: lib/40-graph/Graph.cpp
 layout: document
 redirect_from:

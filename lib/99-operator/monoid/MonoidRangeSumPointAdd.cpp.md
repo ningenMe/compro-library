@@ -9,9 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
     title: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/data-structure/BinaryTrie-set-xor-min.test.cpp
     title: test/data-structure/BinaryTrie-set-xor-min.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-2.test.cpp
+    title: test/graph/Tree-hld-vertex-2.test.cpp
   - icon: ':x:'
     path: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
     title: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
@@ -57,6 +60,7 @@ data:
   - test/data-structure/BinaryTrie-set-xor-min.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+  - test/graph/Tree-hld-vertex-2.test.cpp
 documentation_of: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
 layout: document
 redirect_from:

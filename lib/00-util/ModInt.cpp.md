@@ -22,6 +22,12 @@ data:
     path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-path.test.cpp
+    title: test/graph/Tree-hld-path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-3.test.cpp
+    title: test/graph/Tree-hld-vertex-3.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/CombinationMod-factorial.test.cpp
     title: test/math/CombinationMod-factorial.test.cpp
   - icon: ':heavy_check_mark:'
@@ -174,6 +180,8 @@ data:
   - test/math/Matrix-det.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+  - test/graph/Tree-hld-path.test.cpp
+  - test/graph/Tree-hld-vertex-3.test.cpp
   - test/util/ModInt.test.cpp
 documentation_of: lib/00-util/ModInt.cpp
 layout: document

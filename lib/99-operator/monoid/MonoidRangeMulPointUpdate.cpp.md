@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-path.test.cpp
+    title: test/graph/Tree-hld-path.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/operator/monoid/MonoidRangeMulPointUpdate.md
     document_title: "MonoidRangeMulPointUpdate - [\u533A\u9593\u7A4D, \u4E00\u70B9\
@@ -31,8 +34,9 @@ data:
   path: lib/99-operator/monoid/MonoidRangeMulPointUpdate.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/graph/Tree-hld-path.test.cpp
 documentation_of: lib/99-operator/monoid/MonoidRangeMulPointUpdate.cpp
 layout: document
 redirect_from:

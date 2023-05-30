@@ -4,11 +4,11 @@ data:
   - icon: ':question:'
     path: lib/00-util/ModInt.cpp
     title: ModInt
-  - icon: ':x:'
+  - icon: ':question:'
     path: lib/10-segment-tree/SegmentTree.cpp
     title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
-  - icon: ':x:'
+  - icon: ':question:'
     path: lib/99-operator/monoid/MonoidRangeCompositePointUpdate.cpp
     title: "MonoidRangeCompositePointUpdate - [\u533A\u9593\u4E00\u6B21\u95A2\u6570\
       , \u70B9\u66F4\u65B0]"

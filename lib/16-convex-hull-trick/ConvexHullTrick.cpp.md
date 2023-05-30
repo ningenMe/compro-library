@@ -6,15 +6,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
     title: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
     title: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
     title: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/convex-hull-trick/ConvexHullTrick.md
     document_title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
@@ -107,7 +107,7 @@ data:
   path: lib/16-convex-hull-trick/ConvexHullTrick.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
   - test/convex-hull-trick/ConvexHullTrick-min.test.cpp

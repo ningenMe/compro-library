@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-eulertour.test.cpp
+    title: test/graph/Tree-eulertour.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.md
     document_title: "MonoidRangeEulerTourSumRangeAdd - fold:\u533A\u9593\u30AA\u30A4\
@@ -43,8 +46,9 @@ data:
   path: lib/99-operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/graph/Tree-eulertour.test.cpp
 documentation_of: lib/99-operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp
 layout: document
 redirect_from:

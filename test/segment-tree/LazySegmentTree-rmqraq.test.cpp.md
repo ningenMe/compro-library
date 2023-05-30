@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: lib/10-segment-tree/LazySegmentTree.cpp
     title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
       \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"

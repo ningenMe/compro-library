@@ -27,11 +27,11 @@ data:
       path: lib/10-segment-tree/DynamicSegmentTree.cpp
       title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
         \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':x:'
+    - icon: ':question:'
       path: lib/10-segment-tree/LazySegmentTree.cpp
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':x:'
+    - icon: ':question:'
       path: lib/10-segment-tree/SegmentTree.cpp
       title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
         \u30F3\u30C8\u6728"
@@ -59,7 +59,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/12-binary-search-tree/LazySplayTreeSequence.cpp
       title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp
       title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
     - icon: ':heavy_check_mark:'
@@ -85,7 +85,7 @@ data:
       title: SparseTable
   - name: lib/14-data-structure
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/14-data-structure/BinaryTrie.cpp
       title: BinaryTrie
     - icon: ':heavy_check_mark:'
@@ -119,17 +119,17 @@ data:
       title: "RadixHeapInt - 32bit\u578B\u975E\u8CA0\u6574\u6570heap"
   - name: lib/16-convex-hull-trick
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/16-convex-hull-trick/ConvexHullTrick.cpp
       title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/16-convex-hull-trick/ConvexHullTrickMonotone.cpp
       title: "ConvexHullTrickMonotone - \u5358\u8ABFCHT"
     - icon: ':warning:'
       path: lib/16-convex-hull-trick/ConvexHullTrickSegmentTree.cpp
       title: "ConvexHullTrickSegmentTree - \u975E\u5358\u8ABFCHT\u30BB\u30B0\u30E1\
         \u30F3\u30C8\u6728"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/16-convex-hull-trick/LiChaoTree.cpp
       title: LiChaoTree
   - name: lib/30-math
@@ -254,7 +254,7 @@ data:
       title: AbelPrefixSumPointAdd
   - name: lib/99-operator/monoid
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: lib/99-operator/monoid/MonoidRangeCompositePointUpdate.cpp
       title: "MonoidRangeCompositePointUpdate - [\u533A\u9593\u4E00\u6B21\u95A2\u6570\
         , \u70B9\u66F4\u65B0]"
@@ -264,7 +264,7 @@ data:
     - icon: ':question:'
       path: lib/99-operator/monoid/MonoidRangeMinPointUpdate.cpp
       title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0]"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid/MonoidRangeMulPointUpdate.cpp
       title: "MonoidRangeMulPointUpdate - [\u533A\u9593\u7A4D, \u4E00\u70B9\u66F4\u65B0\
         ]"
@@ -274,7 +274,7 @@ data:
         ]"
   - name: lib/99-operator/monoid-lazy
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp
       title: "MonoidRangeEulerTourSumRangeAdd - fold:\u533A\u9593\u30AA\u30A4\u30E9\
         \u30FC\u30C4\u30A2\u30FC\u548C, operate:\u533A\u9593\u52A0\u7B97"
@@ -308,10 +308,10 @@ data:
         ]"
   - name: lib/99-operator/operator
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/99-operator/operator/ValueMax.cpp
       title: lib/99-operator/operator/ValueMax.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/99-operator/operator/ValueMin.cpp
       title: lib/99-operator/operator/ValueMin.cpp
   - name: non-verified
@@ -440,22 +440,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
       title: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
       title: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
       title: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
       title: test/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
       title: test/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/convex-hull-trick/LiChaoTree-line.test.cpp
       title: test/convex-hull-trick/LiChaoTree-line.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/convex-hull-trick/LiChaoTree-segment.test.cpp
       title: test/convex-hull-trick/LiChaoTree-segment.test.cpp
   - name: test/convolution
@@ -474,7 +474,7 @@ data:
       title: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   - name: test/data-structure
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/data-structure/BinaryTrie-set-xor-min.test.cpp
       title: test/data-structure/BinaryTrie-set-xor-min.test.cpp
     - icon: ':heavy_check_mark:'
@@ -546,19 +546,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/Tree-diameter.test.cpp
       title: test/graph/Tree-diameter.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-eulertour.test.cpp
       title: test/graph/Tree-eulertour.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-hld-path.test.cpp
       title: test/graph/Tree-hld-path.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-hld-vertex-1.test.cpp
       title: test/graph/Tree-hld-vertex-1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-hld-vertex-2.test.cpp
       title: test/graph/Tree-hld-vertex-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-hld-vertex-3.test.cpp
       title: test/graph/Tree-hld-vertex-3.test.cpp
     - icon: ':heavy_check_mark:'

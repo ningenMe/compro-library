@@ -3,24 +3,24 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
     title: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
     title: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
     title: test/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/convex-hull-trick/LiChaoTree-line.test.cpp
     title: test/convex-hull-trick/LiChaoTree-line.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/convex-hull-trick/LiChaoTree-segment.test.cpp
     title: test/convex-hull-trick/LiChaoTree-segment.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"lib/99-operator/operator/ValueMin.cpp\"\n//\u6700\u5C0F\u5024\
@@ -36,7 +36,7 @@ data:
   path: lib/99-operator/operator/ValueMin.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
   - test/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp

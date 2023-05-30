@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/16-convex-hull-trick/LiChaoTree.cpp
     title: LiChaoTree
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/99-operator/operator/ValueMin.cpp
     title: lib/99-operator/operator/ValueMin.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/line_add_get_min
@@ -84,7 +84,7 @@ data:
   path: test/convex-hull-trick/LiChaoTree-line.test.cpp
   requiredBy: []
   timestamp: '2023-05-31 01:48:55+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/convex-hull-trick/LiChaoTree-line.test.cpp
 layout: document

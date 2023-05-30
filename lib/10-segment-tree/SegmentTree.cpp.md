@@ -3,6 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-path.test.cpp
+    title: test/graph/Tree-hld-path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-2.test.cpp
+    title: test/graph/Tree-hld-vertex-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-3.test.cpp
+    title: test/graph/Tree-hld-vertex-3.test.cpp
   - icon: ':x:'
     path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
     title: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
@@ -20,7 +29,7 @@ data:
     title: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/segment-tree/SegmentTree.md
     document_title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\
@@ -134,13 +143,16 @@ data:
   path: lib/10-segment-tree/SegmentTree.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/segment-tree/SegmentTree-rcq.test.cpp
   - test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   - test/segment-tree/SegmentTree-rmq.test.cpp
   - test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
   - test/segment-tree/SegmentTree-rsq.test.cpp
+  - test/graph/Tree-hld-path.test.cpp
+  - test/graph/Tree-hld-vertex-3.test.cpp
+  - test/graph/Tree-hld-vertex-2.test.cpp
 documentation_of: lib/10-segment-tree/SegmentTree.cpp
 layout: document
 redirect_from:

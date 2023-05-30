@@ -3,12 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-3.test.cpp
+    title: test/graph/Tree-hld-vertex-3.test.cpp
   - icon: ':x:'
     path: test/segment-tree/SegmentTree-rcq.test.cpp
     title: test/segment-tree/SegmentTree-rcq.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/operator/monoid/MonoidRangeCompositePointUpdate.md
     document_title: "MonoidRangeCompositePointUpdate - [\u533A\u9593\u4E00\u6B21\u95A2\
@@ -36,9 +39,10 @@ data:
   path: lib/99-operator/monoid/MonoidRangeCompositePointUpdate.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/segment-tree/SegmentTree-rcq.test.cpp
+  - test/graph/Tree-hld-vertex-3.test.cpp
 documentation_of: lib/99-operator/monoid/MonoidRangeCompositePointUpdate.cpp
 layout: document
 redirect_from:
