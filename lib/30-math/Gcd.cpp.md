@@ -9,15 +9,15 @@ data:
   - icon: ':x:'
     path: test/math/Prime-rho.test.cpp
     title: test/math/Prime-rho.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
     title: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
     title: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/math/Gcd.md
     document_title: "Gcd - \u9AD8\u901FGCD"
@@ -64,7 +64,7 @@ data:
   path: lib/30-math/Gcd.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:49:31+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   - test/segment-tree/SegmentTree-prefix-binary-search.test.cpp

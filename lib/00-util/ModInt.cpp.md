@@ -57,7 +57,7 @@ data:
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-pow.test.cpp
     title: test/polynomial/FormalPowerSeries-pow.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-rcq.test.cpp
     title: test/segment-tree/SegmentTree-rcq.test.cpp
   - icon: ':heavy_check_mark:'

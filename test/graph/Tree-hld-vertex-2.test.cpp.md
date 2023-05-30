@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/10-segment-tree/SegmentTree.cpp
     title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
@@ -11,7 +11,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/40-graph/Tree.cpp
     title: "Tree - \u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
     title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
       ]"

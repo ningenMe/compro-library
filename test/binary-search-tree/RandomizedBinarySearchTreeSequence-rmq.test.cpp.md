@@ -5,7 +5,7 @@ data:
     path: lib/12-binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
     title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
       \u6728\u5217"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/99-operator/monoid/MonoidRangeMinPointUpdate.cpp
     title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0]"
   _extendedRequiredBy: []

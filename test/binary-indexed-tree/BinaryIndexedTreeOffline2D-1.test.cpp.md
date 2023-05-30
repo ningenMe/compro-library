@@ -5,7 +5,7 @@ data:
     path: lib/11-binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
     title: "BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F32\u6B21\u5143\
       BIT"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/99-operator/abel/AbelPrefixSumPointAdd.cpp
     title: AbelPrefixSumPointAdd
   _extendedRequiredBy: []

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/11-binary-indexed-tree/DynamicBinaryIndexedTree.cpp
     title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/99-operator/abel/AbelPrefixSumPointAdd.cpp
     title: AbelPrefixSumPointAdd
   _extendedRequiredBy: []

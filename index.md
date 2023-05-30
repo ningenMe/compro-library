@@ -23,15 +23,15 @@ data:
       title: "Zarts - \u5EA7\u6A19\u5727\u7E2E"
   - name: lib/10-segment-tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/DynamicSegmentTree.cpp
       title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
         \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/LazySegmentTree.cpp
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/SegmentTree.cpp
       title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
         \u30F3\u30C8\u6728"
@@ -40,7 +40,7 @@ data:
       title: SegmentTreeBeats
   - name: lib/11-binary-indexed-tree
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/11-binary-indexed-tree/BinaryIndexedTree.cpp
       title: BinaryIndexedTree - BIT
     - icon: ':heavy_check_mark:'
@@ -71,7 +71,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/13-static-range-query/DisjointSparseTable.cpp
       title: DisjointSparseTable
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/13-static-range-query/RangeInversionQuery.cpp
       title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
     - icon: ':warning:'
@@ -150,7 +150,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/30-math/Garner.cpp
       title: "Garner - \u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
-    - icon: ':x:'
+    - icon: ':question:'
       path: lib/30-math/Gcd.cpp
       title: "Gcd - \u9AD8\u901FGCD"
     - icon: ':warning:'
@@ -249,26 +249,26 @@ data:
     - icon: ':warning:'
       path: lib/99-operator/abel/AbelPrefixGcdPointUpdate.cpp
       title: AbelPrefixGcdPointUpdate
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/99-operator/abel/AbelPrefixSumPointAdd.cpp
       title: AbelPrefixSumPointAdd
   - name: lib/99-operator/monoid
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid/MonoidRangeCompositePointUpdate.cpp
       title: "MonoidRangeCompositePointUpdate - [\u533A\u9593\u4E00\u6B21\u95A2\u6570\
         , \u70B9\u66F4\u65B0]"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp
       title: "MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0]"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid/MonoidRangeMinPointUpdate.cpp
       title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0]"
     - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid/MonoidRangeMulPointUpdate.cpp
       title: "MonoidRangeMulPointUpdate - [\u533A\u9593\u7A4D, \u4E00\u70B9\u66F4\u65B0\
         ]"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
       title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
         ]"
@@ -278,7 +278,7 @@ data:
       path: lib/99-operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp
       title: "MonoidRangeEulerTourSumRangeAdd - fold:\u533A\u9593\u30AA\u30A4\u30E9\
         \u30FC\u30C4\u30A2\u30FC\u548C, operate:\u533A\u9593\u52A0\u7B97"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.cpp
       title: "MonoidRangeFoldMinRangeOperateAdd - fold:\u533A\u9593min, operate:\u533A\
         \u9593\u52A0\u7B97"
@@ -302,7 +302,7 @@ data:
       path: lib/99-operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
       title: "MonoidRangeSumRangeAffine - [\u533A\u9593\u548C, \u533A\u9593\u30A2\u30D5\
         \u30A3\u30F3\u5909\u63DB]"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
       title: "MonoidRangeSumRangeUpdate - [\u533A\u9593\u548C, \u533A\u9593\u66F4\u65B0\
         ]"
@@ -417,6 +417,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
       title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
+      title: test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
       title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
@@ -655,31 +658,31 @@ data:
       title: test/polynomial/FormalPowerSeries-pow.test.cpp
   - name: test/segment-tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
       title: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
       title: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
       title: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
       title: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
       title: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree/SegmentTree-rcq.test.cpp
       title: test/segment-tree/SegmentTree-rcq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree/SegmentTree-rmq.test.cpp
       title: test/segment-tree/SegmentTree-rmq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree/SegmentTree-rsq.test.cpp
       title: test/segment-tree/SegmentTree-rsq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
       title: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
     - icon: ':heavy_check_mark:'
@@ -693,7 +696,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/static-range-query/DisjointSparseTable.test.cpp
       title: test/static-range-query/DisjointSparseTable.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/static-range-query/RangeInversionQuery.test.cpp
       title: test/static-range-query/RangeInversionQuery.test.cpp
     - icon: ':heavy_check_mark:'

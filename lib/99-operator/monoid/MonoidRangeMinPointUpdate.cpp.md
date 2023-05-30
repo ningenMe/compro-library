@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
     title: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-rmq.test.cpp
     title: test/segment-tree/SegmentTree-rmq.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/operator/monoid/MonoidRangeMinPointUpdate.md
     document_title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0\
@@ -40,7 +40,7 @@ data:
   path: lib/99-operator/monoid/MonoidRangeMinPointUpdate.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment-tree/SegmentTree-rmq.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp
     title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
     title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
       ]"

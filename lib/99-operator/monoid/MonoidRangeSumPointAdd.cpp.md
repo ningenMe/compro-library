@@ -15,18 +15,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-hld-vertex-2.test.cpp
     title: test/graph/Tree-hld-vertex-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
     title: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
     title: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-rsq.test.cpp
     title: test/segment-tree/SegmentTree-rsq.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/operator/monoid/MonoidRangeSumPointAdd.md
     document_title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\
@@ -52,7 +52,7 @@ data:
   path: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
   - test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp

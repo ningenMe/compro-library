@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: lib/30-math/Gcd.cpp
     title: "Gcd - \u9AD8\u901FGCD"
   - icon: ':x:'

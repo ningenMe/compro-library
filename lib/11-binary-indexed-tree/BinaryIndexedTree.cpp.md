@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
     title: test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/static-range-query/RangeInversionQuery.test.cpp
     title: test/static-range-query/RangeInversionQuery.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/binary-indexed-tree/BinaryIndexedTree.md
     document_title: BinaryIndexedTree - BIT
@@ -62,7 +62,7 @@ data:
   path: lib/11-binary-indexed-tree/BinaryIndexedTree.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
   - test/static-range-query/RangeInversionQuery.test.cpp

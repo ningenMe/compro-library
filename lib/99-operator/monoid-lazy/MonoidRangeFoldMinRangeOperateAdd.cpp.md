@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
     title: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.md
     document_title: "MonoidRangeFoldMinRangeOperateAdd - fold:\u533A\u9593min, operate:\u533A\
@@ -38,7 +38,7 @@ data:
   path: lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment-tree/LazySegmentTree-rmqraq.test.cpp
 documentation_of: lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.cpp
