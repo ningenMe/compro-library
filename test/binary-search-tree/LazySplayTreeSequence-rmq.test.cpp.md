@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: lib/00-util/FastIO.cpp
     title: FastIO
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/12-binary-search-tree/LazySplayTreeSequence.cpp
     title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
   - icon: ':heavy_check_mark:'

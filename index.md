@@ -56,7 +56,7 @@ data:
       path: lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
       title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
         \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/12-binary-search-tree/LazySplayTreeSequence.cpp
       title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
     - icon: ':heavy_check_mark:'
@@ -295,7 +295,7 @@ data:
       path: lib/99-operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
       title: "MonoidRangeSumRangeAdd - [\u533A\u9593\u548C, \u533A\u9593\u52A0\u7B97\
         ]"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/99-operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
       title: "MonoidRangeSumRangeAffine - [\u533A\u9593\u548C, \u533A\u9593\u30A2\u30D5\
         \u30A3\u30F3\u5909\u63DB]"
@@ -420,6 +420,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
       title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
+    - icon: ':x:'
+      path: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+      title: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
       title: test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp

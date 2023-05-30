@@ -9,9 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+    title: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/operator/monoid-lazy/MonoidRangeSumRangeAffine.md
     document_title: "MonoidRangeSumRangeAffine - [\u533A\u9593\u548C, \u533A\u9593\
@@ -43,8 +46,9 @@ data:
   path: lib/99-operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
 documentation_of: lib/99-operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp
