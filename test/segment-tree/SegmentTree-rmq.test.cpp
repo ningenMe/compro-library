@@ -5,7 +5,7 @@
 #include <cassert>
 using namespace std;
 #include "../../lib/10-segment-tree/SegmentTree.cpp"
-#include "../../../lib/operator/monoid/MonoidRangeMinPointUpdate.cpp"
+#include "../../lib/99-operator/monoid/MonoidRangeMinPointUpdate.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);

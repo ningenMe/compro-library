@@ -6,7 +6,7 @@
 #include <stack>
 using namespace std;
 #include "../../lib/10-segment-tree/DynamicSegmentTree.cpp"
-#include "../../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp"
+#include "../../lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);

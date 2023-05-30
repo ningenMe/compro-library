@@ -8,7 +8,7 @@
 #include <cmath>
 using namespace std;
 #include "../../lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp"
-#include "../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp"
+#include "../../lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp"
 
 template<class T> class Mo{
     unordered_map<long long,int> mp;

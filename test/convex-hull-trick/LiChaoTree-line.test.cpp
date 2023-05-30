@@ -5,7 +5,7 @@
 #include <algorithm>
 using namespace std;
 
-#include "../../../lib/operator/operator/ValueMin.cpp"
+#include "../../lib/99-operator/operator/ValueMin.cpp"
 #include "../../lib/16-convex-hull-trick/LiChaoTree.cpp"
 
 int main(void){

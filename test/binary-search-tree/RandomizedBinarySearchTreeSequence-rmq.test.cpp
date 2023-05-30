@@ -5,7 +5,7 @@
 #include <cassert>
 #include <queue>
 using namespace std;
-#include "../../lib/operator/monoid/MonoidRangeMinPointUpdate.cpp"
+#include "../../lib/99-operator/monoid/MonoidRangeMinPointUpdate.cpp"
 #include "../../lib/12-binary-search-tree/RandomizedBinarySearchTreeSequence.cpp"
 
 int main(void){

@@ -5,7 +5,7 @@
 #include <stack>
 using namespace std;
 #include "../../lib/14-data-structure/BinaryTrie.cpp"
-#include "../../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp"
+#include "../../lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp"
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);
 	BinaryTrie<MonoidRangeSumPointAdd<int>,30> trie;

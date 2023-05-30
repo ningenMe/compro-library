@@ -5,7 +5,7 @@
 #include <queue>
 using namespace std;
 #include "../../lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp"
-#include "../../../lib/operator/operator/ValueMin.cpp"
+#include "../../lib/99-operator/operator/ValueMin.cpp"
 #include "../../lib/16-convex-hull-trick/ConvexHullTrick.cpp"
 
 int main(void){

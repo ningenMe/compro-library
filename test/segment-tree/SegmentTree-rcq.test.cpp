@@ -6,7 +6,7 @@
 using namespace std;
 #include "../../lib/10-segment-tree/SegmentTree.cpp"
 #include "../../lib/00-util/ModInt.cpp"
-#include "../../../lib/operator/monoid/MonoidRangeCompositePointUpdate.cpp"
+#include "../../lib/99-operator/monoid/MonoidRangeCompositePointUpdate.cpp"
 
 using modint = ModInt<998244353>;
 int main(){

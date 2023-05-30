@@ -5,7 +5,7 @@
 #include <queue>
 #include <cassert>
 using namespace std;
-#include "../../../lib/operator/operator/ValueMin.cpp"
+#include "../../lib/99-operator/operator/ValueMin.cpp"
 #include "../../lib/16-convex-hull-trick/ConvexHullTrickMonotone.cpp"
 using ll = long long;
 

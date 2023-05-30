@@ -8,7 +8,7 @@
 #include <cmath>
 using namespace std;
 #include "../../lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp"
-#include "../../lib/operator/monoid/MonoidRangeSumPointAdd.cpp"
+#include "../../lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp"
 
 int main(){
     cin.tie(0);ios::sync_with_stdio(false);
