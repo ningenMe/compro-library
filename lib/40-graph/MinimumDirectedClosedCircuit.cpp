@@ -16,7 +16,7 @@ private:
     T solve_impl() {
         T mini = inf;
         last = -1;
-        RadixHeap<int> q(0);
+        RadixHeap<int, unsigned int> q(0);
         q.push({0,root});
         dist[root] = 0;
         while (q.size()) {

@@ -14,7 +14,7 @@ template<class T> class MinimumUndirectedClosedCircuit {
     int last_l,last_r,root;
 private:
     void solve_impl() {
-        RadixHeap<int> q(0);
+        RadixHeap<int, unsigned int> q(0);
         q.push({0,root});
         dist[root] = 0;
         while (q.size()) {

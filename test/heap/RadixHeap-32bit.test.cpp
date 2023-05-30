@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <array>
 using namespace std;
-#include "../../lib/15-heap/RadixHeapInt.cpp"
+#include "../../lib/15-heap/RadixHeap.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);
@@ -21,7 +21,7 @@ int main(void){
 	}
 	vector<vector<int>> dp(N,vector<int>(N+1,1<<30));
 	dp[0][0] = 0;
-	RadixHeapInt<pair<int,int>> pq({0,0});
+	RadixHeap<pair<int,int>, unsigned int> pq({0,0});
 	pq.push({0,{0,0}});
 	while(pq.size()){
 		auto p = pq.pop();

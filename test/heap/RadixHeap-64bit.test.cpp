@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <array>
 using namespace std;
+#include "../../lib/00-util/FastIO.cpp"
 #include "../../lib/15-heap/RadixHeap.cpp"
 
 //Dijkstra
@@ -25,7 +26,7 @@ public:
 	void solve(int start) {
 		for (int i = 0; i < N; ++i) cost[i] = inf;
 
-		RadixHeap<int> pq(0);
+		RadixHeap<int,unsigned long long> pq(0);
 		cost[start] = 0;
 		pq.push({ 0,start });
 
@@ -49,12 +50,13 @@ public:
 
 int main() {
 	cin.tie(0);ios::sync_with_stdio(false);
-	int N, M; cin >> N >> M;
+	int N, M; 
+    read(N); read(M);
 	Dijkstra<long long> dijk(2*N, 1LL<<60);
 	for(int i = 0; i < M; ++i){
 		int a, b;
 		long long c;
-		cin >> a >> b >> c;
+        read(a); read(b); read(c);
 		a--, b--;
 		dijk.make_edge(a, b, c);
 		dijk.make_edge(b, a, c);
@@ -65,7 +67,7 @@ int main() {
 	}
 	dijk.solve(0);
 	dijk.cost[N]=0;
-	for (int i = 0; i < N; ++i) cout << dijk.cost[i]+dijk.cost[i+N] << endl;
+	for (int i = 0; i < N; ++i) cout << dijk.cost[i]+dijk.cost[i+N] << "\n";
 
 	return 0;
 }
