@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/util/NBase.test.cpp
     title: test/util/NBase.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/util/NBase.md
     document_title: "NBase - N\u9032\u6570"
@@ -34,7 +34,7 @@ data:
   path: lib/00-util/NBase.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:32:15+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/util/NBase.test.cpp
 documentation_of: lib/00-util/NBase.cpp

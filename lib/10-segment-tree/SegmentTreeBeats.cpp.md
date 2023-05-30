@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTreeBeats-1.test.cpp
     title: test/segment-tree/SegmentTreeBeats-1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTreeBeats-2.test.cpp
     title: test/segment-tree/SegmentTreeBeats-2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/segment-tree/SegmentTreeBeats.md
     document_title: SegmentTreeBeats
@@ -268,7 +268,7 @@ data:
   path: lib/10-segment-tree/SegmentTreeBeats.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment-tree/SegmentTreeBeats-1.test.cpp
   - test/segment-tree/SegmentTreeBeats-2.test.cpp

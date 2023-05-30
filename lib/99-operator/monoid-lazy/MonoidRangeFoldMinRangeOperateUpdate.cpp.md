@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
+    title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.md
     document_title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min,\
@@ -39,8 +45,10 @@ data:
   path: lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
 documentation_of: lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
 layout: document
 redirect_from:

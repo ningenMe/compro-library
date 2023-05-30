@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/string/LongestCommonSubsequence.test.cpp
     title: test/string/LongestCommonSubsequence.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/string/LongestCommonSubsequence.md
     document_title: LongestCommonSubsequence - LCS
@@ -35,7 +35,7 @@ data:
   path: lib/50-string/LongestCommonSubsequence.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:23:09+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/string/LongestCommonSubsequence.test.cpp
 documentation_of: lib/50-string/LongestCommonSubsequence.cpp

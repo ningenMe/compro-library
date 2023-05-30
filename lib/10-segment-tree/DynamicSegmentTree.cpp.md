@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+    title: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+  - icon: ':x:'
+    path: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+    title: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/segment-tree/DynamicSegmentTree.md
     document_title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\
@@ -69,8 +75,10 @@ data:
   path: lib/10-segment-tree/DynamicSegmentTree.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+  - test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
 documentation_of: lib/10-segment-tree/DynamicSegmentTree.cpp
 layout: document
 redirect_from:

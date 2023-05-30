@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/data-structure/BinaryTrie-set-xor-min.test.cpp
+    title: test/data-structure/BinaryTrie-set-xor-min.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/data-structure/BinaryTrie.md
     document_title: BinaryTrie
@@ -60,8 +63,9 @@ data:
   path: lib/14-data-structure/BinaryTrie.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/data-structure/BinaryTrie-set-xor-min.test.cpp
 documentation_of: lib/14-data-structure/BinaryTrie.cpp
 layout: document
 redirect_from:

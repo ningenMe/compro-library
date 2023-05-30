@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+    title: test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+  - icon: ':x:'
+    path: test/static-range-query/RangeInversionQuery.test.cpp
+    title: test/static-range-query/RangeInversionQuery.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/binary-indexed-tree/BinaryIndexedTree.md
     document_title: BinaryIndexedTree - BIT
@@ -56,8 +62,10 @@ data:
   path: lib/11-binary-indexed-tree/BinaryIndexedTree.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+  - test/static-range-query/RangeInversionQuery.test.cpp
 documentation_of: lib/11-binary-indexed-tree/BinaryIndexedTree.cpp
 layout: document
 redirect_from:

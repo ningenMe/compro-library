@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: lib/00-util/FastIO.cpp
     title: FastIO
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/13-static-range-query/DisjointSparseTable.cpp
     title: DisjointSparseTable
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
@@ -88,7 +88,7 @@ data:
   path: test/static-range-query/DisjointSparseTable.test.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/static-range-query/DisjointSparseTable.test.cpp
 layout: document

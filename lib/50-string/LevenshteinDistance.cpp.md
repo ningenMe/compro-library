@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/string/LevenshteinDistance-1.test.cpp
     title: test/string/LevenshteinDistance-1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/string/LevenshteinDistance-2.test.cpp
     title: test/string/LevenshteinDistance-2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/string/LevenshteinDistance.md
     document_title: "LevenshteinDistance - \u7DE8\u96C6\u8DDD\u96E2"
@@ -40,7 +40,7 @@ data:
   path: lib/50-string/LevenshteinDistance.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:23:09+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/string/LevenshteinDistance-2.test.cpp
   - test/string/LevenshteinDistance-1.test.cpp

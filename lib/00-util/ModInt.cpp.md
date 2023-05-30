@@ -4,6 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -39,13 +45,16 @@ data:
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
     title: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-nth.test.cpp
     title: test/polynomial/FormalPowerSeries-nth.test.cpp
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-pow.test.cpp
     title: test/polynomial/FormalPowerSeries-pow.test.cpp
   - icon: ':x:'
+    path: test/segment-tree/SegmentTree-rcq.test.cpp
+    title: test/segment-tree/SegmentTree-rcq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/util/ModInt.test.cpp
     title: test/util/ModInt.test.cpp
   _isVerificationFailed: true
@@ -159,9 +168,12 @@ data:
   - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-log.test.cpp
   - test/polynomial/FormalPowerSeries-nth.test.cpp
+  - test/segment-tree/SegmentTree-rcq.test.cpp
   - test/math/Matrix-pow.test.cpp
   - test/math/CombinationMod-factorial.test.cpp
   - test/math/Matrix-det.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/util/ModInt.test.cpp
 documentation_of: lib/00-util/ModInt.cpp
 layout: document

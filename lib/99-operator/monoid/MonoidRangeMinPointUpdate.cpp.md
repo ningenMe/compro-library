@@ -2,10 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+    title: test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+    title: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+  - icon: ':x:'
+    path: test/segment-tree/SegmentTree-rmq.test.cpp
+    title: test/segment-tree/SegmentTree-rmq.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/operator/monoid/MonoidRangeMinPointUpdate.md
     document_title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0\
@@ -31,8 +40,11 @@ data:
   path: lib/99-operator/monoid/MonoidRangeMinPointUpdate.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/segment-tree/SegmentTree-rmq.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
 documentation_of: lib/99-operator/monoid/MonoidRangeMinPointUpdate.cpp
 layout: document
 redirect_from:

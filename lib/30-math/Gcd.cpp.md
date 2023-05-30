@@ -9,6 +9,12 @@ data:
   - icon: ':x:'
     path: test/math/Prime-rho.test.cpp
     title: test/math/Prime-rho.test.cpp
+  - icon: ':x:'
+    path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+    title: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+  - icon: ':x:'
+    path: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+    title: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':x:'
@@ -60,6 +66,8 @@ data:
   timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
+  - test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+  - test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
   - test/math/Prime-rho.test.cpp
   - test/math/Prime-miller-rabin.test.cpp
 documentation_of: lib/30-math/Gcd.cpp

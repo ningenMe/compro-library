@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
+    title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -39,22 +42,22 @@ data:
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
     title: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-nth.test.cpp
     title: test/polynomial/FormalPowerSeries-nth.test.cpp
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-pow.test.cpp
     title: test/polynomial/FormalPowerSeries-pow.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/static-range-query/DisjointSparseTable.test.cpp
     title: test/static-range-query/DisjointSparseTable.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/static-range-query/SparseTable.test.cpp
     title: test/static-range-query/SparseTable.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/util/FastIO-int128.test.cpp
     title: test/util/FastIO-int128.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/util/FastIO-int64.test.cpp
     title: test/util/FastIO-int64.test.cpp
   _isVerificationFailed: true
@@ -137,6 +140,7 @@ data:
   - test/polynomial/FormalPowerSeries-log.test.cpp
   - test/polynomial/FormalPowerSeries-nth.test.cpp
   - test/data-structure/WordSizeTreeSet.test.cpp
+  - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - test/graph/UnionFindTree.test.cpp
   - test/static-range-query/SparseTable.test.cpp
   - test/static-range-query/DisjointSparseTable.test.cpp

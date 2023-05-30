@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/convex-hull-trick/LiChaoTree-line.test.cpp
+    title: test/convex-hull-trick/LiChaoTree-line.test.cpp
+  - icon: ':x:'
+    path: test/convex-hull-trick/LiChaoTree-segment.test.cpp
+    title: test/convex-hull-trick/LiChaoTree-segment.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/segment/convex-hull-trick/LiChaoTree.md
     document_title: LiChaoTree
@@ -75,8 +81,10 @@ data:
   path: lib/16-convex-hull-trick/LiChaoTree.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/convex-hull-trick/LiChaoTree-line.test.cpp
+  - test/convex-hull-trick/LiChaoTree-segment.test.cpp
 documentation_of: lib/16-convex-hull-trick/LiChaoTree.cpp
 layout: document
 redirect_from:

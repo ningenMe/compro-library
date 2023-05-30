@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+    title: test/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+    title: test/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/binary-indexed-tree/BinaryIndexedTreeOffline2D.md
     document_title: "BinaryIndexedTreeOffline2D - \u30AA\u30D5\u30E9\u30A4\u30F32\u6B21\
@@ -87,8 +93,10 @@ data:
   path: lib/11-binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+  - test/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
 documentation_of: lib/11-binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
 layout: document
 redirect_from:

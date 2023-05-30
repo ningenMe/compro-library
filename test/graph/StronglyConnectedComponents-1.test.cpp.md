@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/40-graph/StronglyConnectedComponents.cpp
     title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/40-graph/UnionFindTree.cpp
     title: "UnionFindTree - Union Find \u6728"
   _extendedRequiredBy: []

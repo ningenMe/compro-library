@@ -2,10 +2,25 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+    title: test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+    title: test/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+    title: test/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
+    title: test/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
+  - icon: ':x:'
+    path: test/static-range-query/RangeInversionQuery.test.cpp
+    title: test/static-range-query/RangeInversionQuery.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/operator/abel/AbelPrefixSumPointAdd.md
     document_title: AbelPrefixSumPointAdd
@@ -28,8 +43,13 @@ data:
   path: lib/99-operator/abel/AbelPrefixSumPointAdd.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+  - test/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+  - test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+  - test/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
+  - test/static-range-query/RangeInversionQuery.test.cpp
 documentation_of: lib/99-operator/abel/AbelPrefixSumPointAdd.cpp
 layout: document
 redirect_from:

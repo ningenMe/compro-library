@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
+    title: test/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/binary-indexed-tree/DynamicBinaryIndexedTree.md
     document_title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
@@ -48,8 +51,9 @@ data:
   path: lib/11-binary-indexed-tree/DynamicBinaryIndexedTree.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
 documentation_of: lib/11-binary-indexed-tree/DynamicBinaryIndexedTree.cpp
 layout: document
 redirect_from:

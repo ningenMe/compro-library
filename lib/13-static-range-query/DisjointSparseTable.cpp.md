@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/static-range-query/DisjointSparseTable.test.cpp
     title: test/static-range-query/DisjointSparseTable.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/static-range-query/DisjointSparseTable.md
     document_title: DisjointSparseTable
@@ -61,7 +61,7 @@ data:
   path: lib/13-static-range-query/DisjointSparseTable.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/static-range-query/DisjointSparseTable.test.cpp
 documentation_of: lib/13-static-range-query/DisjointSparseTable.cpp

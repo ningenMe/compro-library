@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/00-util/RuntimeModInt.cpp
     title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/1161
@@ -79,7 +79,7 @@ data:
   path: test/util/RuntimeModInt.test.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:54:08+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/util/RuntimeModInt.test.cpp
 layout: document

@@ -12,12 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/UnionFindTree.test.cpp
     title: test/graph/UnionFindTree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/util/RangeIndex.test.cpp
     title: test/util/RangeIndex.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/graph/UnionFindTree.md
     document_title: "UnionFindTree - Union Find \u6728"
@@ -60,7 +60,7 @@ data:
   path: lib/40-graph/UnionFindTree.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:49:31+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/StronglyConnectedComponents-1.test.cpp
   - test/graph/Tree-rerooting.test.cpp

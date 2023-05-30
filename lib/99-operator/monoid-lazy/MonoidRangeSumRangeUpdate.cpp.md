@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
+    title: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/operator/monoid-lazy/MonoidRangeSumRangeUpdate.md
     document_title: "MonoidRangeSumRangeUpdate - [\u533A\u9593\u548C, \u533A\u9593\
@@ -37,8 +40,9 @@ data:
   path: lib/99-operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/segment-tree/LazySegmentTree-rsqruq.test.cpp
 documentation_of: lib/99-operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
 layout: document
 redirect_from:

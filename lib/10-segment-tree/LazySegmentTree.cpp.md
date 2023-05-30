@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
+    title: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
+  - icon: ':x:'
+    path: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
+    title: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/segment-tree/LazySegmentTree.md
     document_title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\
@@ -157,8 +163,10 @@ data:
   path: lib/10-segment-tree/LazySegmentTree.cpp
   requiredBy: []
   timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/segment-tree/LazySegmentTree-rsqruq.test.cpp
+  - test/segment-tree/LazySegmentTree-rmqraq.test.cpp
 documentation_of: lib/10-segment-tree/LazySegmentTree.cpp
 layout: document
 redirect_from:

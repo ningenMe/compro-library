@@ -2,10 +2,28 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+    title: test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+    title: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+  - icon: ':x:'
+    path: test/data-structure/BinaryTrie-set-xor-min.test.cpp
+    title: test/data-structure/BinaryTrie-set-xor-min.test.cpp
+  - icon: ':x:'
+    path: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+    title: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+  - icon: ':x:'
+    path: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+    title: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+  - icon: ':x:'
+    path: test/segment-tree/SegmentTree-rsq.test.cpp
+    title: test/segment-tree/SegmentTree-rsq.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/operator/monoid/MonoidRangeSumPointAdd.md
     document_title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\
@@ -31,8 +49,14 @@ data:
   path: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+  - test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+  - test/segment-tree/SegmentTree-rsq.test.cpp
+  - test/data-structure/BinaryTrie-set-xor-min.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
 documentation_of: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
 layout: document
 redirect_from:

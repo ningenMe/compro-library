@@ -4,11 +4,26 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+    title: test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+    title: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
     title: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
-  _isVerificationFailed: false
+  - icon: ':heavy_check_mark:'
+    path: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
+    title: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
+  - icon: ':x:'
+    path: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
+    title: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - icon: ':x:'
+    path: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+    title: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/binary-search-tree/RandomizedBinarySearchTree.md
     document_title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
@@ -151,9 +166,14 @@ data:
   path: lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:39:19+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+  - test/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - test/convex-hull-trick/ConvexHullTrick-max.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
 documentation_of: lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp
 layout: document
 redirect_from:
