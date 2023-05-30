@@ -15,16 +15,16 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/factorize
+    PROBLEM: https://yukicoder.me/problems/no/3030
     links:
-    - https://judge.yosupo.jp/problem/factorize
-  bundledCode: "#line 1 \"test/math/Prime-rho.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/factorize\"\
-    \n\n#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <array>\n\
-    using namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n\
-    \ * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline static constexpr\
-    \ int ch_0='0';\n    inline static constexpr int ch_9='9';\n    inline static\
-    \ constexpr int ch_n='-';\n    inline static constexpr int ch_s=' ';\n    inline\
-    \ static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
+    - https://yukicoder.me/problems/no/3030
+  bundledCode: "#line 1 \"test/math/Prime-miller-rabin-1.test.cpp\"\n#define PROBLEM\
+    \ \"https://yukicoder.me/problems/no/3030\"\n\n#include <iostream>\n#include <vector>\n\
+    #include <algorithm>\n#include <array>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
+    \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
+    \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
+    \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
+    \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
     \ ch) {\n        while(ch==ch_l) ch=getchar();\n    }\n    template<typename T>\
     \ inline static void read_integer(T &x) {\n        int neg=0; char ch; x=0;\n\
     \        ch=getchar();\n        endline_skip(ch);\n        if(ch==ch_n) neg=1,ch=getchar();\n\
@@ -99,34 +99,29 @@ data:
     \ b)*b): 0);}\n    inline static constexpr long long ext_gcd(long long a, long\
     \ long b, long long &x, long long &y) {\n        if (b == 0) return x = 1, y =\
     \ 0, a; long long d = ext_gcd(b, a%b, y, x); return y -= a / b * x, d;\n    }\n\
-    };\n#line 10 \"test/math/Prime-rho.test.cpp\"\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \    int Q; read(Q);\n    while(Q--) {\n        long long a,sum=0; \n        read(a);\n\
-    \        auto pf = Prime::factorization(a);\n        string ans = \"\";\n    \
-    \    for(auto pa:pf) {\n            sum += pa.second;\n            for(int i=0;i<pa.second;++i)\
-    \ ans += \" \" + to_string(pa.first);\n        }\n        cout << sum << ans <<\
-    \ \"\\n\";\n    }\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/factorize\"\n\n#include\
-    \ <iostream>\n#include <vector>\n#include <algorithm>\n#include <array>\nusing\
-    \ namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/30-math/Prime.cpp\"\
-    \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int Q; read(Q);\n\
-    \    while(Q--) {\n        long long a,sum=0; \n        read(a);\n        auto\
-    \ pf = Prime::factorization(a);\n        string ans = \"\";\n        for(auto\
-    \ pa:pf) {\n            sum += pa.second;\n            for(int i=0;i<pa.second;++i)\
-    \ ans += \" \" + to_string(pa.first);\n        }\n        cout << sum << ans <<\
-    \ \"\\n\";\n    }\n\treturn 0;\n}"
+    };\n#line 10 \"test/math/Prime-miller-rabin-1.test.cpp\"\n\nint main(void){\n\
+    \    cin.tie(0);ios::sync_with_stdio(false);\n    long long N; read(N);\n    for(int\
+    \ i = 0; i < N; ++i) {\n\t\tlong long a; read(a);\n\t\tcout << a << \" \" << Prime::is_prime(a)\
+    \ << \"\\n\";\n\t}\n\treturn 0;\n}\n"
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/3030\"\n\n#include <iostream>\n\
+    #include <vector>\n#include <algorithm>\n#include <array>\nusing namespace std;\n\
+    #include \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/30-math/Prime.cpp\"\
+    \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    long long\
+    \ N; read(N);\n    for(int i = 0; i < N; ++i) {\n\t\tlong long a; read(a);\n\t\
+    \tcout << a << \" \" << Prime::is_prime(a) << \"\\n\";\n\t}\n\treturn 0;\n}\n"
   dependsOn:
   - lib/00-util/FastIO.cpp
   - lib/30-math/Prime.cpp
   isVerificationFile: true
-  path: test/math/Prime-rho.test.cpp
+  path: test/math/Prime-miller-rabin-1.test.cpp
   requiredBy: []
   timestamp: '2023-05-31 05:05:50+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/math/Prime-rho.test.cpp
+documentation_of: test/math/Prime-miller-rabin-1.test.cpp
 layout: document
 redirect_from:
-- /verify/test/math/Prime-rho.test.cpp
-- /verify/test/math/Prime-rho.test.cpp.html
-title: test/math/Prime-rho.test.cpp
+- /verify/test/math/Prime-miller-rabin-1.test.cpp
+- /verify/test/math/Prime-miller-rabin-1.test.cpp.html
+title: test/math/Prime-miller-rabin-1.test.cpp
 ---

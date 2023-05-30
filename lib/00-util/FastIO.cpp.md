@@ -30,6 +30,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/heap/RadixHeap-64bit.test.cpp
     title: test/heap/RadixHeap-64bit.test.cpp
+  - icon: ':x:'
+    path: test/math/Prime-miller-rabin-1.test.cpp
+    title: test/math/Prime-miller-rabin-1.test.cpp
+  - icon: ':x:'
+    path: test/math/Prime-miller-rabin-2.test.cpp
+    title: test/math/Prime-miller-rabin-2.test.cpp
+  - icon: ':x:'
+    path: test/math/Prime-rho.test.cpp
+    title: test/math/Prime-rho.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-exp.test.cpp
     title: test/polynomial/FormalPowerSeries-exp.test.cpp
@@ -143,6 +152,9 @@ data:
   - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-log.test.cpp
   - test/polynomial/FormalPowerSeries-nth.test.cpp
+  - test/math/Prime-miller-rabin-1.test.cpp
+  - test/math/Prime-rho.test.cpp
+  - test/math/Prime-miller-rabin-2.test.cpp
   - test/data-structure/WordSizeTreeSet.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - test/graph/UnionFindTree.test.cpp
