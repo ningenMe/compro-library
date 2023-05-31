@@ -99,7 +99,7 @@ class Prime{
         return vp;
     }
 public:
-    inline static constexpr bool is_prime(const u64 n) { return is_prime(n); }
+    inline static constexpr bool is_prime(const u64 n) { return miller_rabin(n); }
     inline static vector<pair<int64,int64>> factorization(const int64 n) {return factorization_impl(n);}
     inline static constexpr long long gcd(long long n, long long m) { return (n>m ? pre(n,m) : pre(m,n));}
     inline static constexpr long long naive_gcd(long long a, long long b) { return (b ? naive_gcd(b, a % b):a);}
