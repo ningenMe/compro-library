@@ -3,24 +3,24 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Prime-miller-rabin-1.test.cpp
     title: test/math/Prime-miller-rabin-1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Prime-miller-rabin-2.test.cpp
     title: test/math/Prime-miller-rabin-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Prime-rho.test.cpp
     title: test/math/Prime-rho.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
     title: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
     title: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/math/Prime.md
     document_title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\
@@ -70,16 +70,16 @@ data:
     \ vp;\n        sort(v.begin(),v.end());\n        int64 prev = 0;\n        for(int64\
     \ p:v) {\n            if(p == prev) vp.back().second++;\n            else vp.emplace_back(p,1);\n\
     \            prev=p;\n        }\n        return vp;\n    }\npublic:\n    inline\
-    \ static constexpr bool is_prime(const u64 n) { return is_prime(n); }\n    inline\
-    \ static vector<pair<int64,int64>> factorization(const int64 n) {return factorization_impl(n);}\n\
-    \    inline static constexpr long long gcd(long long n, long long m) { return\
-    \ (n>m ? pre(n,m) : pre(m,n));}\n    inline static constexpr long long naive_gcd(long\
-    \ long a, long long b) { return (b ? naive_gcd(b, a % b):a);}\n    inline static\
-    \ constexpr long long lcm(long long a, long long b) {return (a*b ? (a / gcd(a,\
-    \ b)*b): 0);}\n    inline static constexpr long long ext_gcd(long long a, long\
-    \ long b, long long &x, long long &y) {\n        if (b == 0) return x = 1, y =\
-    \ 0, a; long long d = ext_gcd(b, a%b, y, x); return y -= a / b * x, d;\n    }\n\
-    };\n"
+    \ static constexpr bool is_prime(const u64 n) { return miller_rabin(n); }\n  \
+    \  inline static vector<pair<int64,int64>> factorization(const int64 n) {return\
+    \ factorization_impl(n);}\n    inline static constexpr long long gcd(long long\
+    \ n, long long m) { return (n>m ? pre(n,m) : pre(m,n));}\n    inline static constexpr\
+    \ long long naive_gcd(long long a, long long b) { return (b ? naive_gcd(b, a %\
+    \ b):a);}\n    inline static constexpr long long lcm(long long a, long long b)\
+    \ {return (a*b ? (a / gcd(a, b)*b): 0);}\n    inline static constexpr long long\
+    \ ext_gcd(long long a, long long b, long long &x, long long &y) {\n        if\
+    \ (b == 0) return x = 1, y = 0, a; long long d = ext_gcd(b, a%b, y, x); return\
+    \ y -= a / b * x, d;\n    }\n};\n"
   code: "/*\n * @title Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\
     \u30E9\u30FC\u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A\u30FBGcd\u30FBLcm\n * @docs\
     \ md/math/Prime.md\n */\nclass Prime{\n    using int128 = __int128_t;\n    using\
@@ -123,22 +123,22 @@ data:
     \ vp;\n        sort(v.begin(),v.end());\n        int64 prev = 0;\n        for(int64\
     \ p:v) {\n            if(p == prev) vp.back().second++;\n            else vp.emplace_back(p,1);\n\
     \            prev=p;\n        }\n        return vp;\n    }\npublic:\n    inline\
-    \ static constexpr bool is_prime(const u64 n) { return is_prime(n); }\n    inline\
-    \ static vector<pair<int64,int64>> factorization(const int64 n) {return factorization_impl(n);}\n\
-    \    inline static constexpr long long gcd(long long n, long long m) { return\
-    \ (n>m ? pre(n,m) : pre(m,n));}\n    inline static constexpr long long naive_gcd(long\
-    \ long a, long long b) { return (b ? naive_gcd(b, a % b):a);}\n    inline static\
-    \ constexpr long long lcm(long long a, long long b) {return (a*b ? (a / gcd(a,\
-    \ b)*b): 0);}\n    inline static constexpr long long ext_gcd(long long a, long\
-    \ long b, long long &x, long long &y) {\n        if (b == 0) return x = 1, y =\
-    \ 0, a; long long d = ext_gcd(b, a%b, y, x); return y -= a / b * x, d;\n    }\n\
-    };\n"
+    \ static constexpr bool is_prime(const u64 n) { return miller_rabin(n); }\n  \
+    \  inline static vector<pair<int64,int64>> factorization(const int64 n) {return\
+    \ factorization_impl(n);}\n    inline static constexpr long long gcd(long long\
+    \ n, long long m) { return (n>m ? pre(n,m) : pre(m,n));}\n    inline static constexpr\
+    \ long long naive_gcd(long long a, long long b) { return (b ? naive_gcd(b, a %\
+    \ b):a);}\n    inline static constexpr long long lcm(long long a, long long b)\
+    \ {return (a*b ? (a / gcd(a, b)*b): 0);}\n    inline static constexpr long long\
+    \ ext_gcd(long long a, long long b, long long &x, long long &y) {\n        if\
+    \ (b == 0) return x = 1, y = 0, a; long long d = ext_gcd(b, a%b, y, x); return\
+    \ y -= a / b * x, d;\n    }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: lib/30-math/Prime.cpp
   requiredBy: []
-  timestamp: '2023-05-31 05:05:50+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-06-01 06:47:01+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   - test/segment-tree/SegmentTree-prefix-binary-search.test.cpp

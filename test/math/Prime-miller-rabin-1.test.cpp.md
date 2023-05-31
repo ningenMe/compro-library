@@ -4,15 +4,15 @@ data:
   - icon: ':question:'
     path: lib/00-util/FastIO.cpp
     title: FastIO
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/30-math/Prime.cpp
     title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\u30FC\
       \u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A\u30FBGcd\u30FBLcm"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/3030
@@ -90,19 +90,19 @@ data:
     \ vp;\n        sort(v.begin(),v.end());\n        int64 prev = 0;\n        for(int64\
     \ p:v) {\n            if(p == prev) vp.back().second++;\n            else vp.emplace_back(p,1);\n\
     \            prev=p;\n        }\n        return vp;\n    }\npublic:\n    inline\
-    \ static constexpr bool is_prime(const u64 n) { return is_prime(n); }\n    inline\
-    \ static vector<pair<int64,int64>> factorization(const int64 n) {return factorization_impl(n);}\n\
-    \    inline static constexpr long long gcd(long long n, long long m) { return\
-    \ (n>m ? pre(n,m) : pre(m,n));}\n    inline static constexpr long long naive_gcd(long\
-    \ long a, long long b) { return (b ? naive_gcd(b, a % b):a);}\n    inline static\
-    \ constexpr long long lcm(long long a, long long b) {return (a*b ? (a / gcd(a,\
-    \ b)*b): 0);}\n    inline static constexpr long long ext_gcd(long long a, long\
-    \ long b, long long &x, long long &y) {\n        if (b == 0) return x = 1, y =\
-    \ 0, a; long long d = ext_gcd(b, a%b, y, x); return y -= a / b * x, d;\n    }\n\
-    };\n#line 10 \"test/math/Prime-miller-rabin-1.test.cpp\"\n\nint main(void){\n\
-    \    cin.tie(0);ios::sync_with_stdio(false);\n    long long N; read(N);\n    for(int\
-    \ i = 0; i < N; ++i) {\n\t\tlong long a; read(a);\n\t\tcout << a << \" \" << Prime::is_prime(a)\
-    \ << \"\\n\";\n\t}\n\treturn 0;\n}\n"
+    \ static constexpr bool is_prime(const u64 n) { return miller_rabin(n); }\n  \
+    \  inline static vector<pair<int64,int64>> factorization(const int64 n) {return\
+    \ factorization_impl(n);}\n    inline static constexpr long long gcd(long long\
+    \ n, long long m) { return (n>m ? pre(n,m) : pre(m,n));}\n    inline static constexpr\
+    \ long long naive_gcd(long long a, long long b) { return (b ? naive_gcd(b, a %\
+    \ b):a);}\n    inline static constexpr long long lcm(long long a, long long b)\
+    \ {return (a*b ? (a / gcd(a, b)*b): 0);}\n    inline static constexpr long long\
+    \ ext_gcd(long long a, long long b, long long &x, long long &y) {\n        if\
+    \ (b == 0) return x = 1, y = 0, a; long long d = ext_gcd(b, a%b, y, x); return\
+    \ y -= a / b * x, d;\n    }\n};\n#line 10 \"test/math/Prime-miller-rabin-1.test.cpp\"\
+    \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    long long\
+    \ N; read(N);\n    for(int i = 0; i < N; ++i) {\n\t\tlong long a; read(a);\n\t\
+    \tcout << a << \" \" << Prime::is_prime(a) << \"\\n\";\n\t}\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/3030\"\n\n#include <iostream>\n\
     #include <vector>\n#include <algorithm>\n#include <array>\nusing namespace std;\n\
     #include \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/30-math/Prime.cpp\"\
@@ -115,8 +115,8 @@ data:
   isVerificationFile: true
   path: test/math/Prime-miller-rabin-1.test.cpp
   requiredBy: []
-  timestamp: '2023-05-31 05:05:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-06-01 06:47:01+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/Prime-miller-rabin-1.test.cpp
 layout: document

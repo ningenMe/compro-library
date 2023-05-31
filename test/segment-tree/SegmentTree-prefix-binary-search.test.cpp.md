@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/10-segment-tree/SegmentTree.cpp
     title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/30-math/Prime.cpp
     title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\u30FC\
       \u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A\u30FBGcd\u30FBLcm"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp
     title: "MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0]"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/4072
@@ -120,20 +120,20 @@ data:
     \ vp;\n        sort(v.begin(),v.end());\n        int64 prev = 0;\n        for(int64\
     \ p:v) {\n            if(p == prev) vp.back().second++;\n            else vp.emplace_back(p,1);\n\
     \            prev=p;\n        }\n        return vp;\n    }\npublic:\n    inline\
-    \ static constexpr bool is_prime(const u64 n) { return is_prime(n); }\n    inline\
-    \ static vector<pair<int64,int64>> factorization(const int64 n) {return factorization_impl(n);}\n\
-    \    inline static constexpr long long gcd(long long n, long long m) { return\
-    \ (n>m ? pre(n,m) : pre(m,n));}\n    inline static constexpr long long naive_gcd(long\
-    \ long a, long long b) { return (b ? naive_gcd(b, a % b):a);}\n    inline static\
-    \ constexpr long long lcm(long long a, long long b) {return (a*b ? (a / gcd(a,\
-    \ b)*b): 0);}\n    inline static constexpr long long ext_gcd(long long a, long\
-    \ long b, long long &x, long long &y) {\n        if (b == 0) return x = 1, y =\
-    \ 0, a; long long d = ext_gcd(b, a%b, y, x); return y -= a / b * x, d;\n    }\n\
-    };\n#line 1 \"lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp\"\n/*\n * @title\
-    \ MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0]\n * @docs\
-    \ md/operator/monoid/MonoidRangeGcdPointUpdate.md\n */\ntemplate<class T> struct\
-    \ MonoidRangeGcdPointUpdate {\n\tusing TypeNode = T;\n\tinline static constexpr\
-    \ TypeNode unit_node = 0;\n\tinline static constexpr TypeNode func_fold(TypeNode\
+    \ static constexpr bool is_prime(const u64 n) { return miller_rabin(n); }\n  \
+    \  inline static vector<pair<int64,int64>> factorization(const int64 n) {return\
+    \ factorization_impl(n);}\n    inline static constexpr long long gcd(long long\
+    \ n, long long m) { return (n>m ? pre(n,m) : pre(m,n));}\n    inline static constexpr\
+    \ long long naive_gcd(long long a, long long b) { return (b ? naive_gcd(b, a %\
+    \ b):a);}\n    inline static constexpr long long lcm(long long a, long long b)\
+    \ {return (a*b ? (a / gcd(a, b)*b): 0);}\n    inline static constexpr long long\
+    \ ext_gcd(long long a, long long b, long long &x, long long &y) {\n        if\
+    \ (b == 0) return x = 1, y = 0, a; long long d = ext_gcd(b, a%b, y, x); return\
+    \ y -= a / b * x, d;\n    }\n};\n#line 1 \"lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp\"\
+    \n/*\n * @title MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0\
+    ]\n * @docs md/operator/monoid/MonoidRangeGcdPointUpdate.md\n */\ntemplate<class\
+    \ T> struct MonoidRangeGcdPointUpdate {\n\tusing TypeNode = T;\n\tinline static\
+    \ constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeNode func_fold(TypeNode\
     \ l,TypeNode r){return Prime::gcd(l,r);}\n\tinline static constexpr TypeNode func_operate(TypeNode\
     \ l,TypeNode r){return r;}\n\tinline static constexpr bool func_check(TypeNode\
     \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n#line 13 \"test/segment-tree/SegmentTree-prefix-binary-search.test.cpp\"\
@@ -158,8 +158,8 @@ data:
   isVerificationFile: true
   path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
   requiredBy: []
-  timestamp: '2023-05-31 05:05:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-06-01 06:47:01+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
 layout: document
