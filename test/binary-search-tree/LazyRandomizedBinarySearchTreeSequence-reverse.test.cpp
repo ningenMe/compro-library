@@ -6,7 +6,7 @@
 #include <queue>
 using namespace std;
 #include "../../lib/00-util/ModInt.cpp"
-#include "../../lib/99-operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp"
+#include "../../lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAffine.cpp"
 #include "../../lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
 
 using modint = ModInt<998244353>;
@@ -14,7 +14,7 @@ using modint = ModInt<998244353>;
 int main(void){
     int N,Q;
 	scanf("%d %d",&N,&Q);
-	LazyRandomizedBinarySearchTreeSequence<MonoidRangeSumRangeAffine<modint,pair<modint,modint>> > rbst;
+	LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldSumRangeOperateAffine<modint,pair<modint,modint>> > rbst;
     for(int i=0;i<N;++i) {
 		int a; cin >> a;
 		rbst.insert(i,a);
