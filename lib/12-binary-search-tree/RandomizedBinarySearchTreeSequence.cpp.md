@@ -14,12 +14,12 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/binary-search-tree/RandomizedBinarySearchTreeSequence.md
-    document_title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\
-      \u63A2\u7D22\u6728\u5217"
+    document_title: "RandomizedBinarySearchTreeSequence - \u30E9\u30F3\u30C0\u30E0\
+      \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
     links: []
   bundledCode: "#line 1 \"lib/12-binary-search-tree/RandomizedBinarySearchTreeSequence.cpp\"\
-    \n/*\n * @title RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\
-    \u7D22\u6728\u5217\n * @docs md/binary-search-tree/RandomizedBinarySearchTreeSequence.md\n\
+    \n/*\n * @title RandomizedBinarySearchTreeSequence - \u30E9\u30F3\u30C0\u30E0\u5E73\
+    \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217\n * @docs md/binary-search-tree/RandomizedBinarySearchTreeSequence.md\n\
     \ */\ntemplate<class Monoid> class RandomizedBinarySearchTreeSequence {\n    using\
     \ TypeNode = typename Monoid::TypeNode;\n    unsigned int x = 123456789, y = 362436069,\
     \ z = 521288629, w = 88675123;\n    unsigned int xor_shift() {\n        unsigned\
@@ -79,8 +79,8 @@ data:
     \ TypeNode value) {operate_impl(this->root,k,value);}\n    inline TypeNode fold(int\
     \ l, int r) {return fold_impl(this->root,l,r);}\n    void print() {int m = size(this->root);\
     \ for(int i=0;i<m;++i) cout << get(i) << \" \\n\"[i==m-1];}\n};\n"
-  code: "/*\n * @title RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\
-    \u63A2\u7D22\u6728\u5217\n * @docs md/binary-search-tree/RandomizedBinarySearchTreeSequence.md\n\
+  code: "/*\n * @title RandomizedBinarySearchTreeSequence - \u30E9\u30F3\u30C0\u30E0\
+    \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217\n * @docs md/binary-search-tree/RandomizedBinarySearchTreeSequence.md\n\
     \ */\ntemplate<class Monoid> class RandomizedBinarySearchTreeSequence {\n    using\
     \ TypeNode = typename Monoid::TypeNode;\n    unsigned int x = 123456789, y = 362436069,\
     \ z = 521288629, w = 88675123;\n    unsigned int xor_shift() {\n        unsigned\
@@ -144,7 +144,7 @@ data:
   isVerificationFile: false
   path: lib/12-binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:39:19+09:00'
+  timestamp: '2023-06-03 15:39:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
@@ -154,8 +154,8 @@ layout: document
 redirect_from:
 - /library/lib/12-binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
 - /library/lib/12-binary-search-tree/RandomizedBinarySearchTreeSequence.cpp.html
-title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\
-  \u5217"
+title: "RandomizedBinarySearchTreeSequence - \u30E9\u30F3\u30C0\u30E0\u5E73\u8861\u4E8C\
+  \u5206\u63A2\u7D22\u6728\u5217"
 ---
 ### RandomizedBinarySearchTreeSequence
 - 列ベースの、ランダム平衡二分探索木

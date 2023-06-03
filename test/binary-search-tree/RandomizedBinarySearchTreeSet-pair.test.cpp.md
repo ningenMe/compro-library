@@ -1,9 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp
-    title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
+  - icon: ':question:'
+    path: lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp
+    title: "RandomizedBinarySearchTree - \u30E9\u30F3\u30C0\u30E0\u5E73\u8861\u4E8C\
+      \u5206\u63A2\u7D22\u6728set"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -14,27 +15,28 @@ data:
     PROBLEM: https://yukicoder.me/problems/no/822
     links:
     - https://yukicoder.me/problems/no/822
-  bundledCode: "#line 1 \"test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp\"\
+  bundledCode: "#line 1 \"test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp\"\
     \n#define PROBLEM \"https://yukicoder.me/problems/no/822\"\n\n#include <vector>\n\
     #include <iostream>\n#include <unordered_map>\n#include <algorithm>\n#include\
-    \ <numeric>\n#include <cmath>\nusing namespace std;\n#line 1 \"lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp\"\
-    \n/*\n * @title RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
-    \u6728\n * @docs md/binary-search-tree/RandomizedBinarySearchTree.md\n */\ntemplate<class\
-    \ Monoid> class RandomizedBinarySearchTree {\n    using TypeNode = typename Monoid::TypeNode;\n\
-    \    unsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\
-    \    unsigned int xor_shift() {\n        unsigned int t = (x ^ (x << 11)); x =\
-    \ y; y = z; z = w;\n        return (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n \
-    \   }\n    struct Node {\n    private:\n        void build() {left = right = nullptr;size\
-    \ = 1;}\n    public:\n        Node *left, *right;\n        TypeNode value, range_value;\n\
-    \        int size;\n        Node() : value(Monoid::unit_node), range_value(Monoid::unit_node)\
-    \ {build();}\n        Node(TypeNode v) : value(v), range_value(v) {build();}\n\
-    \        friend ostream &operator<<(ostream &os, const Node* node) {return os\
-    \ << \"{\" << node->value << \", \" << node->range_value << \", \" << node->size\
-    \ << \"}\";}\n    };\n    Node* root;\n    inline int size(Node *node) {return\
-    \ node==nullptr ? 0 : node->size;}\n    inline TypeNode range_value(Node *node)\
-    \ {return node==nullptr ? Monoid::unit_node : node->range_value;}\n    inline\
-    \ TypeNode get(Node *node, size_t k) {\n        if (node==nullptr) return Monoid::unit_node;\n\
-    \        if (k == size(node->left)) return node->value;\n        if (k < size(node->left))\
+    \ <numeric>\n#include <cmath>\nusing namespace std;\n#line 1 \"lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp\"\
+    \n/*\n * @title RandomizedBinarySearchTree - \u30E9\u30F3\u30C0\u30E0\u5E73\u8861\
+    \u4E8C\u5206\u63A2\u7D22\u6728set\n * @docs md/binary-search-tree/RandomizedBinarySearchTree.md\n\
+    \ */\ntemplate<class Monoid> class RandomizedBinarySearchTreeSet {\n    using\
+    \ TypeNode = typename Monoid::TypeNode;\n    unsigned int x = 123456789, y = 362436069,\
+    \ z = 521288629, w = 88675123;\n    unsigned int xor_shift() {\n        unsigned\
+    \ int t = (x ^ (x << 11)); x = y; y = z; z = w;\n        return (w = (w ^ (w >>\
+    \ 19)) ^ (t ^ (t >> 8)));\n    }\n    struct Node {\n    private:\n        void\
+    \ build() {left = right = nullptr;size = 1;}\n    public:\n        Node *left,\
+    \ *right;\n        TypeNode value, range_value;\n        int size;\n        Node()\
+    \ : value(Monoid::unit_node), range_value(Monoid::unit_node) {build();}\n    \
+    \    Node(TypeNode v) : value(v), range_value(v) {build();}\n        friend ostream\
+    \ &operator<<(ostream &os, const Node* node) {return os << \"{\" << node->value\
+    \ << \", \" << node->range_value << \", \" << node->size << \"}\";}\n    };\n\
+    \    Node* root;\n    inline int size(Node *node) {return node==nullptr ? 0 :\
+    \ node->size;}\n    inline TypeNode range_value(Node *node) {return node==nullptr\
+    \ ? Monoid::unit_node : node->range_value;}\n    inline TypeNode get(Node *node,\
+    \ size_t k) {\n        if (node==nullptr) return Monoid::unit_node;\n        if\
+    \ (k == size(node->left)) return node->value;\n        if (k < size(node->left))\
     \ return get(node->left, k);\n        else return get(node->right, k-1 - size(node->left));\n\
     \    }\n    inline Node* update(Node *node) {\n        node->size = size(node->left)\
     \ + size(node->right) + 1;\n        node->range_value = Monoid::func_fold(Monoid::func_fold(range_value(node->left),node->value),range_value(node->right));\n\
@@ -70,9 +72,9 @@ data:
     \      int k1 = lower_bound(value), k2 = upper_bound(value);\n        if(k1==k2)\
     \ return;\n        auto sub = split_impl(this->root,k1);\n        this->root =\
     \ merge_impl(sub.first, split_impl(sub.second, 1).second);\n    }\npublic:\n \
-    \   RandomizedBinarySearchTree() : root(nullptr) {}\n    inline int size() {return\
-    \ size(this->root);}\n    inline int empty(void) {return bool(size()==0);}\n \
-    \   inline Node* merge(Node *left, Node *right) {return merge_impl(left,right);}\n\
+    \   RandomizedBinarySearchTreeSet() : root(nullptr) {}\n    inline int size()\
+    \ {return size(this->root);}\n    inline int empty(void) {return bool(size()==0);}\n\
+    \    inline Node* merge(Node *left, Node *right) {return merge_impl(left,right);}\n\
     \    inline pair<Node*, Node*> split(int k) {return split_impl(this->root,k);}\n\
     \    inline void insert(const TypeNode value) {insert_impl(value);}\n    inline\
     \ void erase(const TypeNode value) {erase_impl(value);}\n    inline TypeNode get(size_t\
@@ -82,11 +84,11 @@ data:
     \ {return upper_bound(this->root,value);}\n    inline int count(TypeNode value)\
     \ {return upper_bound(value) - lower_bound(value);}\n    void print() {int m =\
     \ size(this->root); for(int i=0;i<m;++i) cout << get(i) << \" \\n\"[i==m-1];}\n\
-    };\n#line 11 \"test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp\"\
+    };\n#line 11 \"test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp\"\
     \n\ntemplate<class T> struct Monoid {\n\tusing TypeNode = T;\n\tinline static\
     \ constexpr TypeNode unit_node = {0,0};\n\tinline static constexpr TypeNode func_fold(TypeNode\
     \ l,TypeNode r){return {0,0};}\n};\n\nint main() {\n    int N,K; cin >> N >> K;\n\
-    \    if(N+1 <= K){\n\t\tcout << \"INF\" << endl;\n\t\treturn 0;\n\t}\n    RandomizedBinarySearchTree<Monoid<pair<int,int>>>\
+    \    if(N+1 <= K){\n\t\tcout << \"INF\" << endl;\n\t\treturn 0;\n\t}\n    RandomizedBinarySearchTreeSet<Monoid<pair<int,int>>>\
     \ st;\n    for(int i = 0; i < (1<<20); ++i) {\n        if((i&N) != N) continue;\n\
     \        for(int j = -K; j <= K; ++j) {\n            int a = i, b = i + j;\n \
     \           if(a>b) swap(a,b);\n            if(0<=b && b-a<=K && ((a&b)==N) &&\
@@ -94,28 +96,28 @@ data:
     \ << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/822\"\n\n#include <vector>\n\
     #include <iostream>\n#include <unordered_map>\n#include <algorithm>\n#include\
-    \ <numeric>\n#include <cmath>\nusing namespace std;\n#include \"../../lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp\"\
+    \ <numeric>\n#include <cmath>\nusing namespace std;\n#include \"../../lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp\"\
     \n\ntemplate<class T> struct Monoid {\n\tusing TypeNode = T;\n\tinline static\
     \ constexpr TypeNode unit_node = {0,0};\n\tinline static constexpr TypeNode func_fold(TypeNode\
     \ l,TypeNode r){return {0,0};}\n};\n\nint main() {\n    int N,K; cin >> N >> K;\n\
-    \    if(N+1 <= K){\n\t\tcout << \"INF\" << endl;\n\t\treturn 0;\n\t}\n    RandomizedBinarySearchTree<Monoid<pair<int,int>>>\
+    \    if(N+1 <= K){\n\t\tcout << \"INF\" << endl;\n\t\treturn 0;\n\t}\n    RandomizedBinarySearchTreeSet<Monoid<pair<int,int>>>\
     \ st;\n    for(int i = 0; i < (1<<20); ++i) {\n        if((i&N) != N) continue;\n\
     \        for(int j = -K; j <= K; ++j) {\n            int a = i, b = i + j;\n \
     \           if(a>b) swap(a,b);\n            if(0<=b && b-a<=K && ((a&b)==N) &&\
     \ !st.count({a,b})) st.insert({a,b});\n        }\n    }\n    cout << st.size()\
     \ << endl;\n    return 0;\n}\n"
   dependsOn:
-  - lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp
+  - lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp
   isVerificationFile: true
-  path: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+  path: test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:39:19+09:00'
+  timestamp: '2023-06-03 15:39:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+documentation_of: test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp
 layout: document
 redirect_from:
-- /verify/test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
-- /verify/test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp.html
-title: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
+- /verify/test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp
+- /verify/test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp.html
+title: test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp
 ---

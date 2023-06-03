@@ -3,8 +3,8 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/12-binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
-    title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
-      \u6728\u5217"
+    title: "RandomizedBinarySearchTreeSequence - \u30E9\u30F3\u30C0\u30E0\u5E73\u8861\
+      \u4E8C\u5206\u63A2\u7D22\u6728\u5217"
   - icon: ':heavy_check_mark:'
     path: lib/99-operator/monoid/MonoidRangeMinPointUpdate.cpp
     title: "MonoidRangeMinPointUpdate - [\u533A\u9593min, \u70B9\u66F4\u65B0]"
@@ -30,8 +30,8 @@ data:
     \ TypeNode func_operate(TypeNode l,TypeNode r){return r;}\n    inline static constexpr\
     \ bool func_check(TypeNode nodeVal,TypeNode var){return var > nodeVal;}\n};\n\
     #line 1 \"lib/12-binary-search-tree/RandomizedBinarySearchTreeSequence.cpp\"\n\
-    /*\n * @title RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\
-    \u7D22\u6728\u5217\n * @docs md/binary-search-tree/RandomizedBinarySearchTreeSequence.md\n\
+    /*\n * @title RandomizedBinarySearchTreeSequence - \u30E9\u30F3\u30C0\u30E0\u5E73\
+    \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217\n * @docs md/binary-search-tree/RandomizedBinarySearchTreeSequence.md\n\
     \ */\ntemplate<class Monoid> class RandomizedBinarySearchTreeSequence {\n    using\
     \ TypeNode = typename Monoid::TypeNode;\n    unsigned int x = 123456789, y = 362436069,\
     \ z = 521288629, w = 88675123;\n    unsigned int xor_shift() {\n        unsigned\
@@ -117,7 +117,7 @@ data:
   isVerificationFile: true
   path: test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   requiredBy: []
-  timestamp: '2023-05-31 01:48:55+09:00'
+  timestamp: '2023-06-03 15:39:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp

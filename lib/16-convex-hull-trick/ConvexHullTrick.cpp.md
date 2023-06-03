@@ -2,19 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
-    title: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
-    title: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-    title: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     _deprecated_at_docs: md/convex-hull-trick/ConvexHullTrick.md
     document_title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
@@ -25,7 +16,7 @@ data:
     \ = typename Operator::TypeValue;\n    using Line = pair<TypeValue,TypeValue>;\n\
     \    struct Monoid {\n        using TypeNode = Line;\n        inline static constexpr\
     \ TypeNode unit_node = {0,0};\n        inline static constexpr TypeNode func_fold(TypeNode\
-    \ l,TypeNode r){return {0,0};}\n    };\n    RandomizedBinarySearchTree<Monoid>\
+    \ l,TypeNode r){return {0,0};}\n    };\n    RandomizedBinarySearchTreeSet<Monoid>\
     \ lines;\n\n    //3\u76F4\u7DDA\u306B\u95A2\u3057\u3066line2\u304C\u5FC5\u8981\
     \u304B\u78BA\u8A8D (\u3053\u306E\u3068\u304D a1 < a2 < a3\u304C\u5FC5\u8981=rbst\u306E\
     \u9806\u305D\u306E\u307E\u307E)\n    inline int is_required(const Line& line1,\
@@ -66,7 +57,7 @@ data:
     \ = typename Operator::TypeValue;\n    using Line = pair<TypeValue,TypeValue>;\n\
     \    struct Monoid {\n        using TypeNode = Line;\n        inline static constexpr\
     \ TypeNode unit_node = {0,0};\n        inline static constexpr TypeNode func_fold(TypeNode\
-    \ l,TypeNode r){return {0,0};}\n    };\n    RandomizedBinarySearchTree<Monoid>\
+    \ l,TypeNode r){return {0,0};}\n    };\n    RandomizedBinarySearchTreeSet<Monoid>\
     \ lines;\n\n    //3\u76F4\u7DDA\u306B\u95A2\u3057\u3066line2\u304C\u5FC5\u8981\
     \u304B\u78BA\u8A8D (\u3053\u306E\u3068\u304D a1 < a2 < a3\u304C\u5FC5\u8981=rbst\u306E\
     \u9806\u305D\u306E\u307E\u307E)\n    inline int is_required(const Line& line1,\
@@ -106,12 +97,9 @@ data:
   isVerificationFile: false
   path: lib/16-convex-hull-trick/ConvexHullTrick.cpp
   requiredBy: []
-  timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-  - test/convex-hull-trick/ConvexHullTrick-max.test.cpp
-  - test/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  timestamp: '2023-06-03 15:39:15+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: lib/16-convex-hull-trick/ConvexHullTrick.cpp
 layout: document
 redirect_from:

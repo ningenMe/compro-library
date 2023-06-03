@@ -54,18 +54,19 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
-      title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u5E73\
-        \u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
+      title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u30E9\
+        \u30F3\u30C0\u30E0\u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
     - icon: ':heavy_check_mark:'
       path: lib/12-binary-search-tree/LazySplayTreeSequence.cpp
       title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
     - icon: ':heavy_check_mark:'
-      path: lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp
-      title: "RandomizedBinarySearchTree - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728"
-    - icon: ':heavy_check_mark:'
       path: lib/12-binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
-      title: "RandomizedBinarySearchTreeSequence - \u5E73\u8861\u4E8C\u5206\u63A2\u7D22\
-        \u6728\u5217"
+      title: "RandomizedBinarySearchTreeSequence - \u30E9\u30F3\u30C0\u30E0\u5E73\u8861\
+        \u4E8C\u5206\u63A2\u7D22\u6728\u5217"
+    - icon: ':question:'
+      path: lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp
+      title: "RandomizedBinarySearchTree - \u30E9\u30F3\u30C0\u30E0\u5E73\u8861\u4E8C\
+        \u5206\u63A2\u7D22\u6728set"
   - name: lib/13-static-range-query
     pages:
     - icon: ':heavy_check_mark:'
@@ -116,7 +117,7 @@ data:
       title: "RadixHeap - \u975E\u8CA0\u6574\u6570heap"
   - name: lib/16-convex-hull-trick
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/16-convex-hull-trick/ConvexHullTrick.cpp
       title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
     - icon: ':heavy_check_mark:'
@@ -262,7 +263,7 @@ data:
       path: lib/99-operator/monoid/MonoidRangeMulPointUpdate.cpp
       title: "MonoidRangeMulPointUpdate - [\u533A\u9593\u7A4D, \u4E00\u70B9\u66F4\u65B0\
         ]"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
       title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
         ]"
@@ -424,29 +425,29 @@ data:
       path: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
       title: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
-      title: test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
-      title: test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
-      title: test/binary-search-tree/RandomizedBinarySearchTree-pair.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
       title: test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
       title: test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
+      title: test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
+    - icon: ':x:'
+      path: test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
+      title: test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp
+      title: test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp
   - name: test/convex-hull-trick
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
       title: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
       title: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
       title: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
     - icon: ':heavy_check_mark:'
