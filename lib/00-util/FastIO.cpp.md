@@ -42,13 +42,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/heap/RadixHeap-64bit.test.cpp
     title: test/heap/RadixHeap-64bit.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/Prime-miller-rabin-1.test.cpp
     title: test/math/Prime-miller-rabin-1.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/Prime-miller-rabin-2.test.cpp
     title: test/math/Prime-miller-rabin-2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/math/Prime-rho.test.cpp
     title: test/math/Prime-rho.test.cpp
   - icon: ':heavy_check_mark:'

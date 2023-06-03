@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
     title: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
     title: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/operator/monoid/MonoidRangeGcdPointUpdate.md
     document_title: "MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0\
@@ -37,7 +37,7 @@ data:
   path: lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp
   requiredBy: []
   timestamp: '2023-05-31 05:05:50+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
   - test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
