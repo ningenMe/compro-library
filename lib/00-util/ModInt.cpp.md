@@ -7,6 +7,9 @@ data:
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   - icon: ':heavy_check_mark:'
@@ -175,6 +178,7 @@ data:
   - test/math/Matrix-det.test.cpp
   - test/segment-tree/SegmentTree-rcq.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   - test/polynomial/FormalPowerSeries-inv.test.cpp
