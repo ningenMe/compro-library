@@ -4,7 +4,7 @@
 #include <array>
 using namespace std;
 #include "../../lib/00-util/FastIO.cpp"
-#include "../../lib/14-data-structure/WordSizeTreeSet.cpp"
+#include "../../lib/12-binary-search-tree/WordSizeTreeSet.cpp"
 
 /**
  * @url 
