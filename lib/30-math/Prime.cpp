@@ -1,10 +1,8 @@
-
 /*
  * @title Prime - 高速素因数分解・ミラーラビン素数判定・Gcd・Lcm
  * @docs md/math/Prime.md
  */
 class Prime{
-    using int128 = __int128_t;
     using u128 = __uint128_t;
     using u64 = unsigned long long;
     using u32 = unsigned int;
@@ -48,7 +46,30 @@ class Prime{
             return mres >= mod ? mres - mod : mres;
         }
     };
-    template<size_t sz> inline static constexpr bool miller_rabin(const u64& n, const array<u64,sz>& ar) {
+    inline static constexpr long long pow_uint128(long long x, long long n, long long mod) {
+        long long res = 1;
+        for (x %= mod; n > 0; n >>= 1, x=(u128(x)*x)%mod) if (n & 1) res = (u128(res)*x)%mod;
+        return res;
+    }
+    template<size_t sz> inline static constexpr bool miller_rabin_uint128(const u64& n, const array<u64,sz>& ar) {
+        u32 i,s=0; 
+        u64 m = n - 1;
+        for (;!(m&1);++s,m>>=1);
+        MontgomeryMod mmod(n);
+        for (const u64& a: ar) {
+            if(a>=n) break;
+            u64 r=pow_uint128(a,m,n);
+            if(r != 1) {
+                for(i=0; i<s; ++i) {
+                    if(r == n-1) break;
+                    r = (u128(r)*r)%n;
+                }
+                if(i==s) return false;
+            }
+        }
+        return true;
+    }
+    template<size_t sz> inline static constexpr bool miller_rabin_montgomery(const u64& n, const array<u64,sz>& ar) {
         u32 i,s=0; 
         u64 m = n - 1;
         for (;!(m&1);++s,m>>=1);
@@ -90,11 +111,6 @@ class Prime{
         }
         return gcd_impl(n, m);
     }
-    inline static constexpr long long pow(long long x, long long n, long long mod) {
-        long long res = 1;
-        for (x %= mod; n > 0; n >>= 1, x=(int128(x)*x)%mod) if (n & 1) res = (int128(res)*x)%mod;
-        return res;
-    }
     inline static constexpr array<u64,3> ar1={2ULL, 7ULL, 61ULL};
     inline static constexpr array<u64,7> ar2={2ULL,325ULL,9375ULL,28178ULL,450775ULL,9780504ULL,1795265022ULL};
     inline static u64 rho(const u64& n){
@@ -127,8 +143,9 @@ class Prime{
         if(n%2 == 0) return false;
         if(n == 3) return true;
         if(n%3 == 0) return false;
-        if(n < 4759123141LL) return miller_rabin(n, ar1);
-        return miller_rabin(n, ar2);
+        if(n < 4759123141ULL) return miller_rabin_montgomery(n, ar1);
+		if(n <= 1000'000'000'000'000'000ULL) miller_rabin_montgomery(n, ar2);
+        return miller_rabin_uint128(n, ar2);
     }
     inline static vector<pair<u64,u64>> factorization_impl(const u64 n) {
 		// queue<u64> q; q.push(n);
