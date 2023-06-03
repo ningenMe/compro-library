@@ -83,8 +83,8 @@ data:
   timestamp: '2023-05-30 05:01:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/convex-hull-trick/LiChaoTree-line.test.cpp
   - test/convex-hull-trick/LiChaoTree-segment.test.cpp
+  - test/convex-hull-trick/LiChaoTree-line.test.cpp
 documentation_of: lib/16-convex-hull-trick/LiChaoTree.cpp
 layout: document
 redirect_from:

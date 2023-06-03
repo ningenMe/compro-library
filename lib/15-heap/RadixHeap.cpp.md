@@ -100,8 +100,8 @@ data:
   timestamp: '2023-05-31 03:07:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/heap/RadixHeap-64bit.test.cpp
   - test/heap/RadixHeap-32bit.test.cpp
+  - test/heap/RadixHeap-64bit.test.cpp
   - test/graph/MinimumUndirectedClosedCircuit.test.cpp
   - test/graph/MinimumDirectedClosedCircuit.test.cpp
 documentation_of: lib/15-heap/RadixHeap.cpp

@@ -54,12 +54,12 @@ data:
   timestamp: '2023-05-30 04:39:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/segment-tree/SegmentTree-rsq.test.cpp
   - test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
   - test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
-  - test/segment-tree/SegmentTree-rsq.test.cpp
-  - test/data-structure/BinaryTrie-set-xor-min.test.cpp
-  - test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTree-med.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTree-get.test.cpp
+  - test/data-structure/BinaryTrie-set-xor-min.test.cpp
   - test/graph/Tree-hld-vertex-2.test.cpp
 documentation_of: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
 layout: document

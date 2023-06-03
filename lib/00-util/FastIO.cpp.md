@@ -7,6 +7,9 @@ data:
     path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+    title: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -139,29 +142,30 @@ data:
   timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/heap/RadixHeap-64bit.test.cpp
-  - test/heap/DoubleEndedPriorityQuere.test.cpp
+  - test/static-range-query/DisjointSparseTable.test.cpp
+  - test/static-range-query/SparseTable.test.cpp
+  - test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
-  - test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
-  - test/polynomial/FormalPowerSeries-exp.test.cpp
-  - test/polynomial/FormalPowerSeries-pow.test.cpp
+  - test/math/Prime-miller-rabin-1.test.cpp
+  - test/math/Prime-miller-rabin-2.test.cpp
+  - test/math/Prime-rho.test.cpp
+  - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
+  - test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+  - test/data-structure/WordSizeTreeSet.test.cpp
+  - test/polynomial/FormalPowerSeries-inv.test.cpp
+  - test/polynomial/FormalPowerSeries-nth.test.cpp
   - test/polynomial/FormalPowerSeries-interpolation.test.cpp
   - test/polynomial/FormalPowerSeries-multi-eval.test.cpp
-  - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-log.test.cpp
-  - test/polynomial/FormalPowerSeries-nth.test.cpp
-  - test/math/Prime-miller-rabin-1.test.cpp
-  - test/math/Prime-rho.test.cpp
-  - test/math/Prime-miller-rabin-2.test.cpp
-  - test/data-structure/WordSizeTreeSet.test.cpp
-  - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
-  - test/graph/UnionFindTree.test.cpp
-  - test/static-range-query/SparseTable.test.cpp
-  - test/static-range-query/DisjointSparseTable.test.cpp
-  - test/util/FastIO-int128.test.cpp
+  - test/polynomial/FormalPowerSeries-exp.test.cpp
+  - test/polynomial/FormalPowerSeries-pow.test.cpp
   - test/util/FastIO-int64.test.cpp
+  - test/util/FastIO-int128.test.cpp
+  - test/heap/RadixHeap-64bit.test.cpp
+  - test/heap/DoubleEndedPriorityQuere.test.cpp
+  - test/graph/UnionFindTree.test.cpp
 documentation_of: lib/00-util/FastIO.cpp
 layout: document
 redirect_from:

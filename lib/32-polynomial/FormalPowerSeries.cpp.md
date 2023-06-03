@@ -221,13 +221,13 @@ data:
   timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/polynomial/FormalPowerSeries-exp.test.cpp
-  - test/polynomial/FormalPowerSeries-pow.test.cpp
+  - test/polynomial/FormalPowerSeries-inv.test.cpp
+  - test/polynomial/FormalPowerSeries-nth.test.cpp
   - test/polynomial/FormalPowerSeries-interpolation.test.cpp
   - test/polynomial/FormalPowerSeries-multi-eval.test.cpp
-  - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-log.test.cpp
-  - test/polynomial/FormalPowerSeries-nth.test.cpp
+  - test/polynomial/FormalPowerSeries-exp.test.cpp
+  - test/polynomial/FormalPowerSeries-pow.test.cpp
 documentation_of: lib/32-polynomial/FormalPowerSeries.cpp
 layout: document
 redirect_from:
