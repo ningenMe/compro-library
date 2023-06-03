@@ -13,8 +13,8 @@ data:
     title: "Tree - \u6728"
   - icon: ':heavy_check_mark:'
     path: lib/99-operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp
-    title: "MonoidRangeEulerTourSumRangeAdd - fold:\u533A\u9593\u30AA\u30A4\u30E9\u30FC\
-      \u30C4\u30A2\u30FC\u548C, operate:\u533A\u9593\u52A0\u7B97"
+    title: "MonoidRangeFoldEulerTourSumRangeOperateAdd - fold:\u533A\u9593\u30AA\u30A4\
+      \u30E9\u30FC\u30C4\u30A2\u30FC\u548C, operate:\u533A\u9593\u52A0\u7B97"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -283,9 +283,9 @@ data:
     \        cout << \"vector\" << endl;\n        cout << \"{ \" << fold(0,1);\n \
     \       for(int i = 1; i < length; ++i) cout << \", \" << fold(i,i+1);\n     \
     \   cout << \" }\" << endl;\n    }\n};\n#line 1 \"lib/99-operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp\"\
-    \n/*\n * @title MonoidRangeEulerTourSumRangeAdd - fold:\u533A\u9593\u30AA\u30A4\
-    \u30E9\u30FC\u30C4\u30A2\u30FC\u548C, operate:\u533A\u9593\u52A0\u7B97\n * @docs\
-    \ md/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.md\n */\ntemplate<class\
+    \n/*\n * @title MonoidRangeFoldEulerTourSumRangeOperateAdd - fold:\u533A\u9593\
+    \u30AA\u30A4\u30E9\u30FC\u30C4\u30A2\u30FC\u548C, operate:\u533A\u9593\u52A0\u7B97\
+    \n * @docs md/operator/monoid-lazy/MonoidRangeEulerTourSumRangeAdd.md\n */\ntemplate<class\
     \ T, class U> struct MonoidRangeFoldEulerTourSumRangeOperateAdd {\n\tusing TypeNode\
     \ = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode unit_node =\
     \ {0,0};\n\tinline static constexpr TypeLazy unit_lazy = 0;\n\tinline static constexpr\
@@ -335,7 +335,7 @@ data:
   isVerificationFile: true
   path: test/graph/Tree-eulertour.test.cpp
   requiredBy: []
-  timestamp: '2023-05-31 02:01:59+09:00'
+  timestamp: '2023-06-03 10:08:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/graph/Tree-eulertour.test.cpp

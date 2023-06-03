@@ -21,12 +21,12 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
+    PROBLEM: https://judge.yosupo.jp/problem/dynamic_sequence_range_affine_range_sum
     links:
-    - https://judge.yosupo.jp/problem/range_affine_range_sum
-  bundledCode: "#line 1 \"test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\n\
-    \n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
+    - https://judge.yosupo.jp/problem/dynamic_sequence_range_affine_range_sum
+  bundledCode: "#line 1 \"test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_sequence_range_affine_range_sum\"\
+    \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
     using namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n\
     \ * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline static constexpr\
     \ int ch_0='0';\n    inline static constexpr int ch_9='9';\n    inline static\
@@ -216,41 +216,49 @@ data:
     \ int l, const int r, const TypeLazy lazy) {propagate(this->root); operate_impl(l,r,lazy);}\n\
     \    inline TypeNode fold(int l, int r) {return fold_impl(l,r);}\n    inline void\
     \ reverse(int l, int r) {reverse_impl(l,r);}\n    void print() {print_impl();}\n\
-    };\n#line 12 \"test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp\"\
-    \n\nusing modint = ModInt<MOD_998244353>;\n\nint main(void){\n \tcin.tie(0);ios::sync_with_stdio(false);\n\
-    \    int N,Q; \n\tread(N); read(Q);\n    LazySplayTreeSequence<MonoidRangeFoldSumRangeOperateAffine<modint,pair<modint,modint>>>\
-    \ st;\n    for(int i = 0; i < N; ++i) {\n        int a; read(a); st.insert(i,a);\n\
-    \    }\n    while(Q--){\n        int q,l,r; \n\t\tread(q); read(l); read(r);\n\
-    \        if(q) {\n\t\t\tcout << st.fold(l,r) << \"\\n\";\n\t\t}\n        else\
-    \ {\n\t\t\tint b,c; read(b); read(c);\n\t\t\tst.operate(l,r,{modint(b),modint(c)});\n\
-    \t\t}\n    }\n}\n\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
+    };\n#line 12 \"test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp\"\
+    \n\nusing modint = ModInt<MOD_998244353>;\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\
+    \    int N,Q; read(N); read(Q);\n    LazySplayTreeSequence<MonoidRangeFoldSumRangeOperateAffine<modint,pair<modint,modint>>>\
+    \ st;\n    for(int i=0;i<N;++i) {\n        int a; read(a); st.insert(i,a);\n \
+    \   }\n    while(Q--) {\n        int q; read(q);\n        if(q==0) {\n       \
+    \     int i,x; read(i); read(x);\n            st.insert(i,x);\n        }\n   \
+    \     if(q==1) {\n            int i; read(i);\n            st.erase(i);\n    \
+    \    }\n\t\tif(q==2) {\n\t\t\tint l,r; read(l); read(r);\n\t\t\tst.reverse(l,r);\n\
+    \t\t}\n\t\tif(q==3) {\n\t\t\tint l,r,b,c; read(l); read(r); read(b); read(c);\n\
+    \t\t\tst.operate(l,r,{b,c});\n\t\t}\n        if(q==4) {\n            int l,r;\
+    \ read(l); read(r);\n            cout << st.fold(l,r) << \"\\n\";\n        }\n\
+    \    }\n    return 0;\n}\n\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_sequence_range_affine_range_sum\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
     using namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/00-util/ModInt.cpp\"\
     \n#include \"../../lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAffine.cpp\"\
     \n#include \"../../lib/12-binary-search-tree/LazySplayTreeSequence.cpp\"\n\nusing\
-    \ modint = ModInt<MOD_998244353>;\n\nint main(void){\n \tcin.tie(0);ios::sync_with_stdio(false);\n\
-    \    int N,Q; \n\tread(N); read(Q);\n    LazySplayTreeSequence<MonoidRangeFoldSumRangeOperateAffine<modint,pair<modint,modint>>>\
-    \ st;\n    for(int i = 0; i < N; ++i) {\n        int a; read(a); st.insert(i,a);\n\
-    \    }\n    while(Q--){\n        int q,l,r; \n\t\tread(q); read(l); read(r);\n\
-    \        if(q) {\n\t\t\tcout << st.fold(l,r) << \"\\n\";\n\t\t}\n        else\
-    \ {\n\t\t\tint b,c; read(b); read(c);\n\t\t\tst.operate(l,r,{modint(b),modint(c)});\n\
-    \t\t}\n    }\n}\n\n"
+    \ modint = ModInt<MOD_998244353>;\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\
+    \    int N,Q; read(N); read(Q);\n    LazySplayTreeSequence<MonoidRangeFoldSumRangeOperateAffine<modint,pair<modint,modint>>>\
+    \ st;\n    for(int i=0;i<N;++i) {\n        int a; read(a); st.insert(i,a);\n \
+    \   }\n    while(Q--) {\n        int q; read(q);\n        if(q==0) {\n       \
+    \     int i,x; read(i); read(x);\n            st.insert(i,x);\n        }\n   \
+    \     if(q==1) {\n            int i; read(i);\n            st.erase(i);\n    \
+    \    }\n\t\tif(q==2) {\n\t\t\tint l,r; read(l); read(r);\n\t\t\tst.reverse(l,r);\n\
+    \t\t}\n\t\tif(q==3) {\n\t\t\tint l,r,b,c; read(l); read(r); read(b); read(c);\n\
+    \t\t\tst.operate(l,r,{b,c});\n\t\t}\n        if(q==4) {\n            int l,r;\
+    \ read(l); read(r);\n            cout << st.fold(l,r) << \"\\n\";\n        }\n\
+    \    }\n    return 0;\n}\n\n"
   dependsOn:
   - lib/00-util/FastIO.cpp
   - lib/00-util/ModInt.cpp
   - lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAffine.cpp
   - lib/12-binary-search-tree/LazySplayTreeSequence.cpp
   isVerificationFile: true
-  path: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+  path: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   requiredBy: []
-  timestamp: '2023-06-03 10:08:48+09:00'
+  timestamp: '2023-06-03 10:09:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+documentation_of: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
 layout: document
 redirect_from:
-- /verify/test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
-- /verify/test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp.html
-title: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+- /verify/test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
+- /verify/test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp.html
+title: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
 ---

@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
+    title: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -153,6 +156,7 @@ data:
   - test/math/Prime-rho.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+  - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   - test/data-structure/WordSizeTreeSet.test.cpp
   - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-nth.test.cpp

@@ -270,24 +270,24 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp
-      title: "MonoidRangeEulerTourSumRangeAdd - fold:\u533A\u9593\u30AA\u30A4\u30E9\
-        \u30FC\u30C4\u30A2\u30FC\u548C, operate:\u533A\u9593\u52A0\u7B97"
+      title: "MonoidRangeFoldEulerTourSumRangeOperateAdd - fold:\u533A\u9593\u30AA\
+        \u30A4\u30E9\u30FC\u30C4\u30A2\u30FC\u548C, operate:\u533A\u9593\u52A0\u7B97"
     - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateAdd.cpp
       title: "MonoidRangeFoldMinRangeOperateAdd - fold:\u533A\u9593min, operate:\u533A\
         \u9593\u52A0\u7B97"
     - icon: ':warning:'
       path: lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateArithmeticUpdate.cpp
-      title: "MonoidRangeMinRangeArithmeticUpdate - fold:\u533A\u9593min, operate:\u533A\
-        \u9593\u7B49\u5DEE\u6570\u5217\u66F4\u65B0]"
+      title: "MonoidRangeFoldMinRangeOperateArithmeticUpdate - fold:\u533A\u9593min,\
+        \ operate:\u533A\u9593\u7B49\u5DEE\u6570\u5217\u66F4\u65B0]"
     - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
       title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
         \u9593\u66F4\u65B0"
     - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAffine.cpp
-      title: "MonoidRangeSumRangeAffine - fold:\u533A\u9593\u548C, operate:\u533A\u9593\
-        \u30A2\u30D5\u30A3\u30F3\u5909\u63DB"
+      title: "MonoidRangeFoldSumRangeOperateAffine - fold:\u533A\u9593\u548C, operate:\u533A\
+        \u9593\u30A2\u30D5\u30A3\u30F3\u5909\u63DB"
     - icon: ':warning:'
       path: lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateUpdate.cpp
       title: "MonoidRangeFoldSumRangeOperateUpdate - fold:\u533A\u9593sum, operate:\u533A\
@@ -402,7 +402,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
       title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
       title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
     - icon: ':x:'
@@ -414,6 +414,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
       title: test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
+      title: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
       title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp

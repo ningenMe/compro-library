@@ -7,6 +7,9 @@ data:
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
   _isVerificationFailed: false
@@ -191,6 +194,7 @@ data:
   timestamp: '2023-05-30 04:39:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
 documentation_of: lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp

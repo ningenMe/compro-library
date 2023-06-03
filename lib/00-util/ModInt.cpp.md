@@ -4,6 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
+    title: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -168,7 +174,9 @@ data:
   - test/math/CombinationMod-factorial.test.cpp
   - test/math/Matrix-det.test.cpp
   - test/segment-tree/SegmentTree-rcq.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+  - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-nth.test.cpp
   - test/polynomial/FormalPowerSeries-interpolation.test.cpp

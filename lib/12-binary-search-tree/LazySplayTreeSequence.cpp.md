@@ -7,6 +7,9 @@ data:
     path: test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
+    title: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -246,6 +249,7 @@ data:
   - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+  - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
 documentation_of: lib/12-binary-search-tree/LazySplayTreeSequence.cpp
 layout: document
 redirect_from:
