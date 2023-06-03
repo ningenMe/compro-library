@@ -1,8 +1,8 @@
 /*
- * @title RandomizedBinarySearchTree - 平衡二分探索木
+ * @title RandomizedBinarySearchTree - ランダム平衡二分探索木set
  * @docs md/binary-search-tree/RandomizedBinarySearchTree.md
  */
-template<class Monoid> class RandomizedBinarySearchTree {
+template<class Monoid> class RandomizedBinarySearchTreeSet {
     using TypeNode = typename Monoid::TypeNode;
     unsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;
     unsigned int xor_shift() {
@@ -92,7 +92,7 @@ template<class Monoid> class RandomizedBinarySearchTree {
         this->root = merge_impl(sub.first, split_impl(sub.second, 1).second);
     }
 public:
-    RandomizedBinarySearchTree() : root(nullptr) {}
+    RandomizedBinarySearchTreeSet() : root(nullptr) {}
     inline int size() {return size(this->root);}
     inline int empty(void) {return bool(size()==0);}
     inline Node* merge(Node *left, Node *right) {return merge_impl(left,right);}

@@ -7,7 +7,7 @@
 #include <numeric>
 #include <cmath>
 using namespace std;
-#include "../../lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp"
+#include "../../lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp"
 
 template<class T> struct Monoid {
 	using TypeNode = T;
@@ -21,7 +21,7 @@ int main() {
 		cout << "INF" << endl;
 		return 0;
 	}
-    RandomizedBinarySearchTree<Monoid<pair<int,int>>> st;
+    RandomizedBinarySearchTreeSet<Monoid<pair<int,int>>> st;
     for(int i = 0; i < (1<<20); ++i) {
         if((i&N) != N) continue;
         for(int j = -K; j <= K; ++j) {

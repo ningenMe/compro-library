@@ -11,7 +11,7 @@ private:
         inline static constexpr TypeNode unit_node = {0,0};
         inline static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return {0,0};}
     };
-    RandomizedBinarySearchTree<Monoid> lines;
+    RandomizedBinarySearchTreeSet<Monoid> lines;
 
     //3直線に関してline2が必要か確認 (このとき a1 < a2 < a3が必要=rbstの順そのまま)
     inline int is_required(const Line& line1, const Line& line2, const Line& line3) {

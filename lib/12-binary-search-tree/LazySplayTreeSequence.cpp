@@ -18,16 +18,16 @@ template<class Monoid> class LazySplayTreeSequence {
         friend ostream &operator<<(ostream &os, const Node* node) {return os << "{" << node->value << ", " << node->size << "}";}
     };
     Node* root;
-    int size(Node *node) {return node==nullptr ? 0 : node->size;}
-    TypeNode range_value(Node *node) {return node==nullptr ? Monoid::unit_node : node->range_value;}
-    void update(Node *node) {
+    inline int size(Node *node) {return node==nullptr ? 0 : node->size;}
+    inline TypeNode range_value(Node *node) {return node==nullptr ? Monoid::unit_node : node->range_value;}
+    inline void update(Node *node) {
         if(node==nullptr) return;
 		if(node->left != nullptr) propagate(node->left);
 		if(node->right != nullptr) propagate(node->right);
         node->size = size(node->left) + size(node->right) + 1;
         node->range_value = Monoid::func_fold(Monoid::func_fold(range_value(node->left),node->value),range_value(node->right));
     }
-    void propagate(Node *node) {
+    inline void propagate(Node *node) {
         if(node==nullptr || (node->range_lazy == Monoid::unit_lazy && node->rev == 0)) return;
         node->range_value = Monoid::func_operate(node->range_value,node->range_lazy,0,node->size);
         node->value = Monoid::func_operate(node->value,node->range_lazy,0,1);
@@ -36,7 +36,7 @@ template<class Monoid> class LazySplayTreeSequence {
         if(node->rev) swap(node->left,node->right), node->rev = 0;
         node->range_lazy = Monoid::unit_lazy;
     }
-    void rotate_left(Node* node){
+    inline void rotate_left(Node* node){
         Node* parent = node->parent;
         if(parent->parent == nullptr) root = node;
         else if (parent->parent->left == parent) parent->parent->left = node;
@@ -48,7 +48,7 @@ template<class Monoid> class LazySplayTreeSequence {
         parent->right = node->left;
         node->left = parent;
     }
-    void rotate_right(Node* node){
+    inline void rotate_right(Node* node){
         Node* parent = node->parent;
         if(parent->parent == nullptr) root = node;
         else if (parent->parent->left == parent) parent->parent->left = node;
@@ -60,7 +60,7 @@ template<class Monoid> class LazySplayTreeSequence {
         parent->left = node->right;
         node->right = parent;
     }
-    void splay(Node* node){
+    inline void splay(Node* node){
         propagate(node);
         while(node->parent != nullptr){
             Node* parent = node->parent;
@@ -97,14 +97,13 @@ template<class Monoid> class LazySplayTreeSequence {
                 node = node->right;
             }
         }
-        propagate(node); //いらなさそう？
         splay(node);
         return node;
     }
     //[l,r)
     Node* get_range_impl(const size_t l, const size_t r) {
         if(r-l==size(root)) return root;
-        if(l==0) return get_impl(r)->left; //r-1?
+        if(l==0) return get_impl(r)->left;
         if(r==size(root)) return get_impl(l-1)->right;
         Node* target_right = get_impl(r);
         Node* target_left = target_right->left;
@@ -150,29 +149,22 @@ template<class Monoid> class LazySplayTreeSequence {
         if(k == 0){
             root = target->right;
             if(root != nullptr) root->parent = nullptr;
+            return;
         }
         else if(k+1 == size(root)){
             root = target->left;
             if(root != nullptr) root->parent = nullptr;
+            return;
         }
-        else{
-            Node* target_left = target->left;
-            Node* target_right = target->right;
-            target_right->parent = nullptr;
-            root = target_right;
-            get_impl(0);
-            target_right = root;  
-            target_right->left = target_left;
-            target_left->parent = target_right;
-            update(target_right);
-        }
-    }
-    void operate_impl(int l, int r, TypeLazy lazy) {
-        if(l < 0 || size(root) <= l || r <= 0 || r-l <= 0) return;
-        Node* node=get_range_impl(l,r);
-        node->range_lazy = Monoid::func_lazy(node->range_lazy,lazy);
-		propagate(node);
-        splay(node);
+        Node* target_left = target->left;
+        Node* target_right = target->right;
+        target_right->parent = nullptr;
+        root = target_right;
+        get_impl(0);
+        target_right = root;  
+        target_right->left = target_left;
+        target_left->parent = target_right;
+        update(target_right);
     }
     inline TypeNode fold_impl(int l, int r) {
         if (l < 0 || size(root) <= l || r<=0 || r-l <= 0) return Monoid::unit_node;
@@ -180,6 +172,12 @@ template<class Monoid> class LazySplayTreeSequence {
 		propagate(node);
 		update(node);
         return range_value(node);
+    }
+    void operate_impl(int l, int r, TypeLazy lazy) {
+        if(l < 0 || size(root) <= l || r <= 0 || r-l <= 0) return;
+        Node* node=get_range_impl(l,r);
+        node->range_lazy = Monoid::func_lazy(node->range_lazy,lazy);
+        splay(node);
     }
     void reverse_impl(int l, int r) {
         if (l < 0 || size(root) <= l || r<=0 || r-l <= 0) return;
@@ -214,11 +212,11 @@ template<class Monoid> class LazySplayTreeSequence {
     }
 public:
     LazySplayTreeSequence(): root(nullptr) {}
-    TypeNode get(const size_t k) {return get_impl(k)->value; }
-    int size() {return size(root); }
-    void insert(const size_t k, const TypeNode value) {insert_impl(k,value);}
-    void erase(const size_t k) { erase_impl(k);}
-    inline void operate(const int l, const int r, const TypeLazy lazy) {propagate(this->root); operate_impl(l,r,lazy);}
+    inline TypeNode get(const size_t k) {return get_impl(k)->value; }
+    inline int size() {return size(root); }
+    inline void insert(const size_t k, const TypeNode value) {insert_impl(k,value);}
+    inline void erase(const size_t k) { erase_impl(k);}
+    inline void operate(const int l, const int r, const TypeLazy lazy) {operate_impl(l,r,lazy);}
     inline TypeNode fold(int l, int r) {return fold_impl(l,r);}
     inline void reverse(int l, int r) {reverse_impl(l,r);}
     void print() {print_impl();}

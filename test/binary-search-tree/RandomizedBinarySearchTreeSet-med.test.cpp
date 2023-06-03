@@ -7,7 +7,7 @@
 #include <numeric>
 #include <cmath>
 using namespace std;
-#include "../../lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp"
+#include "../../lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp"
 #include "../../lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp"
 
 template<class T> class Mo{
@@ -30,7 +30,7 @@ public:
     }
     
     //参照でvectorを渡したりすると良い
-    void solve(const vector<int>& A, RandomizedBinarySearchTree<MonoidRangeSumPointAdd<long long>>& med){
+    void solve(const vector<int>& A, RandomizedBinarySearchTreeSet<MonoidRangeSumPointAdd<long long>>& med){
         int l = 0, r = 0;
         for(int& i:idx){
             auto& xl = range[i].first;

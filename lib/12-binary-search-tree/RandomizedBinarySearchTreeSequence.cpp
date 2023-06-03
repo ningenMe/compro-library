@@ -1,5 +1,5 @@
 /*
- * @title RandomizedBinarySearchTreeSequence - 平衡二分探索木列
+ * @title RandomizedBinarySearchTreeSequence - ランダム平衡二分探索木列
  * @docs md/binary-search-tree/RandomizedBinarySearchTreeSequence.md
  */
 template<class Monoid> class RandomizedBinarySearchTreeSequence {

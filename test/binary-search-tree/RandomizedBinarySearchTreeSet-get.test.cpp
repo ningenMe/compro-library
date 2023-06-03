@@ -7,12 +7,12 @@
 #include <numeric>
 #include <cmath>
 using namespace std;
-#include "../../lib/12-binary-search-tree/RandomizedBinarySearchTree.cpp"
+#include "../../lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp"
 #include "../../lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp"
 
 int main(){
     cin.tie(0);ios::sync_with_stdio(false);
-	RandomizedBinarySearchTree<MonoidRangeSumPointAdd<long long>> st;
+	RandomizedBinarySearchTreeSet<MonoidRangeSumPointAdd<long long>> st;
 	int Q,K; cin >> Q >> K;
 	while (Q--){
 		int q; cin >> q;
