@@ -12,15 +12,20 @@ int main(void){
     cin.tie(0);ios::sync_with_stdio(false);
     int Q; read(Q);
     while(Q--) {
-        long long a,sum=0; 
-        read(a);
-        auto pf = Prime::factorization(a);
-        string ans = "";
-        for(auto pa:pf) {
-            sum += pa.second;
-            for(int i=0;i<pa.second;++i) ans += " " + to_string(pa.first);
-        }
-        cout << sum << ans << "\n";
-    }
-	return 0;
+        long long a; read(a);
+		vector<unsigned long long> v;
+		if(Q&1) {
+			auto vp = Prime::factorization(a);
+			for(auto& p:vp) {
+				for(int i=0;i<p.second;++i) v.push_back(p.first);
+			}
+		}
+		else {
+			v = Prime::factor(a); 
+		}
+        cout << v.size();
+		for(unsigned long long& b: v) cout << " " << b;
+		cout << "\n";
+	}
+    return 0;
 }
