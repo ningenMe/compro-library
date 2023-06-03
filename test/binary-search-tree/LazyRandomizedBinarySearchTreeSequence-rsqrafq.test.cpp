@@ -5,7 +5,7 @@
 #include <cassert>
 #include <queue>
 using namespace std;
-#include "../../lib/99-operator/monoid-lazy/MonoidRangeSumRangeAffine.cpp"
+#include "../../lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAffine.cpp"
 #include "../../lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
 #include "../../lib/00-util/ModInt.cpp"
 
@@ -15,7 +15,7 @@ template <class T, class U>ostream &operator<<(ostream &o, const pair<T, U>&obj)
 int main(void){
     int N,Q;
 	scanf("%d %d",&N,&Q);
-    LazyRandomizedBinarySearchTreeSequence<MonoidRangeSumRangeAffine<modint,pair<modint,modint>>> A;
+    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldSumRangeOperateAffine<modint,pair<modint,modint>>> A;
     for(int i=0;i<N;++i) {
 		int a;
 		scanf("%d",&a);
