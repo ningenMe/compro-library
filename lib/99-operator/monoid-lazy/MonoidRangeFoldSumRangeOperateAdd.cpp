@@ -1,8 +1,8 @@
 /*
- * @title MonoidRangeSumRangeAdd - [区間和, 区間加算]
+ * @title MonoidRangeSumRangeAdd - fold:区間和, opearate:区間加算
  * @docs md/operator/monoid-lazy/MonoidRangeSumRangeAdd.md
  */
-template<class T, class U> struct MonoidRangeSumRangeAdd {
+template<class T, class U> struct MonoidRangeFoldSumRangeOperateAdd {
 	using TypeNode = T;
 	using TypeLazy = U;
 	inline static constexpr TypeNode unit_node = 0;
