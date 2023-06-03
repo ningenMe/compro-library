@@ -76,6 +76,19 @@ template<class Monoid> class LazyRandomizedBinarySearchTreeSequence {
             return make_pair(update(node), sub.second);
         }
     }
+    inline TypeNode fold_impl(Node *node, int l, int r) {
+        if (l < 0 || size(node) <= l || r<=0 || r-l <= 0) return Monoid::unit_node;
+        propagate(node);
+        if (l == 0 && r == size(node)) return range_value(node);
+        TypeNode value = Monoid::unit_node;
+        int sl = size(node->left);
+        if(sl > l) value = Monoid::func_fold(value,fold_impl(node->left,l,min(sl,r)));
+        l = max(l-sl,0), r -= sl;
+        if(l == 0 && r > 0) value = Monoid::func_fold(value,node->value);
+        l = max(l-1,0), r -= 1;
+        if(l >= 0 && r > l) value = Monoid::func_fold(value,fold_impl(node->right,l,r));
+        return value;
+    }
     inline void operate_impl(Node *node, int l, int r, TypeLazy lazy) {
         if(l < 0 || size(node) <= l || r <= 0 || r-l <= 0) return;
         if (l == 0 && r == size(node)) {
@@ -93,20 +106,8 @@ template<class Monoid> class LazyRandomizedBinarySearchTreeSequence {
         if(l >= 0 && r > l) operate_impl(node->right,l,r,lazy);
         update(node);
     }
-    inline TypeNode fold_impl(Node *node, int l, int r) {
-        if (l < 0 || size(node) <= l || r<=0 || r-l <= 0) return Monoid::unit_node;
-        propagate(node);
-        if (l == 0 && r == size(node)) return range_value(node);
-        TypeNode value = Monoid::unit_node;
-        int sl = size(node->left);
-        if(sl > l) value = Monoid::func_fold(value,fold_impl(node->left,l,min(sl,r)));
-        l = max(l-sl,0), r -= sl;
-        if(l == 0 && r > 0) value = Monoid::func_fold(value,node->value);
-        l = max(l-1,0), r -= 1;
-        if(l >= 0 && r > l) value = Monoid::func_fold(value,fold_impl(node->right,l,r));
-        return value;
-    }
     inline void reverse_impl(int l, int r) {
+        if(l < 0 || size(root) <= l || r <= 0 || r-l <= 0) return;
         pair<Node*,Node*> tmp1 = split_impl(this->root,l);
         pair<Node*,Node*> tmp2 = split_impl(tmp1.second,r-l);
         Node* nl = tmp1.first;
