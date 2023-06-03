@@ -4,15 +4,15 @@ data:
   - icon: ':question:'
     path: lib/00-util/FastIO.cpp
     title: FastIO
-  - icon: ':x:'
+  - icon: ':question:'
     path: lib/30-math/Prime.cpp
     title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\u30FC\
       \u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A\u30FBGcd\u30FBLcm"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/primality_test
@@ -144,7 +144,7 @@ data:
   path: test/math/Prime-miller-rabin-2.test.cpp
   requiredBy: []
   timestamp: '2023-06-04 04:28:00+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/Prime-miller-rabin-2.test.cpp
 layout: document

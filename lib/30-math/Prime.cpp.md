@@ -6,21 +6,21 @@ data:
   - icon: ':x:'
     path: test/math/Prime-miller-rabin-1.test.cpp
     title: test/math/Prime-miller-rabin-1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Prime-miller-rabin-2.test.cpp
     title: test/math/Prime-miller-rabin-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Prime-rho.test.cpp
     title: test/math/Prime-rho.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
     title: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
     title: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/math/Prime.md
     document_title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\
@@ -193,7 +193,7 @@ data:
   path: lib/30-math/Prime.cpp
   requiredBy: []
   timestamp: '2023-06-04 04:28:00+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/math/Prime-miller-rabin-1.test.cpp
   - test/math/Prime-miller-rabin-2.test.cpp

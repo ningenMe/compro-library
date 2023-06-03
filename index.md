@@ -31,7 +31,7 @@ data:
       path: lib/10-segment-tree/LazySegmentTree.cpp
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/SegmentTree.cpp
       title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
         \u30F3\u30C8\u6728"
@@ -157,7 +157,7 @@ data:
     - icon: ':warning:'
       path: lib/30-math/Polynomial.cpp
       title: "Polynomial - \u591A\u9805\u5F0F\u88DC\u9593"
-    - icon: ':x:'
+    - icon: ':question:'
       path: lib/30-math/Prime.cpp
       title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\
         \u30FC\u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A\u30FBGcd\u30FBLcm"
@@ -253,7 +253,7 @@ data:
       path: lib/99-operator/monoid/MonoidRangeCompositePointUpdate.cpp
       title: "MonoidRangeCompositePointUpdate - [\u533A\u9593\u4E00\u6B21\u95A2\u6570\
         , \u70B9\u66F4\u65B0]"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp
       title: "MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0]"
     - icon: ':heavy_check_mark:'
@@ -626,10 +626,10 @@ data:
     - icon: ':x:'
       path: test/math/Prime-miller-rabin-1.test.cpp
       title: test/math/Prime-miller-rabin-1.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/Prime-miller-rabin-2.test.cpp
       title: test/math/Prime-miller-rabin-2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/Prime-rho.test.cpp
       title: test/math/Prime-rho.test.cpp
   - name: test/optimize
@@ -680,7 +680,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
       title: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
       title: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
     - icon: ':heavy_check_mark:'
@@ -692,7 +692,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/SegmentTree-rsq.test.cpp
       title: test/segment-tree/SegmentTree-rsq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
       title: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
     - icon: ':heavy_check_mark:'

@@ -45,10 +45,10 @@ data:
   - icon: ':x:'
     path: test/math/Prime-miller-rabin-1.test.cpp
     title: test/math/Prime-miller-rabin-1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Prime-miller-rabin-2.test.cpp
     title: test/math/Prime-miller-rabin-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Prime-rho.test.cpp
     title: test/math/Prime-rho.test.cpp
   - icon: ':heavy_check_mark:'
