@@ -4,8 +4,56 @@
  */
 class Prime{
     using int128 = __int128_t;
+    using u128 = __uint128_t;
     using u64 = unsigned long long;
     using u32 = unsigned int;
+    class MontgomeryMod {
+        u64 mod,inv_mod,pow2_128;
+        inline u64 reduce(const u128& val) {
+            return (val + u128(u64(val) * u64(-inv_mod)) * mod) >> 64;
+        }
+        inline u128 init_reduce(const u64& val) {
+            return reduce((u128(val) + mod) * pow2_128);
+        }
+        inline u64 mul_impl(const u64 l, const u64 r) {
+            return reduce(u128(l)*r);
+        }
+    public:
+        MontgomeryMod(const u64 mod):mod(mod),pow2_128(-u128(mod)%mod) {
+            inv_mod = mod;
+            for (int i = 0; i < 5; ++i) inv_mod *= 2 - mod * inv_mod;
+        }
+        //x^n % mod
+        inline u64 pow(const u64& x, u64 n) {
+            u64 mres = init_reduce(1);
+            for (u64 mx = init_reduce(x); n > 0; n >>= 1, mx=mul_impl(mx,mx)) if (n & 1) mres = mul_impl(mres,mx);
+            mres=reduce(mres);
+            return mres >= mod ? mres - mod : mres;
+        }
+        inline u64 mul(const u64& l, const u64& r) {
+            u64 ml=init_reduce(l),mr=init_reduce(r);
+            u64 mres=reduce(mul_impl(ml,mr));
+            return mres >= mod ? mres - mod : mres;
+        }
+    };
+    template<size_t sz> inline static constexpr bool miller_rabin(const u64& n, const array<u64,sz>& ar) {
+        u32 i,s=0; 
+        u64 m = n - 1;
+        for (;!(m&1);++s,m>>=1);
+        MontgomeryMod mmod(n);
+        for (const u64& a: ar) {
+            if(a>=n) break;
+            u64 r=mmod.pow(a,m);
+            if(r != 1) {
+                for(i=0; i<s; ++i) {
+                    if(r == n-1) break;
+                    r = mmod.mul(r,r);
+                }
+                if(i==s) return false;
+            }
+        }
+        return true;
+    }
     inline static long long gcd_impl(long long n, long long m) {
         static constexpr long long K = 5;
         long long t,s;
@@ -58,23 +106,6 @@ class Prime{
         auto r = factor(n / p);
         copy(r.begin(), r.end(), back_inserter(l));
         return l;
-    }
-    template<size_t sz> inline static constexpr bool miller_rabin(const u64& n, const array<u64,sz>& ar) {
-        u32 i,s=0; 
-        u64 m = n - 1;
-        for (;!(m&1);++s,m>>=1);
-        for (const u64& a: ar) {
-            if(a>=n) break;
-            u64 r=pow(a,m,n);
-            if(r != 1) {
-                for(i=0; i<s; ++i) {
-                    if(r == n-1) break;
-                    r = (int128(r)*r)%n;
-                }
-                if(i==s) return false;
-            }
-        }
-        return true;
     }
     inline static constexpr bool miller_rabin(const u64 n) {
         if(n <= 1) return false;
