@@ -4,17 +4,17 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/WordSizeTreeSet.test.cpp
-    title: test/data-structure/WordSizeTreeSet.test.cpp
+    path: test/binary-search-tree/WordSizeTreeSet.test.cpp
+    title: test/binary-search-tree/WordSizeTreeSet.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/data-structure/WordSizeTreeSet.md
+    _deprecated_at_docs: md/binary-search-tree/WordSizeTreeSet.md
     document_title: "WordSizeTreeSet - 64\u5206\u6728"
     links: []
-  bundledCode: "#line 1 \"lib/14-data-structure/WordSizeTreeSet.cpp\"\n/*\n * @title\
-    \ WordSizeTreeSet - 64\u5206\u6728\n * @docs md/data-structure/WordSizeTreeSet.md\n\
+  bundledCode: "#line 1 \"lib/12-binary-search-tree/WordSizeTreeSet.cpp\"\n/*\n *\
+    \ @title WordSizeTreeSet - 64\u5206\u6728\n * @docs md/binary-search-tree/WordSizeTreeSet.md\n\
     \ */\nclass WordSizeTreeSet {\npublic:\n    using u64 = unsigned long long;\n\
     \    inline static constexpr u64 max_length=(1ULL<<24);\nprivate:\n    inline\
     \ static constexpr u64 word_size=(1ULL<<6);\n    inline static constexpr array<u64,word_size>\
@@ -146,7 +146,7 @@ data:
     \ inner.count_impl(value);}\n    u64 next_lower_bound(const u64& value) const\
     \ {return inner.next_lower_bound_impl(value);}\n    u64 prev_lower_bound(const\
     \ u64& value) const {return inner.prev_lower_bound_impl(value);}\n};\n"
-  code: "/*\n * @title WordSizeTreeSet - 64\u5206\u6728\n * @docs md/data-structure/WordSizeTreeSet.md\n\
+  code: "/*\n * @title WordSizeTreeSet - 64\u5206\u6728\n * @docs md/binary-search-tree/WordSizeTreeSet.md\n\
     \ */\nclass WordSizeTreeSet {\npublic:\n    using u64 = unsigned long long;\n\
     \    inline static constexpr u64 max_length=(1ULL<<24);\nprivate:\n    inline\
     \ static constexpr u64 word_size=(1ULL<<6);\n    inline static constexpr array<u64,word_size>\
@@ -280,17 +280,17 @@ data:
     \ u64& value) const {return inner.prev_lower_bound_impl(value);}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/14-data-structure/WordSizeTreeSet.cpp
+  path: lib/12-binary-search-tree/WordSizeTreeSet.cpp
   requiredBy: []
-  timestamp: '2023-05-30 05:01:32+09:00'
+  timestamp: '2023-06-03 15:56:05+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/WordSizeTreeSet.test.cpp
-documentation_of: lib/14-data-structure/WordSizeTreeSet.cpp
+  - test/binary-search-tree/WordSizeTreeSet.test.cpp
+documentation_of: lib/12-binary-search-tree/WordSizeTreeSet.cpp
 layout: document
 redirect_from:
-- /library/lib/14-data-structure/WordSizeTreeSet.cpp
-- /library/lib/14-data-structure/WordSizeTreeSet.cpp.html
+- /library/lib/12-binary-search-tree/WordSizeTreeSet.cpp
+- /library/lib/12-binary-search-tree/WordSizeTreeSet.cpp.html
 title: "WordSizeTreeSet - 64\u5206\u6728"
 ---
 ### WordSizeTreeSet

@@ -5,7 +5,7 @@ data:
     path: lib/00-util/FastIO.cpp
     title: FastIO
   - icon: ':heavy_check_mark:'
-    path: lib/14-data-structure/WordSizeTreeSet.cpp
+    path: lib/12-binary-search-tree/WordSizeTreeSet.cpp
     title: "WordSizeTreeSet - 64\u5206\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -17,7 +17,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/predecessor_problem
     links:
     - https://judge.yosupo.jp/problem/predecessor_problem
-  bundledCode: "#line 1 \"test/data-structure/WordSizeTreeSet.test.cpp\"\n#define\
+  bundledCode: "#line 1 \"test/binary-search-tree/WordSizeTreeSet.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/predecessor_problem\"\n\n#include\
     \ <iostream>\n#include <array>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
     \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
@@ -46,8 +46,8 @@ data:
     \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
-    #line 1 \"lib/14-data-structure/WordSizeTreeSet.cpp\"\n/*\n * @title WordSizeTreeSet\
-    \ - 64\u5206\u6728\n * @docs md/data-structure/WordSizeTreeSet.md\n */\nclass\
+    #line 1 \"lib/12-binary-search-tree/WordSizeTreeSet.cpp\"\n/*\n * @title WordSizeTreeSet\
+    \ - 64\u5206\u6728\n * @docs md/binary-search-tree/WordSizeTreeSet.md\n */\nclass\
     \ WordSizeTreeSet {\npublic:\n    using u64 = unsigned long long;\n    inline\
     \ static constexpr u64 max_length=(1ULL<<24);\nprivate:\n    inline static constexpr\
     \ u64 word_size=(1ULL<<6);\n    inline static constexpr array<u64,word_size> pow2\
@@ -178,7 +178,7 @@ data:
     \ inner.count_impl(value);}\n    u64 next_lower_bound(const u64& value) const\
     \ {return inner.next_lower_bound_impl(value);}\n    u64 prev_lower_bound(const\
     \ u64& value) const {return inner.prev_lower_bound_impl(value);}\n};\n#line 8\
-    \ \"test/data-structure/WordSizeTreeSet.test.cpp\"\n\n/**\n * @url \n * @est\n\
+    \ \"test/binary-search-tree/WordSizeTreeSet.test.cpp\"\n\n/**\n * @url \n * @est\n\
     \ */ \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\n    int N,Q;\
     \ read(N);read(Q);\n    string T; read(T);\n    WordSizeTreeSet wsts;\n    for(int\
     \ i=0;i<N;++i) if(T[i]=='1') wsts.insert(i);\n    while(Q--) {\n        unsigned\
@@ -193,8 +193,8 @@ data:
     \ << \"\\n\";\n        }\n    }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/predecessor_problem\"\n\
     \n#include <iostream>\n#include <array>\nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\
-    \n#include \"../../lib/14-data-structure/WordSizeTreeSet.cpp\"\n\n/**\n * @url\
-    \ \n * @est\n */ \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
+    \n#include \"../../lib/12-binary-search-tree/WordSizeTreeSet.cpp\"\n\n/**\n *\
+    \ @url \n * @est\n */ \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
     \n    int N,Q; read(N);read(Q);\n    string T; read(T);\n    WordSizeTreeSet wsts;\n\
     \    for(int i=0;i<N;++i) if(T[i]=='1') wsts.insert(i);\n    while(Q--) {\n  \
     \      unsigned long long q,k;\n        read(q); read(k);\n        if(q==0) {\n\
@@ -208,17 +208,17 @@ data:
     \ << \"\\n\";\n        }\n    }\n\n    return 0;\n}\n"
   dependsOn:
   - lib/00-util/FastIO.cpp
-  - lib/14-data-structure/WordSizeTreeSet.cpp
+  - lib/12-binary-search-tree/WordSizeTreeSet.cpp
   isVerificationFile: true
-  path: test/data-structure/WordSizeTreeSet.test.cpp
+  path: test/binary-search-tree/WordSizeTreeSet.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 05:01:32+09:00'
+  timestamp: '2023-06-03 15:56:05+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/data-structure/WordSizeTreeSet.test.cpp
+documentation_of: test/binary-search-tree/WordSizeTreeSet.test.cpp
 layout: document
 redirect_from:
-- /verify/test/data-structure/WordSizeTreeSet.test.cpp
-- /verify/test/data-structure/WordSizeTreeSet.test.cpp.html
-title: test/data-structure/WordSizeTreeSet.test.cpp
+- /verify/test/binary-search-tree/WordSizeTreeSet.test.cpp
+- /verify/test/binary-search-tree/WordSizeTreeSet.test.cpp.html
+title: test/binary-search-tree/WordSizeTreeSet.test.cpp
 ---

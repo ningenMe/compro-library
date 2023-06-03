@@ -67,6 +67,9 @@ data:
       path: lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp
       title: "RandomizedBinarySearchTree - \u30E9\u30F3\u30C0\u30E0\u5E73\u8861\u4E8C\
         \u5206\u63A2\u7D22\u6728set"
+    - icon: ':heavy_check_mark:'
+      path: lib/12-binary-search-tree/WordSizeTreeSet.cpp
+      title: "WordSizeTreeSet - 64\u5206\u6728"
   - name: lib/13-static-range-query
     pages:
     - icon: ':heavy_check_mark:'
@@ -104,9 +107,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/14-data-structure/WaveletMatrix.cpp
       title: WaveletMatrix
-    - icon: ':heavy_check_mark:'
-      path: lib/14-data-structure/WordSizeTreeSet.cpp
-      title: "WordSizeTreeSet - 64\u5206\u6728"
   - name: lib/15-heap
     pages:
     - icon: ':heavy_check_mark:'
@@ -439,6 +439,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp
       title: test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/WordSizeTreeSet.test.cpp
+      title: test/binary-search-tree/WordSizeTreeSet.test.cpp
   - name: test/convex-hull-trick
     pages:
     - icon: ':heavy_check_mark:'
@@ -496,9 +499,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/data-structure/WaveletMatrix-quantile-2.test.cpp
       title: test/data-structure/WaveletMatrix-quantile-2.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/WordSizeTreeSet.test.cpp
-      title: test/data-structure/WordSizeTreeSet.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'

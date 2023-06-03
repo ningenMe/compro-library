@@ -13,6 +13,9 @@ data:
     path: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/WordSizeTreeSet.test.cpp
+    title: test/binary-search-tree/WordSizeTreeSet.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -24,9 +27,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/WordSizeTreeSet.test.cpp
-    title: test/data-structure/WordSizeTreeSet.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/UnionFindTree.test.cpp
     title: test/graph/UnionFindTree.test.cpp
@@ -155,9 +155,9 @@ data:
   - test/math/Prime-miller-rabin-2.test.cpp
   - test/math/Prime-rho.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
+  - test/binary-search-tree/WordSizeTreeSet.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
-  - test/data-structure/WordSizeTreeSet.test.cpp
   - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-nth.test.cpp
   - test/polynomial/FormalPowerSeries-interpolation.test.cpp
