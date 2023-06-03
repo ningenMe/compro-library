@@ -84,7 +84,7 @@ int main() {
 	
 	//Moで中央値列挙　O(N*sqrt(N)*(logN)^2)
     Mo<int> mo(N,range);
-    RandomizedBinarySearchTree<MonoidRangeSumPointAdd<long long>> med;
+    RandomizedBinarySearchTreeSet<MonoidRangeSumPointAdd<long long>> med;
     med.insert(A[0]);
     mo.solve(A,med);
 
