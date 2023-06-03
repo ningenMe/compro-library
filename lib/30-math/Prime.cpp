@@ -4,7 +4,6 @@
  */
 class Prime{
     using int128 = __int128_t;
-    using int64  = long long;
     using u64 = unsigned long long;
     using u32 = unsigned int;
     inline static long long gcd_impl(long long n, long long m) {
@@ -38,10 +37,10 @@ class Prime{
     }
     inline static constexpr array<u64,3> ar1={2ULL, 7ULL, 61ULL};
     inline static constexpr array<u64,7> ar2={2ULL,325ULL,9375ULL,28178ULL,450775ULL,9780504ULL,1795265022ULL};
-    inline static constexpr int64 rho(int64 n){
+    inline static constexpr u64 rho(const u64& n){
         if(miller_rabin(n)) return n;
         if(n%2 == 0) return 2;
-        for(int64 c=1,x=2,y=2,d=0;;c++){
+        for(u64 c=1,x=2,y=2,d=0;;c++){
             do{
                 x=(int128(x)*x+c)%n;
                 y=(int128(y)*y+c)%n;
@@ -51,9 +50,9 @@ class Prime{
             if(d<n) return d;
         }
     }
-    inline static vector<int64> factor(const int64 n) {
+    inline static vector<u64> factor(const u64& n) {
         if(n <= 1) return {};
-        int64 p = rho(n);
+        u64 p = rho(n);
         if(p == n) return {p};
         auto l = factor(p);
         auto r = factor(n / p);
@@ -86,12 +85,12 @@ class Prime{
         if(n < 4759123141LL) return miller_rabin(n, ar1);
         return miller_rabin(n, ar2);
     }
-    inline static vector<pair<int64,int64>> factorization_impl(const int64 n) {
+    inline static vector<pair<u64,u64>> factorization_impl(const u64 n) {
         auto v = factor(n);
-        vector<pair<int64,int64>> vp;
+        vector<pair<u64,u64>> vp;
         sort(v.begin(),v.end());
-        int64 prev = 0;
-        for(int64 p:v) {
+        u64 prev = 0;
+        for(u64& p:v) {
             if(p == prev) vp.back().second++;
             else vp.emplace_back(p,1);
             prev=p;
@@ -100,7 +99,7 @@ class Prime{
     }
 public:
     inline static constexpr bool is_prime(const u64 n) { return miller_rabin(n); }
-    inline static vector<pair<int64,int64>> factorization(const int64 n) {return factorization_impl(n);}
+    inline static vector<pair<u64,u64>> factorization(const u64 n) {return factorization_impl(n);}
     inline static constexpr long long gcd(long long n, long long m) { return (n>m ? pre(n,m) : pre(m,n));}
     inline static constexpr long long naive_gcd(long long a, long long b) { return (b ? naive_gcd(b, a % b):a);}
     inline static constexpr long long lcm(long long a, long long b) {return (a*b ? (a / gcd(a, b)*b): 0);}
