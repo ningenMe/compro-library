@@ -4,6 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
+    title: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+    title: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
     title: test/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
   - icon: ':heavy_check_mark:'
@@ -34,7 +40,9 @@ data:
   verifiedWith:
   - test/convex-hull-trick/LiChaoTree-segment.test.cpp
   - test/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
+  - test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
   - test/convex-hull-trick/LiChaoTree-line.test.cpp
+  - test/convex-hull-trick/ConvexHullTrick-min.test.cpp
 documentation_of: lib/99-operator/operator/ValueMin.cpp
 layout: document
 redirect_from:

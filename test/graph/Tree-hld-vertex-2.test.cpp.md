@@ -11,7 +11,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/40-graph/Tree.cpp
     title: "Tree - \u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
     title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
       ]"

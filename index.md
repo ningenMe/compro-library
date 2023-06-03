@@ -63,7 +63,7 @@ data:
       path: lib/12-binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
       title: "RandomizedBinarySearchTreeSequence - \u30E9\u30F3\u30C0\u30E0\u5E73\u8861\
         \u4E8C\u5206\u63A2\u7D22\u6728\u5217"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp
       title: "RandomizedBinarySearchTree - \u30E9\u30F3\u30C0\u30E0\u5E73\u8861\u4E8C\
         \u5206\u63A2\u7D22\u6728set"
@@ -117,7 +117,7 @@ data:
       title: "RadixHeap - \u975E\u8CA0\u6574\u6570heap"
   - name: lib/16-convex-hull-trick
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/16-convex-hull-trick/ConvexHullTrick.cpp
       title: "ConvexHullTrick - \u975E\u5358\u8ABFCHT"
     - icon: ':heavy_check_mark:'
@@ -263,7 +263,7 @@ data:
       path: lib/99-operator/monoid/MonoidRangeMulPointUpdate.cpp
       title: "MonoidRangeMulPointUpdate - [\u533A\u9593\u7A4D, \u4E00\u70B9\u66F4\u65B0\
         ]"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
       title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
         ]"
@@ -433,7 +433,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
       title: test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
       title: test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
     - icon: ':heavy_check_mark:'
@@ -441,13 +441,13 @@ data:
       title: test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp
   - name: test/convex-hull-trick
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
       title: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
       title: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
       title: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
     - icon: ':heavy_check_mark:'

@@ -6,15 +6,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
     title: test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
     title: test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp
     title: test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp
-  _isVerificationFailed: true
+  - icon: ':heavy_check_mark:'
+    path: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
+    title: test/convex-hull-trick/ConvexHullTrick-max.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
+    title: test/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+    title: test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/binary-search-tree/RandomizedBinarySearchTree.md
     document_title: "RandomizedBinarySearchTree - \u30E9\u30F3\u30C0\u30E0\u5E73\u8861\
@@ -158,8 +167,11 @@ data:
   path: lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp
   requiredBy: []
   timestamp: '2023-06-03 15:39:15+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+  - test/convex-hull-trick/ConvexHullTrick-max.test.cpp
+  - test/convex-hull-trick/ConvexHullTrick-min.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp

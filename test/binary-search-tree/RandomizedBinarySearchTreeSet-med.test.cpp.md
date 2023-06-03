@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp
     title: "RandomizedBinarySearchTree - \u30E9\u30F3\u30C0\u30E0\u5E73\u8861\u4E8C\
       \u5206\u63A2\u7D22\u6728set"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
     title: "MonoidRangeSumPointAdd - [\u533A\u9593\u548C, \u4E00\u70B9\u52A0\u7B97\
       ]"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/919
@@ -125,11 +125,11 @@ data:
     \ ++n) {\n\t\tint M = N/n;\n\t\tfor(int i = 0;     i+n <= N; i+=n) range.push_back({i,i+n-1});\n\
     \t\tfor(int i = N-M*n; i+n <= N; i+=n) range.push_back({i,i+n-1});\n\t}\n\n\t\n\
     \t//Mo\u3067\u4E2D\u592E\u5024\u5217\u6319\u3000O(N*sqrt(N)*(logN)^2)\n    Mo<int>\
-    \ mo(N,range);\n    RandomizedBinarySearchTree<MonoidRangeSumPointAdd<long long>>\
-    \ med;\n    med.insert(A[0]);\n    mo.solve(A,med);\n\n\tlong long ans = 0;\n\t\
-    int cnt = 0;\n\t//\u533A\u9593\u9577\u6C7A\u3081\u6253\u3061\u5168\u63A2\u7D22\
-    O(N*logN)\n\tfor(long long n = 1; n <= N; ++n) {\n\t\tint M = N/n;\n\t\tvector<long\
-    \ long> lSum(M,0),rSum(M,0);\n\t\tvector<pair<int, int>> lRange(M),rRange(M);\n\
+    \ mo(N,range);\n    RandomizedBinarySearchTreeSet<MonoidRangeSumPointAdd<long\
+    \ long>> med;\n    med.insert(A[0]);\n    mo.solve(A,med);\n\n\tlong long ans\
+    \ = 0;\n\tint cnt = 0;\n\t//\u533A\u9593\u9577\u6C7A\u3081\u6253\u3061\u5168\u63A2\
+    \u7D22O(N*logN)\n\tfor(long long n = 1; n <= N; ++n) {\n\t\tint M = N/n;\n\t\t\
+    vector<long long> lSum(M,0),rSum(M,0);\n\t\tvector<pair<int, int>> lRange(M),rRange(M);\n\
     \t\t//\u533A\u9593\u53D6\u5F97 O(M)\n\t\tfor(int i = 0; i < M; ++i) {\n\t\t\t\
     lRange[i] = range[cnt + i];\n\t\t\tlSum[i]   = n*mo[lRange[i]];\n\t\t\trRange[i]\
     \ = range[cnt + i + M];\n\t\t\trSum[i]   = n*mo[rRange[i]];\n\t\t}\n\t\t//\u7D2F\
@@ -176,11 +176,11 @@ data:
     \ ++n) {\n\t\tint M = N/n;\n\t\tfor(int i = 0;     i+n <= N; i+=n) range.push_back({i,i+n-1});\n\
     \t\tfor(int i = N-M*n; i+n <= N; i+=n) range.push_back({i,i+n-1});\n\t}\n\n\t\n\
     \t//Mo\u3067\u4E2D\u592E\u5024\u5217\u6319\u3000O(N*sqrt(N)*(logN)^2)\n    Mo<int>\
-    \ mo(N,range);\n    RandomizedBinarySearchTree<MonoidRangeSumPointAdd<long long>>\
-    \ med;\n    med.insert(A[0]);\n    mo.solve(A,med);\n\n\tlong long ans = 0;\n\t\
-    int cnt = 0;\n\t//\u533A\u9593\u9577\u6C7A\u3081\u6253\u3061\u5168\u63A2\u7D22\
-    O(N*logN)\n\tfor(long long n = 1; n <= N; ++n) {\n\t\tint M = N/n;\n\t\tvector<long\
-    \ long> lSum(M,0),rSum(M,0);\n\t\tvector<pair<int, int>> lRange(M),rRange(M);\n\
+    \ mo(N,range);\n    RandomizedBinarySearchTreeSet<MonoidRangeSumPointAdd<long\
+    \ long>> med;\n    med.insert(A[0]);\n    mo.solve(A,med);\n\n\tlong long ans\
+    \ = 0;\n\tint cnt = 0;\n\t//\u533A\u9593\u9577\u6C7A\u3081\u6253\u3061\u5168\u63A2\
+    \u7D22O(N*logN)\n\tfor(long long n = 1; n <= N; ++n) {\n\t\tint M = N/n;\n\t\t\
+    vector<long long> lSum(M,0),rSum(M,0);\n\t\tvector<pair<int, int>> lRange(M),rRange(M);\n\
     \t\t//\u533A\u9593\u53D6\u5F97 O(M)\n\t\tfor(int i = 0; i < M; ++i) {\n\t\t\t\
     lRange[i] = range[cnt + i];\n\t\t\tlSum[i]   = n*mo[lRange[i]];\n\t\t\trRange[i]\
     \ = range[cnt + i + M];\n\t\t\trSum[i]   = n*mo[rRange[i]];\n\t\t}\n\t\t//\u7D2F\
@@ -200,8 +200,8 @@ data:
   isVerificationFile: true
   path: test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
   requiredBy: []
-  timestamp: '2023-06-03 15:39:15+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-06-03 15:52:40+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
 layout: document
