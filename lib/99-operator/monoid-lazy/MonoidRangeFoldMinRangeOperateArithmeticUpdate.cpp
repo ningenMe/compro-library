@@ -1,5 +1,5 @@
 /*
- * @title MonoidRangeMinRangeArithmeticUpdate - fold:区間min, operate:区間等差数列更新]
+ * @title MonoidRangeFoldMinRangeOperateArithmeticUpdate - fold:区間min, operate:区間等差数列更新]
  * @docs md/operator/monoid-lazy/MonoidRangeMinRangeArithmeticUpdate.md
  */template<class T, class U> struct MonoidRangeFoldMinRangeOperateArithmeticUpdate {
     using TypeNode = T;

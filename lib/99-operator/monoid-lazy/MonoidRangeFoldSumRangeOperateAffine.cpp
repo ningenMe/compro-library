@@ -1,5 +1,5 @@
 /*
- * @title MonoidRangeSumRangeAffine - fold:区間和, operate:区間アフィン変換
+ * @title MonoidRangeFoldSumRangeOperateAffine - fold:区間和, operate:区間アフィン変換
  * @docs md/operator/monoid-lazy/MonoidRangeSumRangeAffine.md
  */
 template<class T, class U> struct MonoidRangeFoldSumRangeOperateAffine {
