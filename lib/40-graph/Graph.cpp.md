@@ -19,6 +19,9 @@ data:
     path: test/graph/Tree-hld-path.test.cpp
     title: test/graph/Tree-hld-path.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-1.test.cpp
+    title: test/graph/Tree-hld-vertex-1.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/Tree-hld-vertex-2.test.cpp
     title: test/graph/Tree-hld-vertex-2.test.cpp
   - icon: ':heavy_check_mark:'
@@ -91,6 +94,7 @@ data:
   - test/graph/Tree-lca.test.cpp
   - test/graph/MinimumDirectedClosedCircuit.test.cpp
   - test/graph/Tree-hld-vertex-2.test.cpp
+  - test/graph/Tree-hld-vertex-1.test.cpp
   - test/graph/Tree-lca-idx.test.cpp
   - test/graph/Tree-hld-vertex-3.test.cpp
   - test/graph/Tree-diameter.test.cpp

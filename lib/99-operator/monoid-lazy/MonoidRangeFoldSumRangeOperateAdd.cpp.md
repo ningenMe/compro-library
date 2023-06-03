@@ -7,8 +7,14 @@ data:
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-1.test.cpp
+    title: test/graph/Tree-hld-vertex-1.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
@@ -46,7 +52,9 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
+  - test/graph/Tree-hld-vertex-1.test.cpp
 documentation_of: lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAdd.cpp
 layout: document
 redirect_from:

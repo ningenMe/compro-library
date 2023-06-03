@@ -7,6 +7,9 @@ data:
     path: test/graph/Tree-eulertour.test.cpp
     title: test/graph/Tree-eulertour.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/Tree-hld-vertex-1.test.cpp
+    title: test/graph/Tree-hld-vertex-1.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
     title: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -171,6 +174,7 @@ data:
   - test/segment-tree/LazySegmentTree-rsqruq.test.cpp
   - test/segment-tree/LazySegmentTree-rmqraq.test.cpp
   - test/graph/Tree-eulertour.test.cpp
+  - test/graph/Tree-hld-vertex-1.test.cpp
 documentation_of: lib/10-segment-tree/LazySegmentTree.cpp
 layout: document
 redirect_from:
