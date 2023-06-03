@@ -157,7 +157,7 @@ data:
     - icon: ':warning:'
       path: lib/30-math/Polynomial.cpp
       title: "Polynomial - \u591A\u9805\u5F0F\u88DC\u9593"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: lib/30-math/Prime.cpp
       title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\
         \u30FC\u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A\u30FBGcd\u30FBLcm"
@@ -623,7 +623,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Matrix-pow.test.cpp
       title: test/math/Matrix-pow.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/Prime-miller-rabin-1.test.cpp
       title: test/math/Prime-miller-rabin-1.test.cpp
     - icon: ':heavy_check_mark:'

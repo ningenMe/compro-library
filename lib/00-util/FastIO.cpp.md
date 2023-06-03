@@ -42,7 +42,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/heap/RadixHeap-64bit.test.cpp
     title: test/heap/RadixHeap-64bit.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Prime-miller-rabin-1.test.cpp
     title: test/math/Prime-miller-rabin-1.test.cpp
   - icon: ':heavy_check_mark:'
