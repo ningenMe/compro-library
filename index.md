@@ -52,7 +52,7 @@ data:
       title: "DynamicBinaryIndexedTree - \u52D5\u7684BIT"
   - name: lib/12-binary-search-tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
       title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u30E9\
         \u30F3\u30C0\u30E0\u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
@@ -285,6 +285,10 @@ data:
       path: lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
       title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
         \u9593\u66F4\u65B0"
+    - icon: ':question:'
+      path: lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAdd.cpp
+      title: "MonoidRangeSumRangeAdd - fold:\u533A\u9593\u548C, opearate:\u533A\u9593\
+        \u52A0\u7B97"
     - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAffine.cpp
       title: "MonoidRangeFoldSumRangeOperateAffine - fold:\u533A\u9593\u548C, operate:\u533A\
@@ -293,10 +297,6 @@ data:
       path: lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateUpdate.cpp
       title: "MonoidRangeFoldSumRangeOperateUpdate - fold:\u533A\u9593sum, operate:\u533A\
         \u9593\u66F4\u65B0"
-    - icon: ':heavy_check_mark:'
-      path: lib/99-operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp
-      title: "MonoidRangeSumRangeAdd - [\u533A\u9593\u548C, \u533A\u9593\u52A0\u7B97\
-        ]"
     - icon: ':heavy_check_mark:'
       path: lib/99-operator/monoid-lazy/MonoidRangeSumRangeUpdate.cpp
       title: "MonoidRangeSumRangeUpdate - [\u533A\u9593\u548C, \u533A\u9593\u66F4\u65B0\
@@ -406,10 +406,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
       title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+    - icon: ':x:'
+      path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
+      title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
       title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
       title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
     - icon: ':heavy_check_mark:'
@@ -418,6 +421,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
       title: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
+      title: test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
       title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
@@ -556,7 +562,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/Tree-hld-path.test.cpp
       title: test/graph/Tree-hld-path.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/graph/Tree-hld-vertex-1.test.cpp
       title: test/graph/Tree-hld-vertex-1.test.cpp
     - icon: ':heavy_check_mark:'

@@ -9,15 +9,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
+  - icon: ':x:'
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
-    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md
     document_title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\
@@ -197,12 +197,12 @@ data:
   path: lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
   requiredBy: []
   timestamp: '2023-06-03 15:39:15+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
 documentation_of: lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
 layout: document
 redirect_from:

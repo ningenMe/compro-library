@@ -2,38 +2,68 @@
 data:
   _extendedDependsOn:
   - icon: ':question:'
+    path: lib/00-util/FastIO.cpp
+    title: FastIO
+  - icon: ':question:'
     path: lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
     title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u30E9\
       \u30F3\u30C0\u30E0\u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
-  - icon: ':heavy_check_mark:'
-    path: lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
-    title: "MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
-      \u9593\u66F4\u65B0"
+  - icon: ':question:'
+    path: lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAdd.cpp
+    title: "MonoidRangeSumRangeAdd - fold:\u533A\u9593\u548C, opearate:\u533A\u9593\
+      \u52A0\u7B97"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
+    PROBLEM: https://judge.yosupo.jp/problem/range_reverse_range_sum
     links:
-    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508
-  bundledCode: "#line 1 \"test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp\"\
-    \n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508\"\
-    \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
-    using namespace std;\n#line 1 \"lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp\"\
-    \n/*\n * @title MonoidRangeFoldMinRangeOperateUpdate - fold:\u533A\u9593min, operate:\u533A\
-    \u9593\u66F4\u65B0\n * @docs md/operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.md\n\
-    \ */\ntemplate<class T, class U> struct MonoidRangeFoldMinRangeOperateUpdate {\n\
-    \tusing TypeNode = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode\
-    \ unit_node = 1000'000'001LL;\n\tinline static constexpr TypeLazy unit_lazy =\
-    \ 1000'000'001LL;\n\tinline static constexpr TypeNode func_fold(TypeNode l,TypeNode\
-    \ r){return min(l,r);}\n\tinline static constexpr TypeLazy func_lazy(TypeLazy\
-    \ old_lazy,TypeLazy new_lazy){return new_lazy;}\n\tinline static constexpr TypeNode\
-    \ func_operate(TypeNode node,TypeLazy lazy,int l, int r){return lazy==unit_lazy?node:lazy;}\n\
-    \tinline static constexpr bool func_check(TypeNode nodeVal,TypeNode var){return\
-    \ var <= nodeVal;}\n};\n\n#line 1 \"lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
+    - https://judge.yosupo.jp/problem/range_reverse_range_sum
+  bundledCode: "#line 1 \"test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_reverse_range_sum\"\n\
+    \n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
+    using namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n\
+    \ * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline static constexpr\
+    \ int ch_0='0';\n    inline static constexpr int ch_9='9';\n    inline static\
+    \ constexpr int ch_n='-';\n    inline static constexpr int ch_s=' ';\n    inline\
+    \ static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
+    \ ch) {\n        while(ch==ch_l) ch=getchar();\n    }\n    template<typename T>\
+    \ inline static void read_integer(T &x) {\n        int neg=0; char ch; x=0;\n\
+    \        ch=getchar();\n        endline_skip(ch);\n        if(ch==ch_n) neg=1,ch=getchar();\n\
+    \        for(;(ch_0 <= ch && ch <= ch_9); ch = getchar()) x = x*10 + (ch-ch_0);\n\
+    \        if(neg) x*=-1;\n    }\n    template<typename T> inline static void read_unsigned_integer(T\
+    \ &x) {\n        char ch; x=0;\n        ch=getchar();\n        endline_skip(ch);\n\
+    \        for(;(ch_0 <= ch && ch <= ch_9); ch = getchar()) x = x*10 + (ch-ch_0);\n\
+    \    }\n    inline static void read_string(string &x) {\n        char ch; x=\"\
+    \";\n        ch=getchar();\n        endline_skip(ch);\n        for(;(ch != ch_s\
+    \ && ch!=ch_l); ch = getchar()) x.push_back(ch);\n    }\n    inline static char\
+    \ ar[40];\n    inline static char *ch_ar;\n    template<typename T> inline static\
+    \ void write_integer(T x) {\n        ch_ar=ar;\n        if(x< 0) putchar(ch_n),\
+    \ x=-x;\n        if(x==0) putchar(ch_0);\n        for(;x;x/=10) *ch_ar++=(ch_0+x%10);\n\
+    \        while(ch_ar--!=ar) putchar(*ch_ar);\n    }\npublic:\n    inline static\
+    \ void read(int &x) {read_integer<int>(x);}\n    inline static void read(long\
+    \ long &x) {read_integer<long long>(x);}\n    inline static void read(unsigned\
+    \ int &x) {read_unsigned_integer<unsigned int>(x);}\n    inline static void read(unsigned\
+    \ long long &x) {read_unsigned_integer<unsigned long long>(x);}\n    inline static\
+    \ void read(string &x) {read_string(x);}\n    inline static void read(__int128_t\
+    \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
+    \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
+    };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
+    #line 1 \"lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAdd.cpp\"\n\
+    /*\n * @title MonoidRangeSumRangeAdd - fold:\u533A\u9593\u548C, opearate:\u533A\
+    \u9593\u52A0\u7B97\n * @docs md/operator/monoid-lazy/MonoidRangeSumRangeAdd.md\n\
+    \ */\ntemplate<class T, class U> struct MonoidRangeFoldSumRangeOperateAdd {\n\t\
+    using TypeNode = T;\n\tusing TypeLazy = U;\n\tinline static constexpr TypeNode\
+    \ unit_node = 0;\n\tinline static constexpr TypeLazy unit_lazy = 0;\n\tinline\
+    \ static constexpr TypeNode func_fold(TypeNode l,TypeNode r){return l+r;}\n\t\
+    inline static constexpr TypeLazy func_lazy(TypeLazy old_lazy,TypeLazy new_lazy){return\
+    \ old_lazy+new_lazy;}\n\tinline static constexpr TypeNode func_operate(TypeNode\
+    \ node,TypeLazy lazy,int l, int r){return node+lazy*(r-l);}\n\tinline static constexpr\
+    \ bool func_check(TypeNode nodeVal,TypeNode var){return var <= nodeVal;}\n};\n\
+    #line 1 \"lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
     \n/*\n * @title LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\
     \u30E9\u30F3\u30C0\u30E0\u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217\n * @docs\
     \ md/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md\n */\ntemplate<class\
@@ -117,40 +147,39 @@ data:
     \ operate_impl(this->root,l,r,lazy);}\n    inline TypeNode fold(int l, int r)\
     \ {return fold_impl(this->root,l,r);}\n    inline void reverse(int l, int r) {reverse_impl(l,r);}\n\
     \    void print() {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i)\
-    \ << \" \\n\"[i==m-1];}\n};\n#line 10 \"test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp\"\
-    \n\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldMinRangeOperateUpdate<long\
-    \ long,long long>> seq;\n    int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i)\
-    \ {\n        int a; cin >> a;\n        seq.insert(i,a);\n    }\n    while(Q--)\
-    \ {\n        int x,y,z; cin >> x >> y >> z;\n        if(x==0) {\n            auto\
-    \ w = seq.get(z);\n            seq.erase(z);\n            seq.insert(y,w);\n \
-    \       }\n        if(x==1) {\n            cout << seq.fold(y,z+1) << \"\\n\"\
-    ;\n        }\n        if(x==2) {\n            seq.operate(y,y+1,z);\n        }\n\
-    \    }\n    return 0; \n}\n\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508\"\
+    \ << \" \\n\"[i==m-1];}\n};\n#line 11 \"test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp\"\
+    \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q;\
+    \ read(N); read(Q);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldSumRangeOperateAdd<long\
+    \ long,long long>> st;\n    for(int i=0;i<N;++i) {\n        int a; read(a); st.insert(i,a);\n\
+    \    }\n    while(Q--) {\n        int q; read(q);\n        int l,r; read(l); read(r);\n\
+    \        if(q==0) {\n            st.reverse(l,r);\n        }\n        if(q==1)\
+    \ {\n            cout << st.fold(l,r) << \"\\n\";\n        }\n    }\n    return\
+    \ 0;\n}\n\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_reverse_range_sum\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <queue>\n\
-    using namespace std;\n#include \"../../lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp\"\
+    using namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAdd.cpp\"\
     \n#include \"../../lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
-    \n\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldMinRangeOperateUpdate<long\
-    \ long,long long>> seq;\n    int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i)\
-    \ {\n        int a; cin >> a;\n        seq.insert(i,a);\n    }\n    while(Q--)\
-    \ {\n        int x,y,z; cin >> x >> y >> z;\n        if(x==0) {\n            auto\
-    \ w = seq.get(z);\n            seq.erase(z);\n            seq.insert(y,w);\n \
-    \       }\n        if(x==1) {\n            cout << seq.fold(y,z+1) << \"\\n\"\
-    ;\n        }\n        if(x==2) {\n            seq.operate(y,y+1,z);\n        }\n\
-    \    }\n    return 0; \n}\n\n"
+    \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q;\
+    \ read(N); read(Q);\n    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldSumRangeOperateAdd<long\
+    \ long,long long>> st;\n    for(int i=0;i<N;++i) {\n        int a; read(a); st.insert(i,a);\n\
+    \    }\n    while(Q--) {\n        int q; read(q);\n        int l,r; read(l); read(r);\n\
+    \        if(q==0) {\n            st.reverse(l,r);\n        }\n        if(q==1)\
+    \ {\n            cout << st.fold(l,r) << \"\\n\";\n        }\n    }\n    return\
+    \ 0;\n}\n\n"
   dependsOn:
-  - lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp
+  - lib/00-util/FastIO.cpp
+  - lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAdd.cpp
   - lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
   isVerificationFile: true
-  path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+  path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
   requiredBy: []
-  timestamp: '2023-06-03 15:39:15+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-06-03 16:56:32+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+documentation_of: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
 layout: document
 redirect_from:
-- /verify/test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
-- /verify/test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp.html
-title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+- /verify/test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
+- /verify/test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp.html
+title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
 ---

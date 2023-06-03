@@ -3,9 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
+    title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
+    title: test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
@@ -156,7 +162,9 @@ data:
   - test/math/Prime-rho.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - test/binary-search-tree/WordSizeTreeSet.test.cpp
+  - test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-nth.test.cpp
