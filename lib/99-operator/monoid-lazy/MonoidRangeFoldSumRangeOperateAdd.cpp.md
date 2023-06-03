@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
   - icon: ':heavy_check_mark:'
@@ -15,9 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-hld-vertex-1.test.cpp
     title: test/graph/Tree-hld-vertex-1.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/operator/monoid-lazy/MonoidRangeSumRangeAdd.md
     document_title: "MonoidRangeSumRangeAdd - fold:\u533A\u9593\u548C, opearate:\u533A\
@@ -49,7 +49,7 @@ data:
   path: lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAdd.cpp
   requiredBy: []
   timestamp: '2023-06-03 16:56:32+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp

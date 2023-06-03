@@ -9,7 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
   - icon: ':heavy_check_mark:'
@@ -18,9 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md
     document_title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\
@@ -74,43 +74,45 @@ data:
     \ {\n            propagate(node->left);\n            pair<Node*, Node*> sub =\
     \ split_impl(node->right, k - 1 - size(node->left));\n            node->right\
     \ = sub.first;\n            return make_pair(update(node), sub.second);\n    \
-    \    }\n    }\n    inline void operate_impl(Node *node, int l, int r, TypeLazy\
-    \ lazy) {\n        if(l < 0 || size(node) <= l || r <= 0 || r-l <= 0) return;\n\
-    \        if (l == 0 && r == size(node)) {\n            node->range_lazy = Monoid::func_lazy(node->range_lazy,lazy);\n\
-    \            propagate(node);\n            return;\n        }\n        int sl\
-    \ = size(node->left);\n        propagate(node->left);\n        propagate(node->right);\n\
-    \        if(sl > l) operate_impl(node->left,l,min(sl,r),lazy);\n        l = max(l-sl,0),\
-    \ r -= sl;\n        if(l == 0 && r > 0) node->value = Monoid::func_operate(node->value,lazy,0,1);\n\
-    \        l = max(l-1,0), r -= 1;\n        if(l >= 0 && r > l) operate_impl(node->right,l,r,lazy);\n\
-    \        update(node);\n    }\n    inline TypeNode fold_impl(Node *node, int l,\
-    \ int r) {\n        if (l < 0 || size(node) <= l || r<=0 || r-l <= 0) return Monoid::unit_node;\n\
+    \    }\n    }\n    inline TypeNode fold_impl(Node *node, int l, int r) {\n   \
+    \     if (l < 0 || size(node) <= l || r<=0 || r-l <= 0) return Monoid::unit_node;\n\
     \        propagate(node);\n        if (l == 0 && r == size(node)) return range_value(node);\n\
     \        TypeNode value = Monoid::unit_node;\n        int sl = size(node->left);\n\
     \        if(sl > l) value = Monoid::func_fold(value,fold_impl(node->left,l,min(sl,r)));\n\
     \        l = max(l-sl,0), r -= sl;\n        if(l == 0 && r > 0) value = Monoid::func_fold(value,node->value);\n\
     \        l = max(l-1,0), r -= 1;\n        if(l >= 0 && r > l) value = Monoid::func_fold(value,fold_impl(node->right,l,r));\n\
-    \        return value;\n    }\n    inline void reverse_impl(int l, int r) {\n\
-    \        pair<Node*,Node*> tmp1 = split_impl(this->root,l);\n        pair<Node*,Node*>\
-    \ tmp2 = split_impl(tmp1.second,r-l);\n        Node* nl = tmp1.first;\n      \
-    \  Node* nc = tmp2.first;\n        Node* nr = tmp2.second;\n        nc->rev ^=\
-    \ 1;\n        this->root = merge_impl(merge_impl(nl,nc),nr);\n    }\n    inline\
-    \ void insert_impl(const size_t k, const TypeNode value) {\n        pair<Node*,\
-    \ Node*> sub = split_impl(this->root, k);\n        this->root = this->merge_impl(this->merge_impl(sub.first,\
-    \ new Node(value)), sub.second);\n    }\n    inline void erase_impl(const size_t\
-    \ k) {\n        if(size(this->root) <= k) return;\n        auto sub = split_impl(this->root,k);\n\
-    \        this->root = merge_impl(sub.first, split_impl(sub.second, 1).second);\n\
-    \    }\npublic:\n    LazyRandomizedBinarySearchTreeSequence() : root(nullptr)\
-    \ {}\n    inline int size() {return size(this->root);}\n    inline int empty(void)\
-    \ {return bool(size()==0);}\n    inline Node* merge(Node *left, Node *right) {return\
-    \ merge_impl(left,right);}\n    inline pair<Node*, Node*> split(int k) {return\
-    \ split_impl(this->root,k);}\n    inline void insert(const size_t k, const TypeNode\
-    \ value) {insert_impl(k,value);}\n    inline void erase(const size_t k) {erase_impl(k);}\n\
-    \    inline TypeNode get(size_t k) {return get(this->root, k);}\n    inline void\
-    \ operate(const int l, const int r, const TypeLazy lazy) {propagate(this->root);\
-    \ operate_impl(this->root,l,r,lazy);}\n    inline TypeNode fold(int l, int r)\
-    \ {return fold_impl(this->root,l,r);}\n    inline void reverse(int l, int r) {reverse_impl(l,r);}\n\
-    \    void print() {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i)\
-    \ << \" \\n\"[i==m-1];}\n};\n"
+    \        return value;\n    }\n    inline void operate_impl(Node *node, int l,\
+    \ int r, TypeLazy lazy) {\n        if(l < 0 || size(node) <= l || r <= 0 || r-l\
+    \ <= 0) return;\n        if (l == 0 && r == size(node)) {\n            node->range_lazy\
+    \ = Monoid::func_lazy(node->range_lazy,lazy);\n            propagate(node);\n\
+    \            return;\n        }\n        int sl = size(node->left);\n        propagate(node->left);\n\
+    \        propagate(node->right);\n        if(sl > l) operate_impl(node->left,l,min(sl,r),lazy);\n\
+    \        l = max(l-sl,0), r -= sl;\n        if(l == 0 && r > 0) node->value =\
+    \ Monoid::func_operate(node->value,lazy,0,1);\n        l = max(l-1,0), r -= 1;\n\
+    \        if(l >= 0 && r > l) operate_impl(node->right,l,r,lazy);\n        update(node);\n\
+    \    }\n    inline void reverse_impl(int l, int r) {\n        if(l < 0 || size(root)\
+    \ <= l || r <= 0 || r-l <= 0) return;\n        pair<Node*,Node*> tmp1 = split_impl(this->root,l);\n\
+    \        pair<Node*,Node*> tmp2 = split_impl(tmp1.second,r-l);\n        Node*\
+    \ nl = tmp1.first;\n        Node* nc = tmp2.first;\n        Node* nr = tmp2.second;\n\
+    \        nc->rev ^= 1;\n        this->root = merge_impl(merge_impl(nl,nc),nr);\n\
+    \    }\n    inline void insert_impl(const size_t k, const TypeNode value) {\n\
+    \        pair<Node*, Node*> sub = split_impl(this->root, k);\n        this->root\
+    \ = this->merge_impl(this->merge_impl(sub.first, new Node(value)), sub.second);\n\
+    \    }\n    inline void erase_impl(const size_t k) {\n        if(size(this->root)\
+    \ <= k) return;\n        auto sub = split_impl(this->root,k);\n        this->root\
+    \ = merge_impl(sub.first, split_impl(sub.second, 1).second);\n    }\npublic:\n\
+    \    LazyRandomizedBinarySearchTreeSequence() : root(nullptr) {}\n    inline int\
+    \ size() {return size(this->root);}\n    inline int empty(void) {return bool(size()==0);}\n\
+    \    inline Node* merge(Node *left, Node *right) {return merge_impl(left,right);}\n\
+    \    inline pair<Node*, Node*> split(int k) {return split_impl(this->root,k);}\n\
+    \    inline void insert(const size_t k, const TypeNode value) {insert_impl(k,value);}\n\
+    \    inline void erase(const size_t k) {erase_impl(k);}\n    inline TypeNode get(size_t\
+    \ k) {return get(this->root, k);}\n    inline void operate(const int l, const\
+    \ int r, const TypeLazy lazy) {propagate(this->root); operate_impl(this->root,l,r,lazy);}\n\
+    \    inline TypeNode fold(int l, int r) {return fold_impl(this->root,l,r);}\n\
+    \    inline void reverse(int l, int r) {reverse_impl(l,r);}\n    void print()\
+    \ {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i) << \" \\n\"[i==m-1];}\n\
+    };\n"
   code: "/*\n * @title LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\
     \u4FA1\u30E9\u30F3\u30C0\u30E0\u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217\
     \n * @docs md/binary-search-tree/LazyRandomizedBinarySearchTreeSequence.md\n */\n\
@@ -158,49 +160,51 @@ data:
     \ {\n            propagate(node->left);\n            pair<Node*, Node*> sub =\
     \ split_impl(node->right, k - 1 - size(node->left));\n            node->right\
     \ = sub.first;\n            return make_pair(update(node), sub.second);\n    \
-    \    }\n    }\n    inline void operate_impl(Node *node, int l, int r, TypeLazy\
-    \ lazy) {\n        if(l < 0 || size(node) <= l || r <= 0 || r-l <= 0) return;\n\
-    \        if (l == 0 && r == size(node)) {\n            node->range_lazy = Monoid::func_lazy(node->range_lazy,lazy);\n\
-    \            propagate(node);\n            return;\n        }\n        int sl\
-    \ = size(node->left);\n        propagate(node->left);\n        propagate(node->right);\n\
-    \        if(sl > l) operate_impl(node->left,l,min(sl,r),lazy);\n        l = max(l-sl,0),\
-    \ r -= sl;\n        if(l == 0 && r > 0) node->value = Monoid::func_operate(node->value,lazy,0,1);\n\
-    \        l = max(l-1,0), r -= 1;\n        if(l >= 0 && r > l) operate_impl(node->right,l,r,lazy);\n\
-    \        update(node);\n    }\n    inline TypeNode fold_impl(Node *node, int l,\
-    \ int r) {\n        if (l < 0 || size(node) <= l || r<=0 || r-l <= 0) return Monoid::unit_node;\n\
+    \    }\n    }\n    inline TypeNode fold_impl(Node *node, int l, int r) {\n   \
+    \     if (l < 0 || size(node) <= l || r<=0 || r-l <= 0) return Monoid::unit_node;\n\
     \        propagate(node);\n        if (l == 0 && r == size(node)) return range_value(node);\n\
     \        TypeNode value = Monoid::unit_node;\n        int sl = size(node->left);\n\
     \        if(sl > l) value = Monoid::func_fold(value,fold_impl(node->left,l,min(sl,r)));\n\
     \        l = max(l-sl,0), r -= sl;\n        if(l == 0 && r > 0) value = Monoid::func_fold(value,node->value);\n\
     \        l = max(l-1,0), r -= 1;\n        if(l >= 0 && r > l) value = Monoid::func_fold(value,fold_impl(node->right,l,r));\n\
-    \        return value;\n    }\n    inline void reverse_impl(int l, int r) {\n\
-    \        pair<Node*,Node*> tmp1 = split_impl(this->root,l);\n        pair<Node*,Node*>\
-    \ tmp2 = split_impl(tmp1.second,r-l);\n        Node* nl = tmp1.first;\n      \
-    \  Node* nc = tmp2.first;\n        Node* nr = tmp2.second;\n        nc->rev ^=\
-    \ 1;\n        this->root = merge_impl(merge_impl(nl,nc),nr);\n    }\n    inline\
-    \ void insert_impl(const size_t k, const TypeNode value) {\n        pair<Node*,\
-    \ Node*> sub = split_impl(this->root, k);\n        this->root = this->merge_impl(this->merge_impl(sub.first,\
-    \ new Node(value)), sub.second);\n    }\n    inline void erase_impl(const size_t\
-    \ k) {\n        if(size(this->root) <= k) return;\n        auto sub = split_impl(this->root,k);\n\
-    \        this->root = merge_impl(sub.first, split_impl(sub.second, 1).second);\n\
-    \    }\npublic:\n    LazyRandomizedBinarySearchTreeSequence() : root(nullptr)\
-    \ {}\n    inline int size() {return size(this->root);}\n    inline int empty(void)\
-    \ {return bool(size()==0);}\n    inline Node* merge(Node *left, Node *right) {return\
-    \ merge_impl(left,right);}\n    inline pair<Node*, Node*> split(int k) {return\
-    \ split_impl(this->root,k);}\n    inline void insert(const size_t k, const TypeNode\
-    \ value) {insert_impl(k,value);}\n    inline void erase(const size_t k) {erase_impl(k);}\n\
-    \    inline TypeNode get(size_t k) {return get(this->root, k);}\n    inline void\
-    \ operate(const int l, const int r, const TypeLazy lazy) {propagate(this->root);\
-    \ operate_impl(this->root,l,r,lazy);}\n    inline TypeNode fold(int l, int r)\
-    \ {return fold_impl(this->root,l,r);}\n    inline void reverse(int l, int r) {reverse_impl(l,r);}\n\
-    \    void print() {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i)\
-    \ << \" \\n\"[i==m-1];}\n};"
+    \        return value;\n    }\n    inline void operate_impl(Node *node, int l,\
+    \ int r, TypeLazy lazy) {\n        if(l < 0 || size(node) <= l || r <= 0 || r-l\
+    \ <= 0) return;\n        if (l == 0 && r == size(node)) {\n            node->range_lazy\
+    \ = Monoid::func_lazy(node->range_lazy,lazy);\n            propagate(node);\n\
+    \            return;\n        }\n        int sl = size(node->left);\n        propagate(node->left);\n\
+    \        propagate(node->right);\n        if(sl > l) operate_impl(node->left,l,min(sl,r),lazy);\n\
+    \        l = max(l-sl,0), r -= sl;\n        if(l == 0 && r > 0) node->value =\
+    \ Monoid::func_operate(node->value,lazy,0,1);\n        l = max(l-1,0), r -= 1;\n\
+    \        if(l >= 0 && r > l) operate_impl(node->right,l,r,lazy);\n        update(node);\n\
+    \    }\n    inline void reverse_impl(int l, int r) {\n        if(l < 0 || size(root)\
+    \ <= l || r <= 0 || r-l <= 0) return;\n        pair<Node*,Node*> tmp1 = split_impl(this->root,l);\n\
+    \        pair<Node*,Node*> tmp2 = split_impl(tmp1.second,r-l);\n        Node*\
+    \ nl = tmp1.first;\n        Node* nc = tmp2.first;\n        Node* nr = tmp2.second;\n\
+    \        nc->rev ^= 1;\n        this->root = merge_impl(merge_impl(nl,nc),nr);\n\
+    \    }\n    inline void insert_impl(const size_t k, const TypeNode value) {\n\
+    \        pair<Node*, Node*> sub = split_impl(this->root, k);\n        this->root\
+    \ = this->merge_impl(this->merge_impl(sub.first, new Node(value)), sub.second);\n\
+    \    }\n    inline void erase_impl(const size_t k) {\n        if(size(this->root)\
+    \ <= k) return;\n        auto sub = split_impl(this->root,k);\n        this->root\
+    \ = merge_impl(sub.first, split_impl(sub.second, 1).second);\n    }\npublic:\n\
+    \    LazyRandomizedBinarySearchTreeSequence() : root(nullptr) {}\n    inline int\
+    \ size() {return size(this->root);}\n    inline int empty(void) {return bool(size()==0);}\n\
+    \    inline Node* merge(Node *left, Node *right) {return merge_impl(left,right);}\n\
+    \    inline pair<Node*, Node*> split(int k) {return split_impl(this->root,k);}\n\
+    \    inline void insert(const size_t k, const TypeNode value) {insert_impl(k,value);}\n\
+    \    inline void erase(const size_t k) {erase_impl(k);}\n    inline TypeNode get(size_t\
+    \ k) {return get(this->root, k);}\n    inline void operate(const int l, const\
+    \ int r, const TypeLazy lazy) {propagate(this->root); operate_impl(this->root,l,r,lazy);}\n\
+    \    inline TypeNode fold(int l, int r) {return fold_impl(this->root,l,r);}\n\
+    \    inline void reverse(int l, int r) {reverse_impl(l,r);}\n    void print()\
+    \ {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i) << \" \\n\"[i==m-1];}\n\
+    };\n"
   dependsOn: []
   isVerificationFile: false
   path: lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
   requiredBy: []
-  timestamp: '2023-06-03 15:39:15+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-06-03 17:08:23+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp

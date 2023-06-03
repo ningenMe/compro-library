@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
   - icon: ':heavy_check_mark:'

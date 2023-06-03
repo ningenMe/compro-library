@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: lib/12-binary-search-tree/LazySplayTreeSequence.cpp
     title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAdd.cpp
     title: "MonoidRangeSumRangeAdd - fold:\u533A\u9593\u548C, opearate:\u533A\u9593\
       \u52A0\u7B97"
