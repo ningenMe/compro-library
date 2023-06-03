@@ -5,13 +5,13 @@
 #include <cassert>
 #include <queue>
 using namespace std;
-#include "../../lib/99-operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp"
+#include "../../lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAdd.cpp"
 #include "../../lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
 
 int main(void){
     int N,Q;
 	scanf("%d %d",&N,&Q);
-    LazyRandomizedBinarySearchTreeSequence<MonoidRangeSumRangeAdd<long long,long long>> A;
+    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldSumRangeOperateAdd<long long,long long>> A;
     for(int i=0;i<N;++i) {
 		A.insert(i,0);
     }

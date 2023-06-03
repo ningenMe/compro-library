@@ -12,7 +12,7 @@ using namespace std;
 #include "../../lib/40-graph/Graph.cpp"
 #include "../../lib/40-graph/Tree.cpp"
 #include "../../lib/10-segment-tree/LazySegmentTree.cpp"
-#include "../../lib/99-operator/monoid-lazy/MonoidRangeSumRangeAdd.cpp"
+#include "../../lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAdd.cpp"
 
 int main(void){
 	int N; cin >> N;
@@ -23,7 +23,7 @@ int main(void){
 		g.make_bidirectional_edge(u,v,1);
 	}
 	auto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();
-	LazySegmentTree<MonoidRangeSumRangeAdd<long long,long long>> seg(N);
+	LazySegmentTree<MonoidRangeFoldSumRangeOperateAdd<long long,long long>> seg(N);
 	int Q; cin >> Q;
 	long long ans = 0;
 	while(Q--) {
