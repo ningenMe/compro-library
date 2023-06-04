@@ -15,22 +15,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-exp.test.cpp
     title: test/polynomial/FormalPowerSeries-exp.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
     title: test/polynomial/FormalPowerSeries-interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-inv.test.cpp
     title: test/polynomial/FormalPowerSeries-inv.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-log.test.cpp
     title: test/polynomial/FormalPowerSeries-log.test.cpp
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
     title: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-nth.test.cpp
     title: test/polynomial/FormalPowerSeries-nth.test.cpp
   - icon: ':x:'

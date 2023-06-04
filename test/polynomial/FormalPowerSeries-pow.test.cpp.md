@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: lib/31-convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':question:'
+  - icon: ':x:'
     path: lib/32-polynomial/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   _extendedRequiredBy: []
@@ -184,7 +184,7 @@ data:
     \ convolution_friendrymod<prime>(g,h,base_998244353,ibase_998244353,pow2_inv_998244353);\n\
     \        }\n    }; \npublic:\n    inline static vector<ModInt<mod>> convolution(const\
     \ vector<ModInt<mod>>& g,const vector<ModInt<mod>>& h){return Inner<mod,mod>::convolution_impl(g,h);}\n\
-    };\n#line 1 \"lib/32-polynomial/FormalPowerSeries.cpp\"\n\n/*\n * @title FormalPowerSeries\
+    };\n#line 1 \"lib/32-polynomial/FormalPowerSeries.cpp\"\n/*\n * @title FormalPowerSeries\
     \ - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n * @docs md/polynomial/FormalPowerSeries.md\n\
     \ */\ntemplate<long long prime, class T = ModInt<prime>> struct FormalPowerSeries\
     \ : public vector<T> {\n    using vector<T>::vector;\n    using Mint  = T;\n \
@@ -255,19 +255,26 @@ data:
     \        reverse(f.begin(),f.end());\n        return f;\n    }\n    inline static\
     \ Fps mod(const Fps& lhs, const Fps& rhs) {\n        int m = rhs.size();\n   \
     \     auto f = sub(lhs,mul(div(lhs,rhs).prefix(m),rhs)).prefix(m);\n        while(f.size()\
-    \ && f.back().x==0) f.pop_back();\n        return f;\n    }\n    vector<Mint>\
-    \ multipoint_evaluation(vector<Mint> x) {\n        int n = x.size(),m;\n     \
-    \   for(m=1;m<n;m<<=1);\n        vector<Fps> f(2*m,Fps(1,1));\n        for(int\
-    \ i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n        for(int i=m-1;i;--i) f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n\
-    \        f[1] = mod(*this,f[1]);\n        for(int i=2;i<m+n;++i) f[i] = mod(f[i>>1],f[i]);\n\
-    \        for(int i=0;i<n;++i)   x[i] = f[i+m][0];\n        return x;\n    }\n\
-    \    inline static Fps interpolation(const vector<Mint>& x,const vector<Mint>&\
-    \ y) {\n        int n = x.size(),m;\n        for(m=1;m<n;m<<=1);\n        vector<Fps>\
-    \ f(2*m,Fps(1,1)),g(2*m);\n        for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n\
-    \        for(int i=m-1;i;--i) f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        g[1]\
-    \ = mod(f[1].diff(), f[1]);\n        for(int i=2;i<m+n;++i) g[i] = mod(g[i>>1],f[i]);\n\
-    \        for(int i=0;i<n;++i) g[i+m] = Fps(1, y[i] / g[i+m][0]);\n        for(int\
-    \ i=m-1;i;--i) g[i] = add(mul(g[(i<<1)|0],f[(i<<1)|1]),mul(f[(i<<1)|0],g[(i<<1)|1]));\n\
+    \ && f.back().x==0) f.pop_back();\n        return f;\n    }\n    inline static\
+    \ Fps fold_all(vector<Fps> vfps) {\n        if(vfps.empty()) return {};\n    \
+    \    priority_queue<pair<size_t,size_t>, vector<pair<size_t,size_t>>, greater<>>\
+    \ pq;\n        for(size_t i=0;i<vfps.size(); ++i) pq.emplace(vfps[i].size(), i);\n\
+    \        while(pq.size()>1) {\n            auto l=pq.top().second; pq.pop();\n\
+    \            auto r=pq.top().second; pq.pop();\n            vfps[l]=mul(vfps[l],vfps[r]);\n\
+    \            vfps[r]={};\n            pq.emplace(vfps[l].size(), l);\n       \
+    \ }\n        auto ret=pq.top().second; pq.pop();\n        return vfps[ret];\n\
+    \    }\n    vector<Mint> multipoint_evaluation(vector<Mint> x) {\n        int\
+    \ n = x.size(),m;\n        for(m=1;m<n;m<<=1);\n        vector<Fps> f(2*m,Fps(1,1));\n\
+    \        for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n        for(int i=m-1;i;--i)\
+    \ f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        f[1] = mod(*this,f[1]);\n    \
+    \    for(int i=2;i<m+n;++i) f[i] = mod(f[i>>1],f[i]);\n        for(int i=0;i<n;++i)\
+    \   x[i] = f[i+m][0];\n        return x;\n    }\n    inline static Fps interpolation(const\
+    \ vector<Mint>& x,const vector<Mint>& y) {\n        int n = x.size(),m;\n    \
+    \    for(m=1;m<n;m<<=1);\n        vector<Fps> f(2*m,Fps(1,1)),g(2*m);\n      \
+    \  for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n        for(int i=m-1;i;--i)\
+    \ f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        g[1] = mod(f[1].diff(), f[1]);\n\
+    \        for(int i=2;i<m+n;++i) g[i] = mod(g[i>>1],f[i]);\n        for(int i=0;i<n;++i)\
+    \ g[i+m] = Fps(1, y[i] / g[i+m][0]);\n        for(int i=m-1;i;--i) g[i] = add(mul(g[(i<<1)|0],f[(i<<1)|1]),mul(f[(i<<1)|0],g[(i<<1)|1]));\n\
     \        return g[1];\n    }\n    inline static Mint nth_term(long long n, Fps\
     \ numerator,Fps denominator) {\n        while(n) {\n            numerator    =\
     \ mul(numerator,denominator.symmetry());\n            numerator    = ((n&1)?numerator.odd():numerator.even());\n\
@@ -298,7 +305,7 @@ data:
   isVerificationFile: true
   path: test/polynomial/FormalPowerSeries-pow.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:32:15+09:00'
+  timestamp: '2023-06-04 14:01:29+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/polynomial/FormalPowerSeries-pow.test.cpp

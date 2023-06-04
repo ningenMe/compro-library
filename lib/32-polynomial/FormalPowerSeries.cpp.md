@@ -3,22 +3,22 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-exp.test.cpp
     title: test/polynomial/FormalPowerSeries-exp.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
     title: test/polynomial/FormalPowerSeries-interpolation.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-inv.test.cpp
     title: test/polynomial/FormalPowerSeries-inv.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-log.test.cpp
     title: test/polynomial/FormalPowerSeries-log.test.cpp
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
     title: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-nth.test.cpp
     title: test/polynomial/FormalPowerSeries-nth.test.cpp
   - icon: ':x:'
@@ -26,12 +26,12 @@ data:
     title: test/polynomial/FormalPowerSeries-pow.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     _deprecated_at_docs: md/polynomial/FormalPowerSeries.md
     document_title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
     links: []
-  bundledCode: "#line 1 \"lib/32-polynomial/FormalPowerSeries.cpp\"\n\n/*\n * @title\
+  bundledCode: "#line 1 \"lib/32-polynomial/FormalPowerSeries.cpp\"\n/*\n * @title\
     \ FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n * @docs md/polynomial/FormalPowerSeries.md\n\
     \ */\ntemplate<long long prime, class T = ModInt<prime>> struct FormalPowerSeries\
     \ : public vector<T> {\n    using vector<T>::vector;\n    using Mint  = T;\n \
@@ -102,19 +102,26 @@ data:
     \        reverse(f.begin(),f.end());\n        return f;\n    }\n    inline static\
     \ Fps mod(const Fps& lhs, const Fps& rhs) {\n        int m = rhs.size();\n   \
     \     auto f = sub(lhs,mul(div(lhs,rhs).prefix(m),rhs)).prefix(m);\n        while(f.size()\
-    \ && f.back().x==0) f.pop_back();\n        return f;\n    }\n    vector<Mint>\
-    \ multipoint_evaluation(vector<Mint> x) {\n        int n = x.size(),m;\n     \
-    \   for(m=1;m<n;m<<=1);\n        vector<Fps> f(2*m,Fps(1,1));\n        for(int\
-    \ i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n        for(int i=m-1;i;--i) f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n\
-    \        f[1] = mod(*this,f[1]);\n        for(int i=2;i<m+n;++i) f[i] = mod(f[i>>1],f[i]);\n\
-    \        for(int i=0;i<n;++i)   x[i] = f[i+m][0];\n        return x;\n    }\n\
-    \    inline static Fps interpolation(const vector<Mint>& x,const vector<Mint>&\
-    \ y) {\n        int n = x.size(),m;\n        for(m=1;m<n;m<<=1);\n        vector<Fps>\
-    \ f(2*m,Fps(1,1)),g(2*m);\n        for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n\
-    \        for(int i=m-1;i;--i) f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        g[1]\
-    \ = mod(f[1].diff(), f[1]);\n        for(int i=2;i<m+n;++i) g[i] = mod(g[i>>1],f[i]);\n\
-    \        for(int i=0;i<n;++i) g[i+m] = Fps(1, y[i] / g[i+m][0]);\n        for(int\
-    \ i=m-1;i;--i) g[i] = add(mul(g[(i<<1)|0],f[(i<<1)|1]),mul(f[(i<<1)|0],g[(i<<1)|1]));\n\
+    \ && f.back().x==0) f.pop_back();\n        return f;\n    }\n    inline static\
+    \ Fps fold_all(vector<Fps> vfps) {\n        if(vfps.empty()) return {};\n    \
+    \    priority_queue<pair<size_t,size_t>, vector<pair<size_t,size_t>>, greater<>>\
+    \ pq;\n        for(size_t i=0;i<vfps.size(); ++i) pq.emplace(vfps[i].size(), i);\n\
+    \        while(pq.size()>1) {\n            auto l=pq.top().second; pq.pop();\n\
+    \            auto r=pq.top().second; pq.pop();\n            vfps[l]=mul(vfps[l],vfps[r]);\n\
+    \            vfps[r]={};\n            pq.emplace(vfps[l].size(), l);\n       \
+    \ }\n        auto ret=pq.top().second; pq.pop();\n        return vfps[ret];\n\
+    \    }\n    vector<Mint> multipoint_evaluation(vector<Mint> x) {\n        int\
+    \ n = x.size(),m;\n        for(m=1;m<n;m<<=1);\n        vector<Fps> f(2*m,Fps(1,1));\n\
+    \        for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n        for(int i=m-1;i;--i)\
+    \ f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        f[1] = mod(*this,f[1]);\n    \
+    \    for(int i=2;i<m+n;++i) f[i] = mod(f[i>>1],f[i]);\n        for(int i=0;i<n;++i)\
+    \   x[i] = f[i+m][0];\n        return x;\n    }\n    inline static Fps interpolation(const\
+    \ vector<Mint>& x,const vector<Mint>& y) {\n        int n = x.size(),m;\n    \
+    \    for(m=1;m<n;m<<=1);\n        vector<Fps> f(2*m,Fps(1,1)),g(2*m);\n      \
+    \  for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n        for(int i=m-1;i;--i)\
+    \ f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        g[1] = mod(f[1].diff(), f[1]);\n\
+    \        for(int i=2;i<m+n;++i) g[i] = mod(g[i>>1],f[i]);\n        for(int i=0;i<n;++i)\
+    \ g[i+m] = Fps(1, y[i] / g[i+m][0]);\n        for(int i=m-1;i;--i) g[i] = add(mul(g[(i<<1)|0],f[(i<<1)|1]),mul(f[(i<<1)|0],g[(i<<1)|1]));\n\
     \        return g[1];\n    }\n    inline static Mint nth_term(long long n, Fps\
     \ numerator,Fps denominator) {\n        while(n) {\n            numerator    =\
     \ mul(numerator,denominator.symmetry());\n            numerator    = ((n&1)?numerator.odd():numerator.even());\n\
@@ -123,7 +130,7 @@ data:
     \      return numerator[0];\n    }\n\n    friend ostream &operator<<(ostream &os,\
     \ const Fps& fps) {os << \"{\" << fps[0];for(int i=1;i<fps.size();++i) os << \"\
     , \" << fps[i];return os << \"}\";}\n};\n"
-  code: "\n/*\n * @title FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n\
+  code: "/*\n * @title FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n\
     \ * @docs md/polynomial/FormalPowerSeries.md\n */\ntemplate<long long prime, class\
     \ T = ModInt<prime>> struct FormalPowerSeries : public vector<T> {\n    using\
     \ vector<T>::vector;\n    using Mint  = T;\n    using Fps   = FormalPowerSeries<prime>;\n\
@@ -193,19 +200,26 @@ data:
     \        reverse(f.begin(),f.end());\n        return f;\n    }\n    inline static\
     \ Fps mod(const Fps& lhs, const Fps& rhs) {\n        int m = rhs.size();\n   \
     \     auto f = sub(lhs,mul(div(lhs,rhs).prefix(m),rhs)).prefix(m);\n        while(f.size()\
-    \ && f.back().x==0) f.pop_back();\n        return f;\n    }\n    vector<Mint>\
-    \ multipoint_evaluation(vector<Mint> x) {\n        int n = x.size(),m;\n     \
-    \   for(m=1;m<n;m<<=1);\n        vector<Fps> f(2*m,Fps(1,1));\n        for(int\
-    \ i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n        for(int i=m-1;i;--i) f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n\
-    \        f[1] = mod(*this,f[1]);\n        for(int i=2;i<m+n;++i) f[i] = mod(f[i>>1],f[i]);\n\
-    \        for(int i=0;i<n;++i)   x[i] = f[i+m][0];\n        return x;\n    }\n\
-    \    inline static Fps interpolation(const vector<Mint>& x,const vector<Mint>&\
-    \ y) {\n        int n = x.size(),m;\n        for(m=1;m<n;m<<=1);\n        vector<Fps>\
-    \ f(2*m,Fps(1,1)),g(2*m);\n        for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n\
-    \        for(int i=m-1;i;--i) f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        g[1]\
-    \ = mod(f[1].diff(), f[1]);\n        for(int i=2;i<m+n;++i) g[i] = mod(g[i>>1],f[i]);\n\
-    \        for(int i=0;i<n;++i) g[i+m] = Fps(1, y[i] / g[i+m][0]);\n        for(int\
-    \ i=m-1;i;--i) g[i] = add(mul(g[(i<<1)|0],f[(i<<1)|1]),mul(f[(i<<1)|0],g[(i<<1)|1]));\n\
+    \ && f.back().x==0) f.pop_back();\n        return f;\n    }\n    inline static\
+    \ Fps fold_all(vector<Fps> vfps) {\n        if(vfps.empty()) return {};\n    \
+    \    priority_queue<pair<size_t,size_t>, vector<pair<size_t,size_t>>, greater<>>\
+    \ pq;\n        for(size_t i=0;i<vfps.size(); ++i) pq.emplace(vfps[i].size(), i);\n\
+    \        while(pq.size()>1) {\n            auto l=pq.top().second; pq.pop();\n\
+    \            auto r=pq.top().second; pq.pop();\n            vfps[l]=mul(vfps[l],vfps[r]);\n\
+    \            vfps[r]={};\n            pq.emplace(vfps[l].size(), l);\n       \
+    \ }\n        auto ret=pq.top().second; pq.pop();\n        return vfps[ret];\n\
+    \    }\n    vector<Mint> multipoint_evaluation(vector<Mint> x) {\n        int\
+    \ n = x.size(),m;\n        for(m=1;m<n;m<<=1);\n        vector<Fps> f(2*m,Fps(1,1));\n\
+    \        for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n        for(int i=m-1;i;--i)\
+    \ f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        f[1] = mod(*this,f[1]);\n    \
+    \    for(int i=2;i<m+n;++i) f[i] = mod(f[i>>1],f[i]);\n        for(int i=0;i<n;++i)\
+    \   x[i] = f[i+m][0];\n        return x;\n    }\n    inline static Fps interpolation(const\
+    \ vector<Mint>& x,const vector<Mint>& y) {\n        int n = x.size(),m;\n    \
+    \    for(m=1;m<n;m<<=1);\n        vector<Fps> f(2*m,Fps(1,1)),g(2*m);\n      \
+    \  for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n        for(int i=m-1;i;--i)\
+    \ f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        g[1] = mod(f[1].diff(), f[1]);\n\
+    \        for(int i=2;i<m+n;++i) g[i] = mod(g[i>>1],f[i]);\n        for(int i=0;i<n;++i)\
+    \ g[i+m] = Fps(1, y[i] / g[i+m][0]);\n        for(int i=m-1;i;--i) g[i] = add(mul(g[(i<<1)|0],f[(i<<1)|1]),mul(f[(i<<1)|0],g[(i<<1)|1]));\n\
     \        return g[1];\n    }\n    inline static Mint nth_term(long long n, Fps\
     \ numerator,Fps denominator) {\n        while(n) {\n            numerator    =\
     \ mul(numerator,denominator.symmetry());\n            numerator    = ((n&1)?numerator.odd():numerator.even());\n\
@@ -213,13 +227,13 @@ data:
     \     denominator  = denominator.even();\n            n >>= 1;\n        }\n  \
     \      return numerator[0];\n    }\n\n    friend ostream &operator<<(ostream &os,\
     \ const Fps& fps) {os << \"{\" << fps[0];for(int i=1;i<fps.size();++i) os << \"\
-    , \" << fps[i];return os << \"}\";}\n};"
+    , \" << fps[i];return os << \"}\";}\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: lib/32-polynomial/FormalPowerSeries.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:32:15+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-06-04 14:01:29+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-nth.test.cpp
@@ -315,6 +329,9 @@ title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   - 単純な多項式除算から発生する余りであることに注意。
   - $O(N\log N)$
   - サイズは、rhs.size()-1になる
+- Fps fold_all(vector<Fps> vfps)
+  - 複数個のfpsをマージテクを使って積を取る
+  - [提出](https://atcoder.jp/contests/tdpc/submissions/41600573)
 - vector<Mint> multipoint_evaluation(vector<Mint> x)
   - 多点評価
   - f(x_0),f(x_1), ... , f(x_N) が返る

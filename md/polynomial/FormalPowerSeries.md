@@ -78,6 +78,9 @@
   - 単純な多項式除算から発生する余りであることに注意。
   - $O(N\log N)$
   - サイズは、rhs.size()-1になる
+- Fps fold_all(vector<Fps> vfps)
+  - 複数個のfpsをマージテクを使って積を取る
+  - [提出](https://atcoder.jp/contests/tdpc/submissions/41600573)
 - vector<Mint> multipoint_evaluation(vector<Mint> x)
   - 多点評価
   - f(x_0),f(x_1), ... , f(x_N) が返る
