@@ -10,14 +10,14 @@ data:
   - icon: ':question:'
     path: lib/31-convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':x:'
+  - icon: ':question:'
     path: lib/32-polynomial/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/754
@@ -25,12 +25,12 @@ data:
     - https://yukicoder.me/problems/no/754
   bundledCode: "#line 1 \"test/polynomial/FormalPowerSeries-nth.test.cpp\"\n#define\
     \ PROBLEM \"https://yukicoder.me/problems/no/754\"\n\n#include <vector>\n#include\
-    \ <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\nusing\
-    \ namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n *\
-    \ @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline static constexpr\
-    \ int ch_0='0';\n    inline static constexpr int ch_9='9';\n    inline static\
-    \ constexpr int ch_n='-';\n    inline static constexpr int ch_s=' ';\n    inline\
-    \ static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
+    \ <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n#include\
+    \ <queue>\n\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n *\
+    \ @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n  \
+    \  inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
+    \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
+    \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
     \ ch) {\n        while(ch==ch_l) ch=getchar();\n    }\n    template<typename T>\
     \ inline static void read_integer(T &x) {\n        int neg=0; char ch; x=0;\n\
     \        ch=getchar();\n        endline_skip(ch);\n        if(ch==ch_n) neg=1,ch=getchar();\n\
@@ -282,7 +282,7 @@ data:
     \     denominator  = denominator.even();\n            n >>= 1;\n        }\n  \
     \      return numerator[0];\n    }\n\n    friend ostream &operator<<(ostream &os,\
     \ const Fps& fps) {os << \"{\" << fps[0];for(int i=1;i<fps.size();++i) os << \"\
-    , \" << fps[i];return os << \"}\";}\n};\n#line 14 \"test/polynomial/FormalPowerSeries-nth.test.cpp\"\
+    , \" << fps[i];return os << \"}\";}\n};\n#line 15 \"test/polynomial/FormalPowerSeries-nth.test.cpp\"\
     \n\nint main(void){\n    int N; read(N);\n    FormalPowerSeries<MOD_1000000007>\
     \ A(N+1),B(N+1);\n    for(int i = 0; i < N+1; ++i) {\n        int a; read(a);\n\
     \        A[i]=a;\n    }\n    for(int i = 0; i < N+1; ++i) {\n        int a; read(a);\n\
@@ -291,8 +291,8 @@ data:
     \ \"\\n\";\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/754\"\n\n#include <vector>\n\
     #include <iostream>\n#include <numeric>\n#include <algorithm>\n#include <array>\n\
-    \nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\n#include \"\
-    ../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/31-convolution/NumberTheoreticalTransform.cpp\"\
+    #include <queue>\n\nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\
+    \n#include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/31-convolution/NumberTheoreticalTransform.cpp\"\
     \n#include \"../../lib/32-polynomial/FormalPowerSeries.cpp\"\n\nint main(void){\n\
     \    int N; read(N);\n    FormalPowerSeries<MOD_1000000007> A(N+1),B(N+1);\n \
     \   for(int i = 0; i < N+1; ++i) {\n        int a; read(a);\n        A[i]=a;\n\
@@ -308,8 +308,8 @@ data:
   isVerificationFile: true
   path: test/polynomial/FormalPowerSeries-nth.test.cpp
   requiredBy: []
-  timestamp: '2023-06-04 14:01:29+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-06-04 14:34:33+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/polynomial/FormalPowerSeries-nth.test.cpp
 layout: document

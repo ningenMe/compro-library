@@ -171,7 +171,7 @@ data:
       title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
   - name: lib/32-polynomial
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: lib/32-polynomial/FormalPowerSeries.cpp
       title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   - name: lib/40-graph
@@ -645,22 +645,22 @@ data:
       title: test/optimize/MaximumRectangle-2.test.cpp
   - name: test/polynomial
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/polynomial/FormalPowerSeries-exp.test.cpp
       title: test/polynomial/FormalPowerSeries-exp.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
       title: test/polynomial/FormalPowerSeries-interpolation.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/polynomial/FormalPowerSeries-inv.test.cpp
       title: test/polynomial/FormalPowerSeries-inv.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/polynomial/FormalPowerSeries-log.test.cpp
       title: test/polynomial/FormalPowerSeries-log.test.cpp
     - icon: ':x:'
       path: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
       title: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/polynomial/FormalPowerSeries-nth.test.cpp
       title: test/polynomial/FormalPowerSeries-nth.test.cpp
     - icon: ':x:'

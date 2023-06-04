@@ -10,7 +10,7 @@ data:
   - icon: ':question:'
     path: lib/31-convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
-  - icon: ':x:'
+  - icon: ':question:'
     path: lib/32-polynomial/FormalPowerSeries.cpp
     title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   _extendedRequiredBy: []
@@ -26,8 +26,8 @@ data:
   bundledCode: "#line 1 \"test/polynomial/FormalPowerSeries-multi-eval.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\n\n\
     #include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
-    #include <array>\n\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n\
-    /*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
+    #include <array>\n#include <queue>\n\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
+    \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
     \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
@@ -282,7 +282,7 @@ data:
     \     denominator  = denominator.even();\n            n >>= 1;\n        }\n  \
     \      return numerator[0];\n    }\n\n    friend ostream &operator<<(ostream &os,\
     \ const Fps& fps) {os << \"{\" << fps[0];for(int i=1;i<fps.size();++i) os << \"\
-    , \" << fps[i];return os << \"}\";}\n};\n#line 14 \"test/polynomial/FormalPowerSeries-multi-eval.test.cpp\"\
+    , \" << fps[i];return os << \"}\";}\n};\n#line 15 \"test/polynomial/FormalPowerSeries-multi-eval.test.cpp\"\
     \n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,M; read(N);\n\
     \    FormalPowerSeries<MOD_998244353> C(N);\n    vector<ModInt<MOD_998244353>>\
     \ P(M);\n    for(int i=0;i<N;++i) {\n        int a; read(a);\n        C[i]=a;\n\
@@ -291,7 +291,7 @@ data:
     \ P[i] << \" \\n\"[i==M-1];\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/multipoint_evaluation\"\
     \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
-    #include <array>\n\nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\
+    #include <array>\n#include <queue>\n\nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\
     \n#include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/31-convolution/NumberTheoreticalTransform.cpp\"\
     \n#include \"../../lib/32-polynomial/FormalPowerSeries.cpp\"\n\nint main() {\n\
     \    cin.tie(0);ios::sync_with_stdio(false);\n    int N,M; read(N);\n    FormalPowerSeries<MOD_998244353>\
@@ -307,7 +307,7 @@ data:
   isVerificationFile: true
   path: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
   requiredBy: []
-  timestamp: '2023-06-04 14:01:29+09:00'
+  timestamp: '2023-06-04 14:34:33+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
