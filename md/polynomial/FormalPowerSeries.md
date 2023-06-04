@@ -96,6 +96,7 @@
   - nは求めたい項数
   - numeratorは分子のFps
   - denominatorは分母のFps
+  - [提出](https://atcoder.jp/contests/abc178/submissions/41992411)
 
 ### 参考資料
 - [【競技プログラミング】形式的冪級数の応用テクニック(前編)](https://qiita.com/hotman78/items/f0e6d2265badd84d429a)
