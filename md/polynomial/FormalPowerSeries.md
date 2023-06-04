@@ -79,9 +79,11 @@
   - 単純な多項式除算から発生する余りであることに注意。
   - $O(N\log N)$
   - サイズは、rhs.size()-1になる
-- Fps fold_all(vector<Fps> vfps)
+- Fps fold_all(vector<Fps> vfps, size_t n=0)
   - 複数個のfpsをマージテクを使って積を取る
+  - nを指定すると、そのprefixで打ち切りながら積を取る
   - [提出](https://atcoder.jp/contests/tdpc/submissions/41600573)
+  - [提出](https://atcoder.jp/contests/abc169/submissions/42001325)
 - vector<Mint> multipoint_evaluation(vector<Mint> x)
   - 多点評価
   - f(x_0),f(x_1), ... , f(x_N) が返る
@@ -110,3 +112,6 @@
 - [多項式を使うテクニックたち](https://yukicoder.me/wiki/polynomial_techniques)
 - [非再帰で多項式の多点評価をするよ](https://rsk0315.hatenablog.com/entry/2020/04/05/190941)
 - [非再帰で補間多項式を求めるよ](https://rsk0315.hatenablog.com/entry/2020/04/05/203210)
+- 桁dpもできる
+  - [[多項式・形式的べき級数]（２）式変形による解法の導出](https://maspypy.com/%e5%a4%9a%e9%a0%85%e5%bc%8f%e3%83%bb%e5%bd%a2%e5%bc%8f%e7%9a%84%e3%81%b9%e3%81%8d%e7%b4%9a%e6%95%b0%ef%bc%88%ef%bc%92%ef%bc%89%e5%bc%8f%e5%a4%89%e5%bd%a2%e3%81%ab%e3%82%88%e3%82%8b%e8%a7%a3%e6%b3%95)
+  - [提出](https://atcoder.jp/contests/abc135/submissions/42000622)

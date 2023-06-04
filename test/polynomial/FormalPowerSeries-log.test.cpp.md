@@ -256,25 +256,26 @@ data:
     \ Fps mod(const Fps& lhs, const Fps& rhs) {\n        int m = rhs.size();\n   \
     \     auto f = sub(lhs,mul(div(lhs,rhs).prefix(m),rhs)).prefix(m);\n        while(f.size()\
     \ && f.back().x==0) f.pop_back();\n        return f;\n    }\n    inline static\
-    \ Fps fold_all(vector<Fps> vfps) {\n        if(vfps.empty()) return {};\n    \
-    \    priority_queue<pair<size_t,size_t>, vector<pair<size_t,size_t>>, greater<>>\
-    \ pq;\n        for(size_t i=0;i<vfps.size(); ++i) pq.emplace(vfps[i].size(), i);\n\
-    \        while(pq.size()>1) {\n            auto l=pq.top().second; pq.pop();\n\
+    \ Fps fold_all(vector<Fps> vfps, size_t n=0) {\n        if(vfps.empty()) return\
+    \ {};\n        priority_queue<pair<size_t,size_t>, vector<pair<size_t,size_t>>,\
+    \ greater<>> pq;\n        for(size_t i=0;i<vfps.size(); ++i) pq.emplace(vfps[i].size(),\
+    \ i);\n        while(pq.size()>1) {\n            auto l=pq.top().second; pq.pop();\n\
     \            auto r=pq.top().second; pq.pop();\n            vfps[l]=mul(vfps[l],vfps[r]);\n\
-    \            vfps[r]={};\n            pq.emplace(vfps[l].size(), l);\n       \
-    \ }\n        auto ret=pq.top().second; pq.pop();\n        return vfps[ret];\n\
-    \    }\n    vector<Mint> multipoint_evaluation(vector<Mint> x) {\n        int\
-    \ n = x.size(),m;\n        for(m=1;m<n;m<<=1);\n        vector<Fps> f(2*m,Fps(1,1));\n\
-    \        for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n        for(int i=m-1;i;--i)\
-    \ f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        f[1] = mod(*this,f[1]);\n    \
-    \    for(int i=2;i<m+n;++i) f[i] = mod(f[i>>1],f[i]);\n        for(int i=0;i<n;++i)\
-    \   x[i] = f[i+m][0];\n        return x;\n    }\n    inline static Fps interpolation(const\
-    \ vector<Mint>& x,const vector<Mint>& y) {\n        int n = x.size(),m;\n    \
-    \    for(m=1;m<n;m<<=1);\n        vector<Fps> f(2*m,Fps(1,1)),g(2*m);\n      \
-    \  for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n        for(int i=m-1;i;--i)\
-    \ f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        g[1] = mod(f[1].diff(), f[1]);\n\
-    \        for(int i=2;i<m+n;++i) g[i] = mod(g[i>>1],f[i]);\n        for(int i=0;i<n;++i)\
-    \ g[i+m] = Fps(1, y[i] / g[i+m][0]);\n        for(int i=m-1;i;--i) g[i] = add(mul(g[(i<<1)|0],f[(i<<1)|1]),mul(f[(i<<1)|0],g[(i<<1)|1]));\n\
+    \            if(n) vfps[l].resize(n);\n            vfps[r]={};\n            pq.emplace(vfps[l].size(),\
+    \ l);\n        }\n        auto ret=pq.top().second; pq.pop();\n        return\
+    \ vfps[ret];\n    }\n    vector<Mint> multipoint_evaluation(vector<Mint> x) {\n\
+    \        int n = x.size(),m;\n        for(m=1;m<n;m<<=1);\n        vector<Fps>\
+    \ f(2*m,Fps(1,1));\n        for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n  \
+    \      for(int i=m-1;i;--i) f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        f[1]\
+    \ = mod(*this,f[1]);\n        for(int i=2;i<m+n;++i) f[i] = mod(f[i>>1],f[i]);\n\
+    \        for(int i=0;i<n;++i)   x[i] = f[i+m][0];\n        return x;\n    }\n\
+    \    inline static Fps interpolation(const vector<Mint>& x,const vector<Mint>&\
+    \ y) {\n        int n = x.size(),m;\n        for(m=1;m<n;m<<=1);\n        vector<Fps>\
+    \ f(2*m,Fps(1,1)),g(2*m);\n        for(int i=0;i<n;++i) f[i+m] = Fps({-x[i],1});\n\
+    \        for(int i=m-1;i;--i) f[i] = mul(f[(i<<1)|0],f[(i<<1)|1]);\n        g[1]\
+    \ = mod(f[1].diff(), f[1]);\n        for(int i=2;i<m+n;++i) g[i] = mod(g[i>>1],f[i]);\n\
+    \        for(int i=0;i<n;++i) g[i+m] = Fps(1, y[i] / g[i+m][0]);\n        for(int\
+    \ i=m-1;i;--i) g[i] = add(mul(g[(i<<1)|0],f[(i<<1)|1]),mul(f[(i<<1)|0],g[(i<<1)|1]));\n\
     \        return g[1];\n    }\n    inline static Mint nth_term(long long n, Fps\
     \ numerator,Fps denominator) {\n        while(n) {\n            numerator    =\
     \ mul(numerator,denominator.symmetry());\n            numerator    = ((n&1)?numerator.odd():numerator.even());\n\
@@ -304,7 +305,7 @@ data:
   isVerificationFile: true
   path: test/polynomial/FormalPowerSeries-log.test.cpp
   requiredBy: []
-  timestamp: '2023-06-04 14:34:33+09:00'
+  timestamp: '2023-06-04 21:19:44+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/polynomial/FormalPowerSeries-log.test.cpp
