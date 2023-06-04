@@ -6,11 +6,14 @@
 #include <algorithm>
 #include <array>
 #include <queue>
+#include <cassert>
+#include <unordered_map>
 
 using namespace std;
 #include "../../lib/00-util/FastIO.cpp"
 #include "../../lib/00-util/ModInt.cpp"
 #include "../../lib/31-convolution/NumberTheoreticalTransform.cpp"
+#include "../../lib/30-math/CombinationMod.cpp"
 #include "../../lib/32-polynomial/FormalPowerSeries.cpp"
 
 int main(void){

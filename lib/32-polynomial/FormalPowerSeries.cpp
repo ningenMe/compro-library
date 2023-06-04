@@ -2,10 +2,39 @@
  * @title FormalPowerSeries - 形式的冪級数
  * @docs md/polynomial/FormalPowerSeries.md
  */
-template<long long prime, class T = ModInt<prime>> struct FormalPowerSeries : public vector<T> {
+template<long long prime, class T = ModInt<prime>> struct FormalPowerSeries;
+template<long long prime, class T = ModInt<prime>> class SparseFormalPowerSeries {
+    using Mint = T;
+    using Sfps = SparseFormalPowerSeries<prime>;
+    unordered_map<size_t, T> mp;
+    size_t sz;
+public:
+    friend class FormalPowerSeries<prime>;
+    SparseFormalPowerSeries():sz(0){}
+    void update(const size_t idx, const Mint val) {
+        if(val.x == 0) mp.erase(idx);
+        else mp[idx]=val;
+        size_t tmp_sz=0;
+        for(auto& p:mp) tmp_sz=max(tmp_sz,p.first);
+        sz=tmp_sz;
+    }
+    inline static Sfps mul(const Sfps& lhs, const Sfps& rhs) {
+        unordered_map<size_t, T> ret;
+        for(auto& [i,a]: lhs.mp) {
+            for(auto& [j,b]: rhs.mp) {
+                ret[i+j]+=a*b;
+            }
+        }
+        return ret;
+    }
+    //mapのサイズじゃなくて、最大のindexを返すことに注意
+    size_t size() const {return sz+1;}
+};
+template<long long prime, class T> struct FormalPowerSeries : public vector<T> {
     using vector<T>::vector;
     using Mint  = T;
     using Fps   = FormalPowerSeries<prime>;
+    using Sfps   = SparseFormalPowerSeries<prime>;
     inline static constexpr int N_MAX = 1000000;
     Fps even(void) const {Fps ret;for(int i = 0; i < this->size(); i+=2) ret.push_back((*this)[i]);return ret;}
     Fps odd(void)  const {Fps ret;for(int i = 1; i < this->size(); i+=2) ret.push_back((*this)[i]);return ret;}
@@ -113,6 +142,14 @@ public:
     inline static Fps mul(const Fps& lhs, const Fps& rhs) {
         return NumberTheoreticalTransform<prime>::convolution(lhs,rhs);
     }
+    inline static Fps mul(const Fps& lhs, const Sfps& rhs) {
+        size_t n = lhs.size() + rhs.size();
+        Fps res(n,0);
+        for(auto& [i,a]:rhs.mp) {
+            for (int j = 0; j < lhs.size(); ++j) res[i+j]+=a*lhs[j];
+        }
+        return res;
+    }
     inline static Fps div(Fps lhs, Fps rhs) {
         while(lhs.size() && lhs.back().x == 0) lhs.pop_back();
         while(rhs.size() && rhs.back().x == 0) rhs.pop_back();
@@ -178,6 +215,14 @@ public:
         }
         return numerator[0];
     }
-
+    //(1-rx)^(-n) = Σ (i+n-1)_C_(n-1) (rx)^i をm項まで計算して返してくれる
+    inline static Fps negative_binomial_theorem(const Mint r, const size_t n, const size_t m, const CombinationMod<prime>& cm) {
+        assert(n-1+m-1 <= cm.size());
+        Fps res(m,0);
+        for(int i=0;i<m;++i) {
+            res[i]= Mint(cm.binom(i+n-1,n-1));
+        }
+        return res;
+    }
     friend ostream &operator<<(ostream &os, const Fps& fps) {os << "{" << fps[0];for(int i=1;i<fps.size();++i) os << ", " << fps[i];return os << "}";}
 };
