@@ -93,9 +93,11 @@
 - Mint nth_term(long long n,const Fps& numerator,const Fps& denominator)
   - f(x)のn項目が返却される
   - $O(N\log N \log n)$
-  - nは求めたい項数
-  - numeratorは分子のFps
+  - nは求めたい項数 
+  - numeratorは分子のFps (numerator=1かつ求めたい項が大きくないなら、invを使う方が速い)
   - denominatorは分母のFps
+  - [提出](https://atcoder.jp/contests/abc178/submissions/41992411)
+  - [提出](https://atcoder.jp/contests/abc179/submissions/41995344)
 
 ### 参考資料
 - [【競技プログラミング】形式的冪級数の応用テクニック(前編)](https://qiita.com/hotman78/items/f0e6d2265badd84d429a)
