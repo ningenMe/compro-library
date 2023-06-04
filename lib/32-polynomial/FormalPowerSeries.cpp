@@ -130,7 +130,7 @@ public:
         while(f.size() && f.back().x==0) f.pop_back();
         return f;
     }
-    inline static Fps fold_all(vector<Fps> vfps) {
+    inline static Fps fold_all(vector<Fps> vfps, size_t n=0) {
         if(vfps.empty()) return {};
         priority_queue<pair<size_t,size_t>, vector<pair<size_t,size_t>>, greater<>> pq;
         for(size_t i=0;i<vfps.size(); ++i) pq.emplace(vfps[i].size(), i);
@@ -138,6 +138,7 @@ public:
             auto l=pq.top().second; pq.pop();
             auto r=pq.top().second; pq.pop();
             vfps[l]=mul(vfps[l],vfps[r]);
+            if(n) vfps[l].resize(n);
             vfps[r]={};
             pq.emplace(vfps[l].size(), l);
         }
