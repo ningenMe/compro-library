@@ -73,6 +73,7 @@
   - lhs * rhs.inv() とは違うことに注意。単純な多項式除算である。
   - $O(N\log N)$
   - サイズは、lhs.size()-rhs.size()+1になる。
+  - [提出](https://atcoder.jp/contests/abc245/submissions/41991428)
 - Fps mod(const Fps& lhs,const Fps& rhs) 
   - lhsをrhsで割ったあまりのfpsを返却する。
   - 単純な多項式除算から発生する余りであることに注意。

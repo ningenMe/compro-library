@@ -5,6 +5,7 @@
 #include <numeric>
 #include <algorithm>
 #include <array>
+#include <queue>
 
 using namespace std;
 #include "../../lib/00-util/FastIO.cpp"
