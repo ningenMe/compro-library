@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: lib/00-util/ModInt.cpp
     title: ModInt
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/30-math/CombinationMod.cpp
     title: "CombinationMod - mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\u968E\u4E57"
   _extendedRequiredBy: []

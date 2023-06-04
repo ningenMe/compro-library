@@ -8,6 +8,9 @@ data:
     path: lib/00-util/ModInt.cpp
     title: ModInt
   - icon: ':question:'
+    path: lib/30-math/CombinationMod.cpp
+    title: "CombinationMod - mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\u968E\u4E57"
+  - icon: ':question:'
     path: lib/31-convolution/NumberTheoreticalTransform.cpp
     title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
   - icon: ':question:'
@@ -26,11 +29,12 @@ data:
   bundledCode: "#line 1 \"test/polynomial/FormalPowerSeries-exp.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/exp_of_formal_power_series\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n#include\
-    \ <array>\n#include <queue>\n\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
-    \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
-    \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
-    \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
-    \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
+    \ <array>\n#include <queue>\n#include <cassert>\n#include <unordered_map>\n\n\
+    using namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n\
+    \ * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline static constexpr\
+    \ int ch_0='0';\n    inline static constexpr int ch_9='9';\n    inline static\
+    \ constexpr int ch_n='-';\n    inline static constexpr int ch_s=' ';\n    inline\
+    \ static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
     \ ch) {\n        while(ch==ch_l) ch=getchar();\n    }\n    template<typename T>\
     \ inline static void read_integer(T &x) {\n        int neg=0; char ch; x=0;\n\
     \        ch=getchar();\n        endline_skip(ch);\n        if(ch==ch_n) neg=1,ch=getchar();\n\
@@ -184,12 +188,36 @@ data:
     \ convolution_friendrymod<prime>(g,h,base_998244353,ibase_998244353,pow2_inv_998244353);\n\
     \        }\n    }; \npublic:\n    inline static vector<ModInt<mod>> convolution(const\
     \ vector<ModInt<mod>>& g,const vector<ModInt<mod>>& h){return Inner<mod,mod>::convolution_impl(g,h);}\n\
-    };\n#line 1 \"lib/32-polynomial/FormalPowerSeries.cpp\"\n/*\n * @title FormalPowerSeries\
+    };\n#line 1 \"lib/30-math/CombinationMod.cpp\"\n/*\n * @title CombinationMod -\
+    \ mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\u968E\u4E57\n * @docs md/math/CombinationMod.md\n\
+    \ */\ntemplate<long long mod> class CombinationMod {\n    vector<long long> fac,finv,inv;\n\
+    public:\n    CombinationMod(int N) : fac(N + 1), finv(N + 1), inv(N + 1) {\n \
+    \       fac[0] = fac[1] = finv[0] = finv[1] = inv[1] = 1;\n        for (int i\
+    \ = 2; i <= N; ++i) {\n            fac[i] = fac[i - 1] * i % mod;\n          \
+    \  inv[i] = mod - inv[mod%i] * (mod / i) % mod;\n            finv[i] = finv[i\
+    \ - 1] * inv[i] % mod;\n        }\n    }\n    inline long long binom(int n, int\
+    \ k) {\n        return ((n < 0 || k < 0 || n < k) ? 0 : fac[n] * (finv[k] * finv[n\
+    \ - k] % mod) % mod);\n    }\n    inline long long factorial(int n) {\n      \
+    \  return fac[n];\n    }\n};\n\n//verify https://atcoder.jp/contests/abc021/tasks/abc021_d\n\
+    #line 1 \"lib/32-polynomial/FormalPowerSeries.cpp\"\n/*\n * @title FormalPowerSeries\
     \ - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n * @docs md/polynomial/FormalPowerSeries.md\n\
-    \ */\ntemplate<long long prime, class T = ModInt<prime>> struct FormalPowerSeries\
-    \ : public vector<T> {\n    using vector<T>::vector;\n    using Mint  = T;\n \
-    \   using Fps   = FormalPowerSeries<prime>;\n    inline static constexpr int N_MAX\
-    \ = 1000000;\n    Fps even(void) const {Fps ret;for(int i = 0; i < this->size();\
+    \ */\ntemplate<long long prime, class T = ModInt<prime>> struct FormalPowerSeries;\n\
+    template<long long prime, class T = ModInt<prime>> class SparseFormalPowerSeries\
+    \ {\n    using Mint = T;\n    using Sfps = SparseFormalPowerSeries<prime>;\n \
+    \   unordered_map<size_t, T> mp;\n    size_t sz;\npublic:\n    friend class FormalPowerSeries<prime>;\n\
+    \    SparseFormalPowerSeries():sz(0){}\n    void update(const size_t idx, const\
+    \ Mint val) {\n        if(val.x == 0) mp.erase(idx);\n        else mp[idx]=val;\n\
+    \        size_t tmp_sz=0;\n        for(auto& p:mp) tmp_sz=max(tmp_sz,p.first);\n\
+    \        sz=tmp_sz;\n    }\n    inline static Sfps mul(const Sfps& lhs, const\
+    \ Sfps& rhs) {\n        unordered_map<size_t, T> ret;\n        for(auto& [i,a]:\
+    \ lhs.mp) {\n            for(auto& [j,b]: rhs.mp) {\n                ret[i+j]+=a*b;\n\
+    \            }\n        }\n        return ret;\n    }\n    //map\u306E\u30B5\u30A4\
+    \u30BA\u3058\u3083\u306A\u304F\u3066\u3001\u6700\u5927\u306Eindex\u3092\u8FD4\u3059\
+    \u3053\u3068\u306B\u6CE8\u610F\n    size_t size() const {return sz+1;}\n};\ntemplate<long\
+    \ long prime, class T> struct FormalPowerSeries : public vector<T> {\n    using\
+    \ vector<T>::vector;\n    using Mint  = T;\n    using Fps   = FormalPowerSeries<prime>;\n\
+    \    using Sfps   = SparseFormalPowerSeries<prime>;\n    inline static constexpr\
+    \ int N_MAX = 1000000;\n    Fps even(void) const {Fps ret;for(int i = 0; i < this->size();\
     \ i+=2) ret.push_back((*this)[i]);return ret;}\n    Fps odd(void)  const {Fps\
     \ ret;for(int i = 1; i < this->size(); i+=2) ret.push_back((*this)[i]);return\
     \ ret;}\n    Fps symmetry(void) const {Fps ret(this->size());for(int i = 0; i\
@@ -247,11 +275,14 @@ data:
     \        Fps res(max(n,m),0);\n        for(int i=0;i<n;++i) res[i] += lhs[i];\n\
     \        for(int i=0;i<m;++i) res[i] -= rhs[i];\n        return res;\n    }\n\
     \    inline static Fps mul(const Fps& lhs, const Fps& rhs) {\n        return NumberTheoreticalTransform<prime>::convolution(lhs,rhs);\n\
-    \    }\n    inline static Fps div(Fps lhs, Fps rhs) {\n        while(lhs.size()\
-    \ && lhs.back().x == 0) lhs.pop_back();\n        while(rhs.size() && rhs.back().x\
-    \ == 0) rhs.pop_back();\n        int n = lhs.size(), m = rhs.size();\n       \
-    \ if(n < m) return Fps(1,0);\n        reverse(lhs.begin(),lhs.end());\n      \
-    \  reverse(rhs.begin(),rhs.end());\n        auto f = mul(lhs,rhs.inv(n-m+1)).prefix(n-m+1);\n\
+    \    }\n    inline static Fps mul(const Fps& lhs, const Sfps& rhs) {\n       \
+    \ size_t n = lhs.size() + rhs.size();\n        Fps res(n,0);\n        for(auto&\
+    \ [i,a]:rhs.mp) {\n            for (int j = 0; j < lhs.size(); ++j) res[i+j]+=a*lhs[j];\n\
+    \        }\n        return res;\n    }\n    inline static Fps div(Fps lhs, Fps\
+    \ rhs) {\n        while(lhs.size() && lhs.back().x == 0) lhs.pop_back();\n   \
+    \     while(rhs.size() && rhs.back().x == 0) rhs.pop_back();\n        int n =\
+    \ lhs.size(), m = rhs.size();\n        if(n < m) return Fps(1,0);\n        reverse(lhs.begin(),lhs.end());\n\
+    \        reverse(rhs.begin(),rhs.end());\n        auto f = mul(lhs,rhs.inv(n-m+1)).prefix(n-m+1);\n\
     \        reverse(f.begin(),f.end());\n        return f;\n    }\n    inline static\
     \ Fps mod(const Fps& lhs, const Fps& rhs) {\n        int m = rhs.size();\n   \
     \     auto f = sub(lhs,mul(div(lhs,rhs).prefix(m),rhs)).prefix(m);\n        while(f.size()\
@@ -281,31 +312,39 @@ data:
     \ mul(numerator,denominator.symmetry());\n            numerator    = ((n&1)?numerator.odd():numerator.even());\n\
     \            denominator  = mul(denominator,denominator.symmetry());\n       \
     \     denominator  = denominator.even();\n            n >>= 1;\n        }\n  \
-    \      return numerator[0];\n    }\n\n    friend ostream &operator<<(ostream &os,\
-    \ const Fps& fps) {os << \"{\" << fps[0];for(int i=1;i<fps.size();++i) os << \"\
-    , \" << fps[i];return os << \"}\";}\n};\n#line 15 \"test/polynomial/FormalPowerSeries-exp.test.cpp\"\
-    \n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N; read(N);\n\
+    \      return numerator[0];\n    }\n    //(1-rx)^(-n) = \u03A3 (i+n-1)_C_(n-1)\
+    \ (rx)^i \u3092m\u9805\u307E\u3067\u8A08\u7B97\u3057\u3066\u8FD4\u3057\u3066\u304F\
+    \u308C\u308B\n    inline static Fps negative_binomial_theorem(const Mint r, const\
+    \ size_t n, const size_t m, const CombinationMod<prime>& cm) {\n        assert(n-1+m-1\
+    \ <= cm.size());\n        Fps res(m,0);\n        for(int i=0;i<m;++i) {\n    \
+    \        res[i]= Mint(cm.binom(i+n-1,n-1));\n        }\n        return res;\n\
+    \    }\n    friend ostream &operator<<(ostream &os, const Fps& fps) {os << \"\
+    {\" << fps[0];for(int i=1;i<fps.size();++i) os << \", \" << fps[i];return os <<\
+    \ \"}\";}\n};\n#line 18 \"test/polynomial/FormalPowerSeries-exp.test.cpp\"\n\n\
+    int main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N; read(N);\n\
     \    FormalPowerSeries<MOD_998244353> f(N);\n    for(int i=0;i<N;++i) {\n    \
     \    int a; read(a);\n        f[i]=a;\n    }\n    f = f.exp();\n    for(int i=0;i<f.size();++i)\
     \ cout << f[i] << \" \\n\"[i==N-1];\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/exp_of_formal_power_series\"\
     \n\n#include <vector>\n#include <iostream>\n#include <numeric>\n#include <algorithm>\n\
-    #include <array>\n#include <queue>\n\nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\
-    \n#include \"../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/31-convolution/NumberTheoreticalTransform.cpp\"\
-    \n#include \"../../lib/32-polynomial/FormalPowerSeries.cpp\"\n\nint main() {\n\
-    \    cin.tie(0);ios::sync_with_stdio(false);\n    int N; read(N);\n    FormalPowerSeries<MOD_998244353>\
-    \ f(N);\n    for(int i=0;i<N;++i) {\n        int a; read(a);\n        f[i]=a;\n\
-    \    }\n    f = f.exp();\n    for(int i=0;i<f.size();++i) cout << f[i] << \" \\\
-    n\"[i==N-1];\n    return 0;\n}"
+    #include <array>\n#include <queue>\n#include <cassert>\n#include <unordered_map>\n\
+    \nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\n#include \"\
+    ../../lib/00-util/ModInt.cpp\"\n#include \"../../lib/31-convolution/NumberTheoreticalTransform.cpp\"\
+    \n#include \"../../lib/30-math/CombinationMod.cpp\"\n#include \"../../lib/32-polynomial/FormalPowerSeries.cpp\"\
+    \n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N; read(N);\n\
+    \    FormalPowerSeries<MOD_998244353> f(N);\n    for(int i=0;i<N;++i) {\n    \
+    \    int a; read(a);\n        f[i]=a;\n    }\n    f = f.exp();\n    for(int i=0;i<f.size();++i)\
+    \ cout << f[i] << \" \\n\"[i==N-1];\n    return 0;\n}"
   dependsOn:
   - lib/00-util/FastIO.cpp
   - lib/00-util/ModInt.cpp
   - lib/31-convolution/NumberTheoreticalTransform.cpp
+  - lib/30-math/CombinationMod.cpp
   - lib/32-polynomial/FormalPowerSeries.cpp
   isVerificationFile: true
   path: test/polynomial/FormalPowerSeries-exp.test.cpp
   requiredBy: []
-  timestamp: '2023-06-04 21:19:44+09:00'
+  timestamp: '2023-06-05 03:49:56+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/polynomial/FormalPowerSeries-exp.test.cpp

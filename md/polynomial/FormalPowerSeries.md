@@ -18,7 +18,7 @@
 - FormalPowerSeries(vector< Mint > v)
   - ModInt型のvectorでも初期化できる
   
-### メソッド
+### FormalPowerSeries メソッド
 - int,long long,ModInt型に対して、Fpsとの四則演算をオーバーロードしている。
   - 演算は、fpsの各項に対して行われる。
   - +,-,*: $O(N)$
@@ -100,6 +100,13 @@
   - denominatorは分母のFps
   - [提出](https://atcoder.jp/contests/abc178/submissions/41992411)
   - [提出](https://atcoder.jp/contests/abc179/submissions/41995344)
+- Fps negative_binomial_theorem(const Mint r, const size_t n, const size_t m, const CombinationMod<prime>& cm)
+  - $(1-rx)^{-n} = Σ {i+n-1}_C_{n-1} (rx)^{i}$ を計算して返す
+  - nは分母にあった時の乗数
+  - mは計算後求めたい項数
+### SparseFormalPowerSeries メソッド
+  - 疎なFps。発展途上なので随時メソッド追加予定。
+  - [提出](https://atcoder.jp/contests/dp/submissions/42007133)
 
 ### 参考資料
 - [【競技プログラミング】形式的冪級数の応用テクニック(前編)](https://qiita.com/hotman78/items/f0e6d2265badd84d429a)
@@ -115,6 +122,6 @@
 - 桁dpもできる
   - [[多項式・形式的べき級数]（２）式変形による解法の導出](https://maspypy.com/%e5%a4%9a%e9%a0%85%e5%bc%8f%e3%83%bb%e5%bd%a2%e5%bc%8f%e7%9a%84%e3%81%b9%e3%81%8d%e7%b4%9a%e6%95%b0%ef%bc%88%ef%bc%92%ef%bc%89%e5%bc%8f%e5%a4%89%e5%bd%a2%e3%81%ab%e3%82%88%e3%82%8b%e8%a7%a3%e6%b3%95)
   - [提出](https://atcoder.jp/contests/abc135/submissions/42000622)
-- $(1-rx)^(-K) = Σ (n+K-1)_C_(K-1) (rx)^n$
+- $(1-rx)^{-n} = Σ {i+n-1}_C_{n-1} (rx)^{i}$
   - [[AtCoder 参加感想] 2020/06/21:ABC 171](https://maspypy.com/atcoder-%e5%8f%82%e5%8a%a0%e6%84%9f%e6%83%b3-2020-06-21abc-17#toc4)
   - [提出](https://atcoder.jp/contests/abc171/submissions/42004091)

@@ -9,9 +9,30 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/CombinationMod-factorial.test.cpp
     title: test/math/CombinationMod-factorial.test.cpp
-  _isVerificationFailed: false
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-exp.test.cpp
+    title: test/polynomial/FormalPowerSeries-exp.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-interpolation.test.cpp
+    title: test/polynomial/FormalPowerSeries-interpolation.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-inv.test.cpp
+    title: test/polynomial/FormalPowerSeries-inv.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-log.test.cpp
+    title: test/polynomial/FormalPowerSeries-log.test.cpp
+  - icon: ':x:'
+    path: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+    title: test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/polynomial/FormalPowerSeries-nth.test.cpp
+    title: test/polynomial/FormalPowerSeries-nth.test.cpp
+  - icon: ':x:'
+    path: test/polynomial/FormalPowerSeries-pow.test.cpp
+    title: test/polynomial/FormalPowerSeries-pow.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     _deprecated_at_docs: md/math/CombinationMod.md
     document_title: "CombinationMod - mod\u4E0A\u306E\u4E8C\u9805\u4FC2\u6570\u30FB\
@@ -45,10 +66,17 @@ data:
   path: lib/30-math/CombinationMod.cpp
   requiredBy: []
   timestamp: '2023-05-30 04:49:31+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/math/CombinationMod-binom.test.cpp
   - test/math/CombinationMod-factorial.test.cpp
+  - test/polynomial/FormalPowerSeries-inv.test.cpp
+  - test/polynomial/FormalPowerSeries-nth.test.cpp
+  - test/polynomial/FormalPowerSeries-interpolation.test.cpp
+  - test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+  - test/polynomial/FormalPowerSeries-log.test.cpp
+  - test/polynomial/FormalPowerSeries-exp.test.cpp
+  - test/polynomial/FormalPowerSeries-pow.test.cpp
 documentation_of: lib/30-math/CombinationMod.cpp
 layout: document
 redirect_from:

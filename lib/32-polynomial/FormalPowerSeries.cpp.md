@@ -33,10 +33,23 @@ data:
     links: []
   bundledCode: "#line 1 \"lib/32-polynomial/FormalPowerSeries.cpp\"\n/*\n * @title\
     \ FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n * @docs md/polynomial/FormalPowerSeries.md\n\
-    \ */\ntemplate<long long prime, class T = ModInt<prime>> struct FormalPowerSeries\
-    \ : public vector<T> {\n    using vector<T>::vector;\n    using Mint  = T;\n \
-    \   using Fps   = FormalPowerSeries<prime>;\n    inline static constexpr int N_MAX\
-    \ = 1000000;\n    Fps even(void) const {Fps ret;for(int i = 0; i < this->size();\
+    \ */\ntemplate<long long prime, class T = ModInt<prime>> struct FormalPowerSeries;\n\
+    template<long long prime, class T = ModInt<prime>> class SparseFormalPowerSeries\
+    \ {\n    using Mint = T;\n    using Sfps = SparseFormalPowerSeries<prime>;\n \
+    \   unordered_map<size_t, T> mp;\n    size_t sz;\npublic:\n    friend class FormalPowerSeries<prime>;\n\
+    \    SparseFormalPowerSeries():sz(0){}\n    void update(const size_t idx, const\
+    \ Mint val) {\n        if(val.x == 0) mp.erase(idx);\n        else mp[idx]=val;\n\
+    \        size_t tmp_sz=0;\n        for(auto& p:mp) tmp_sz=max(tmp_sz,p.first);\n\
+    \        sz=tmp_sz;\n    }\n    inline static Sfps mul(const Sfps& lhs, const\
+    \ Sfps& rhs) {\n        unordered_map<size_t, T> ret;\n        for(auto& [i,a]:\
+    \ lhs.mp) {\n            for(auto& [j,b]: rhs.mp) {\n                ret[i+j]+=a*b;\n\
+    \            }\n        }\n        return ret;\n    }\n    //map\u306E\u30B5\u30A4\
+    \u30BA\u3058\u3083\u306A\u304F\u3066\u3001\u6700\u5927\u306Eindex\u3092\u8FD4\u3059\
+    \u3053\u3068\u306B\u6CE8\u610F\n    size_t size() const {return sz+1;}\n};\ntemplate<long\
+    \ long prime, class T> struct FormalPowerSeries : public vector<T> {\n    using\
+    \ vector<T>::vector;\n    using Mint  = T;\n    using Fps   = FormalPowerSeries<prime>;\n\
+    \    using Sfps   = SparseFormalPowerSeries<prime>;\n    inline static constexpr\
+    \ int N_MAX = 1000000;\n    Fps even(void) const {Fps ret;for(int i = 0; i < this->size();\
     \ i+=2) ret.push_back((*this)[i]);return ret;}\n    Fps odd(void)  const {Fps\
     \ ret;for(int i = 1; i < this->size(); i+=2) ret.push_back((*this)[i]);return\
     \ ret;}\n    Fps symmetry(void) const {Fps ret(this->size());for(int i = 0; i\
@@ -94,11 +107,14 @@ data:
     \        Fps res(max(n,m),0);\n        for(int i=0;i<n;++i) res[i] += lhs[i];\n\
     \        for(int i=0;i<m;++i) res[i] -= rhs[i];\n        return res;\n    }\n\
     \    inline static Fps mul(const Fps& lhs, const Fps& rhs) {\n        return NumberTheoreticalTransform<prime>::convolution(lhs,rhs);\n\
-    \    }\n    inline static Fps div(Fps lhs, Fps rhs) {\n        while(lhs.size()\
-    \ && lhs.back().x == 0) lhs.pop_back();\n        while(rhs.size() && rhs.back().x\
-    \ == 0) rhs.pop_back();\n        int n = lhs.size(), m = rhs.size();\n       \
-    \ if(n < m) return Fps(1,0);\n        reverse(lhs.begin(),lhs.end());\n      \
-    \  reverse(rhs.begin(),rhs.end());\n        auto f = mul(lhs,rhs.inv(n-m+1)).prefix(n-m+1);\n\
+    \    }\n    inline static Fps mul(const Fps& lhs, const Sfps& rhs) {\n       \
+    \ size_t n = lhs.size() + rhs.size();\n        Fps res(n,0);\n        for(auto&\
+    \ [i,a]:rhs.mp) {\n            for (int j = 0; j < lhs.size(); ++j) res[i+j]+=a*lhs[j];\n\
+    \        }\n        return res;\n    }\n    inline static Fps div(Fps lhs, Fps\
+    \ rhs) {\n        while(lhs.size() && lhs.back().x == 0) lhs.pop_back();\n   \
+    \     while(rhs.size() && rhs.back().x == 0) rhs.pop_back();\n        int n =\
+    \ lhs.size(), m = rhs.size();\n        if(n < m) return Fps(1,0);\n        reverse(lhs.begin(),lhs.end());\n\
+    \        reverse(rhs.begin(),rhs.end());\n        auto f = mul(lhs,rhs.inv(n-m+1)).prefix(n-m+1);\n\
     \        reverse(f.begin(),f.end());\n        return f;\n    }\n    inline static\
     \ Fps mod(const Fps& lhs, const Fps& rhs) {\n        int m = rhs.size();\n   \
     \     auto f = sub(lhs,mul(div(lhs,rhs).prefix(m),rhs)).prefix(m);\n        while(f.size()\
@@ -128,19 +144,39 @@ data:
     \ mul(numerator,denominator.symmetry());\n            numerator    = ((n&1)?numerator.odd():numerator.even());\n\
     \            denominator  = mul(denominator,denominator.symmetry());\n       \
     \     denominator  = denominator.even();\n            n >>= 1;\n        }\n  \
-    \      return numerator[0];\n    }\n\n    friend ostream &operator<<(ostream &os,\
-    \ const Fps& fps) {os << \"{\" << fps[0];for(int i=1;i<fps.size();++i) os << \"\
-    , \" << fps[i];return os << \"}\";}\n};\n"
+    \      return numerator[0];\n    }\n    //(1-rx)^(-n) = \u03A3 (i+n-1)_C_(n-1)\
+    \ (rx)^i \u3092m\u9805\u307E\u3067\u8A08\u7B97\u3057\u3066\u8FD4\u3057\u3066\u304F\
+    \u308C\u308B\n    inline static Fps negative_binomial_theorem(const Mint r, const\
+    \ size_t n, const size_t m, const CombinationMod<prime>& cm) {\n        assert(n-1+m-1\
+    \ <= cm.size());\n        Fps res(m,0);\n        for(int i=0;i<m;++i) {\n    \
+    \        res[i]= Mint(cm.binom(i+n-1,n-1));\n        }\n        return res;\n\
+    \    }\n    friend ostream &operator<<(ostream &os, const Fps& fps) {os << \"\
+    {\" << fps[0];for(int i=1;i<fps.size();++i) os << \", \" << fps[i];return os <<\
+    \ \"}\";}\n};\n"
   code: "/*\n * @title FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570\n\
     \ * @docs md/polynomial/FormalPowerSeries.md\n */\ntemplate<long long prime, class\
-    \ T = ModInt<prime>> struct FormalPowerSeries : public vector<T> {\n    using\
+    \ T = ModInt<prime>> struct FormalPowerSeries;\ntemplate<long long prime, class\
+    \ T = ModInt<prime>> class SparseFormalPowerSeries {\n    using Mint = T;\n  \
+    \  using Sfps = SparseFormalPowerSeries<prime>;\n    unordered_map<size_t, T>\
+    \ mp;\n    size_t sz;\npublic:\n    friend class FormalPowerSeries<prime>;\n \
+    \   SparseFormalPowerSeries():sz(0){}\n    void update(const size_t idx, const\
+    \ Mint val) {\n        if(val.x == 0) mp.erase(idx);\n        else mp[idx]=val;\n\
+    \        size_t tmp_sz=0;\n        for(auto& p:mp) tmp_sz=max(tmp_sz,p.first);\n\
+    \        sz=tmp_sz;\n    }\n    inline static Sfps mul(const Sfps& lhs, const\
+    \ Sfps& rhs) {\n        unordered_map<size_t, T> ret;\n        for(auto& [i,a]:\
+    \ lhs.mp) {\n            for(auto& [j,b]: rhs.mp) {\n                ret[i+j]+=a*b;\n\
+    \            }\n        }\n        return ret;\n    }\n    //map\u306E\u30B5\u30A4\
+    \u30BA\u3058\u3083\u306A\u304F\u3066\u3001\u6700\u5927\u306Eindex\u3092\u8FD4\u3059\
+    \u3053\u3068\u306B\u6CE8\u610F\n    size_t size() const {return sz+1;}\n};\ntemplate<long\
+    \ long prime, class T> struct FormalPowerSeries : public vector<T> {\n    using\
     \ vector<T>::vector;\n    using Mint  = T;\n    using Fps   = FormalPowerSeries<prime>;\n\
-    \    inline static constexpr int N_MAX = 1000000;\n    Fps even(void) const {Fps\
-    \ ret;for(int i = 0; i < this->size(); i+=2) ret.push_back((*this)[i]);return\
-    \ ret;}\n    Fps odd(void)  const {Fps ret;for(int i = 1; i < this->size(); i+=2)\
-    \ ret.push_back((*this)[i]);return ret;}\n    Fps symmetry(void) const {Fps ret(this->size());for(int\
-    \ i = 0; i < ret.size(); ++i) ret[i] = (*this)[i]*(i&1?-1:1);return ret;}\npublic:\n\
-    \    //a0 + a_1*x^1 + a_2*x^2 + ... + a_(n-1)*x^(n-1)\n    FormalPowerSeries(const\
+    \    using Sfps   = SparseFormalPowerSeries<prime>;\n    inline static constexpr\
+    \ int N_MAX = 1000000;\n    Fps even(void) const {Fps ret;for(int i = 0; i < this->size();\
+    \ i+=2) ret.push_back((*this)[i]);return ret;}\n    Fps odd(void)  const {Fps\
+    \ ret;for(int i = 1; i < this->size(); i+=2) ret.push_back((*this)[i]);return\
+    \ ret;}\n    Fps symmetry(void) const {Fps ret(this->size());for(int i = 0; i\
+    \ < ret.size(); ++i) ret[i] = (*this)[i]*(i&1?-1:1);return ret;}\npublic:\n  \
+    \  //a0 + a_1*x^1 + a_2*x^2 + ... + a_(n-1)*x^(n-1)\n    FormalPowerSeries(const\
     \ vector<Mint>& v){*this=FormalPowerSeries(v.size());for(int i=0;i<v.size();++i)\
     \ (*this)[i]=v[i];}\n    //TODO constexpr\u306B\u3059\u308B\n    inline static\
     \ vector<Mint> invs;\n    static void invs_build() {\n        if(invs.size())\
@@ -193,11 +229,14 @@ data:
     \        Fps res(max(n,m),0);\n        for(int i=0;i<n;++i) res[i] += lhs[i];\n\
     \        for(int i=0;i<m;++i) res[i] -= rhs[i];\n        return res;\n    }\n\
     \    inline static Fps mul(const Fps& lhs, const Fps& rhs) {\n        return NumberTheoreticalTransform<prime>::convolution(lhs,rhs);\n\
-    \    }\n    inline static Fps div(Fps lhs, Fps rhs) {\n        while(lhs.size()\
-    \ && lhs.back().x == 0) lhs.pop_back();\n        while(rhs.size() && rhs.back().x\
-    \ == 0) rhs.pop_back();\n        int n = lhs.size(), m = rhs.size();\n       \
-    \ if(n < m) return Fps(1,0);\n        reverse(lhs.begin(),lhs.end());\n      \
-    \  reverse(rhs.begin(),rhs.end());\n        auto f = mul(lhs,rhs.inv(n-m+1)).prefix(n-m+1);\n\
+    \    }\n    inline static Fps mul(const Fps& lhs, const Sfps& rhs) {\n       \
+    \ size_t n = lhs.size() + rhs.size();\n        Fps res(n,0);\n        for(auto&\
+    \ [i,a]:rhs.mp) {\n            for (int j = 0; j < lhs.size(); ++j) res[i+j]+=a*lhs[j];\n\
+    \        }\n        return res;\n    }\n    inline static Fps div(Fps lhs, Fps\
+    \ rhs) {\n        while(lhs.size() && lhs.back().x == 0) lhs.pop_back();\n   \
+    \     while(rhs.size() && rhs.back().x == 0) rhs.pop_back();\n        int n =\
+    \ lhs.size(), m = rhs.size();\n        if(n < m) return Fps(1,0);\n        reverse(lhs.begin(),lhs.end());\n\
+    \        reverse(rhs.begin(),rhs.end());\n        auto f = mul(lhs,rhs.inv(n-m+1)).prefix(n-m+1);\n\
     \        reverse(f.begin(),f.end());\n        return f;\n    }\n    inline static\
     \ Fps mod(const Fps& lhs, const Fps& rhs) {\n        int m = rhs.size();\n   \
     \     auto f = sub(lhs,mul(div(lhs,rhs).prefix(m),rhs)).prefix(m);\n        while(f.size()\
@@ -227,14 +266,20 @@ data:
     \ mul(numerator,denominator.symmetry());\n            numerator    = ((n&1)?numerator.odd():numerator.even());\n\
     \            denominator  = mul(denominator,denominator.symmetry());\n       \
     \     denominator  = denominator.even();\n            n >>= 1;\n        }\n  \
-    \      return numerator[0];\n    }\n\n    friend ostream &operator<<(ostream &os,\
-    \ const Fps& fps) {os << \"{\" << fps[0];for(int i=1;i<fps.size();++i) os << \"\
-    , \" << fps[i];return os << \"}\";}\n};\n"
+    \      return numerator[0];\n    }\n    //(1-rx)^(-n) = \u03A3 (i+n-1)_C_(n-1)\
+    \ (rx)^i \u3092m\u9805\u307E\u3067\u8A08\u7B97\u3057\u3066\u8FD4\u3057\u3066\u304F\
+    \u308C\u308B\n    inline static Fps negative_binomial_theorem(const Mint r, const\
+    \ size_t n, const size_t m, const CombinationMod<prime>& cm) {\n        assert(n-1+m-1\
+    \ <= cm.size());\n        Fps res(m,0);\n        for(int i=0;i<m;++i) {\n    \
+    \        res[i]= Mint(cm.binom(i+n-1,n-1));\n        }\n        return res;\n\
+    \    }\n    friend ostream &operator<<(ostream &os, const Fps& fps) {os << \"\
+    {\" << fps[0];for(int i=1;i<fps.size();++i) os << \", \" << fps[i];return os <<\
+    \ \"}\";}\n};"
   dependsOn: []
   isVerificationFile: false
   path: lib/32-polynomial/FormalPowerSeries.cpp
   requiredBy: []
-  timestamp: '2023-06-04 21:19:44+09:00'
+  timestamp: '2023-06-05 03:49:56+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/polynomial/FormalPowerSeries-inv.test.cpp
@@ -271,7 +316,7 @@ title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
 - FormalPowerSeries(vector< Mint > v)
   - ModInt型のvectorでも初期化できる
   
-### メソッド
+### FormalPowerSeries メソッド
 - int,long long,ModInt型に対して、Fpsとの四則演算をオーバーロードしている。
   - 演算は、fpsの各項に対して行われる。
   - +,-,*: $O(N)$
@@ -353,6 +398,13 @@ title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
   - denominatorは分母のFps
   - [提出](https://atcoder.jp/contests/abc178/submissions/41992411)
   - [提出](https://atcoder.jp/contests/abc179/submissions/41995344)
+- Fps negative_binomial_theorem(const Mint r, const size_t n, const size_t m, const CombinationMod<prime>& cm)
+  - $(1-rx)^{-n} = Σ {i+n-1}_C_{n-1} (rx)^{i}$ を計算して返す
+  - nは分母にあった時の乗数
+  - mは計算後求めたい項数
+### SparseFormalPowerSeries メソッド
+  - 疎なFps。発展途上なので随時メソッド追加予定。
+  - [提出](https://atcoder.jp/contests/dp/submissions/42007133)
 
 ### 参考資料
 - [【競技プログラミング】形式的冪級数の応用テクニック(前編)](https://qiita.com/hotman78/items/f0e6d2265badd84d429a)
@@ -368,6 +420,6 @@ title: "FormalPowerSeries - \u5F62\u5F0F\u7684\u51AA\u7D1A\u6570"
 - 桁dpもできる
   - [[多項式・形式的べき級数]（２）式変形による解法の導出](https://maspypy.com/%e5%a4%9a%e9%a0%85%e5%bc%8f%e3%83%bb%e5%bd%a2%e5%bc%8f%e7%9a%84%e3%81%b9%e3%81%8d%e7%b4%9a%e6%95%b0%ef%bc%88%ef%bc%92%ef%bc%89%e5%bc%8f%e5%a4%89%e5%bd%a2%e3%81%ab%e3%82%88%e3%82%8b%e8%a7%a3%e6%b3%95)
   - [提出](https://atcoder.jp/contests/abc135/submissions/42000622)
-- $(1-rx)^(-K) = Σ (n+K-1)_C_(K-1) (rx)^n$
+- $(1-rx)^{-n} = Σ {i+n-1}_C_{n-1} (rx)^{i}$
   - [[AtCoder 参加感想] 2020/06/21:ABC 171](https://maspypy.com/atcoder-%e5%8f%82%e5%8a%a0%e6%84%9f%e6%83%b3-2020-06-21abc-17#toc4)
   - [提出](https://atcoder.jp/contests/abc171/submissions/42004091)
