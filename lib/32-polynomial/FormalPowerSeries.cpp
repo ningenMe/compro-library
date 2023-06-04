@@ -1,4 +1,3 @@
-
 /*
  * @title FormalPowerSeries - 形式的冪級数
  * @docs md/polynomial/FormalPowerSeries.md
@@ -130,6 +129,20 @@ public:
         auto f = sub(lhs,mul(div(lhs,rhs).prefix(m),rhs)).prefix(m);
         while(f.size() && f.back().x==0) f.pop_back();
         return f;
+    }
+    inline static Fps fold_all(vector<Fps> vfps) {
+        if(vfps.empty()) return {};
+        priority_queue<pair<size_t,size_t>, vector<pair<size_t,size_t>>, greater<>> pq;
+        for(size_t i=0;i<vfps.size(); ++i) pq.emplace(vfps[i].size(), i);
+        while(pq.size()>1) {
+            auto l=pq.top().second; pq.pop();
+            auto r=pq.top().second; pq.pop();
+            vfps[l]=mul(vfps[l],vfps[r]);
+            vfps[r]={};
+            pq.emplace(vfps[l].size(), l);
+        }
+        auto ret=pq.top().second; pq.pop();
+        return vfps[ret];
     }
     vector<Mint> multipoint_evaluation(vector<Mint> x) {
         int n = x.size(),m;
