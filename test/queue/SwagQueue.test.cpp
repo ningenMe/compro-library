@@ -4,14 +4,14 @@
 #include <iostream>
 #include <stack>
 using namespace std;
-#include "../../lib/14-data-structure/Swag.cpp"
+#include "../../lib/15-queue/SwagQueue.cpp"
 
 int main(void){
 	cin.tie(0);ios::sync_with_stdio(false);
 	long long N; cin >> N;
 	vector<long long> A(N+1,1);
 	for(int i = 0; i < N; ++i) cin >> A[i];
-	Swag<NodeGcd<long long>> swag;
+	SwagQueue<NodeGcd<long long>> swag;
 	long long ans=0;
 	int r=0;
 	swag.push(A[0]);
