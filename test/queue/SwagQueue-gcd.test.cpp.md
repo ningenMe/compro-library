@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: lib/15-queue/SwagQueue.cpp
-    title: Swag
+    title: SwagQueue
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,7 +17,7 @@ data:
   bundledCode: "#line 1 \"test/queue/SwagQueue-gcd.test.cpp\"\n#define PROBLEM \"\
     https://yukicoder.me/problems/no/1036\"\n\n#include <vector>\n#include <iostream>\n\
     #include <stack>\nusing namespace std;\n#line 1 \"lib/15-queue/SwagQueue.cpp\"\
-    \n/*\n * @title Swag\n * @docs md/data-structure/Swag.md\n */\ntemplate<class\
+    \n/*\n * @title SwagQueue\n * @docs md/data-structure/SwagQueue.md\n */\ntemplate<class\
     \ Operator> class SwagQueue{\npublic:\n    using TypeNode = typename Operator::TypeNode;\n\
     \    stack<pair<TypeNode,TypeNode>> pre,suf;\n\n    SwagQueue() {\n        //\
     \ do nothing\n    }\n    TypeNode fold() {\n        TypeNode res = Operator::unit_node;\n\
@@ -58,7 +58,7 @@ data:
   isVerificationFile: true
   path: test/queue/SwagQueue-gcd.test.cpp
   requiredBy: []
-  timestamp: '2023-06-06 01:11:14+09:00'
+  timestamp: '2023-06-06 01:28:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/queue/SwagQueue-gcd.test.cpp

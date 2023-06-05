@@ -120,7 +120,7 @@ data:
       title: SwagDeque
     - icon: ':heavy_check_mark:'
       path: lib/15-queue/SwagQueue.cpp
-      title: Swag
+      title: SwagQueue
   - name: lib/16-convex-hull-trick
     pages:
     - icon: ':heavy_check_mark:'

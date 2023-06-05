@@ -13,17 +13,17 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/data-structure/Swag.md
+    _deprecated_at_docs: md/data-structure/SwagDeque.md
     document_title: SwagDeque
     links: []
   bundledCode: "#line 1 \"lib/15-queue/SwagDeque.cpp\"\n/*\n * @title SwagDeque\n\
-    \ * @docs md/data-structure/Swag.md\n */\ntemplate<class Operator> class SwagDeque{\n\
-    public:\n    using TypeNode = typename Operator::TypeNode;\n    stack<pair<TypeNode,TypeNode>>\
-    \ pre,suf;\n    stack<TypeNode> tmp;\n\n    SwagDeque() {\n        // do nothing\n\
-    \    }\n    TypeNode fold() {\n        TypeNode res = Operator::unit_node;\n \
-    \       if(pre.size()) res = Operator::func_node(pre.top().second,res);\n    \
-    \    if(suf.size()) res = Operator::func_node(res,suf.top().second);\n       \
-    \ return res;\n    }\n    void push_back(const TypeNode val) {\n        TypeNode\
+    \ * @docs md/data-structure/SwagDeque.md\n */\ntemplate<class Operator> class\
+    \ SwagDeque{\npublic:\n    using TypeNode = typename Operator::TypeNode;\n   \
+    \ stack<pair<TypeNode,TypeNode>> pre,suf;\n    stack<TypeNode> tmp;\n\n    SwagDeque()\
+    \ {\n        // do nothing\n    }\n    TypeNode fold() {\n        TypeNode res\
+    \ = Operator::unit_node;\n        if(pre.size()) res = Operator::func_node(pre.top().second,res);\n\
+    \        if(suf.size()) res = Operator::func_node(res,suf.top().second);\n   \
+    \     return res;\n    }\n    void push_back(const TypeNode val) {\n        TypeNode\
     \ acc = val;\n        if(suf.size()) acc = Operator::func_node(suf.top().second,val);\n\
     \        suf.emplace(val,acc);\n    }\n    void push_front(const TypeNode val)\
     \ {\n        TypeNode acc = val;\n        if(pre.size()) acc = Operator::func_node(val,pre.top().second);\n\
@@ -67,7 +67,7 @@ data:
     \ using TypeNode = T;\n    inline static constexpr TypeNode unit_node = {1,0};\n\
     \    inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return\
     \ {l.first*r.first, r.first*l.second+r.second};}\n};\n"
-  code: "/*\n * @title SwagDeque\n * @docs md/data-structure/Swag.md\n */\ntemplate<class\
+  code: "/*\n * @title SwagDeque\n * @docs md/data-structure/SwagDeque.md\n */\ntemplate<class\
     \ Operator> class SwagDeque{\npublic:\n    using TypeNode = typename Operator::TypeNode;\n\
     \    stack<pair<TypeNode,TypeNode>> pre,suf;\n    stack<TypeNode> tmp;\n\n   \
     \ SwagDeque() {\n        // do nothing\n    }\n    TypeNode fold() {\n       \
@@ -121,7 +121,7 @@ data:
   isVerificationFile: false
   path: lib/15-queue/SwagDeque.cpp
   requiredBy: []
-  timestamp: '2023-06-06 01:09:52+09:00'
+  timestamp: '2023-06-06 01:28:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/queue/SwagDeque-deque-composite.test.cpp

@@ -9,7 +9,7 @@ data:
     title: ModInt
   - icon: ':heavy_check_mark:'
     path: lib/15-queue/SwagQueue.cpp
-    title: Swag
+    title: SwagQueue
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -92,7 +92,7 @@ data:
     \    friend istream &operator>>(istream &is, ModInt &a) {long long t;is >> t;a\
     \ = ModInt<mod>(t);return (is);}\n};\nconstexpr long long MOD_998244353 = 998244353;\n\
     constexpr long long MOD_1000000007 = 1'000'000'000LL + 7; //'\n#line 1 \"lib/15-queue/SwagQueue.cpp\"\
-    \n/*\n * @title Swag\n * @docs md/data-structure/Swag.md\n */\ntemplate<class\
+    \n/*\n * @title SwagQueue\n * @docs md/data-structure/SwagQueue.md\n */\ntemplate<class\
     \ Operator> class SwagQueue{\npublic:\n    using TypeNode = typename Operator::TypeNode;\n\
     \    stack<pair<TypeNode,TypeNode>> pre,suf;\n\n    SwagQueue() {\n        //\
     \ do nothing\n    }\n    TypeNode fold() {\n        TypeNode res = Operator::unit_node;\n\
@@ -136,7 +136,7 @@ data:
   isVerificationFile: true
   path: test/queue/SwagQueue-composite.test.cpp
   requiredBy: []
-  timestamp: '2023-06-06 01:11:14+09:00'
+  timestamp: '2023-06-06 01:28:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/queue/SwagQueue-composite.test.cpp
