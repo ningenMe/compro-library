@@ -1,6 +1,6 @@
 /*
- * @title Swag
- * @docs md/data-structure/Swag.md
+ * @title SwagQueue
+ * @docs md/data-structure/SwagQueue.md
  */
 template<class Operator> class SwagQueue{
 public:
