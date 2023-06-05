@@ -188,11 +188,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/40-graph/Graph.cpp
       title: Graph
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/40-graph/MinimumDirectedClosedCircuit.cpp
       title: "MinimumDirectedClosedCircuit - \u6709\u5411\u30B0\u30E9\u30D5\u306E\u6700\
         \u5C0F\u9589\u8DEF\u691C\u51FA"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/40-graph/MinimumUndirectedClosedCircuit.cpp
       title: "MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\u306E\
         \u6700\u5C0F\u9589\u8DEF\u691C\u51FA"
@@ -535,10 +535,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/Dinic.test.cpp
       title: test/graph/Dinic.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/MinimumDirectedClosedCircuit.test.cpp
       title: test/graph/MinimumDirectedClosedCircuit.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
       title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
     - icon: ':heavy_check_mark:'

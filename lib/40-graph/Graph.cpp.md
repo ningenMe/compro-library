@@ -4,6 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/graph/MinimumDirectedClosedCircuit.test.cpp
+    title: test/graph/MinimumDirectedClosedCircuit.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
+    title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/Tree-diameter.test.cpp
     title: test/graph/Tree-diameter.test.cpp
   - icon: ':heavy_check_mark:'
@@ -84,7 +90,9 @@ data:
   - test/graph/Tree-rerooting.test.cpp
   - test/graph/Tree-hld-path.test.cpp
   - test/graph/Tree-parent.test.cpp
+  - test/graph/MinimumUndirectedClosedCircuit.test.cpp
   - test/graph/Tree-lca.test.cpp
+  - test/graph/MinimumDirectedClosedCircuit.test.cpp
   - test/graph/Tree-hld-vertex-2.test.cpp
   - test/graph/Tree-hld-vertex-1.test.cpp
   - test/graph/Tree-lca-idx.test.cpp

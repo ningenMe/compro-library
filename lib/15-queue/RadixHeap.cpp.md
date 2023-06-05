@@ -4,6 +4,12 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/graph/MinimumDirectedClosedCircuit.test.cpp
+    title: test/graph/MinimumDirectedClosedCircuit.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
+    title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/queue/RadixHeap-32bit.test.cpp
     title: test/queue/RadixHeap-32bit.test.cpp
   - icon: ':heavy_check_mark:'
@@ -96,6 +102,8 @@ data:
   verifiedWith:
   - test/queue/RadixHeap-32bit.test.cpp
   - test/queue/RadixHeap-64bit.test.cpp
+  - test/graph/MinimumUndirectedClosedCircuit.test.cpp
+  - test/graph/MinimumDirectedClosedCircuit.test.cpp
 documentation_of: lib/15-queue/RadixHeap.cpp
 layout: document
 redirect_from:
