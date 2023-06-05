@@ -2,18 +2,21 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/queue/SwagQueue.test.cpp
+    title: test/queue/SwagQueue.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/data-structure/Swag.md
     document_title: Swag
     links: []
-  bundledCode: "#line 1 \"lib/14-data-structure/Swag.cpp\"\n/*\n * @title Swag\n *\
-    \ @docs md/data-structure/Swag.md\n */\ntemplate<class Operator> class Swag{\n\
+  bundledCode: "#line 1 \"lib/15-queue/SwagQueue.cpp\"\n/*\n * @title Swag\n * @docs\
+    \ md/data-structure/Swag.md\n */\ntemplate<class Operator> class SwagQueue{\n\
     public:\n    using TypeNode = typename Operator::TypeNode;\n    stack<pair<TypeNode,TypeNode>>\
-    \ pre,suf;\n\n    Swag() {\n        // do nothing\n    }\n    TypeNode fold()\
+    \ pre,suf;\n\n    SwagQueue() {\n        // do nothing\n    }\n    TypeNode fold()\
     \ {\n        TypeNode res = Operator::unit_node;\n        if(pre.size()) res =\
     \ Operator::func_node(pre.top().second,res);\n        if(suf.size()) res = Operator::func_node(res,suf.top().second);\n\
     \        return res;\n    }\n    void push(TypeNode val) {\n        TypeNode acc\
@@ -31,12 +34,12 @@ data:
     \ {1,0};\n    inline static constexpr TypeNode func_node(TypeNode l,TypeNode r){return\
     \ {r.first*l.first,r.first*l.second+r.second};}\n};\n"
   code: "/*\n * @title Swag\n * @docs md/data-structure/Swag.md\n */\ntemplate<class\
-    \ Operator> class Swag{\npublic:\n    using TypeNode = typename Operator::TypeNode;\n\
-    \    stack<pair<TypeNode,TypeNode>> pre,suf;\n\n    Swag() {\n        // do nothing\n\
-    \    }\n    TypeNode fold() {\n        TypeNode res = Operator::unit_node;\n \
-    \       if(pre.size()) res = Operator::func_node(pre.top().second,res);\n    \
-    \    if(suf.size()) res = Operator::func_node(res,suf.top().second);\n       \
-    \ return res;\n    }\n    void push(TypeNode val) {\n        TypeNode acc = val;\n\
+    \ Operator> class SwagQueue{\npublic:\n    using TypeNode = typename Operator::TypeNode;\n\
+    \    stack<pair<TypeNode,TypeNode>> pre,suf;\n\n    SwagQueue() {\n        //\
+    \ do nothing\n    }\n    TypeNode fold() {\n        TypeNode res = Operator::unit_node;\n\
+    \        if(pre.size()) res = Operator::func_node(pre.top().second,res);\n   \
+    \     if(suf.size()) res = Operator::func_node(res,suf.top().second);\n      \
+    \  return res;\n    }\n    void push(TypeNode val) {\n        TypeNode acc = val;\n\
     \        if(suf.size()) acc = Operator::func_node(suf.top().second,acc);\n   \
     \     suf.emplace(val,acc);\n    }\n    void pop() {\n        if(pre.empty())\
     \ {\n            TypeNode acc = Operator::unit_node;\n            while(suf.size())\
@@ -52,15 +55,16 @@ data:
     \ {r.first*l.first,r.first*l.second+r.second};}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/14-data-structure/Swag.cpp
+  path: lib/15-queue/SwagQueue.cpp
   requiredBy: []
-  timestamp: '2023-05-30 05:01:32+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: lib/14-data-structure/Swag.cpp
+  timestamp: '2023-06-05 22:14:21+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/queue/SwagQueue.test.cpp
+documentation_of: lib/15-queue/SwagQueue.cpp
 layout: document
 redirect_from:
-- /library/lib/14-data-structure/Swag.cpp
-- /library/lib/14-data-structure/Swag.cpp.html
+- /library/lib/15-queue/SwagQueue.cpp
+- /library/lib/15-queue/SwagQueue.cpp.html
 title: Swag
 ---

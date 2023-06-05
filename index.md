@@ -101,7 +101,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/14-data-structure/SlideMost.cpp
       title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/14-data-structure/Swag.cpp
       title: Swag
     - icon: ':heavy_check_mark:'
@@ -115,6 +115,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/15-queue/RadixHeap.cpp
       title: "RadixHeap - \u975E\u8CA0\u6574\u6570heap"
+    - icon: ':heavy_check_mark:'
+      path: lib/15-queue/SwagQueue.cpp
+      title: Swag
   - name: lib/16-convex-hull-trick
     pages:
     - icon: ':heavy_check_mark:'
@@ -497,9 +500,6 @@ data:
       path: test/data-structure/SlideMost.test.cpp
       title: test/data-structure/SlideMost.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/data-structure/Swag.test.cpp
-      title: test/data-structure/Swag.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/data-structure/WaveletMatrix-quantile-1.test.cpp
       title: test/data-structure/WaveletMatrix-quantile-1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -666,6 +666,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/queue/RadixHeap-64bit.test.cpp
       title: test/queue/RadixHeap-64bit.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/queue/SwagQueue.test.cpp
+      title: test/queue/SwagQueue.test.cpp
   - name: test/segment-tree
     pages:
     - icon: ':heavy_check_mark:'
