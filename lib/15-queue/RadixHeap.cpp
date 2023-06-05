@@ -1,7 +1,7 @@
 
 /*
  * @title RadixHeap - 非負整数heap
- * @docs md/heap/RadixHeap.md
+ * @docs md/queue/RadixHeap.md
  */
 template<class T, class Key = unsigned long long> class RadixHeap{
     using TypeNode = pair<Key, T>;

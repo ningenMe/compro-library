@@ -2,11 +2,11 @@
 
 #include <vector>
 #include <iostream>
-#include <algorithm>
 #include <array>
+#include <algorithm>
 using namespace std;
 #include "../../lib/00-util/FastIO.cpp"
-#include "../../lib/15-heap/RadixHeap.cpp"
+#include "../../lib/15-queue/RadixHeap.cpp"
 
 //Dijkstra
 template<class T> class Dijkstra {

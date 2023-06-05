@@ -1,6 +1,6 @@
 /*
  * @title DoubleEndedPriorityQuere - 両端priority queue
- * @docs md/heap/DoubleEndedPriorityQuere.md
+ * @docs md/queue/DoubleEndedPriorityQuere.md
  */
 template<class T> class DoubleEndedPriorityQuere {
 	std::priority_queue<T> max_pq,poped_max_pq;
