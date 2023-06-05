@@ -12,7 +12,7 @@
 
 using namespace std;
 #include "../../lib/40-graph/Graph.cpp"
-#include "../../lib/15-heap/RadixHeap.cpp"
+#include "../../lib/15-queue/RadixHeap.cpp"
 #include "../../lib/40-graph/MinimumUndirectedClosedCircuit.cpp"
 
 int main(){
