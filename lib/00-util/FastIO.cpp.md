@@ -37,12 +37,6 @@ data:
     path: test/graph/UnionFindTree.test.cpp
     title: test/graph/UnionFindTree.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/heap/DoubleEndedPriorityQuere.test.cpp
-    title: test/heap/DoubleEndedPriorityQuere.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/heap/RadixHeap-64bit.test.cpp
-    title: test/heap/RadixHeap-64bit.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/math/Prime-miller-rabin-1.test.cpp
     title: test/math/Prime-miller-rabin-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -72,6 +66,12 @@ data:
   - icon: ':x:'
     path: test/polynomial/FormalPowerSeries-pow.test.cpp
     title: test/polynomial/FormalPowerSeries-pow.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/queue/DoubleEndedPriorityQuere.test.cpp
+    title: test/queue/DoubleEndedPriorityQuere.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/queue/RadixHeap-64bit.test.cpp
+    title: test/queue/RadixHeap-64bit.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/static-range-query/DisjointSparseTable.test.cpp
     title: test/static-range-query/DisjointSparseTable.test.cpp
@@ -160,6 +160,8 @@ data:
   - test/math/Prime-miller-rabin-1.test.cpp
   - test/math/Prime-miller-rabin-2.test.cpp
   - test/math/Prime-rho.test.cpp
+  - test/queue/RadixHeap-64bit.test.cpp
+  - test/queue/DoubleEndedPriorityQuere.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - test/binary-search-tree/WordSizeTreeSet.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
@@ -175,8 +177,6 @@ data:
   - test/polynomial/FormalPowerSeries-pow.test.cpp
   - test/util/FastIO-int64.test.cpp
   - test/util/FastIO-int128.test.cpp
-  - test/heap/RadixHeap-64bit.test.cpp
-  - test/heap/DoubleEndedPriorityQuere.test.cpp
   - test/graph/UnionFindTree.test.cpp
 documentation_of: lib/00-util/FastIO.cpp
 layout: document

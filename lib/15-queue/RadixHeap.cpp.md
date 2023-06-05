@@ -4,26 +4,20 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/graph/MinimumDirectedClosedCircuit.test.cpp
-    title: test/graph/MinimumDirectedClosedCircuit.test.cpp
+    path: test/queue/RadixHeap-32bit.test.cpp
+    title: test/queue/RadixHeap-32bit.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
-    title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/heap/RadixHeap-32bit.test.cpp
-    title: test/heap/RadixHeap-32bit.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/heap/RadixHeap-64bit.test.cpp
-    title: test/heap/RadixHeap-64bit.test.cpp
+    path: test/queue/RadixHeap-64bit.test.cpp
+    title: test/queue/RadixHeap-64bit.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/heap/RadixHeap.md
+    _deprecated_at_docs: md/queue/RadixHeap.md
     document_title: "RadixHeap - \u975E\u8CA0\u6574\u6570heap"
     links: []
-  bundledCode: "#line 1 \"lib/15-heap/RadixHeap.cpp\"\n\n/*\n * @title RadixHeap -\
-    \ \u975E\u8CA0\u6574\u6570heap\n * @docs md/heap/RadixHeap.md\n */\ntemplate<class\
+  bundledCode: "#line 1 \"lib/15-queue/RadixHeap.cpp\"\n\n/*\n * @title RadixHeap\
+    \ - \u975E\u8CA0\u6574\u6570heap\n * @docs md/queue/RadixHeap.md\n */\ntemplate<class\
     \ T, class Key = unsigned long long> class RadixHeap{\n    using TypeNode = pair<Key,\
     \ T>;\n    template<class InnerKey, class ZZ=InnerKey> class Inner{};\n    template<class\
     \ InnerKey> class Inner<InnerKey, unsigned long long>{\n        array<vector<TypeNode>,65>\
@@ -58,7 +52,7 @@ data:
     \    inline void push(TypeNode x){ inner.push(x);}\n    inline void emplace(unsigned\
     \ long long key,T val){ inner.emplace(key,val);}\n    inline TypeNode pop() {\
     \ return inner.pop(); }\n};\n"
-  code: "\n/*\n * @title RadixHeap - \u975E\u8CA0\u6574\u6570heap\n * @docs md/heap/RadixHeap.md\n\
+  code: "\n/*\n * @title RadixHeap - \u975E\u8CA0\u6574\u6570heap\n * @docs md/queue/RadixHeap.md\n\
     \ */\ntemplate<class T, class Key = unsigned long long> class RadixHeap{\n   \
     \ using TypeNode = pair<Key, T>;\n    template<class InnerKey, class ZZ=InnerKey>\
     \ class Inner{};\n    template<class InnerKey> class Inner<InnerKey, unsigned\
@@ -95,20 +89,18 @@ data:
     \ return inner.pop(); }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/15-heap/RadixHeap.cpp
+  path: lib/15-queue/RadixHeap.cpp
   requiredBy: []
-  timestamp: '2023-05-31 03:07:03+09:00'
+  timestamp: '2023-06-05 21:57:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/heap/RadixHeap-32bit.test.cpp
-  - test/heap/RadixHeap-64bit.test.cpp
-  - test/graph/MinimumUndirectedClosedCircuit.test.cpp
-  - test/graph/MinimumDirectedClosedCircuit.test.cpp
-documentation_of: lib/15-heap/RadixHeap.cpp
+  - test/queue/RadixHeap-32bit.test.cpp
+  - test/queue/RadixHeap-64bit.test.cpp
+documentation_of: lib/15-queue/RadixHeap.cpp
 layout: document
 redirect_from:
-- /library/lib/15-heap/RadixHeap.cpp
-- /library/lib/15-heap/RadixHeap.cpp.html
+- /library/lib/15-queue/RadixHeap.cpp
+- /library/lib/15-queue/RadixHeap.cpp.html
 title: "RadixHeap - \u975E\u8CA0\u6574\u6570heap"
 ---
 ### RadixHeap

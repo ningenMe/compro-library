@@ -5,7 +5,7 @@ data:
     path: lib/00-util/FastIO.cpp
     title: FastIO
   - icon: ':heavy_check_mark:'
-    path: lib/15-heap/RadixHeap.cpp
+    path: lib/15-queue/RadixHeap.cpp
     title: "RadixHeap - \u975E\u8CA0\u6574\u6570heap"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -17,9 +17,9 @@ data:
     PROBLEM: https://yukicoder.me/problems/no/807
     links:
     - https://yukicoder.me/problems/no/807
-  bundledCode: "#line 1 \"test/heap/RadixHeap-64bit.test.cpp\"\n#define PROBLEM \"\
+  bundledCode: "#line 1 \"test/queue/RadixHeap-64bit.test.cpp\"\n#define PROBLEM \"\
     https://yukicoder.me/problems/no/807\"\n\n#include <vector>\n#include <iostream>\n\
-    #include <algorithm>\n#include <array>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
+    #include <array>\n#include <algorithm>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
     \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
@@ -46,8 +46,8 @@ data:
     \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
-    #line 1 \"lib/15-heap/RadixHeap.cpp\"\n\n/*\n * @title RadixHeap - \u975E\u8CA0\
-    \u6574\u6570heap\n * @docs md/heap/RadixHeap.md\n */\ntemplate<class T, class\
+    #line 1 \"lib/15-queue/RadixHeap.cpp\"\n\n/*\n * @title RadixHeap - \u975E\u8CA0\
+    \u6574\u6570heap\n * @docs md/queue/RadixHeap.md\n */\ntemplate<class T, class\
     \ Key = unsigned long long> class RadixHeap{\n    using TypeNode = pair<Key, T>;\n\
     \    template<class InnerKey, class ZZ=InnerKey> class Inner{};\n    template<class\
     \ InnerKey> class Inner<InnerKey, unsigned long long>{\n        array<vector<TypeNode>,65>\
@@ -81,7 +81,7 @@ data:
     \ { return inner.empty();}\n    inline size_t size(){ return inner.size();}\n\
     \    inline void push(TypeNode x){ inner.push(x);}\n    inline void emplace(unsigned\
     \ long long key,T val){ inner.emplace(key,val);}\n    inline TypeNode pop() {\
-    \ return inner.pop(); }\n};\n#line 10 \"test/heap/RadixHeap-64bit.test.cpp\"\n\
+    \ return inner.pop(); }\n};\n#line 10 \"test/queue/RadixHeap-64bit.test.cpp\"\n\
     \n//Dijkstra\ntemplate<class T> class Dijkstra {\npublic:\n\tint N;\n\tT inf;\n\
     \tvector<T> cost;\n\tvector<vector<pair<T, int>>> edge;\n\n\tDijkstra(const int\
     \ N, T inf) : N(N), inf(inf), cost(N), edge(N) {\n\t}\n\n\tvoid make_edge(int\
@@ -101,8 +101,8 @@ data:
     \tdijk.cost[N]=0;\n\tfor (int i = 0; i < N; ++i) cout << dijk.cost[i]+dijk.cost[i+N]\
     \ << \"\\n\";\n\n\treturn 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/807\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <algorithm>\n#include <array>\nusing namespace std;\n\
-    #include \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/15-heap/RadixHeap.cpp\"\
+    #include <iostream>\n#include <array>\n#include <algorithm>\nusing namespace std;\n\
+    #include \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/15-queue/RadixHeap.cpp\"\
     \n\n//Dijkstra\ntemplate<class T> class Dijkstra {\npublic:\n\tint N;\n\tT inf;\n\
     \tvector<T> cost;\n\tvector<vector<pair<T, int>>> edge;\n\n\tDijkstra(const int\
     \ N, T inf) : N(N), inf(inf), cost(N), edge(N) {\n\t}\n\n\tvoid make_edge(int\
@@ -123,17 +123,17 @@ data:
     \ << \"\\n\";\n\n\treturn 0;\n}\n"
   dependsOn:
   - lib/00-util/FastIO.cpp
-  - lib/15-heap/RadixHeap.cpp
+  - lib/15-queue/RadixHeap.cpp
   isVerificationFile: true
-  path: test/heap/RadixHeap-64bit.test.cpp
+  path: test/queue/RadixHeap-64bit.test.cpp
   requiredBy: []
-  timestamp: '2023-05-31 03:07:03+09:00'
+  timestamp: '2023-06-05 21:57:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/heap/RadixHeap-64bit.test.cpp
+documentation_of: test/queue/RadixHeap-64bit.test.cpp
 layout: document
 redirect_from:
-- /verify/test/heap/RadixHeap-64bit.test.cpp
-- /verify/test/heap/RadixHeap-64bit.test.cpp.html
-title: test/heap/RadixHeap-64bit.test.cpp
+- /verify/test/queue/RadixHeap-64bit.test.cpp
+- /verify/test/queue/RadixHeap-64bit.test.cpp.html
+title: test/queue/RadixHeap-64bit.test.cpp
 ---

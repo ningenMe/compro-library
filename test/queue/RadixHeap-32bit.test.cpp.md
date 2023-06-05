@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/15-heap/RadixHeap.cpp
+    path: lib/15-queue/RadixHeap.cpp
     title: "RadixHeap - \u975E\u8CA0\u6574\u6570heap"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -14,11 +14,11 @@ data:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0596
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0596
-  bundledCode: "#line 1 \"test/heap/RadixHeap-32bit.test.cpp\"\n#define PROBLEM \"\
+  bundledCode: "#line 1 \"test/queue/RadixHeap-32bit.test.cpp\"\n#define PROBLEM \"\
     http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0596\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <algorithm>\n#include <array>\nusing namespace std;\n\
-    #line 1 \"lib/15-heap/RadixHeap.cpp\"\n\n/*\n * @title RadixHeap - \u975E\u8CA0\
-    \u6574\u6570heap\n * @docs md/heap/RadixHeap.md\n */\ntemplate<class T, class\
+    #include <iostream>\n#include <array>\n#include <algorithm>\nusing namespace std;\n\
+    #line 1 \"lib/15-queue/RadixHeap.cpp\"\n\n/*\n * @title RadixHeap - \u975E\u8CA0\
+    \u6574\u6570heap\n * @docs md/queue/RadixHeap.md\n */\ntemplate<class T, class\
     \ Key = unsigned long long> class RadixHeap{\n    using TypeNode = pair<Key, T>;\n\
     \    template<class InnerKey, class ZZ=InnerKey> class Inner{};\n    template<class\
     \ InnerKey> class Inner<InnerKey, unsigned long long>{\n        array<vector<TypeNode>,65>\
@@ -52,8 +52,8 @@ data:
     \ { return inner.empty();}\n    inline size_t size(){ return inner.size();}\n\
     \    inline void push(TypeNode x){ inner.push(x);}\n    inline void emplace(unsigned\
     \ long long key,T val){ inner.emplace(key,val);}\n    inline TypeNode pop() {\
-    \ return inner.pop(); }\n};\n#line 9 \"test/heap/RadixHeap-32bit.test.cpp\"\n\n\
-    int main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tint N,K; cin >>\
+    \ return inner.pop(); }\n};\n#line 9 \"test/queue/RadixHeap-32bit.test.cpp\"\n\
+    \nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tint N,K; cin >>\
     \ N >> K;\n\tvector<int> C(N),R(N);\n\tfor(int i = 0; i < N; ++i) cin >> C[i]\
     \ >> R[i];\n\tvector<vector<int>> edge(N);\n\tfor(int i = 0; i < K; ++i) {\n\t\
     \tint A,B; cin >> A >> B;\n\t\tA--,B--;\n\t\tedge[A].push_back(B);\n\t\tedge[B].push_back(A);\n\
@@ -67,8 +67,8 @@ data:
     \t\t}\n\t}\n\tcout << *min_element(dp[N-1].begin(),dp[N-1].end()) << endl;\n\t\
     return 0;\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0596\"\
-    \n\n#include <vector>\n#include <iostream>\n#include <algorithm>\n#include <array>\n\
-    using namespace std;\n#include \"../../lib/15-heap/RadixHeap.cpp\"\n\nint main(void){\n\
+    \n\n#include <vector>\n#include <iostream>\n#include <array>\n#include <algorithm>\n\
+    using namespace std;\n#include \"../../lib/15-queue/RadixHeap.cpp\"\n\nint main(void){\n\
     \tcin.tie(0);ios::sync_with_stdio(false);\n\tint N,K; cin >> N >> K;\n\tvector<int>\
     \ C(N),R(N);\n\tfor(int i = 0; i < N; ++i) cin >> C[i] >> R[i];\n\tvector<vector<int>>\
     \ edge(N);\n\tfor(int i = 0; i < K; ++i) {\n\t\tint A,B; cin >> A >> B;\n\t\t\
@@ -82,17 +82,17 @@ data:
     \t\t}\n\t}\n\tcout << *min_element(dp[N-1].begin(),dp[N-1].end()) << endl;\n\t\
     return 0;\n}"
   dependsOn:
-  - lib/15-heap/RadixHeap.cpp
+  - lib/15-queue/RadixHeap.cpp
   isVerificationFile: true
-  path: test/heap/RadixHeap-32bit.test.cpp
+  path: test/queue/RadixHeap-32bit.test.cpp
   requiredBy: []
-  timestamp: '2023-05-31 03:07:03+09:00'
+  timestamp: '2023-06-05 21:57:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/heap/RadixHeap-32bit.test.cpp
+documentation_of: test/queue/RadixHeap-32bit.test.cpp
 layout: document
 redirect_from:
-- /verify/test/heap/RadixHeap-32bit.test.cpp
-- /verify/test/heap/RadixHeap-32bit.test.cpp.html
-title: test/heap/RadixHeap-32bit.test.cpp
+- /verify/test/queue/RadixHeap-32bit.test.cpp
+- /verify/test/queue/RadixHeap-32bit.test.cpp.html
+title: test/queue/RadixHeap-32bit.test.cpp
 ---

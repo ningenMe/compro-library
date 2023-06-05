@@ -107,13 +107,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/14-data-structure/WaveletMatrix.cpp
       title: WaveletMatrix
-  - name: lib/15-heap
+  - name: lib/15-queue
     pages:
     - icon: ':heavy_check_mark:'
-      path: lib/15-heap/DoubleEndedPriorityQuere.cpp
+      path: lib/15-queue/DoubleEndedPriorityQuere.cpp
       title: "DoubleEndedPriorityQuere - \u4E21\u7AEFpriority queue"
     - icon: ':heavy_check_mark:'
-      path: lib/15-heap/RadixHeap.cpp
+      path: lib/15-queue/RadixHeap.cpp
       title: "RadixHeap - \u975E\u8CA0\u6574\u6570heap"
   - name: lib/16-convex-hull-trick
     pages:
@@ -185,11 +185,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/40-graph/Graph.cpp
       title: Graph
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/40-graph/MinimumDirectedClosedCircuit.cpp
       title: "MinimumDirectedClosedCircuit - \u6709\u5411\u30B0\u30E9\u30D5\u306E\u6700\
         \u5C0F\u9589\u8DEF\u691C\u51FA"
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/40-graph/MinimumUndirectedClosedCircuit.cpp
       title: "MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\u306E\
         \u6700\u5C0F\u9589\u8DEF\u691C\u51FA"
@@ -535,10 +535,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/Dinic.test.cpp
       title: test/graph/Dinic.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/graph/MinimumDirectedClosedCircuit.test.cpp
       title: test/graph/MinimumDirectedClosedCircuit.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
       title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
     - icon: ':heavy_check_mark:'
@@ -589,17 +589,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/UnionFindTree.test.cpp
       title: test/graph/UnionFindTree.test.cpp
-  - name: test/heap
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: test/heap/DoubleEndedPriorityQuere.test.cpp
-      title: test/heap/DoubleEndedPriorityQuere.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/heap/RadixHeap-32bit.test.cpp
-      title: test/heap/RadixHeap-32bit.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/heap/RadixHeap-64bit.test.cpp
-      title: test/heap/RadixHeap-64bit.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'
@@ -666,6 +655,17 @@ data:
     - icon: ':x:'
       path: test/polynomial/FormalPowerSeries-pow.test.cpp
       title: test/polynomial/FormalPowerSeries-pow.test.cpp
+  - name: test/queue
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/queue/DoubleEndedPriorityQuere.test.cpp
+      title: test/queue/DoubleEndedPriorityQuere.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/queue/RadixHeap-32bit.test.cpp
+      title: test/queue/RadixHeap-32bit.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/queue/RadixHeap-64bit.test.cpp
+      title: test/queue/RadixHeap-64bit.test.cpp
   - name: test/segment-tree
     pages:
     - icon: ':heavy_check_mark:'

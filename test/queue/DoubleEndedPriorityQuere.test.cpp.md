@@ -5,7 +5,7 @@ data:
     path: lib/00-util/FastIO.cpp
     title: FastIO
   - icon: ':heavy_check_mark:'
-    path: lib/15-heap/DoubleEndedPriorityQuere.cpp
+    path: lib/15-queue/DoubleEndedPriorityQuere.cpp
     title: "DoubleEndedPriorityQuere - \u4E21\u7AEFpriority queue"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -17,9 +17,9 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/double_ended_priority_queue
     links:
     - https://judge.yosupo.jp/problem/double_ended_priority_queue
-  bundledCode: "#line 1 \"test/heap/DoubleEndedPriorityQuere.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/double_ended_priority_queue\"\n\n#include\
-    \ <iostream>\n#include <queue>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
+  bundledCode: "#line 1 \"test/queue/DoubleEndedPriorityQuere.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/double_ended_priority_queue\"\n\n\
+    #include <iostream>\n#include <queue>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
     \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
@@ -46,8 +46,8 @@ data:
     \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
-    #line 1 \"lib/15-heap/DoubleEndedPriorityQuere.cpp\"\n/*\n * @title DoubleEndedPriorityQuere\
-    \ - \u4E21\u7AEFpriority queue\n * @docs md/heap/DoubleEndedPriorityQuere.md\n\
+    #line 1 \"lib/15-queue/DoubleEndedPriorityQuere.cpp\"\n/*\n * @title DoubleEndedPriorityQuere\
+    \ - \u4E21\u7AEFpriority queue\n * @docs md/queue/DoubleEndedPriorityQuere.md\n\
     \ */\ntemplate<class T> class DoubleEndedPriorityQuere {\n\tstd::priority_queue<T>\
     \ max_pq,poped_max_pq;\n\tstd::priority_queue<T, vector<T>, greater<T> > min_pq,\
     \ poped_min_pq;\npublic:\n\tDoubleEndedPriorityQuere() {\n    }\n\tinline void\
@@ -61,7 +61,7 @@ data:
     min_pq.pop();\n\t}\n\tinline void pop_back() {\n        while(poped_max_pq.size()\
     \ && max_pq.top()==poped_max_pq.top()) max_pq.pop(),poped_max_pq.pop();\n\t\t\
     poped_min_pq.push(max_pq.top());\n\t\tmax_pq.pop();\n\t}\n\tinline size_t size()\
-    \ const { return max_pq.size(); }\n};\n#line 8 \"test/heap/DoubleEndedPriorityQuere.test.cpp\"\
+    \ const { return max_pq.size(); }\n};\n#line 8 \"test/queue/DoubleEndedPriorityQuere.test.cpp\"\
     \n\nint main() {\n    cin.tie(0)->sync_with_stdio(0);\n    int N,Q; read(N);read(Q);\n\
     \    DoubleEndedPriorityQuere<long long> pq;\n    while(N--) {\n        long long\
     \ s; read(s); pq.push(s);\n    }\n    while(Q--) {\n        int q; read(q); \n\
@@ -72,7 +72,7 @@ data:
     \        }\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/double_ended_priority_queue\"\
     \n\n#include <iostream>\n#include <queue>\nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\
-    \n#include \"../../lib/15-heap/DoubleEndedPriorityQuere.cpp\"\n\nint main() {\n\
+    \n#include \"../../lib/15-queue/DoubleEndedPriorityQuere.cpp\"\n\nint main() {\n\
     \    cin.tie(0)->sync_with_stdio(0);\n    int N,Q; read(N);read(Q);\n    DoubleEndedPriorityQuere<long\
     \ long> pq;\n    while(N--) {\n        long long s; read(s); pq.push(s);\n   \
     \ }\n    while(Q--) {\n        int q; read(q); \n        if(q==0) {\n        \
@@ -83,17 +83,17 @@ data:
     \ 0;\n}\n"
   dependsOn:
   - lib/00-util/FastIO.cpp
-  - lib/15-heap/DoubleEndedPriorityQuere.cpp
+  - lib/15-queue/DoubleEndedPriorityQuere.cpp
   isVerificationFile: true
-  path: test/heap/DoubleEndedPriorityQuere.test.cpp
+  path: test/queue/DoubleEndedPriorityQuere.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:39:19+09:00'
+  timestamp: '2023-06-05 21:57:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/heap/DoubleEndedPriorityQuere.test.cpp
+documentation_of: test/queue/DoubleEndedPriorityQuere.test.cpp
 layout: document
 redirect_from:
-- /verify/test/heap/DoubleEndedPriorityQuere.test.cpp
-- /verify/test/heap/DoubleEndedPriorityQuere.test.cpp.html
-title: test/heap/DoubleEndedPriorityQuere.test.cpp
+- /verify/test/queue/DoubleEndedPriorityQuere.test.cpp
+- /verify/test/queue/DoubleEndedPriorityQuere.test.cpp.html
+title: test/queue/DoubleEndedPriorityQuere.test.cpp
 ---
