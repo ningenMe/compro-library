@@ -18,7 +18,7 @@ public:
     }
     void push(TypeNode val) {
         TypeNode acc = val;
-        if(suf.size()) acc = Operator::func_node(suf.top().second,acc);
+        if(suf.size()) acc = Operator::func_node(suf.top().second,val);
         suf.emplace(val,acc);
     }
     void pop() {
