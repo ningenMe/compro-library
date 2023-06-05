@@ -4,8 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/queue/SwagQueue.test.cpp
-    title: test/queue/SwagQueue.test.cpp
+    path: test/queue/SwagQueue-composite.test.cpp
+    title: test/queue/SwagQueue-composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/queue/SwagQueue-gcd.test.cpp
+    title: test/queue/SwagQueue-gcd.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -20,7 +23,7 @@ data:
     \ {\n        TypeNode res = Operator::unit_node;\n        if(pre.size()) res =\
     \ Operator::func_node(pre.top().second,res);\n        if(suf.size()) res = Operator::func_node(res,suf.top().second);\n\
     \        return res;\n    }\n    void push(TypeNode val) {\n        TypeNode acc\
-    \ = val;\n        if(suf.size()) acc = Operator::func_node(suf.top().second,acc);\n\
+    \ = val;\n        if(suf.size()) acc = Operator::func_node(suf.top().second,val);\n\
     \        suf.emplace(val,acc);\n    }\n    void pop() {\n        if(pre.empty())\
     \ {\n            TypeNode acc = Operator::unit_node;\n            while(suf.size())\
     \ {\n                auto [val,_] = suf.top();\n                suf.pop();\n \
@@ -40,7 +43,7 @@ data:
     \        if(pre.size()) res = Operator::func_node(pre.top().second,res);\n   \
     \     if(suf.size()) res = Operator::func_node(res,suf.top().second);\n      \
     \  return res;\n    }\n    void push(TypeNode val) {\n        TypeNode acc = val;\n\
-    \        if(suf.size()) acc = Operator::func_node(suf.top().second,acc);\n   \
+    \        if(suf.size()) acc = Operator::func_node(suf.top().second,val);\n   \
     \     suf.emplace(val,acc);\n    }\n    void pop() {\n        if(pre.empty())\
     \ {\n            TypeNode acc = Operator::unit_node;\n            while(suf.size())\
     \ {\n                auto [val,_] = suf.top();\n                suf.pop();\n \
@@ -57,10 +60,11 @@ data:
   isVerificationFile: false
   path: lib/15-queue/SwagQueue.cpp
   requiredBy: []
-  timestamp: '2023-06-05 22:14:21+09:00'
+  timestamp: '2023-06-06 01:11:14+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/queue/SwagQueue.test.cpp
+  - test/queue/SwagQueue-gcd.test.cpp
+  - test/queue/SwagQueue-composite.test.cpp
 documentation_of: lib/15-queue/SwagQueue.cpp
 layout: document
 redirect_from:

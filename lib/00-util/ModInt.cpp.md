@@ -64,6 +64,15 @@ data:
     path: test/polynomial/FormalPowerSeries-pow.test.cpp
     title: test/polynomial/FormalPowerSeries-pow.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/queue/SwagDeque-deque-composite.test.cpp
+    title: test/queue/SwagDeque-deque-composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/queue/SwagDeque-queue-composite.test.cpp
+    title: test/queue/SwagDeque-queue-composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/queue/SwagQueue-composite.test.cpp
+    title: test/queue/SwagQueue-composite.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-rcq.test.cpp
     title: test/segment-tree/SegmentTree-rcq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -176,6 +185,9 @@ data:
   - test/math/Matrix-pow.test.cpp
   - test/math/CombinationMod-factorial.test.cpp
   - test/math/Matrix-det.test.cpp
+  - test/queue/SwagDeque-deque-composite.test.cpp
+  - test/queue/SwagQueue-composite.test.cpp
+  - test/queue/SwagDeque-queue-composite.test.cpp
   - test/segment-tree/SegmentTree-rcq.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp

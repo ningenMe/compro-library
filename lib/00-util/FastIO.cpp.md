@@ -73,6 +73,15 @@ data:
     path: test/queue/RadixHeap-64bit.test.cpp
     title: test/queue/RadixHeap-64bit.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/queue/SwagDeque-deque-composite.test.cpp
+    title: test/queue/SwagDeque-deque-composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/queue/SwagDeque-queue-composite.test.cpp
+    title: test/queue/SwagDeque-queue-composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/queue/SwagQueue-composite.test.cpp
+    title: test/queue/SwagQueue-composite.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/static-range-query/DisjointSparseTable.test.cpp
     title: test/static-range-query/DisjointSparseTable.test.cpp
   - icon: ':heavy_check_mark:'
@@ -160,8 +169,11 @@ data:
   - test/math/Prime-miller-rabin-1.test.cpp
   - test/math/Prime-miller-rabin-2.test.cpp
   - test/math/Prime-rho.test.cpp
+  - test/queue/SwagDeque-deque-composite.test.cpp
+  - test/queue/SwagQueue-composite.test.cpp
   - test/queue/RadixHeap-64bit.test.cpp
   - test/queue/DoubleEndedPriorityQuere.test.cpp
+  - test/queue/SwagDeque-queue-composite.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - test/binary-search-tree/WordSizeTreeSet.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp

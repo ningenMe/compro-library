@@ -116,6 +116,9 @@ data:
       path: lib/15-queue/RadixHeap.cpp
       title: "RadixHeap - \u975E\u8CA0\u6574\u6570heap"
     - icon: ':heavy_check_mark:'
+      path: lib/15-queue/SwagDeque.cpp
+      title: SwagDeque
+    - icon: ':heavy_check_mark:'
       path: lib/15-queue/SwagQueue.cpp
       title: Swag
   - name: lib/16-convex-hull-trick
@@ -667,8 +670,17 @@ data:
       path: test/queue/RadixHeap-64bit.test.cpp
       title: test/queue/RadixHeap-64bit.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/queue/SwagQueue.test.cpp
-      title: test/queue/SwagQueue.test.cpp
+      path: test/queue/SwagDeque-deque-composite.test.cpp
+      title: test/queue/SwagDeque-deque-composite.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/queue/SwagDeque-queue-composite.test.cpp
+      title: test/queue/SwagDeque-queue-composite.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/queue/SwagQueue-composite.test.cpp
+      title: test/queue/SwagQueue-composite.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/queue/SwagQueue-gcd.test.cpp
+      title: test/queue/SwagQueue-gcd.test.cpp
   - name: test/segment-tree
     pages:
     - icon: ':heavy_check_mark:'
