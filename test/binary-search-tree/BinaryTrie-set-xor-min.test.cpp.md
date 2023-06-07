@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: lib/14-data-structure/BinaryTrie.cpp
+    path: lib/12-binary-search-tree/BinaryTrie.cpp
     title: BinaryTrie
   - icon: ':heavy_check_mark:'
     path: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
@@ -18,12 +18,13 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/set_xor_min
     links:
     - https://judge.yosupo.jp/problem/set_xor_min
-  bundledCode: "#line 1 \"test/data-structure/BinaryTrie-set-xor-min.test.cpp\"\n\
-    #define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <stack>\nusing namespace std;\n#line 1 \"lib/14-data-structure/BinaryTrie.cpp\"\
-    \n/*\n * @title BinaryTrie\n * @docs md/data-structure/BinaryTrie.md\n */\ntemplate<class\
-    \ Operator, int bit=60> class BinaryTrie{\n    using TypeNode = typename Operator::TypeNode;\n\
-    public:\n    vector<TypeNode> node;\n    vector<vector<int>> ch;\n    BinaryTrie():node(1),ch(1,vector<int>(2,-1)){}\n\
+  bundledCode: "#line 1 \"test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n\n#include\
+    \ <vector>\n#include <iostream>\n#include <stack>\nusing namespace std;\n#line\
+    \ 1 \"lib/12-binary-search-tree/BinaryTrie.cpp\"\n/*\n * @title BinaryTrie\n *\
+    \ @docs md/data-structure/BinaryTrie.md\n */\ntemplate<class Operator, int bit=60>\
+    \ class BinaryTrie{\n    using TypeNode = typename Operator::TypeNode;\npublic:\n\
+    \    vector<TypeNode> node;\n    vector<vector<int>> ch;\n    BinaryTrie():node(1),ch(1,vector<int>(2,-1)){}\n\
     \    void operate(long long idx, const TypeNode var) {\n        int curr=0;\n\
     \        stack<int> st;\n        for(int i=bit-1; 0 <= i; --i) {\n           \
     \ st.push(curr);\n            int f=(idx>>i)&1;\n            if(ch[curr][f]==-1)\
@@ -49,7 +50,7 @@ data:
     \ constexpr TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_fold(TypeNode\
     \ l,TypeNode r){return l+r;}\n    inline static constexpr TypeNode func_operate(TypeNode\
     \ l,TypeNode r){return l+r;}\n    inline static constexpr bool func_check(TypeNode\
-    \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n#line 9 \"test/data-structure/BinaryTrie-set-xor-min.test.cpp\"\
+    \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n#line 9 \"test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp\"\
     \nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tBinaryTrie<MonoidRangeSumPointAdd<int>,30>\
     \ trie;\n\tint Q; cin >> Q;\n\twhile (Q--){\n\t\tint q; cin >> q;\n\t\tlong long\
     \ x; cin >> x;\n\t\tif(q==0) {\n\t\t\tlong long y=trie.fold(x);\n\t\t\tif(!y)\
@@ -58,7 +59,7 @@ data:
     \ << endl;\n\t\t}\n\t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <stack>\nusing namespace std;\n#include\
-    \ \"../../lib/14-data-structure/BinaryTrie.cpp\"\n#include \"../../lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp\"\
+    \ \"../../lib/12-binary-search-tree/BinaryTrie.cpp\"\n#include \"../../lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp\"\
     \nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tBinaryTrie<MonoidRangeSumPointAdd<int>,30>\
     \ trie;\n\tint Q; cin >> Q;\n\twhile (Q--){\n\t\tint q; cin >> q;\n\t\tlong long\
     \ x; cin >> x;\n\t\tif(q==0) {\n\t\t\tlong long y=trie.fold(x);\n\t\t\tif(!y)\
@@ -66,18 +67,18 @@ data:
     \t\t\tif(y) trie.operate(x,-1);\n\t\t}\n\t\tif(q==2) {\n\t\t\tcout << trie.min_bitwise_xor(x)\
     \ << endl;\n\t\t}\n\t}\n}"
   dependsOn:
-  - lib/14-data-structure/BinaryTrie.cpp
+  - lib/12-binary-search-tree/BinaryTrie.cpp
   - lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
   isVerificationFile: true
-  path: test/data-structure/BinaryTrie-set-xor-min.test.cpp
+  path: test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp
   requiredBy: []
-  timestamp: '2023-05-31 01:48:55+09:00'
+  timestamp: '2023-06-08 02:51:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/data-structure/BinaryTrie-set-xor-min.test.cpp
+documentation_of: test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp
 layout: document
 redirect_from:
-- /verify/test/data-structure/BinaryTrie-set-xor-min.test.cpp
-- /verify/test/data-structure/BinaryTrie-set-xor-min.test.cpp.html
-title: test/data-structure/BinaryTrie-set-xor-min.test.cpp
+- /verify/test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp
+- /verify/test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp.html
+title: test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp
 ---

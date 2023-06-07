@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/data-structure/PerisitentQueue.test.cpp
-    title: test/data-structure/PerisitentQueue.test.cpp
+    path: test/queue/PerisitentQueue.test.cpp
+    title: test/queue/PerisitentQueue.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -13,11 +13,11 @@ data:
     _deprecated_at_docs: md/data-structure/PersistentQueue.md
     document_title: "PersistentQueue - \u6C38\u7D9Aqueue"
     links: []
-  bundledCode: "#line 1 \"lib/14-data-structure/PersistentQueue.cpp\"\n/*\n * @title\
-    \ PersistentQueue - \u6C38\u7D9Aqueue\n * @docs md/data-structure/PersistentQueue.md\n\
-    \ */\ntemplate<class T,size_t bit=20> class PersistentQueue{\nprivate:\n    struct\
-    \ Node{\n        array<size_t,bit> parent;\n        T val;\n        size_t length;\n\
-    \        Node(T val,size_t length):val(val),length(length){}\n    };\n    vector<Node>\
+  bundledCode: "#line 1 \"lib/15-queue/PersistentQueue.cpp\"\n/*\n * @title PersistentQueue\
+    \ - \u6C38\u7D9Aqueue\n * @docs md/data-structure/PersistentQueue.md\n */\ntemplate<class\
+    \ T,size_t bit=20> class PersistentQueue{\nprivate:\n    struct Node{\n      \
+    \  array<size_t,bit> parent;\n        T val;\n        size_t length;\n       \
+    \ Node(T val,size_t length):val(val),length(length){}\n    };\n    vector<Node>\
     \ tree;\n    unordered_map<int,size_t> mp;\npublic:\n    PersistentQueue(T inf)\
     \ {\n        Node root(inf,0);\n        for(size_t i=0;i<bit;++i) root.parent[i]=0;\n\
     \        mp[-1]=0;\n        tree.push_back(root);\n    }\n    void push(int target_id,\
@@ -48,16 +48,16 @@ data:
     \ & 1) idx = tree[idx].parent[i];\n        return tree[idx].val;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/14-data-structure/PersistentQueue.cpp
+  path: lib/15-queue/PersistentQueue.cpp
   requiredBy: []
-  timestamp: '2023-05-30 05:01:32+09:00'
+  timestamp: '2023-06-08 02:51:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/data-structure/PerisitentQueue.test.cpp
-documentation_of: lib/14-data-structure/PersistentQueue.cpp
+  - test/queue/PerisitentQueue.test.cpp
+documentation_of: lib/15-queue/PersistentQueue.cpp
 layout: document
 redirect_from:
-- /library/lib/14-data-structure/PersistentQueue.cpp
-- /library/lib/14-data-structure/PersistentQueue.cpp.html
+- /library/lib/15-queue/PersistentQueue.cpp
+- /library/lib/15-queue/PersistentQueue.cpp.html
 title: "PersistentQueue - \u6C38\u7D9Aqueue"
 ---

@@ -53,6 +53,9 @@ data:
   - name: lib/12-binary-search-tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: lib/12-binary-search-tree/BinaryTrie.cpp
+      title: BinaryTrie
+    - icon: ':heavy_check_mark:'
       path: lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
       title: "LazyRandomizedBinarySearchTreeSequence - \u9045\u5EF6\u8A55\u4FA1\u30E9\
         \u30F3\u30C0\u30E0\u5E73\u8861\u4E8C\u5206\u63A2\u7D22\u6728\u5217"
@@ -85,25 +88,16 @@ data:
       path: lib/13-static-range-query/RangeModeQuery.cpp
       title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
     - icon: ':heavy_check_mark:'
+      path: lib/13-static-range-query/SlideMost.cpp
+      title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
+    - icon: ':heavy_check_mark:'
       path: lib/13-static-range-query/SparseTable.cpp
       title: SparseTable
   - name: lib/14-data-structure
     pages:
     - icon: ':heavy_check_mark:'
-      path: lib/14-data-structure/BinaryTrie.cpp
-      title: BinaryTrie
-    - icon: ':heavy_check_mark:'
       path: lib/14-data-structure/BitVector.cpp
       title: BitVector
-    - icon: ':heavy_check_mark:'
-      path: lib/14-data-structure/PersistentQueue.cpp
-      title: "PersistentQueue - \u6C38\u7D9Aqueue"
-    - icon: ':heavy_check_mark:'
-      path: lib/14-data-structure/SlideMost.cpp
-      title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
-    - icon: ':warning:'
-      path: lib/14-data-structure/Swag.cpp
-      title: Swag
     - icon: ':heavy_check_mark:'
       path: lib/14-data-structure/WaveletMatrix.cpp
       title: WaveletMatrix
@@ -112,6 +106,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/15-queue/DoubleEndedPriorityQuere.cpp
       title: "DoubleEndedPriorityQuere - \u4E21\u7AEFpriority queue"
+    - icon: ':heavy_check_mark:'
+      path: lib/15-queue/PersistentQueue.cpp
+      title: "PersistentQueue - \u6C38\u7D9Aqueue"
     - icon: ':heavy_check_mark:'
       path: lib/15-queue/RadixHeap.cpp
       title: "RadixHeap - \u975E\u8CA0\u6574\u6570heap"
@@ -407,6 +404,9 @@ data:
   - name: test/binary-search-tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp
+      title: test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
       title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
     - icon: ':heavy_check_mark:'
@@ -493,15 +493,6 @@ data:
       title: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   - name: test/data-structure
     pages:
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/BinaryTrie-set-xor-min.test.cpp
-      title: test/data-structure/BinaryTrie-set-xor-min.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/PerisitentQueue.test.cpp
-      title: test/data-structure/PerisitentQueue.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/SlideMost.test.cpp
-      title: test/data-structure/SlideMost.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/data-structure/WaveletMatrix-quantile-1.test.cpp
       title: test/data-structure/WaveletMatrix-quantile-1.test.cpp
@@ -664,6 +655,9 @@ data:
       path: test/queue/DoubleEndedPriorityQuere.test.cpp
       title: test/queue/DoubleEndedPriorityQuere.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/queue/PerisitentQueue.test.cpp
+      title: test/queue/PerisitentQueue.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/queue/RadixHeap-32bit.test.cpp
       title: test/queue/RadixHeap-32bit.test.cpp
     - icon: ':heavy_check_mark:'
@@ -724,6 +718,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/static-range-query/RangeInversionQuery.test.cpp
       title: test/static-range-query/RangeInversionQuery.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/static-range-query/SlideMost.test.cpp
+      title: test/static-range-query/SlideMost.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/static-range-query/SparseTable.test.cpp
       title: test/static-range-query/SparseTable.test.cpp

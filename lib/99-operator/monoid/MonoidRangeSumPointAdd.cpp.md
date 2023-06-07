@@ -4,14 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp
+    title: test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
     title: test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
     title: test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/data-structure/BinaryTrie-set-xor-min.test.cpp
-    title: test/data-structure/BinaryTrie-set-xor-min.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/graph/Tree-hld-vertex-2.test.cpp
     title: test/graph/Tree-hld-vertex-2.test.cpp
@@ -58,8 +58,8 @@ data:
   - test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
   - test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
+  - test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
-  - test/data-structure/BinaryTrie-set-xor-min.test.cpp
   - test/graph/Tree-hld-vertex-2.test.cpp
 documentation_of: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
 layout: document
