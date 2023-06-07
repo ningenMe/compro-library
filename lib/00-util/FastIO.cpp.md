@@ -88,6 +88,12 @@ data:
     path: test/static-range-query/SparseTable.test.cpp
     title: test/static-range-query/SparseTable.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/static-range-query/WaveletMatrix-quantile-1.test.cpp
+    title: test/static-range-query/WaveletMatrix-quantile-1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/static-range-query/WaveletMatrix-quantile-2.test.cpp
+    title: test/static-range-query/WaveletMatrix-quantile-2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/util/FastIO-int128.test.cpp
     title: test/util/FastIO-int128.test.cpp
   - icon: ':heavy_check_mark:'
@@ -160,7 +166,9 @@ data:
   timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/static-range-query/WaveletMatrix-quantile-1.test.cpp
   - test/static-range-query/DisjointSparseTable.test.cpp
+  - test/static-range-query/WaveletMatrix-quantile-2.test.cpp
   - test/static-range-query/SparseTable.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp

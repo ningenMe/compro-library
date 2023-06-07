@@ -93,13 +93,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/13-static-range-query/SparseTable.cpp
       title: SparseTable
-  - name: lib/14-data-structure
-    pages:
     - icon: ':heavy_check_mark:'
-      path: lib/14-data-structure/BitVector.cpp
-      title: BitVector
-    - icon: ':heavy_check_mark:'
-      path: lib/14-data-structure/WaveletMatrix.cpp
+      path: lib/13-static-range-query/WaveletMatrix.cpp
       title: WaveletMatrix
   - name: lib/15-queue
     pages:
@@ -491,14 +486,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
       title: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
-  - name: test/data-structure
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/WaveletMatrix-quantile-1.test.cpp
-      title: test/data-structure/WaveletMatrix-quantile-1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/data-structure/WaveletMatrix-quantile-2.test.cpp
-      title: test/data-structure/WaveletMatrix-quantile-2.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
@@ -724,6 +711,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/static-range-query/SparseTable.test.cpp
       title: test/static-range-query/SparseTable.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/static-range-query/WaveletMatrix-quantile-1.test.cpp
+      title: test/static-range-query/WaveletMatrix-quantile-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/static-range-query/WaveletMatrix-quantile-2.test.cpp
+      title: test/static-range-query/WaveletMatrix-quantile-2.test.cpp
   - name: test/string
     pages:
     - icon: ':heavy_check_mark:'
