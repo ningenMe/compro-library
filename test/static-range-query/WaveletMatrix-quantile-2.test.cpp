@@ -6,24 +6,18 @@
 #include <algorithm>
 #include <numeric>
 using namespace std;
-using int128  = __int128_t;
-using int64   = long long;
-using int32   = int;
-using uint128 = __uint128_t;
-using uint64  = unsigned long long;
-using uint32  = unsigned int;
 
-#include "../../lib/14-data-structure/BitVector.cpp"
-#include "../../lib/14-data-structure/WaveletMatrix.cpp"
+#include "../../lib/00-util/FastIO.cpp"
+#include "../../lib/13-static-range-query/WaveletMatrix.cpp"
 
-void chmax(int64& a,int64 b){a=max(a,b);}
+void chmax(long long& a,long long b){a=max(a,b);}
 
 int main() {
     cin.tie(0);ios::sync_with_stdio(false);
-	int N; cin >> N;
-    vector<int64> A(N);
-	for(int i = 0; i < N; ++i) cin >> A[i];
-    WaveletMatrix<int64> wm(A);
+	int N; read(N);
+    vector<long long> A(N);
+	for(int i = 0; i < N; ++i) read(A[i]);
+    WaveletMatrix<long long> wm(A);
 
 	//クエリ区間を列挙、調和級数なのでO(N*logN)
 	vector<pair<int,int>> range;
@@ -43,9 +37,9 @@ int main() {
 		//区間取得 O(M)
 		for(int i = 0; i < M; ++i) {
 			l_range[i] = range[cnt + i];
-			lSum[i]   = n*wm.quantile(l_range[i].first,l_range[i].second,(l_range[i].second-l_range[i].first-1)/2) ;
+			lSum[i]   = n*wm.range_kth_smallest(l_range[i].first,l_range[i].second,(l_range[i].second-l_range[i].first-1)/2) ;
 			r_range[i] = range[cnt + i + M];
-			rSum[i]   = n*wm.quantile(r_range[i].first,r_range[i].second,(r_range[i].second-r_range[i].first-1)/2);
+			rSum[i]   = n*wm.range_kth_smallest(r_range[i].first,r_range[i].second,(r_range[i].second-r_range[i].first-1)/2);
 		}
 		//累積和 O(M)
 		for(int i = 1;    i < M; ++i) lSum[i]  += lSum[i-1];
