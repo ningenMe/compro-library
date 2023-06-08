@@ -17,7 +17,7 @@ data:
     PROBLEM: https://yukicoder.me/problems/no/919
     links:
     - https://yukicoder.me/problems/no/919
-  bundledCode: "#line 1 \"test/static-range-query/WaveletMatrix-quantile-2.test.cpp\"\
+  bundledCode: "#line 1 \"test/static-range-query/WaveletMatrix-range-kth-2.test.cpp\"\
     \n#define PROBLEM \"https://yukicoder.me/problems/no/919\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <algorithm>\n#include <numeric>\n\
     using namespace std;\n\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n\
@@ -48,11 +48,11 @@ data:
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
     #line 1 \"lib/13-static-range-query/WaveletMatrix.cpp\"\n/*\n * @title WaveletMatrix\n\
-    \ * @docs md/static-range-query/WaveletMatrix.md\n */\ntemplate<class T> class\
-    \ WaveletMatrix{\n    using u64 = unsigned long long;\n    using u32 = unsigned\
-    \ int;\n    class BitVector{\n        inline static constexpr size_t BIT_BLOCK_SIZE\
-    \ = 5;\n        inline static constexpr size_t BIT_BLOCK_NUM  = 1<<BIT_BLOCK_SIZE;\n\
-    \        inline static constexpr u32 popcount(u32 x) {return __builtin_popcount(x);}\n\
+    \ * @docs md/data-structure/WaveletMatrix.md\n */\ntemplate<class T> class WaveletMatrix{\n\
+    \    using u64 = unsigned long long;\n    using u32 = unsigned int;\n    class\
+    \ BitVector{\n        inline static constexpr size_t BIT_BLOCK_SIZE = 5;\n   \
+    \     inline static constexpr size_t BIT_BLOCK_NUM  = 1<<BIT_BLOCK_SIZE;\n   \
+    \     inline static constexpr u32 popcount(u32 x) {return __builtin_popcount(x);}\n\
     \        inline static constexpr u32 popcount(u64 x) {return __builtin_popcountll(x);}\n\
     \        vector<u32> vec, acc;\n    public:\n        BitVector(const u32 N) {\n\
     \            u32 tmp = (N + BIT_BLOCK_NUM-1) / BIT_BLOCK_NUM;\n            vec.assign(tmp,\
@@ -112,8 +112,9 @@ data:
     \    //[l,l+1) element\n    inline T get(const u32 l) const {return get_impl(l);}\n\
     \    //[l,r) range k (0-indexed) th smallest number\n    T range_kth_smallest(const\
     \ u32 l, const u32 r, const u32 k) const {return range_kth_smallest_impl(l,r,k);}\n\
-    };\n#line 12 \"test/static-range-query/WaveletMatrix-quantile-2.test.cpp\"\n\n\
-    void chmax(long long& a,long long b){a=max(a,b);}\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
+    \    T range_kth_largest(const u32 l, const u32 r, const u32 k) const {return\
+    \ range_kth_smallest_impl(l,r,(r-l)-(k+1));}\n};\n#line 12 \"test/static-range-query/WaveletMatrix-range-kth-2.test.cpp\"\
+    \n\nvoid chmax(long long& a,long long b){a=max(a,b);}\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
     \tint N; read(N);\n    vector<long long> A(N);\n\tfor(int i = 0; i < N; ++i) read(A[i]);\n\
     \    WaveletMatrix<long long> wm(A);\n\n\t//\u30AF\u30A8\u30EA\u533A\u9593\u3092\
     \u5217\u6319\u3001\u8ABF\u548C\u7D1A\u6570\u306A\u306E\u3067O(N*logN)\n\tvector<pair<int,int>>\
@@ -167,15 +168,15 @@ data:
   - lib/00-util/FastIO.cpp
   - lib/13-static-range-query/WaveletMatrix.cpp
   isVerificationFile: true
-  path: test/static-range-query/WaveletMatrix-quantile-2.test.cpp
+  path: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
   requiredBy: []
-  timestamp: '2023-06-08 03:48:36+09:00'
+  timestamp: '2023-06-09 02:22:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/static-range-query/WaveletMatrix-quantile-2.test.cpp
+documentation_of: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
 layout: document
 redirect_from:
-- /verify/test/static-range-query/WaveletMatrix-quantile-2.test.cpp
-- /verify/test/static-range-query/WaveletMatrix-quantile-2.test.cpp.html
-title: test/static-range-query/WaveletMatrix-quantile-2.test.cpp
+- /verify/test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
+- /verify/test/static-range-query/WaveletMatrix-range-kth-2.test.cpp.html
+title: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
 ---

@@ -173,8 +173,8 @@ data:
   verifiedWith:
   - test/segment-tree/LazySegmentTree-rsqruq.test.cpp
   - test/segment-tree/LazySegmentTree-rmqraq.test.cpp
-  - test/graph/Tree-eulertour.test.cpp
   - test/graph/Tree-hld-vertex-1.test.cpp
+  - test/graph/Tree-eulertour.test.cpp
 documentation_of: lib/10-segment-tree/LazySegmentTree.cpp
 layout: document
 redirect_from:

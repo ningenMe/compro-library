@@ -712,11 +712,11 @@ data:
       path: test/static-range-query/SparseTable.test.cpp
       title: test/static-range-query/SparseTable.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/static-range-query/WaveletMatrix-quantile-1.test.cpp
-      title: test/static-range-query/WaveletMatrix-quantile-1.test.cpp
+      path: test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
+      title: test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/static-range-query/WaveletMatrix-quantile-2.test.cpp
-      title: test/static-range-query/WaveletMatrix-quantile-2.test.cpp
+      path: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
+      title: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
   - name: test/string
     pages:
     - icon: ':heavy_check_mark:'

@@ -17,7 +17,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/range_kth_smallest
     links:
     - https://judge.yosupo.jp/problem/range_kth_smallest
-  bundledCode: "#line 1 \"test/static-range-query/WaveletMatrix-quantile-1.test.cpp\"\
+  bundledCode: "#line 1 \"test/static-range-query/WaveletMatrix-range-kth-1.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n#include\
     \ <numeric>\nusing namespace std;\n\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n\
@@ -48,11 +48,11 @@ data:
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
     #line 1 \"lib/13-static-range-query/WaveletMatrix.cpp\"\n/*\n * @title WaveletMatrix\n\
-    \ * @docs md/static-range-query/WaveletMatrix.md\n */\ntemplate<class T> class\
-    \ WaveletMatrix{\n    using u64 = unsigned long long;\n    using u32 = unsigned\
-    \ int;\n    class BitVector{\n        inline static constexpr size_t BIT_BLOCK_SIZE\
-    \ = 5;\n        inline static constexpr size_t BIT_BLOCK_NUM  = 1<<BIT_BLOCK_SIZE;\n\
-    \        inline static constexpr u32 popcount(u32 x) {return __builtin_popcount(x);}\n\
+    \ * @docs md/data-structure/WaveletMatrix.md\n */\ntemplate<class T> class WaveletMatrix{\n\
+    \    using u64 = unsigned long long;\n    using u32 = unsigned int;\n    class\
+    \ BitVector{\n        inline static constexpr size_t BIT_BLOCK_SIZE = 5;\n   \
+    \     inline static constexpr size_t BIT_BLOCK_NUM  = 1<<BIT_BLOCK_SIZE;\n   \
+    \     inline static constexpr u32 popcount(u32 x) {return __builtin_popcount(x);}\n\
     \        inline static constexpr u32 popcount(u64 x) {return __builtin_popcountll(x);}\n\
     \        vector<u32> vec, acc;\n    public:\n        BitVector(const u32 N) {\n\
     \            u32 tmp = (N + BIT_BLOCK_NUM-1) / BIT_BLOCK_NUM;\n            vec.assign(tmp,\
@@ -112,12 +112,14 @@ data:
     \    //[l,l+1) element\n    inline T get(const u32 l) const {return get_impl(l);}\n\
     \    //[l,r) range k (0-indexed) th smallest number\n    T range_kth_smallest(const\
     \ u32 l, const u32 r, const u32 k) const {return range_kth_smallest_impl(l,r,k);}\n\
-    };\n#line 12 \"test/static-range-query/WaveletMatrix-quantile-1.test.cpp\"\n\n\
-    int main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; read(N);\
+    \    T range_kth_largest(const u32 l, const u32 r, const u32 k) const {return\
+    \ range_kth_smallest_impl(l,r,(r-l)-(k+1));}\n};\n#line 12 \"test/static-range-query/WaveletMatrix-range-kth-1.test.cpp\"\
+    \n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; read(N);\
     \ read(Q);\n    vector<long long> A(N);\n    for(int i=0;i<N;++i) read(A[i]);\n\
     \    WaveletMatrix<long long> wm(A);\n    while(Q--) {\n        int l,r,k; read(l);\
-    \ read(r); read(k);\n        cout << wm.range_kth_smallest(l,r,k) << \"\\n\";\n\
-    \    }\n    return 0;\n}\n"
+    \ read(r); read(k);\n\n\t\tif(Q^1) cout << wm.range_kth_smallest(l,r,k) << \"\\\
+    n\";\n\t\telse cout << wm.range_kth_largest(l,r,(r-l)-(k+1)) << \"\\n\";\n   \
+    \ }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_kth_smallest\"\n\n\
     #include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
     #include <numeric>\nusing namespace std;\n\n#include \"../../lib/00-util/FastIO.cpp\"\
@@ -125,21 +127,22 @@ data:
     \ {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; read(N); read(Q);\n\
     \    vector<long long> A(N);\n    for(int i=0;i<N;++i) read(A[i]);\n    WaveletMatrix<long\
     \ long> wm(A);\n    while(Q--) {\n        int l,r,k; read(l); read(r); read(k);\n\
-    \        cout << wm.range_kth_smallest(l,r,k) << \"\\n\";\n    }\n    return 0;\n\
+    \n\t\tif(Q^1) cout << wm.range_kth_smallest(l,r,k) << \"\\n\";\n\t\telse cout\
+    \ << wm.range_kth_largest(l,r,(r-l)-(k+1)) << \"\\n\";\n    }\n    return 0;\n\
     }"
   dependsOn:
   - lib/00-util/FastIO.cpp
   - lib/13-static-range-query/WaveletMatrix.cpp
   isVerificationFile: true
-  path: test/static-range-query/WaveletMatrix-quantile-1.test.cpp
+  path: test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
   requiredBy: []
-  timestamp: '2023-06-08 03:48:36+09:00'
+  timestamp: '2023-06-09 02:22:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/static-range-query/WaveletMatrix-quantile-1.test.cpp
+documentation_of: test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
 layout: document
 redirect_from:
-- /verify/test/static-range-query/WaveletMatrix-quantile-1.test.cpp
-- /verify/test/static-range-query/WaveletMatrix-quantile-1.test.cpp.html
-title: test/static-range-query/WaveletMatrix-quantile-1.test.cpp
+- /verify/test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
+- /verify/test/static-range-query/WaveletMatrix-range-kth-1.test.cpp.html
+title: test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
 ---

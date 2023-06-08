@@ -4,20 +4,20 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/static-range-query/WaveletMatrix-quantile-1.test.cpp
-    title: test/static-range-query/WaveletMatrix-quantile-1.test.cpp
+    path: test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
+    title: test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/static-range-query/WaveletMatrix-quantile-2.test.cpp
-    title: test/static-range-query/WaveletMatrix-quantile-2.test.cpp
+    path: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
+    title: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/static-range-query/WaveletMatrix.md
+    _deprecated_at_docs: md/data-structure/WaveletMatrix.md
     document_title: WaveletMatrix
     links: []
   bundledCode: "#line 1 \"lib/13-static-range-query/WaveletMatrix.cpp\"\n/*\n * @title\
-    \ WaveletMatrix\n * @docs md/static-range-query/WaveletMatrix.md\n */\ntemplate<class\
+    \ WaveletMatrix\n * @docs md/data-structure/WaveletMatrix.md\n */\ntemplate<class\
     \ T> class WaveletMatrix{\n    using u64 = unsigned long long;\n    using u32\
     \ = unsigned int;\n    class BitVector{\n        inline static constexpr size_t\
     \ BIT_BLOCK_SIZE = 5;\n        inline static constexpr size_t BIT_BLOCK_NUM  =\
@@ -81,8 +81,9 @@ data:
     \    //[l,l+1) element\n    inline T get(const u32 l) const {return get_impl(l);}\n\
     \    //[l,r) range k (0-indexed) th smallest number\n    T range_kth_smallest(const\
     \ u32 l, const u32 r, const u32 k) const {return range_kth_smallest_impl(l,r,k);}\n\
-    };\n"
-  code: "/*\n * @title WaveletMatrix\n * @docs md/static-range-query/WaveletMatrix.md\n\
+    \    T range_kth_largest(const u32 l, const u32 r, const u32 k) const {return\
+    \ range_kth_smallest_impl(l,r,(r-l)-(k+1));}\n};\n"
+  code: "/*\n * @title WaveletMatrix\n * @docs md/data-structure/WaveletMatrix.md\n\
     \ */\ntemplate<class T> class WaveletMatrix{\n    using u64 = unsigned long long;\n\
     \    using u32 = unsigned int;\n    class BitVector{\n        inline static constexpr\
     \ size_t BIT_BLOCK_SIZE = 5;\n        inline static constexpr size_t BIT_BLOCK_NUM\
@@ -146,16 +147,17 @@ data:
     \    //[l,l+1) element\n    inline T get(const u32 l) const {return get_impl(l);}\n\
     \    //[l,r) range k (0-indexed) th smallest number\n    T range_kth_smallest(const\
     \ u32 l, const u32 r, const u32 k) const {return range_kth_smallest_impl(l,r,k);}\n\
-    };"
+    \    T range_kth_largest(const u32 l, const u32 r, const u32 k) const {return\
+    \ range_kth_smallest_impl(l,r,(r-l)-(k+1));}\n};"
   dependsOn: []
   isVerificationFile: false
   path: lib/13-static-range-query/WaveletMatrix.cpp
   requiredBy: []
-  timestamp: '2023-06-08 03:48:36+09:00'
+  timestamp: '2023-06-09 02:22:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/static-range-query/WaveletMatrix-quantile-1.test.cpp
-  - test/static-range-query/WaveletMatrix-quantile-2.test.cpp
+  - test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
+  - test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
 documentation_of: lib/13-static-range-query/WaveletMatrix.cpp
 layout: document
 redirect_from:
