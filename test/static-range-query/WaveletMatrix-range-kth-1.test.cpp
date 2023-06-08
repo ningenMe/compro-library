@@ -18,7 +18,9 @@ int main() {
     WaveletMatrix<long long> wm(A);
     while(Q--) {
         int l,r,k; read(l); read(r); read(k);
-        cout << wm.range_kth_smallest(l,r,k) << "\n";
+
+		if(Q^1) cout << wm.range_kth_smallest(l,r,k) << "\n";
+		else cout << wm.range_kth_largest(l,r,(r-l)-(k+1)) << "\n";
     }
     return 0;
 }

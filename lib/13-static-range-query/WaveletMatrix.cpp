@@ -1,6 +1,6 @@
 /*
  * @title WaveletMatrix
- * @docs md/static-range-query/WaveletMatrix.md
+ * @docs md/data-structure/WaveletMatrix.md
  */
 template<class T> class WaveletMatrix{
     using u64 = unsigned long long;
@@ -121,4 +121,5 @@ public:
     inline T get(const u32 l) const {return get_impl(l);}
     //[l,r) range k (0-indexed) th smallest number
     T range_kth_smallest(const u32 l, const u32 r, const u32 k) const {return range_kth_smallest_impl(l,r,k);}
+    T range_kth_largest(const u32 l, const u32 r, const u32 k) const {return range_kth_smallest_impl(l,r,(r-l)-(k+1));}
 };
