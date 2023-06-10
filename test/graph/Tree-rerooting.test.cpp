@@ -10,7 +10,7 @@
 using namespace std;
 #include "../../lib/40-graph/UnionFindTree.cpp"
 #include "../../lib/40-graph/Graph.cpp"
-#include "../../lib/40-graph/Tree.cpp"
+#include "../../lib/40-graph/StaticTree.cpp"
 
 int main(void){
     int N,M,Q; cin >> N >> M >> Q;
@@ -22,7 +22,7 @@ int main(void){
 		uf.merge(u,v);
         g.make_bidirectional_edge(u,v,1);
     }
-    auto tree = Tree<TreeOperator<long long>>::builder(g).root().parent().ancestor().child().build();
+    auto tree = StaticTree<StaticTreeOperator<long long>>::builder(g).root().parent().ancestor().child().build();
 	long long ans = 0;
 	vector<pair<long long,long long>> cnt(N,{0,0}),par(N,{0,0});
 	for(int i = 0; i < Q; ++i){

@@ -10,7 +10,7 @@
 #include <array>
 using namespace std;
 #include "../../lib/40-graph/Graph.cpp"
-#include "../../lib/40-graph/Tree.cpp"
+#include "../../lib/40-graph/StaticTree.cpp"
 #include "../../lib/00-util/ModInt.cpp"
 #include "../../lib/10-segment-tree/SegmentTree.cpp"
 #include "../../lib/99-operator/monoid/MonoidRangeCompositePointUpdate.cpp"
@@ -38,7 +38,7 @@ int main(void){
         int u,v; cin >> u >> v;
         g.make_bidirectional_edge(u,v,1);
     }
-    auto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();
+    auto tree = StaticTree<StaticTreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();
     for(int i=0;i<N;++i) {
         int j = tree.hld[i];
         segLtoR.operate(j,{A[i],B[i]});

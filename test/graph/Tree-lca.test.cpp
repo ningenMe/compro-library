@@ -9,7 +9,7 @@
 #include <array>
 using namespace std;
 #include "../../lib/40-graph/Graph.cpp"
-#include "../../lib/40-graph/Tree.cpp"
+#include "../../lib/40-graph/StaticTree.cpp"
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);
@@ -19,7 +19,7 @@ int main(void){
         int p; cin >> p;
         g.make_bidirectional_edge(i,p,1);
     }
-    auto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().ancestor().build();
+    auto tree = StaticTree<StaticTreeOperator<int>>::builder(g).root(0).parent().ancestor().build();
     while(Q--) {
         int u,v; cin >> u >> v;
         cout << tree.lca(u,v).first << "\n";

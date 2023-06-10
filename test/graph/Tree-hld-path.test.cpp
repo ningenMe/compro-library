@@ -11,7 +11,7 @@
 using namespace std;
 #include "../../lib/40-graph/Graph.cpp"
 #include "../../lib/30-math/Matrix.cpp"
-#include "../../lib/40-graph/Tree.cpp"
+#include "../../lib/40-graph/StaticTree.cpp"
 #include "../../lib/10-segment-tree/SegmentTree.cpp"
 #include "../../lib/99-operator/monoid/MonoidRangeMulPointUpdate.cpp"
 #include "../../lib/00-util/ModInt.cpp"
@@ -29,7 +29,7 @@ int main(void){
 		g.make_bidirectional_edge(u,v,1);
 		vp[i]={u,v};
 	}
-	auto tree = Tree<TreeOperator<int>>::builder(g).root(0).child().subtree_size().parent().heavy_light_decomposition().build();
+	auto tree = StaticTree<StaticTreeOperator<int>>::builder(g).root(0).child().subtree_size().parent().heavy_light_decomposition().build();
     SegmentTree<MonoidRangeMulPointUpdate<matrix>> seg(N);
     int Q; cin >> Q;
     while(Q--) {

@@ -1,16 +1,16 @@
 /*
- * @title Tree - 木
- * @docs md/graph/Tree.md
+ * @title StaticTree - 木
+ * @docs md/graph/StaticTree.md
  */
-template<class Operator> class TreeBuilder;
-template<class Operator> class Tree {
+template<class Operator> class StaticTreeBuilder;
+template<class Operator> class StaticTree {
 private:
     using TypeEdge = typename Operator::TypeEdge;
     size_t num;
     size_t ord;
     Graph<TypeEdge>& g;
-    friend TreeBuilder<Operator>;
-    Tree(Graph<TypeEdge>& graph):
+    friend StaticTreeBuilder<Operator>;
+    StaticTree(Graph<TypeEdge>& graph):
             g(graph),
             num(graph.size()),
             depth(graph.size(),-1),
@@ -98,7 +98,7 @@ private:
         return Operator::func_lca_edge_merge(ancl,ancr);
     }
     pair<TypeEdge,vector<size_t>> diameter_impl() {
-        Tree tree = Tree::builder(g).build();
+        StaticTree tree = StaticTree::builder(g).build();
         size_t root = 0;
         {
             tree.make_root(0);
@@ -256,7 +256,7 @@ public:
     /**
      * O(N) builder
      */
-    static TreeBuilder<Operator> builder(Graph<TypeEdge>& graph) { return TreeBuilder<Operator>(graph);}
+    static StaticTreeBuilder<Operator> builder(Graph<TypeEdge>& graph) { return StaticTreeBuilder<Operator>(graph);}
     /**
      * O(logN) after make_ancestor
      * return {lca,lca_dist} l and r must be connected
@@ -296,27 +296,27 @@ public:
     size_t lca_idx(size_t u, size_t v) {return lca_idx_impl(u,v);}
 };
 
-template<class Operator> class TreeBuilder {
+template<class Operator> class StaticTreeBuilder {
     bool is_root_made =false;
     bool is_child_made =false;
     bool is_parent_made=false;
     bool is_subtree_size_made=false;
 public:
     using TypeEdge = typename Operator::TypeEdge;
-    TreeBuilder(Graph<TypeEdge>& g):tree(g){}
-    TreeBuilder& root(const int rt) { is_root_made=true; tree.make_root(rt); return *this;}
-    TreeBuilder& root() { is_root_made=true; tree.make_root(); return *this;}
-    TreeBuilder& child() { assert(is_root_made); is_child_made=true;  tree.make_child();  return *this;}
-    TreeBuilder& parent() { assert(is_root_made); is_parent_made=true; tree.make_parent(); return *this;}
-    TreeBuilder& subtree_size() { assert(is_child_made); is_subtree_size_made=true; tree.make_subtree_size(); return *this;}
-    TreeBuilder& ancestor() { assert(is_parent_made); tree.make_ancestor(); return *this;}
-    TreeBuilder& eulertour() { assert(is_child_made); tree.make_eulertour(); return *this;}
-    TreeBuilder& heavy_light_decomposition() { assert(is_subtree_size_made); assert(is_parent_made); tree.make_heavy_light_decomposition(); return *this;}
-    Tree<Operator>&& build() {return move(tree);}
+    StaticTreeBuilder(Graph<TypeEdge>& g):tree(g){}
+    StaticTreeBuilder& root(const int rt) { is_root_made=true; tree.make_root(rt); return *this;}
+    StaticTreeBuilder& root() { is_root_made=true; tree.make_root(); return *this;}
+    StaticTreeBuilder& child() { assert(is_root_made); is_child_made=true;  tree.make_child();  return *this;}
+    StaticTreeBuilder& parent() { assert(is_root_made); is_parent_made=true; tree.make_parent(); return *this;}
+    StaticTreeBuilder& subtree_size() { assert(is_child_made); is_subtree_size_made=true; tree.make_subtree_size(); return *this;}
+    StaticTreeBuilder& ancestor() { assert(is_parent_made); tree.make_ancestor(); return *this;}
+    StaticTreeBuilder& eulertour() { assert(is_child_made); tree.make_eulertour(); return *this;}
+    StaticTreeBuilder& heavy_light_decomposition() { assert(is_subtree_size_made); assert(is_parent_made); tree.make_heavy_light_decomposition(); return *this;}
+    StaticTree<Operator>&& build() {return move(tree);}
 private:
-    Tree<Operator> tree;
+    StaticTree<Operator> tree;
 };
-template<class T> struct TreeOperator{
+template<class T> struct StaticTreeOperator{
     using TypeEdge = T;
     inline static constexpr size_t bit = 20;
     inline static constexpr TypeEdge unit_edge = 0;
@@ -326,4 +326,4 @@ template<class T> struct TreeOperator{
     template<class TypeReroot> inline static constexpr TypeReroot func_reroot_dp(const TypeReroot& l,const TypeReroot& r) {return {l.first+r.first+r.second,l.second+r.second};}
     template<class TypeReroot> inline static constexpr TypeReroot func_reroot_merge(const TypeReroot& l,const TypeReroot& r) {return {l.first+r.first,l.second+r.second};}
 };
-//auto tree = Tree<TreeOperator<int>>::builder(g).build();
+//auto tree = StaticTree<StaticTreeOperator<int>>::builder(g).build();

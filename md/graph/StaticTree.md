@@ -1,4 +1,4 @@
-### Tree
+### StaticTree
 - 木ライブラリ
   - 根つき木
     - dfsしてトポロジカルソート順を列挙
@@ -27,7 +27,7 @@
 - なし。ビルダーを用意している。  
 下記のように、グラフを最初に渡し、前計算したいものを指定してビルドを行う。
 ```
-auto tree = Tree<TreeOperator<int>>::builder(g).root(0).child().parent().build();
+auto tree = StaticTree<StaticTreeOperator<int>>::builder(g).root(0).child().parent().build();
 ```
 
 ### メソッド

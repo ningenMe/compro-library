@@ -10,7 +10,7 @@
 #include <array>
 using namespace std;
 #include "../../lib/40-graph/Graph.cpp"
-#include "../../lib/40-graph/Tree.cpp"
+#include "../../lib/40-graph/StaticTree.cpp"
 #include "../../lib/10-segment-tree/LazySegmentTree.cpp"
 #include "../../lib/99-operator/monoid-lazy/MonoidRangeFoldEulerTourSumRangeOperateAdd.cpp"
 
@@ -21,7 +21,7 @@ int main(void){
 		int u,v,w; cin >> u >> v >> w;
 		g.make_bidirectional_edge(u,v,w);
 	}
-	auto tree = Tree<TreeOperator<long long>>::builder(g).root(0).parent().child().eulertour().build();
+	auto tree = StaticTree<StaticTreeOperator<long long>>::builder(g).root(0).parent().child().eulertour().build();
 	int M = tree.eulertour.size();
 	vector<pair<long long,long long>> init(M,{0,0});
 	for(int i=1;i<M;++i) {

@@ -10,7 +10,7 @@
 #include <array>
 using namespace std;
 #include "../../lib/40-graph/Graph.cpp"
-#include "../../lib/40-graph/Tree.cpp"
+#include "../../lib/40-graph/StaticTree.cpp"
 #include "../../lib/10-segment-tree/LazySegmentTree.cpp"
 #include "../../lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAdd.cpp"
 
@@ -22,7 +22,7 @@ int main(void){
 		u--,v--;
 		g.make_bidirectional_edge(u,v,1);
 	}
-	auto tree = Tree<TreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();
+	auto tree = StaticTree<StaticTreeOperator<int>>::builder(g).root(0).parent().child().subtree_size().heavy_light_decomposition().build();
 	LazySegmentTree<MonoidRangeFoldSumRangeOperateAdd<long long,long long>> seg(N);
 	int Q; cin >> Q;
 	long long ans = 0;

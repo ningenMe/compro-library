@@ -9,7 +9,7 @@
 #include <array>
 using namespace std;
 #include "../../lib/40-graph/Graph.cpp"
-#include "../../lib/40-graph/Tree.cpp"
+#include "../../lib/40-graph/StaticTree.cpp"
 
 template<class T> void chmin(T& a,T b) {a=min(a,b);}
 
@@ -29,7 +29,7 @@ int main(void){
     dp[0][N]=0;
     for(int i=1;i<Q;++i) {
 
-        auto tree = Tree<TreeOperator<long long>>::builder(g).root(X[i]).parent().child().build();
+        auto tree = StaticTree<StaticTreeOperator<long long>>::builder(g).root(X[i]).parent().child().build();
 
         //jにあるジャンプビーコンをそのままにして、X[i]へ向かうとき
         for(int j=0;j<=N;++j) {
