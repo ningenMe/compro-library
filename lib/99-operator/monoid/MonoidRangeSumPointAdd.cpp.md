@@ -57,10 +57,10 @@ data:
   - test/segment-tree/SegmentTree-rsq.test.cpp
   - test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
   - test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
-  - test/graph/Tree-hld-vertex-2.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
   - test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
-  - test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
+  - test/graph/Tree-hld-vertex-2.test.cpp
 documentation_of: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
 layout: document
 redirect_from:

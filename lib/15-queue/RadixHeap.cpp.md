@@ -102,8 +102,8 @@ data:
   verifiedWith:
   - test/queue/RadixHeap-32bit.test.cpp
   - test/queue/RadixHeap-64bit.test.cpp
-  - test/graph/MinimumDirectedClosedCircuit.test.cpp
   - test/graph/MinimumUndirectedClosedCircuit.test.cpp
+  - test/graph/MinimumDirectedClosedCircuit.test.cpp
 documentation_of: lib/15-queue/RadixHeap.cpp
 layout: document
 redirect_from:

@@ -712,6 +712,9 @@ data:
       path: test/static-range-query/SparseTable.test.cpp
       title: test/static-range-query/SparseTable.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/static-range-query/WaveletMatrix-range-freq.test.cpp
+      title: test/static-range-query/WaveletMatrix-range-freq.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
       title: test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
     - icon: ':heavy_check_mark:'

@@ -88,6 +88,9 @@ data:
     path: test/static-range-query/SparseTable.test.cpp
     title: test/static-range-query/SparseTable.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/static-range-query/WaveletMatrix-range-freq.test.cpp
+    title: test/static-range-query/WaveletMatrix-range-freq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
     title: test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -166,38 +169,39 @@ data:
   timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/static-range-query/SparseTable.test.cpp
   - test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
-  - test/static-range-query/DisjointSparseTable.test.cpp
   - test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
-  - test/math/Prime-miller-rabin-2.test.cpp
-  - test/math/Prime-miller-rabin-1.test.cpp
-  - test/math/Prime-rho.test.cpp
-  - test/queue/SwagDeque-queue-composite.test.cpp
-  - test/queue/DoubleEndedPriorityQuere.test.cpp
-  - test/queue/SwagDeque-deque-composite.test.cpp
-  - test/queue/RadixHeap-64bit.test.cpp
-  - test/queue/SwagQueue-composite.test.cpp
+  - test/static-range-query/WaveletMatrix-range-freq.test.cpp
+  - test/static-range-query/DisjointSparseTable.test.cpp
+  - test/static-range-query/SparseTable.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
-  - test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
-  - test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
-  - test/graph/UnionFindTree.test.cpp
-  - test/util/FastIO-int128.test.cpp
-  - test/util/FastIO-int64.test.cpp
-  - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
+  - test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp
+  - test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
+  - test/math/Prime-miller-rabin-1.test.cpp
+  - test/math/Prime-miller-rabin-2.test.cpp
+  - test/math/Prime-rho.test.cpp
+  - test/queue/SwagDeque-deque-composite.test.cpp
+  - test/queue/SwagQueue-composite.test.cpp
+  - test/queue/RadixHeap-64bit.test.cpp
+  - test/queue/DoubleEndedPriorityQuere.test.cpp
+  - test/queue/SwagDeque-queue-composite.test.cpp
+  - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
+  - test/binary-search-tree/WordSizeTreeSet.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
-  - test/binary-search-tree/WordSizeTreeSet.test.cpp
-  - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
-  - test/polynomial/FormalPowerSeries-pow.test.cpp
-  - test/polynomial/FormalPowerSeries-log.test.cpp
-  - test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+  - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
+  - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/polynomial/FormalPowerSeries-nth.test.cpp
   - test/polynomial/FormalPowerSeries-interpolation.test.cpp
+  - test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+  - test/polynomial/FormalPowerSeries-log.test.cpp
   - test/polynomial/FormalPowerSeries-exp.test.cpp
-  - test/polynomial/FormalPowerSeries-inv.test.cpp
+  - test/polynomial/FormalPowerSeries-pow.test.cpp
+  - test/util/FastIO-int64.test.cpp
+  - test/util/FastIO-int128.test.cpp
+  - test/graph/UnionFindTree.test.cpp
 documentation_of: lib/00-util/FastIO.cpp
 layout: document
 redirect_from:

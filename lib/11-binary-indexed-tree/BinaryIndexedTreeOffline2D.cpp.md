@@ -95,8 +95,8 @@ data:
   timestamp: '2023-05-30 05:01:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
   - test/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+  - test/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
 documentation_of: lib/11-binary-indexed-tree/BinaryIndexedTreeOffline2D.cpp
 layout: document
 redirect_from:

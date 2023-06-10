@@ -212,11 +212,11 @@ data:
   timestamp: '2023-06-04 05:24:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
-  - test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-  - test/math/Prime-miller-rabin-2.test.cpp
   - test/math/Prime-miller-rabin-1.test.cpp
+  - test/math/Prime-miller-rabin-2.test.cpp
   - test/math/Prime-rho.test.cpp
+  - test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+  - test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
 documentation_of: lib/30-math/Prime.cpp
 layout: document
 redirect_from:

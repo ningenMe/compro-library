@@ -14,17 +14,17 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://yukicoder.me/problems/no/919
+    PROBLEM: https://judge.yosupo.jp/problem/static_range_frequency
     links:
-    - https://yukicoder.me/problems/no/919
-  bundledCode: "#line 1 \"test/static-range-query/WaveletMatrix-range-kth-2.test.cpp\"\
-    \n#define PROBLEM \"https://yukicoder.me/problems/no/919\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <cassert>\n#include <algorithm>\n#include <numeric>\n\
-    using namespace std;\n\n#line 1 \"lib/00-util/FastIO.cpp\"\n/*\n * @title FastIO\n\
-    \ * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n    inline static constexpr\
-    \ int ch_0='0';\n    inline static constexpr int ch_9='9';\n    inline static\
-    \ constexpr int ch_n='-';\n    inline static constexpr int ch_s=' ';\n    inline\
-    \ static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
+    - https://judge.yosupo.jp/problem/static_range_frequency
+  bundledCode: "#line 1 \"test/static-range-query/WaveletMatrix-range-freq.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\n\
+    \n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
+    #include <numeric>\nusing namespace std;\n\n#line 1 \"lib/00-util/FastIO.cpp\"\
+    \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
+    \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
+    \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
+    \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
     \ ch) {\n        while(ch==ch_l) ch=getchar();\n    }\n    template<typename T>\
     \ inline static void read_integer(T &x) {\n        int neg=0; char ch; x=0;\n\
     \        ch=getchar();\n        endline_skip(ch);\n        if(ch==ch_n) neg=1,ch=getchar();\n\
@@ -116,70 +116,33 @@ data:
     \ u32 l, const u32 r, const T lower, const T upper) const {return range_freq_upper_impl(l,r,upper)\
     \ - range_freq_upper_impl(l,r,lower);}\n    //[l,r) range freq of val\n    u32\
     \ range_freq(const u32 l, const u32 r, const T val) const {return range_freq_lower_upper(l,r,val,val+1);}\n\
-    };\n#line 12 \"test/static-range-query/WaveletMatrix-range-kth-2.test.cpp\"\n\n\
-    void chmax(long long& a,long long b){a=max(a,b);}\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \tint N; read(N);\n    vector<long long> A(N);\n\tfor(int i = 0; i < N; ++i) read(A[i]);\n\
-    \    WaveletMatrix<long long> wm(A);\n\n\t//\u30AF\u30A8\u30EA\u533A\u9593\u3092\
-    \u5217\u6319\u3001\u8ABF\u548C\u7D1A\u6570\u306A\u306E\u3067O(N*logN)\n\tvector<pair<int,int>>\
-    \ range;\n\tfor(int j = 1; j <= N; ++j) {\n\t\tint M = N/j;\n\t\tfor(int i = 0;\
-    \     i+j <= N; i+=j) range.push_back({i,i+j});\n\t\tfor(int i = N-M*j; i+j <=\
-    \ N; i+=j) range.push_back({i,i+j});\n\t}\n\n\tlong long ans = 0;\n\tint cnt =\
-    \ 0;\n\t//\u533A\u9593\u9577\u6C7A\u3081\u6253\u3061\u5168\u63A2\u7D22O(N*logN)\n\
-    \tfor(long long n = 1; n <= N; ++n) {\n\t\tint M = N/n;\n\t\tvector<long long>\
-    \ lSum(M,0),rSum(M,0);\n\t\tvector<pair<int, int>> l_range(M),r_range(M);\n\t\t\
-    //\u533A\u9593\u53D6\u5F97 O(M)\n\t\tfor(int i = 0; i < M; ++i) {\n\t\t\tl_range[i]\
-    \ = range[cnt + i];\n\t\t\tlSum[i]   = n*wm.range_kth_smallest(l_range[i].first,l_range[i].second,(l_range[i].second-l_range[i].first-1)/2)\
-    \ ;\n\t\t\tr_range[i] = range[cnt + i + M];\n\t\t\trSum[i]   = n*wm.range_kth_smallest(r_range[i].first,r_range[i].second,(r_range[i].second-r_range[i].first-1)/2);\n\
-    \t\t}\n\t\t//\u7D2F\u7A4D\u548C O(M)\n\t\tfor(int i = 1;    i < M; ++i) lSum[i]\
-    \  += lSum[i-1];\n\t\tfor(int i = M-2; 0 <= i; --i) rSum[i]  += rSum[i+1];\n\t\
-    \t//\u7D2F\u7A4Dmax O(M)\n\t\tfor(int i = 1;    i < M; ++i) chmax(lSum[i],lSum[i-1]);\n\
-    \t\tfor(int i = M-2; 0 <= i; --i) chmax(rSum[i],rSum[i+1]);\n\n\t\tchmax(ans,lSum[M-1]);\n\
-    \t\tchmax(ans,rSum[0]);\n\n\t\t//\u5C3A\u53D6\u308A\u3057\u306A\u304C\u3089\u5DE6\
-    \u53F3\u6C7A\u3081\u6253\u3061\u5168\u63A2\u7D22 O(M)\n\t\tint j = 0;\n\t\tfor(int\
-    \ i = 0; i < M; ++i) {\n\t\t\twhile(j < M && l_range[i].second-1 >= r_range[j].first)\
-    \ j++;\n\t\t\tif(j<M && l_range[i].second-1 < r_range[j].first) {\n\t\t\t\tchmax(ans,lSum[i]+rSum[j]);\n\
-    \t\t\t}\n\t\t}\n\t\tcnt += 2*M;\n\t}\n\tcout << ans << endl;\n\n    return 0;\n\
-    }\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/919\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <cassert>\n#include <algorithm>\n#include <numeric>\n\
-    using namespace std;\n\n#include \"../../lib/00-util/FastIO.cpp\"\n#include \"\
-    ../../lib/13-static-range-query/WaveletMatrix.cpp\"\n\nvoid chmax(long long& a,long\
-    \ long b){a=max(a,b);}\n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \tint N; read(N);\n    vector<long long> A(N);\n\tfor(int i = 0; i < N; ++i) read(A[i]);\n\
-    \    WaveletMatrix<long long> wm(A);\n\n\t//\u30AF\u30A8\u30EA\u533A\u9593\u3092\
-    \u5217\u6319\u3001\u8ABF\u548C\u7D1A\u6570\u306A\u306E\u3067O(N*logN)\n\tvector<pair<int,int>>\
-    \ range;\n\tfor(int j = 1; j <= N; ++j) {\n\t\tint M = N/j;\n\t\tfor(int i = 0;\
-    \     i+j <= N; i+=j) range.push_back({i,i+j});\n\t\tfor(int i = N-M*j; i+j <=\
-    \ N; i+=j) range.push_back({i,i+j});\n\t}\n\n\tlong long ans = 0;\n\tint cnt =\
-    \ 0;\n\t//\u533A\u9593\u9577\u6C7A\u3081\u6253\u3061\u5168\u63A2\u7D22O(N*logN)\n\
-    \tfor(long long n = 1; n <= N; ++n) {\n\t\tint M = N/n;\n\t\tvector<long long>\
-    \ lSum(M,0),rSum(M,0);\n\t\tvector<pair<int, int>> l_range(M),r_range(M);\n\t\t\
-    //\u533A\u9593\u53D6\u5F97 O(M)\n\t\tfor(int i = 0; i < M; ++i) {\n\t\t\tl_range[i]\
-    \ = range[cnt + i];\n\t\t\tlSum[i]   = n*wm.range_kth_smallest(l_range[i].first,l_range[i].second,(l_range[i].second-l_range[i].first-1)/2)\
-    \ ;\n\t\t\tr_range[i] = range[cnt + i + M];\n\t\t\trSum[i]   = n*wm.range_kth_smallest(r_range[i].first,r_range[i].second,(r_range[i].second-r_range[i].first-1)/2);\n\
-    \t\t}\n\t\t//\u7D2F\u7A4D\u548C O(M)\n\t\tfor(int i = 1;    i < M; ++i) lSum[i]\
-    \  += lSum[i-1];\n\t\tfor(int i = M-2; 0 <= i; --i) rSum[i]  += rSum[i+1];\n\t\
-    \t//\u7D2F\u7A4Dmax O(M)\n\t\tfor(int i = 1;    i < M; ++i) chmax(lSum[i],lSum[i-1]);\n\
-    \t\tfor(int i = M-2; 0 <= i; --i) chmax(rSum[i],rSum[i+1]);\n\n\t\tchmax(ans,lSum[M-1]);\n\
-    \t\tchmax(ans,rSum[0]);\n\n\t\t//\u5C3A\u53D6\u308A\u3057\u306A\u304C\u3089\u5DE6\
-    \u53F3\u6C7A\u3081\u6253\u3061\u5168\u63A2\u7D22 O(M)\n\t\tint j = 0;\n\t\tfor(int\
-    \ i = 0; i < M; ++i) {\n\t\t\twhile(j < M && l_range[i].second-1 >= r_range[j].first)\
-    \ j++;\n\t\t\tif(j<M && l_range[i].second-1 < r_range[j].first) {\n\t\t\t\tchmax(ans,lSum[i]+rSum[j]);\n\
-    \t\t\t}\n\t\t}\n\t\tcnt += 2*M;\n\t}\n\tcout << ans << endl;\n\n    return 0;\n\
-    }\n"
+    };\n#line 12 \"test/static-range-query/WaveletMatrix-range-freq.test.cpp\"\n\n\
+    int main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; read(N);\
+    \ read(Q);\n    vector<long long> A(N);\n    for(int i=0;i<N;++i) read(A[i]);\n\
+    \    WaveletMatrix<long long> wm(A);\n    while(Q--) {\n        int l,r,k; read(l);\
+    \ read(r); read(k);\n\t\tcout << wm.range_freq(l,r,k) << \"\\n\";\n    }\n   \
+    \ return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\
+    \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
+    #include <numeric>\nusing namespace std;\n\n#include \"../../lib/00-util/FastIO.cpp\"\
+    \n#include \"../../lib/13-static-range-query/WaveletMatrix.cpp\"\n\nint main()\
+    \ {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; read(N); read(Q);\n\
+    \    vector<long long> A(N);\n    for(int i=0;i<N;++i) read(A[i]);\n    WaveletMatrix<long\
+    \ long> wm(A);\n    while(Q--) {\n        int l,r,k; read(l); read(r); read(k);\n\
+    \t\tcout << wm.range_freq(l,r,k) << \"\\n\";\n    }\n    return 0;\n}"
   dependsOn:
   - lib/00-util/FastIO.cpp
   - lib/13-static-range-query/WaveletMatrix.cpp
   isVerificationFile: true
-  path: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
+  path: test/static-range-query/WaveletMatrix-range-freq.test.cpp
   requiredBy: []
   timestamp: '2023-06-10 18:11:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
+documentation_of: test/static-range-query/WaveletMatrix-range-freq.test.cpp
 layout: document
 redirect_from:
-- /verify/test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
-- /verify/test/static-range-query/WaveletMatrix-range-kth-2.test.cpp.html
-title: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
+- /verify/test/static-range-query/WaveletMatrix-range-freq.test.cpp
+- /verify/test/static-range-query/WaveletMatrix-range-freq.test.cpp.html
+title: test/static-range-query/WaveletMatrix-range-freq.test.cpp
 ---
