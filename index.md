@@ -196,11 +196,11 @@ data:
       title: "PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\u4ED8\
         \u304DUnionFind\u6728"
     - icon: ':heavy_check_mark:'
+      path: lib/40-graph/StaticTree.cpp
+      title: "StaticTree - \u6728"
+    - icon: ':heavy_check_mark:'
       path: lib/40-graph/StronglyConnectedComponents.cpp
       title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
-    - icon: ':heavy_check_mark:'
-      path: lib/40-graph/Tree.cpp
-      title: "Tree - \u6728"
     - icon: ':heavy_check_mark:'
       path: lib/40-graph/UnionFindTree.cpp
       title: "UnionFindTree - Union Find \u6728"

@@ -40,14 +40,15 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/graph/Tree.md
-    document_title: "Tree - \u6728"
+    _deprecated_at_docs: md/graph/StaticTree.md
+    document_title: "StaticTree - \u6728"
     links: []
-  bundledCode: "#line 1 \"lib/40-graph/Tree.cpp\"\n/*\n * @title Tree - \u6728\n *\
-    \ @docs md/graph/Tree.md\n */\ntemplate<class Operator> class TreeBuilder;\ntemplate<class\
-    \ Operator> class Tree {\nprivate:\n    using TypeEdge = typename Operator::TypeEdge;\n\
-    \    size_t num;\n    size_t ord;\n    Graph<TypeEdge>& g;\n    friend TreeBuilder<Operator>;\n\
-    \    Tree(Graph<TypeEdge>& graph):\n            g(graph),\n            num(graph.size()),\n\
+  bundledCode: "#line 1 \"lib/40-graph/StaticTree.cpp\"\n/*\n * @title StaticTree\
+    \ - \u6728\n * @docs md/graph/StaticTree.md\n */\ntemplate<class Operator> class\
+    \ StaticTreeBuilder;\ntemplate<class Operator> class StaticTree {\nprivate:\n\
+    \    using TypeEdge = typename Operator::TypeEdge;\n    size_t num;\n    size_t\
+    \ ord;\n    Graph<TypeEdge>& g;\n    friend StaticTreeBuilder<Operator>;\n   \
+    \ StaticTree(Graph<TypeEdge>& graph):\n            g(graph),\n            num(graph.size()),\n\
     \            depth(graph.size(),-1),\n            order(graph.size()),\n     \
     \       edge_dist(graph.size()){\n    }\n    //for make_depth\n    void dfs(int\
     \ curr, int prev){\n        for(const auto& e:g.edges[curr]){\n            const\
@@ -88,19 +89,20 @@ data:
     \            }\n        }\n        ancl = Operator::func_lca_edge_merge(ancestor[ancl.first][0],ancl);\n\
     \        ancr = Operator::func_lca_edge_merge(ancestor[ancr.first][0],ancr);\n\
     \        return Operator::func_lca_edge_merge(ancl,ancr);\n    }\n    pair<TypeEdge,vector<size_t>>\
-    \ diameter_impl() {\n        Tree tree = Tree::builder(g).build();\n        size_t\
-    \ root = 0;\n        {\n            tree.make_root(0);\n        }\n        root\
-    \ = max_element(tree.edge_dist.begin(),tree.edge_dist.end()) - tree.edge_dist.begin();\n\
-    \        {\n            tree.make_root(root);\n        }\n        size_t leaf\
-    \ = max_element(tree.edge_dist.begin(),tree.edge_dist.end()) - tree.edge_dist.begin();\n\
-    \        TypeEdge sz = tree.edge_dist[leaf];\n        vector<size_t> st;\n   \
-    \     {\n            tree.make_parent();\n            while(leaf != root) {\n\
-    \                st.push_back(leaf);\n                leaf = tree.parent[leaf].first;\n\
-    \            }\n            st.push_back(root);\n        }\n        return make_pair(sz,st);\n\
-    \    }\n    template<class TypeReroot> vector<TypeReroot> rerooting_impl(vector<TypeReroot>\
-    \ rerootdp,vector<TypeReroot> rerootparent) {\n        for(size_t pa:order) for(auto&\
-    \ e:child[pa]) rerootdp[pa] = Operator::func_reroot_dp(rerootdp[pa],rerootdp[e.first]);\n\
-    \        for(size_t pa:reorder) {\n            if(depth[pa]) rerootdp[pa] = Operator::func_reroot_dp(rerootdp[pa],rerootparent[pa]);\n\
+    \ diameter_impl() {\n        StaticTree tree = StaticTree::builder(g).build();\n\
+    \        size_t root = 0;\n        {\n            tree.make_root(0);\n       \
+    \ }\n        root = max_element(tree.edge_dist.begin(),tree.edge_dist.end()) -\
+    \ tree.edge_dist.begin();\n        {\n            tree.make_root(root);\n    \
+    \    }\n        size_t leaf = max_element(tree.edge_dist.begin(),tree.edge_dist.end())\
+    \ - tree.edge_dist.begin();\n        TypeEdge sz = tree.edge_dist[leaf];\n   \
+    \     vector<size_t> st;\n        {\n            tree.make_parent();\n       \
+    \     while(leaf != root) {\n                st.push_back(leaf);\n           \
+    \     leaf = tree.parent[leaf].first;\n            }\n            st.push_back(root);\n\
+    \        }\n        return make_pair(sz,st);\n    }\n    template<class TypeReroot>\
+    \ vector<TypeReroot> rerooting_impl(vector<TypeReroot> rerootdp,vector<TypeReroot>\
+    \ rerootparent) {\n        for(size_t pa:order) for(auto& e:child[pa]) rerootdp[pa]\
+    \ = Operator::func_reroot_dp(rerootdp[pa],rerootdp[e.first]);\n        for(size_t\
+    \ pa:reorder) {\n            if(depth[pa]) rerootdp[pa] = Operator::func_reroot_dp(rerootdp[pa],rerootparent[pa]);\n\
     \            size_t m = child[pa].size();\n            for(int j = 0; j < m &&\
     \ depth[pa]; ++j){\n                size_t ch = child[pa][j].first;\n        \
     \        rerootparent[ch] = Operator::func_reroot_dp(rerootparent[ch],rerootparent[pa]);\n\
@@ -168,7 +170,7 @@ data:
     \ edge_dist;\n    vector<array<pair<size_t,TypeEdge>,Operator::bit>> ancestor;\n\
     \    vector<size_t> eulertour;\n    vector<pair<size_t,size_t>> eulertour_range;\n\
     \    vector<size_t> hld;\n\n    /**\n     * O(N) builder\n     */\n    static\
-    \ TreeBuilder<Operator> builder(Graph<TypeEdge>& graph) { return TreeBuilder<Operator>(graph);}\n\
+    \ StaticTreeBuilder<Operator> builder(Graph<TypeEdge>& graph) { return StaticTreeBuilder<Operator>(graph);}\n\
     \    /**\n     * O(logN) after make_ancestor\n     * return {lca,lca_dist} l and\
     \ r must be connected\n     */\n    pair<size_t,TypeEdge> lca(size_t l, size_t\
     \ r) {return lca_impl(l,r);}\n    /**\n     * O(N) anytime\n     * return {diameter\
@@ -186,43 +188,43 @@ data:
     \ edge_ordered_set_on_path(size_t u, size_t v) {return ordered_path_impl(u,v,1);}\n\
     \    /**\n     * O(logN) ancestor\u306Elca\u3088\u308A\u5B9A\u6570\u500D\u8EFD\
     \u3081\u3002idx\u3060\u3051\n     */\n    size_t lca_idx(size_t u, size_t v) {return\
-    \ lca_idx_impl(u,v);}\n};\n\ntemplate<class Operator> class TreeBuilder {\n  \
-    \  bool is_root_made =false;\n    bool is_child_made =false;\n    bool is_parent_made=false;\n\
+    \ lca_idx_impl(u,v);}\n};\n\ntemplate<class Operator> class StaticTreeBuilder\
+    \ {\n    bool is_root_made =false;\n    bool is_child_made =false;\n    bool is_parent_made=false;\n\
     \    bool is_subtree_size_made=false;\npublic:\n    using TypeEdge = typename\
-    \ Operator::TypeEdge;\n    TreeBuilder(Graph<TypeEdge>& g):tree(g){}\n    TreeBuilder&\
-    \ root(const int rt) { is_root_made=true; tree.make_root(rt); return *this;}\n\
-    \    TreeBuilder& root() { is_root_made=true; tree.make_root(); return *this;}\n\
-    \    TreeBuilder& child() { assert(is_root_made); is_child_made=true;  tree.make_child();\
-    \  return *this;}\n    TreeBuilder& parent() { assert(is_root_made); is_parent_made=true;\
-    \ tree.make_parent(); return *this;}\n    TreeBuilder& subtree_size() { assert(is_child_made);\
-    \ is_subtree_size_made=true; tree.make_subtree_size(); return *this;}\n    TreeBuilder&\
-    \ ancestor() { assert(is_parent_made); tree.make_ancestor(); return *this;}\n\
-    \    TreeBuilder& eulertour() { assert(is_child_made); tree.make_eulertour();\
-    \ return *this;}\n    TreeBuilder& heavy_light_decomposition() { assert(is_subtree_size_made);\
-    \ assert(is_parent_made); tree.make_heavy_light_decomposition(); return *this;}\n\
-    \    Tree<Operator>&& build() {return move(tree);}\nprivate:\n    Tree<Operator>\
-    \ tree;\n};\ntemplate<class T> struct TreeOperator{\n    using TypeEdge = T;\n\
-    \    inline static constexpr size_t bit = 20;\n    inline static constexpr TypeEdge\
-    \ unit_edge = 0;\n    inline static constexpr TypeEdge unit_lca_edge = 0;\n  \
-    \  inline static constexpr TypeEdge func_edge_merge(const TypeEdge& parent,const\
-    \ TypeEdge& w){return parent+w;}\n    inline static constexpr pair<size_t,TypeEdge>\
-    \ func_lca_edge_merge(const pair<size_t,TypeEdge>& l,const pair<size_t,TypeEdge>&\
-    \ r){return make_pair(l.first,l.second+r.second);}\n    template<class TypeReroot>\
-    \ inline static constexpr TypeReroot func_reroot_dp(const TypeReroot& l,const\
-    \ TypeReroot& r) {return {l.first+r.first+r.second,l.second+r.second};}\n    template<class\
-    \ TypeReroot> inline static constexpr TypeReroot func_reroot_merge(const TypeReroot&\
-    \ l,const TypeReroot& r) {return {l.first+r.first,l.second+r.second};}\n};\n//auto\
-    \ tree = Tree<TreeOperator<int>>::builder(g).build();\n"
-  code: "/*\n * @title Tree - \u6728\n * @docs md/graph/Tree.md\n */\ntemplate<class\
-    \ Operator> class TreeBuilder;\ntemplate<class Operator> class Tree {\nprivate:\n\
-    \    using TypeEdge = typename Operator::TypeEdge;\n    size_t num;\n    size_t\
-    \ ord;\n    Graph<TypeEdge>& g;\n    friend TreeBuilder<Operator>;\n    Tree(Graph<TypeEdge>&\
-    \ graph):\n            g(graph),\n            num(graph.size()),\n           \
-    \ depth(graph.size(),-1),\n            order(graph.size()),\n            edge_dist(graph.size()){\n\
-    \    }\n    //for make_depth\n    void dfs(int curr, int prev){\n        for(const\
-    \ auto& e:g.edges[curr]){\n            const int& next = e.first;\n          \
-    \  if(next==prev) continue;\n            depth[next] = depth[curr] + 1;\n    \
-    \        edge_dist[next]  = Operator::func_edge_merge(edge_dist[curr],e.second);\n\
+    \ Operator::TypeEdge;\n    StaticTreeBuilder(Graph<TypeEdge>& g):tree(g){}\n \
+    \   StaticTreeBuilder& root(const int rt) { is_root_made=true; tree.make_root(rt);\
+    \ return *this;}\n    StaticTreeBuilder& root() { is_root_made=true; tree.make_root();\
+    \ return *this;}\n    StaticTreeBuilder& child() { assert(is_root_made); is_child_made=true;\
+    \  tree.make_child();  return *this;}\n    StaticTreeBuilder& parent() { assert(is_root_made);\
+    \ is_parent_made=true; tree.make_parent(); return *this;}\n    StaticTreeBuilder&\
+    \ subtree_size() { assert(is_child_made); is_subtree_size_made=true; tree.make_subtree_size();\
+    \ return *this;}\n    StaticTreeBuilder& ancestor() { assert(is_parent_made);\
+    \ tree.make_ancestor(); return *this;}\n    StaticTreeBuilder& eulertour() { assert(is_child_made);\
+    \ tree.make_eulertour(); return *this;}\n    StaticTreeBuilder& heavy_light_decomposition()\
+    \ { assert(is_subtree_size_made); assert(is_parent_made); tree.make_heavy_light_decomposition();\
+    \ return *this;}\n    StaticTree<Operator>&& build() {return move(tree);}\nprivate:\n\
+    \    StaticTree<Operator> tree;\n};\ntemplate<class T> struct StaticTreeOperator{\n\
+    \    using TypeEdge = T;\n    inline static constexpr size_t bit = 20;\n    inline\
+    \ static constexpr TypeEdge unit_edge = 0;\n    inline static constexpr TypeEdge\
+    \ unit_lca_edge = 0;\n    inline static constexpr TypeEdge func_edge_merge(const\
+    \ TypeEdge& parent,const TypeEdge& w){return parent+w;}\n    inline static constexpr\
+    \ pair<size_t,TypeEdge> func_lca_edge_merge(const pair<size_t,TypeEdge>& l,const\
+    \ pair<size_t,TypeEdge>& r){return make_pair(l.first,l.second+r.second);}\n  \
+    \  template<class TypeReroot> inline static constexpr TypeReroot func_reroot_dp(const\
+    \ TypeReroot& l,const TypeReroot& r) {return {l.first+r.first+r.second,l.second+r.second};}\n\
+    \    template<class TypeReroot> inline static constexpr TypeReroot func_reroot_merge(const\
+    \ TypeReroot& l,const TypeReroot& r) {return {l.first+r.first,l.second+r.second};}\n\
+    };\n//auto tree = StaticTree<StaticTreeOperator<int>>::builder(g).build();\n"
+  code: "/*\n * @title StaticTree - \u6728\n * @docs md/graph/StaticTree.md\n */\n\
+    template<class Operator> class StaticTreeBuilder;\ntemplate<class Operator> class\
+    \ StaticTree {\nprivate:\n    using TypeEdge = typename Operator::TypeEdge;\n\
+    \    size_t num;\n    size_t ord;\n    Graph<TypeEdge>& g;\n    friend StaticTreeBuilder<Operator>;\n\
+    \    StaticTree(Graph<TypeEdge>& graph):\n            g(graph),\n            num(graph.size()),\n\
+    \            depth(graph.size(),-1),\n            order(graph.size()),\n     \
+    \       edge_dist(graph.size()){\n    }\n    //for make_depth\n    void dfs(int\
+    \ curr, int prev){\n        for(const auto& e:g.edges[curr]){\n            const\
+    \ int& next = e.first;\n            if(next==prev) continue;\n            depth[next]\
+    \ = depth[curr] + 1;\n            edge_dist[next]  = Operator::func_edge_merge(edge_dist[curr],e.second);\n\
     \            dfs(next,curr);\n            order[ord++] = next;\n        }\n  \
     \  }\n    //for make_eulertour\n    void dfs(int from){\n        eulertour.push_back(from);\n\
     \        for(auto& e:child[from]){\n            int to = e.first;\n          \
@@ -258,19 +260,20 @@ data:
     \            }\n        }\n        ancl = Operator::func_lca_edge_merge(ancestor[ancl.first][0],ancl);\n\
     \        ancr = Operator::func_lca_edge_merge(ancestor[ancr.first][0],ancr);\n\
     \        return Operator::func_lca_edge_merge(ancl,ancr);\n    }\n    pair<TypeEdge,vector<size_t>>\
-    \ diameter_impl() {\n        Tree tree = Tree::builder(g).build();\n        size_t\
-    \ root = 0;\n        {\n            tree.make_root(0);\n        }\n        root\
-    \ = max_element(tree.edge_dist.begin(),tree.edge_dist.end()) - tree.edge_dist.begin();\n\
-    \        {\n            tree.make_root(root);\n        }\n        size_t leaf\
-    \ = max_element(tree.edge_dist.begin(),tree.edge_dist.end()) - tree.edge_dist.begin();\n\
-    \        TypeEdge sz = tree.edge_dist[leaf];\n        vector<size_t> st;\n   \
-    \     {\n            tree.make_parent();\n            while(leaf != root) {\n\
-    \                st.push_back(leaf);\n                leaf = tree.parent[leaf].first;\n\
-    \            }\n            st.push_back(root);\n        }\n        return make_pair(sz,st);\n\
-    \    }\n    template<class TypeReroot> vector<TypeReroot> rerooting_impl(vector<TypeReroot>\
-    \ rerootdp,vector<TypeReroot> rerootparent) {\n        for(size_t pa:order) for(auto&\
-    \ e:child[pa]) rerootdp[pa] = Operator::func_reroot_dp(rerootdp[pa],rerootdp[e.first]);\n\
-    \        for(size_t pa:reorder) {\n            if(depth[pa]) rerootdp[pa] = Operator::func_reroot_dp(rerootdp[pa],rerootparent[pa]);\n\
+    \ diameter_impl() {\n        StaticTree tree = StaticTree::builder(g).build();\n\
+    \        size_t root = 0;\n        {\n            tree.make_root(0);\n       \
+    \ }\n        root = max_element(tree.edge_dist.begin(),tree.edge_dist.end()) -\
+    \ tree.edge_dist.begin();\n        {\n            tree.make_root(root);\n    \
+    \    }\n        size_t leaf = max_element(tree.edge_dist.begin(),tree.edge_dist.end())\
+    \ - tree.edge_dist.begin();\n        TypeEdge sz = tree.edge_dist[leaf];\n   \
+    \     vector<size_t> st;\n        {\n            tree.make_parent();\n       \
+    \     while(leaf != root) {\n                st.push_back(leaf);\n           \
+    \     leaf = tree.parent[leaf].first;\n            }\n            st.push_back(root);\n\
+    \        }\n        return make_pair(sz,st);\n    }\n    template<class TypeReroot>\
+    \ vector<TypeReroot> rerooting_impl(vector<TypeReroot> rerootdp,vector<TypeReroot>\
+    \ rerootparent) {\n        for(size_t pa:order) for(auto& e:child[pa]) rerootdp[pa]\
+    \ = Operator::func_reroot_dp(rerootdp[pa],rerootdp[e.first]);\n        for(size_t\
+    \ pa:reorder) {\n            if(depth[pa]) rerootdp[pa] = Operator::func_reroot_dp(rerootdp[pa],rerootparent[pa]);\n\
     \            size_t m = child[pa].size();\n            for(int j = 0; j < m &&\
     \ depth[pa]; ++j){\n                size_t ch = child[pa][j].first;\n        \
     \        rerootparent[ch] = Operator::func_reroot_dp(rerootparent[ch],rerootparent[pa]);\n\
@@ -338,7 +341,7 @@ data:
     \ edge_dist;\n    vector<array<pair<size_t,TypeEdge>,Operator::bit>> ancestor;\n\
     \    vector<size_t> eulertour;\n    vector<pair<size_t,size_t>> eulertour_range;\n\
     \    vector<size_t> hld;\n\n    /**\n     * O(N) builder\n     */\n    static\
-    \ TreeBuilder<Operator> builder(Graph<TypeEdge>& graph) { return TreeBuilder<Operator>(graph);}\n\
+    \ StaticTreeBuilder<Operator> builder(Graph<TypeEdge>& graph) { return StaticTreeBuilder<Operator>(graph);}\n\
     \    /**\n     * O(logN) after make_ancestor\n     * return {lca,lca_dist} l and\
     \ r must be connected\n     */\n    pair<size_t,TypeEdge> lca(size_t l, size_t\
     \ r) {return lca_impl(l,r);}\n    /**\n     * O(N) anytime\n     * return {diameter\
@@ -356,38 +359,38 @@ data:
     \ edge_ordered_set_on_path(size_t u, size_t v) {return ordered_path_impl(u,v,1);}\n\
     \    /**\n     * O(logN) ancestor\u306Elca\u3088\u308A\u5B9A\u6570\u500D\u8EFD\
     \u3081\u3002idx\u3060\u3051\n     */\n    size_t lca_idx(size_t u, size_t v) {return\
-    \ lca_idx_impl(u,v);}\n};\n\ntemplate<class Operator> class TreeBuilder {\n  \
-    \  bool is_root_made =false;\n    bool is_child_made =false;\n    bool is_parent_made=false;\n\
+    \ lca_idx_impl(u,v);}\n};\n\ntemplate<class Operator> class StaticTreeBuilder\
+    \ {\n    bool is_root_made =false;\n    bool is_child_made =false;\n    bool is_parent_made=false;\n\
     \    bool is_subtree_size_made=false;\npublic:\n    using TypeEdge = typename\
-    \ Operator::TypeEdge;\n    TreeBuilder(Graph<TypeEdge>& g):tree(g){}\n    TreeBuilder&\
-    \ root(const int rt) { is_root_made=true; tree.make_root(rt); return *this;}\n\
-    \    TreeBuilder& root() { is_root_made=true; tree.make_root(); return *this;}\n\
-    \    TreeBuilder& child() { assert(is_root_made); is_child_made=true;  tree.make_child();\
-    \  return *this;}\n    TreeBuilder& parent() { assert(is_root_made); is_parent_made=true;\
-    \ tree.make_parent(); return *this;}\n    TreeBuilder& subtree_size() { assert(is_child_made);\
-    \ is_subtree_size_made=true; tree.make_subtree_size(); return *this;}\n    TreeBuilder&\
-    \ ancestor() { assert(is_parent_made); tree.make_ancestor(); return *this;}\n\
-    \    TreeBuilder& eulertour() { assert(is_child_made); tree.make_eulertour();\
-    \ return *this;}\n    TreeBuilder& heavy_light_decomposition() { assert(is_subtree_size_made);\
-    \ assert(is_parent_made); tree.make_heavy_light_decomposition(); return *this;}\n\
-    \    Tree<Operator>&& build() {return move(tree);}\nprivate:\n    Tree<Operator>\
-    \ tree;\n};\ntemplate<class T> struct TreeOperator{\n    using TypeEdge = T;\n\
-    \    inline static constexpr size_t bit = 20;\n    inline static constexpr TypeEdge\
-    \ unit_edge = 0;\n    inline static constexpr TypeEdge unit_lca_edge = 0;\n  \
-    \  inline static constexpr TypeEdge func_edge_merge(const TypeEdge& parent,const\
-    \ TypeEdge& w){return parent+w;}\n    inline static constexpr pair<size_t,TypeEdge>\
-    \ func_lca_edge_merge(const pair<size_t,TypeEdge>& l,const pair<size_t,TypeEdge>&\
-    \ r){return make_pair(l.first,l.second+r.second);}\n    template<class TypeReroot>\
-    \ inline static constexpr TypeReroot func_reroot_dp(const TypeReroot& l,const\
-    \ TypeReroot& r) {return {l.first+r.first+r.second,l.second+r.second};}\n    template<class\
-    \ TypeReroot> inline static constexpr TypeReroot func_reroot_merge(const TypeReroot&\
-    \ l,const TypeReroot& r) {return {l.first+r.first,l.second+r.second};}\n};\n//auto\
-    \ tree = Tree<TreeOperator<int>>::builder(g).build();"
+    \ Operator::TypeEdge;\n    StaticTreeBuilder(Graph<TypeEdge>& g):tree(g){}\n \
+    \   StaticTreeBuilder& root(const int rt) { is_root_made=true; tree.make_root(rt);\
+    \ return *this;}\n    StaticTreeBuilder& root() { is_root_made=true; tree.make_root();\
+    \ return *this;}\n    StaticTreeBuilder& child() { assert(is_root_made); is_child_made=true;\
+    \  tree.make_child();  return *this;}\n    StaticTreeBuilder& parent() { assert(is_root_made);\
+    \ is_parent_made=true; tree.make_parent(); return *this;}\n    StaticTreeBuilder&\
+    \ subtree_size() { assert(is_child_made); is_subtree_size_made=true; tree.make_subtree_size();\
+    \ return *this;}\n    StaticTreeBuilder& ancestor() { assert(is_parent_made);\
+    \ tree.make_ancestor(); return *this;}\n    StaticTreeBuilder& eulertour() { assert(is_child_made);\
+    \ tree.make_eulertour(); return *this;}\n    StaticTreeBuilder& heavy_light_decomposition()\
+    \ { assert(is_subtree_size_made); assert(is_parent_made); tree.make_heavy_light_decomposition();\
+    \ return *this;}\n    StaticTree<Operator>&& build() {return move(tree);}\nprivate:\n\
+    \    StaticTree<Operator> tree;\n};\ntemplate<class T> struct StaticTreeOperator{\n\
+    \    using TypeEdge = T;\n    inline static constexpr size_t bit = 20;\n    inline\
+    \ static constexpr TypeEdge unit_edge = 0;\n    inline static constexpr TypeEdge\
+    \ unit_lca_edge = 0;\n    inline static constexpr TypeEdge func_edge_merge(const\
+    \ TypeEdge& parent,const TypeEdge& w){return parent+w;}\n    inline static constexpr\
+    \ pair<size_t,TypeEdge> func_lca_edge_merge(const pair<size_t,TypeEdge>& l,const\
+    \ pair<size_t,TypeEdge>& r){return make_pair(l.first,l.second+r.second);}\n  \
+    \  template<class TypeReroot> inline static constexpr TypeReroot func_reroot_dp(const\
+    \ TypeReroot& l,const TypeReroot& r) {return {l.first+r.first+r.second,l.second+r.second};}\n\
+    \    template<class TypeReroot> inline static constexpr TypeReroot func_reroot_merge(const\
+    \ TypeReroot& l,const TypeReroot& r) {return {l.first+r.first,l.second+r.second};}\n\
+    };\n//auto tree = StaticTree<StaticTreeOperator<int>>::builder(g).build();"
   dependsOn: []
   isVerificationFile: false
-  path: lib/40-graph/Tree.cpp
+  path: lib/40-graph/StaticTree.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:49:31+09:00'
+  timestamp: '2023-06-10 18:20:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/Tree-size.test.cpp
@@ -401,14 +404,14 @@ data:
   - test/graph/Tree-lca-idx.test.cpp
   - test/graph/Tree-hld-vertex-3.test.cpp
   - test/graph/Tree-diameter.test.cpp
-documentation_of: lib/40-graph/Tree.cpp
+documentation_of: lib/40-graph/StaticTree.cpp
 layout: document
 redirect_from:
-- /library/lib/40-graph/Tree.cpp
-- /library/lib/40-graph/Tree.cpp.html
-title: "Tree - \u6728"
+- /library/lib/40-graph/StaticTree.cpp
+- /library/lib/40-graph/StaticTree.cpp.html
+title: "StaticTree - \u6728"
 ---
-### Tree
+### StaticTree
 - 木ライブラリ
   - 根つき木
     - dfsしてトポロジカルソート順を列挙
@@ -437,7 +440,7 @@ title: "Tree - \u6728"
 - なし。ビルダーを用意している。  
 下記のように、グラフを最初に渡し、前計算したいものを指定してビルドを行う。
 ```
-auto tree = Tree<TreeOperator<int>>::builder(g).root(0).child().parent().build();
+auto tree = StaticTree<StaticTreeOperator<int>>::builder(g).root(0).child().parent().build();
 ```
 
 ### メソッド
