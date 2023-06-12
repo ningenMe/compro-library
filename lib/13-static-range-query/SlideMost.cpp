@@ -1,6 +1,6 @@
 /*
  * @title SlideMost - スライド最小値/最大値
- * @docs md/data-structure/SlideMost.md
+ * @docs md/static-range-query/SlideMost.md
  */
 template<class Operator> class SlideMost {
     using TypeValue = typename Operator::TypeValue;
