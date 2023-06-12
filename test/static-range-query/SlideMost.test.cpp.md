@@ -18,7 +18,7 @@ data:
     \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_3_D\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <deque>\nusing namespace std;\n#line\
     \ 1 \"lib/13-static-range-query/SlideMost.cpp\"\n/*\n * @title SlideMost - \u30B9\
-    \u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024\n * @docs md/data-structure/SlideMost.md\n\
+    \u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024\n * @docs md/static-range-query/SlideMost.md\n\
     \ */\ntemplate<class Operator> class SlideMost {\n    using TypeValue = typename\
     \ Operator::TypeValue;\npublic:\n    SlideMost(void){\n    }\n    vector<TypeValue>\
     \ window(vector<TypeValue>& vec, const int& width){\n        vector<TypeValue>\
@@ -48,7 +48,7 @@ data:
   isVerificationFile: true
   path: test/static-range-query/SlideMost.test.cpp
   requiredBy: []
-  timestamp: '2023-06-08 02:51:47+09:00'
+  timestamp: '2023-06-13 08:02:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/static-range-query/SlideMost.test.cpp
