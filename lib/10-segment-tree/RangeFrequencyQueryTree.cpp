@@ -1,5 +1,5 @@
 /*
- * @title RangeFrequencyQueryTree - 区間freq
+ * @title RangeFrequencyQueryTree - 区間freqTree
  * @docs md/segment-tree/RangeFrequencyQueryTree.md
  */
 template<class T> class RangeFrequencyQueryTree {
@@ -84,7 +84,6 @@ template<class T> class RangeFrequencyQueryTree {
         inline int count(U value) const {return upper_bound(value) - lower_bound(value);}
     };
     size_t length;
-    size_t num;
     vector<BinarySearchTreeSet<T>> node;
     void insert_impl(size_t idx, const T var) {
         if(idx < 0 || length <= idx) return;
@@ -117,7 +116,6 @@ template<class T> class RangeFrequencyQueryTree {
         return ret;
     }
 public:
-    //unitで初期化
     RangeFrequencyQueryTree(const vector<T> & vec) {
         for (length = 1; length <= vec.size(); length *= 2);
         node.resize(2 * length, BinarySearchTreeSet<T>());
