@@ -1,5 +1,5 @@
 /*
- * @title RangeFrequencyQueryTree - 区間freqTree
+ * @title RangeFrequencyQueryTree - 区間freqクエリ用Tree
  * @docs md/segment-tree/RangeFrequencyQueryTree.md
  */
 template<class T> class RangeFrequencyQueryTree {
