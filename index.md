@@ -32,6 +32,9 @@ data:
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
+      path: lib/10-segment-tree/RangeFrequencyQueryTree.cpp
+      title: "RangeFrequencyQueryTree - \u533A\u9593freq"
+    - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/SegmentTree.cpp
       title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
         \u30F3\u30C8\u6728"
@@ -676,6 +679,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
       title: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
+      title: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
       title: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
