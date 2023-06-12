@@ -11,10 +11,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/segment-tree/RangeFrequencyQueryTree.md
-    document_title: "RangeFrequencyQueryTree - \u533A\u9593freq"
+    document_title: "RangeFrequencyQueryTree - \u533A\u9593freqTree"
     links: []
   bundledCode: "#line 1 \"lib/10-segment-tree/RangeFrequencyQueryTree.cpp\"\n/*\n\
-    \ * @title RangeFrequencyQueryTree - \u533A\u9593freq\n * @docs md/segment-tree/RangeFrequencyQueryTree.md\n\
+    \ * @title RangeFrequencyQueryTree - \u533A\u9593freqTree\n * @docs md/segment-tree/RangeFrequencyQueryTree.md\n\
     \ */\ntemplate<class T> class RangeFrequencyQueryTree {\n    template<class U>\
     \ class BinarySearchTreeSet {\n        unsigned int x = 123456789, y = 362436069,\
     \ z = 521288629, w = 88675123;\n        unsigned int xor_shift() {\n         \
@@ -65,12 +65,12 @@ data:
     \        inline int lower_bound(U value) const {return lower_bound(this->root,value);}\n\
     \        inline int upper_bound(U value) const {return upper_bound(this->root,value);}\n\
     \        inline int count(U value) const {return upper_bound(value) - lower_bound(value);}\n\
-    \    };\n    size_t length;\n    size_t num;\n    vector<BinarySearchTreeSet<T>>\
-    \ node;\n    void insert_impl(size_t idx, const T var) {\n        if(idx < 0 ||\
-    \ length <= idx) return;\n        idx += length;\n        node[idx].insert(var);\n\
-    \        while(idx >>= 1) node[idx].insert(var);\n    }\n    void erase_impl(size_t\
-    \ idx, const T var) {\n        if(idx < 0 || length <= idx) return;\n        idx\
-    \ += length;\n        node[idx].erase(var);\n        while(idx >>= 1) node[idx].erase(var);\n\
+    \    };\n    size_t length;\n    vector<BinarySearchTreeSet<T>> node;\n    void\
+    \ insert_impl(size_t idx, const T var) {\n        if(idx < 0 || length <= idx)\
+    \ return;\n        idx += length;\n        node[idx].insert(var);\n        while(idx\
+    \ >>= 1) node[idx].insert(var);\n    }\n    void erase_impl(size_t idx, const\
+    \ T var) {\n        if(idx < 0 || length <= idx) return;\n        idx += length;\n\
+    \        node[idx].erase(var);\n        while(idx >>= 1) node[idx].erase(var);\n\
     \    }\n    int range_freq_upper_impl(int l, int r, const T upper) const {\n \
     \       if (l < 0 || length <= l || r < 0 || length < r) return 0;\n        int\
     \ ret=0;\n        for(l += length, r += length; l < r; l >>=1, r >>=1) {\n   \
@@ -80,20 +80,20 @@ data:
     \ length <= l || r < 0 || length < r) return 0;\n        int ret=0;\n        for(l\
     \ += length, r += length; l < r; l >>=1, r >>=1) {\n            if(l&1) ret +=\
     \ node[l++].count(val);\n            if(r&1) ret += node[--r].count(val);\n  \
-    \      }\n        return ret;\n    }\npublic:\n    //unit\u3067\u521D\u671F\u5316\
-    \n    RangeFrequencyQueryTree(const vector<T> & vec) {\n        for (length =\
-    \ 1; length <= vec.size(); length *= 2);\n        node.resize(2 * length, BinarySearchTreeSet<T>());\n\
-    \        for (int i=0; i < vec.size(); ++i) {\n            insert_impl(i, vec[i]);\n\
-    \        }\n    }\n    //idx\u756A\u76EE\u306E\u8981\u7D20\u3092update\n    void\
-    \ update(const size_t idx, const T var) { erase_impl(idx, var); insert_impl(idx,\
-    \ var);}\n    //[l,r) range freq of val (val < upper)\n    int range_freq_upper(const\
-    \ int l, const int r, const T upper) const {return range_freq_upper_impl(l,r,upper);}\n\
+    \      }\n        return ret;\n    }\npublic:\n    RangeFrequencyQueryTree(const\
+    \ vector<T> & vec) {\n        for (length = 1; length <= vec.size(); length *=\
+    \ 2);\n        node.resize(2 * length, BinarySearchTreeSet<T>());\n        for\
+    \ (int i=0; i < vec.size(); ++i) {\n            insert_impl(i, vec[i]);\n    \
+    \    }\n    }\n    //idx\u756A\u76EE\u306E\u8981\u7D20\u3092update\n    void update(const\
+    \ size_t idx, const T var) { erase_impl(idx, var); insert_impl(idx, var);}\n \
+    \   //[l,r) range freq of val (val < upper)\n    int range_freq_upper(const int\
+    \ l, const int r, const T upper) const {return range_freq_upper_impl(l,r,upper);}\n\
     \    //[l,r) range freq of val (lower <= val < upper)\n    int range_freq_lower_upper(const\
     \ int l, const int r, const T lower, const T upper) const {return range_freq_upper_impl(l,r,upper)\
     \ - range_freq_upper_impl(l,r,lower);}\n    //[l,r) range freq of val\n    int\
     \ range_freq(const int l, const int r, const T val) const {return range_freq_impl(l,r,val);}\n\
     };\n"
-  code: "/*\n * @title RangeFrequencyQueryTree - \u533A\u9593freq\n * @docs md/segment-tree/RangeFrequencyQueryTree.md\n\
+  code: "/*\n * @title RangeFrequencyQueryTree - \u533A\u9593freqTree\n * @docs md/segment-tree/RangeFrequencyQueryTree.md\n\
     \ */\ntemplate<class T> class RangeFrequencyQueryTree {\n    template<class U>\
     \ class BinarySearchTreeSet {\n        unsigned int x = 123456789, y = 362436069,\
     \ z = 521288629, w = 88675123;\n        unsigned int xor_shift() {\n         \
@@ -144,12 +144,12 @@ data:
     \        inline int lower_bound(U value) const {return lower_bound(this->root,value);}\n\
     \        inline int upper_bound(U value) const {return upper_bound(this->root,value);}\n\
     \        inline int count(U value) const {return upper_bound(value) - lower_bound(value);}\n\
-    \    };\n    size_t length;\n    size_t num;\n    vector<BinarySearchTreeSet<T>>\
-    \ node;\n    void insert_impl(size_t idx, const T var) {\n        if(idx < 0 ||\
-    \ length <= idx) return;\n        idx += length;\n        node[idx].insert(var);\n\
-    \        while(idx >>= 1) node[idx].insert(var);\n    }\n    void erase_impl(size_t\
-    \ idx, const T var) {\n        if(idx < 0 || length <= idx) return;\n        idx\
-    \ += length;\n        node[idx].erase(var);\n        while(idx >>= 1) node[idx].erase(var);\n\
+    \    };\n    size_t length;\n    vector<BinarySearchTreeSet<T>> node;\n    void\
+    \ insert_impl(size_t idx, const T var) {\n        if(idx < 0 || length <= idx)\
+    \ return;\n        idx += length;\n        node[idx].insert(var);\n        while(idx\
+    \ >>= 1) node[idx].insert(var);\n    }\n    void erase_impl(size_t idx, const\
+    \ T var) {\n        if(idx < 0 || length <= idx) return;\n        idx += length;\n\
+    \        node[idx].erase(var);\n        while(idx >>= 1) node[idx].erase(var);\n\
     \    }\n    int range_freq_upper_impl(int l, int r, const T upper) const {\n \
     \       if (l < 0 || length <= l || r < 0 || length < r) return 0;\n        int\
     \ ret=0;\n        for(l += length, r += length; l < r; l >>=1, r >>=1) {\n   \
@@ -159,14 +159,14 @@ data:
     \ length <= l || r < 0 || length < r) return 0;\n        int ret=0;\n        for(l\
     \ += length, r += length; l < r; l >>=1, r >>=1) {\n            if(l&1) ret +=\
     \ node[l++].count(val);\n            if(r&1) ret += node[--r].count(val);\n  \
-    \      }\n        return ret;\n    }\npublic:\n    //unit\u3067\u521D\u671F\u5316\
-    \n    RangeFrequencyQueryTree(const vector<T> & vec) {\n        for (length =\
-    \ 1; length <= vec.size(); length *= 2);\n        node.resize(2 * length, BinarySearchTreeSet<T>());\n\
-    \        for (int i=0; i < vec.size(); ++i) {\n            insert_impl(i, vec[i]);\n\
-    \        }\n    }\n    //idx\u756A\u76EE\u306E\u8981\u7D20\u3092update\n    void\
-    \ update(const size_t idx, const T var) { erase_impl(idx, var); insert_impl(idx,\
-    \ var);}\n    //[l,r) range freq of val (val < upper)\n    int range_freq_upper(const\
-    \ int l, const int r, const T upper) const {return range_freq_upper_impl(l,r,upper);}\n\
+    \      }\n        return ret;\n    }\npublic:\n    RangeFrequencyQueryTree(const\
+    \ vector<T> & vec) {\n        for (length = 1; length <= vec.size(); length *=\
+    \ 2);\n        node.resize(2 * length, BinarySearchTreeSet<T>());\n        for\
+    \ (int i=0; i < vec.size(); ++i) {\n            insert_impl(i, vec[i]);\n    \
+    \    }\n    }\n    //idx\u756A\u76EE\u306E\u8981\u7D20\u3092update\n    void update(const\
+    \ size_t idx, const T var) { erase_impl(idx, var); insert_impl(idx, var);}\n \
+    \   //[l,r) range freq of val (val < upper)\n    int range_freq_upper(const int\
+    \ l, const int r, const T upper) const {return range_freq_upper_impl(l,r,upper);}\n\
     \    //[l,r) range freq of val (lower <= val < upper)\n    int range_freq_lower_upper(const\
     \ int l, const int r, const T lower, const T upper) const {return range_freq_upper_impl(l,r,upper)\
     \ - range_freq_upper_impl(l,r,lower);}\n    //[l,r) range freq of val\n    int\
@@ -176,7 +176,7 @@ data:
   isVerificationFile: false
   path: lib/10-segment-tree/RangeFrequencyQueryTree.cpp
   requiredBy: []
-  timestamp: '2023-06-13 05:45:52+09:00'
+  timestamp: '2023-06-13 07:23:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
@@ -185,7 +185,7 @@ layout: document
 redirect_from:
 - /library/lib/10-segment-tree/RangeFrequencyQueryTree.cpp
 - /library/lib/10-segment-tree/RangeFrequencyQueryTree.cpp.html
-title: "RangeFrequencyQueryTree - \u533A\u9593freq"
+title: "RangeFrequencyQueryTree - \u533A\u9593freqTree"
 ---
 ### RangeFrequencyQueryTree
 - 区間の中の値の頻度クエリを答えるセグ木

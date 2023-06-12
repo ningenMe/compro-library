@@ -33,7 +33,7 @@ data:
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/RangeFrequencyQueryTree.cpp
-      title: "RangeFrequencyQueryTree - \u533A\u9593freq"
+      title: "RangeFrequencyQueryTree - \u533A\u9593freqTree"
     - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/SegmentTree.cpp
       title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
