@@ -1,8 +1,8 @@
 /*
- * @title IntegerRangeFrequencyQuery - integer専用区間freq
- * @docs md/segment-tree/IntegerRangeFrequencyQuery.md
+ * @title IntegerRangeFrequencyQueryTree - integer専用区間freq
+ * @docs md/segment-tree/IntegerRangeFrequencyQueryTree.md
  */
-template<unsigned int bit_length=20> class IntegerRangeFrequencyQuery {
+template<unsigned int bit_length=20> class IntegerRangeFrequencyQueryTree {
     using u64 = unsigned long long;
     class SimpleBinaryTrie {
         struct Node {
@@ -162,7 +162,7 @@ template<unsigned int bit_length=20> class IntegerRangeFrequencyQuery {
     }
 public:
     //unitで初期化
-    IntegerRangeFrequencyQuery(const vector<u64> & vec) {
+    IntegerRangeFrequencyQueryTree(const vector<u64> & vec) {
         for (length = 1; length <= vec.size(); length *= 2);
         node.resize(2 * length);
         for (int i=0; i < vec.size(); ++i) {

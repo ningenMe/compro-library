@@ -1,4 +1,4 @@
-### IntegerRangeFrequencyQuery
+### IntegerRangeFrequencyQueryTree
 - 区間の中の値の頻度クエリを答えるセグ木
 - unsigned integer専用
 - 更新も対応できるはず (verifyできてない)
@@ -7,7 +7,7 @@
 
 
 ### メソッド
-- IntegerRangeFrequencyQuery(const vector<T> & vec) 
+- IntegerRangeFrequencyQueryTree(const vector<T> & vec) 
   - コンストラクタ。列を渡す
 - void update(const size_t idx, const T var)
   - 値を更新
