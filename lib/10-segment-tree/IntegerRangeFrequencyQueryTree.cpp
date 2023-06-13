@@ -77,6 +77,7 @@ template<unsigned int bit_length=20> class IntegerRangeFrequencyQueryTree {
             }
         }
         size_t size() const {return size(root);}
+        bool empty() const {return empty(root);}
         u64 kth_smallest(u64 k) const {
             Node* curr = root; u64 val=0;
             for(u64 i=0; i < bit_length; ++i) {
@@ -136,9 +137,11 @@ template<unsigned int bit_length=20> class IntegerRangeFrequencyQueryTree {
         node[idx].insert(val);
         while(idx >>= 1) node[idx].insert(val);
     }
-    void erase_impl(size_t idx, const u64 val) {
+    void erase_impl(size_t idx) {
         if(idx < 0 || length <= idx) return;
         idx += length;
+        if(node[idx].empty()) return;
+        u64 val = node[idx].kth_smallest(0);
         node[idx].erase(val);
         while(idx >>= 1) node[idx].erase(val);
     }
@@ -161,18 +164,21 @@ template<unsigned int bit_length=20> class IntegerRangeFrequencyQueryTree {
         return ret;
     }
 public:
-    //unitで初期化
+    IntegerRangeFrequencyQueryTree(const u64 num) {
+        for (length = 1; length <= num; length *= 2);
+        node.resize(2 * length);
+    }
     IntegerRangeFrequencyQueryTree(const vector<u64> & vec) {
         for (length = 1; length <= vec.size(); length *= 2);
         node.resize(2 * length);
         for (int i=0; i < vec.size(); ++i) {
-            insert(i, vec[i]);
+            update(i, vec[i]);
         }
     }
-    //idx番目の要素にinsert
-    void insert(const size_t idx, const u64 val) { insert_impl(idx, val);}
-    //idx番目の要素にdelete
-    void erase(size_t idx, const u64 val) { erase_impl(idx, val);}
+    //idx番目の要素をupdate
+    void update(const size_t idx, const u64 val) { erase_impl(idx); insert_impl(idx, val);}
+    //idx番目の要素をerase
+    void erase(const size_t idx) { erase_impl(idx); }
     //[l,r) range freq of val (val < upper)
     int range_freq_upper(const int l, const int r, const u64 upper) const {return range_freq_upper_impl(l,r,upper);}
     //[l,r) range freq of val (lower <= val < upper)

@@ -19,4 +19,4 @@
   - [l,r) の範囲の中で、valに等しい要素の数を返す
 
 - 補足
-  - [提出](https://atcoder.jp/contests/abc202/submissions/42225864)
+  - [提出](https://atcoder.jp/contests/abc202/submissions/42244987)
