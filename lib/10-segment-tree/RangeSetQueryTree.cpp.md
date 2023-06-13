@@ -86,3 +86,7 @@ redirect_from:
 - /library/lib/10-segment-tree/RangeSetQueryTree.cpp.html
 title: "RangeSetQueryTree - \u533A\u9593set\u30AF\u30A8\u30EA\u7528Tree"
 ---
+### RangeSetQueryTree
+- 区間内のユニークのサイズを求めるクラス
+- 更新もできるはずだがかなり遅い
+- [提出](https://atcoder.jp/contests/abc157/submissions/42226836)

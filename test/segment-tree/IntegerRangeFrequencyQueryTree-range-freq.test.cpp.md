@@ -86,34 +86,36 @@ data:
     \       curr->size -= 1;\n            while(st.size()) {\n                auto\
     \ node=st.top(); st.pop();\n                node->size = size(node->left) + size(node->right);\n\
     \            }\n        }\n        size_t size() const {return size(root);}\n\
-    \        u64 kth_smallest(u64 k) const {\n            Node* curr = root; u64 val=0;\n\
-    \            for(u64 i=0; i < bit_length; ++i) {\n                u64 j = 1UL\
-    \ << (bit_length-1-i);\n                u64 sz_l = size(curr->left);\n       \
-    \         if(k<sz_l) curr = curr->left;\n                else {\n            \
-    \        val |= j;\n                    k -= sz_l;\n                    curr =\
-    \ curr->right;\n                }\n            }\n            return val;\n  \
-    \      }\n        size_t lower_bound(const u64 val) const {\n            Node*\
-    \ curr = root;\n            u64 k=0;\n            for(u64 i=0; i < bit_length;\
-    \ ++i) {\n                u64 j = ((val>>(bit_length-1-i)) & 1UL);\n         \
-    \       if(j) {\n                    k+=size(curr->left);\n                  \
-    \  if(curr->right != nullptr) curr = curr->right;\n                    else break;\n\
-    \                }\n                else {\n                    if(curr->left\
-    \ != nullptr) curr = curr->left;\n                    else break;\n          \
-    \      }\n            }\n            return k;\n        }\n        size_t count(const\
-    \ u64 val) const {\n            Node* curr = root;\n            for(u64 i=0; i\
-    \ < bit_length; ++i) {\n                u64 j = ((val>>(bit_length-1-i)) & 1);\n\
-    \                if(j) {\n                    if(curr->right != nullptr) curr\
-    \ = curr->right;\n                    else return 0;\n                }\n    \
-    \            else {\n                    if(curr->left != nullptr) curr = curr->left;\n\
-    \                    else return 0;\n                }\n            }\n      \
-    \      return size(curr);\n        }\n        void print() {\n            cout\
-    \ << \"{\"; print(root,0,0); cout << \"}\" << endl;\n        }\n    };\n    size_t\
-    \ length;\n    size_t num;\n    vector<SimpleBinaryTrie> node;\n    void insert_impl(size_t\
-    \ idx, const u64 val) {\n        if(idx < 0 || length <= idx) return;\n      \
-    \  idx += length;\n        node[idx].insert(val);\n        while(idx >>= 1) node[idx].insert(val);\n\
-    \    }\n    void erase_impl(size_t idx, const u64 val) {\n        if(idx < 0 ||\
-    \ length <= idx) return;\n        idx += length;\n        node[idx].erase(val);\n\
-    \        while(idx >>= 1) node[idx].erase(val);\n    }\n    int range_freq_upper_impl(int\
+    \        bool empty() const {return empty(root);}\n        u64 kth_smallest(u64\
+    \ k) const {\n            Node* curr = root; u64 val=0;\n            for(u64 i=0;\
+    \ i < bit_length; ++i) {\n                u64 j = 1UL << (bit_length-1-i);\n \
+    \               u64 sz_l = size(curr->left);\n                if(k<sz_l) curr\
+    \ = curr->left;\n                else {\n                    val |= j;\n     \
+    \               k -= sz_l;\n                    curr = curr->right;\n        \
+    \        }\n            }\n            return val;\n        }\n        size_t\
+    \ lower_bound(const u64 val) const {\n            Node* curr = root;\n       \
+    \     u64 k=0;\n            for(u64 i=0; i < bit_length; ++i) {\n            \
+    \    u64 j = ((val>>(bit_length-1-i)) & 1UL);\n                if(j) {\n     \
+    \               k+=size(curr->left);\n                    if(curr->right != nullptr)\
+    \ curr = curr->right;\n                    else break;\n                }\n  \
+    \              else {\n                    if(curr->left != nullptr) curr = curr->left;\n\
+    \                    else break;\n                }\n            }\n         \
+    \   return k;\n        }\n        size_t count(const u64 val) const {\n      \
+    \      Node* curr = root;\n            for(u64 i=0; i < bit_length; ++i) {\n \
+    \               u64 j = ((val>>(bit_length-1-i)) & 1);\n                if(j)\
+    \ {\n                    if(curr->right != nullptr) curr = curr->right;\n    \
+    \                else return 0;\n                }\n                else {\n \
+    \                   if(curr->left != nullptr) curr = curr->left;\n           \
+    \         else return 0;\n                }\n            }\n            return\
+    \ size(curr);\n        }\n        void print() {\n            cout << \"{\"; print(root,0,0);\
+    \ cout << \"}\" << endl;\n        }\n    };\n    size_t length;\n    size_t num;\n\
+    \    vector<SimpleBinaryTrie> node;\n    void insert_impl(size_t idx, const u64\
+    \ val) {\n        if(idx < 0 || length <= idx) return;\n        idx += length;\n\
+    \        node[idx].insert(val);\n        while(idx >>= 1) node[idx].insert(val);\n\
+    \    }\n    void erase_impl(size_t idx) {\n        if(idx < 0 || length <= idx)\
+    \ return;\n        idx += length;\n        if(node[idx].empty()) return;\n   \
+    \     u64 val = node[idx].kth_smallest(0);\n        node[idx].erase(val);\n  \
+    \      while(idx >>= 1) node[idx].erase(val);\n    }\n    int range_freq_upper_impl(int\
     \ l, int r, const u64 upper) const {\n        if (l < 0 || length <= l || r <\
     \ 0 || length < r) return 0;\n        int ret=0;\n        for(l += length, r +=\
     \ length; l < r; l >>=1, r >>=1) {\n            if(l&1) ret += node[l++].lower_bound(upper);\n\
@@ -123,17 +125,18 @@ data:
     \    int ret=0;\n        for(l += length, r += length; l < r; l >>=1, r >>=1)\
     \ {\n            if(l&1) ret += node[l++].count(val);\n            if(r&1) ret\
     \ += node[--r].count(val);\n        }\n        return ret;\n    }\npublic:\n \
-    \   //unit\u3067\u521D\u671F\u5316\n    IntegerRangeFrequencyQueryTree(const vector<u64>\
-    \ & vec) {\n        for (length = 1; length <= vec.size(); length *= 2);\n   \
-    \     node.resize(2 * length);\n        for (int i=0; i < vec.size(); ++i) {\n\
-    \            insert(i, vec[i]);\n        }\n    }\n    //idx\u756A\u76EE\u306E\
-    \u8981\u7D20\u306Binsert\n    void insert(const size_t idx, const u64 val) { insert_impl(idx,\
-    \ val);}\n    //idx\u756A\u76EE\u306E\u8981\u7D20\u306Bdelete\n    void erase(size_t\
-    \ idx, const u64 val) { erase_impl(idx, val);}\n    //[l,r) range freq of val\
-    \ (val < upper)\n    int range_freq_upper(const int l, const int r, const u64\
-    \ upper) const {return range_freq_upper_impl(l,r,upper);}\n    //[l,r) range freq\
-    \ of val (lower <= val < upper)\n    int range_freq_lower_upper(const int l, const\
-    \ int r, const u64 lower, const u64 upper) const { return range_freq_upper_impl(l,r,upper)\
+    \   IntegerRangeFrequencyQueryTree(const u64 num) {\n        for (length = 1;\
+    \ length <= num; length *= 2);\n        node.resize(2 * length);\n    }\n    IntegerRangeFrequencyQueryTree(const\
+    \ vector<u64> & vec) {\n        for (length = 1; length <= vec.size(); length\
+    \ *= 2);\n        node.resize(2 * length);\n        for (int i=0; i < vec.size();\
+    \ ++i) {\n            update(i, vec[i]);\n        }\n    }\n    //idx\u756A\u76EE\
+    \u306E\u8981\u7D20\u3092update\n    void update(const size_t idx, const u64 val)\
+    \ { erase_impl(idx); insert_impl(idx, val);}\n    //idx\u756A\u76EE\u306E\u8981\
+    \u7D20\u3092erase\n    void erase(const size_t idx) { erase_impl(idx); }\n   \
+    \ //[l,r) range freq of val (val < upper)\n    int range_freq_upper(const int\
+    \ l, const int r, const u64 upper) const {return range_freq_upper_impl(l,r,upper);}\n\
+    \    //[l,r) range freq of val (lower <= val < upper)\n    int range_freq_lower_upper(const\
+    \ int l, const int r, const u64 lower, const u64 upper) const { return range_freq_upper_impl(l,r,upper)\
     \ - range_freq_upper_impl(l,r,lower);}\n    //[l,r) range freq of val\n    int\
     \ range_freq(const int l, const int r, const u64 val) const {return range_freq_impl(l,r,val);}\n\
     \    void print() { for(int i= length; i < 2*length; ++i) node[i].print();}\n\
@@ -158,7 +161,7 @@ data:
   isVerificationFile: true
   path: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
   requiredBy: []
-  timestamp: '2023-06-14 03:39:48+09:00'
+  timestamp: '2023-06-14 05:14:08+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
