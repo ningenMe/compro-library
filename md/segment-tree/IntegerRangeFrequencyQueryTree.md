@@ -1,12 +1,13 @@
-### RangeFrequencyQueryTree
+### IntegerRangeFrequencyQuery
 - 区間の中の値の頻度クエリを答えるセグ木
+- unsigned integer専用
 - 更新も対応できるはず (verifyできてない)
-- セグメント木に、二分探索木を載せている log2個で定数倍かなり重め。いらないライブラリ
+- セグメント木に、BinaryTrieを載せている log2個で定数倍重め。
 - 値の更新がないならwavelet matrixを使うのが良い。
 
 
 ### メソッド
-- RangeFrequencyQueryTree(const vector<T> & vec) 
+- IntegerRangeFrequencyQuery(const vector<T> & vec) 
   - コンストラクタ。列を渡す
 - void update(const size_t idx, const T var)
   - 値を更新
