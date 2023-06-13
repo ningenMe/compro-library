@@ -11,23 +11,24 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/segment-tree/RangeFrequencyQueryTree.md
-    document_title: "RangeFrequencyQueryTree - \u533A\u9593freqTree"
+    document_title: "RangeFrequencyQueryTree - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528\
+      Tree"
     links: []
   bundledCode: "#line 1 \"lib/10-segment-tree/RangeFrequencyQueryTree.cpp\"\n/*\n\
-    \ * @title RangeFrequencyQueryTree - \u533A\u9593freqTree\n * @docs md/segment-tree/RangeFrequencyQueryTree.md\n\
-    \ */\ntemplate<class T> class RangeFrequencyQueryTree {\n    template<class U>\
-    \ class BinarySearchTreeSet {\n        unsigned int x = 123456789, y = 362436069,\
-    \ z = 521288629, w = 88675123;\n        unsigned int xor_shift() {\n         \
-    \   unsigned int t = (x ^ (x << 11)); x = y; y = z; z = w;\n            return\
-    \ (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n        }\n        struct Node {\n\
-    \        private:\n            void build() {left = right = nullptr;size = 1;}\n\
-    \        public:\n            Node *left, *right;\n            U value;\n    \
-    \        int size;\n            Node() {build();}\n            Node(U v) : value(v)\
-    \ {build();}\n            friend ostream &operator<<(ostream &os, const Node*\
-    \ node) {return os << \"{\" << node->value << \", \" << node->range_value << \"\
-    , \" << node->size << \"}\";}\n        };\n        Node* root;\n        inline\
-    \ int size(Node *node) const {return node==nullptr ? 0 : node->size;}\n      \
-    \  inline Node* update(Node *node) {\n            node->size = size(node->left)\
+    \ * @title RangeFrequencyQueryTree - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528\
+    Tree\n * @docs md/segment-tree/RangeFrequencyQueryTree.md\n */\ntemplate<class\
+    \ T> class RangeFrequencyQueryTree {\n    template<class U> class BinarySearchTreeSet\
+    \ {\n        unsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\
+    \        unsigned int xor_shift() {\n            unsigned int t = (x ^ (x << 11));\
+    \ x = y; y = z; z = w;\n            return (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\
+    \        }\n        struct Node {\n        private:\n            void build()\
+    \ {left = right = nullptr;size = 1;}\n        public:\n            Node *left,\
+    \ *right;\n            U value;\n            int size;\n            Node() {build();}\n\
+    \            Node(U v) : value(v) {build();}\n            friend ostream &operator<<(ostream\
+    \ &os, const Node* node) {return os << \"{\" << node->value << \", \" << node->range_value\
+    \ << \", \" << node->size << \"}\";}\n        };\n        Node* root;\n      \
+    \  inline int size(Node *node) const {return node==nullptr ? 0 : node->size;}\n\
+    \        inline Node* update(Node *node) {\n            node->size = size(node->left)\
     \ + size(node->right) + 1;\n            return node;\n        }\n        inline\
     \ Node* merge_impl(Node *left, Node *right) {\n            if (left==nullptr)\
     \  return right;\n            if (right==nullptr) return left;\n            if\
@@ -93,20 +94,20 @@ data:
     \ - range_freq_upper_impl(l,r,lower);}\n    //[l,r) range freq of val\n    int\
     \ range_freq(const int l, const int r, const T val) const {return range_freq_impl(l,r,val);}\n\
     };\n"
-  code: "/*\n * @title RangeFrequencyQueryTree - \u533A\u9593freqTree\n * @docs md/segment-tree/RangeFrequencyQueryTree.md\n\
-    \ */\ntemplate<class T> class RangeFrequencyQueryTree {\n    template<class U>\
-    \ class BinarySearchTreeSet {\n        unsigned int x = 123456789, y = 362436069,\
-    \ z = 521288629, w = 88675123;\n        unsigned int xor_shift() {\n         \
-    \   unsigned int t = (x ^ (x << 11)); x = y; y = z; z = w;\n            return\
-    \ (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n        }\n        struct Node {\n\
-    \        private:\n            void build() {left = right = nullptr;size = 1;}\n\
-    \        public:\n            Node *left, *right;\n            U value;\n    \
-    \        int size;\n            Node() {build();}\n            Node(U v) : value(v)\
-    \ {build();}\n            friend ostream &operator<<(ostream &os, const Node*\
-    \ node) {return os << \"{\" << node->value << \", \" << node->range_value << \"\
-    , \" << node->size << \"}\";}\n        };\n        Node* root;\n        inline\
-    \ int size(Node *node) const {return node==nullptr ? 0 : node->size;}\n      \
-    \  inline Node* update(Node *node) {\n            node->size = size(node->left)\
+  code: "/*\n * @title RangeFrequencyQueryTree - \u533A\u9593freq\u30AF\u30A8\u30EA\
+    \u7528Tree\n * @docs md/segment-tree/RangeFrequencyQueryTree.md\n */\ntemplate<class\
+    \ T> class RangeFrequencyQueryTree {\n    template<class U> class BinarySearchTreeSet\
+    \ {\n        unsigned int x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n\
+    \        unsigned int xor_shift() {\n            unsigned int t = (x ^ (x << 11));\
+    \ x = y; y = z; z = w;\n            return (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n\
+    \        }\n        struct Node {\n        private:\n            void build()\
+    \ {left = right = nullptr;size = 1;}\n        public:\n            Node *left,\
+    \ *right;\n            U value;\n            int size;\n            Node() {build();}\n\
+    \            Node(U v) : value(v) {build();}\n            friend ostream &operator<<(ostream\
+    \ &os, const Node* node) {return os << \"{\" << node->value << \", \" << node->range_value\
+    \ << \", \" << node->size << \"}\";}\n        };\n        Node* root;\n      \
+    \  inline int size(Node *node) const {return node==nullptr ? 0 : node->size;}\n\
+    \        inline Node* update(Node *node) {\n            node->size = size(node->left)\
     \ + size(node->right) + 1;\n            return node;\n        }\n        inline\
     \ Node* merge_impl(Node *left, Node *right) {\n            if (left==nullptr)\
     \  return right;\n            if (right==nullptr) return left;\n            if\
@@ -176,7 +177,7 @@ data:
   isVerificationFile: false
   path: lib/10-segment-tree/RangeFrequencyQueryTree.cpp
   requiredBy: []
-  timestamp: '2023-06-13 07:23:52+09:00'
+  timestamp: '2023-06-13 08:51:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
@@ -185,7 +186,7 @@ layout: document
 redirect_from:
 - /library/lib/10-segment-tree/RangeFrequencyQueryTree.cpp
 - /library/lib/10-segment-tree/RangeFrequencyQueryTree.cpp.html
-title: "RangeFrequencyQueryTree - \u533A\u9593freqTree"
+title: "RangeFrequencyQueryTree - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528Tree"
 ---
 ### RangeFrequencyQueryTree
 - 区間の中の値の頻度クエリを答えるセグ木

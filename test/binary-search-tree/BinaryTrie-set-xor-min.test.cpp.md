@@ -22,9 +22,9 @@ data:
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <stack>\nusing namespace std;\n#line\
     \ 1 \"lib/12-binary-search-tree/BinaryTrie.cpp\"\n/*\n * @title BinaryTrie\n *\
-    \ @docs md/data-structure/BinaryTrie.md\n */\ntemplate<class Operator, int bit=60>\
-    \ class BinaryTrie{\n    using TypeNode = typename Operator::TypeNode;\npublic:\n\
-    \    vector<TypeNode> node;\n    vector<vector<int>> ch;\n    BinaryTrie():node(1),ch(1,vector<int>(2,-1)){}\n\
+    \ @docs md/12-binary-search-tree/BinaryTrie.md\n */\ntemplate<class Operator,\
+    \ int bit=60> class BinaryTrie{\n    using TypeNode = typename Operator::TypeNode;\n\
+    public:\n    vector<TypeNode> node;\n    vector<vector<int>> ch;\n    BinaryTrie():node(1),ch(1,vector<int>(2,-1)){}\n\
     \    void operate(long long idx, const TypeNode var) {\n        int curr=0;\n\
     \        stack<int> st;\n        for(int i=bit-1; 0 <= i; --i) {\n           \
     \ st.push(curr);\n            int f=(idx>>i)&1;\n            if(ch[curr][f]==-1)\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: true
   path: test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp
   requiredBy: []
-  timestamp: '2023-06-08 02:51:47+09:00'
+  timestamp: '2023-06-14 01:56:03+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp

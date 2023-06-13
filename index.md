@@ -33,7 +33,10 @@ data:
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/RangeFrequencyQueryTree.cpp
-      title: "RangeFrequencyQueryTree - \u533A\u9593freqTree"
+      title: "RangeFrequencyQueryTree - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528Tree"
+    - icon: ':warning:'
+      path: lib/10-segment-tree/RangeSetQueryTree.cpp
+      title: "RangeSetQueryTree - \u533A\u9593set\u30AF\u30A8\u30EA\u7528Tree"
     - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/SegmentTree.cpp
       title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
@@ -73,6 +76,9 @@ data:
       path: lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp
       title: "RandomizedBinarySearchTree - \u30E9\u30F3\u30C0\u30E0\u5E73\u8861\u4E8C\
         \u5206\u63A2\u7D22\u6728set"
+    - icon: ':warning:'
+      path: lib/12-binary-search-tree/SimpleBinaryTrie.cpp
+      title: BinaryTrie
     - icon: ':heavy_check_mark:'
       path: lib/12-binary-search-tree/WordSizeTreeSet.cpp
       title: "WordSizeTreeSet - 64\u5206\u6728"

@@ -6,7 +6,7 @@ data:
     title: FastIO
   - icon: ':heavy_check_mark:'
     path: lib/10-segment-tree/RangeFrequencyQueryTree.cpp
-    title: "RangeFrequencyQueryTree - \u533A\u9593freqTree"
+    title: "RangeFrequencyQueryTree - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528Tree"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -48,7 +48,7 @@ data:
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
     #line 1 \"lib/10-segment-tree/RangeFrequencyQueryTree.cpp\"\n/*\n * @title RangeFrequencyQueryTree\
-    \ - \u533A\u9593freqTree\n * @docs md/segment-tree/RangeFrequencyQueryTree.md\n\
+    \ - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528Tree\n * @docs md/segment-tree/RangeFrequencyQueryTree.md\n\
     \ */\ntemplate<class T> class RangeFrequencyQueryTree {\n    template<class U>\
     \ class BinarySearchTreeSet {\n        unsigned int x = 123456789, y = 362436069,\
     \ z = 521288629, w = 88675123;\n        unsigned int xor_shift() {\n         \
@@ -146,7 +146,7 @@ data:
   isVerificationFile: true
   path: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
   requiredBy: []
-  timestamp: '2023-06-13 07:23:52+09:00'
+  timestamp: '2023-06-13 08:51:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
