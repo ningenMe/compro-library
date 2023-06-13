@@ -27,6 +27,9 @@ data:
       path: lib/10-segment-tree/DynamicSegmentTree.cpp
       title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
         \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
+    - icon: ':x:'
+      path: lib/10-segment-tree/IntegerRangeFrequencyQueryTree.cpp
+      title: "IntegerRangeFrequencyQueryTree - integer\u5C02\u7528\u533A\u9593freq"
     - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/LazySegmentTree.cpp
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
@@ -682,6 +685,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
       title: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+    - icon: ':x:'
+      path: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
+      title: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
       title: test/segment-tree/LazySegmentTree-rmqraq.test.cpp

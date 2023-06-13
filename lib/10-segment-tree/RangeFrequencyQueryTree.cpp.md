@@ -191,7 +191,7 @@ title: "RangeFrequencyQueryTree - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528Tree"
 ### RangeFrequencyQueryTree
 - 区間の中の値の頻度クエリを答えるセグ木
 - 更新も対応できるはず (verifyできてない)
-- セグメント木に、二分探索木を載せている log2個で定数倍重め。
+- セグメント木に、二分探索木を載せている log2個で定数倍かなり重め。いらないライブラリ
 - 値の更新がないならwavelet matrixを使うのが良い。
 
 

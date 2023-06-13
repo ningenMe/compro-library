@@ -81,6 +81,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/queue/SwagQueue-composite.test.cpp
     title: test/queue/SwagQueue-composite.test.cpp
+  - icon: ':x:'
+    path: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
+    title: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
     title: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
@@ -189,6 +192,7 @@ data:
   - test/queue/RadixHeap-64bit.test.cpp
   - test/queue/DoubleEndedPriorityQuere.test.cpp
   - test/queue/SwagDeque-queue-composite.test.cpp
+  - test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
   - test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - test/binary-search-tree/WordSizeTreeSet.test.cpp
