@@ -1,6 +1,6 @@
 /*
  * @title BinaryTrie
- * @docs md/data-structure/BinaryTrie.md
+ * @docs md/12-binary-search-tree/BinaryTrie.md
  */
 template<class Operator, int bit=60> class BinaryTrie{
     using TypeNode = typename Operator::TypeNode;
