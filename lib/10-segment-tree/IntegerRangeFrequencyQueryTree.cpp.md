@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
-    title: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     _deprecated_at_docs: md/segment-tree/IntegerRangeFrequencyQueryTree.md
     document_title: "IntegerRangeFrequencyQueryTree - integer\u5C02\u7528\u533A\u9593\
@@ -206,9 +203,8 @@ data:
   path: lib/10-segment-tree/IntegerRangeFrequencyQueryTree.cpp
   requiredBy: []
   timestamp: '2023-06-14 05:14:08+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: lib/10-segment-tree/IntegerRangeFrequencyQueryTree.cpp
 layout: document
 redirect_from:

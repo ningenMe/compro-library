@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
+    title: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
     title: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
   _isVerificationFailed: false
@@ -180,6 +183,7 @@ data:
   timestamp: '2023-06-13 08:51:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
   - test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
 documentation_of: lib/10-segment-tree/RangeFrequencyQueryTree.cpp
 layout: document

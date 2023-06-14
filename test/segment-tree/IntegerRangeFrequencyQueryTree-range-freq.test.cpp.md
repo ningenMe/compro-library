@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: lib/00-util/FastIO.cpp
     title: FastIO
-  - icon: ':x:'
-    path: lib/10-segment-tree/IntegerRangeFrequencyQueryTree.cpp
-    title: "IntegerRangeFrequencyQueryTree - integer\u5C02\u7528\u533A\u9593freq"
+  - icon: ':heavy_check_mark:'
+    path: lib/10-segment-tree/RangeFrequencyQueryTree.cpp
+    title: "RangeFrequencyQueryTree - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528Tree"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_frequency
@@ -47,122 +47,107 @@ data:
     \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
-    #line 1 \"lib/10-segment-tree/IntegerRangeFrequencyQueryTree.cpp\"\n/*\n * @title\
-    \ IntegerRangeFrequencyQueryTree - integer\u5C02\u7528\u533A\u9593freq\n * @docs\
-    \ md/segment-tree/IntegerRangeFrequencyQueryTree.md\n */\ntemplate<unsigned int\
-    \ bit_length=20> class IntegerRangeFrequencyQueryTree {\n    using u64 = unsigned\
-    \ long long;\n    class SimpleBinaryTrie {\n        struct Node {\n          \
-    \  Node *left, *right;\n            u64 size;\n            Node(): size(0) {left=right=nullptr;}\n\
-    \        };\n        Node* root;\n        size_t size(Node* node) const {return\
-    \ (node==nullptr ? 0 : node->size);}\n        bool empty(Node* node) const {return\
-    \ size(node) == 0;}\n        void print(Node* node,u64 i, u64 val) {\n       \
-    \     if(i == bit_length) {\n                cout << \"{\" << val << \":\" <<\
-    \ size(node) << \":\" << size(node->left) << \":\" << size(node->right) << \"\
-    } \";\n                return;\n            }\n            if(node->left != nullptr)\
-    \ {\n                print(node->left, i+1, val);\n            }\n           \
-    \ if(node->right != nullptr) {\n                print(node->right, i+1, (val |\
-    \ (1UL<<(bit_length-1-i))) );\n            }\n        }\n    public:\n       \
-    \ SimpleBinaryTrie(): root(new Node()) {}\n        void insert(const u64 val)\
-    \ {\n            Node* curr = root; stack<Node*> st;\n            for(u64 i=0;\
-    \ i < bit_length; ++i) {\n                u64 j = ((val>>(bit_length-1-i)) & 1UL);\n\
-    \                st.push(curr);\n                if(j) {\n                   \
-    \ if(curr->right != nullptr) { curr = curr->right;}\n                    else\
-    \ {\n                        Node* next = new Node();\n                      \
-    \  curr->right = next;\n                        curr = next;\n               \
-    \     }\n                }\n                else {\n                    if(curr->left\
-    \ != nullptr) curr = curr->left;\n                    else {\n               \
-    \         Node* next = new Node();\n                        curr->left = next;\n\
-    \                        curr = next;\n                    }\n               \
-    \ }\n            }\n            curr->size += 1;\n            while(st.size())\
-    \ {\n                auto node=st.top(); st.pop();\n                node->size\
-    \ = size(node->left) + size(node->right);\n            }\n        }\n        void\
-    \ erase(const u64 val) {\n            Node* curr = root; stack<Node*> st;\n  \
-    \          for(u64 i=0; i < bit_length; ++i) {\n                u64 j = ((val>>(bit_length-1-i))\
-    \ & 1UL);\n                st.push(curr);\n                if(j) {\n         \
-    \           if(curr->right != nullptr) curr = curr->right;\n                 \
-    \   else return;\n                }\n                else {\n                \
-    \    if(curr->left != nullptr) curr = curr->left;\n                    else return;\n\
-    \                }\n            }\n            if(empty(curr)) return;\n     \
-    \       curr->size -= 1;\n            while(st.size()) {\n                auto\
-    \ node=st.top(); st.pop();\n                node->size = size(node->left) + size(node->right);\n\
-    \            }\n        }\n        size_t size() const {return size(root);}\n\
-    \        bool empty() const {return empty(root);}\n        u64 kth_smallest(u64\
-    \ k) const {\n            Node* curr = root; u64 val=0;\n            for(u64 i=0;\
-    \ i < bit_length; ++i) {\n                u64 j = 1UL << (bit_length-1-i);\n \
-    \               u64 sz_l = size(curr->left);\n                if(k<sz_l) curr\
-    \ = curr->left;\n                else {\n                    val |= j;\n     \
-    \               k -= sz_l;\n                    curr = curr->right;\n        \
-    \        }\n            }\n            return val;\n        }\n        size_t\
-    \ lower_bound(const u64 val) const {\n            Node* curr = root;\n       \
-    \     u64 k=0;\n            for(u64 i=0; i < bit_length; ++i) {\n            \
-    \    u64 j = ((val>>(bit_length-1-i)) & 1UL);\n                if(j) {\n     \
-    \               k+=size(curr->left);\n                    if(curr->right != nullptr)\
-    \ curr = curr->right;\n                    else break;\n                }\n  \
-    \              else {\n                    if(curr->left != nullptr) curr = curr->left;\n\
-    \                    else break;\n                }\n            }\n         \
-    \   return k;\n        }\n        size_t count(const u64 val) const {\n      \
-    \      Node* curr = root;\n            for(u64 i=0; i < bit_length; ++i) {\n \
-    \               u64 j = ((val>>(bit_length-1-i)) & 1);\n                if(j)\
-    \ {\n                    if(curr->right != nullptr) curr = curr->right;\n    \
-    \                else return 0;\n                }\n                else {\n \
-    \                   if(curr->left != nullptr) curr = curr->left;\n           \
-    \         else return 0;\n                }\n            }\n            return\
-    \ size(curr);\n        }\n        void print() {\n            cout << \"{\"; print(root,0,0);\
-    \ cout << \"}\" << endl;\n        }\n    };\n    size_t length;\n    size_t num;\n\
-    \    vector<SimpleBinaryTrie> node;\n    void insert_impl(size_t idx, const u64\
-    \ val) {\n        if(idx < 0 || length <= idx) return;\n        idx += length;\n\
-    \        node[idx].insert(val);\n        while(idx >>= 1) node[idx].insert(val);\n\
-    \    }\n    void erase_impl(size_t idx) {\n        if(idx < 0 || length <= idx)\
-    \ return;\n        idx += length;\n        if(node[idx].empty()) return;\n   \
-    \     u64 val = node[idx].kth_smallest(0);\n        node[idx].erase(val);\n  \
-    \      while(idx >>= 1) node[idx].erase(val);\n    }\n    int range_freq_upper_impl(int\
-    \ l, int r, const u64 upper) const {\n        if (l < 0 || length <= l || r <\
-    \ 0 || length < r) return 0;\n        int ret=0;\n        for(l += length, r +=\
-    \ length; l < r; l >>=1, r >>=1) {\n            if(l&1) ret += node[l++].lower_bound(upper);\n\
-    \            if(r&1) ret += node[--r].lower_bound(upper);\n        }\n       \
-    \ return ret;\n    }\n    int range_freq_impl(int l, int r, const u64 val) const\
-    \ {\n        if (l < 0 || length <= l || r < 0 || length < r) return 0;\n    \
-    \    int ret=0;\n        for(l += length, r += length; l < r; l >>=1, r >>=1)\
-    \ {\n            if(l&1) ret += node[l++].count(val);\n            if(r&1) ret\
-    \ += node[--r].count(val);\n        }\n        return ret;\n    }\npublic:\n \
-    \   IntegerRangeFrequencyQueryTree(const u64 num) {\n        for (length = 1;\
-    \ length <= num; length *= 2);\n        node.resize(2 * length);\n    }\n    IntegerRangeFrequencyQueryTree(const\
-    \ vector<u64> & vec) {\n        for (length = 1; length <= vec.size(); length\
-    \ *= 2);\n        node.resize(2 * length);\n        for (int i=0; i < vec.size();\
-    \ ++i) {\n            update(i, vec[i]);\n        }\n    }\n    //idx\u756A\u76EE\
-    \u306E\u8981\u7D20\u3092update\n    void update(const size_t idx, const u64 val)\
-    \ { erase_impl(idx); insert_impl(idx, val);}\n    //idx\u756A\u76EE\u306E\u8981\
-    \u7D20\u3092erase\n    void erase(const size_t idx) { erase_impl(idx); }\n   \
-    \ //[l,r) range freq of val (val < upper)\n    int range_freq_upper(const int\
-    \ l, const int r, const u64 upper) const {return range_freq_upper_impl(l,r,upper);}\n\
+    #line 1 \"lib/10-segment-tree/RangeFrequencyQueryTree.cpp\"\n/*\n * @title RangeFrequencyQueryTree\
+    \ - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528Tree\n * @docs md/segment-tree/RangeFrequencyQueryTree.md\n\
+    \ */\ntemplate<class T> class RangeFrequencyQueryTree {\n    template<class U>\
+    \ class BinarySearchTreeSet {\n        unsigned int x = 123456789, y = 362436069,\
+    \ z = 521288629, w = 88675123;\n        unsigned int xor_shift() {\n         \
+    \   unsigned int t = (x ^ (x << 11)); x = y; y = z; z = w;\n            return\
+    \ (w = (w ^ (w >> 19)) ^ (t ^ (t >> 8)));\n        }\n        struct Node {\n\
+    \        private:\n            void build() {left = right = nullptr;size = 1;}\n\
+    \        public:\n            Node *left, *right;\n            U value;\n    \
+    \        int size;\n            Node() {build();}\n            Node(U v) : value(v)\
+    \ {build();}\n            friend ostream &operator<<(ostream &os, const Node*\
+    \ node) {return os << \"{\" << node->value << \", \" << node->range_value << \"\
+    , \" << node->size << \"}\";}\n        };\n        Node* root;\n        inline\
+    \ int size(Node *node) const {return node==nullptr ? 0 : node->size;}\n      \
+    \  inline Node* update(Node *node) {\n            node->size = size(node->left)\
+    \ + size(node->right) + 1;\n            return node;\n        }\n        inline\
+    \ Node* merge_impl(Node *left, Node *right) {\n            if (left==nullptr)\
+    \  return right;\n            if (right==nullptr) return left;\n            if\
+    \ (xor_shift() % (left->size + right->size) < left->size) {\n                left->right\
+    \ = merge_impl(left->right, right);\n                return update(left);\n  \
+    \          }\n            else {\n                right->left = merge_impl(left,\
+    \ right->left);\n                return update(right);\n            }\n      \
+    \  }\n        inline pair<Node*, Node*> split_impl(Node* node, int k) {\n    \
+    \        if (node==nullptr) return make_pair(nullptr, nullptr);\n            if\
+    \ (k <= size(node->left)) {\n                pair<Node*, Node*> sub = split_impl(node->left,\
+    \ k);\n                node->left = sub.second;\n                return make_pair(sub.first,\
+    \ update(node));\n            }\n            else {\n                pair<Node*,\
+    \ Node*> sub = split_impl(node->right, k - 1 - size(node->left));\n          \
+    \      node->right = sub.first;\n                return make_pair(update(node),\
+    \ sub.second);\n            }\n        }\n        inline int lower_bound(Node\
+    \ *node, U value) const {\n            if (node==nullptr) return 0;\n        \
+    \    if (value <= node->value) return lower_bound(node->left, value);\n      \
+    \      else return size(node->left) + lower_bound(node->right, value) + 1;\n \
+    \       }\n        inline int upper_bound(Node *node, U value) const {\n     \
+    \       if (node==nullptr) return 0;\n            if (value < node->value) return\
+    \ upper_bound(node->left, value);\n            else return size(node->left) +\
+    \ upper_bound(node->right, value) + 1;\n        }\n        inline void insert_impl(const\
+    \ U value) {\n            pair<Node*, Node*> sub = split_impl(this->root, lower_bound(this->root,value));\n\
+    \            this->root = this->merge_impl(this->merge_impl(sub.first, new Node(value)),\
+    \ sub.second);\n        }\n        inline void erase_impl(const U value) {\n \
+    \           int k1 = lower_bound(value), k2 = upper_bound(value);\n          \
+    \  if(k1==k2) return;\n            auto sub = split_impl(this->root,k1);\n   \
+    \         this->root = merge_impl(sub.first, split_impl(sub.second, 1).second);\n\
+    \        }\n    public:\n        BinarySearchTreeSet() : root(nullptr) {}\n  \
+    \      inline int size() {return size(this->root);}\n        inline int empty(void)\
+    \ {return bool(size()==0);}\n        inline Node* merge(Node *left, Node *right)\
+    \ {return merge_impl(left,right);}\n        inline pair<Node*, Node*> split(int\
+    \ k) {return split_impl(this->root,k);}\n        inline void insert(const U value)\
+    \ {insert_impl(value);}\n        inline void erase(const U value) {erase_impl(value);}\n\
+    \        inline int lower_bound(U value) const {return lower_bound(this->root,value);}\n\
+    \        inline int upper_bound(U value) const {return upper_bound(this->root,value);}\n\
+    \        inline int count(U value) const {return upper_bound(value) - lower_bound(value);}\n\
+    \    };\n    size_t length;\n    vector<BinarySearchTreeSet<T>> node;\n    void\
+    \ insert_impl(size_t idx, const T var) {\n        if(idx < 0 || length <= idx)\
+    \ return;\n        idx += length;\n        node[idx].insert(var);\n        while(idx\
+    \ >>= 1) node[idx].insert(var);\n    }\n    void erase_impl(size_t idx, const\
+    \ T var) {\n        if(idx < 0 || length <= idx) return;\n        idx += length;\n\
+    \        node[idx].erase(var);\n        while(idx >>= 1) node[idx].erase(var);\n\
+    \    }\n    int range_freq_upper_impl(int l, int r, const T upper) const {\n \
+    \       if (l < 0 || length <= l || r < 0 || length < r) return 0;\n        int\
+    \ ret=0;\n        for(l += length, r += length; l < r; l >>=1, r >>=1) {\n   \
+    \         if(l&1) ret += node[l++].lower_bound(upper);\n            if(r&1) ret\
+    \ += node[--r].lower_bound(upper);\n        }\n        return ret;\n    }\n  \
+    \  int range_freq_impl(int l, int r, const T val) const {\n        if (l < 0 ||\
+    \ length <= l || r < 0 || length < r) return 0;\n        int ret=0;\n        for(l\
+    \ += length, r += length; l < r; l >>=1, r >>=1) {\n            if(l&1) ret +=\
+    \ node[l++].count(val);\n            if(r&1) ret += node[--r].count(val);\n  \
+    \      }\n        return ret;\n    }\npublic:\n    RangeFrequencyQueryTree(const\
+    \ vector<T> & vec) {\n        for (length = 1; length <= vec.size(); length *=\
+    \ 2);\n        node.resize(2 * length, BinarySearchTreeSet<T>());\n        for\
+    \ (int i=0; i < vec.size(); ++i) {\n            insert_impl(i, vec[i]);\n    \
+    \    }\n    }\n    //idx\u756A\u76EE\u306E\u8981\u7D20\u3092update\n    void update(const\
+    \ size_t idx, const T var) { erase_impl(idx, var); insert_impl(idx, var);}\n \
+    \   //[l,r) range freq of val (val < upper)\n    int range_freq_upper(const int\
+    \ l, const int r, const T upper) const {return range_freq_upper_impl(l,r,upper);}\n\
     \    //[l,r) range freq of val (lower <= val < upper)\n    int range_freq_lower_upper(const\
-    \ int l, const int r, const u64 lower, const u64 upper) const { return range_freq_upper_impl(l,r,upper)\
+    \ int l, const int r, const T lower, const T upper) const {return range_freq_upper_impl(l,r,upper)\
     \ - range_freq_upper_impl(l,r,lower);}\n    //[l,r) range freq of val\n    int\
-    \ range_freq(const int l, const int r, const u64 val) const {return range_freq_impl(l,r,val);}\n\
-    \    void print() { for(int i= length; i < 2*length; ++i) node[i].print();}\n\
+    \ range_freq(const int l, const int r, const T val) const {return range_freq_impl(l,r,val);}\n\
     };\n#line 12 \"test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp\"\
     \n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; read(N);\
-    \ read(Q);\n    vector<unsigned long long> A(N);\n    for(int i=0;i<N;++i) read(A[i]);\n\
-    \    IntegerRangeFrequencyQueryTree<30> rfqt(A);\n    while(Q--) {\n        int\
+    \ read(Q);\n    vector<long long> A(N);\n    for(int i=0;i<N;++i) read(A[i]);\n\
+    \    RangeFrequencyQueryTree<long long> rfqt(A);\n    while(Q--) {\n        int\
     \ l,r,k; read(l); read(r); read(k);\n\t\tcout << rfqt.range_freq(l,r,k) << \"\\\
     n\";\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
     #include <numeric>\nusing namespace std;\n\n#include \"../../lib/00-util/FastIO.cpp\"\
-    \n#include \"../../lib/10-segment-tree/IntegerRangeFrequencyQueryTree.cpp\"\n\n\
-    int main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; read(N);\
-    \ read(Q);\n    vector<unsigned long long> A(N);\n    for(int i=0;i<N;++i) read(A[i]);\n\
-    \    IntegerRangeFrequencyQueryTree<30> rfqt(A);\n    while(Q--) {\n        int\
-    \ l,r,k; read(l); read(r); read(k);\n\t\tcout << rfqt.range_freq(l,r,k) << \"\\\
-    n\";\n    }\n    return 0;\n}"
+    \n#include \"../../lib/10-segment-tree/RangeFrequencyQueryTree.cpp\"\n\nint main()\
+    \ {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; read(N); read(Q);\n\
+    \    vector<long long> A(N);\n    for(int i=0;i<N;++i) read(A[i]);\n    RangeFrequencyQueryTree<long\
+    \ long> rfqt(A);\n    while(Q--) {\n        int l,r,k; read(l); read(r); read(k);\n\
+    \t\tcout << rfqt.range_freq(l,r,k) << \"\\n\";\n    }\n    return 0;\n}"
   dependsOn:
   - lib/00-util/FastIO.cpp
-  - lib/10-segment-tree/IntegerRangeFrequencyQueryTree.cpp
+  - lib/10-segment-tree/RangeFrequencyQueryTree.cpp
   isVerificationFile: true
   path: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
   requiredBy: []
-  timestamp: '2023-06-14 05:14:08+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-06-15 03:54:28+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
 layout: document
