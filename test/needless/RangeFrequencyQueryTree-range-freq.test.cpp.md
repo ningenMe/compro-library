@@ -5,7 +5,7 @@ data:
     path: lib/00-util/FastIO.cpp
     title: FastIO
   - icon: ':heavy_check_mark:'
-    path: lib/10-segment-tree/RangeFrequencyQueryTree.cpp
+    path: lib/98-needless/RangeFrequencyQueryTree.cpp
     title: "RangeFrequencyQueryTree - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528Tree"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -17,7 +17,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/static_range_frequency
     links:
     - https://judge.yosupo.jp/problem/static_range_frequency
-  bundledCode: "#line 1 \"test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp\"\
+  bundledCode: "#line 1 \"test/needless/RangeFrequencyQueryTree-range-freq.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\n\
     \n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
     #include <numeric>\nusing namespace std;\n\n#line 1 \"lib/00-util/FastIO.cpp\"\
@@ -47,8 +47,8 @@ data:
     \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
-    #line 1 \"lib/10-segment-tree/RangeFrequencyQueryTree.cpp\"\n/*\n * @title RangeFrequencyQueryTree\
-    \ - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528Tree\n * @docs md/segment-tree/RangeFrequencyQueryTree.md\n\
+    #line 1 \"lib/98-needless/RangeFrequencyQueryTree.cpp\"\n/*\n * @title RangeFrequencyQueryTree\
+    \ - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528Tree\n * @docs md/needless/RangeFrequencyQueryTree.md\n\
     \ */\ntemplate<class T> class RangeFrequencyQueryTree {\n    template<class U>\
     \ class BinarySearchTreeSet {\n        unsigned int x = 123456789, y = 362436069,\
     \ z = 521288629, w = 88675123;\n        unsigned int xor_shift() {\n         \
@@ -126,8 +126,8 @@ data:
     \ int l, const int r, const T lower, const T upper) const {return range_freq_upper_impl(l,r,upper)\
     \ - range_freq_upper_impl(l,r,lower);}\n    //[l,r) range freq of val\n    int\
     \ range_freq(const int l, const int r, const T val) const {return range_freq_impl(l,r,val);}\n\
-    };\n#line 12 \"test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp\"\
-    \n\nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; read(N);\
+    };\n#line 12 \"test/needless/RangeFrequencyQueryTree-range-freq.test.cpp\"\n\n\
+    int main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; read(N);\
     \ read(Q);\n    vector<long long> A(N);\n    for(int i=0;i<N;++i) read(A[i]);\n\
     \    RangeFrequencyQueryTree<long long> rfqt(A);\n    while(Q--) {\n        int\
     \ l,r,k; read(l); read(r); read(k);\n\t\tcout << rfqt.range_freq(l,r,k) << \"\\\
@@ -135,24 +135,24 @@ data:
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
     #include <numeric>\nusing namespace std;\n\n#include \"../../lib/00-util/FastIO.cpp\"\
-    \n#include \"../../lib/10-segment-tree/RangeFrequencyQueryTree.cpp\"\n\nint main()\
+    \n#include \"../../lib/98-needless/RangeFrequencyQueryTree.cpp\"\n\nint main()\
     \ {\n    cin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; read(N); read(Q);\n\
     \    vector<long long> A(N);\n    for(int i=0;i<N;++i) read(A[i]);\n    RangeFrequencyQueryTree<long\
     \ long> rfqt(A);\n    while(Q--) {\n        int l,r,k; read(l); read(r); read(k);\n\
     \t\tcout << rfqt.range_freq(l,r,k) << \"\\n\";\n    }\n    return 0;\n}"
   dependsOn:
   - lib/00-util/FastIO.cpp
-  - lib/10-segment-tree/RangeFrequencyQueryTree.cpp
+  - lib/98-needless/RangeFrequencyQueryTree.cpp
   isVerificationFile: true
-  path: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
+  path: test/needless/RangeFrequencyQueryTree-range-freq.test.cpp
   requiredBy: []
-  timestamp: '2023-06-13 08:51:11+09:00'
+  timestamp: '2023-06-15 04:20:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
+documentation_of: test/needless/RangeFrequencyQueryTree-range-freq.test.cpp
 layout: document
 redirect_from:
-- /verify/test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
-- /verify/test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp.html
-title: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
+- /verify/test/needless/RangeFrequencyQueryTree-range-freq.test.cpp
+- /verify/test/needless/RangeFrequencyQueryTree-range-freq.test.cpp.html
+title: test/needless/RangeFrequencyQueryTree-range-freq.test.cpp
 ---

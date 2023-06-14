@@ -28,22 +28,16 @@ data:
       title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
         \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
-      path: lib/10-segment-tree/IntegerRangeFrequencyQuerySqrtTree.cpp
-      title: "IntegerRangeFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\u9593\
-        freq"
-    - icon: ':warning:'
-      path: lib/10-segment-tree/IntegerRangeFrequencyQueryTree.cpp
-      title: "IntegerRangeFrequencyQueryTree - integer\u5C02\u7528\u533A\u9593freq"
-    - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/LazySegmentTree.cpp
       title: "LazySegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u9045\u5EF6\u8A55\
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
-      path: lib/10-segment-tree/RangeFrequencyQueryTree.cpp
-      title: "RangeFrequencyQueryTree - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528Tree"
+      path: lib/10-segment-tree/RangeIntegerFrequencyQuerySqrtTree.cpp
+      title: "RangeIntegerFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\u9593\
+        freq"
     - icon: ':warning:'
-      path: lib/10-segment-tree/RangeSetQueryTree.cpp
-      title: "RangeSetQueryTree - \u533A\u9593set\u30AF\u30A8\u30EA\u7528Tree"
+      path: lib/10-segment-tree/RangeSetQuerySqrtTree.cpp
+      title: lib/10-segment-tree/RangeSetQuerySqrtTree.cpp
     - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/SegmentTree.cpp
       title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
@@ -256,6 +250,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/70-geometory/RectangleWeight.cpp
       title: "RectangleWeight - \u91CD\u307F\u3064\u304D\u77E9\u5F62"
+  - name: lib/98-needless
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/98-needless/IntegerRangeFrequencyQueryTree.cpp
+      title: "IntegerRangeFrequencyQueryTree - integer\u5C02\u7528\u533A\u9593freq"
+    - icon: ':heavy_check_mark:'
+      path: lib/98-needless/RangeFrequencyQueryTree.cpp
+      title: "RangeFrequencyQueryTree - \u533A\u9593freq\u30AF\u30A8\u30EA\u7528Tree"
   - name: lib/99-operator/abel
     pages:
     - icon: ':warning:'
@@ -621,6 +623,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Prime-rho.test.cpp
       title: test/math/Prime-rho.test.cpp
+  - name: test/needless
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/needless/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
+      title: test/needless/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/needless/RangeFrequencyQueryTree-range-freq.test.cpp
+      title: test/needless/RangeFrequencyQueryTree-range-freq.test.cpp
   - name: test/optimize
     pages:
     - icon: ':heavy_check_mark:'
@@ -689,12 +699,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
       title: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/segment-tree/IntegerRangeFrequencyQuerySqrtTree-range-freq.test.cpp
       title: test/segment-tree/IntegerRangeFrequencyQuerySqrtTree-range-freq.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
-      title: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
       title: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
@@ -702,8 +709,8 @@ data:
       path: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
       title: test/segment-tree/LazySegmentTree-rsqruq.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
-      title: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
+      path: test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
+      title: test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
       title: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp

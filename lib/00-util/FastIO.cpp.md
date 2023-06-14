@@ -46,6 +46,12 @@ data:
     path: test/math/Prime-rho.test.cpp
     title: test/math/Prime-rho.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/needless/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
+    title: test/needless/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/needless/RangeFrequencyQueryTree-range-freq.test.cpp
+    title: test/needless/RangeFrequencyQueryTree-range-freq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/polynomial/FormalPowerSeries-exp.test.cpp
     title: test/polynomial/FormalPowerSeries-exp.test.cpp
   - icon: ':heavy_check_mark:'
@@ -82,14 +88,8 @@ data:
     path: test/queue/SwagQueue-composite.test.cpp
     title: test/queue/SwagQueue-composite.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/segment-tree/IntegerRangeFrequencyQuerySqrtTree-range-freq.test.cpp
-    title: test/segment-tree/IntegerRangeFrequencyQuerySqrtTree-range-freq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
-    title: test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
-    title: test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
+    path: test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
+    title: test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/static-range-query/DisjointSparseTable.test.cpp
     title: test/static-range-query/DisjointSparseTable.test.cpp
@@ -195,9 +195,7 @@ data:
   - test/queue/RadixHeap-64bit.test.cpp
   - test/queue/DoubleEndedPriorityQuere.test.cpp
   - test/queue/SwagDeque-queue-composite.test.cpp
-  - test/segment-tree/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
-  - test/segment-tree/IntegerRangeFrequencyQuerySqrtTree-range-freq.test.cpp
-  - test/segment-tree/RangeFrequencyQueryTree-range-freq.test.cpp
+  - test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
   - test/binary-search-tree/WordSizeTreeSet.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
@@ -211,6 +209,8 @@ data:
   - test/polynomial/FormalPowerSeries-log.test.cpp
   - test/polynomial/FormalPowerSeries-exp.test.cpp
   - test/polynomial/FormalPowerSeries-pow.test.cpp
+  - test/needless/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
+  - test/needless/RangeFrequencyQueryTree-range-freq.test.cpp
   - test/util/FastIO-int64.test.cpp
   - test/util/FastIO-int128.test.cpp
   - test/graph/UnionFindTree.test.cpp

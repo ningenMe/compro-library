@@ -4,20 +4,20 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/segment-tree/IntegerRangeFrequencyQuerySqrtTree-range-freq.test.cpp
-    title: test/segment-tree/IntegerRangeFrequencyQuerySqrtTree-range-freq.test.cpp
+    path: test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
+    title: test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/segment-tree/IntegerRangeFrequencyQuerySqrtTree.md
-    document_title: "IntegerRangeFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\
+    _deprecated_at_docs: md/segment-tree/RangeIntegerFrequencyQuerySqrtTree.md
+    document_title: "RangeIntegerFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\
       \u9593freq"
     links: []
-  bundledCode: "#line 1 \"lib/10-segment-tree/IntegerRangeFrequencyQuerySqrtTree.cpp\"\
-    \n/*\n * @title IntegerRangeFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\
-    \u9593freq\n * @docs md/segment-tree/IntegerRangeFrequencyQuerySqrtTree.md\n */\n\
-    template<unsigned int bit_length=20> class IntegerRangeFrequencyQuerySqrtTree\
+  bundledCode: "#line 1 \"lib/10-segment-tree/RangeIntegerFrequencyQuerySqrtTree.cpp\"\
+    \n/*\n * @title RangeIntegerFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\
+    \u9593freq\n * @docs md/segment-tree/RangeIntegerFrequencyQuerySqrtTree.md\n */\n\
+    template<unsigned int bit_length=20> class RangeIntegerFrequencyQuerySqrtTree\
     \ {\n    using u64 = unsigned long long;\n    class SimpleBinaryTrie {\n     \
     \   struct Node {\n            Node *left, *right;\n            u64 size;\n  \
     \          Node(): size(0) {left=right=nullptr;}\n        };\n        Node* root;\n\
@@ -99,7 +99,7 @@ data:
     \ i=l; i < min(bl1,r); ++i) ret += (node1[i] == val);\n        for(int i=bl0;\
     \ i < br0; ++i) ret += node0[i].count(val);\n        for(int i=max(br1,l); i <\
     \ r; ++i) ret += (node1[i] == val);\n\n        return ret;\n    }\npublic:\n \
-    \   IntegerRangeFrequencyQuerySqrtTree(const u64 length): length(length), node1(length,inf)\
+    \   RangeIntegerFrequencyQuerySqrtTree(const u64 length): length(length), node1(length,inf)\
     \ {\n        bucket_size = 5*sqrt(length);\n        if(!bucket_size) bucket_size=1;\n\
     \        node0.resize(length / bucket_size + 1);\n    }\n    //idx\u756A\u76EE\
     \u306E\u8981\u7D20\u3092update\n    void update(const size_t idx, const u64 val)\
@@ -115,9 +115,9 @@ data:
     \        for(int i= 0; i < length / bucket_size + 1; ++i) node0[i].print();\n\
     \        cout << endl;\n        for(int i= 0; i < length; ++i) cout << node1[i]\
     \ << \" \\n\"[i==length-1];\n        cout << endl;\n    }\n};\n"
-  code: "/*\n * @title IntegerRangeFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\
-    \u9593freq\n * @docs md/segment-tree/IntegerRangeFrequencyQuerySqrtTree.md\n */\n\
-    template<unsigned int bit_length=20> class IntegerRangeFrequencyQuerySqrtTree\
+  code: "/*\n * @title RangeIntegerFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\
+    \u9593freq\n * @docs md/segment-tree/RangeIntegerFrequencyQuerySqrtTree.md\n */\n\
+    template<unsigned int bit_length=20> class RangeIntegerFrequencyQuerySqrtTree\
     \ {\n    using u64 = unsigned long long;\n    class SimpleBinaryTrie {\n     \
     \   struct Node {\n            Node *left, *right;\n            u64 size;\n  \
     \          Node(): size(0) {left=right=nullptr;}\n        };\n        Node* root;\n\
@@ -199,7 +199,7 @@ data:
     \ i=l; i < min(bl1,r); ++i) ret += (node1[i] == val);\n        for(int i=bl0;\
     \ i < br0; ++i) ret += node0[i].count(val);\n        for(int i=max(br1,l); i <\
     \ r; ++i) ret += (node1[i] == val);\n\n        return ret;\n    }\npublic:\n \
-    \   IntegerRangeFrequencyQuerySqrtTree(const u64 length): length(length), node1(length,inf)\
+    \   RangeIntegerFrequencyQuerySqrtTree(const u64 length): length(length), node1(length,inf)\
     \ {\n        bucket_size = 5*sqrt(length);\n        if(!bucket_size) bucket_size=1;\n\
     \        node0.resize(length / bucket_size + 1);\n    }\n    //idx\u756A\u76EE\
     \u306E\u8981\u7D20\u3092update\n    void update(const size_t idx, const u64 val)\
@@ -217,16 +217,38 @@ data:
     \ << \" \\n\"[i==length-1];\n        cout << endl;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/10-segment-tree/IntegerRangeFrequencyQuerySqrtTree.cpp
+  path: lib/10-segment-tree/RangeIntegerFrequencyQuerySqrtTree.cpp
   requiredBy: []
-  timestamp: '2023-06-15 03:54:28+09:00'
+  timestamp: '2023-06-15 04:19:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment-tree/IntegerRangeFrequencyQuerySqrtTree-range-freq.test.cpp
-documentation_of: lib/10-segment-tree/IntegerRangeFrequencyQuerySqrtTree.cpp
+  - test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
+documentation_of: lib/10-segment-tree/RangeIntegerFrequencyQuerySqrtTree.cpp
 layout: document
 redirect_from:
-- /library/lib/10-segment-tree/IntegerRangeFrequencyQuerySqrtTree.cpp
-- /library/lib/10-segment-tree/IntegerRangeFrequencyQuerySqrtTree.cpp.html
-title: "IntegerRangeFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\u9593freq"
+- /library/lib/10-segment-tree/RangeIntegerFrequencyQuerySqrtTree.cpp
+- /library/lib/10-segment-tree/RangeIntegerFrequencyQuerySqrtTree.cpp.html
+title: "RangeIntegerFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\u9593freq"
 ---
+### RangeIntegerFrequencyQuerySqrtTree
+- 区間の中の値の頻度クエリを答える平方分割木
+- unsigned integer専用
+- 更新も対応できるはず (verifyできてない)
+- 平方分割で、BinaryTrieを載せている sqrt(N)*log(N) の探索時間がかかる
+- 値の更新がないならwavelet matrixを使うのが良い。
+
+
+### メソッド
+- RangeIntegerFrequencyQuerySqrtTree(const length) 
+  - コンストラクタ。列のサイズを渡す
+- void update(const size_t idx, const T var)
+  - 値を更新
+- int range_freq_upper(const int l, const int r, const T upper) 
+  - [l,r) の範囲の中で、upperより小さい要素の数を返す
+- int range_freq_lower_upper(const int l, const int r, const T lower, const T upper)
+  - [l,r) の範囲の中で、lower以上、upperより小さい要素の数を返す [lower, upper)
+- int range_freq(const int l, const int r, const T val)
+  - [l,r) の範囲の中で、valに等しい要素の数を返す
+
+- 補足
+  - [提出](https://atcoder.jp/contests/abc202/submissions/42263827)

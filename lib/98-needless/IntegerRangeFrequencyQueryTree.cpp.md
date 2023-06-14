@@ -2,18 +2,21 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/needless/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
+    title: test/needless/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/segment-tree/IntegerRangeFrequencyQueryTree.md
+    _deprecated_at_docs: md/needless/IntegerRangeFrequencyQueryTree.md
     document_title: "IntegerRangeFrequencyQueryTree - integer\u5C02\u7528\u533A\u9593\
       freq"
     links: []
-  bundledCode: "#line 1 \"lib/10-segment-tree/IntegerRangeFrequencyQueryTree.cpp\"\
-    \n/*\n * @title IntegerRangeFrequencyQueryTree - integer\u5C02\u7528\u533A\u9593\
-    freq\n * @docs md/segment-tree/IntegerRangeFrequencyQueryTree.md\n */\ntemplate<unsigned\
+  bundledCode: "#line 1 \"lib/98-needless/IntegerRangeFrequencyQueryTree.cpp\"\n/*\n\
+    \ * @title IntegerRangeFrequencyQueryTree - integer\u5C02\u7528\u533A\u9593freq\n\
+    \ * @docs md/needless/IntegerRangeFrequencyQueryTree.md\n */\ntemplate<unsigned\
     \ int bit_length=20> class IntegerRangeFrequencyQueryTree {\n    using u64 = unsigned\
     \ long long;\n    class SimpleBinaryTrie {\n        struct Node {\n          \
     \  Node *left, *right;\n            u64 size;\n            Node(): size(0) {left=right=nullptr;}\n\
@@ -106,7 +109,7 @@ data:
     \    void print() { for(int i= length; i < 2*length; ++i) node[i].print();}\n\
     };\n"
   code: "/*\n * @title IntegerRangeFrequencyQueryTree - integer\u5C02\u7528\u533A\u9593\
-    freq\n * @docs md/segment-tree/IntegerRangeFrequencyQueryTree.md\n */\ntemplate<unsigned\
+    freq\n * @docs md/needless/IntegerRangeFrequencyQueryTree.md\n */\ntemplate<unsigned\
     \ int bit_length=20> class IntegerRangeFrequencyQueryTree {\n    using u64 = unsigned\
     \ long long;\n    class SimpleBinaryTrie {\n        struct Node {\n          \
     \  Node *left, *right;\n            u64 size;\n            Node(): size(0) {left=right=nullptr;}\n\
@@ -200,16 +203,17 @@ data:
     };"
   dependsOn: []
   isVerificationFile: false
-  path: lib/10-segment-tree/IntegerRangeFrequencyQueryTree.cpp
+  path: lib/98-needless/IntegerRangeFrequencyQueryTree.cpp
   requiredBy: []
-  timestamp: '2023-06-14 05:14:08+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: lib/10-segment-tree/IntegerRangeFrequencyQueryTree.cpp
+  timestamp: '2023-06-15 04:20:46+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/needless/IntegerRangeFrequencyQueryTree-range-freq.test.cpp
+documentation_of: lib/98-needless/IntegerRangeFrequencyQueryTree.cpp
 layout: document
 redirect_from:
-- /library/lib/10-segment-tree/IntegerRangeFrequencyQueryTree.cpp
-- /library/lib/10-segment-tree/IntegerRangeFrequencyQueryTree.cpp.html
+- /library/lib/98-needless/IntegerRangeFrequencyQueryTree.cpp
+- /library/lib/98-needless/IntegerRangeFrequencyQueryTree.cpp.html
 title: "IntegerRangeFrequencyQueryTree - integer\u5C02\u7528\u533A\u9593freq"
 ---
 ### IntegerRangeFrequencyQueryTree
