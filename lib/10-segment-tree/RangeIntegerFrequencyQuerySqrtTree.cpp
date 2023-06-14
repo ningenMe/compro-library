@@ -1,8 +1,8 @@
 /*
- * @title IntegerRangeFrequencyQuerySqrtTree - integer専用区間freq
- * @docs md/segment-tree/IntegerRangeFrequencyQuerySqrtTree.md
+ * @title RangeIntegerFrequencyQuerySqrtTree - integer専用区間freq
+ * @docs md/segment-tree/RangeIntegerFrequencyQuerySqrtTree.md
  */
-template<unsigned int bit_length=20> class IntegerRangeFrequencyQuerySqrtTree {
+template<unsigned int bit_length=20> class RangeIntegerFrequencyQuerySqrtTree {
     using u64 = unsigned long long;
     class SimpleBinaryTrie {
         struct Node {
@@ -179,7 +179,7 @@ template<unsigned int bit_length=20> class IntegerRangeFrequencyQuerySqrtTree {
         return ret;
     }
 public:
-    IntegerRangeFrequencyQuerySqrtTree(const u64 length): length(length), node1(length,inf) {
+    RangeIntegerFrequencyQuerySqrtTree(const u64 length): length(length), node1(length,inf) {
         bucket_size = 5*sqrt(length);
         if(!bucket_size) bucket_size=1;
         node0.resize(length / bucket_size + 1);

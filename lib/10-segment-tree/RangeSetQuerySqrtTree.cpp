@@ -1,10 +1,6 @@
-/*
- * @title RangeSetQueryTree - 区間setクエリ用Tree
- * @docs md/segment-tree/RangeSetQueryTree.md
- */
-template<class T> class RangeSetQueryTree {
+template<class T, unsigned int bit_length=20> class RangeSetQuerySqrtTree {
     using size_t = unsigned int;
-    RangeFrequencyQueryTree<size_t> tree;
+    RangeIntegerFrequencyQuerySqrtTree<bit_length> tree;
     unordered_map<T,set<size_t>> mp;
     vector<T> ar;
     size_t length;
@@ -14,49 +10,45 @@ template<class T> class RangeSetQueryTree {
     }
     void update_impl(const size_t idx, const T next) {
         T prev = ar[idx];
-        queue<pair<size_t,size_t>> q;
         //更新前の1つ左に影響があるか確認
         {
-            auto itr_l = mp[prev].find(idx);
-            auto itr_r = mp[prev].upper_bound(idx);
-            if(itr_l != mp[prev].begin()) {
-                --itr_l;
-                q.emplace((*itr_l),(*itr_r));
+            auto itr_r = mp[prev].lower_bound(idx);
+            //左が存在するなら影響あり
+            if(itr_r != mp[prev].begin()) {
+                auto itr_l=itr_r;
+                itr_l--;
+                itr_r++;
+                if(itr_r==mp[prev].end()) tree.erase((*itr_l));
+                else tree.update((*itr_l),(*itr_r));
             }
             mp[prev].erase(idx);
         }
+        //更新後の1つ左に影響があるか確認
         {
-            if(mp[next].size()==0) mp[next].insert(length);
-            auto itr_r = mp[next].upper_bound(idx);
-            q.emplace(idx,(*itr_r));
-            //更新後の1つ左に影響があるか確認
-            if(itr_r != mp[next].begin()) {
-                --itr_r;
-                q.emplace((*itr_r),idx);
-            }
             mp[next].insert(idx);
+            auto itr_r = mp[next].upper_bound(idx);
+            if(itr_r==mp[next].end()) tree.erase(idx);
+            else tree.update(idx,(*itr_r));
+
+            //左が存在するなら影響あり
+            auto itr_l = mp[next].lower_bound(idx);
+            if(itr_l != mp[next].begin()) {
+                itr_l--;
+                tree.update((*itr_l),idx);
+            }
         }
         ar[idx] = next;
-        while(q.size()) {
-            auto [l,r]=q.front(); q.pop();
-            tree.update(l,r);
-        }
     }
 public:
-    RangeSetQueryTree(const vector<T> & vec):ar(vec),tree(vec.size()) {
+    RangeSetQuerySqrtTree(const vector<T> & vec):ar(vec),tree(vec.size()) {
         length = vec.size();
         for(size_t i = 0; i<length; ++i) mp[ar[i]].insert(i);
         for(auto& [_,st]: mp) {
-            st.insert(length);
-            int cnt=0;
             size_t l=length,r=length; //このl,rは閉区間 [l,r]
             for(size_t idx: st) {
                 r=idx;
-                if(cnt) {
-                    tree.update(l,r);
-                }
-                l=r;
-                cnt++;
+                if(l<length && r<length) tree.update(l,r);
+                l=r; 
             }
         }
     }
