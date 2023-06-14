@@ -1,5 +1,5 @@
 /*
- * @title RangeIntegerFrequencyQuerySqrtTree - integer専用区間freq
+ * @title RangeIntegerFrequencyQuerySqrtTree - 区間interger頻度クエリ用平方分割木
  * @docs md/segment-tree/RangeIntegerFrequencyQuerySqrtTree.md
  */
 template<unsigned int bit_length=20> class RangeIntegerFrequencyQuerySqrtTree {

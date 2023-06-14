@@ -1,3 +1,7 @@
+/*
+ * @title RangeSetQuerySqrtTree - 区間setクエリ用平方分割木
+ * @docs md/segment-tree/RangeSetQuerySqrtTree.md
+ */
 template<class T, unsigned int bit_length=20> class RangeSetQuerySqrtTree {
     using size_t = unsigned int;
     RangeIntegerFrequencyQuerySqrtTree<bit_length> tree;
