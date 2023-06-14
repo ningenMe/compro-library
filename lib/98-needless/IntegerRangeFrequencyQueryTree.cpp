@@ -1,6 +1,6 @@
 /*
  * @title IntegerRangeFrequencyQueryTree - integer専用区間freq
- * @docs md/segment-tree/IntegerRangeFrequencyQueryTree.md
+ * @docs md/needless/IntegerRangeFrequencyQueryTree.md
  */
 template<unsigned int bit_length=20> class IntegerRangeFrequencyQueryTree {
     using u64 = unsigned long long;

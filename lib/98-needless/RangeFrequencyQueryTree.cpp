@@ -1,6 +1,6 @@
 /*
  * @title RangeFrequencyQueryTree - 区間freqクエリ用Tree
- * @docs md/segment-tree/RangeFrequencyQueryTree.md
+ * @docs md/needless/RangeFrequencyQueryTree.md
  */
 template<class T> class RangeFrequencyQueryTree {
     template<class U> class BinarySearchTreeSet {
