@@ -6,7 +6,8 @@ data:
     title: FastIO
   - icon: ':heavy_check_mark:'
     path: lib/10-segment-tree/RangeIntegerFrequencyQuerySqrtTree.cpp
-    title: "RangeIntegerFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\u9593freq"
+    title: "RangeIntegerFrequencyQuerySqrtTree - \u533A\u9593interger\u983B\u5EA6\u30AF\
+      \u30A8\u30EA\u7528\u5E73\u65B9\u5206\u5272\u6728"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -48,9 +49,9 @@ data:
     \   inline static void write(__int128_t x) {write_integer<__int128_t>(x);}\n \
     \   inline static void write(char x) {putchar(x);}\n};\n#define read(arg) FastIO::read(arg)\n\
     #define write(arg) FastIO::write(arg)\n#line 1 \"lib/10-segment-tree/RangeIntegerFrequencyQuerySqrtTree.cpp\"\
-    \n/*\n * @title RangeIntegerFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\
-    \u9593freq\n * @docs md/segment-tree/RangeIntegerFrequencyQuerySqrtTree.md\n */\n\
-    template<unsigned int bit_length=20> class RangeIntegerFrequencyQuerySqrtTree\
+    \n/*\n * @title RangeIntegerFrequencyQuerySqrtTree - \u533A\u9593interger\u983B\
+    \u5EA6\u30AF\u30A8\u30EA\u7528\u5E73\u65B9\u5206\u5272\u6728\n * @docs md/segment-tree/RangeIntegerFrequencyQuerySqrtTree.md\n\
+    \ */\ntemplate<unsigned int bit_length=20> class RangeIntegerFrequencyQuerySqrtTree\
     \ {\n    using u64 = unsigned long long;\n    class SimpleBinaryTrie {\n     \
     \   struct Node {\n            Node *left, *right;\n            u64 size;\n  \
     \          Node(): size(0) {left=right=nullptr;}\n        };\n        Node* root;\n\
@@ -168,7 +169,7 @@ data:
   isVerificationFile: true
   path: test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
   requiredBy: []
-  timestamp: '2023-06-15 04:19:22+09:00'
+  timestamp: '2023-06-15 04:38:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp

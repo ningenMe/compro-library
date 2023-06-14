@@ -11,13 +11,13 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/segment-tree/RangeIntegerFrequencyQuerySqrtTree.md
-    document_title: "RangeIntegerFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\
-      \u9593freq"
+    document_title: "RangeIntegerFrequencyQuerySqrtTree - \u533A\u9593interger\u983B\
+      \u5EA6\u30AF\u30A8\u30EA\u7528\u5E73\u65B9\u5206\u5272\u6728"
     links: []
   bundledCode: "#line 1 \"lib/10-segment-tree/RangeIntegerFrequencyQuerySqrtTree.cpp\"\
-    \n/*\n * @title RangeIntegerFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\
-    \u9593freq\n * @docs md/segment-tree/RangeIntegerFrequencyQuerySqrtTree.md\n */\n\
-    template<unsigned int bit_length=20> class RangeIntegerFrequencyQuerySqrtTree\
+    \n/*\n * @title RangeIntegerFrequencyQuerySqrtTree - \u533A\u9593interger\u983B\
+    \u5EA6\u30AF\u30A8\u30EA\u7528\u5E73\u65B9\u5206\u5272\u6728\n * @docs md/segment-tree/RangeIntegerFrequencyQuerySqrtTree.md\n\
+    \ */\ntemplate<unsigned int bit_length=20> class RangeIntegerFrequencyQuerySqrtTree\
     \ {\n    using u64 = unsigned long long;\n    class SimpleBinaryTrie {\n     \
     \   struct Node {\n            Node *left, *right;\n            u64 size;\n  \
     \          Node(): size(0) {left=right=nullptr;}\n        };\n        Node* root;\n\
@@ -115,9 +115,9 @@ data:
     \        for(int i= 0; i < length / bucket_size + 1; ++i) node0[i].print();\n\
     \        cout << endl;\n        for(int i= 0; i < length; ++i) cout << node1[i]\
     \ << \" \\n\"[i==length-1];\n        cout << endl;\n    }\n};\n"
-  code: "/*\n * @title RangeIntegerFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\
-    \u9593freq\n * @docs md/segment-tree/RangeIntegerFrequencyQuerySqrtTree.md\n */\n\
-    template<unsigned int bit_length=20> class RangeIntegerFrequencyQuerySqrtTree\
+  code: "/*\n * @title RangeIntegerFrequencyQuerySqrtTree - \u533A\u9593interger\u983B\
+    \u5EA6\u30AF\u30A8\u30EA\u7528\u5E73\u65B9\u5206\u5272\u6728\n * @docs md/segment-tree/RangeIntegerFrequencyQuerySqrtTree.md\n\
+    \ */\ntemplate<unsigned int bit_length=20> class RangeIntegerFrequencyQuerySqrtTree\
     \ {\n    using u64 = unsigned long long;\n    class SimpleBinaryTrie {\n     \
     \   struct Node {\n            Node *left, *right;\n            u64 size;\n  \
     \          Node(): size(0) {left=right=nullptr;}\n        };\n        Node* root;\n\
@@ -219,7 +219,7 @@ data:
   isVerificationFile: false
   path: lib/10-segment-tree/RangeIntegerFrequencyQuerySqrtTree.cpp
   requiredBy: []
-  timestamp: '2023-06-15 04:19:22+09:00'
+  timestamp: '2023-06-15 04:38:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
@@ -228,7 +228,8 @@ layout: document
 redirect_from:
 - /library/lib/10-segment-tree/RangeIntegerFrequencyQuerySqrtTree.cpp
 - /library/lib/10-segment-tree/RangeIntegerFrequencyQuerySqrtTree.cpp.html
-title: "RangeIntegerFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\u9593freq"
+title: "RangeIntegerFrequencyQuerySqrtTree - \u533A\u9593interger\u983B\u5EA6\u30AF\
+  \u30A8\u30EA\u7528\u5E73\u65B9\u5206\u5272\u6728"
 ---
 ### RangeIntegerFrequencyQuerySqrtTree
 - 区間の中の値の頻度クエリを答える平方分割木

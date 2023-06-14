@@ -7,11 +7,16 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
+    _deprecated_at_docs: md/segment-tree/RangeSetQuerySqrtTree.md
+    document_title: "RangeSetQuerySqrtTree - \u533A\u9593set\u30AF\u30A8\u30EA\u7528\
+      \u5E73\u65B9\u5206\u5272\u6728"
     links: []
-  bundledCode: "#line 1 \"lib/10-segment-tree/RangeSetQuerySqrtTree.cpp\"\ntemplate<class\
-    \ T, unsigned int bit_length=20> class RangeSetQuerySqrtTree {\n    using size_t\
-    \ = unsigned int;\n    RangeIntegerFrequencyQuerySqrtTree<bit_length> tree;\n\
-    \    unordered_map<T,set<size_t>> mp;\n    vector<T> ar;\n    size_t length;\n\
+  bundledCode: "#line 1 \"lib/10-segment-tree/RangeSetQuerySqrtTree.cpp\"\n/*\n *\
+    \ @title RangeSetQuerySqrtTree - \u533A\u9593set\u30AF\u30A8\u30EA\u7528\u5E73\
+    \u65B9\u5206\u5272\u6728\n * @docs md/segment-tree/RangeSetQuerySqrtTree.md\n\
+    \ */\ntemplate<class T, unsigned int bit_length=20> class RangeSetQuerySqrtTree\
+    \ {\n    using size_t = unsigned int;\n    RangeIntegerFrequencyQuerySqrtTree<bit_length>\
+    \ tree;\n    unordered_map<T,set<size_t>> mp;\n    vector<T> ar;\n    size_t length;\n\
     \    size_t range_set_size_impl(const int l, const int r) const {\n        if\
     \ (l < 0 || length <= l || r < 0 || length < r) return 0;\n        return (r-l)\
     \ - tree.range_freq_upper(l,r,r);\n    }\n    void update_impl(const size_t idx,\
@@ -39,7 +44,9 @@ data:
     update\n    void update(const size_t idx, const T val) { update_impl(idx,val);\
     \ }\n    //[l,r) range set size \n    size_t range_set_size(const int l, const\
     \ int r) const {return range_set_size_impl(l,r);}\n};\n"
-  code: "template<class T, unsigned int bit_length=20> class RangeSetQuerySqrtTree\
+  code: "/*\n * @title RangeSetQuerySqrtTree - \u533A\u9593set\u30AF\u30A8\u30EA\u7528\
+    \u5E73\u65B9\u5206\u5272\u6728\n * @docs md/segment-tree/RangeSetQuerySqrtTree.md\n\
+    \ */\ntemplate<class T, unsigned int bit_length=20> class RangeSetQuerySqrtTree\
     \ {\n    using size_t = unsigned int;\n    RangeIntegerFrequencyQuerySqrtTree<bit_length>\
     \ tree;\n    unordered_map<T,set<size_t>> mp;\n    vector<T> ar;\n    size_t length;\n\
     \    size_t range_set_size_impl(const int l, const int r) const {\n        if\
@@ -73,7 +80,7 @@ data:
   isVerificationFile: false
   path: lib/10-segment-tree/RangeSetQuerySqrtTree.cpp
   requiredBy: []
-  timestamp: '2023-06-15 04:19:22+09:00'
+  timestamp: '2023-06-15 04:38:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/10-segment-tree/RangeSetQuerySqrtTree.cpp
@@ -81,5 +88,13 @@ layout: document
 redirect_from:
 - /library/lib/10-segment-tree/RangeSetQuerySqrtTree.cpp
 - /library/lib/10-segment-tree/RangeSetQuerySqrtTree.cpp.html
-title: lib/10-segment-tree/RangeSetQuerySqrtTree.cpp
+title: "RangeSetQuerySqrtTree - \u533A\u9593set\u30AF\u30A8\u30EA\u7528\u5E73\u65B9\
+  \u5206\u5272\u6728"
 ---
+### RangeSetQuerySqrtTree
+- 区間内のユニークのサイズを求めるクラス
+- 更新もできるはずだがかなり遅い
+- 更新がないならstaticの方使うのを推奨
+- [提出](https://atcoder.jp/contests/abc157/submissions/42263932)
+- [提出](https://atcoder.jp/contests/abc210/submissions/42263979)
+- [提出(TLE)](https://atcoder.jp/contests/abc174/submissions/42263957)

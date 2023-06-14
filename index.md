@@ -33,11 +33,12 @@ data:
         \u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
     - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/RangeIntegerFrequencyQuerySqrtTree.cpp
-      title: "RangeIntegerFrequencyQuerySqrtTree - integer\u5C02\u7528\u533A\u9593\
-        freq"
+      title: "RangeIntegerFrequencyQuerySqrtTree - \u533A\u9593interger\u983B\u5EA6\
+        \u30AF\u30A8\u30EA\u7528\u5E73\u65B9\u5206\u5272\u6728"
     - icon: ':warning:'
       path: lib/10-segment-tree/RangeSetQuerySqrtTree.cpp
-      title: lib/10-segment-tree/RangeSetQuerySqrtTree.cpp
+      title: "RangeSetQuerySqrtTree - \u533A\u9593set\u30AF\u30A8\u30EA\u7528\u5E73\
+        \u65B9\u5206\u5272\u6728"
     - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/SegmentTree.cpp
       title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
