@@ -40,4 +40,4 @@ public:
     friend istream &operator>>(istream &is, RuntimeModInt &a) {long long t;is >> t;a = RuntimeModInt<mod>(t);return (is);}
 };
 long long runtime_mod;
-// using modint = RuntimeModInt<mod>;
+// using modint = RuntimeModInt<runtime_mod>;
