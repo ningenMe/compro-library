@@ -152,24 +152,32 @@ data:
     \t\t// \telse v.push_back(p);\n\t\t// }\n        auto v = factor(n, true);\n \
     \       vector<pair<u64,u64>> vp;\n        u64 prev = 0;\n        for(u64& p:v)\
     \ {\n            if(p == prev) vp.back().second++;\n            else vp.emplace_back(p,1);\n\
-    \            prev=p;\n        }\n        return move(vp);\n    }\npublic:\n  \
-    \  inline static constexpr bool is_prime(const u64 n) { return miller_rabin(n);\
-    \ }\n\t//{\u7D20\u56E0\u6570,\u500B\u6570}\u306Evector\u304C\u8FD4\u5374\u3055\
-    \u308C\u308B\n    inline static vector<pair<u64,u64>> factorization(const u64\
-    \ n) {return factorization_impl(n);}\n\t//\u7D20\u56E0\u6570\u304C\u611A\u76F4\
-    \u306B\u6607\u9806\u3067\u8FD4\u5374\u3055\u308C\u308B\n    inline static vector<u64>\
-    \ factor(const u64 n) {return move(factor(n, true));}\n    inline static constexpr\
-    \ long long gcd(long long n, long long m) { return (n>m ? pre(n,m) : pre(m,n));}\n\
-    \    inline static constexpr long long naive_gcd(long long a, long long b) { return\
-    \ (b ? naive_gcd(b, a % b):a);}\n    inline static constexpr long long lcm(long\
-    \ long a, long long b) {return (a*b ? (a / gcd(a, b)*b): 0);}\n    inline static\
-    \ constexpr long long ext_gcd(long long a, long long b, long long &x, long long\
-    \ &y) {\n        if (b == 0) return x = 1, y = 0, a; long long d = ext_gcd(b,\
-    \ a%b, y, x); return y -= a / b * x, d;\n    }\n};\n#line 1 \"lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp\"\
-    \n/*\n * @title MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0\
-    ]\n * @docs md/operator/monoid/MonoidRangeGcdPointUpdate.md\n */\ntemplate<class\
-    \ T> struct MonoidRangeGcdPointUpdate {\n\tusing TypeNode = T;\n\tinline static\
-    \ constexpr TypeNode unit_node = 0;\n\tinline static constexpr TypeNode func_fold(TypeNode\
+    \            prev=p;\n        }\n        return move(vp);\n    }\n    inline static\
+    \ vector<u64> divisor_impl(const u64 n) {\n        auto fac = factorization_impl(n);\n\
+    \        vector<u64> res = {1};\n        for(auto& [p,m]: fac) {\n           \
+    \ u32 sz = res.size();\n            for(u32 i=0;i<sz;++i) {\n                u64\
+    \ d = 1;\n                for(u32 j=0;j<m;++j) {\n                    d *= p;\n\
+    \                    res.push_back(res[i]*d);\n                }\n           \
+    \ }\n        }\n        return res;\n    }\npublic:\n    inline static constexpr\
+    \ bool is_prime(const u64 n) { return miller_rabin(n); }\n\t//{\u7D20\u56E0\u6570\
+    ,\u500B\u6570}\u306Evector\u304C\u8FD4\u5374\u3055\u308C\u308B\n    inline static\
+    \ vector<pair<u64,u64>> factorization(const u64 n) {return factorization_impl(n);}\n\
+    \t//\u7D20\u56E0\u6570\u304C\u611A\u76F4\u306B\u6607\u9806\u3067\u8FD4\u5374\u3055\
+    \u308C\u308B\n    inline static vector<u64> factor(const u64 n) {return move(factor(n,\
+    \ true));}\n    //\u7D04\u6570\u304C\u6607\u9806\u3067\u5217\u6319\u3055\u308C\
+    \u308B\n    inline static vector<u64> divisor(const u64 n) {return divisor_impl(n);\
+    \ }\n    inline static constexpr long long gcd(long long n, long long m) { return\
+    \ (n>m ? pre(n,m) : pre(m,n));}\n    inline static constexpr long long naive_gcd(long\
+    \ long a, long long b) { return (b ? naive_gcd(b, a % b):a);}\n    inline static\
+    \ constexpr long long lcm(long long a, long long b) {return (a*b ? (a / gcd(a,\
+    \ b)*b): 0);}\n    inline static constexpr long long ext_gcd(long long a, long\
+    \ long b, long long &x, long long &y) {\n        if (b == 0) return x = 1, y =\
+    \ 0, a; long long d = ext_gcd(b, a%b, y, x); return y -= a / b * x, d;\n    }\n\
+    };\n#line 1 \"lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp\"\n/*\n * @title\
+    \ MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0]\n * @docs\
+    \ md/operator/monoid/MonoidRangeGcdPointUpdate.md\n */\ntemplate<class T> struct\
+    \ MonoidRangeGcdPointUpdate {\n\tusing TypeNode = T;\n\tinline static constexpr\
+    \ TypeNode unit_node = 0;\n\tinline static constexpr TypeNode func_fold(TypeNode\
     \ l,TypeNode r){return Prime::gcd(l,r);}\n\tinline static constexpr TypeNode func_operate(TypeNode\
     \ l,TypeNode r){return r;}\n\tinline static constexpr bool func_check(TypeNode\
     \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n#line 13 \"test/segment-tree/SegmentTree-suffix-binary-search.test.cpp\"\
@@ -194,7 +202,7 @@ data:
   isVerificationFile: true
   path: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   requiredBy: []
-  timestamp: '2023-06-04 05:24:52+09:00'
+  timestamp: '2023-06-16 04:54:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp

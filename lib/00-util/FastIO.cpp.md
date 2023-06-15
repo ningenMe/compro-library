@@ -40,6 +40,9 @@ data:
     path: test/math/MontmortNumber.test.cpp
     title: test/math/MontmortNumber.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/Prime-divisor-1.test.cpp
+    title: test/math/Prime-divisor-1.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/Prime-miller-rabin-1.test.cpp
     title: test/math/Prime-miller-rabin-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -189,6 +192,7 @@ data:
   - test/static-range-query/WaveletMatrix-range-freq.test.cpp
   - test/static-range-query/DisjointSparseTable.test.cpp
   - test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
+  - test/math/Prime-divisor-1.test.cpp
   - test/math/Prime-miller-rabin-2.test.cpp
   - test/math/Prime-miller-rabin-1.test.cpp
   - test/math/Prime-rho.test.cpp

@@ -620,6 +620,9 @@ data:
       path: test/math/MontmortNumber.test.cpp
       title: test/math/MontmortNumber.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/math/Prime-divisor-1.test.cpp
+      title: test/math/Prime-divisor-1.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/math/Prime-miller-rabin-1.test.cpp
       title: test/math/Prime-miller-rabin-1.test.cpp
     - icon: ':heavy_check_mark:'
