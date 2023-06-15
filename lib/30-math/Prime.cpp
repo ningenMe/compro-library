@@ -167,12 +167,29 @@ class Prime{
         }
         return move(vp);
     }
+    inline static vector<u64> divisor_impl(const u64 n) {
+        auto fac = factorization_impl(n);
+        vector<u64> res = {1};
+        for(auto& [p,m]: fac) {
+            u32 sz = res.size();
+            for(u32 i=0;i<sz;++i) {
+                u64 d = 1;
+                for(u32 j=0;j<m;++j) {
+                    d *= p;
+                    res.push_back(res[i]*d);
+                }
+            }
+        }
+        return res;
+    }
 public:
     inline static constexpr bool is_prime(const u64 n) { return miller_rabin(n); }
 	//{素因数,個数}のvectorが返却される
     inline static vector<pair<u64,u64>> factorization(const u64 n) {return factorization_impl(n);}
 	//素因数が愚直に昇順で返却される
     inline static vector<u64> factor(const u64 n) {return move(factor(n, true));}
+    //約数が昇順で列挙される
+    inline static vector<u64> divisor(const u64 n) {return divisor_impl(n); }
     inline static constexpr long long gcd(long long n, long long m) { return (n>m ? pre(n,m) : pre(m,n));}
     inline static constexpr long long naive_gcd(long long a, long long b) { return (b ? naive_gcd(b, a % b):a);}
     inline static constexpr long long lcm(long long a, long long b) {return (a*b ? (a / gcd(a, b)*b): 0);}
