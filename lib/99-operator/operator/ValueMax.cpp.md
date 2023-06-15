@@ -29,8 +29,8 @@ data:
   timestamp: '2023-05-30 04:39:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/convex-hull-trick/ConvexHullTrick-max.test.cpp
   - test/convex-hull-trick/ConvexHullTrickMonotone-max.test.cpp
+  - test/convex-hull-trick/ConvexHullTrick-max.test.cpp
 documentation_of: lib/99-operator/operator/ValueMax.cpp
 layout: document
 redirect_from:

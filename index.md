@@ -166,6 +166,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/30-math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
+    - icon: ':heavy_check_mark:'
+      path: lib/30-math/MontmortNumber.cpp
+      title: "MontmortNumber - \u5B8C\u5168\u9806\u5217,\u64B9\u4E71\u9806\u5217\u306E\
+        \u500B\u6570"
     - icon: ':warning:'
       path: lib/30-math/Polynomial.cpp
       title: "Polynomial - \u591A\u9805\u5F0F\u88DC\u9593"
@@ -364,9 +368,6 @@ data:
     - icon: ':warning:'
       path: non-verified/Mo.cpp
       title: non-verified/Mo.cpp
-    - icon: ':warning:'
-      path: non-verified/MontmortNumber.cpp
-      title: non-verified/MontmortNumber.cpp
     - icon: ':warning:'
       path: non-verified/Parser.cpp
       title: non-verified/Parser.cpp
@@ -615,6 +616,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Matrix-pow.test.cpp
       title: test/math/Matrix-pow.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/math/MontmortNumber.test.cpp
+      title: test/math/MontmortNumber.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/math/Prime-miller-rabin-1.test.cpp
       title: test/math/Prime-miller-rabin-1.test.cpp

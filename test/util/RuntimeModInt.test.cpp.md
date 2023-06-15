@@ -58,7 +58,7 @@ data:
     \ >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream &operator<<(ostream\
     \ &os, const RuntimeModInt &p) {return os << p.x;}\n    friend istream &operator>>(istream\
     \ &is, RuntimeModInt &a) {long long t;is >> t;a = RuntimeModInt<mod>(t);return\
-    \ (is);}\n};\nlong long runtime_mod;\n// using modint = RuntimeModInt<mod>;\n\
+    \ (is);}\n};\nlong long runtime_mod;\n// using modint = RuntimeModInt<runtime_mod>;\n\
     #line 9 \"test/util/RuntimeModInt.test.cpp\"\n\nusing modint = RuntimeModInt<runtime_mod>;\n\
     \nint main() {\n\tlong long A,B,C;\n\tcin >> A >> B >> C;\n\truntime_mod = C;\n\
     \tmodint ans = 0;\n\tarray<modint,100001> cnt;\n\tfor(long long i = 1; i <= C;\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: true
   path: test/util/RuntimeModInt.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:54:08+09:00'
+  timestamp: '2023-06-16 04:11:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/util/RuntimeModInt.test.cpp

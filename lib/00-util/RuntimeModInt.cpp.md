@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/math/MontmortNumber.test.cpp
+    title: test/math/MontmortNumber.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/util/RuntimeModInt.test.cpp
     title: test/util/RuntimeModInt.test.cpp
   _isVerificationFailed: false
@@ -55,7 +58,7 @@ data:
     \ &operator<<(ostream &os, const RuntimeModInt &p) {return os << p.x;}\n    friend\
     \ istream &operator>>(istream &is, RuntimeModInt &a) {long long t;is >> t;a =\
     \ RuntimeModInt<mod>(t);return (is);}\n};\nlong long runtime_mod;\n// using modint\
-    \ = RuntimeModInt<mod>;\n"
+    \ = RuntimeModInt<runtime_mod>;\n"
   code: "/*\n * @title RuntimeModInt - \u5B9F\u884C\u6642ModInt\n * @docs md/util/RuntimeModInt.md\n\
     \ */\ntemplate<long long& mod> class RuntimeModInt {\npublic:\n    long long x;\n\
     \    constexpr RuntimeModInt():x(0) {}\n    constexpr RuntimeModInt(long long\
@@ -97,14 +100,15 @@ data:
     \ >>= 1) if(n & 1) ret *= mul;return ret;}\n    friend ostream &operator<<(ostream\
     \ &os, const RuntimeModInt &p) {return os << p.x;}\n    friend istream &operator>>(istream\
     \ &is, RuntimeModInt &a) {long long t;is >> t;a = RuntimeModInt<mod>(t);return\
-    \ (is);}\n};\nlong long runtime_mod;\n// using modint = RuntimeModInt<mod>;"
+    \ (is);}\n};\nlong long runtime_mod;\n// using modint = RuntimeModInt<runtime_mod>;\n"
   dependsOn: []
   isVerificationFile: false
   path: lib/00-util/RuntimeModInt.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:32:15+09:00'
+  timestamp: '2023-06-16 04:11:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/math/MontmortNumber.test.cpp
   - test/util/RuntimeModInt.test.cpp
 documentation_of: lib/00-util/RuntimeModInt.cpp
 layout: document
