@@ -12,7 +12,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/00-util/NBase.cpp
       title: "NBase - N\u9032\u6570"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/00-util/RangeIndex.cpp
       title: "RangeIndex - \u533A\u9593index"
     - icon: ':heavy_check_mark:'
@@ -547,7 +547,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
       title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/StronglyConnectedComponents-1.test.cpp
       title: test/graph/StronglyConnectedComponents-1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -583,7 +583,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/Tree-parent.test.cpp
       title: test/graph/Tree-parent.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/graph/Tree-rerooting.test.cpp
       title: test/graph/Tree-rerooting.test.cpp
     - icon: ':heavy_check_mark:'
@@ -792,7 +792,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/util/NBase.test.cpp
       title: test/util/NBase.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/util/RangeIndex.test.cpp
       title: test/util/RangeIndex.test.cpp
     - icon: ':heavy_check_mark:'
