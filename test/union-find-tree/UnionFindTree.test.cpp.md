@@ -5,8 +5,8 @@ data:
     path: lib/00-util/FastIO.cpp
     title: FastIO
   - icon: ':heavy_check_mark:'
-    path: lib/40-graph/UnionFindTree.cpp
-    title: "UnionFindTree - Union Find \u6728"
+    path: lib/41-union-find-tree/UnionFindTree.cpp
+    title: UnionFindTree - Union Find Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,10 +17,10 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/unionfind
     links:
     - https://judge.yosupo.jp/problem/unionfind
-  bundledCode: "#line 1 \"test/graph/UnionFindTree.test.cpp\"\n#define PROBLEM \"\
-    https://judge.yosupo.jp/problem/unionfind\"\n\n#include <vector>\n#include <iostream>\n\
-    #include <numeric>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\n\
-    /*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
+  bundledCode: "#line 1 \"test/union-find-tree/UnionFindTree.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include <vector>\n#include\
+    \ <iostream>\n#include <numeric>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
+    \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
     \ ';\n    inline static constexpr int ch_l='\\n';\n    inline static void endline_skip(char&\
@@ -46,11 +46,11 @@ data:
     \ &x) {read_integer<__int128_t>(x);}\n    inline static void write(__int128_t\
     \ x) {write_integer<__int128_t>(x);}\n    inline static void write(char x) {putchar(x);}\n\
     };\n#define read(arg) FastIO::read(arg)\n#define write(arg) FastIO::write(arg)\n\
-    #line 1 \"lib/40-graph/UnionFindTree.cpp\"\n/*\n * @title UnionFindTree - Union\
-    \ Find \u6728\n * @docs md/graph/UnionFindTree.md\n */\nclass UnionFindTree {\n\
-    \    vector<int> parent,maxi,mini;\n    inline int root(int n) {\n        return\
-    \ (parent[n]<0?n:parent[n] = root(parent[n]));\n    }\npublic:\n    UnionFindTree(const\
-    \ int N = 1) : parent(N,-1),maxi(N),mini(N){\n        iota(maxi.begin(),maxi.end(),0);\n\
+    #line 1 \"lib/41-union-find-tree/UnionFindTree.cpp\"\n/*\n * @title UnionFindTree\
+    \ - Union Find Tree\n * @docs md/union-find-tree/UnionFindTree.md\n */\nclass\
+    \ UnionFindTree {\n    vector<int> parent,maxi,mini;\n    inline int root(int\
+    \ n) {\n        return (parent[n]<0?n:parent[n] = root(parent[n]));\n    }\npublic:\n\
+    \    UnionFindTree(const int N = 1) : parent(N,-1),maxi(N),mini(N){\n        iota(maxi.begin(),maxi.end(),0);\n\
     \        iota(mini.begin(),mini.end(),0);\n    }\n    inline bool connected(const\
     \ int n, const int m) {\n        return root(n) == root(m);\n    }\n    inline\
     \ void merge(int n,int m) {\n        n = root(n);\n        m = root(m);\n    \
@@ -62,31 +62,31 @@ data:
     \        return (-parent[root(n)]);\n    }\n    inline int operator[](const int\
     \ n) {\n        return root(n);\n    }\n    inline void print() {\n        for(int\
     \ i = 0; i < parent.size(); ++i) cout << root(i) << \" \";\n        cout << endl;\n\
-    \    }\n};\n#line 9 \"test/graph/UnionFindTree.test.cpp\"\n\n\nint main(){\n \
-    \   cin.tie(0)->sync_with_stdio(0);\n    int N,Q; \n    read(N); read(Q);\n  \
-    \  UnionFindTree uf(N);\n    while(Q--){\n        int q,a,b; \n        read(q);read(a);read(b);\n\
+    \    }\n};\n#line 9 \"test/union-find-tree/UnionFindTree.test.cpp\"\n\n\nint main(){\n\
+    \    cin.tie(0)->sync_with_stdio(0);\n    int N,Q; \n    read(N); read(Q);\n \
+    \   UnionFindTree uf(N);\n    while(Q--){\n        int q,a,b; \n        read(q);read(a);read(b);\n\
     \        if(q) cout << uf.connected(a,b) << \"\\n\";\n        else uf.merge(a,b);\n\
     \    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <numeric>\nusing namespace std;\n#include\
-    \ \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/40-graph/UnionFindTree.cpp\"\
+    \ \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/41-union-find-tree/UnionFindTree.cpp\"\
     \n\n\nint main(){\n    cin.tie(0)->sync_with_stdio(0);\n    int N,Q; \n    read(N);\
     \ read(Q);\n    UnionFindTree uf(N);\n    while(Q--){\n        int q,a,b; \n \
     \       read(q);read(a);read(b);\n        if(q) cout << uf.connected(a,b) << \"\
     \\n\";\n        else uf.merge(a,b);\n    }\n}\n"
   dependsOn:
   - lib/00-util/FastIO.cpp
-  - lib/40-graph/UnionFindTree.cpp
+  - lib/41-union-find-tree/UnionFindTree.cpp
   isVerificationFile: true
-  path: test/graph/UnionFindTree.test.cpp
+  path: test/union-find-tree/UnionFindTree.test.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:49:31+09:00'
+  timestamp: '2023-06-17 04:07:32+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/graph/UnionFindTree.test.cpp
+documentation_of: test/union-find-tree/UnionFindTree.test.cpp
 layout: document
 redirect_from:
-- /verify/test/graph/UnionFindTree.test.cpp
-- /verify/test/graph/UnionFindTree.test.cpp.html
-title: test/graph/UnionFindTree.test.cpp
+- /verify/test/union-find-tree/UnionFindTree.test.cpp
+- /verify/test/union-find-tree/UnionFindTree.test.cpp.html
+title: test/union-find-tree/UnionFindTree.test.cpp
 ---

@@ -4,25 +4,25 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/graph/PotentializedUnionFindTree.test.cpp
-    title: test/graph/PotentializedUnionFindTree.test.cpp
+    path: test/union-find-tree/PotentializedUnionFindTree.test.cpp
+    title: test/union-find-tree/PotentializedUnionFindTree.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/graph/PotentializedUnionFindTree.md
+    _deprecated_at_docs: md/union-find-tree/PotentializedUnionFindTree.md
     document_title: "PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\
       \u4ED8\u304DUnionFind\u6728"
     links: []
-  bundledCode: "#line 1 \"lib/40-graph/PotentializedUnionFindTree.cpp\"\n/*\n * @title\
-    \ PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\u4ED8\u304D\
-    UnionFind\u6728\n * @docs md/graph/PotentializedUnionFindTree.md\n */\ntemplate<class\
-    \ T> class PotentializedUnionFindTree {\n    vector<int> parent,rank;\n    vector<T>\
-    \ potential;\n    inline int root(int n) {\n        if (parent[n] == n) {\n  \
-    \          return n;\n        }\n        else {\n            int r = root(parent[n]);\n\
-    \            potential[n] += potential[parent[n]];\n            return parent[n]\
-    \ = r;\n        }\n    }\n    inline T updated_dist(int x) {\n        root(x);\n\
-    \        return potential[x];\n    }\npublic:\n    PotentializedUnionFindTree(int\
+  bundledCode: "#line 1 \"lib/41-union-find-tree/PotentializedUnionFindTree.cpp\"\n\
+    /*\n * @title PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\
+    \u4ED8\u304DUnionFind\u6728\n * @docs md/union-find-tree/PotentializedUnionFindTree.md\n\
+    \ */\ntemplate<class T> class PotentializedUnionFindTree {\n    vector<int> parent,rank;\n\
+    \    vector<T> potential;\n    inline int root(int n) {\n        if (parent[n]\
+    \ == n) {\n            return n;\n        }\n        else {\n            int r\
+    \ = root(parent[n]);\n            potential[n] += potential[parent[n]];\n    \
+    \        return parent[n] = r;\n        }\n    }\n    inline T updated_dist(int\
+    \ x) {\n        root(x);\n        return potential[x];\n    }\npublic:\n    PotentializedUnionFindTree(int\
     \ N = 1, T ini = 0) : parent(N),rank(N,1),potential(N,ini) {\n        iota(parent.begin(),parent.end(),0);\n\
     \    }\n    inline bool connected(int n, int m) {\n        return root(n) == root(m);\n\
     \    }\n    /*\n    * potential[m] = potential[n] + d\u3068\u306A\u308B\u3088\u3046\
@@ -37,7 +37,7 @@ data:
     \   inline void print() {\n        for(int i = 0; i < parent.size(); ++i) cout\
     \ << root(i) << \" \";\n        cout << endl;\n    }\n};\n"
   code: "/*\n * @title PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\
-    \u30EB\u4ED8\u304DUnionFind\u6728\n * @docs md/graph/PotentializedUnionFindTree.md\n\
+    \u30EB\u4ED8\u304DUnionFind\u6728\n * @docs md/union-find-tree/PotentializedUnionFindTree.md\n\
     \ */\ntemplate<class T> class PotentializedUnionFindTree {\n    vector<int> parent,rank;\n\
     \    vector<T> potential;\n    inline int root(int n) {\n        if (parent[n]\
     \ == n) {\n            return n;\n        }\n        else {\n            int r\
@@ -59,17 +59,17 @@ data:
     \ << root(i) << \" \";\n        cout << endl;\n    }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: lib/40-graph/PotentializedUnionFindTree.cpp
+  path: lib/41-union-find-tree/PotentializedUnionFindTree.cpp
   requiredBy: []
-  timestamp: '2023-05-30 04:49:31+09:00'
+  timestamp: '2023-06-17 04:07:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/graph/PotentializedUnionFindTree.test.cpp
-documentation_of: lib/40-graph/PotentializedUnionFindTree.cpp
+  - test/union-find-tree/PotentializedUnionFindTree.test.cpp
+documentation_of: lib/41-union-find-tree/PotentializedUnionFindTree.cpp
 layout: document
 redirect_from:
-- /library/lib/40-graph/PotentializedUnionFindTree.cpp
-- /library/lib/40-graph/PotentializedUnionFindTree.cpp.html
+- /library/lib/41-union-find-tree/PotentializedUnionFindTree.cpp
+- /library/lib/41-union-find-tree/PotentializedUnionFindTree.cpp.html
 title: "PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\u4ED8\u304D\
   UnionFind\u6728"
 ---

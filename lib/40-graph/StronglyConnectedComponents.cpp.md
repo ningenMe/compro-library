@@ -4,9 +4,6 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/graph/StronglyConnectedComponents-1.test.cpp
-    title: test/graph/StronglyConnectedComponents-1.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/StronglyConnectedComponents-2.test.cpp
     title: test/graph/StronglyConnectedComponents-2.test.cpp
   - icon: ':heavy_check_mark:'
@@ -92,7 +89,6 @@ data:
   verifiedWith:
   - test/graph/StronglyConnectedComponents-2.test.cpp
   - test/graph/StronglyConnectedComponents-2sat.test.cpp
-  - test/graph/StronglyConnectedComponents-1.test.cpp
 documentation_of: lib/40-graph/StronglyConnectedComponents.cpp
 layout: document
 redirect_from:

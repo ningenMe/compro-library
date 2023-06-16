@@ -8,13 +8,13 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     _deprecated_at_docs: md/12-binary-search-tree/SimpleBinaryTrie.md
-    document_title: BinaryTrie
+    document_title: SimpleBinaryTrie
     links: []
   bundledCode: "#line 1 \"lib/12-binary-search-tree/SimpleBinaryTrie.cpp\"\n/*\n *\
-    \ @title BinaryTrie\n * @docs md/12-binary-search-tree/SimpleBinaryTrie.md\n */\n\
-    template<size_t bit_length=20> class SimpleBinaryTrie {\n    using u32 = unsigned\
-    \ int;\n    struct Node {\n        Node *left, *right;\n        u32 size;\n  \
-    \      Node(): size(0) {left=right=nullptr;}\n    };\n    Node* root;\n    u32\
+    \ @title SimpleBinaryTrie\n * @docs md/12-binary-search-tree/SimpleBinaryTrie.md\n\
+    \ */\ntemplate<size_t bit_length=20> class SimpleBinaryTrie {\n    using u32 =\
+    \ unsigned int;\n    struct Node {\n        Node *left, *right;\n        u32 size;\n\
+    \        Node(): size(0) {left=right=nullptr;}\n    };\n    Node* root;\n    u32\
     \ size(Node* node) const {return (node==nullptr ? 0 : node->size);}\n    u32 empty(Node*\
     \ node) const {return size(node) == 0;}\npublic:\n    SimpleBinaryTrie(): root(new\
     \ Node) {}\n    void insert(const u32 val) {\n        Node* curr = root;\n   \
@@ -57,7 +57,7 @@ data:
     \         curr = curr->left;\n                }\n                else {\n    \
     \                return k;\n                }\n            }\n        }\n    \
     \    return val;\n    }\n};\n"
-  code: "/*\n * @title BinaryTrie\n * @docs md/12-binary-search-tree/SimpleBinaryTrie.md\n\
+  code: "/*\n * @title SimpleBinaryTrie\n * @docs md/12-binary-search-tree/SimpleBinaryTrie.md\n\
     \ */\ntemplate<size_t bit_length=20> class SimpleBinaryTrie {\n    using u32 =\
     \ unsigned int;\n    struct Node {\n        Node *left, *right;\n        u32 size;\n\
     \        Node(): size(0) {left=right=nullptr;}\n    };\n    Node* root;\n    u32\
@@ -107,7 +107,7 @@ data:
   isVerificationFile: false
   path: lib/12-binary-search-tree/SimpleBinaryTrie.cpp
   requiredBy: []
-  timestamp: '2023-06-14 01:56:03+09:00'
+  timestamp: '2023-06-17 04:07:32+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/12-binary-search-tree/SimpleBinaryTrie.cpp
@@ -115,5 +115,5 @@ layout: document
 redirect_from:
 - /library/lib/12-binary-search-tree/SimpleBinaryTrie.cpp
 - /library/lib/12-binary-search-tree/SimpleBinaryTrie.cpp.html
-title: BinaryTrie
+title: SimpleBinaryTrie
 ---

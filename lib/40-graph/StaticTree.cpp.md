@@ -31,9 +31,6 @@ data:
     path: test/graph/Tree-parent.test.cpp
     title: test/graph/Tree-parent.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/Tree-rerooting.test.cpp
-    title: test/graph/Tree-rerooting.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/graph/Tree-size.test.cpp
     title: test/graph/Tree-size.test.cpp
   _isVerificationFailed: false
@@ -399,7 +396,6 @@ data:
   - test/graph/Tree-hld-vertex-2.test.cpp
   - test/graph/Tree-hld-vertex-3.test.cpp
   - test/graph/Tree-hld-vertex-1.test.cpp
-  - test/graph/Tree-rerooting.test.cpp
   - test/graph/Tree-eulertour.test.cpp
   - test/graph/Tree-diameter.test.cpp
   - test/graph/Tree-lca-idx.test.cpp

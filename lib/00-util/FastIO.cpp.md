@@ -34,9 +34,6 @@ data:
     path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/graph/UnionFindTree.test.cpp
-    title: test/graph/UnionFindTree.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/math/MontmortNumber.test.cpp
     title: test/math/MontmortNumber.test.cpp
   - icon: ':heavy_check_mark:'
@@ -111,6 +108,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
     title: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/union-find-tree/UnionFindTree.test.cpp
+    title: test/union-find-tree/UnionFindTree.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/util/FastIO-int128.test.cpp
     title: test/util/FastIO-int128.test.cpp
@@ -206,9 +206,9 @@ data:
   - test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
-  - test/graph/UnionFindTree.test.cpp
   - test/util/FastIO-int128.test.cpp
   - test/util/FastIO-int64.test.cpp
+  - test/union-find-tree/UnionFindTree.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp

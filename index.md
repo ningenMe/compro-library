@@ -12,7 +12,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/00-util/NBase.cpp
       title: "NBase - N\u9032\u6570"
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: lib/00-util/RangeIndex.cpp
       title: "RangeIndex - \u533A\u9593index"
     - icon: ':heavy_check_mark:'
@@ -80,7 +80,7 @@ data:
         \u5206\u63A2\u7D22\u6728set"
     - icon: ':warning:'
       path: lib/12-binary-search-tree/SimpleBinaryTrie.cpp
-      title: BinaryTrie
+      title: SimpleBinaryTrie
     - icon: ':heavy_check_mark:'
       path: lib/12-binary-search-tree/WordSizeTreeSet.cpp
       title: "WordSizeTreeSet - 64\u5206\u6728"
@@ -210,18 +210,20 @@ data:
       title: "MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\u306E\
         \u6700\u5C0F\u9589\u8DEF\u691C\u51FA"
     - icon: ':heavy_check_mark:'
-      path: lib/40-graph/PotentializedUnionFindTree.cpp
-      title: "PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\u4ED8\
-        \u304DUnionFind\u6728"
-    - icon: ':heavy_check_mark:'
       path: lib/40-graph/StaticTree.cpp
       title: "StaticTree - \u6728"
     - icon: ':heavy_check_mark:'
       path: lib/40-graph/StronglyConnectedComponents.cpp
       title: "StronglyConnectedComponents - \u5F37\u9023\u7D50\u6210\u5206\u5206\u89E3"
+  - name: lib/41-union-find-tree
+    pages:
     - icon: ':heavy_check_mark:'
-      path: lib/40-graph/UnionFindTree.cpp
-      title: "UnionFindTree - Union Find \u6728"
+      path: lib/41-union-find-tree/PotentializedUnionFindTree.cpp
+      title: "PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\u4ED8\
+        \u304DUnionFind\u6728"
+    - icon: ':heavy_check_mark:'
+      path: lib/41-union-find-tree/UnionFindTree.cpp
+      title: UnionFindTree - Union Find Tree
   - name: lib/50-string
     pages:
     - icon: ':heavy_check_mark:'
@@ -545,10 +547,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
       title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/graph/PotentializedUnionFindTree.test.cpp
-      title: test/graph/PotentializedUnionFindTree.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/graph/StronglyConnectedComponents-1.test.cpp
       title: test/graph/StronglyConnectedComponents-1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -584,15 +583,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/Tree-parent.test.cpp
       title: test/graph/Tree-parent.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/graph/Tree-rerooting.test.cpp
       title: test/graph/Tree-rerooting.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/Tree-size.test.cpp
       title: test/graph/Tree-size.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/graph/UnionFindTree.test.cpp
-      title: test/graph/UnionFindTree.test.cpp
   - name: test/math
     pages:
     - icon: ':heavy_check_mark:'
@@ -707,9 +703,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
       title: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
-    - icon: ':x:'
-      path: test/segment-tree/IntegerRangeFrequencyQuerySqrtTree-range-freq.test.cpp
-      title: test/segment-tree/IntegerRangeFrequencyQuerySqrtTree-range-freq.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
       title: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
@@ -777,6 +770,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/string/Zalgorithm.test.cpp
       title: test/string/Zalgorithm.test.cpp
+  - name: test/union-find-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/union-find-tree/PotentializedUnionFindTree.test.cpp
+      title: test/union-find-tree/PotentializedUnionFindTree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/union-find-tree/UnionFindTree.test.cpp
+      title: test/union-find-tree/UnionFindTree.test.cpp
   - name: test/util
     pages:
     - icon: ':heavy_check_mark:'
@@ -791,7 +792,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/util/NBase.test.cpp
       title: test/util/NBase.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/util/RangeIndex.test.cpp
       title: test/util/RangeIndex.test.cpp
     - icon: ':heavy_check_mark:'
