@@ -8,7 +8,7 @@
 #include <numeric>
 #include <array>
 using namespace std;
-#include "../../lib/40-graph/UnionFindTree.cpp"
+#include "../../lib/41-union-find-tree/UnionFindTree.cpp"
 #include "../../lib/40-graph/Graph.cpp"
 #include "../../lib/40-graph/StaticTree.cpp"
 

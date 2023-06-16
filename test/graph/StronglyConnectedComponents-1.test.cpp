@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <stack>
 using namespace std;
-#include "../../lib/40-graph/UnionFindTree.cpp"
+#include "../../lib/41-union-find-tree/UnionFindTree.cpp"
 #include "../../lib/40-graph/StronglyConnectedComponents.cpp"
 
 int main(){
