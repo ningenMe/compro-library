@@ -1,5 +1,5 @@
 /*
- * @title BinaryTrie
+ * @title SimpleBinaryTrie
  * @docs md/12-binary-search-tree/SimpleBinaryTrie.md
  */
 template<size_t bit_length=20> class SimpleBinaryTrie {

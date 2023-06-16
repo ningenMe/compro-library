@@ -1,6 +1,6 @@
 /*
  * @title PotentializedUnionFindTree - ポテンシャル付きUnionFind木
- * @docs md/graph/PotentializedUnionFindTree.md
+ * @docs md/union-find-tree/PotentializedUnionFindTree.md
  */
 template<class T> class PotentializedUnionFindTree {
     vector<int> parent,rank;
