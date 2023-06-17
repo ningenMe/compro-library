@@ -1,5 +1,6 @@
-### GcdConvolution
-- Gcd添字畳み込み
+### DivisorZetaMoebiusTransform
+- 約数のゼータ変換、メビウス変換
+- gcd添字畳み込み, lcm添字畳み込みができる
 
 ### コンストラクタ
 - なし

@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/gcd_convolution"
+#define PROBLEM "https://judge.yosupo.jp/problem/lcm_convolution"
 
 #include <vector>
 #include <iostream>
@@ -7,7 +7,7 @@ using namespace std;
 #include "../../lib/00-util/ModInt.cpp"
 #include "../../lib/00-util/FastIO.cpp"
 #include "../../lib/30-math/Eratosthenes.cpp"
-#include "../../lib/31-convolution/GcdConvolution.cpp"
+#include "../../lib/31-convolution/DivisorZetaMoebiusTransform.cpp"
 
 
 int main() {
@@ -22,7 +22,7 @@ int main() {
     for(int i=1;i<=N;++i) {
         int t; read(t); b[i]=t;
     }
-    auto c = GcdConvolution::convolution(a,b,e);
+    auto c = DivisorZetaMoebiusTransform::lcm_convolution(a,b,e);
     for(int i=1;i<=N;++i) {
         cout << c[i] << " \n"[i==N];
     }
