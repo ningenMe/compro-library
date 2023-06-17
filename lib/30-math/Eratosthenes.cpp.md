@@ -4,8 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/convolution/GcdConvolution.test.cpp
-    title: test/convolution/GcdConvolution.test.cpp
+    path: test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
+    title: test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/convolution/DivisorZetaMoebiusTransform-lcm-convolution.test.cpp
+    title: test/convolution/DivisorZetaMoebiusTransform-lcm-convolution.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/math/Eratosthenes.test.cpp
     title: test/math/Eratosthenes.test.cpp
@@ -40,7 +43,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/Eratosthenes.test.cpp
-  - test/convolution/GcdConvolution.test.cpp
+  - test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
+  - test/convolution/DivisorZetaMoebiusTransform-lcm-convolution.test.cpp
 documentation_of: lib/30-math/Eratosthenes.cpp
 layout: document
 redirect_from:

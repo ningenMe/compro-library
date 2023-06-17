@@ -180,8 +180,9 @@ data:
   - name: lib/31-convolution
     pages:
     - icon: ':heavy_check_mark:'
-      path: lib/31-convolution/GcdConvolution.cpp
-      title: "GcdConvolution - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F"
+      path: lib/31-convolution/DivisorZetaMoebiusTransform.cpp
+      title: "DivisorZetaMoebiusTransform - \u7D04\u6570\u306E\u30BC\u30FC\u30BF\u30FB\
+        \u30E1\u30D3\u30A6\u30B9\u5909\u63DB (gcd/lcm\u7573\u307F\u8FBC\u307F)"
     - icon: ':question:'
       path: lib/31-convolution/NumberTheoreticalTransform.cpp
       title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
@@ -500,8 +501,11 @@ data:
   - name: test/convolution
     pages:
     - icon: ':heavy_check_mark:'
-      path: test/convolution/GcdConvolution.test.cpp
-      title: test/convolution/GcdConvolution.test.cpp
+      path: test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
+      title: test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/convolution/DivisorZetaMoebiusTransform-lcm-convolution.test.cpp
+      title: test/convolution/DivisorZetaMoebiusTransform-lcm-convolution.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
       title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp

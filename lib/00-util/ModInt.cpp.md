@@ -16,8 +16,11 @@ data:
     path: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/convolution/GcdConvolution.test.cpp
-    title: test/convolution/GcdConvolution.test.cpp
+    path: test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
+    title: test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/convolution/DivisorZetaMoebiusTransform-lcm-convolution.test.cpp
+    title: test/convolution/DivisorZetaMoebiusTransform-lcm-convolution.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
@@ -190,9 +193,10 @@ data:
   - test/queue/SwagQueue-composite.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
+  - test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp
-  - test/convolution/GcdConvolution.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
+  - test/convolution/DivisorZetaMoebiusTransform-lcm-convolution.test.cpp
   - test/graph/Tree-hld-vertex-3.test.cpp
   - test/graph/Tree-hld-path.test.cpp
   - test/util/ModInt.test.cpp
