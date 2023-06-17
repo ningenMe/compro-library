@@ -12,7 +12,7 @@ int main() {
     auto E = Eratosthenes(200000);
     vector<long long> A;
     for(int i = 100001; i < 100100; ++i) {
-        if(E[i]) A.push_back(i);
+        if(E.sieve[i]) A.push_back(i);
     }
     vector<long long> B={1};
     for(auto& e1:A) for(auto& e2:A) B.push_back(e1*e2);
