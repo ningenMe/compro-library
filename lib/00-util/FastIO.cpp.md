@@ -22,6 +22,9 @@ data:
     path: test/binary-search-tree/WordSizeTreeSet.test.cpp
     title: test/binary-search-tree/WordSizeTreeSet.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/convolution/GcdConvolution.test.cpp
+    title: test/convolution/GcdConvolution.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -205,6 +208,7 @@ data:
   - test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp
+  - test/convolution/GcdConvolution.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
   - test/util/FastIO-int128.test.cpp
   - test/util/FastIO-int64.test.cpp

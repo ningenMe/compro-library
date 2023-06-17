@@ -160,9 +160,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/30-math/Garner.cpp
       title: "Garner - \u4E2D\u56FD\u5270\u4F59\u5B9A\u7406"
-    - icon: ':warning:'
-      path: lib/30-math/GcdConvolution.cpp
-      title: "GcdConvolution - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F"
     - icon: ':heavy_check_mark:'
       path: lib/30-math/Matrix.cpp
       title: "Matrix - \u884C\u5217\u6F14\u7B97"
@@ -182,6 +179,9 @@ data:
       title: "PrimitiveRoot - \u539F\u59CB\u6839"
   - name: lib/31-convolution
     pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/31-convolution/GcdConvolution.cpp
+      title: "GcdConvolution - \u6DFB\u5B57gcd\u7573\u307F\u8FBC\u307F"
     - icon: ':question:'
       path: lib/31-convolution/NumberTheoreticalTransform.cpp
       title: "NumberTheoreticalTransform - \u6570\u8AD6\u5909\u63DB"
@@ -499,6 +499,9 @@ data:
       title: test/convex-hull-trick/LiChaoTree-segment.test.cpp
   - name: test/convolution
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/convolution/GcdConvolution.test.cpp
+      title: test/convolution/GcdConvolution.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
       title: test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
