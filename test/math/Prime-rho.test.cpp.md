@@ -4,15 +4,15 @@ data:
   - icon: ':question:'
     path: lib/00-util/FastIO.cpp
     title: FastIO
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: lib/30-math/Prime.cpp
     title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\u30FC\
       \u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A\u30FBGcd\u30FBLcm"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/factorize
@@ -89,18 +89,18 @@ data:
     \          if(r != 1) {\n                for(i=0; i<s; ++i) {\n              \
     \      if(r == n-1) break;\n                    r = mmod.mul(r,r);\n         \
     \       }\n                if(i==s) return false;\n            }\n        }\n\
-    \        return true;\n    }\n    inline static long long gcd_impl(long long n,\
-    \ long long m) {\n        static constexpr long long K = 5;\n        long long\
-    \ t,s;\n        for(int i = 0; t = n - m, s = n - m * K, i < 80; ++i) {\n    \
-    \        if(t<m){\n                if(!t) return m;\n                n = m, m\
-    \ = t;\n            }\n            else{\n                if(!m) return t;\n \
-    \               n=t;\n                if(t >= m * K) n = s;\n            }\n \
-    \       }\n        return gcd_impl(m, n % m);\n    }\n    inline static constexpr\
-    \ long long pre(long long n, long long m) {\n        long long t = n - m;\n  \
-    \      for(int i = 0; t = n - m, i < 4; ++i) {\n            (t < m ? n=m,m=t :\
-    \ n=t);\n            if(!m) return n;\n        }\n        return gcd_impl(n, m);\n\
-    \    }\n    inline static constexpr array<u64,3> ar1={2ULL, 7ULL, 61ULL};\n  \
-    \  inline static constexpr array<u64,7> ar2={2ULL,325ULL,9375ULL,28178ULL,450775ULL,9780504ULL,1795265022ULL};\n\
+    \        return true;\n    }\n    inline static constexpr long long K = 5;\n \
+    \   inline static constexpr long long gcd_impl(long long n, long long m) {\n \
+    \       long long t=0,s=0;\n        for(int i = 0; t = n - m, s = n - m * K, i\
+    \ < 80; ++i) {\n            if(t<m){\n                if(!t) return m;\n     \
+    \           n = m, m = t;\n            }\n            else{\n                if(!m)\
+    \ return t;\n                n=t;\n                if(t >= m * K) n = s;\n   \
+    \         }\n        }\n        return gcd_impl(m, n % m);\n    }\n    inline\
+    \ static constexpr long long pre(long long n, long long m) {\n        long long\
+    \ t = n - m;\n        for(int i = 0; i < 4; ++i) {\n            (t < m ? n=m,m=t\
+    \ : n=t);\n            if(!m) return n;\n        }\n        return gcd_impl(n,\
+    \ m);\n    }\n    inline static constexpr array<u64,3> ar1={2ULL, 7ULL, 61ULL};\n\
+    \    inline static constexpr array<u64,7> ar2={2ULL,325ULL,9375ULL,28178ULL,450775ULL,9780504ULL,1795265022ULL};\n\
     \    inline static u64 rho(const u64& n){\n        if(miller_rabin(n)) return\
     \ n;\n        if((n&1) == 0) return 2;\n\t\tMontgomeryMod mmod(n);\n        for(u64\
     \ c=1,x=2,y=2,d=0;;c++){\n            do{\n\t\t\t\tx=mmod.add(mmod.mmul(x,x),c);\n\
@@ -110,34 +110,34 @@ data:
     \ n, bool is_root) {\n        if(n <= 1) return {};\n        u64 p = rho(n);\n\
     \        if(p == n) return {p};\n        auto l = factor(p, false);\n        auto\
     \ r = factor(n / p, false);\n        copy(r.begin(), r.end(), back_inserter(l));\n\
-    \t\tif(is_root) sort(l.begin(),l.end());\n        return move(l);\n    }\n   \
-    \ inline static constexpr bool miller_rabin(const u64 n) {\n        if(n <= 1)\
-    \ return false;\n        if(n == 2) return true;\n        if(n%2 == 0) return\
-    \ false;\n        if(n == 3) return true;\n        if(n%3 == 0) return false;\n\
-    \        if(n < 4759123141ULL) return miller_rabin_montgomery(n, ar1);\n\t\tif(n\
-    \ <= 1000'000'000'000'000'000ULL) miller_rabin_montgomery(n, ar2);\n        return\
-    \ miller_rabin_uint128(n, ar2);\n    }\n    inline static vector<pair<u64,u64>>\
-    \ factorization_impl(const u64 n) {\n\t\t// queue<u64> q; q.push(n);\n\t\t// vector<u64>\
-    \ v;\n\t\t// while(q.size()) {\n\t\t// \tu64 tn = q.front(); q.pop();\n\t\t//\
-    \ \tif(tn<=1) continue;\n\t\t// \tu64 p = rho(tn);\n\t\t// \tif(p!=tn) q.push(p),q.push(tn/p);\n\
-    \t\t// \telse v.push_back(p);\n\t\t// }\n        auto v = factor(n, true);\n \
-    \       vector<pair<u64,u64>> vp;\n        u64 prev = 0;\n        for(u64& p:v)\
-    \ {\n            if(p == prev) vp.back().second++;\n            else vp.emplace_back(p,1);\n\
-    \            prev=p;\n        }\n        return move(vp);\n    }\n    inline static\
-    \ vector<u64> divisor_impl(const u64 n) {\n        auto fac = factorization_impl(n);\n\
-    \        vector<u64> res = {1};\n        for(auto& [p,m]: fac) {\n           \
-    \ u32 sz = res.size();\n            for(u32 i=0;i<sz;++i) {\n                u64\
-    \ d = 1;\n                for(u32 j=0;j<m;++j) {\n                    d *= p;\n\
-    \                    res.push_back(res[i]*d);\n                }\n           \
-    \ }\n        }\n        return res;\n    }\npublic:\n    inline static constexpr\
-    \ bool is_prime(const u64 n) { return miller_rabin(n); }\n\t//{\u7D20\u56E0\u6570\
-    ,\u500B\u6570}\u306Evector\u304C\u8FD4\u5374\u3055\u308C\u308B\n    inline static\
-    \ vector<pair<u64,u64>> factorization(const u64 n) {return factorization_impl(n);}\n\
-    \t//\u7D20\u56E0\u6570\u304C\u611A\u76F4\u306B\u6607\u9806\u3067\u8FD4\u5374\u3055\
-    \u308C\u308B\n    inline static vector<u64> factor(const u64 n) {return move(factor(n,\
-    \ true));}\n    //\u7D04\u6570\u304C\u6607\u9806\u3067\u5217\u6319\u3055\u308C\
-    \u308B\n    inline static vector<u64> divisor(const u64 n) {return divisor_impl(n);\
-    \ }\n    inline static constexpr long long gcd(long long n, long long m) { return\
+    \t\tif(is_root) sort(l.begin(),l.end());\n        return l;\n    }\n    inline\
+    \ static constexpr bool miller_rabin(const u64 n) {\n        if(n <= 1) return\
+    \ false;\n        if(n == 2) return true;\n        if(n%2 == 0) return false;\n\
+    \        if(n == 3) return true;\n        if(n%3 == 0) return false;\n       \
+    \ if(n < 4759123141ULL) return miller_rabin_montgomery(n, ar1);\n\t\tif(n <= 1000'000'000'000'000'000ULL)\
+    \ miller_rabin_montgomery(n, ar2);\n        return miller_rabin_uint128(n, ar2);\n\
+    \    }\n    inline static vector<pair<u64,u64>> factorization_impl(const u64 n)\
+    \ {\n\t\t// queue<u64> q; q.push(n);\n\t\t// vector<u64> v;\n\t\t// while(q.size())\
+    \ {\n\t\t// \tu64 tn = q.front(); q.pop();\n\t\t// \tif(tn<=1) continue;\n\t\t\
+    // \tu64 p = rho(tn);\n\t\t// \tif(p!=tn) q.push(p),q.push(tn/p);\n\t\t// \telse\
+    \ v.push_back(p);\n\t\t// }\n        auto v = factor(n, true);\n        vector<pair<u64,u64>>\
+    \ vp;\n        u64 prev = 0;\n        for(u64& p:v) {\n            if(p == prev)\
+    \ vp.back().second++;\n            else vp.emplace_back(p,1);\n            prev=p;\n\
+    \        }\n        return vp;\n    }\n    inline static vector<u64> divisor_impl(const\
+    \ u64 n) {\n        auto fac = factorization_impl(n);\n        vector<u64> res\
+    \ = {1};\n        for(auto& [p,m]: fac) {\n            u32 sz = res.size();\n\
+    \            for(u32 i=0;i<sz;++i) {\n                u64 d = 1;\n           \
+    \     for(u32 j=0;j<m;++j) {\n                    d *= p;\n                  \
+    \  res.push_back(res[i]*d);\n                }\n            }\n        }\n   \
+    \     return res;\n    }\npublic:\n    inline static constexpr bool is_prime(const\
+    \ u64 n) { return miller_rabin(n); }\n\t//{\u7D20\u56E0\u6570,\u500B\u6570}\u306E\
+    vector\u304C\u8FD4\u5374\u3055\u308C\u308B\n    inline static vector<pair<u64,u64>>\
+    \ factorization(const u64 n) {return factorization_impl(n);}\n\t//\u7D20\u56E0\
+    \u6570\u304C\u611A\u76F4\u306B\u6607\u9806\u3067\u8FD4\u5374\u3055\u308C\u308B\
+    \n    inline static vector<u64> factor(const u64 n) {return factor(n, true);}\n\
+    \    //\u7D04\u6570\u304C\u6607\u9806\u3067\u5217\u6319\u3055\u308C\u308B\n  \
+    \  inline static vector<u64> divisor(const u64 n) {return divisor_impl(n); }\n\
+    \    inline static constexpr long long gcd(long long n, long long m) { return\
     \ (n>m ? pre(n,m) : pre(m,n));}\n    inline static constexpr long long naive_gcd(long\
     \ long a, long long b) { return (b ? naive_gcd(b, a % b):a);}\n    inline static\
     \ constexpr long long lcm(long long a, long long b) {return (a*b ? (a / gcd(a,\
@@ -167,8 +167,8 @@ data:
   isVerificationFile: true
   path: test/math/Prime-rho.test.cpp
   requiredBy: []
-  timestamp: '2023-06-16 04:54:13+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-06-19 02:13:50+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/math/Prime-rho.test.cpp
 layout: document
