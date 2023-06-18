@@ -104,8 +104,8 @@ class Prime{
         return gcd_impl(m, n % m);
     }
     inline static constexpr long long pre(long long n, long long m) {
-        long long t = n - m;
-        for(int i = 0; i < 4; ++i) {
+        long long t = 0;
+        for(int i = 0; t = n - m, i < 4; ++i) {
             (t < m ? n=m,m=t : n=t);
             if(!m) return n;
         }
@@ -144,7 +144,7 @@ class Prime{
         if(n == 3) return true;
         if(n%3 == 0) return false;
         if(n < 4759123141ULL) return miller_rabin_montgomery(n, ar1);
-		if(n <= 1000'000'000'000'000'000ULL) miller_rabin_montgomery(n, ar2);
+		if(n <= 1000'000'000'000'000'000ULL) miller_rabin_montgomery(n, ar2); //'
         return miller_rabin_uint128(n, ar2);
     }
     inline static vector<pair<u64,u64>> factorization_impl(const u64 n) {
