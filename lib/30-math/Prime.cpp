@@ -87,9 +87,9 @@ class Prime{
         }
         return true;
     }
-    inline static long long gcd_impl(long long n, long long m) {
-        static constexpr long long K = 5;
-        long long t,s;
+    inline static constexpr long long K = 5;
+    inline static constexpr long long gcd_impl(long long n, long long m) {
+        long long t=0,s=0;
         for(int i = 0; t = n - m, s = n - m * K, i < 80; ++i) {
             if(t<m){
                 if(!t) return m;
@@ -105,7 +105,7 @@ class Prime{
     }
     inline static constexpr long long pre(long long n, long long m) {
         long long t = n - m;
-        for(int i = 0; t = n - m, i < 4; ++i) {
+        for(int i = 0; i < 4; ++i) {
             (t < m ? n=m,m=t : n=t);
             if(!m) return n;
         }
@@ -135,7 +135,7 @@ class Prime{
         auto r = factor(n / p, false);
         copy(r.begin(), r.end(), back_inserter(l));
 		if(is_root) sort(l.begin(),l.end());
-        return move(l);
+        return l;
     }
     inline static constexpr bool miller_rabin(const u64 n) {
         if(n <= 1) return false;
@@ -165,7 +165,7 @@ class Prime{
             else vp.emplace_back(p,1);
             prev=p;
         }
-        return move(vp);
+        return vp;
     }
     inline static vector<u64> divisor_impl(const u64 n) {
         auto fac = factorization_impl(n);
@@ -187,7 +187,7 @@ public:
 	//{素因数,個数}のvectorが返却される
     inline static vector<pair<u64,u64>> factorization(const u64 n) {return factorization_impl(n);}
 	//素因数が愚直に昇順で返却される
-    inline static vector<u64> factor(const u64 n) {return move(factor(n, true));}
+    inline static vector<u64> factor(const u64 n) {return factor(n, true);}
     //約数が昇順で列挙される
     inline static vector<u64> divisor(const u64 n) {return divisor_impl(n); }
     inline static constexpr long long gcd(long long n, long long m) { return (n>m ? pre(n,m) : pre(m,n));}
