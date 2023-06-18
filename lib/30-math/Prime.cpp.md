@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Prime-divisor-1.test.cpp
     title: test/math/Prime-divisor-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -12,18 +12,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/math/Prime-miller-rabin-2.test.cpp
     title: test/math/Prime-miller-rabin-2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Prime-rho.test.cpp
     title: test/math/Prime-rho.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
     title: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
     title: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/math/Prime.md
     document_title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\
@@ -79,8 +79,8 @@ data:
     \ return t;\n                n=t;\n                if(t >= m * K) n = s;\n   \
     \         }\n        }\n        return gcd_impl(m, n % m);\n    }\n    inline\
     \ static constexpr long long pre(long long n, long long m) {\n        long long\
-    \ t = n - m;\n        for(int i = 0; i < 4; ++i) {\n            (t < m ? n=m,m=t\
-    \ : n=t);\n            if(!m) return n;\n        }\n        return gcd_impl(n,\
+    \ t = 0;\n        for(int i = 0; t = n - m, i < 4; ++i) {\n            (t < m\
+    \ ? n=m,m=t : n=t);\n            if(!m) return n;\n        }\n        return gcd_impl(n,\
     \ m);\n    }\n    inline static constexpr array<u64,3> ar1={2ULL, 7ULL, 61ULL};\n\
     \    inline static constexpr array<u64,7> ar2={2ULL,325ULL,9375ULL,28178ULL,450775ULL,9780504ULL,1795265022ULL};\n\
     \    inline static u64 rho(const u64& n){\n        if(miller_rabin(n)) return\
@@ -97,9 +97,9 @@ data:
     \ false;\n        if(n == 2) return true;\n        if(n%2 == 0) return false;\n\
     \        if(n == 3) return true;\n        if(n%3 == 0) return false;\n       \
     \ if(n < 4759123141ULL) return miller_rabin_montgomery(n, ar1);\n\t\tif(n <= 1000'000'000'000'000'000ULL)\
-    \ miller_rabin_montgomery(n, ar2);\n        return miller_rabin_uint128(n, ar2);\n\
-    \    }\n    inline static vector<pair<u64,u64>> factorization_impl(const u64 n)\
-    \ {\n\t\t// queue<u64> q; q.push(n);\n\t\t// vector<u64> v;\n\t\t// while(q.size())\
+    \ miller_rabin_montgomery(n, ar2); //'\n        return miller_rabin_uint128(n,\
+    \ ar2);\n    }\n    inline static vector<pair<u64,u64>> factorization_impl(const\
+    \ u64 n) {\n\t\t// queue<u64> q; q.push(n);\n\t\t// vector<u64> v;\n\t\t// while(q.size())\
     \ {\n\t\t// \tu64 tn = q.front(); q.pop();\n\t\t// \tif(tn<=1) continue;\n\t\t\
     // \tu64 p = rho(tn);\n\t\t// \tif(p!=tn) q.push(p),q.push(tn/p);\n\t\t// \telse\
     \ v.push_back(p);\n\t\t// }\n        auto v = factor(n, true);\n        vector<pair<u64,u64>>\
@@ -176,8 +176,8 @@ data:
     \ return t;\n                n=t;\n                if(t >= m * K) n = s;\n   \
     \         }\n        }\n        return gcd_impl(m, n % m);\n    }\n    inline\
     \ static constexpr long long pre(long long n, long long m) {\n        long long\
-    \ t = n - m;\n        for(int i = 0; i < 4; ++i) {\n            (t < m ? n=m,m=t\
-    \ : n=t);\n            if(!m) return n;\n        }\n        return gcd_impl(n,\
+    \ t = 0;\n        for(int i = 0; t = n - m, i < 4; ++i) {\n            (t < m\
+    \ ? n=m,m=t : n=t);\n            if(!m) return n;\n        }\n        return gcd_impl(n,\
     \ m);\n    }\n    inline static constexpr array<u64,3> ar1={2ULL, 7ULL, 61ULL};\n\
     \    inline static constexpr array<u64,7> ar2={2ULL,325ULL,9375ULL,28178ULL,450775ULL,9780504ULL,1795265022ULL};\n\
     \    inline static u64 rho(const u64& n){\n        if(miller_rabin(n)) return\
@@ -194,9 +194,9 @@ data:
     \ false;\n        if(n == 2) return true;\n        if(n%2 == 0) return false;\n\
     \        if(n == 3) return true;\n        if(n%3 == 0) return false;\n       \
     \ if(n < 4759123141ULL) return miller_rabin_montgomery(n, ar1);\n\t\tif(n <= 1000'000'000'000'000'000ULL)\
-    \ miller_rabin_montgomery(n, ar2);\n        return miller_rabin_uint128(n, ar2);\n\
-    \    }\n    inline static vector<pair<u64,u64>> factorization_impl(const u64 n)\
-    \ {\n\t\t// queue<u64> q; q.push(n);\n\t\t// vector<u64> v;\n\t\t// while(q.size())\
+    \ miller_rabin_montgomery(n, ar2); //'\n        return miller_rabin_uint128(n,\
+    \ ar2);\n    }\n    inline static vector<pair<u64,u64>> factorization_impl(const\
+    \ u64 n) {\n\t\t// queue<u64> q; q.push(n);\n\t\t// vector<u64> v;\n\t\t// while(q.size())\
     \ {\n\t\t// \tu64 tn = q.front(); q.pop();\n\t\t// \tif(tn<=1) continue;\n\t\t\
     // \tu64 p = rho(tn);\n\t\t// \tif(p!=tn) q.push(p),q.push(tn/p);\n\t\t// \telse\
     \ v.push_back(p);\n\t\t// }\n        auto v = factor(n, true);\n        vector<pair<u64,u64>>\
@@ -228,8 +228,8 @@ data:
   isVerificationFile: false
   path: lib/30-math/Prime.cpp
   requiredBy: []
-  timestamp: '2023-06-19 02:13:50+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-06-19 02:28:10+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   - test/segment-tree/SegmentTree-prefix-binary-search.test.cpp

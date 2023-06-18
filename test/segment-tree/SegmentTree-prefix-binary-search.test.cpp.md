@@ -1,22 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/10-segment-tree/SegmentTree.cpp
     title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\
       \u30C8\u6728"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/30-math/Prime.cpp
     title: "Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\u30E9\u30FC\
       \u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A\u30FBGcd\u30FBLcm"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp
     title: "MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0]"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/4072
@@ -126,8 +126,8 @@ data:
     \ return t;\n                n=t;\n                if(t >= m * K) n = s;\n   \
     \         }\n        }\n        return gcd_impl(m, n % m);\n    }\n    inline\
     \ static constexpr long long pre(long long n, long long m) {\n        long long\
-    \ t = n - m;\n        for(int i = 0; i < 4; ++i) {\n            (t < m ? n=m,m=t\
-    \ : n=t);\n            if(!m) return n;\n        }\n        return gcd_impl(n,\
+    \ t = 0;\n        for(int i = 0; t = n - m, i < 4; ++i) {\n            (t < m\
+    \ ? n=m,m=t : n=t);\n            if(!m) return n;\n        }\n        return gcd_impl(n,\
     \ m);\n    }\n    inline static constexpr array<u64,3> ar1={2ULL, 7ULL, 61ULL};\n\
     \    inline static constexpr array<u64,7> ar2={2ULL,325ULL,9375ULL,28178ULL,450775ULL,9780504ULL,1795265022ULL};\n\
     \    inline static u64 rho(const u64& n){\n        if(miller_rabin(n)) return\
@@ -144,9 +144,9 @@ data:
     \ false;\n        if(n == 2) return true;\n        if(n%2 == 0) return false;\n\
     \        if(n == 3) return true;\n        if(n%3 == 0) return false;\n       \
     \ if(n < 4759123141ULL) return miller_rabin_montgomery(n, ar1);\n\t\tif(n <= 1000'000'000'000'000'000ULL)\
-    \ miller_rabin_montgomery(n, ar2);\n        return miller_rabin_uint128(n, ar2);\n\
-    \    }\n    inline static vector<pair<u64,u64>> factorization_impl(const u64 n)\
-    \ {\n\t\t// queue<u64> q; q.push(n);\n\t\t// vector<u64> v;\n\t\t// while(q.size())\
+    \ miller_rabin_montgomery(n, ar2); //'\n        return miller_rabin_uint128(n,\
+    \ ar2);\n    }\n    inline static vector<pair<u64,u64>> factorization_impl(const\
+    \ u64 n) {\n\t\t// queue<u64> q; q.push(n);\n\t\t// vector<u64> v;\n\t\t// while(q.size())\
     \ {\n\t\t// \tu64 tn = q.front(); q.pop();\n\t\t// \tif(tn<=1) continue;\n\t\t\
     // \tu64 p = rho(tn);\n\t\t// \tif(p!=tn) q.push(p),q.push(tn/p);\n\t\t// \telse\
     \ v.push_back(p);\n\t\t// }\n        auto v = factor(n, true);\n        vector<pair<u64,u64>>\
@@ -202,8 +202,8 @@ data:
   isVerificationFile: true
   path: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
   requiredBy: []
-  timestamp: '2023-06-19 02:13:50+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-06-19 02:28:10+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
 layout: document
