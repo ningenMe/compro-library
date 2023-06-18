@@ -223,6 +223,9 @@ data:
       title: "PotentializedUnionFindTree - \u30DD\u30C6\u30F3\u30B7\u30E3\u30EB\u4ED8\
         \u304DUnionFind\u6728"
     - icon: ':heavy_check_mark:'
+      path: lib/41-union-find-tree/UndoUnionFindTree.cpp
+      title: "UndoUnionFindTree - Undo\u3064\u304D Union Find Tree"
+    - icon: ':heavy_check_mark:'
       path: lib/41-union-find-tree/UnionFindTree.cpp
       title: UnionFindTree - Union Find Tree
   - name: lib/50-string
@@ -782,6 +785,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/union-find-tree/PotentializedUnionFindTree.test.cpp
       title: test/union-find-tree/PotentializedUnionFindTree.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/union-find-tree/UndoUnionFindTree.test.cpp
+      title: test/union-find-tree/UndoUnionFindTree.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/union-find-tree/UnionFindTree.test.cpp
       title: test/union-find-tree/UnionFindTree.test.cpp

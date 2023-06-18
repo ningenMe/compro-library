@@ -115,6 +115,9 @@ data:
     path: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
     title: test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/union-find-tree/UndoUnionFindTree.test.cpp
+    title: test/union-find-tree/UndoUnionFindTree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/union-find-tree/UnionFindTree.test.cpp
     title: test/union-find-tree/UnionFindTree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -216,6 +219,7 @@ data:
   - test/convolution/DivisorZetaMoebiusTransform-lcm-convolution.test.cpp
   - test/util/FastIO-int128.test.cpp
   - test/util/FastIO-int64.test.cpp
+  - test/union-find-tree/UndoUnionFindTree.test.cpp
   - test/union-find-tree/UnionFindTree.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
