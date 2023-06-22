@@ -4,6 +4,8 @@
 #include <vector>
 #include <algorithm>
 #include <array>
+#include <cmath>
+#include <unordered_map>
 using namespace std;
 #include "../../lib/00-util/FastIO.cpp"
 #include "../../lib/30-math/Prime.cpp"

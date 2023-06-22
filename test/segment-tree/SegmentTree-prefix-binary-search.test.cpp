@@ -5,6 +5,8 @@
 #include <cassert>
 #include <array>
 #include <algorithm>
+#include <cmath>
+#include <unordered_map>
 
 using namespace std;
 #include "../../lib/10-segment-tree/SegmentTree.cpp"

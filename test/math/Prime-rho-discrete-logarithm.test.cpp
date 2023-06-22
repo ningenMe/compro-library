@@ -1,4 +1,4 @@
-#define PROBLEM "https://yukicoder.me/problems/no/3030"
+#define PROBLEM "https://judge.yosupo.jp/problem/discrete_logarithm_mod"
 
 #include <iostream>
 #include <vector>
@@ -12,10 +12,12 @@ using namespace std;
 
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);
-    long long N; read(N);
-    for(int i = 0; i < N; ++i) {
-		long long a; read(a);
-		cout << a << " " << Prime::is_prime(a) << "\n";
-	}
-	return 0;
+    int T; read(T);
+    while(T--) {
+        long long x,y,m;
+        read(x), read(y), read(m);
+        long long k = Prime::discrete_logarithm(x,y,m);
+        cout << k << "\n";
+    }
+    return 0;
 }
