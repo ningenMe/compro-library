@@ -187,27 +187,31 @@ class Prime{
         }
         return res;
     }
-    inline static long long baby_step_giant_step(long long a, long long b, long long mod) {
+    inline static long long baby_step_giant_step(long long a, long long b, long long mod, const bool is_include_zero) {
         a %= mod, b%= mod;
-        if(b==1 || mod==1) return 0;
+        if(mod==1) return is_include_zero ? 0 : 1;
+        if(b==1 && is_include_zero) return 0;
         if(a==0) return (b==0 ? 1:-1);
 
         long long offset=0, c = 1 % mod;
         for(long long g; g=gcd(a,mod); ++offset, b /= g, mod /= g, (c *= (a/g)) %= mod) {
             if(g==1) break;
-            if(b == c) return offset;
+            if(b == c) {
+                if(offset) return offset;
+                else if(is_include_zero) return offset;
+            }
             if(b % g) return -1;
         }
 
         long long sm = sqrtl(mod)+1;
         //{a^0, a^1, ... a^sm} % mod
         unordered_map<long long, long long> pow_a;
-        for(long long i = 0, d = b; i <= sm; ++i, (d*=a)%=mod) {
+        for(long long i = !is_include_zero, d = b; i <= sm; ++i, (d*=a)%=mod) {
             pow_a[d]=i;
         }
         long long e = pow_int64(a,sm,mod);
         for(long long i = 1, d = (c*e) % mod; i <= sm; ++i, (d*=e)%=mod) {
-            if(pow_a.count(d)) return i * sm - pow_a[d] + offset;
+            if(pow_a.count(d)) return i * sm - pow_a[d] + offset + !is_include_zero;
         }
         return -1;
     }
@@ -227,5 +231,5 @@ public:
         if (b == 0) return x = 1, y = 0, a; long long d = ext_gcd(b, a%b, y, x); return y -= a / b * x, d;
     }
     //a^x = b (% mod) なる xを求める
-    inline static long long discrete_logarithm(long long a, long long b, long long mod) {return baby_step_giant_step(a,b,mod);}
+    inline static long long discrete_logarithm(long long a, long long b, long long mod, bool is_include_zero=1) {return baby_step_giant_step(a,b,mod,is_include_zero);}
 };
