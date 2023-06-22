@@ -15,13 +15,13 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/primality_test
+    PROBLEM: https://judge.yosupo.jp/problem/discrete_logarithm_mod
     links:
-    - https://judge.yosupo.jp/problem/primality_test
-  bundledCode: "#line 1 \"test/math/Prime-miller-rabin-2.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/primality_test\"\n\n#include <iostream>\n\
-    #include <vector>\n#include <algorithm>\n#include <array>\n#include <cmath>\n\
-    #include <unordered_map>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
+    - https://judge.yosupo.jp/problem/discrete_logarithm_mod
+  bundledCode: "#line 1 \"test/math/Prime-rho-discrete-logarithm.test.cpp\"\n#define\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/discrete_logarithm_mod\"\n\n#include\
+    \ <iostream>\n#include <vector>\n#include <algorithm>\n#include <array>\n#include\
+    \ <cmath>\n#include <unordered_map>\nusing namespace std;\n#line 1 \"lib/00-util/FastIO.cpp\"\
     \n/*\n * @title FastIO\n * @docs md/util/FastIO.md\n */\nclass FastIO{\nprivate:\n\
     \    inline static constexpr int ch_0='0';\n    inline static constexpr int ch_9='9';\n\
     \    inline static constexpr int ch_n='-';\n    inline static constexpr int ch_s='\
@@ -162,30 +162,32 @@ data:
     \ a%b, y, x); return y -= a / b * x, d;\n    }\n    //a^x = b (% mod) \u306A\u308B\
     \ x\u3092\u6C42\u3081\u308B\n    inline static long long discrete_logarithm(long\
     \ long a, long long b, long long mod) {return baby_step_giant_step(a,b,mod);}\n\
-    };\n#line 12 \"test/math/Prime-miller-rabin-2.test.cpp\"\n\nint main(void){\n\
-    \    cin.tie(0);ios::sync_with_stdio(false);\n    int Q; read(Q);\n    while(Q--)\
-    \ {\n        unsigned long long n; read(n);\n        cout << (Prime::is_prime(n)\
-    \ ? \"Yes\" : \"No\") << \"\\n\";\n\t}\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/primality_test\"\n\n#include\
-    \ <iostream>\n#include <vector>\n#include <algorithm>\n#include <array>\n#include\
-    \ <cmath>\n#include <unordered_map>\nusing namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\
-    \n#include \"../../lib/30-math/Prime.cpp\"\n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \    int Q; read(Q);\n    while(Q--) {\n        unsigned long long n; read(n);\n\
-    \        cout << (Prime::is_prime(n) ? \"Yes\" : \"No\") << \"\\n\";\n\t}\n\t\
-    return 0;\n}\n"
+    };\n#line 12 \"test/math/Prime-rho-discrete-logarithm.test.cpp\"\n\nint main(void){\n\
+    \    cin.tie(0);ios::sync_with_stdio(false);\n    int T; read(T);\n    while(T--)\
+    \ {\n        long long x,y,m;\n        read(x), read(y), read(m);\n        long\
+    \ long k = Prime::discrete_logarithm(x,y,m);\n        cout << k << \"\\n\";\n\
+    \    }\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/discrete_logarithm_mod\"\
+    \n\n#include <iostream>\n#include <vector>\n#include <algorithm>\n#include <array>\n\
+    #include <cmath>\n#include <unordered_map>\nusing namespace std;\n#include \"\
+    ../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/30-math/Prime.cpp\"\n\nint\
+    \ main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    int T; read(T);\n\
+    \    while(T--) {\n        long long x,y,m;\n        read(x), read(y), read(m);\n\
+    \        long long k = Prime::discrete_logarithm(x,y,m);\n        cout << k <<\
+    \ \"\\n\";\n    }\n    return 0;\n}"
   dependsOn:
   - lib/00-util/FastIO.cpp
   - lib/30-math/Prime.cpp
   isVerificationFile: true
-  path: test/math/Prime-miller-rabin-2.test.cpp
+  path: test/math/Prime-rho-discrete-logarithm.test.cpp
   requiredBy: []
   timestamp: '2023-06-23 04:26:18+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/math/Prime-miller-rabin-2.test.cpp
+documentation_of: test/math/Prime-rho-discrete-logarithm.test.cpp
 layout: document
 redirect_from:
-- /verify/test/math/Prime-miller-rabin-2.test.cpp
-- /verify/test/math/Prime-miller-rabin-2.test.cpp.html
-title: test/math/Prime-miller-rabin-2.test.cpp
+- /verify/test/math/Prime-rho-discrete-logarithm.test.cpp
+- /verify/test/math/Prime-rho-discrete-logarithm.test.cpp.html
+title: test/math/Prime-rho-discrete-logarithm.test.cpp
 ---

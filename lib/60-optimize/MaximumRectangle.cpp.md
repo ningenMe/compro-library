@@ -44,8 +44,8 @@ data:
   timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/optimize/MaximumRectangle-2.test.cpp
   - test/optimize/MaximumRectangle-1.test.cpp
+  - test/optimize/MaximumRectangle-2.test.cpp
 documentation_of: lib/60-optimize/MaximumRectangle.cpp
 layout: document
 redirect_from:

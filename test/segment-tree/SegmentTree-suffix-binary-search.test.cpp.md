@@ -25,34 +25,34 @@ data:
   bundledCode: "#line 1 \"test/segment-tree/SegmentTree-suffix-binary-search.test.cpp\"\
     \n#define PROBLEM \"https://yukicoder.me/problems/4072\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <array>\n#include <algorithm>\n\
-    \nusing namespace std;\n#line 1 \"lib/10-segment-tree/SegmentTree.cpp\"\n/*\n\
-    \ * @title SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
-    \u30F3\u30C8\u6728\n * @docs md/segment-tree/SegmentTree.md\n */\ntemplate<class\
-    \ Monoid> class SegmentTree {\n    using TypeNode = typename Monoid::TypeNode;\n\
-    \    size_t length;\n    size_t num;\n    vector<TypeNode> node;\n    vector<pair<int,int>>\
-    \ range;\n    inline void build() {\n        for (int i = length - 1; i >= 0;\
-    \ --i) node[i] = Monoid::func_fold(node[(i<<1)+0],node[(i<<1)+1]);\n        range.resize(2\
-    \ * length);\n        for (int i = 0; i < length; ++i) range[i+length] = make_pair(i,i+1);\n\
-    \        for (int i = length - 1; i >= 0; --i) range[i] = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);\n\
-    \    }\npublic:\n\n    //unit\u3067\u521D\u671F\u5316\n    SegmentTree(const size_t\
-    \ num): num(num) {\n        for (length = 1; length <= num; length *= 2);\n  \
-    \      node.resize(2 * length, Monoid::unit_node);\n        build();\n    }\n\n\
-    \    //vector\u3067\u521D\u671F\u5316\n    SegmentTree(const vector<TypeNode>\
-    \ & vec) : num(vec.size()) {\n        for (length = 1; length <= vec.size(); length\
-    \ *= 2);\n        node.resize(2 * length, Monoid::unit_node);\n        for (int\
-    \ i = 0; i < vec.size(); ++i) node[i + length] = vec[i];\n        build();\n \
-    \   }\n\n    //\u540C\u3058init\u3067\u521D\u671F\u5316\n    SegmentTree(const\
-    \ size_t num, const TypeNode init) : num(num) {\n        for (length = 1; length\
-    \ <= num; length *= 2);\n        node.resize(2 * length, Monoid::unit_node);\n\
-    \        for (int i = 0; i < length; ++i) node[i+length] = init;\n        build();\n\
-    \    }\n\n    //[idx,idx+1)\n    void operate(size_t idx, const TypeNode var)\
-    \ {\n        if(idx < 0 || length <= idx) return;\n        idx += length;\n  \
-    \      node[idx] = Monoid::func_operate(node[idx],var);\n        while(idx >>=\
-    \ 1) node[idx] = Monoid::func_fold(node[(idx<<1)+0],node[(idx<<1)+1]);\n    }\n\
-    \n    //[l,r)\n    TypeNode fold(int l, int r) {\n        if (l < 0 || length\
-    \ <= l || r < 0 || length < r) return Monoid::unit_node;\n        TypeNode vl\
-    \ = Monoid::unit_node, vr = Monoid::unit_node;\n        for(l += length, r +=\
-    \ length; l < r; l >>=1, r >>=1) {\n            if(l&1) vl = Monoid::func_fold(vl,node[l++]);\n\
+    #include <cmath>\n#include <unordered_map>\n\nusing namespace std;\n#line 1 \"\
+    lib/10-segment-tree/SegmentTree.cpp\"\n/*\n * @title SegmentTree - \u975E\u518D\
+    \u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @docs md/segment-tree/SegmentTree.md\n\
+    \ */\ntemplate<class Monoid> class SegmentTree {\n    using TypeNode = typename\
+    \ Monoid::TypeNode;\n    size_t length;\n    size_t num;\n    vector<TypeNode>\
+    \ node;\n    vector<pair<int,int>> range;\n    inline void build() {\n       \
+    \ for (int i = length - 1; i >= 0; --i) node[i] = Monoid::func_fold(node[(i<<1)+0],node[(i<<1)+1]);\n\
+    \        range.resize(2 * length);\n        for (int i = 0; i < length; ++i) range[i+length]\
+    \ = make_pair(i,i+1);\n        for (int i = length - 1; i >= 0; --i) range[i]\
+    \ = make_pair(range[(i<<1)+0].first,range[(i<<1)+1].second);\n    }\npublic:\n\
+    \n    //unit\u3067\u521D\u671F\u5316\n    SegmentTree(const size_t num): num(num)\
+    \ {\n        for (length = 1; length <= num; length *= 2);\n        node.resize(2\
+    \ * length, Monoid::unit_node);\n        build();\n    }\n\n    //vector\u3067\
+    \u521D\u671F\u5316\n    SegmentTree(const vector<TypeNode> & vec) : num(vec.size())\
+    \ {\n        for (length = 1; length <= vec.size(); length *= 2);\n        node.resize(2\
+    \ * length, Monoid::unit_node);\n        for (int i = 0; i < vec.size(); ++i)\
+    \ node[i + length] = vec[i];\n        build();\n    }\n\n    //\u540C\u3058init\u3067\
+    \u521D\u671F\u5316\n    SegmentTree(const size_t num, const TypeNode init) : num(num)\
+    \ {\n        for (length = 1; length <= num; length *= 2);\n        node.resize(2\
+    \ * length, Monoid::unit_node);\n        for (int i = 0; i < length; ++i) node[i+length]\
+    \ = init;\n        build();\n    }\n\n    //[idx,idx+1)\n    void operate(size_t\
+    \ idx, const TypeNode var) {\n        if(idx < 0 || length <= idx) return;\n \
+    \       idx += length;\n        node[idx] = Monoid::func_operate(node[idx],var);\n\
+    \        while(idx >>= 1) node[idx] = Monoid::func_fold(node[(idx<<1)+0],node[(idx<<1)+1]);\n\
+    \    }\n\n    //[l,r)\n    TypeNode fold(int l, int r) {\n        if (l < 0 ||\
+    \ length <= l || r < 0 || length < r) return Monoid::unit_node;\n        TypeNode\
+    \ vl = Monoid::unit_node, vr = Monoid::unit_node;\n        for(l += length, r\
+    \ += length; l < r; l >>=1, r >>=1) {\n            if(l&1) vl = Monoid::func_fold(vl,node[l++]);\n\
     \            if(r&1) vr = Monoid::func_fold(node[--r],vr);\n        }\n      \
     \  return Monoid::func_fold(vl,vr);\n    }\n\n    //range[l,r) return [l,r] search\
     \ max right\n    int prefix_binary_search(int l, int r, TypeNode var) {\n    \
@@ -103,7 +103,10 @@ data:
     \        }\n    };\n    inline static constexpr long long pow_uint128(long long\
     \ x, long long n, long long mod) {\n        long long res = 1;\n        for (x\
     \ %= mod; n > 0; n >>= 1, x=(u128(x)*x)%mod) if (n & 1) res = (u128(res)*x)%mod;\n\
-    \        return res;\n    }\n    template<size_t sz> inline static constexpr bool\
+    \        return res;\n    }\n    inline static constexpr long long pow_int64(long\
+    \ long x, long long n, long long mod) {\n        long long res = 1;\n        for\
+    \ (x %= mod; n > 0; n >>= 1, x=(x*x)%mod) if (n & 1) res = (res*x)%mod;\n    \
+    \    return res;\n    }\n    template<size_t sz> inline static constexpr bool\
     \ miller_rabin_uint128(const u64& n, const array<u64,sz>& ar) {\n        u32 i,s=0;\
     \ \n        u64 m = n - 1;\n        for (;!(m&1);++s,m>>=1);\n        MontgomeryMod\
     \ mmod(n);\n        for (const u64& a: ar) {\n            if(a>=n) break;\n  \
@@ -158,21 +161,35 @@ data:
     \            for(u32 i=0;i<sz;++i) {\n                u64 d = 1;\n           \
     \     for(u32 j=0;j<m;++j) {\n                    d *= p;\n                  \
     \  res.push_back(res[i]*d);\n                }\n            }\n        }\n   \
-    \     return res;\n    }\npublic:\n    inline static constexpr bool is_prime(const\
-    \ u64 n) { return miller_rabin(n); }\n\t//{\u7D20\u56E0\u6570,\u500B\u6570}\u306E\
-    vector\u304C\u8FD4\u5374\u3055\u308C\u308B\n    inline static vector<pair<u64,u64>>\
-    \ factorization(const u64 n) {return factorization_impl(n);}\n\t//\u7D20\u56E0\
-    \u6570\u304C\u611A\u76F4\u306B\u6607\u9806\u3067\u8FD4\u5374\u3055\u308C\u308B\
-    \n    inline static vector<u64> factor(const u64 n) {return factor(n, true);}\n\
-    \    //\u7D04\u6570\u304C\u6607\u9806\u3067\u5217\u6319\u3055\u308C\u308B\n  \
-    \  inline static vector<u64> divisor(const u64 n) {return divisor_impl(n); }\n\
-    \    inline static constexpr long long gcd(long long n, long long m) { return\
-    \ (n>m ? pre(n,m) : pre(m,n));}\n    inline static constexpr long long naive_gcd(long\
-    \ long a, long long b) { return (b ? naive_gcd(b, a % b):a);}\n    inline static\
-    \ constexpr long long lcm(long long a, long long b) {return (a*b ? (a / gcd(a,\
-    \ b)*b): 0);}\n    inline static constexpr long long ext_gcd(long long a, long\
-    \ long b, long long &x, long long &y) {\n        if (b == 0) return x = 1, y =\
-    \ 0, a; long long d = ext_gcd(b, a%b, y, x); return y -= a / b * x, d;\n    }\n\
+    \     return res;\n    }\n    inline static long long baby_step_giant_step(long\
+    \ long a, long long b, long long mod) {\n        a %= mod, b%= mod;\n        if(b==1\
+    \ || mod==1) return 0;\n        if(a==0) return (b==0 ? 1:-1);\n\n        long\
+    \ long offset=0, c = 1 % mod;\n        for(long long g; g=gcd(a,mod); ++offset,\
+    \ b /= g, mod /= g, (c *= (a/g)) %= mod) {\n            if(g==1) break;\n    \
+    \        if(b == c) return offset;\n            if(b % g) return -1;\n       \
+    \ }\n\n        long long sm = sqrtl(mod)+1;\n        //{a^0, a^1, ... a^sm} %\
+    \ mod\n        unordered_map<long long, long long> pow_a;\n        for(long long\
+    \ i = 0, d = b; i <= sm; ++i, (d*=a)%=mod) {\n            pow_a[d]=i;\n      \
+    \  }\n        long long e = pow_int64(a,sm,mod);\n        for(long long i = 1,\
+    \ d = (c*e) % mod; i <= sm; ++i, (d*=e)%=mod) {\n            if(pow_a.count(d))\
+    \ return i * sm - pow_a[d] + offset;\n        }\n        return -1;\n    }\npublic:\n\
+    \    inline static constexpr bool is_prime(const u64 n) { return miller_rabin(n);\
+    \ }\n\t//{\u7D20\u56E0\u6570,\u500B\u6570}\u306Evector\u304C\u8FD4\u5374\u3055\
+    \u308C\u308B\n    inline static vector<pair<u64,u64>> factorization(const u64\
+    \ n) {return factorization_impl(n);}\n\t//\u7D20\u56E0\u6570\u304C\u611A\u76F4\
+    \u306B\u6607\u9806\u3067\u8FD4\u5374\u3055\u308C\u308B\n    inline static vector<u64>\
+    \ factor(const u64 n) {return factor(n, true);}\n    //\u7D04\u6570\u304C\u6607\
+    \u9806\u3067\u5217\u6319\u3055\u308C\u308B\n    inline static vector<u64> divisor(const\
+    \ u64 n) {return divisor_impl(n); }\n    inline static constexpr long long gcd(long\
+    \ long n, long long m) { return (n>m ? pre(n,m) : pre(m,n));}\n    inline static\
+    \ constexpr long long naive_gcd(long long a, long long b) { return (b ? naive_gcd(b,\
+    \ a % b):a);}\n    inline static constexpr long long lcm(long long a, long long\
+    \ b) {return (a*b ? (a / gcd(a, b)*b): 0);}\n    //ax+by=gcd(a,b)\n    inline\
+    \ static constexpr long long ext_gcd(long long a, long long b, long long &x, long\
+    \ long &y) {\n        if (b == 0) return x = 1, y = 0, a; long long d = ext_gcd(b,\
+    \ a%b, y, x); return y -= a / b * x, d;\n    }\n    //a^x = b (% mod) \u306A\u308B\
+    \ x\u3092\u6C42\u3081\u308B\n    inline static long long discrete_logarithm(long\
+    \ long a, long long b, long long mod) {return baby_step_giant_step(a,b,mod);}\n\
     };\n#line 1 \"lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp\"\n/*\n * @title\
     \ MonoidRangeGcdPointUpdate - [\u533A\u9593gcd, \u70B9\u66F4\u65B0]\n * @docs\
     \ md/operator/monoid/MonoidRangeGcdPointUpdate.md\n */\ntemplate<class T> struct\
@@ -180,7 +197,7 @@ data:
     \ TypeNode unit_node = 0;\n\tinline static constexpr TypeNode func_fold(TypeNode\
     \ l,TypeNode r){return Prime::gcd(l,r);}\n\tinline static constexpr TypeNode func_operate(TypeNode\
     \ l,TypeNode r){return r;}\n\tinline static constexpr bool func_check(TypeNode\
-    \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n#line 13 \"test/segment-tree/SegmentTree-suffix-binary-search.test.cpp\"\
+    \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n#line 15 \"test/segment-tree/SegmentTree-suffix-binary-search.test.cpp\"\
     \n\n// solution by binary search in prefix range on segment tree \nint main()\
     \ {\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tlong long N; cin >> N;\n\tvector<long\
     \ long> A(N);\n\tfor(int i = 0; i < N; ++i) cin >> A[i];\n\tSegmentTree<MonoidRangeGcdPointUpdate<long\
@@ -188,10 +205,11 @@ data:
     ans += seg.suffix_binary_search(-1,i,1) + 1;\n\t}\n\tcout << ans << endl;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/4072\"\n\n#include <vector>\n\
     #include <iostream>\n#include <cassert>\n#include <array>\n#include <algorithm>\n\
-    \nusing namespace std;\n#include \"../../lib/10-segment-tree/SegmentTree.cpp\"\
-    \n#include \"../../lib/30-math/Prime.cpp\"\n#include \"../../lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp\"\
-    \n\n// solution by binary search in prefix range on segment tree \nint main()\
-    \ {\n\tcin.tie(0);ios::sync_with_stdio(false);\n\tlong long N; cin >> N;\n\tvector<long\
+    #include <cmath>\n#include <unordered_map>\n\nusing namespace std;\n#include \"\
+    ../../lib/10-segment-tree/SegmentTree.cpp\"\n#include \"../../lib/30-math/Prime.cpp\"\
+    \n#include \"../../lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp\"\n\n\
+    // solution by binary search in prefix range on segment tree \nint main() {\n\t\
+    cin.tie(0);ios::sync_with_stdio(false);\n\tlong long N; cin >> N;\n\tvector<long\
     \ long> A(N);\n\tfor(int i = 0; i < N; ++i) cin >> A[i];\n\tSegmentTree<MonoidRangeGcdPointUpdate<long\
     \ long>> seg(A);\n\tlong long ans = 0;\n\tfor(int i = N-1; 0 <= i; --i) {\n\t\t\
     ans += seg.suffix_binary_search(-1,i,1) + 1;\n\t}\n\tcout << ans << endl;\n}\n"
@@ -202,7 +220,7 @@ data:
   isVerificationFile: true
   path: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   requiredBy: []
-  timestamp: '2023-06-19 02:28:10+09:00'
+  timestamp: '2023-06-23 04:26:18+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp

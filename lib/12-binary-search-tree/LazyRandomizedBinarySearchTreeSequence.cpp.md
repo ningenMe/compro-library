@@ -207,10 +207,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
-  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
-  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
 documentation_of: lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp
 layout: document
 redirect_from:

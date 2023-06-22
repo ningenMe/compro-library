@@ -104,8 +104,8 @@ data:
   timestamp: '2023-05-30 04:49:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/graph/Dijkstra.test.cpp
   - test/graph/Dijkstra-restore.test.cpp
+  - test/graph/Dijkstra.test.cpp
 documentation_of: lib/40-graph/Dijkstra.cpp
 layout: document
 redirect_from:

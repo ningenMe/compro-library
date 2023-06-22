@@ -45,11 +45,11 @@ data:
   timestamp: '2023-05-30 04:39:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/static-range-query/RangeInversionQuery.test.cpp
-  - test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
-  - test/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
-  - test/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
   - test/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp
+  - test/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
+  - test/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
+  - test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+  - test/static-range-query/RangeInversionQuery.test.cpp
 documentation_of: lib/99-operator/abel/AbelPrefixSumPointAdd.cpp
 layout: document
 redirect_from:

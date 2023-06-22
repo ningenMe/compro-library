@@ -46,8 +46,8 @@ data:
   timestamp: '2023-05-30 04:23:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/geometory/Distance-line.test.cpp
   - test/graph/Dijkstra.test.cpp
+  - test/geometory/Distance-line.test.cpp
 documentation_of: lib/70-geometory/Distance.cpp
 layout: document
 redirect_from:

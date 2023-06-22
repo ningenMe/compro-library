@@ -635,6 +635,9 @@ data:
       path: test/math/Prime-miller-rabin-2.test.cpp
       title: test/math/Prime-miller-rabin-2.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/math/Prime-rho-discrete-logarithm.test.cpp
+      title: test/math/Prime-rho-discrete-logarithm.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/math/Prime-rho.test.cpp
       title: test/math/Prime-rho.test.cpp
   - name: test/needless

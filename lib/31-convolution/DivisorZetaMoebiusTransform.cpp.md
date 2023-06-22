@@ -81,8 +81,8 @@ data:
   timestamp: '2023-06-18 05:25:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
   - test/convolution/DivisorZetaMoebiusTransform-lcm-convolution.test.cpp
+  - test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
 documentation_of: lib/31-convolution/DivisorZetaMoebiusTransform.cpp
 layout: document
 redirect_from:

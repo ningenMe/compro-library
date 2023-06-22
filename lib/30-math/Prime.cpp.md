@@ -13,6 +13,9 @@ data:
     path: test/math/Prime-miller-rabin-2.test.cpp
     title: test/math/Prime-miller-rabin-2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/math/Prime-rho-discrete-logarithm.test.cpp
+    title: test/math/Prime-rho-discrete-logarithm.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/math/Prime-rho.test.cpp
     title: test/math/Prime-rho.test.cpp
   - icon: ':heavy_check_mark:'
@@ -56,7 +59,10 @@ data:
     \        }\n    };\n    inline static constexpr long long pow_uint128(long long\
     \ x, long long n, long long mod) {\n        long long res = 1;\n        for (x\
     \ %= mod; n > 0; n >>= 1, x=(u128(x)*x)%mod) if (n & 1) res = (u128(res)*x)%mod;\n\
-    \        return res;\n    }\n    template<size_t sz> inline static constexpr bool\
+    \        return res;\n    }\n    inline static constexpr long long pow_int64(long\
+    \ long x, long long n, long long mod) {\n        long long res = 1;\n        for\
+    \ (x %= mod; n > 0; n >>= 1, x=(x*x)%mod) if (n & 1) res = (res*x)%mod;\n    \
+    \    return res;\n    }\n    template<size_t sz> inline static constexpr bool\
     \ miller_rabin_uint128(const u64& n, const array<u64,sz>& ar) {\n        u32 i,s=0;\
     \ \n        u64 m = n - 1;\n        for (;!(m&1);++s,m>>=1);\n        MontgomeryMod\
     \ mmod(n);\n        for (const u64& a: ar) {\n            if(a>=n) break;\n  \
@@ -111,21 +117,35 @@ data:
     \            for(u32 i=0;i<sz;++i) {\n                u64 d = 1;\n           \
     \     for(u32 j=0;j<m;++j) {\n                    d *= p;\n                  \
     \  res.push_back(res[i]*d);\n                }\n            }\n        }\n   \
-    \     return res;\n    }\npublic:\n    inline static constexpr bool is_prime(const\
-    \ u64 n) { return miller_rabin(n); }\n\t//{\u7D20\u56E0\u6570,\u500B\u6570}\u306E\
-    vector\u304C\u8FD4\u5374\u3055\u308C\u308B\n    inline static vector<pair<u64,u64>>\
-    \ factorization(const u64 n) {return factorization_impl(n);}\n\t//\u7D20\u56E0\
-    \u6570\u304C\u611A\u76F4\u306B\u6607\u9806\u3067\u8FD4\u5374\u3055\u308C\u308B\
-    \n    inline static vector<u64> factor(const u64 n) {return factor(n, true);}\n\
-    \    //\u7D04\u6570\u304C\u6607\u9806\u3067\u5217\u6319\u3055\u308C\u308B\n  \
-    \  inline static vector<u64> divisor(const u64 n) {return divisor_impl(n); }\n\
-    \    inline static constexpr long long gcd(long long n, long long m) { return\
-    \ (n>m ? pre(n,m) : pre(m,n));}\n    inline static constexpr long long naive_gcd(long\
-    \ long a, long long b) { return (b ? naive_gcd(b, a % b):a);}\n    inline static\
-    \ constexpr long long lcm(long long a, long long b) {return (a*b ? (a / gcd(a,\
-    \ b)*b): 0);}\n    inline static constexpr long long ext_gcd(long long a, long\
-    \ long b, long long &x, long long &y) {\n        if (b == 0) return x = 1, y =\
-    \ 0, a; long long d = ext_gcd(b, a%b, y, x); return y -= a / b * x, d;\n    }\n\
+    \     return res;\n    }\n    inline static long long baby_step_giant_step(long\
+    \ long a, long long b, long long mod) {\n        a %= mod, b%= mod;\n        if(b==1\
+    \ || mod==1) return 0;\n        if(a==0) return (b==0 ? 1:-1);\n\n        long\
+    \ long offset=0, c = 1 % mod;\n        for(long long g; g=gcd(a,mod); ++offset,\
+    \ b /= g, mod /= g, (c *= (a/g)) %= mod) {\n            if(g==1) break;\n    \
+    \        if(b == c) return offset;\n            if(b % g) return -1;\n       \
+    \ }\n\n        long long sm = sqrtl(mod)+1;\n        //{a^0, a^1, ... a^sm} %\
+    \ mod\n        unordered_map<long long, long long> pow_a;\n        for(long long\
+    \ i = 0, d = b; i <= sm; ++i, (d*=a)%=mod) {\n            pow_a[d]=i;\n      \
+    \  }\n        long long e = pow_int64(a,sm,mod);\n        for(long long i = 1,\
+    \ d = (c*e) % mod; i <= sm; ++i, (d*=e)%=mod) {\n            if(pow_a.count(d))\
+    \ return i * sm - pow_a[d] + offset;\n        }\n        return -1;\n    }\npublic:\n\
+    \    inline static constexpr bool is_prime(const u64 n) { return miller_rabin(n);\
+    \ }\n\t//{\u7D20\u56E0\u6570,\u500B\u6570}\u306Evector\u304C\u8FD4\u5374\u3055\
+    \u308C\u308B\n    inline static vector<pair<u64,u64>> factorization(const u64\
+    \ n) {return factorization_impl(n);}\n\t//\u7D20\u56E0\u6570\u304C\u611A\u76F4\
+    \u306B\u6607\u9806\u3067\u8FD4\u5374\u3055\u308C\u308B\n    inline static vector<u64>\
+    \ factor(const u64 n) {return factor(n, true);}\n    //\u7D04\u6570\u304C\u6607\
+    \u9806\u3067\u5217\u6319\u3055\u308C\u308B\n    inline static vector<u64> divisor(const\
+    \ u64 n) {return divisor_impl(n); }\n    inline static constexpr long long gcd(long\
+    \ long n, long long m) { return (n>m ? pre(n,m) : pre(m,n));}\n    inline static\
+    \ constexpr long long naive_gcd(long long a, long long b) { return (b ? naive_gcd(b,\
+    \ a % b):a);}\n    inline static constexpr long long lcm(long long a, long long\
+    \ b) {return (a*b ? (a / gcd(a, b)*b): 0);}\n    //ax+by=gcd(a,b)\n    inline\
+    \ static constexpr long long ext_gcd(long long a, long long b, long long &x, long\
+    \ long &y) {\n        if (b == 0) return x = 1, y = 0, a; long long d = ext_gcd(b,\
+    \ a%b, y, x); return y -= a / b * x, d;\n    }\n    //a^x = b (% mod) \u306A\u308B\
+    \ x\u3092\u6C42\u3081\u308B\n    inline static long long discrete_logarithm(long\
+    \ long a, long long b, long long mod) {return baby_step_giant_step(a,b,mod);}\n\
     };\n"
   code: "/*\n * @title Prime - \u9AD8\u901F\u7D20\u56E0\u6570\u5206\u89E3\u30FB\u30DF\
     \u30E9\u30FC\u30E9\u30D3\u30F3\u7D20\u6570\u5224\u5B9A\u30FBGcd\u30FBLcm\n * @docs\
@@ -153,7 +173,10 @@ data:
     \        }\n    };\n    inline static constexpr long long pow_uint128(long long\
     \ x, long long n, long long mod) {\n        long long res = 1;\n        for (x\
     \ %= mod; n > 0; n >>= 1, x=(u128(x)*x)%mod) if (n & 1) res = (u128(res)*x)%mod;\n\
-    \        return res;\n    }\n    template<size_t sz> inline static constexpr bool\
+    \        return res;\n    }\n    inline static constexpr long long pow_int64(long\
+    \ long x, long long n, long long mod) {\n        long long res = 1;\n        for\
+    \ (x %= mod; n > 0; n >>= 1, x=(x*x)%mod) if (n & 1) res = (res*x)%mod;\n    \
+    \    return res;\n    }\n    template<size_t sz> inline static constexpr bool\
     \ miller_rabin_uint128(const u64& n, const array<u64,sz>& ar) {\n        u32 i,s=0;\
     \ \n        u64 m = n - 1;\n        for (;!(m&1);++s,m>>=1);\n        MontgomeryMod\
     \ mmod(n);\n        for (const u64& a: ar) {\n            if(a>=n) break;\n  \
@@ -208,35 +231,50 @@ data:
     \            for(u32 i=0;i<sz;++i) {\n                u64 d = 1;\n           \
     \     for(u32 j=0;j<m;++j) {\n                    d *= p;\n                  \
     \  res.push_back(res[i]*d);\n                }\n            }\n        }\n   \
-    \     return res;\n    }\npublic:\n    inline static constexpr bool is_prime(const\
-    \ u64 n) { return miller_rabin(n); }\n\t//{\u7D20\u56E0\u6570,\u500B\u6570}\u306E\
-    vector\u304C\u8FD4\u5374\u3055\u308C\u308B\n    inline static vector<pair<u64,u64>>\
-    \ factorization(const u64 n) {return factorization_impl(n);}\n\t//\u7D20\u56E0\
-    \u6570\u304C\u611A\u76F4\u306B\u6607\u9806\u3067\u8FD4\u5374\u3055\u308C\u308B\
-    \n    inline static vector<u64> factor(const u64 n) {return factor(n, true);}\n\
-    \    //\u7D04\u6570\u304C\u6607\u9806\u3067\u5217\u6319\u3055\u308C\u308B\n  \
-    \  inline static vector<u64> divisor(const u64 n) {return divisor_impl(n); }\n\
-    \    inline static constexpr long long gcd(long long n, long long m) { return\
-    \ (n>m ? pre(n,m) : pre(m,n));}\n    inline static constexpr long long naive_gcd(long\
-    \ long a, long long b) { return (b ? naive_gcd(b, a % b):a);}\n    inline static\
-    \ constexpr long long lcm(long long a, long long b) {return (a*b ? (a / gcd(a,\
-    \ b)*b): 0);}\n    inline static constexpr long long ext_gcd(long long a, long\
-    \ long b, long long &x, long long &y) {\n        if (b == 0) return x = 1, y =\
-    \ 0, a; long long d = ext_gcd(b, a%b, y, x); return y -= a / b * x, d;\n    }\n\
-    };\n"
+    \     return res;\n    }\n    inline static long long baby_step_giant_step(long\
+    \ long a, long long b, long long mod) {\n        a %= mod, b%= mod;\n        if(b==1\
+    \ || mod==1) return 0;\n        if(a==0) return (b==0 ? 1:-1);\n\n        long\
+    \ long offset=0, c = 1 % mod;\n        for(long long g; g=gcd(a,mod); ++offset,\
+    \ b /= g, mod /= g, (c *= (a/g)) %= mod) {\n            if(g==1) break;\n    \
+    \        if(b == c) return offset;\n            if(b % g) return -1;\n       \
+    \ }\n\n        long long sm = sqrtl(mod)+1;\n        //{a^0, a^1, ... a^sm} %\
+    \ mod\n        unordered_map<long long, long long> pow_a;\n        for(long long\
+    \ i = 0, d = b; i <= sm; ++i, (d*=a)%=mod) {\n            pow_a[d]=i;\n      \
+    \  }\n        long long e = pow_int64(a,sm,mod);\n        for(long long i = 1,\
+    \ d = (c*e) % mod; i <= sm; ++i, (d*=e)%=mod) {\n            if(pow_a.count(d))\
+    \ return i * sm - pow_a[d] + offset;\n        }\n        return -1;\n    }\npublic:\n\
+    \    inline static constexpr bool is_prime(const u64 n) { return miller_rabin(n);\
+    \ }\n\t//{\u7D20\u56E0\u6570,\u500B\u6570}\u306Evector\u304C\u8FD4\u5374\u3055\
+    \u308C\u308B\n    inline static vector<pair<u64,u64>> factorization(const u64\
+    \ n) {return factorization_impl(n);}\n\t//\u7D20\u56E0\u6570\u304C\u611A\u76F4\
+    \u306B\u6607\u9806\u3067\u8FD4\u5374\u3055\u308C\u308B\n    inline static vector<u64>\
+    \ factor(const u64 n) {return factor(n, true);}\n    //\u7D04\u6570\u304C\u6607\
+    \u9806\u3067\u5217\u6319\u3055\u308C\u308B\n    inline static vector<u64> divisor(const\
+    \ u64 n) {return divisor_impl(n); }\n    inline static constexpr long long gcd(long\
+    \ long n, long long m) { return (n>m ? pre(n,m) : pre(m,n));}\n    inline static\
+    \ constexpr long long naive_gcd(long long a, long long b) { return (b ? naive_gcd(b,\
+    \ a % b):a);}\n    inline static constexpr long long lcm(long long a, long long\
+    \ b) {return (a*b ? (a / gcd(a, b)*b): 0);}\n    //ax+by=gcd(a,b)\n    inline\
+    \ static constexpr long long ext_gcd(long long a, long long b, long long &x, long\
+    \ long &y) {\n        if (b == 0) return x = 1, y = 0, a; long long d = ext_gcd(b,\
+    \ a%b, y, x); return y -= a / b * x, d;\n    }\n    //a^x = b (% mod) \u306A\u308B\
+    \ x\u3092\u6C42\u3081\u308B\n    inline static long long discrete_logarithm(long\
+    \ long a, long long b, long long mod) {return baby_step_giant_step(a,b,mod);}\n\
+    };"
   dependsOn: []
   isVerificationFile: false
   path: lib/30-math/Prime.cpp
   requiredBy: []
-  timestamp: '2023-06-19 02:28:10+09:00'
+  timestamp: '2023-06-23 04:26:18+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
-  - test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
-  - test/math/Prime-divisor-1.test.cpp
-  - test/math/Prime-miller-rabin-2.test.cpp
   - test/math/Prime-miller-rabin-1.test.cpp
   - test/math/Prime-rho.test.cpp
+  - test/math/Prime-miller-rabin-2.test.cpp
+  - test/math/Prime-divisor-1.test.cpp
+  - test/math/Prime-rho-discrete-logarithm.test.cpp
+  - test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+  - test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
 documentation_of: lib/30-math/Prime.cpp
 layout: document
 redirect_from:

@@ -43,8 +43,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/Eratosthenes.test.cpp
-  - test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
   - test/convolution/DivisorZetaMoebiusTransform-lcm-convolution.test.cpp
+  - test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
 documentation_of: lib/30-math/Eratosthenes.cpp
 layout: document
 redirect_from:
