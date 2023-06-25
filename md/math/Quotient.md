@@ -1,0 +1,3 @@
+- Quotient
+- N/i の集合と個数を返す
+- [提出](https://atcoder.jp/contests/abc230/tasks/abc230_e)
