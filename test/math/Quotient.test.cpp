@@ -1,4 +1,4 @@
-#define PROBLEM "https://yukicoder.me/problems/no/741"
+#define PROBLEM "https://judge.yosupo.jp/problem/enumerate_quotients"
 
 #include <vector>
 #include <iostream>
