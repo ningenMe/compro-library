@@ -70,6 +70,7 @@
 "test/math/Prime-miller-rabin-2.test.cpp": "2023-06-23 05:10:52 +0900",
 "test/math/Prime-rho-discrete-logarithm.test.cpp": "2023-06-23 05:10:52 +0900",
 "test/math/Prime-rho.test.cpp": "2023-06-23 05:10:52 +0900",
+"test/math/Quotient.test.cpp": "2023-06-26 21:08:22 +0900",
 "test/needless/IntegerRangeFrequencyQueryTree-range-freq.test.cpp": "2023-06-15 04:20:46 +0900",
 "test/needless/RangeFrequencyQueryTree-range-freq.test.cpp": "2023-06-15 04:20:46 +0900",
 "test/optimize/LongestIncreasingSubsequence.test.cpp": "2023-05-30 04:23:09 +0900",
