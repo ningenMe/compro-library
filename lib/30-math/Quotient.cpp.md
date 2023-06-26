@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/math/Quotient.test.cpp
     title: test/math/Quotient.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/math/Quotient.md
     document_title: "Quotient - \u5546\u306E\u96C6\u5408"
@@ -39,7 +39,7 @@ data:
   path: lib/30-math/Quotient.cpp
   requiredBy: []
   timestamp: '2023-06-26 06:47:35+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/math/Quotient.test.cpp
 documentation_of: lib/30-math/Quotient.cpp

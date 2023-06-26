@@ -181,7 +181,7 @@ data:
     - icon: ':warning:'
       path: lib/30-math/PrimitiveRoot.cpp
       title: "PrimitiveRoot - \u539F\u59CB\u6839"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: lib/30-math/Quotient.cpp
       title: "Quotient - \u5546\u306E\u96C6\u5408"
   - name: lib/31-convolution
@@ -647,7 +647,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/math/Prime-rho.test.cpp
       title: test/math/Prime-rho.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/math/Quotient.test.cpp
       title: test/math/Quotient.test.cpp
   - name: test/needless

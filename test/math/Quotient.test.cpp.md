@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: lib/30-math/Quotient.cpp
     title: "Quotient - \u5546\u306E\u96C6\u5408"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://yukicoder.me/problems/no/741
+    PROBLEM: https://judge.yosupo.jp/problem/enumerate_quotients
     links:
-    - https://yukicoder.me/problems/no/741
-  bundledCode: "#line 1 \"test/math/Quotient.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/741\"\
+    - https://judge.yosupo.jp/problem/enumerate_quotients
+  bundledCode: "#line 1 \"test/math/Quotient.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_quotients\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cmath>\n#include <algorithm>\n\
     #include <cassert>\nusing namespace std;\n#line 1 \"lib/30-math/Quotient.cpp\"\
     \n/*\n * @title Quotient - \u5546\u306E\u96C6\u5408\n * @docs md/math/Quotient.md\n\
@@ -31,20 +31,20 @@ data:
     \ N; cin >> N;\n    auto vp = Quotient(N);\n    int M = vp.size();\n    cout <<\
     \ M << \"\\n\";\n    for(int i = 0; i<M; ++i) cout << vp[i].first << \" \\n\"\
     [i==M-1];\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://yukicoder.me/problems/no/741\"\n\n#include <vector>\n\
-    #include <iostream>\n#include <cmath>\n#include <algorithm>\n#include <cassert>\n\
-    using namespace std;\n#include \"../../lib/30-math/Quotient.cpp\"\n\nint main(void){\n\
-    \    cin.tie(0);ios::sync_with_stdio(false);\n    long long N; cin >> N;\n   \
-    \ auto vp = Quotient(N);\n    int M = vp.size();\n    cout << M << \"\\n\";\n\
-    \    for(int i = 0; i<M; ++i) cout << vp[i].first << \" \\n\"[i==M-1];\n\treturn\
-    \ 0;\n}"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_quotients\"\n\
+    \n#include <vector>\n#include <iostream>\n#include <cmath>\n#include <algorithm>\n\
+    #include <cassert>\nusing namespace std;\n#include \"../../lib/30-math/Quotient.cpp\"\
+    \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    long long\
+    \ N; cin >> N;\n    auto vp = Quotient(N);\n    int M = vp.size();\n    cout <<\
+    \ M << \"\\n\";\n    for(int i = 0; i<M; ++i) cout << vp[i].first << \" \\n\"\
+    [i==M-1];\n\treturn 0;\n}"
   dependsOn:
   - lib/30-math/Quotient.cpp
   isVerificationFile: true
   path: test/math/Quotient.test.cpp
   requiredBy: []
-  timestamp: '2023-06-26 06:47:35+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-06-26 21:08:22+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/math/Quotient.test.cpp
 layout: document
