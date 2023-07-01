@@ -124,8 +124,8 @@ data:
   timestamp: '2023-06-06 01:28:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/queue/SwagDeque-queue-composite.test.cpp
   - test/queue/SwagDeque-deque-composite.test.cpp
+  - test/queue/SwagDeque-queue-composite.test.cpp
 documentation_of: lib/15-queue/SwagDeque.cpp
 layout: document
 redirect_from:

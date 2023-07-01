@@ -108,8 +108,8 @@ data:
   timestamp: '2023-06-16 04:11:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/math/MontmortNumber.test.cpp
   - test/util/RuntimeModInt.test.cpp
+  - test/math/MontmortNumber.test.cpp
 documentation_of: lib/00-util/RuntimeModInt.cpp
 layout: document
 redirect_from:
