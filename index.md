@@ -721,11 +721,17 @@ data:
   - name: test/segment-tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
+      title: test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
       title: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
       title: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
+      title: test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/LazySegmentTree-rmqraq.test.cpp
       title: test/segment-tree/LazySegmentTree-rmqraq.test.cpp

@@ -4,11 +4,17 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
+    title: test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
     title: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
     title: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
+    title: test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -28,21 +34,24 @@ data:
     \ return Monoid::unit_node;\n        TypeNode vl=Monoid::unit_node, vr=Monoid::unit_node;\n\
     \        i64 m = (nl+nr)>>1;\n        if(node->left)  vl = dfs(l,r,nl,m,node->left);\n\
     \        if(node->right) vr = dfs(l,r,m,nr,node->right);\n        return Monoid::func_fold(vl,vr);\n\
-    \    }\n\n    i64 length;\n    Node *root;\npublic:\n\n    //unit\u3067\u521D\u671F\
+    \    }\n\n    i64 length;\n    Node *root;\npublic:\n    //unit\u3067\u521D\u671F\
     \u5316\n    DynamicSegmentTree() : length(1) {\n        root = new Node();\n \
-    \   }\n\n    //[idx,idx+1)\n    void operate(i64 idx, const TypeNode var) {\n\
-    \        if(idx < 0) return;\n        for (;length <= idx; length *= 2) {\n  \
-    \          Node *new_root = new Node();\n            TypeNode val = root->val;\n\
+    \   }\n    //[idx,idx+1)\n    void operate(i64 idx, const TypeNode val) {\n  \
+    \      if(idx < 0) return;\n        for (;length <= idx; length *= 2) {\n    \
+    \        Node *new_root = new Node();\n            TypeNode val = root->val;\n\
     \            new_root->left = root;\n            root = new_root;\n          \
-    \  root->val = val;\n        }\n\n        Node *node = root;\n        node->val\
-    \ = Monoid::func_operate(node->val,var);\n\n        i64 l = 0, r = length, m;\n\
-    \        while(r-l>1) {\n            m = (r+l)>>1;\n            if(idx<m) {\n\
-    \                r = m;\n                if(!node->left) node->left=new Node();\n\
-    \                node = node->left;\n            }\n            else {\n     \
-    \           l = m;\n                if(!node->right) node->right = new Node();\n\
-    \                node = node->right;\n            }\n            node->val = Monoid::func_operate(node->val,var);\n\
-    \        }\n    }\n\n    //[l,r)\n    TypeNode fold(i64 l, i64 r) {\n        if\
-    \ (l < 0 || length <= l || r < 0) return Monoid::unit_node;\n        return dfs(l,r,0,length,root);\n\
+    \  root->val = val;\n        }\n        Node* node = root;\n        i64 l = 0,\
+    \ r = length, m;\n\t\tstack<Node*> st;\n\n        while(r-l>1) {\n\t\t\tst.push(node);\n\
+    \            m = (r+l)>>1;\n            if(idx<m) {\n                r = m;\n\
+    \                if(!node->left) node->left=new Node();\n                node\
+    \ = node->left;\n            }\n            else {\n                l = m;\n \
+    \               if(!node->right) node->right = new Node();\n                node\
+    \ = node->right;\n            }\n        }\n        node->val = Monoid::func_operate(node->val,val);\n\
+    \t\twhile(st.size()) {\n\t\t\tnode = st.top(); st.pop();\n\t\t\tTypeNode vl=Monoid::unit_node,\
+    \ vr=Monoid::unit_node;\n\t\t\tif(node->left)  vl = node->left->val;\n\t\t\tif(node->right)\
+    \ vr = node->right->val;\n\t\t\tnode->val = Monoid::func_fold(vl,vr);\n\t\t}\n\
+    \    }\n\n    //[l,r)\n    TypeNode fold(i64 l, i64 r) {\n        if (l < 0 ||\
+    \ length <= l || r < 0) return Monoid::unit_node;\n        return dfs(l,r,0,length,root);\n\
     \    }\n};\n"
   code: "/*\n * @title DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\
     \u7684\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\n * @docs md/segment-tree/DynamicSegmentTree.md\n\
@@ -54,31 +63,36 @@ data:
     \ return Monoid::unit_node;\n        TypeNode vl=Monoid::unit_node, vr=Monoid::unit_node;\n\
     \        i64 m = (nl+nr)>>1;\n        if(node->left)  vl = dfs(l,r,nl,m,node->left);\n\
     \        if(node->right) vr = dfs(l,r,m,nr,node->right);\n        return Monoid::func_fold(vl,vr);\n\
-    \    }\n\n    i64 length;\n    Node *root;\npublic:\n\n    //unit\u3067\u521D\u671F\
+    \    }\n\n    i64 length;\n    Node *root;\npublic:\n    //unit\u3067\u521D\u671F\
     \u5316\n    DynamicSegmentTree() : length(1) {\n        root = new Node();\n \
-    \   }\n\n    //[idx,idx+1)\n    void operate(i64 idx, const TypeNode var) {\n\
-    \        if(idx < 0) return;\n        for (;length <= idx; length *= 2) {\n  \
-    \          Node *new_root = new Node();\n            TypeNode val = root->val;\n\
+    \   }\n    //[idx,idx+1)\n    void operate(i64 idx, const TypeNode val) {\n  \
+    \      if(idx < 0) return;\n        for (;length <= idx; length *= 2) {\n    \
+    \        Node *new_root = new Node();\n            TypeNode val = root->val;\n\
     \            new_root->left = root;\n            root = new_root;\n          \
-    \  root->val = val;\n        }\n\n        Node *node = root;\n        node->val\
-    \ = Monoid::func_operate(node->val,var);\n\n        i64 l = 0, r = length, m;\n\
-    \        while(r-l>1) {\n            m = (r+l)>>1;\n            if(idx<m) {\n\
-    \                r = m;\n                if(!node->left) node->left=new Node();\n\
-    \                node = node->left;\n            }\n            else {\n     \
-    \           l = m;\n                if(!node->right) node->right = new Node();\n\
-    \                node = node->right;\n            }\n            node->val = Monoid::func_operate(node->val,var);\n\
-    \        }\n    }\n\n    //[l,r)\n    TypeNode fold(i64 l, i64 r) {\n        if\
-    \ (l < 0 || length <= l || r < 0) return Monoid::unit_node;\n        return dfs(l,r,0,length,root);\n\
+    \  root->val = val;\n        }\n        Node* node = root;\n        i64 l = 0,\
+    \ r = length, m;\n\t\tstack<Node*> st;\n\n        while(r-l>1) {\n\t\t\tst.push(node);\n\
+    \            m = (r+l)>>1;\n            if(idx<m) {\n                r = m;\n\
+    \                if(!node->left) node->left=new Node();\n                node\
+    \ = node->left;\n            }\n            else {\n                l = m;\n \
+    \               if(!node->right) node->right = new Node();\n                node\
+    \ = node->right;\n            }\n        }\n        node->val = Monoid::func_operate(node->val,val);\n\
+    \t\twhile(st.size()) {\n\t\t\tnode = st.top(); st.pop();\n\t\t\tTypeNode vl=Monoid::unit_node,\
+    \ vr=Monoid::unit_node;\n\t\t\tif(node->left)  vl = node->left->val;\n\t\t\tif(node->right)\
+    \ vr = node->right->val;\n\t\t\tnode->val = Monoid::func_fold(vl,vr);\n\t\t}\n\
+    \    }\n\n    //[l,r)\n    TypeNode fold(i64 l, i64 r) {\n        if (l < 0 ||\
+    \ length <= l || r < 0) return Monoid::unit_node;\n        return dfs(l,r,0,length,root);\n\
     \    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: lib/10-segment-tree/DynamicSegmentTree.cpp
   requiredBy: []
-  timestamp: '2023-05-30 05:01:32+09:00'
+  timestamp: '2023-07-02 23:40:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+  - test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
   - test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+  - test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
 documentation_of: lib/10-segment-tree/DynamicSegmentTree.cpp
 layout: document
 redirect_from:

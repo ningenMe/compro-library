@@ -7,6 +7,9 @@ data:
     path: test/graph/Tree-hld-vertex-3.test.cpp
     title: test/graph/Tree-hld-vertex-3.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
+    title: test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-rcq.test.cpp
     title: test/segment-tree/SegmentTree-rcq.test.cpp
   _isVerificationFailed: false
@@ -42,6 +45,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/Tree-hld-vertex-3.test.cpp
+  - test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
   - test/segment-tree/SegmentTree-rcq.test.cpp
 documentation_of: lib/99-operator/monoid/MonoidRangeCompositePointUpdate.cpp
 layout: document

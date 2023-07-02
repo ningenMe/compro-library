@@ -22,6 +22,9 @@ data:
     path: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
     title: test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
+    title: test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-rsq.test.cpp
     title: test/segment-tree/SegmentTree-rsq.test.cpp
   _isVerificationFailed: false
@@ -61,6 +64,7 @@ data:
   - test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
   - test/segment-tree/SegmentTree-rsq.test.cpp
   - test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+  - test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
 documentation_of: lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
 layout: document
 redirect_from:

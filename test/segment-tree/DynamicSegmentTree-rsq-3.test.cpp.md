@@ -16,11 +16,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
+    PROBLEM: https://judge.yosupo.jp/problem/point_add_range_sum
     links:
-    - https://judge.yosupo.jp/problem/static_range_sum
-  bundledCode: "#line 1 \"test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp\"\n\
-    #define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n#include\
+    - https://judge.yosupo.jp/problem/point_add_range_sum
+  bundledCode: "#line 1 \"test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp\"\n\
+    #define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <cassert>\n#include <stack>\nusing namespace\
     \ std;\n#line 1 \"lib/10-segment-tree/DynamicSegmentTree.cpp\"\n/*\n * @title\
     \ DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\u30BB\u30B0\
@@ -58,34 +58,35 @@ data:
     \ constexpr TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_fold(TypeNode\
     \ l,TypeNode r){return l+r;}\n    inline static constexpr TypeNode func_operate(TypeNode\
     \ l,TypeNode r){return l+r;}\n    inline static constexpr bool func_check(TypeNode\
-    \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n#line 10 \"test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp\"\
-    \n\nint main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    DynamicSegmentTree<MonoidRangeSumPointAdd<long\
-    \ long>> dseg;\n    int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i) {\n    \
-    \    int a; cin >> a;\n        dseg.operate(i,a);\n    }\n    while(Q--) {\n \
-    \       int l,r; cin >> l >> r;\n        cout << dseg.fold(l,r) << endl;\n   \
-    \ }\n    return 0;\n\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n\
-    #include <vector>\n#include <iostream>\n#include <cassert>\n#include <stack>\n\
+    \ nodeVal,TypeNode var){return var == nodeVal;}\n};\n#line 10 \"test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp\"\
+    \n\nint main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; cin\
+    \ >> N >> Q;\n\tDynamicSegmentTree<MonoidRangeSumPointAdd<long long>> seg;\n \
+    \   for(int i = 0; i < N; ++i) {\n\t\tint a; cin >> a;\n\t\tseg.operate(i,a);\n\
+    \    }\n    \n    while(Q--){\n        long long q,l,r; cin >> q >> l >> r;\n\
+    \        if(q) cout << seg.fold(l,r) << \"\\n\";\n        else seg.operate(l,r);\n\
+    \    }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n\
+    \n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <stack>\n\
     using namespace std;\n#include \"../../lib/10-segment-tree/DynamicSegmentTree.cpp\"\
     \n#include \"../../lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp\"\n\nint\
-    \ main(void){\n    cin.tie(0);ios::sync_with_stdio(false);\n    DynamicSegmentTree<MonoidRangeSumPointAdd<long\
-    \ long>> dseg;\n    int N,Q; cin >> N >> Q;\n    for(int i=0;i<N;++i) {\n    \
-    \    int a; cin >> a;\n        dseg.operate(i,a);\n    }\n    while(Q--) {\n \
-    \       int l,r; cin >> l >> r;\n        cout << dseg.fold(l,r) << endl;\n   \
-    \ }\n    return 0;\n\n}"
+    \ main(void){\n\tcin.tie(0);ios::sync_with_stdio(false);\n    int N,Q; cin >>\
+    \ N >> Q;\n\tDynamicSegmentTree<MonoidRangeSumPointAdd<long long>> seg;\n    for(int\
+    \ i = 0; i < N; ++i) {\n\t\tint a; cin >> a;\n\t\tseg.operate(i,a);\n    }\n \
+    \   \n    while(Q--){\n        long long q,l,r; cin >> q >> l >> r;\n        if(q)\
+    \ cout << seg.fold(l,r) << \"\\n\";\n        else seg.operate(l,r);\n    }\n}"
   dependsOn:
   - lib/10-segment-tree/DynamicSegmentTree.cpp
   - lib/99-operator/monoid/MonoidRangeSumPointAdd.cpp
   isVerificationFile: true
-  path: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+  path: test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
   requiredBy: []
   timestamp: '2023-07-02 23:40:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+documentation_of: test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
 layout: document
 redirect_from:
-- /verify/test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
-- /verify/test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp.html
-title: test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
+- /verify/test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
+- /verify/test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp.html
+title: test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
 ---
