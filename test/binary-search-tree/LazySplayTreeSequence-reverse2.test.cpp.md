@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: lib/00-util/FastIO.cpp
     title: FastIO
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: lib/12-binary-search-tree/LazySplayTreeSequence.cpp
     title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
   - icon: ':heavy_check_mark:'
@@ -99,12 +99,22 @@ data:
     \   return right;\n    }\n    inline Node* rotate_right(Node* node){\n       \
     \ Node* left = node->left;\n        node->left = left->right;\n        left->right\
     \ = node;\n        update(node);\n        update(left);\n        return left;\n\
-    \    }\n\n    inline Node* splay(Node* node, size_t k){\n        propagate(node);\n\
-    \        size_t sz_l = size(node->left);\n        if(k == sz_l) return node;\n\
-    \        if(k < sz_l) {\n            node->left = splay(node->left, k);\n    \
-    \        node = rotate_right(node);\n        }\n        else {\n            node->right\
-    \ = splay(node->right, k - sz_l - 1);\n            node = rotate_left(node);\n\
-    \        }\n        update(node);\n        return node;\n    }\n\n    //\u975E\
+    \    }\n\n    inline Node* splay(Node* node, size_t k){\n        auto p = splay_inner(node,\
+    \ k);\n        node = p.first;\n        auto last = p.second;\n        if(node->left\
+    \ == last) return rotate_right(node);\n        else if(node->right == last) return\
+    \ rotate_left(node);\n        return node;\n    }\n    inline pair<Node*,Node*>\
+    \ splay_inner(Node* node, size_t k){\n        propagate(node);\n        size_t\
+    \ sz_l = size(node->left);\n        if(k == sz_l) return {node, node};\n     \
+    \   if(k < sz_l) {\n            auto p = splay_inner(node->left, k);\n       \
+    \     node->left = p.first;\n            auto last = p.second;\n            update(node);\n\
+    \            if(node->left == last) return {node, last};\n            if(node->left->left\
+    \ == last) node = rotate_right(node);\n            else node->left = rotate_left(node->left);\n\
+    \            return {rotate_right(node), last};\n        }\n        else {\n \
+    \           auto p = splay_inner(node->right, k - sz_l - 1);\n            node->right\
+    \ = p.first;\n            auto last = p.second;\n            update(node);\n \
+    \           if(node->right == last) return {node, last};\n            if(node->right->right\
+    \ == last) node = rotate_left(node);\n            else node->right = rotate_right(node->right);\n\
+    \            return {rotate_left(node), last};\n        }\n    }\n\n    //\u975E\
     \u518D\u5E30\u306F\u9045\u304B\u3063\u305F\n    // stack<pair<Node*, size_t>>\
     \ st;\n    // inline Node* splay(Node* node, size_t k){\n    //     Node* t_node\
     \ = node;\n    //     Node* last = nullptr;\n    //     while(last == nullptr)\
@@ -192,7 +202,7 @@ data:
   isVerificationFile: true
   path: test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
   requiredBy: []
-  timestamp: '2023-07-02 05:58:47+09:00'
+  timestamp: '2023-07-02 22:00:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp

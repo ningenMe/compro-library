@@ -10,6 +10,9 @@ data:
     path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
     title: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
+    title: test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   - icon: ':heavy_check_mark:'
@@ -231,6 +234,7 @@ data:
   - test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
+  - test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   - test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
   - test/needless/RangeFrequencyQueryTree-range-freq.test.cpp

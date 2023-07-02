@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
   - icon: ':heavy_check_mark:'
@@ -18,9 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/binary-search-tree/LazySplayTreeSequence.md
     document_title: "LazySplayTreeSequence - \u9045\u5EF6\u8A55\u4FA1SplayTree\u5217"
@@ -63,12 +63,22 @@ data:
     \   return right;\n    }\n    inline Node* rotate_right(Node* node){\n       \
     \ Node* left = node->left;\n        node->left = left->right;\n        left->right\
     \ = node;\n        update(node);\n        update(left);\n        return left;\n\
-    \    }\n\n    inline Node* splay(Node* node, size_t k){\n        propagate(node);\n\
-    \        size_t sz_l = size(node->left);\n        if(k == sz_l) return node;\n\
-    \        if(k < sz_l) {\n            node->left = splay(node->left, k);\n    \
-    \        node = rotate_right(node);\n        }\n        else {\n            node->right\
-    \ = splay(node->right, k - sz_l - 1);\n            node = rotate_left(node);\n\
-    \        }\n        update(node);\n        return node;\n    }\n\n    //\u975E\
+    \    }\n\n    inline Node* splay(Node* node, size_t k){\n        auto p = splay_inner(node,\
+    \ k);\n        node = p.first;\n        auto last = p.second;\n        if(node->left\
+    \ == last) return rotate_right(node);\n        else if(node->right == last) return\
+    \ rotate_left(node);\n        return node;\n    }\n    inline pair<Node*,Node*>\
+    \ splay_inner(Node* node, size_t k){\n        propagate(node);\n        size_t\
+    \ sz_l = size(node->left);\n        if(k == sz_l) return {node, node};\n     \
+    \   if(k < sz_l) {\n            auto p = splay_inner(node->left, k);\n       \
+    \     node->left = p.first;\n            auto last = p.second;\n            update(node);\n\
+    \            if(node->left == last) return {node, last};\n            if(node->left->left\
+    \ == last) node = rotate_right(node);\n            else node->left = rotate_left(node->left);\n\
+    \            return {rotate_right(node), last};\n        }\n        else {\n \
+    \           auto p = splay_inner(node->right, k - sz_l - 1);\n            node->right\
+    \ = p.first;\n            auto last = p.second;\n            update(node);\n \
+    \           if(node->right == last) return {node, last};\n            if(node->right->right\
+    \ == last) node = rotate_left(node);\n            else node->right = rotate_right(node->right);\n\
+    \            return {rotate_left(node), last};\n        }\n    }\n\n    //\u975E\
     \u518D\u5E30\u306F\u9045\u304B\u3063\u305F\n    // stack<pair<Node*, size_t>>\
     \ st;\n    // inline Node* splay(Node* node, size_t k){\n    //     Node* t_node\
     \ = node;\n    //     Node* last = nullptr;\n    //     while(last == nullptr)\
@@ -167,12 +177,22 @@ data:
     \   return right;\n    }\n    inline Node* rotate_right(Node* node){\n       \
     \ Node* left = node->left;\n        node->left = left->right;\n        left->right\
     \ = node;\n        update(node);\n        update(left);\n        return left;\n\
-    \    }\n\n    inline Node* splay(Node* node, size_t k){\n        propagate(node);\n\
-    \        size_t sz_l = size(node->left);\n        if(k == sz_l) return node;\n\
-    \        if(k < sz_l) {\n            node->left = splay(node->left, k);\n    \
-    \        node = rotate_right(node);\n        }\n        else {\n            node->right\
-    \ = splay(node->right, k - sz_l - 1);\n            node = rotate_left(node);\n\
-    \        }\n        update(node);\n        return node;\n    }\n\n    //\u975E\
+    \    }\n\n    inline Node* splay(Node* node, size_t k){\n        auto p = splay_inner(node,\
+    \ k);\n        node = p.first;\n        auto last = p.second;\n        if(node->left\
+    \ == last) return rotate_right(node);\n        else if(node->right == last) return\
+    \ rotate_left(node);\n        return node;\n    }\n    inline pair<Node*,Node*>\
+    \ splay_inner(Node* node, size_t k){\n        propagate(node);\n        size_t\
+    \ sz_l = size(node->left);\n        if(k == sz_l) return {node, node};\n     \
+    \   if(k < sz_l) {\n            auto p = splay_inner(node->left, k);\n       \
+    \     node->left = p.first;\n            auto last = p.second;\n            update(node);\n\
+    \            if(node->left == last) return {node, last};\n            if(node->left->left\
+    \ == last) node = rotate_right(node);\n            else node->left = rotate_left(node->left);\n\
+    \            return {rotate_right(node), last};\n        }\n        else {\n \
+    \           auto p = splay_inner(node->right, k - sz_l - 1);\n            node->right\
+    \ = p.first;\n            auto last = p.second;\n            update(node);\n \
+    \           if(node->right == last) return {node, last};\n            if(node->right->right\
+    \ == last) node = rotate_left(node);\n            else node->right = rotate_right(node->right);\n\
+    \            return {rotate_left(node), last};\n        }\n    }\n\n    //\u975E\
     \u518D\u5E30\u306F\u9045\u304B\u3063\u305F\n    // stack<pair<Node*, size_t>>\
     \ st;\n    // inline Node* splay(Node* node, size_t k){\n    //     Node* t_node\
     \ = node;\n    //     Node* last = nullptr;\n    //     while(last == nullptr)\
@@ -238,8 +258,8 @@ data:
   isVerificationFile: false
   path: lib/12-binary-search-tree/LazySplayTreeSequence.cpp
   requiredBy: []
-  timestamp: '2023-07-02 05:58:47+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2023-07-02 22:00:20+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rmq.test.cpp
