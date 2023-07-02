@@ -25,14 +25,12 @@ template<class Monoid> class DynamicSegmentTree {
     i64 length;
     Node *root;
 public:
-
     //unitで初期化
     DynamicSegmentTree() : length(1) {
         root = new Node();
     }
-
     //[idx,idx+1)
-    void operate(i64 idx, const TypeNode var) {
+    void operate(i64 idx, const TypeNode val) {
         if(idx < 0) return;
         for (;length <= idx; length *= 2) {
             Node *new_root = new Node();
@@ -41,12 +39,12 @@ public:
             root = new_root;
             root->val = val;
         }
-
-        Node *node = root;
-        node->val = Monoid::func_operate(node->val,var);
-
+        Node* node = root;
         i64 l = 0, r = length, m;
+		stack<Node*> st;
+
         while(r-l>1) {
+			st.push(node);
             m = (r+l)>>1;
             if(idx<m) {
                 r = m;
@@ -58,8 +56,15 @@ public:
                 if(!node->right) node->right = new Node();
                 node = node->right;
             }
-            node->val = Monoid::func_operate(node->val,var);
         }
+        node->val = Monoid::func_operate(node->val,val);
+		while(st.size()) {
+			node = st.top(); st.pop();
+			TypeNode vl=Monoid::unit_node, vr=Monoid::unit_node;
+			if(node->left)  vl = node->left->val;
+			if(node->right) vr = node->right->val;
+			node->val = Monoid::func_fold(vl,vr);
+		}
     }
 
     //[l,r)
