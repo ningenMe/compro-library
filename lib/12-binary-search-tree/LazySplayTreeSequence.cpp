@@ -74,19 +74,37 @@ template<class Monoid> class LazySplayTreeSequence {
     }
 
     inline Node* splay(Node* node, size_t k){
+        auto p = splay_inner(node, k);
+        node = p.first;
+        auto last = p.second;
+        if(node->left == last) return rotate_right(node);
+        else if(node->right == last) return rotate_left(node);
+        return node;
+    }
+    inline pair<Node*,Node*> splay_inner(Node* node, size_t k){
         propagate(node);
         size_t sz_l = size(node->left);
-        if(k == sz_l) return node;
+        if(k == sz_l) return {node, node};
         if(k < sz_l) {
-            node->left = splay(node->left, k);
-            node = rotate_right(node);
+            auto p = splay_inner(node->left, k);
+            node->left = p.first;
+            auto last = p.second;
+            update(node);
+            if(node->left == last) return {node, last};
+            if(node->left->left == last) node = rotate_right(node);
+            else node->left = rotate_left(node->left);
+            return {rotate_right(node), last};
         }
         else {
-            node->right = splay(node->right, k - sz_l - 1);
-            node = rotate_left(node);
+            auto p = splay_inner(node->right, k - sz_l - 1);
+            node->right = p.first;
+            auto last = p.second;
+            update(node);
+            if(node->right == last) return {node, last};
+            if(node->right->right == last) node = rotate_left(node);
+            else node->right = rotate_right(node->right);
+            return {rotate_left(node), last};
         }
-        update(node);
-        return node;
     }
 
     //非再帰は遅かった
