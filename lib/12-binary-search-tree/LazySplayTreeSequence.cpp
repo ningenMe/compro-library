@@ -107,15 +107,17 @@ template<class Monoid> class LazySplayTreeSequence {
         }
     }
 
-    //非再帰は遅かった
+    // 非再帰は遅かった
     // stack<pair<Node*, size_t>> st;
-    // inline Node* splay(Node* node, size_t k){
+    // inline pair<Node*,Node*> splay_inner2(Node* node, size_t k){
     //     Node* t_node = node;
+    //     Node* next = nullptr;
     //     Node* last = nullptr;
     //     while(last == nullptr) {
     //         propagate(t_node);
     //         size_t sz_l = size(t_node->left);
     //         if(k == sz_l) {
+    //             next = t_node;
     //             last = t_node;
     //             continue;
     //         }
@@ -132,17 +134,29 @@ template<class Monoid> class LazySplayTreeSequence {
     //     while(st.size()) {
     //         auto [t_node,is_left] = st.top(); st.pop();
     //         if(is_left) {
-    //             t_node->left = last;
-    //             t_node = rotate_right(t_node);
+    //             t_node->left = next;
+    //             update(t_node);
+    //             if(t_node->left == last) {
+    //                 next = t_node;
+    //                 continue;
+    //             }
+    //             if(t_node->left->left == last) t_node = rotate_right(t_node);
+    //             else t_node->left = rotate_left(t_node->left);
+    //             next = rotate_right(t_node);
     //         }
     //         else {
-    //             t_node->right = last;
-    //             t_node = rotate_left(t_node);
+    //             t_node->right = next;
+    //             update(t_node);
+    //             if(t_node->right == last) {
+    //                 next = t_node;
+    //                 continue;
+    //             }
+    //             if(t_node->right->right == last) t_node = rotate_left(t_node);
+    //             else t_node->right = rotate_right(t_node->right);
+    //             next = rotate_left(t_node);
     //         }
-    //         update(t_node);
-    //         last = t_node;
     //     }
-    //     return last;
+    //     return {next, last};
     // }
 
     //    - parent
