@@ -151,12 +151,12 @@ data:
     \ {int m = size(this->root); for(int i=0;i<m;++i) cout << get(i) << \" \\n\"[i==m-1];}\n\
     };\n#line 11 \"test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp\"\
     \n\n\n/**\n * @url \n * @est\n */ \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldMinRangeOperateUpdate<long\
-    \ long,long long>> seq;\n    int N,Q; read(N),read(Q);\n    for(int i=0;i<N;++i)\
-    \ {\n        int a; read(a);\n        seq.insert(i,a);\n    }\n    while(Q--)\
-    \ {\n        int x,y,z; \n        read(x),read(y),read(z);\n        if(x==0) {\n\
-    \            auto w = seq.get(z);\n            seq.erase(z);\n            seq.insert(y,w);\n\
-    \        }\n        if(x==1) {\n            cout << seq.fold(y,z+1) << \"\\n\"\
+    \    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldMinRangeOperateUpdate<int,int>>\
+    \ seq;\n    int N,Q; read(N),read(Q);\n    for(int i=0;i<N;++i) {\n        int\
+    \ a; read(a);\n        seq.insert(i,a);\n    }\n    while(Q--) {\n        int\
+    \ x,y,z; \n        read(x),read(y),read(z);\n        if(x==0) {\n            auto\
+    \ w = seq.get(z);\n            seq.erase(z);\n            seq.insert(y,w);\n \
+    \       }\n        if(x==1) {\n            cout << seq.fold(y,z+1) << \"\\n\"\
     ;\n        }\n        if(x==2) {\n            seq.operate(y,y+1,z);\n        }\n\
     \    }\n    return 0; \n}\n\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1508\"\
@@ -164,12 +164,12 @@ data:
     using namespace std;\n#include \"../../lib/00-util/FastIO.cpp\"\n#include \"../../lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp\"\
     \n#include \"../../lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp\"\
     \n\n\n/**\n * @url \n * @est\n */ \nint main() {\n    cin.tie(0);ios::sync_with_stdio(false);\n\
-    \    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldMinRangeOperateUpdate<long\
-    \ long,long long>> seq;\n    int N,Q; read(N),read(Q);\n    for(int i=0;i<N;++i)\
-    \ {\n        int a; read(a);\n        seq.insert(i,a);\n    }\n    while(Q--)\
-    \ {\n        int x,y,z; \n        read(x),read(y),read(z);\n        if(x==0) {\n\
-    \            auto w = seq.get(z);\n            seq.erase(z);\n            seq.insert(y,w);\n\
-    \        }\n        if(x==1) {\n            cout << seq.fold(y,z+1) << \"\\n\"\
+    \    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldMinRangeOperateUpdate<int,int>>\
+    \ seq;\n    int N,Q; read(N),read(Q);\n    for(int i=0;i<N;++i) {\n        int\
+    \ a; read(a);\n        seq.insert(i,a);\n    }\n    while(Q--) {\n        int\
+    \ x,y,z; \n        read(x),read(y),read(z);\n        if(x==0) {\n            auto\
+    \ w = seq.get(z);\n            seq.erase(z);\n            seq.insert(y,w);\n \
+    \       }\n        if(x==1) {\n            cout << seq.fold(y,z+1) << \"\\n\"\
     ;\n        }\n        if(x==2) {\n            seq.operate(y,y+1,z);\n        }\n\
     \    }\n    return 0; \n}\n\n"
   dependsOn:
@@ -179,7 +179,7 @@ data:
   isVerificationFile: true
   path: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   requiredBy: []
-  timestamp: '2023-07-02 19:08:50+09:00'
+  timestamp: '2023-07-02 19:34:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
