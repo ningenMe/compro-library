@@ -5,20 +5,26 @@
 #include <cassert>
 #include <queue>
 using namespace std;
+#include "../../lib/00-util/FastIO.cpp"
 #include "../../lib/99-operator/monoid-lazy/MonoidRangeFoldMinRangeOperateUpdate.cpp"
 #include "../../lib/12-binary-search-tree/LazyRandomizedBinarySearchTreeSequence.cpp"
 
 
-int main(void){
+/**
+ * @url 
+ * @est
+ */ 
+int main() {
     cin.tie(0);ios::sync_with_stdio(false);
     LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldMinRangeOperateUpdate<long long,long long>> seq;
-    int N,Q; cin >> N >> Q;
+    int N,Q; read(N),read(Q);
     for(int i=0;i<N;++i) {
-        int a; cin >> a;
+        int a; read(a);
         seq.insert(i,a);
     }
     while(Q--) {
-        int x,y,z; cin >> x >> y >> z;
+        int x,y,z; 
+        read(x),read(y),read(z);
         if(x==0) {
             auto w = seq.get(z);
             seq.erase(z);
