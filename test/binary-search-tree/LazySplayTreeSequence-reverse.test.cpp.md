@@ -160,26 +160,35 @@ data:
     \ = p.first;\n            auto last = p.second;\n            update(node);\n \
     \           if(node->right == last) return {node, last};\n            if(node->right->right\
     \ == last) node = rotate_left(node);\n            else node->right = rotate_right(node->right);\n\
-    \            return {rotate_left(node), last};\n        }\n    }\n\n    //\u975E\
+    \            return {rotate_left(node), last};\n        }\n    }\n\n    // \u975E\
     \u518D\u5E30\u306F\u9045\u304B\u3063\u305F\n    // stack<pair<Node*, size_t>>\
-    \ st;\n    // inline Node* splay(Node* node, size_t k){\n    //     Node* t_node\
-    \ = node;\n    //     Node* last = nullptr;\n    //     while(last == nullptr)\
-    \ {\n    //         propagate(t_node);\n    //         size_t sz_l = size(t_node->left);\n\
-    \    //         if(k == sz_l) {\n    //             last = t_node;\n    //   \
-    \          continue;\n    //         }\n    //         if(k < sz_l) {\n    //\
-    \             st.emplace(t_node, 1);\n    //             t_node = t_node->left;\n\
+    \ st;\n    // inline pair<Node*,Node*> splay_inner2(Node* node, size_t k){\n \
+    \   //     Node* t_node = node;\n    //     Node* next = nullptr;\n    //    \
+    \ Node* last = nullptr;\n    //     while(last == nullptr) {\n    //         propagate(t_node);\n\
+    \    //         size_t sz_l = size(t_node->left);\n    //         if(k == sz_l)\
+    \ {\n    //             next = t_node;\n    //             last = t_node;\n  \
+    \  //             continue;\n    //         }\n    //         if(k < sz_l) {\n\
+    \    //             st.emplace(t_node, 1);\n    //             t_node = t_node->left;\n\
     \    //         }\n    //         else {\n    //             st.emplace(t_node,\
     \ 0);\n    //             t_node = t_node->right;\n    //             k = (k -\
     \ sz_l - 1);\n    //         }\n    //     }\n    //     while(st.size()) {\n\
     \    //         auto [t_node,is_left] = st.top(); st.pop();\n    //         if(is_left)\
-    \ {\n    //             t_node->left = last;\n    //             t_node = rotate_right(t_node);\n\
-    \    //         }\n    //         else {\n    //             t_node->right = last;\n\
-    \    //             t_node = rotate_left(t_node);\n    //         }\n    //  \
-    \       update(t_node);\n    //         last = t_node;\n    //     }\n    // \
-    \    return last;\n    // }\n\n    //    - parent\n    //   |\n    // left\n \
-    \   //\u306E\u5F62\u3067\u30DE\u30FC\u30B8\n    Node* merge(Node* left, Node*\
-    \ parent) {\n        if(left == nullptr) return parent;\n        if(parent ==\
-    \ nullptr) return left;\n        parent = splay(parent, 0);\n        parent->left\
+    \ {\n    //             t_node->left = next;\n    //             update(t_node);\n\
+    \    //             if(t_node->left == last) {\n    //                 next =\
+    \ t_node;\n    //                 continue;\n    //             }\n    //    \
+    \         if(t_node->left->left == last) t_node = rotate_right(t_node);\n    //\
+    \             else t_node->left = rotate_left(t_node->left);\n    //         \
+    \    next = rotate_right(t_node);\n    //         }\n    //         else {\n \
+    \   //             t_node->right = next;\n    //             update(t_node);\n\
+    \    //             if(t_node->right == last) {\n    //                 next =\
+    \ t_node;\n    //                 continue;\n    //             }\n    //    \
+    \         if(t_node->right->right == last) t_node = rotate_left(t_node);\n   \
+    \ //             else t_node->right = rotate_right(t_node->right);\n    //   \
+    \          next = rotate_left(t_node);\n    //         }\n    //     }\n    //\
+    \     return {next, last};\n    // }\n\n    //    - parent\n    //   |\n    //\
+    \ left\n    //\u306E\u5F62\u3067\u30DE\u30FC\u30B8\n    Node* merge(Node* left,\
+    \ Node* parent) {\n        if(left == nullptr) return parent;\n        if(parent\
+    \ == nullptr) return left;\n        parent = splay(parent, 0);\n        parent->left\
     \ = left;\n        update(parent);\n        return parent;\n    }\n    Node* merge(TupleNode*\
     \ tuple_node) {\n        Node* node = merge(tuple_node->center, tuple_node->right);\n\
     \        if(tuple_node->left == nullptr) return node;\n        tuple_node->left->right\
@@ -258,7 +267,7 @@ data:
   isVerificationFile: true
   path: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   requiredBy: []
-  timestamp: '2023-07-02 22:00:20+09:00'
+  timestamp: '2023-07-02 22:43:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
