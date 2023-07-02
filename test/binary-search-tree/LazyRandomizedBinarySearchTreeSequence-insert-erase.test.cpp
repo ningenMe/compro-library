@@ -16,7 +16,7 @@ using namespace std;
  */ 
 int main() {
     cin.tie(0);ios::sync_with_stdio(false);
-    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldMinRangeOperateUpdate<long long,long long>> seq;
+    LazyRandomizedBinarySearchTreeSequence<MonoidRangeFoldMinRangeOperateUpdate<int,int>> seq;
     int N,Q; read(N),read(Q);
     for(int i=0;i<N;++i) {
         int a; read(a);
