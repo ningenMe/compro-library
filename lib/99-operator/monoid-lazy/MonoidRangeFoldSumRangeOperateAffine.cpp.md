@@ -15,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
     title: test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/segment-tree/DualSegmentTree-pcq.test.cpp
+    title: test/segment-tree/DualSegmentTree-pcq.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -57,6 +60,7 @@ data:
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+  - test/segment-tree/DualSegmentTree-pcq.test.cpp
 documentation_of: lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAffine.cpp
 layout: document
 redirect_from:

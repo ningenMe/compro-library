@@ -79,6 +79,9 @@ data:
     path: test/queue/SwagQueue-composite.test.cpp
     title: test/queue/SwagQueue-composite.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/segment-tree/DualSegmentTree-pcq.test.cpp
+    title: test/segment-tree/DualSegmentTree-pcq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
     title: test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -214,6 +217,7 @@ data:
   - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   - test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
+  - test/segment-tree/DualSegmentTree-pcq.test.cpp
   - test/segment-tree/SegmentTree-rcq.test.cpp
 documentation_of: lib/00-util/ModInt.cpp
 layout: document

@@ -106,6 +106,9 @@ data:
     path: test/queue/SwagQueue-composite.test.cpp
     title: test/queue/SwagQueue-composite.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/segment-tree/DualSegmentTree-pcq.test.cpp
+    title: test/segment-tree/DualSegmentTree-pcq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
     title: test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
   - icon: ':heavy_check_mark:'
@@ -240,6 +243,7 @@ data:
   - test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   - test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
+  - test/segment-tree/DualSegmentTree-pcq.test.cpp
   - test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
   - test/needless/RangeFrequencyQueryTree-range-freq.test.cpp
   - test/needless/IntegerRangeFrequencyQueryTree-range-freq.test.cpp

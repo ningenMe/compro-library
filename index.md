@@ -24,6 +24,10 @@ data:
   - name: lib/10-segment-tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: lib/10-segment-tree/DualSegmentTree.cpp
+      title: "DualSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u53CC\u5BFE\u30BB\
+        \u30B0\u30E1\u30F3\u30C8\u6728"
+    - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/DynamicSegmentTree.cpp
       title: "DynamicSegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u52D5\u7684\
         \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
@@ -720,6 +724,9 @@ data:
       title: test/queue/SwagQueue-gcd.test.cpp
   - name: test/segment-tree
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/segment-tree/DualSegmentTree-pcq.test.cpp
+      title: test/segment-tree/DualSegmentTree-pcq.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
       title: test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
