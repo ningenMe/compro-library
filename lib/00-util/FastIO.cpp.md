@@ -115,6 +115,9 @@ data:
     path: test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
     title: test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/segment-tree/SortableSegmentTree-rcq.test.cpp
+    title: test/segment-tree/SortableSegmentTree-rcq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/static-range-query/DisjointSparseTable.test.cpp
     title: test/static-range-query/DisjointSparseTable.test.cpp
   - icon: ':heavy_check_mark:'
@@ -242,6 +245,7 @@ data:
   - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-insert-erase.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-insert-erase.test.cpp
+  - test/segment-tree/SortableSegmentTree-rcq.test.cpp
   - test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
   - test/segment-tree/DualSegmentTree-pcq.test.cpp
   - test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp

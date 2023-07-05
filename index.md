@@ -54,6 +54,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/SegmentTreeBeats.cpp
       title: SegmentTreeBeats
+    - icon: ':heavy_check_mark:'
+      path: lib/10-segment-tree/SortableSegmentTree.cpp
+      title: "SortableSegmentTree - \u30BD\u30FC\u30C8\u53EF\u80FD\u62BD\u8C61\u5316\
+        \u30BB\u30B0\u30E1\u30F3\u30C8\u6728"
   - name: lib/11-binary-indexed-tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -769,6 +773,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/SegmentTreeBeats-2.test.cpp
       title: test/segment-tree/SegmentTreeBeats-2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment-tree/SortableSegmentTree-rcq.test.cpp
+      title: test/segment-tree/SortableSegmentTree-rcq.test.cpp
   - name: test/static-range-query
     pages:
     - icon: ':heavy_check_mark:'

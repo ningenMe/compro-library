@@ -88,6 +88,9 @@ data:
     path: test/segment-tree/SegmentTree-rcq.test.cpp
     title: test/segment-tree/SegmentTree-rcq.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/segment-tree/SortableSegmentTree-rcq.test.cpp
+    title: test/segment-tree/SortableSegmentTree-rcq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/util/ModInt.test.cpp
     title: test/util/ModInt.test.cpp
   _isVerificationFailed: true
@@ -216,6 +219,7 @@ data:
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
+  - test/segment-tree/SortableSegmentTree-rcq.test.cpp
   - test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
   - test/segment-tree/DualSegmentTree-pcq.test.cpp
   - test/segment-tree/SegmentTree-rcq.test.cpp
