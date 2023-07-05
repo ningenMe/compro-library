@@ -119,6 +119,9 @@ data:
     - icon: ':warning:'
       path: lib/13-static-range-query/StaticRangeSetQuery.cpp
       title: "StaticRangeSetQuery - \u9759\u7684\u533A\u9593set\u30AF\u30A8\u30EA"
+    - icon: ':warning:'
+      path: lib/13-static-range-query/StaticRangeSortQuery.cpp
+      title: "StaticRangeSortQuery - \u9759\u7684\u533A\u9593sort\u30AF\u30A8\u30EA"
     - icon: ':heavy_check_mark:'
       path: lib/13-static-range-query/WaveletMatrix.cpp
       title: WaveletMatrix
