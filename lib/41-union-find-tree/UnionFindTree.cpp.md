@@ -62,10 +62,10 @@ data:
   timestamp: '2023-06-17 04:07:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/union-find-tree/UnionFindTree.test.cpp
+  - test/util/RangeIndex.test.cpp
   - test/graph/StronglyConnectedComponents-1.test.cpp
   - test/graph/Tree-rerooting.test.cpp
-  - test/util/RangeIndex.test.cpp
-  - test/union-find-tree/UnionFindTree.test.cpp
 documentation_of: lib/41-union-find-tree/UnionFindTree.cpp
 layout: document
 redirect_from:

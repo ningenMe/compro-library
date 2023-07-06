@@ -89,9 +89,9 @@ data:
   timestamp: '2023-07-02 23:40:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
-  - test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
   - test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
+  - test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
+  - test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
   - test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
 documentation_of: lib/10-segment-tree/DynamicSegmentTree.cpp
 layout: document

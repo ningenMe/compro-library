@@ -147,8 +147,8 @@ data:
   timestamp: '2023-06-03 15:39:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
 documentation_of: lib/12-binary-search-tree/RandomizedBinarySearchTreeSequence.cpp
 layout: document
 redirect_from:

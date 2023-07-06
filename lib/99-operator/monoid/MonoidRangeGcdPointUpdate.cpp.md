@@ -39,8 +39,8 @@ data:
   timestamp: '2023-05-31 05:05:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
   - test/segment-tree/SegmentTree-prefix-binary-search.test.cpp
+  - test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
 documentation_of: lib/99-operator/monoid/MonoidRangeGcdPointUpdate.cpp
 layout: document
 redirect_from:

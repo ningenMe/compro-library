@@ -42,9 +42,9 @@ data:
   timestamp: '2023-06-18 04:36:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/convolution/DivisorZetaMoebiusTransform-lcm-convolution.test.cpp
-  - test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
   - test/math/Eratosthenes.test.cpp
+  - test/convolution/DivisorZetaMoebiusTransform-gcd-convolution.test.cpp
+  - test/convolution/DivisorZetaMoebiusTransform-lcm-convolution.test.cpp
 documentation_of: lib/30-math/Eratosthenes.cpp
 layout: document
 redirect_from:

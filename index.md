@@ -372,9 +372,6 @@ data:
       path: non-verified/CircleIntersection.cpp
       title: non-verified/CircleIntersection.cpp
     - icon: ':warning:'
-      path: non-verified/Divisor.cpp
-      title: non-verified/Divisor.cpp
-    - icon: ':warning:'
       path: non-verified/Ford_Fulkerson.cpp
       title: non-verified/Ford_Fulkerson.cpp
     - icon: ':warning:'
@@ -402,9 +399,6 @@ data:
       path: non-verified/Permutation_Mod.cpp
       title: non-verified/Permutation_Mod.cpp
     - icon: ':warning:'
-      path: non-verified/PrimeFactorization.cpp
-      title: non-verified/PrimeFactorization.cpp
-    - icon: ':warning:'
       path: non-verified/Rarts.cpp
       title: non-verified/Rarts.cpp
     - icon: ':warning:'
@@ -419,15 +413,6 @@ data:
     - icon: ':warning:'
       path: non-verified/XorShift.cpp
       title: non-verified/XorShift.cpp
-    - icon: ':warning:'
-      path: non-verified/ZAlgorithm.cpp
-      title: non-verified/ZAlgorithm.cpp
-    - icon: ':warning:'
-      path: non-verified/ZArray.cpp
-      title: non-verified/ZArray.cpp
-    - icon: ':warning:'
-      path: non-verified/old-tree.cpp
-      title: "Tree - \u6728"
   verificationCategories:
   - name: test/binary-indexed-tree
     pages:
