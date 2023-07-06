@@ -2,7 +2,7 @@
  * @title MaximumRectangle - 最大長方形
  * @docs md/optimize/MaximumRectangle.md
  */
-template<class T> long long MaximumRectangle(vector<T> ar){
+long long MaximumRectangle(vector<long long> ar){
 	ar.push_back(0);
 	stack<pair<long long,long long>> st;
 	long long res = 0;
@@ -12,20 +12,12 @@ template<class T> long long MaximumRectangle(vector<T> ar){
 			st.push({vr,r});
 			continue;
 		}
-
-		long long vl = st.top().first, l = st.top().second;
-		if(vl < vr) st.push({vr,r});
-		if(vl < vr || vl == vr)	continue;
 		
-		while(vl > vr) {
+		while(st.size() && st.top().first > vr) {
+			auto [vl, l] = st.top(); st.pop();
 			res = max(res,vl*(r - l));
-			st.pop();
-
-			if(st.size() && st.top().first > vr) vl = st.top().first, l = st.top().second;
-			else break;
 		}
-		st.push({vr,l});
+		if(st.empty() || (st.size() && st.top().first < vr)) st.push({vr,r});
 	}
-	ar.pop_back();
 	return res;
 }

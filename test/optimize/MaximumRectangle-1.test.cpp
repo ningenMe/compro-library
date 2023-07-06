@@ -9,8 +9,8 @@ using namespace std;
 int main(void){
     cin.tie(0);ios::sync_with_stdio(false);
     int H,W; cin >> H >> W;
-    vector<vector<int>> c(H,vector<int>(W,0));
-    vector<vector<int>> s(H,vector<int>(W,0));    
+    vector<vector<long long>> c(H,vector<long long>(W,0));
+    vector<vector<long long>> s(H,vector<long long>(W,0));    
     for(int i=0;i<H;++i) {
         for(int j=0;j<W;++j) {
             cin >> c[i][j];
