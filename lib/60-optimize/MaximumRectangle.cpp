@@ -7,12 +7,7 @@ long long MaximumRectangle(vector<long long> ar){
 	stack<pair<long long,long long>> st;
 	long long res = 0;
 	for(long long r = 0; r < ar.size(); ++r){
-		long long vr = ar[r];
-		if(st.empty()){
-			st.push({vr,r});
-			continue;
-		}
-		
+		long long vr = ar[r];		
 		while(st.size() && st.top().first > vr) {
 			auto [vl, l] = st.top(); st.pop();
 			res = max(res,vl*(r - l));
