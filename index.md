@@ -262,7 +262,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/60-optimize/LongestIncreasingSubsequence.cpp
       title: LongestIncreasingSubsequence - LIS
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: lib/60-optimize/MaximumRectangle.cpp
       title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
   - name: lib/70-geometory
@@ -659,10 +659,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/optimize/LongestIncreasingSubsequence.test.cpp
       title: test/optimize/LongestIncreasingSubsequence.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/optimize/MaximumRectangle-1.test.cpp
       title: test/optimize/MaximumRectangle-1.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/optimize/MaximumRectangle-2.test.cpp
       title: test/optimize/MaximumRectangle-2.test.cpp
   - name: test/polynomial
