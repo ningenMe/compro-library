@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/optimize/MaximumRectangle-1.test.cpp
     title: test/optimize/MaximumRectangle-1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/optimize/MaximumRectangle-2.test.cpp
     title: test/optimize/MaximumRectangle-2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: md/optimize/MaximumRectangle.md
     document_title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
@@ -20,25 +20,25 @@ data:
     \ - \u6700\u5927\u9577\u65B9\u5F62\n * @docs md/optimize/MaximumRectangle.md\n\
     \ */\nlong long MaximumRectangle(vector<long long> ar){\n\tar.push_back(0);\n\t\
     stack<pair<long long,long long>> st;\n\tlong long res = 0;\n\tfor(long long r\
-    \ = 0; r < ar.size(); ++r){\n\t\tlong long vr = ar[r];\n\t\tif(st.empty()){\n\t\
-    \t\tst.push({vr,r});\n\t\t\tcontinue;\n\t\t}\n\t\t\n\t\twhile(st.size() && st.top().first\
-    \ > vr) {\n\t\t\tauto [vl, l] = st.top(); st.pop();\n\t\t\tres = max(res,vl*(r\
-    \ - l));\n\t\t}\n\t\tif(st.empty() || (st.size() && st.top().first < vr)) st.push({vr,r});\n\
-    \t}\n\treturn res;\n}\n"
+    \ = 0; r < ar.size(); ++r){\n\t\tlong long vr = ar[r];\n\t\tlong long x = r;\t\
+    \t\n\t\twhile(st.size() && st.top().first > vr) {\n\t\t\tauto [vl, l] = st.top();\
+    \ st.pop();\n\t\t\tx = l;\n\t\t\tres = max(res,vl*(r - l));\n\t\t}\n\t\tif(st.empty()\
+    \ || (st.size() && st.top().first < vr)) st.push({vr,x});\n\t}\n\treturn res;\n\
+    }\n"
   code: "/*\n * @title MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62\n * @docs\
     \ md/optimize/MaximumRectangle.md\n */\nlong long MaximumRectangle(vector<long\
     \ long> ar){\n\tar.push_back(0);\n\tstack<pair<long long,long long>> st;\n\tlong\
     \ long res = 0;\n\tfor(long long r = 0; r < ar.size(); ++r){\n\t\tlong long vr\
-    \ = ar[r];\n\t\tif(st.empty()){\n\t\t\tst.push({vr,r});\n\t\t\tcontinue;\n\t\t\
-    }\n\t\t\n\t\twhile(st.size() && st.top().first > vr) {\n\t\t\tauto [vl, l] = st.top();\
-    \ st.pop();\n\t\t\tres = max(res,vl*(r - l));\n\t\t}\n\t\tif(st.empty() || (st.size()\
-    \ && st.top().first < vr)) st.push({vr,r});\n\t}\n\treturn res;\n}\n"
+    \ = ar[r];\n\t\tlong long x = r;\t\t\n\t\twhile(st.size() && st.top().first >\
+    \ vr) {\n\t\t\tauto [vl, l] = st.top(); st.pop();\n\t\t\tx = l;\n\t\t\tres = max(res,vl*(r\
+    \ - l));\n\t\t}\n\t\tif(st.empty() || (st.size() && st.top().first < vr)) st.push({vr,x});\n\
+    \t}\n\treturn res;\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: lib/60-optimize/MaximumRectangle.cpp
   requiredBy: []
-  timestamp: '2023-07-07 04:50:34+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-07-09 00:53:34+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/optimize/MaximumRectangle-2.test.cpp
   - test/optimize/MaximumRectangle-1.test.cpp
