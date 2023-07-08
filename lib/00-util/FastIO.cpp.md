@@ -121,6 +121,12 @@ data:
     path: test/static-range-query/DisjointSparseTable.test.cpp
     title: test/static-range-query/DisjointSparseTable.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/static-range-query/LongestIncreasingSubsequence-index.test.cpp
+    title: test/static-range-query/LongestIncreasingSubsequence-index.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/static-range-query/LongestIncreasingSubsequence-size.test.cpp
+    title: test/static-range-query/LongestIncreasingSubsequence-size.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/static-range-query/SparseTable.test.cpp
     title: test/static-range-query/SparseTable.test.cpp
   - icon: ':heavy_check_mark:'
@@ -213,6 +219,8 @@ data:
   verifiedWith:
   - test/union-find-tree/UndoUnionFindTree.test.cpp
   - test/union-find-tree/UnionFindTree.test.cpp
+  - test/static-range-query/LongestIncreasingSubsequence-size.test.cpp
+  - test/static-range-query/LongestIncreasingSubsequence-index.test.cpp
   - test/static-range-query/DisjointSparseTable.test.cpp
   - test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
   - test/static-range-query/WaveletMatrix-range-freq.test.cpp

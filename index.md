@@ -102,6 +102,9 @@ data:
       path: lib/13-static-range-query/DisjointSparseTable.cpp
       title: DisjointSparseTable
     - icon: ':heavy_check_mark:'
+      path: lib/13-static-range-query/LongestIncreasingSubsequence.cpp
+      title: LongestIncreasingSubsequence - LIS
+    - icon: ':heavy_check_mark:'
       path: lib/13-static-range-query/RangeInversionQuery.cpp
       title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
     - icon: ':warning:'
@@ -259,9 +262,6 @@ data:
       title: Zalgorithm
   - name: lib/60-optimize
     pages:
-    - icon: ':heavy_check_mark:'
-      path: lib/60-optimize/LongestIncreasingSubsequence.cpp
-      title: LongestIncreasingSubsequence - LIS
     - icon: ':heavy_check_mark:'
       path: lib/60-optimize/MaximumRectangle.cpp
       title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
@@ -657,9 +657,6 @@ data:
   - name: test/optimize
     pages:
     - icon: ':heavy_check_mark:'
-      path: test/optimize/LongestIncreasingSubsequence.test.cpp
-      title: test/optimize/LongestIncreasingSubsequence.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/optimize/MaximumRectangle-1.test.cpp
       title: test/optimize/MaximumRectangle-1.test.cpp
     - icon: ':heavy_check_mark:'
@@ -769,6 +766,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/static-range-query/DisjointSparseTable.test.cpp
       title: test/static-range-query/DisjointSparseTable.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/static-range-query/LongestIncreasingSubsequence-index.test.cpp
+      title: test/static-range-query/LongestIncreasingSubsequence-index.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/static-range-query/LongestIncreasingSubsequence-size.test.cpp
+      title: test/static-range-query/LongestIncreasingSubsequence-size.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/static-range-query/RangeInversionQuery.test.cpp
       title: test/static-range-query/RangeInversionQuery.test.cpp
