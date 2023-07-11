@@ -1,8 +1,8 @@
 /*
- * @title RangeModeQuery - 区間最頻値
- * @docs md/static-range-query/RangeModeQuery.md
+ * @title StaticRangeModeQuery - 静的区間最頻値クエリ
+ * @docs md/static-range-query/StaticRangeModeQuery.md
  */
-template<class T> class RangeModeQuery {
+template<class T> class StaticRangeModeQuery {
     vector<size_t> compressed;
     vector<T> origin;
     vector<vector<size_t>> sqrt_bucket_freq;
@@ -11,7 +11,7 @@ template<class T> class RangeModeQuery {
     vector<int> pos;
     size_t N,B;
 public:
-    RangeModeQuery(const vector<T>& ar, T pre=-1)
+    StaticRangeModeQuery(const vector<T>& ar, T pre=-1)
             : compressed(ar.size()), origin(ar.size()), idx(ar.size()), pos(ar.size()) {
         N = ar.size();
         B = sqrt(N) + 1;

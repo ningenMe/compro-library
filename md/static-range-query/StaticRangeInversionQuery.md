@@ -1,4 +1,4 @@
-### RangeInversionQuery
+### StaticRangeInversionQuery
 - 区間転倒数
   - 半開区間[l,r)に対する転倒数を求める。
   - クエリはオンラインでも可。

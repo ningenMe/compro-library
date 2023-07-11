@@ -1,8 +1,8 @@
 /*
- * @title RangeInversionQuery - 区間転倒数
- * @docs md/static-range-query/RangeInversionQuery.md
+ * @title StaticRangeInversionQuery - 静的区間転倒数クエリ
+ * @docs md/static-range-query/StaticRangeInversionQuery.md
  */
-template<class T> class RangeInversionQuery {
+template<class T> class StaticRangeInversionQuery {
     vector<size_t> compressed;
     vector<long long> prefix_inv;
     vector<long long> suffix_inv;
@@ -12,7 +12,7 @@ template<class T> class RangeInversionQuery {
     vector<long long> sqrt_bucket_size;
     size_t N,B,M;
 public:
-    RangeInversionQuery(const vector<T>& ar, T pre=-1)
+    StaticRangeInversionQuery(const vector<T>& ar, T pre=-1)
             : compressed(ar.size()),prefix_inv(ar.size()),suffix_inv(ar.size()) {
         N = ar.size();
         B = sqrt(N) + 1; // bucket size

@@ -1,11 +1,11 @@
-### RangeModeQuery
+### StaticRangeModeQuery
 - 区間最瀕値
   - 半開区間[l,r)に対する最瀕値となる頻度(freq)とその値(mode)が求まる。
   - クエリはオンラインでも可能。
   - 列の更新は出来ない。
 
 ### コンストラクタ
-- RangeModeQuery(const vector<T>& ar, T pre=-1)
+- StaticRangeModeQuery(const vector<T>& ar, T pre=-1)
   - 列と、列に含まれない最小値preを渡す必要がある。
   - これは座圧を内部的に行うため、最小を定義する必要がある。
   - ソートできる列であれば何でも渡せる
