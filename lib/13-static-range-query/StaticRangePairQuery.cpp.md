@@ -137,6 +137,7 @@ title: "StaticRangePairQuery - \u9759\u7684\u533A\u9593pair\u30AF\u30A8\u30EA"
 ### StaticRangePairQuery
 - 静的区間pairクエリ
   - 半開区間[l,r)に対するpairの数を求める
+  - 構築 $O(N\sqrt(N))$, クエリ $O(\sqrt(N))$
   - 列の更新は出来ない。
   - [提出](https://atcoder.jp/contests/abc242/submissions/43492117)
   - [提出](https://atcoder.jp/contests/abc295/submissions/43492103)

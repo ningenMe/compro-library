@@ -7,18 +7,18 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    _deprecated_at_docs: md/segment-tree/StaticRangeSortQuery.md
+    _deprecated_at_docs: md/static-range-query/StaticRangeSortQuery.md
     document_title: "StaticRangeSortQuery - \u9759\u7684\u533A\u9593sort\u30AF\u30A8\
       \u30EA"
     links: []
   bundledCode: "#line 1 \"lib/13-static-range-query/StaticRangeSortQuery.cpp\"\n/*\n\
     \ * @title StaticRangeSortQuery - \u9759\u7684\u533A\u9593sort\u30AF\u30A8\u30EA\
-    \n * @docs md/segment-tree/StaticRangeSortQuery.md\n */\ntemplate<size_t bit_length,\
-    \ class Monoid> class StaticRangeSortQuery {\n    using TypeNode = typename Monoid::TypeNode;\n\
-    \    using TypeSortKey = unsigned long long;\n    class InnerTreeSet {\n     \
-    \   struct Node {\n            Node *left, *right; size_t size; TypeNode value;\n\
-    \            Node(): size(0),value(Monoid::unit_node) {left=right=nullptr;}\n\
-    \            Node(Node* _left, Node* _right):size(0),value(Monoid::unit_node),left(_left),right(_right)\
+    \n * @docs md/static-range-query/StaticRangeSortQuery.md\n */\ntemplate<size_t\
+    \ bit_length, class Monoid> class StaticRangeSortQuery {\n    using TypeNode =\
+    \ typename Monoid::TypeNode;\n    using TypeSortKey = unsigned long long;\n  \
+    \  class InnerTreeSet {\n        struct Node {\n            Node *left, *right;\
+    \ size_t size; TypeNode value;\n            Node(): size(0),value(Monoid::unit_node)\
+    \ {left=right=nullptr;}\n            Node(Node* _left, Node* _right):size(0),value(Monoid::unit_node),left(_left),right(_right)\
     \ {}\n            void clear(){ left=right=nullptr; size=0;value=Monoid::unit_node;\
     \ }\n            void init(TypeNode val) {size=1,value=val;}\n        };\n   \
     \     int rev;\n        Node* root;\n        size_t size(Node* node) const {return\
@@ -97,7 +97,7 @@ data:
     \ struct MonoidInt {\n    using TypeNode = T;\n    inline static constexpr TypeNode\
     \ unit_node = 0;\n};\n"
   code: "/*\n * @title StaticRangeSortQuery - \u9759\u7684\u533A\u9593sort\u30AF\u30A8\
-    \u30EA\n * @docs md/segment-tree/StaticRangeSortQuery.md\n */\ntemplate<size_t\
+    \u30EA\n * @docs md/static-range-query/StaticRangeSortQuery.md\n */\ntemplate<size_t\
     \ bit_length, class Monoid> class StaticRangeSortQuery {\n    using TypeNode =\
     \ typename Monoid::TypeNode;\n    using TypeSortKey = unsigned long long;\n  \
     \  class InnerTreeSet {\n        struct Node {\n            Node *left, *right;\
@@ -184,7 +184,7 @@ data:
   isVerificationFile: false
   path: lib/13-static-range-query/StaticRangeSortQuery.cpp
   requiredBy: []
-  timestamp: '2023-07-06 00:00:51+09:00'
+  timestamp: '2023-07-12 04:40:34+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/13-static-range-query/StaticRangeSortQuery.cpp
@@ -194,3 +194,9 @@ redirect_from:
 - /library/lib/13-static-range-query/StaticRangeSortQuery.cpp.html
 title: "StaticRangeSortQuery - \u9759\u7684\u533A\u9593sort\u30AF\u30A8\u30EA"
 ---
+### StaticRangeSortQuery
+- 静的区間sortクエリ
+  - 半開区間[l,r)に対するsortを行える
+  - 構築 $O(N\log(N))$, クエリ $O(\log(N))$
+  - 列の更新は出来ない。クエリで列自体はソートされる
+  - [提出](https://atcoder.jp/contests/abc237/submissions/43277175)
