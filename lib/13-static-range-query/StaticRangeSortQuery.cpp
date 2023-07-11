@@ -1,6 +1,6 @@
 /*
  * @title StaticRangeSortQuery - 静的区間sortクエリ
- * @docs md/segment-tree/StaticRangeSortQuery.md
+ * @docs md/static-range-query/StaticRangeSortQuery.md
  */
 template<size_t bit_length, class Monoid> class StaticRangeSortQuery {
     using TypeNode = typename Monoid::TypeNode;
