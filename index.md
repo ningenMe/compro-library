@@ -104,21 +104,26 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/13-static-range-query/LongestIncreasingSubsequence.cpp
       title: LongestIncreasingSubsequence - LIS
-    - icon: ':heavy_check_mark:'
-      path: lib/13-static-range-query/RangeInversionQuery.cpp
-      title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
     - icon: ':warning:'
       path: lib/13-static-range-query/RangeMexQuery.cpp
       title: "RangeMexQuery - \u533A\u9593mex"
-    - icon: ':warning:'
-      path: lib/13-static-range-query/RangeModeQuery.cpp
-      title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
     - icon: ':heavy_check_mark:'
       path: lib/13-static-range-query/SlideMost.cpp
       title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
     - icon: ':heavy_check_mark:'
       path: lib/13-static-range-query/SparseTable.cpp
       title: SparseTable
+    - icon: ':heavy_check_mark:'
+      path: lib/13-static-range-query/StaticRangeInversionQuery.cpp
+      title: "StaticRangeInversionQuery - \u9759\u7684\u533A\u9593\u8EE2\u5012\u6570\
+        \u30AF\u30A8\u30EA"
+    - icon: ':warning:'
+      path: lib/13-static-range-query/StaticRangeModeQuery.cpp
+      title: "StaticRangeModeQuery - \u9759\u7684\u533A\u9593\u6700\u983B\u5024\u30AF\
+        \u30A8\u30EA"
+    - icon: ':warning:'
+      path: lib/13-static-range-query/StaticRangePairQuery.cpp
+      title: "StaticRangePairQuery - \u9759\u7684\u533A\u9593pair\u30AF\u30A8\u30EA"
     - icon: ':warning:'
       path: lib/13-static-range-query/StaticRangeSetQuery.cpp
       title: "StaticRangeSetQuery - \u9759\u7684\u533A\u9593set\u30AF\u30A8\u30EA"
@@ -773,14 +778,14 @@ data:
       path: test/static-range-query/LongestIncreasingSubsequence-size.test.cpp
       title: test/static-range-query/LongestIncreasingSubsequence-size.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/static-range-query/RangeInversionQuery.test.cpp
-      title: test/static-range-query/RangeInversionQuery.test.cpp
-    - icon: ':heavy_check_mark:'
       path: test/static-range-query/SlideMost.test.cpp
       title: test/static-range-query/SlideMost.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/static-range-query/SparseTable.test.cpp
       title: test/static-range-query/SparseTable.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/static-range-query/StaticRangeInversionQuery.test.cpp
+      title: test/static-range-query/StaticRangeInversionQuery.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/static-range-query/WaveletMatrix-range-freq.test.cpp
       title: test/static-range-query/WaveletMatrix-range-freq.test.cpp

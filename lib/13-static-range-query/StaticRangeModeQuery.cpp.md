@@ -7,15 +7,17 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    _deprecated_at_docs: md/static-range-query/RangeModeQuery.md
-    document_title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
+    _deprecated_at_docs: md/static-range-query/StaticRangeModeQuery.md
+    document_title: "StaticRangeModeQuery - \u9759\u7684\u533A\u9593\u6700\u983B\u5024\
+      \u30AF\u30A8\u30EA"
     links: []
-  bundledCode: "#line 1 \"lib/13-static-range-query/RangeModeQuery.cpp\"\n/*\n * @title\
-    \ RangeModeQuery - \u533A\u9593\u6700\u983B\u5024\n * @docs md/static-range-query/RangeModeQuery.md\n\
-    \ */\ntemplate<class T> class RangeModeQuery {\n    vector<size_t> compressed;\n\
-    \    vector<T> origin;\n    vector<vector<size_t>> sqrt_bucket_freq;\n    vector<vector<size_t>>\
+  bundledCode: "#line 1 \"lib/13-static-range-query/StaticRangeModeQuery.cpp\"\n/*\n\
+    \ * @title StaticRangeModeQuery - \u9759\u7684\u533A\u9593\u6700\u983B\u5024\u30AF\
+    \u30A8\u30EA\n * @docs md/static-range-query/StaticRangeModeQuery.md\n */\ntemplate<class\
+    \ T> class StaticRangeModeQuery {\n    vector<size_t> compressed;\n    vector<T>\
+    \ origin;\n    vector<vector<size_t>> sqrt_bucket_freq;\n    vector<vector<size_t>>\
     \ sqrt_bucket_mode;\n    vector<vector<size_t>> idx;\n    vector<int> pos;\n \
-    \   size_t N,B;\npublic:\n    RangeModeQuery(const vector<T>& ar, T pre=-1)\n\
+    \   size_t N,B;\npublic:\n    StaticRangeModeQuery(const vector<T>& ar, T pre=-1)\n\
     \            : compressed(ar.size()), origin(ar.size()), idx(ar.size()), pos(ar.size())\
     \ {\n        N = ar.size();\n        B = sqrt(N) + 1;\n        //zarts\n     \
     \   {\n            vector<pair<T,size_t>> ord(N);\n            for(size_t i=0;i<N;++i)\
@@ -54,11 +56,12 @@ data:
     \          maxi_mode = key;\n                }\n                else break;\n\
     \            }\n        }\n        return {maxi_freq,origin[maxi_mode]};\n   \
     \ }\n};\n"
-  code: "/*\n * @title RangeModeQuery - \u533A\u9593\u6700\u983B\u5024\n * @docs md/static-range-query/RangeModeQuery.md\n\
-    \ */\ntemplate<class T> class RangeModeQuery {\n    vector<size_t> compressed;\n\
+  code: "/*\n * @title StaticRangeModeQuery - \u9759\u7684\u533A\u9593\u6700\u983B\
+    \u5024\u30AF\u30A8\u30EA\n * @docs md/static-range-query/StaticRangeModeQuery.md\n\
+    \ */\ntemplate<class T> class StaticRangeModeQuery {\n    vector<size_t> compressed;\n\
     \    vector<T> origin;\n    vector<vector<size_t>> sqrt_bucket_freq;\n    vector<vector<size_t>>\
     \ sqrt_bucket_mode;\n    vector<vector<size_t>> idx;\n    vector<int> pos;\n \
-    \   size_t N,B;\npublic:\n    RangeModeQuery(const vector<T>& ar, T pre=-1)\n\
+    \   size_t N,B;\npublic:\n    StaticRangeModeQuery(const vector<T>& ar, T pre=-1)\n\
     \            : compressed(ar.size()), origin(ar.size()), idx(ar.size()), pos(ar.size())\
     \ {\n        N = ar.size();\n        B = sqrt(N) + 1;\n        //zarts\n     \
     \   {\n            vector<pair<T,size_t>> ord(N);\n            for(size_t i=0;i<N;++i)\
@@ -99,26 +102,27 @@ data:
     \ }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: lib/13-static-range-query/RangeModeQuery.cpp
+  path: lib/13-static-range-query/StaticRangeModeQuery.cpp
   requiredBy: []
-  timestamp: '2023-05-30 05:01:32+09:00'
+  timestamp: '2023-07-12 04:26:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: lib/13-static-range-query/RangeModeQuery.cpp
+documentation_of: lib/13-static-range-query/StaticRangeModeQuery.cpp
 layout: document
 redirect_from:
-- /library/lib/13-static-range-query/RangeModeQuery.cpp
-- /library/lib/13-static-range-query/RangeModeQuery.cpp.html
-title: "RangeModeQuery - \u533A\u9593\u6700\u983B\u5024"
+- /library/lib/13-static-range-query/StaticRangeModeQuery.cpp
+- /library/lib/13-static-range-query/StaticRangeModeQuery.cpp.html
+title: "StaticRangeModeQuery - \u9759\u7684\u533A\u9593\u6700\u983B\u5024\u30AF\u30A8\
+  \u30EA"
 ---
-### RangeModeQuery
+### StaticRangeModeQuery
 - 区間最瀕値
   - 半開区間[l,r)に対する最瀕値となる頻度(freq)とその値(mode)が求まる。
   - クエリはオンラインでも可能。
   - 列の更新は出来ない。
 
 ### コンストラクタ
-- RangeModeQuery(const vector<T>& ar, T pre=-1)
+- StaticRangeModeQuery(const vector<T>& ar, T pre=-1)
   - 列と、列に含まれない最小値preを渡す必要がある。
   - これは座圧を内部的に行うため、最小を定義する必要がある。
   - ソートできる列であれば何でも渡せる

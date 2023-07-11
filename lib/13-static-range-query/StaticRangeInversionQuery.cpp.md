@@ -4,23 +4,25 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/static-range-query/RangeInversionQuery.test.cpp
-    title: test/static-range-query/RangeInversionQuery.test.cpp
+    path: test/static-range-query/StaticRangeInversionQuery.test.cpp
+    title: test/static-range-query/StaticRangeInversionQuery.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: md/static-range-query/RangeInversionQuery.md
-    document_title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
+    _deprecated_at_docs: md/static-range-query/StaticRangeInversionQuery.md
+    document_title: "StaticRangeInversionQuery - \u9759\u7684\u533A\u9593\u8EE2\u5012\
+      \u6570\u30AF\u30A8\u30EA"
     links: []
-  bundledCode: "#line 1 \"lib/13-static-range-query/RangeInversionQuery.cpp\"\n/*\n\
-    \ * @title RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570\n * @docs md/static-range-query/RangeInversionQuery.md\n\
-    \ */\ntemplate<class T> class RangeInversionQuery {\n    vector<size_t> compressed;\n\
-    \    vector<long long> prefix_inv;\n    vector<long long> suffix_inv;\n    vector<vector<long\
-    \ long>> sqrt_bucket_freq;\n    vector<long long> sqrt_bucket_inv;\n    vector<vector<size_t>>\
-    \ sqrt_bucket_sort_index;\n    vector<long long> sqrt_bucket_size;\n    size_t\
-    \ N,B,M;\npublic:\n    RangeInversionQuery(const vector<T>& ar, T pre=-1)\n  \
-    \          : compressed(ar.size()),prefix_inv(ar.size()),suffix_inv(ar.size())\
+  bundledCode: "#line 1 \"lib/13-static-range-query/StaticRangeInversionQuery.cpp\"\
+    \n/*\n * @title StaticRangeInversionQuery - \u9759\u7684\u533A\u9593\u8EE2\u5012\
+    \u6570\u30AF\u30A8\u30EA\n * @docs md/static-range-query/StaticRangeInversionQuery.md\n\
+    \ */\ntemplate<class T> class StaticRangeInversionQuery {\n    vector<size_t>\
+    \ compressed;\n    vector<long long> prefix_inv;\n    vector<long long> suffix_inv;\n\
+    \    vector<vector<long long>> sqrt_bucket_freq;\n    vector<long long> sqrt_bucket_inv;\n\
+    \    vector<vector<size_t>> sqrt_bucket_sort_index;\n    vector<long long> sqrt_bucket_size;\n\
+    \    size_t N,B,M;\npublic:\n    StaticRangeInversionQuery(const vector<T>& ar,\
+    \ T pre=-1)\n            : compressed(ar.size()),prefix_inv(ar.size()),suffix_inv(ar.size())\
     \ {\n        N = ar.size();\n        B = sqrt(N) + 1; // bucket size\n       \
     \ M = N / B + 1;   // bucket num\n        //zarts\n        {\n            vector<pair<T,size_t>>\
     \ ord(N);\n            for(size_t i=0;i<N;++i) ord[i]={ar[i],i};\n           \
@@ -84,13 +86,14 @@ data:
     \          if(xr >= r) continue;\n                    if(compressed[xl] > compressed[xr])\
     \ sum++;\n                    else break;\n                }\n               \
     \ inv += sum;\n            }\n        }\n        return inv;\n    }\n};\n"
-  code: "/*\n * @title RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570\n * @docs\
-    \ md/static-range-query/RangeInversionQuery.md\n */\ntemplate<class T> class RangeInversionQuery\
-    \ {\n    vector<size_t> compressed;\n    vector<long long> prefix_inv;\n    vector<long\
-    \ long> suffix_inv;\n    vector<vector<long long>> sqrt_bucket_freq;\n    vector<long\
-    \ long> sqrt_bucket_inv;\n    vector<vector<size_t>> sqrt_bucket_sort_index;\n\
-    \    vector<long long> sqrt_bucket_size;\n    size_t N,B,M;\npublic:\n    RangeInversionQuery(const\
-    \ vector<T>& ar, T pre=-1)\n            : compressed(ar.size()),prefix_inv(ar.size()),suffix_inv(ar.size())\
+  code: "/*\n * @title StaticRangeInversionQuery - \u9759\u7684\u533A\u9593\u8EE2\u5012\
+    \u6570\u30AF\u30A8\u30EA\n * @docs md/static-range-query/StaticRangeInversionQuery.md\n\
+    \ */\ntemplate<class T> class StaticRangeInversionQuery {\n    vector<size_t>\
+    \ compressed;\n    vector<long long> prefix_inv;\n    vector<long long> suffix_inv;\n\
+    \    vector<vector<long long>> sqrt_bucket_freq;\n    vector<long long> sqrt_bucket_inv;\n\
+    \    vector<vector<size_t>> sqrt_bucket_sort_index;\n    vector<long long> sqrt_bucket_size;\n\
+    \    size_t N,B,M;\npublic:\n    StaticRangeInversionQuery(const vector<T>& ar,\
+    \ T pre=-1)\n            : compressed(ar.size()),prefix_inv(ar.size()),suffix_inv(ar.size())\
     \ {\n        N = ar.size();\n        B = sqrt(N) + 1; // bucket size\n       \
     \ M = N / B + 1;   // bucket num\n        //zarts\n        {\n            vector<pair<T,size_t>>\
     \ ord(N);\n            for(size_t i=0;i<N;++i) ord[i]={ar[i],i};\n           \
@@ -156,20 +159,21 @@ data:
     \ inv += sum;\n            }\n        }\n        return inv;\n    }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: lib/13-static-range-query/RangeInversionQuery.cpp
+  path: lib/13-static-range-query/StaticRangeInversionQuery.cpp
   requiredBy: []
-  timestamp: '2023-05-30 05:01:32+09:00'
+  timestamp: '2023-07-12 04:26:50+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/static-range-query/RangeInversionQuery.test.cpp
-documentation_of: lib/13-static-range-query/RangeInversionQuery.cpp
+  - test/static-range-query/StaticRangeInversionQuery.test.cpp
+documentation_of: lib/13-static-range-query/StaticRangeInversionQuery.cpp
 layout: document
 redirect_from:
-- /library/lib/13-static-range-query/RangeInversionQuery.cpp
-- /library/lib/13-static-range-query/RangeInversionQuery.cpp.html
-title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
+- /library/lib/13-static-range-query/StaticRangeInversionQuery.cpp
+- /library/lib/13-static-range-query/StaticRangeInversionQuery.cpp.html
+title: "StaticRangeInversionQuery - \u9759\u7684\u533A\u9593\u8EE2\u5012\u6570\u30AF\
+  \u30A8\u30EA"
 ---
-### RangeInversionQuery
+### StaticRangeInversionQuery
 - 区間転倒数
   - 半開区間[l,r)に対する転倒数を求める。
   - クエリはオンラインでも可。

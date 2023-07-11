@@ -16,8 +16,8 @@ data:
     path: test/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
     title: test/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/static-range-query/RangeInversionQuery.test.cpp
-    title: test/static-range-query/RangeInversionQuery.test.cpp
+    path: test/static-range-query/StaticRangeInversionQuery.test.cpp
+    title: test/static-range-query/StaticRangeInversionQuery.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -45,7 +45,7 @@ data:
   timestamp: '2023-05-30 04:39:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/static-range-query/RangeInversionQuery.test.cpp
+  - test/static-range-query/StaticRangeInversionQuery.test.cpp
   - test/binary-indexed-tree/DynamicBinaryIndexedTree-rsqraq.test.cpp
   - test/binary-indexed-tree/BinaryIndexedTreeOffline2D-2.test.cpp
   - test/binary-indexed-tree/BinaryIndexedTreeOffline2D-1.test.cpp

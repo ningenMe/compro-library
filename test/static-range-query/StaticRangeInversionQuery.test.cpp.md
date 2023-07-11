@@ -5,8 +5,9 @@ data:
     path: lib/11-binary-indexed-tree/BinaryIndexedTree.cpp
     title: BinaryIndexedTree - BIT
   - icon: ':heavy_check_mark:'
-    path: lib/13-static-range-query/RangeInversionQuery.cpp
-    title: "RangeInversionQuery - \u533A\u9593\u8EE2\u5012\u6570"
+    path: lib/13-static-range-query/StaticRangeInversionQuery.cpp
+    title: "StaticRangeInversionQuery - \u9759\u7684\u533A\u9593\u8EE2\u5012\u6570\
+      \u30AF\u30A8\u30EA"
   - icon: ':heavy_check_mark:'
     path: lib/99-operator/abel/AbelPrefixSumPointAdd.cpp
     title: AbelPrefixSumPointAdd
@@ -20,8 +21,8 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/static_range_inversions_query
     links:
     - https://judge.yosupo.jp/problem/static_range_inversions_query
-  bundledCode: "#line 1 \"test/static-range-query/RangeInversionQuery.test.cpp\"\n\
-    #define PROBLEM \"https://judge.yosupo.jp/problem/static_range_inversions_query\"\
+  bundledCode: "#line 1 \"test/static-range-query/StaticRangeInversionQuery.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_inversions_query\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
     #include <cmath>\nusing namespace std;\n#line 1 \"lib/11-binary-indexed-tree/BinaryIndexedTree.cpp\"\
     \n/*\n * @title BinaryIndexedTree - BIT\n * @docs md/binary-indexed-tree/BinaryIndexedTree.md\n\
@@ -50,14 +51,14 @@ data:
     \ TypeNode unit_node = 0;\n    inline static constexpr TypeNode func_fold(const\
     \ TypeNode& l,const TypeNode& r){return l+r;}\n    inline static constexpr TypeNode\
     \ func_fold_inv(const TypeNode& l,const TypeNode& r){return l-r;}\n};\n#line 1\
-    \ \"lib/13-static-range-query/RangeInversionQuery.cpp\"\n/*\n * @title RangeInversionQuery\
-    \ - \u533A\u9593\u8EE2\u5012\u6570\n * @docs md/static-range-query/RangeInversionQuery.md\n\
-    \ */\ntemplate<class T> class RangeInversionQuery {\n    vector<size_t> compressed;\n\
-    \    vector<long long> prefix_inv;\n    vector<long long> suffix_inv;\n    vector<vector<long\
-    \ long>> sqrt_bucket_freq;\n    vector<long long> sqrt_bucket_inv;\n    vector<vector<size_t>>\
-    \ sqrt_bucket_sort_index;\n    vector<long long> sqrt_bucket_size;\n    size_t\
-    \ N,B,M;\npublic:\n    RangeInversionQuery(const vector<T>& ar, T pre=-1)\n  \
-    \          : compressed(ar.size()),prefix_inv(ar.size()),suffix_inv(ar.size())\
+    \ \"lib/13-static-range-query/StaticRangeInversionQuery.cpp\"\n/*\n * @title StaticRangeInversionQuery\
+    \ - \u9759\u7684\u533A\u9593\u8EE2\u5012\u6570\u30AF\u30A8\u30EA\n * @docs md/static-range-query/StaticRangeInversionQuery.md\n\
+    \ */\ntemplate<class T> class StaticRangeInversionQuery {\n    vector<size_t>\
+    \ compressed;\n    vector<long long> prefix_inv;\n    vector<long long> suffix_inv;\n\
+    \    vector<vector<long long>> sqrt_bucket_freq;\n    vector<long long> sqrt_bucket_inv;\n\
+    \    vector<vector<size_t>> sqrt_bucket_sort_index;\n    vector<long long> sqrt_bucket_size;\n\
+    \    size_t N,B,M;\npublic:\n    StaticRangeInversionQuery(const vector<T>& ar,\
+    \ T pre=-1)\n            : compressed(ar.size()),prefix_inv(ar.size()),suffix_inv(ar.size())\
     \ {\n        N = ar.size();\n        B = sqrt(N) + 1; // bucket size\n       \
     \ M = N / B + 1;   // bucket num\n        //zarts\n        {\n            vector<pair<T,size_t>>\
     \ ord(N);\n            for(size_t i=0;i<N;++i) ord[i]={ar[i],i};\n           \
@@ -121,34 +122,34 @@ data:
     \          if(xr >= r) continue;\n                    if(compressed[xl] > compressed[xr])\
     \ sum++;\n                    else break;\n                }\n               \
     \ inv += sum;\n            }\n        }\n        return inv;\n    }\n};\n#line\
-    \ 12 \"test/static-range-query/RangeInversionQuery.test.cpp\"\n\nint main(void){\n\
+    \ 12 \"test/static-range-query/StaticRangeInversionQuery.test.cpp\"\n\nint main(void){\n\
     \    cin.tie(0);ios::sync_with_stdio(false); \n    int N,Q; cin >> N >> Q;\n \
-    \   vector<long long> A(N);\n    for(int i=0;i<N;++i) cin >> A[i];\n    RangeInversionQuery<long\
+    \   vector<long long> A(N);\n    for(int i=0;i<N;++i) cin >> A[i];\n    StaticRangeInversionQuery<long\
     \ long> riq(A);\n    while(Q--) {\n        int l,r; cin >> l >> r;\n        long\
     \ long inv = riq.fold(l,r);\n        cout << inv << \"\\n\";\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_inversions_query\"\
     \n\n#include <vector>\n#include <iostream>\n#include <cassert>\n#include <algorithm>\n\
     #include <cmath>\nusing namespace std;\n#include \"../../lib/11-binary-indexed-tree/BinaryIndexedTree.cpp\"\
     \n#include \"../../lib/99-operator/abel/AbelPrefixSumPointAdd.cpp\"\n#include\
-    \ \"../../lib/13-static-range-query/RangeInversionQuery.cpp\"\n\nint main(void){\n\
+    \ \"../../lib/13-static-range-query/StaticRangeInversionQuery.cpp\"\n\nint main(void){\n\
     \    cin.tie(0);ios::sync_with_stdio(false); \n    int N,Q; cin >> N >> Q;\n \
-    \   vector<long long> A(N);\n    for(int i=0;i<N;++i) cin >> A[i];\n    RangeInversionQuery<long\
+    \   vector<long long> A(N);\n    for(int i=0;i<N;++i) cin >> A[i];\n    StaticRangeInversionQuery<long\
     \ long> riq(A);\n    while(Q--) {\n        int l,r; cin >> l >> r;\n        long\
     \ long inv = riq.fold(l,r);\n        cout << inv << \"\\n\";\n    }\n}"
   dependsOn:
   - lib/11-binary-indexed-tree/BinaryIndexedTree.cpp
   - lib/99-operator/abel/AbelPrefixSumPointAdd.cpp
-  - lib/13-static-range-query/RangeInversionQuery.cpp
+  - lib/13-static-range-query/StaticRangeInversionQuery.cpp
   isVerificationFile: true
-  path: test/static-range-query/RangeInversionQuery.test.cpp
+  path: test/static-range-query/StaticRangeInversionQuery.test.cpp
   requiredBy: []
-  timestamp: '2023-05-31 01:48:55+09:00'
+  timestamp: '2023-07-12 04:26:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/static-range-query/RangeInversionQuery.test.cpp
+documentation_of: test/static-range-query/StaticRangeInversionQuery.test.cpp
 layout: document
 redirect_from:
-- /verify/test/static-range-query/RangeInversionQuery.test.cpp
-- /verify/test/static-range-query/RangeInversionQuery.test.cpp.html
-title: test/static-range-query/RangeInversionQuery.test.cpp
+- /verify/test/static-range-query/StaticRangeInversionQuery.test.cpp
+- /verify/test/static-range-query/StaticRangeInversionQuery.test.cpp.html
+title: test/static-range-query/StaticRangeInversionQuery.test.cpp
 ---

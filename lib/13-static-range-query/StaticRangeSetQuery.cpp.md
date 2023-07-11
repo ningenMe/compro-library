@@ -59,6 +59,6 @@ redirect_from:
 title: "StaticRangeSetQuery - \u9759\u7684\u533A\u9593set\u30AF\u30A8\u30EA"
 ---
 ### StaticRangeSetQuery
-- 区間内のユニークのサイズを求めるクラス
+- 静的区間setクエリ。ユニークのサイズを求める。
 - [提出](https://atcoder.jp/contests/abc210/submissions/42226500)
 - [提出](https://atcoder.jp/contests/abc174/submissions/42226531)
