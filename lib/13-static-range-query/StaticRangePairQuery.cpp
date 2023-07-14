@@ -6,10 +6,10 @@ template<class T> class StaticRangePairQuery {
     vector<int> compressed;
     vector<vector<size_t>> sqrt_bucket_count;
     vector<vector<int>> acc;
-    size_t length,bucket_size,val_size;
+    size_t length,bucket_size,val_size,pair_size;
     vector<size_t> tmp;
 public:
-    StaticRangePairQuery(const vector<T>& ar, T pre=-1) : compressed(ar.size()) {
+    StaticRangePairQuery(const vector<T>& ar, const size_t pair_size, T pre=-1) : compressed(ar.size()), pair_size(pair_size) {
         length = ar.size();
         bucket_size = sqrt(length) + 1;
         //zarts
@@ -36,7 +36,7 @@ public:
                 for(size_t r = l; r < length; ++r) {
                     int val=compressed[r];
                     tmp[val]++;
-                    if(tmp[val]==2) {
+                    if(tmp[val]==pair_size) {
                         tmp[val]=0;
                         size_t br = r/bucket_size + 1;
                         sqrt_bucket_count[bl][br]++;
@@ -71,7 +71,7 @@ public:
                 size_t val = compressed[i];
                 st.push(val);
                 tmp[val]++;
-                if(tmp[val]==2) {
+                if(tmp[val]==pair_size) {
                     tmp[val]=0;
                     res++;
                 }
@@ -94,7 +94,7 @@ public:
             size_t val = compressed[i];
             st.push(val);
             tmp[val]++;
-            if(tmp[val]==2) {
+            if(tmp[val]==pair_size) {
                 tmp[val]=0;
                 res++;
             }
@@ -104,19 +104,19 @@ public:
             size_t val = compressed[i];
             st.push(val);
             tmp[val]++;
-            if(tmp[val]==2) {
+            if(tmp[val]==pair_size) {
                 tmp[val]=0;
                 res++;
             }
         }
-        //1個余ってるものと、[ml,mr) で探索
+        //余ってるものと、[ml,mr) で探索
         while(st.size()) {
             auto val = st.top(); st.pop();
             if(tmp[val]==0) continue;
+            int cnt = (acc[val][br] - acc[val][bl]) % pair_size;
+            //合計がpair_size以上なら、余ってるからインクリメント
+            if(cnt + tmp[val] >= pair_size) res++;
             tmp[val]=0;
-            int cnt = acc[val][br] - acc[val][bl];
-            //合計が奇数だったら1個余ってるからインクリメント
-            if(cnt&1) res++;
         }
 
         return res;
