@@ -15,24 +15,25 @@ data:
     \ * @title StaticRangePairQuery - \u9759\u7684\u533A\u9593pair\u30AF\u30A8\u30EA\
     \n * @docs md/static-range-query/StaticRangePairQuery.md\n */\ntemplate<class\
     \ T> class StaticRangePairQuery {\n    vector<int> compressed;\n    vector<vector<size_t>>\
-    \ sqrt_bucket_count;\n    vector<vector<int>> acc;\n    size_t length,bucket_size,val_size;\n\
+    \ sqrt_bucket_count;\n    vector<vector<int>> acc;\n    size_t length,bucket_size,val_size,pair_size;\n\
     \    vector<size_t> tmp;\npublic:\n    StaticRangePairQuery(const vector<T>& ar,\
-    \ T pre=-1) : compressed(ar.size()) {\n        length = ar.size();\n        bucket_size\
-    \ = sqrt(length) + 1;\n        //zarts\n        {\n            vector<pair<T,size_t>>\
-    \ ord(length);\n            for(size_t i=0;i<length;++i) ord[i]={ar[i],i};\n \
-    \           sort(ord.begin(),ord.end());\n            int inc=-1;\n          \
-    \  for(size_t i=0;i<length;++i) {\n                if(pre < ord[i].first) inc++;\n\
-    \                compressed[ord[i].second] = inc;\n                pre = ord[i].first;\n\
-    \            }\n            val_size = inc + 1;\n            tmp.resize(val_size);\n\
-    \        }\n        //sqrt bucket\n        {\n            sqrt_bucket_count.resize(bucket_size+1,vector<size_t>(bucket_size+1));\n\
+    \ const size_t pair_size, T pre=-1) : compressed(ar.size()), pair_size(pair_size)\
+    \ {\n        length = ar.size();\n        bucket_size = sqrt(length) + 1;\n  \
+    \      //zarts\n        {\n            vector<pair<T,size_t>> ord(length);\n \
+    \           for(size_t i=0;i<length;++i) ord[i]={ar[i],i};\n            sort(ord.begin(),ord.end());\n\
+    \            int inc=-1;\n            for(size_t i=0;i<length;++i) {\n       \
+    \         if(pre < ord[i].first) inc++;\n                compressed[ord[i].second]\
+    \ = inc;\n                pre = ord[i].first;\n            }\n            val_size\
+    \ = inc + 1;\n            tmp.resize(val_size);\n        }\n        //sqrt bucket\n\
+    \        {\n            sqrt_bucket_count.resize(bucket_size+1,vector<size_t>(bucket_size+1));\n\
     \            for(size_t l = 0; l < length; l += bucket_size) {\n             \
     \   for(size_t i = 0; i < val_size; ++i) tmp[i]=0;\n\n                size_t bl\
     \ = l/bucket_size;\n                for(size_t r = l; r < length; ++r) {\n   \
     \                 int val=compressed[r];\n                    tmp[val]++;\n  \
-    \                  if(tmp[val]==2) {\n                        tmp[val]=0;\n  \
-    \                      size_t br = r/bucket_size + 1;\n                      \
-    \  sqrt_bucket_count[bl][br]++;\n                    }\n                }\n  \
-    \              for(size_t r = l+bucket_size; r < length; r += bucket_size) {\n\
+    \                  if(tmp[val]==pair_size) {\n                        tmp[val]=0;\n\
+    \                        size_t br = r/bucket_size + 1;\n                    \
+    \    sqrt_bucket_count[bl][br]++;\n                    }\n                }\n\
+    \                for(size_t r = l+bucket_size; r < length; r += bucket_size) {\n\
     \                    size_t br = r/bucket_size + 1;\n                    sqrt_bucket_count[bl][br]\
     \ += sqrt_bucket_count[bl][br-1];\n                }\n            }\n        \
     \    //query\u3067\u4F7F\u3044\u56DE\u3059\u304B\u30890\u306B\u3057\u3066\u304A\
@@ -45,7 +46,7 @@ data:
     \u30A2\u306E\u6570\n    int get(int l, int r) {\n        stack<size_t> st;\n \
     \       int res = 0;\n\n        //naive\n        if(r - l <= bucket_size) {\n\
     \            for(int i = l; i < r; ++i) {\n                size_t val = compressed[i];\n\
-    \                st.push(val);\n                tmp[val]++;\n                if(tmp[val]==2)\
+    \                st.push(val);\n                tmp[val]++;\n                if(tmp[val]==pair_size)\
     \ {\n                    tmp[val]=0;\n                    res++;\n           \
     \     }\n            }\n            while(st.size()) {\n                auto val\
     \ = st.top(); st.pop();\n                tmp[val]=0;\n            }\n        \
@@ -54,39 +55,41 @@ data:
     \        ml = min(ml,r); mr = max(l,mr);\n        res += sqrt_bucket_count[bl][br];\
     \    \n\n        //\u5DE6\u5074\u306E\u63A2\u7D22\n        for(int i = l; i <\
     \ ml; ++i) {\n            size_t val = compressed[i];\n            st.push(val);\n\
-    \            tmp[val]++;\n            if(tmp[val]==2) {\n                tmp[val]=0;\n\
-    \                res++;\n            }\n        }\n        //\u53F3\u5074\u306E\
-    \u63A2\u7D22\n        for(int i = mr; i < r; ++i) {\n            size_t val =\
-    \ compressed[i];\n            st.push(val);\n            tmp[val]++;\n       \
-    \     if(tmp[val]==2) {\n                tmp[val]=0;\n                res++;\n\
-    \            }\n        }\n        //1\u500B\u4F59\u3063\u3066\u308B\u3082\u306E\
-    \u3068\u3001[ml,mr) \u3067\u63A2\u7D22\n        while(st.size()) {\n         \
-    \   auto val = st.top(); st.pop();\n            if(tmp[val]==0) continue;\n  \
-    \          tmp[val]=0;\n            int cnt = acc[val][br] - acc[val][bl];\n \
-    \           //\u5408\u8A08\u304C\u5947\u6570\u3060\u3063\u305F\u30891\u500B\u4F59\
-    \u3063\u3066\u308B\u304B\u3089\u30A4\u30F3\u30AF\u30EA\u30E1\u30F3\u30C8\n   \
-    \         if(cnt&1) res++;\n        }\n\n        return res;\n    }\n};\n"
+    \            tmp[val]++;\n            if(tmp[val]==pair_size) {\n            \
+    \    tmp[val]=0;\n                res++;\n            }\n        }\n        //\u53F3\
+    \u5074\u306E\u63A2\u7D22\n        for(int i = mr; i < r; ++i) {\n            size_t\
+    \ val = compressed[i];\n            st.push(val);\n            tmp[val]++;\n \
+    \           if(tmp[val]==pair_size) {\n                tmp[val]=0;\n         \
+    \       res++;\n            }\n        }\n        //\u4F59\u3063\u3066\u308B\u3082\
+    \u306E\u3068\u3001[ml,mr) \u3067\u63A2\u7D22\n        while(st.size()) {\n   \
+    \         auto val = st.top(); st.pop();\n            if(tmp[val]==0) continue;\n\
+    \            int cnt = (acc[val][br] - acc[val][bl]) % pair_size;\n          \
+    \  //\u5408\u8A08\u304Cpair_size\u4EE5\u4E0A\u306A\u3089\u3001\u4F59\u3063\u3066\
+    \u308B\u304B\u3089\u30A4\u30F3\u30AF\u30EA\u30E1\u30F3\u30C8\n            if(cnt\
+    \ + tmp[val] >= pair_size) res++;\n            tmp[val]=0;\n        }\n\n    \
+    \    return res;\n    }\n};\n"
   code: "/*\n * @title StaticRangePairQuery - \u9759\u7684\u533A\u9593pair\u30AF\u30A8\
     \u30EA\n * @docs md/static-range-query/StaticRangePairQuery.md\n */\ntemplate<class\
     \ T> class StaticRangePairQuery {\n    vector<int> compressed;\n    vector<vector<size_t>>\
-    \ sqrt_bucket_count;\n    vector<vector<int>> acc;\n    size_t length,bucket_size,val_size;\n\
+    \ sqrt_bucket_count;\n    vector<vector<int>> acc;\n    size_t length,bucket_size,val_size,pair_size;\n\
     \    vector<size_t> tmp;\npublic:\n    StaticRangePairQuery(const vector<T>& ar,\
-    \ T pre=-1) : compressed(ar.size()) {\n        length = ar.size();\n        bucket_size\
-    \ = sqrt(length) + 1;\n        //zarts\n        {\n            vector<pair<T,size_t>>\
-    \ ord(length);\n            for(size_t i=0;i<length;++i) ord[i]={ar[i],i};\n \
-    \           sort(ord.begin(),ord.end());\n            int inc=-1;\n          \
-    \  for(size_t i=0;i<length;++i) {\n                if(pre < ord[i].first) inc++;\n\
-    \                compressed[ord[i].second] = inc;\n                pre = ord[i].first;\n\
-    \            }\n            val_size = inc + 1;\n            tmp.resize(val_size);\n\
-    \        }\n        //sqrt bucket\n        {\n            sqrt_bucket_count.resize(bucket_size+1,vector<size_t>(bucket_size+1));\n\
+    \ const size_t pair_size, T pre=-1) : compressed(ar.size()), pair_size(pair_size)\
+    \ {\n        length = ar.size();\n        bucket_size = sqrt(length) + 1;\n  \
+    \      //zarts\n        {\n            vector<pair<T,size_t>> ord(length);\n \
+    \           for(size_t i=0;i<length;++i) ord[i]={ar[i],i};\n            sort(ord.begin(),ord.end());\n\
+    \            int inc=-1;\n            for(size_t i=0;i<length;++i) {\n       \
+    \         if(pre < ord[i].first) inc++;\n                compressed[ord[i].second]\
+    \ = inc;\n                pre = ord[i].first;\n            }\n            val_size\
+    \ = inc + 1;\n            tmp.resize(val_size);\n        }\n        //sqrt bucket\n\
+    \        {\n            sqrt_bucket_count.resize(bucket_size+1,vector<size_t>(bucket_size+1));\n\
     \            for(size_t l = 0; l < length; l += bucket_size) {\n             \
     \   for(size_t i = 0; i < val_size; ++i) tmp[i]=0;\n\n                size_t bl\
     \ = l/bucket_size;\n                for(size_t r = l; r < length; ++r) {\n   \
     \                 int val=compressed[r];\n                    tmp[val]++;\n  \
-    \                  if(tmp[val]==2) {\n                        tmp[val]=0;\n  \
-    \                      size_t br = r/bucket_size + 1;\n                      \
-    \  sqrt_bucket_count[bl][br]++;\n                    }\n                }\n  \
-    \              for(size_t r = l+bucket_size; r < length; r += bucket_size) {\n\
+    \                  if(tmp[val]==pair_size) {\n                        tmp[val]=0;\n\
+    \                        size_t br = r/bucket_size + 1;\n                    \
+    \    sqrt_bucket_count[bl][br]++;\n                    }\n                }\n\
+    \                for(size_t r = l+bucket_size; r < length; r += bucket_size) {\n\
     \                    size_t br = r/bucket_size + 1;\n                    sqrt_bucket_count[bl][br]\
     \ += sqrt_bucket_count[bl][br-1];\n                }\n            }\n        \
     \    //query\u3067\u4F7F\u3044\u56DE\u3059\u304B\u30890\u306B\u3057\u3066\u304A\
@@ -99,7 +102,7 @@ data:
     \u30A2\u306E\u6570\n    int get(int l, int r) {\n        stack<size_t> st;\n \
     \       int res = 0;\n\n        //naive\n        if(r - l <= bucket_size) {\n\
     \            for(int i = l; i < r; ++i) {\n                size_t val = compressed[i];\n\
-    \                st.push(val);\n                tmp[val]++;\n                if(tmp[val]==2)\
+    \                st.push(val);\n                tmp[val]++;\n                if(tmp[val]==pair_size)\
     \ {\n                    tmp[val]=0;\n                    res++;\n           \
     \     }\n            }\n            while(st.size()) {\n                auto val\
     \ = st.top(); st.pop();\n                tmp[val]=0;\n            }\n        \
@@ -108,23 +111,24 @@ data:
     \        ml = min(ml,r); mr = max(l,mr);\n        res += sqrt_bucket_count[bl][br];\
     \    \n\n        //\u5DE6\u5074\u306E\u63A2\u7D22\n        for(int i = l; i <\
     \ ml; ++i) {\n            size_t val = compressed[i];\n            st.push(val);\n\
-    \            tmp[val]++;\n            if(tmp[val]==2) {\n                tmp[val]=0;\n\
-    \                res++;\n            }\n        }\n        //\u53F3\u5074\u306E\
-    \u63A2\u7D22\n        for(int i = mr; i < r; ++i) {\n            size_t val =\
-    \ compressed[i];\n            st.push(val);\n            tmp[val]++;\n       \
-    \     if(tmp[val]==2) {\n                tmp[val]=0;\n                res++;\n\
-    \            }\n        }\n        //1\u500B\u4F59\u3063\u3066\u308B\u3082\u306E\
-    \u3068\u3001[ml,mr) \u3067\u63A2\u7D22\n        while(st.size()) {\n         \
-    \   auto val = st.top(); st.pop();\n            if(tmp[val]==0) continue;\n  \
-    \          tmp[val]=0;\n            int cnt = acc[val][br] - acc[val][bl];\n \
-    \           //\u5408\u8A08\u304C\u5947\u6570\u3060\u3063\u305F\u30891\u500B\u4F59\
-    \u3063\u3066\u308B\u304B\u3089\u30A4\u30F3\u30AF\u30EA\u30E1\u30F3\u30C8\n   \
-    \         if(cnt&1) res++;\n        }\n\n        return res;\n    }\n};"
+    \            tmp[val]++;\n            if(tmp[val]==pair_size) {\n            \
+    \    tmp[val]=0;\n                res++;\n            }\n        }\n        //\u53F3\
+    \u5074\u306E\u63A2\u7D22\n        for(int i = mr; i < r; ++i) {\n            size_t\
+    \ val = compressed[i];\n            st.push(val);\n            tmp[val]++;\n \
+    \           if(tmp[val]==pair_size) {\n                tmp[val]=0;\n         \
+    \       res++;\n            }\n        }\n        //\u4F59\u3063\u3066\u308B\u3082\
+    \u306E\u3068\u3001[ml,mr) \u3067\u63A2\u7D22\n        while(st.size()) {\n   \
+    \         auto val = st.top(); st.pop();\n            if(tmp[val]==0) continue;\n\
+    \            int cnt = (acc[val][br] - acc[val][bl]) % pair_size;\n          \
+    \  //\u5408\u8A08\u304Cpair_size\u4EE5\u4E0A\u306A\u3089\u3001\u4F59\u3063\u3066\
+    \u308B\u304B\u3089\u30A4\u30F3\u30AF\u30EA\u30E1\u30F3\u30C8\n            if(cnt\
+    \ + tmp[val] >= pair_size) res++;\n            tmp[val]=0;\n        }\n\n    \
+    \    return res;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: lib/13-static-range-query/StaticRangePairQuery.cpp
   requiredBy: []
-  timestamp: '2023-07-12 04:26:50+09:00'
+  timestamp: '2023-07-15 05:18:33+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: lib/13-static-range-query/StaticRangePairQuery.cpp
@@ -136,8 +140,9 @@ title: "StaticRangePairQuery - \u9759\u7684\u533A\u9593pair\u30AF\u30A8\u30EA"
 ---
 ### StaticRangePairQuery
 - 静的区間pairクエリ
-  - 半開区間[l,r)に対するpairの数を求める
+  - 半開区間[l,r)に対するk-pairの数を求める
   - 構築 $O(N\sqrt(N))$, クエリ $O(\sqrt(N))$
   - 列の更新は出来ない。
-  - [提出](https://atcoder.jp/contests/abc242/submissions/43492117)
+  - pair_sizeはペアの数。
+  - [提出](https://atcoder.jp/contests/abc242/submissions/43565684)
   - [提出](https://atcoder.jp/contests/abc295/submissions/43492103)
