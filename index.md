@@ -237,6 +237,9 @@ data:
       title: "MinimumUndirectedClosedCircuit - \u7121\u5411\u30B0\u30E9\u30D5\u306E\
         \u6700\u5C0F\u9589\u8DEF\u691C\u51FA"
     - icon: ':heavy_check_mark:'
+      path: lib/40-graph/PrimalDualMinCostFlow.cpp
+      title: PrimalDualMinCostFlow
+    - icon: ':heavy_check_mark:'
       path: lib/40-graph/StaticTree.cpp
       title: "StaticTree - \u6728"
     - icon: ':heavy_check_mark:'
@@ -565,6 +568,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/graph/MinimumUndirectedClosedCircuit.test.cpp
       title: test/graph/MinimumUndirectedClosedCircuit.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/PrimalDualMinCostFlow.test.cpp
+      title: test/graph/PrimalDualMinCostFlow.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/StronglyConnectedComponents-1.test.cpp
       title: test/graph/StronglyConnectedComponents-1.test.cpp
