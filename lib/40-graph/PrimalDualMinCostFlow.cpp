@@ -19,7 +19,7 @@ template<class TypeFlow, class TypeCost> class PrimalDualMinCostFlow {
     TypeFlow max_flow=0;
 public:
     PrimalDualMinCostFlow(const size_t N, const TypeCost inf_cost) 
-        : N(N), edge(N), min_cost(N), potential(N), prev_vertex(N), prev_edge(N), inf_cost(inf_cost) {}
+        : N(N), edge(N), min_cost(N), potential(N,0), prev_vertex(N,N), prev_edge(N,N), inf_cost(inf_cost) {}
     // costは単位流量あたりのコスト
     inline void make_edge(const size_t from, const size_t to, const TypeFlow cap, const TypeCost cost) {
         assert(cost < inf_cost);
@@ -33,12 +33,9 @@ public:
     pair<TypeFlow,TypeCost> min_cost_flow(const size_t s, const size_t g, const TypeFlow limit_flow) {
         assert(0 <= s && s < N && 0 <= g && g < N && s != g);
         priority_queue<Pair,vector<Pair>,greater<Pair>> pq;
-        potential.assign(N, 0);
-        prev_edge.assign(N, N);
-        prev_vertex.assign(N, N);
 
         TypeCost sum_cost=0;
-        TypeFlow sum_flow = 0;
+        TypeFlow sum_flow=0;
         while(sum_flow < limit_flow) {
             min_cost.assign(N, inf_cost);
             {

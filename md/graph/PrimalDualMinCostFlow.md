@@ -1,9 +1,6 @@
 ### PrimalDualMinCostFlow
 - 最小費用流
 
-### コンストラクタ
-- 
-
 ### メソッド
 - PrimalDualMinCostFlow(const size_t N, const TypeCost inf_cost)
   - コンストラクタ
@@ -14,9 +11,12 @@
 - pair<TypeFlow,TypeCost> min_cost_flow(const size_t s, const size_t g) 
   - $s$ から $g$ へ流せるだけ流した時の (流量,コスト) を求める
 - pair<TypeFlow,TypeCost> min_cost_flow(const size_t s, const size_t g, const TypeFlow limit_flow) 
-  - $s$ から $g$ へ $limit_flow$ だけ 流した時の (流量,コスト) を求める
-  - $limit_flow$ だけ流れなくても、可能な限り流した時の値が返却される
+  - $s$ から $g$ へ $limitflow$ だけ 流した時の (流量,コスト) を求める
+  - $limitflow$ だけ流れなくても、可能な限り流した時の値が返却される
+  - この結果はstateを持つので、さらにflowを流すことができる
+  - $ O(F(N+M)log(N+M)) $ F: 流量, N: 頂点数, M: 辺数
 
   
 ### 参考資料
 - [提出](https://atcoder.jp/contests/acl1/submissions/43703249)
+- [提出](https://atcoder.jp/contests/abc247/submissions/43703462)
