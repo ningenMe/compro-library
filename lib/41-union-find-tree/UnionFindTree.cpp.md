@@ -64,8 +64,8 @@ data:
   verifiedWith:
   - test/union-find-tree/UnionFindTree.test.cpp
   - test/util/RangeIndex.test.cpp
-  - test/graph/StronglyConnectedComponents-1.test.cpp
   - test/graph/Tree-rerooting.test.cpp
+  - test/graph/StronglyConnectedComponents-1.test.cpp
 documentation_of: lib/41-union-find-tree/UnionFindTree.cpp
 layout: document
 redirect_from:

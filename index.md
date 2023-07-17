@@ -238,7 +238,8 @@ data:
         \u6700\u5C0F\u9589\u8DEF\u691C\u51FA"
     - icon: ':heavy_check_mark:'
       path: lib/40-graph/PrimalDualMinCostFlow.cpp
-      title: PrimalDualMinCostFlow
+      title: "PrimalDualMinCostFlow - \u6700\u77ED\u8DEF\u53CD\u5FA9\u306E\u6700\u5C0F\
+        \u8CBB\u7528\u6D41"
     - icon: ':heavy_check_mark:'
       path: lib/40-graph/StaticTree.cpp
       title: "StaticTree - \u6728"

@@ -91,8 +91,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/graph/StronglyConnectedComponents-1.test.cpp
-  - test/graph/StronglyConnectedComponents-2sat.test.cpp
   - test/graph/StronglyConnectedComponents-2.test.cpp
+  - test/graph/StronglyConnectedComponents-2sat.test.cpp
 documentation_of: lib/40-graph/StronglyConnectedComponents.cpp
 layout: document
 redirect_from:

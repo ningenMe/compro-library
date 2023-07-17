@@ -70,13 +70,13 @@ data:
   verifiedWith:
   - test/math/CombinationMod-binom.test.cpp
   - test/math/CombinationMod-factorial.test.cpp
-  - test/polynomial/FormalPowerSeries-exp.test.cpp
-  - test/polynomial/FormalPowerSeries-interpolation.test.cpp
-  - test/polynomial/FormalPowerSeries-pow.test.cpp
-  - test/polynomial/FormalPowerSeries-log.test.cpp
-  - test/polynomial/FormalPowerSeries-nth.test.cpp
-  - test/polynomial/FormalPowerSeries-multi-eval.test.cpp
   - test/polynomial/FormalPowerSeries-inv.test.cpp
+  - test/polynomial/FormalPowerSeries-nth.test.cpp
+  - test/polynomial/FormalPowerSeries-interpolation.test.cpp
+  - test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+  - test/polynomial/FormalPowerSeries-log.test.cpp
+  - test/polynomial/FormalPowerSeries-exp.test.cpp
+  - test/polynomial/FormalPowerSeries-pow.test.cpp
 documentation_of: lib/30-math/CombinationMod.cpp
 layout: document
 redirect_from:
