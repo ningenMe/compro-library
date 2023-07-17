@@ -1,5 +1,5 @@
 /*
- * @title PrimalDualMinCostFlow
+ * @title PrimalDualMinCostFlow - 最短路反復の最小費用流
  * @docs md/graph/PrimalDualMinCostFlow.md
  */
 template<class TypeFlow, class TypeCost> class PrimalDualMinCostFlow {
@@ -16,15 +16,21 @@ template<class TypeFlow, class TypeCost> class PrimalDualMinCostFlow {
     vector<TypeCost> min_cost;
     vector<TypeCost> potential;
     vector<size_t> prev_vertex,prev_edge;
+    TypeFlow max_flow=0;
 public:
     PrimalDualMinCostFlow(const size_t N, const TypeCost inf_cost) 
         : N(N), edge(N), min_cost(N), potential(N), prev_vertex(N), prev_edge(N), inf_cost(inf_cost) {}
     // costは単位流量あたりのコスト
     inline void make_edge(const size_t from, const size_t to, const TypeFlow cap, const TypeCost cost) {
+        assert(cost < inf_cost);
         edge[from].push_back({ to, edge[to].size(), cap, cost });
         edge[to].push_back({ from, edge[from].size() - 1, 0, -cost });
+        max_flow += cap;
     }
-    pair<TypeFlow,TypeCost> min_cost_flow(const size_t s, const size_t g, const TypeFlow max_flow) {
+    pair<TypeFlow,TypeCost> min_cost_flow(const size_t s, const size_t g) {
+        return min_cost_flow(s,g,max_flow);
+    }
+    pair<TypeFlow,TypeCost> min_cost_flow(const size_t s, const size_t g, const TypeFlow limit_flow) {
         assert(0 <= s && s < N && 0 <= g && g < N && s != g);
         priority_queue<Pair,vector<Pair>,greater<Pair>> pq;
         potential.assign(N, 0);
@@ -33,7 +39,7 @@ public:
 
         TypeCost sum_cost=0;
         TypeFlow sum_flow = 0;
-        while(sum_flow < max_flow) {
+        while(sum_flow < limit_flow) {
             min_cost.assign(N, inf_cost);
             {
                 pq.emplace(0,s);
@@ -57,7 +63,7 @@ public:
             if(min_cost[g]==inf_cost) break;
             for(size_t i=0; i<N; ++i) potential[i] += min_cost[i];
 
-            TypeFlow diff_flow = max_flow - sum_flow;
+            TypeFlow diff_flow = limit_flow - sum_flow;
             for(size_t i=g; i!=s; i = prev_vertex[i]) {
                 diff_flow = min(diff_flow, edge[prev_vertex[i]][prev_edge[i]].cap);
             }
