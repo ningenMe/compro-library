@@ -104,9 +104,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/13-static-range-query/LongestIncreasingSubsequence.cpp
       title: LongestIncreasingSubsequence - LIS
-    - icon: ':warning:'
-      path: lib/13-static-range-query/RangeMexQuery.cpp
-      title: "RangeMexQuery - \u533A\u9593mex"
     - icon: ':heavy_check_mark:'
       path: lib/13-static-range-query/SlideMost.cpp
       title: "SlideMost - \u30B9\u30E9\u30A4\u30C9\u6700\u5C0F\u5024/\u6700\u5927\u5024"
@@ -117,6 +114,9 @@ data:
       path: lib/13-static-range-query/StaticRangeInversionQuery.cpp
       title: "StaticRangeInversionQuery - \u9759\u7684\u533A\u9593\u8EE2\u5012\u6570\
         \u30AF\u30A8\u30EA"
+    - icon: ':warning:'
+      path: lib/13-static-range-query/StaticRangeMexQuery.cpp
+      title: "StaticRangeMexQuery - \u9759\u7684\u533A\u9593mex\u30AF\u30A8\u30EA"
     - icon: ':warning:'
       path: lib/13-static-range-query/StaticRangeModeQuery.cpp
       title: "StaticRangeModeQuery - \u9759\u7684\u533A\u9593\u6700\u983B\u5024\u30AF\
