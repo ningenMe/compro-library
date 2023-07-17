@@ -39,10 +39,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/convex-hull-trick/LiChaoTree-segment.test.cpp
-  - test/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
-  - test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
-  - test/convex-hull-trick/LiChaoTree-line.test.cpp
   - test/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+  - test/convex-hull-trick/ConvexHullTrickMonotone-min.test.cpp
+  - test/convex-hull-trick/LiChaoTree-line.test.cpp
 documentation_of: lib/99-operator/operator/ValueMin.cpp
 layout: document
 redirect_from:

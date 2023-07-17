@@ -228,17 +228,17 @@ data:
   timestamp: '2023-05-30 04:32:15+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/polynomial/FormalPowerSeries-exp.test.cpp
+  - test/polynomial/FormalPowerSeries-interpolation.test.cpp
+  - test/polynomial/FormalPowerSeries-pow.test.cpp
+  - test/polynomial/FormalPowerSeries-log.test.cpp
+  - test/polynomial/FormalPowerSeries-nth.test.cpp
+  - test/polynomial/FormalPowerSeries-multi-eval.test.cpp
+  - test/polynomial/FormalPowerSeries-inv.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-1000000007-1.test.cpp
-  - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-1.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
-  - test/polynomial/FormalPowerSeries-inv.test.cpp
-  - test/polynomial/FormalPowerSeries-nth.test.cpp
-  - test/polynomial/FormalPowerSeries-interpolation.test.cpp
-  - test/polynomial/FormalPowerSeries-multi-eval.test.cpp
-  - test/polynomial/FormalPowerSeries-log.test.cpp
-  - test/polynomial/FormalPowerSeries-exp.test.cpp
-  - test/polynomial/FormalPowerSeries-pow.test.cpp
+  - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
 documentation_of: lib/31-convolution/NumberTheoreticalTransform.cpp
 layout: document
 redirect_from:

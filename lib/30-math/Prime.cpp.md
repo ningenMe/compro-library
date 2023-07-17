@@ -274,9 +274,9 @@ data:
   timestamp: '2023-06-23 05:10:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/math/Prime-rho-discrete-logarithm.test.cpp
   - test/math/Prime-miller-rabin-1.test.cpp
   - test/math/Prime-divisor-1.test.cpp
-  - test/math/Prime-rho-discrete-logarithm.test.cpp
   - test/math/Prime-miller-rabin-2.test.cpp
   - test/math/Prime-rho.test.cpp
   - test/segment-tree/SegmentTree-prefix-binary-search.test.cpp

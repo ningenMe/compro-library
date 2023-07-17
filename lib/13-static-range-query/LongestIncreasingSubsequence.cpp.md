@@ -52,8 +52,8 @@ data:
   timestamp: '2023-07-09 01:40:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/static-range-query/LongestIncreasingSubsequence-index.test.cpp
   - test/static-range-query/LongestIncreasingSubsequence-size.test.cpp
+  - test/static-range-query/LongestIncreasingSubsequence-index.test.cpp
 documentation_of: lib/13-static-range-query/LongestIncreasingSubsequence.cpp
 layout: document
 redirect_from:

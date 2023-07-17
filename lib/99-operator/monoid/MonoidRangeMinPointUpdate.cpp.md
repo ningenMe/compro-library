@@ -43,8 +43,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment-tree/SegmentTree-rmq.test.cpp
-  - test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTreeSequence-rmq.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTreeSequence-insert-erase.test.cpp
 documentation_of: lib/99-operator/monoid/MonoidRangeMinPointUpdate.cpp
 layout: document
 redirect_from:

@@ -52,8 +52,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/binary-search-tree/LazySplayTreeSequence-reverse2.test.cpp
-  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse2.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqraq.test.cpp
   - test/graph/Tree-hld-vertex-1.test.cpp
 documentation_of: lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAdd.cpp
 layout: document

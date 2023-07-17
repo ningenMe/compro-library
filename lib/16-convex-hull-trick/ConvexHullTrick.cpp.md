@@ -109,9 +109,9 @@ data:
   timestamp: '2023-06-03 15:39:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
   - test/convex-hull-trick/ConvexHullTrick-max.test.cpp
   - test/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
 documentation_of: lib/16-convex-hull-trick/ConvexHullTrick.cpp
 layout: document
 redirect_from:

@@ -167,9 +167,9 @@ data:
   timestamp: '2023-06-10 18:11:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
   - test/static-range-query/WaveletMatrix-range-kth-1.test.cpp
   - test/static-range-query/WaveletMatrix-range-freq.test.cpp
+  - test/static-range-query/WaveletMatrix-range-kth-2.test.cpp
 documentation_of: lib/13-static-range-query/WaveletMatrix.cpp
 layout: document
 redirect_from:
