@@ -223,8 +223,8 @@ data:
       path: lib/40-graph/Dijkstra.cpp
       title: "Dijkstra - \u591A\u6B21\u5143\u30C0\u30A4\u30AF\u30B9\u30C8\u30E9"
     - icon: ':heavy_check_mark:'
-      path: lib/40-graph/Dinic.cpp
-      title: "Dinic - Dinic\u30D5\u30ED\u30FC"
+      path: lib/40-graph/DinicMaxFlow.cpp
+      title: "DinicMaxFlow - Dinic\u30D5\u30ED\u30FC"
     - icon: ':heavy_check_mark:'
       path: lib/40-graph/Graph.cpp
       title: Graph
@@ -561,8 +561,11 @@ data:
       path: test/graph/Dijkstra.test.cpp
       title: test/graph/Dijkstra.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/graph/Dinic.test.cpp
-      title: test/graph/Dinic.test.cpp
+      path: test/graph/DinicMaxFlow-1.test.cpp
+      title: test/graph/DinicMaxFlow-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/graph/DinicMaxFlow-2.test.cpp
+      title: test/graph/DinicMaxFlow-2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/graph/MinimumDirectedClosedCircuit.test.cpp
       title: test/graph/MinimumDirectedClosedCircuit.test.cpp

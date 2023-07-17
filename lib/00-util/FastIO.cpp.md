@@ -46,6 +46,9 @@ data:
     path: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
     title: test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/graph/DinicMaxFlow-2.test.cpp
+    title: test/graph/DinicMaxFlow-2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/graph/PrimalDualMinCostFlow.test.cpp
     title: test/graph/PrimalDualMinCostFlow.test.cpp
   - icon: ':heavy_check_mark:'
@@ -270,6 +273,7 @@ data:
   - test/convolution/NumberTheoreticalTransform-conv-fft.test.cpp
   - test/convolution/NumberTheoreticalTransform-conv-998244353-2.test.cpp
   - test/graph/PrimalDualMinCostFlow.test.cpp
+  - test/graph/DinicMaxFlow-2.test.cpp
 documentation_of: lib/00-util/FastIO.cpp
 layout: document
 redirect_from:
