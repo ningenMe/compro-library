@@ -15,6 +15,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/00-util/RangeIndex.cpp
       title: "RangeIndex - \u533A\u9593index"
+    - icon: ':warning:'
+      path: lib/00-util/Rational.cpp
+      title: "Rational - \u6709\u7406\u6570"
     - icon: ':heavy_check_mark:'
       path: lib/00-util/RuntimeModInt.cpp
       title: "RuntimeModInt - \u5B9F\u884C\u6642ModInt"
@@ -285,6 +288,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/70-geometory/KdTree.cpp
       title: "KdTree - 2\u6B21\u5143\u9802\u70B9\u5206\u985E\u6728"
+    - icon: ':warning:'
+      path: lib/70-geometory/RationalLine.cpp
+      title: "RationalLine - \u6709\u7406\u6570\u76F4\u7DDA"
     - icon: ':heavy_check_mark:'
       path: lib/70-geometory/RectangleWeight.cpp
       title: "RectangleWeight - \u91CD\u307F\u3064\u304D\u77E9\u5F62"
