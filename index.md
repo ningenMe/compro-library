@@ -24,6 +24,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/00-util/Zarts.cpp
       title: "Zarts - \u5EA7\u6A19\u5727\u7E2E"
+    - icon: ':warning:'
+      path: lib/00-util/ZobristHash.cpp
+      title: ZobristHash - Zobrist Hashing
   - name: lib/10-segment-tree
     pages:
     - icon: ':heavy_check_mark:'
