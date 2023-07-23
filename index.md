@@ -431,6 +431,16 @@ data:
     - icon: ':warning:'
       path: non-verified/XorShift.cpp
       title: non-verified/XorShift.cpp
+  - name: snippet
+    pages:
+    - icon: ':warning:'
+      path: snippet/main.go
+      title: snippet/main.go
+  - name: snippet/model
+    pages:
+    - icon: ':warning:'
+      path: snippet/model/file_node.go
+      title: snippet/model/file_node.go
   verificationCategories:
   - name: test/binary-indexed-tree
     pages:
