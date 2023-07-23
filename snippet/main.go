@@ -44,7 +44,7 @@ func main() {
         fileName := GetLastString(strings.Split(path,"/"))
         fileNameWithoutExtension := strings.Split(fileName,".")[0]
 
-        snippetFile, err := os.Create(pwd+"/.vscode/"+fileNameWithoutExtension+".code-snippets")
+        snippetFile, err := os.Create(pwd+"/tmp/"+fileNameWithoutExtension+".code-snippets")
         if err != nil {
             log.Fatalln(err)
         }
