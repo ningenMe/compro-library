@@ -1,0 +1,32 @@
+name: verify
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - id: checkout
+      uses: actions/checkout@v3
+      with:
+          fetch-depth: 0
+    - id: setup-go
+      name: setup go
+      uses: actions/setup-go@v3
+      with:
+        go-version: "1.19.1"
+    - id: go-run
+      name: go run
+      run: go run ./
+      shell: bash
+      working-directory: ./snippet
+    - id: debug
+      name: debug
+      run: |
+        cd ./sunippet
+        ls tmp        
+      shell: bash
