@@ -43,9 +43,7 @@ jobs:
     - id: debug2
       name: debug
       run: |
+        cp compro-library/snippet/tmp/* compro-solver-cpp/.vscode
         cd ./compro-solver-cpp
-        mkdir .vscode
-        cd .vscode
-        touch hoge.txt
         git status        
       shell: bash
