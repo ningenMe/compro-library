@@ -31,14 +31,14 @@ jobs:
         cd ./snippet
         ls tmp        
       shell: bash
-    - id: checkout
+    - id: checkout2
       name: checkout
       uses: actions/checkout@v3
       with:
         repository: ningenMe/compro-solver-cpp
         fetch-depth: 0
     - id: debug
-      name: debug
+      name: debug2
       run: |
         mkdir .vscode
         cd .vscode
