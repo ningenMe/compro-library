@@ -1,6 +1,7 @@
 package main
 import (
-	"fmt"
+    "bufio"
+    "fmt"
 	"github.com/ningenMe/compro-library/snippet/model"
     "io/ioutil"
     "log"
@@ -28,11 +29,18 @@ func main() {
         fmt.Println(path)
 
         //  ファイルの中身を取得
-        byteText, err := os.ReadFile(pwd+path)
+        libraryFile, err := os.Open(pwd+path)
         if err != nil {
-           log.Fatalln(err)
+            log.Fatalln(err)
         }
-        texts := strings.Split(string(byteText),"\n")
+
+        scanner := bufio.NewScanner(libraryFile)
+
+        var texts []string
+        for scanner.Scan() {
+            texts = append(texts, scanner.Text())
+        }
+
         fileName := GetLastString(strings.Split(path,"/"))
         fileNameWithoutExtension := strings.Split(fileName,".")[0]
 
@@ -55,7 +63,8 @@ func main() {
         }
 
         for _, text := range texts {
-            _, err := snippetFile.WriteString("\t\t\t"+text+"\n")
+            text = strings.ReplaceAll(text,"\"","\\\"")
+            _, err := snippetFile.WriteString("\t\t\t\""+text+"\",\n")
             if err != nil {
                 log.Fatalln(err)
             }
