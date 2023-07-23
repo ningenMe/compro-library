@@ -45,6 +45,8 @@ jobs:
       run: |
         cd ./compro-solver-cpp
         git status        
+        git config --global user.email "amohkuru@gmail.com"
+        git config --global user.name "ningenMe"
         git add .
         git commit -m "[github actions] sync snippets"
         git push origin 
