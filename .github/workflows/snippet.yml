@@ -11,6 +11,7 @@ jobs:
 
     steps:
     - id: checkout
+      name: checkout
       uses: actions/checkout@v3
       with:
           fetch-depth: 0
@@ -27,6 +28,20 @@ jobs:
     - id: debug
       name: debug
       run: |
-        cd ./sunippet
+        cd ./snippet
         ls tmp        
+      shell: bash
+    - id: checkout
+      name: checkout
+      uses: actions/checkout@v3
+      with:
+        repository: ningenMe/compro-solver-cpp
+        fetch-depth: 0
+    - id: debug
+      name: debug
+      run: |
+        mkdir .vscode
+        cd .vscode
+        touch hoge.txt
+        git status        
       shell: bash
