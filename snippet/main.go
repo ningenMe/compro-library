@@ -81,10 +81,6 @@ func main() {
                 log.Fatalln(err)
             }
         }
-        fmt.Println(path, fileNameWithoutExtension, len(texts))
-
-        //TODO
-        break
     }
 
 	//for {
@@ -102,11 +98,9 @@ func GetLastString(strings []string) string {
 
 
 func GetFileNode(path string, directoryName string) model.FileNode {
-
 	files, err := ioutil.ReadDir(path)
-
 	if err != nil {
-		panic(err)
+        log.Fatalln(err)
 	}
 
 	fileNode := model.FileNode{
