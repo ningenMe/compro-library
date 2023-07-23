@@ -10,11 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - id: checkout
-      name: checkout
+    - id: checkout-compro-library
+      name: checkout-compro-library
       uses: actions/checkout@v3
       with:
-          fetch-depth: 0
+        repository: ningenMe/compro-library
+        path: compro-library
+        fetch-depth: 0
+    - id: checkout-compro-solver-cpp
+      name: checkout-compro-solver-cpp
+      uses: actions/checkout@v3
+      with:
+        repository: ningenMe/compro-solver-cpp
+        path: compro-solver-cpp
+        fetch-depth: 0
     - id: setup-go
       name: setup go
       uses: actions/setup-go@v3
@@ -24,22 +33,17 @@ jobs:
       name: go run
       run: go run ./
       shell: bash
-      working-directory: ./snippet
+      working-directory: ./compro-library/snippet
     - id: debug
       name: debug
       run: |
-        cd ./snippet
+        cd ./compro-library/snippet
         ls tmp        
       shell: bash
-    - id: checkout2
-      name: checkout
-      uses: actions/checkout@v3
-      with:
-        repository: ningenMe/compro-solver-cpp
-        fetch-depth: 0
-    - id: debug
-      name: debug2
+    - id: debug2
+      name: debug
       run: |
+        cd ./compro-solver-cpp
         mkdir .vscode
         cd .vscode
         touch hoge.txt
