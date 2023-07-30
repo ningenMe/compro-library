@@ -53,7 +53,7 @@ data:
       path: lib/10-segment-tree/SegmentTree.cpp
       title: "SegmentTree - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
         \u30F3\u30C8\u6728"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: lib/10-segment-tree/SegmentTree2D.cpp
       title: "SegmentTree2D - \u975E\u518D\u5E30\u62BD\u8C61\u5316\u30BB\u30B0\u30E1\
         \u30F3\u30C8\u67282D"
@@ -171,6 +171,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/16-convex-hull-trick/LiChaoTree.cpp
       title: LiChaoTree
+  - name: lib/17-rectangle
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: lib/17-rectangle/MaximumRectangle.cpp
+      title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
   - name: lib/30-math
     pages:
     - icon: ':warning:'
@@ -275,11 +280,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: lib/50-string/Zalgorithm.cpp
       title: Zalgorithm
-  - name: lib/60-optimize
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: lib/60-optimize/MaximumRectangle.cpp
-      title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"
   - name: lib/70-geometory
     pages:
     - icon: ':heavy_check_mark:'
@@ -294,9 +294,6 @@ data:
     - icon: ':warning:'
       path: lib/70-geometory/RationalLine.cpp
       title: "RationalLine - \u6709\u7406\u6570\u76F4\u7DDA"
-    - icon: ':heavy_check_mark:'
-      path: lib/70-geometory/RectangleWeight.cpp
-      title: "RectangleWeight - \u91CD\u307F\u3064\u304D\u77E9\u5F62"
   - name: lib/98-needless
     pages:
     - icon: ':heavy_check_mark:'
@@ -568,9 +565,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/geometory/KdTree.test.cpp
       title: test/geometory/KdTree.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/geometory/RectangleWeight.test.cpp
-      title: test/geometory/RectangleWeight.test.cpp
   - name: test/graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -688,14 +682,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/needless/RangeFrequencyQueryTree-range-freq.test.cpp
       title: test/needless/RangeFrequencyQueryTree-range-freq.test.cpp
-  - name: test/optimize
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: test/optimize/MaximumRectangle-1.test.cpp
-      title: test/optimize/MaximumRectangle-1.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: test/optimize/MaximumRectangle-2.test.cpp
-      title: test/optimize/MaximumRectangle-2.test.cpp
   - name: test/polynomial
     pages:
     - icon: ':heavy_check_mark:'
@@ -745,6 +731,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/queue/SwagQueue-gcd.test.cpp
       title: test/queue/SwagQueue-gcd.test.cpp
+  - name: test/rectangle
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/rectangle/MaximumRectangle-1.test.cpp
+      title: test/rectangle/MaximumRectangle-1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/rectangle/MaximumRectangle-2.test.cpp
+      title: test/rectangle/MaximumRectangle-2.test.cpp
   - name: test/segment-tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -786,6 +780,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
       title: test/segment-tree/SegmentTree-suffix-binary-search.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/segment-tree/SegmentTree2D-rsq.test.cpp
+      title: test/segment-tree/SegmentTree2D-rsq.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/segment-tree/SegmentTreeBeats-1.test.cpp
       title: test/segment-tree/SegmentTreeBeats-1.test.cpp

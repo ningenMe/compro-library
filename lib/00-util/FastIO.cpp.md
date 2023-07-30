@@ -121,6 +121,9 @@ data:
     path: test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
     title: test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
   - icon: ':heavy_check_mark:'
+    path: test/segment-tree/SegmentTree2D-rsq.test.cpp
+    title: test/segment-tree/SegmentTree2D-rsq.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/segment-tree/SortableSegmentTree-rcq.test.cpp
     title: test/segment-tree/SortableSegmentTree-rcq.test.cpp
   - icon: ':heavy_check_mark:'
@@ -245,6 +248,7 @@ data:
   - test/math/Prime-rho.test.cpp
   - test/segment-tree/DynamicSegmentTree-rcq-1.test.cpp
   - test/segment-tree/RangeIntegerFrequencyQuerySqrtTree-range-freq.test.cpp
+  - test/segment-tree/SegmentTree2D-rsq.test.cpp
   - test/segment-tree/SortableSegmentTree-rcq.test.cpp
   - test/segment-tree/DualSegmentTree-pcq.test.cpp
   - test/needless/IntegerRangeFrequencyQueryTree-range-freq.test.cpp

@@ -27,6 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/segment-tree/SegmentTree-rsq.test.cpp
     title: test/segment-tree/SegmentTree-rsq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/segment-tree/SegmentTree2D-rsq.test.cpp
+    title: test/segment-tree/SegmentTree2D-rsq.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -60,6 +63,7 @@ data:
   - test/segment-tree/DynamicSegmentTree-rsq-2.test.cpp
   - test/segment-tree/DynamicSegmentTree-rsq-1.test.cpp
   - test/segment-tree/DynamicSegmentTree-rsq-3.test.cpp
+  - test/segment-tree/SegmentTree2D-rsq.test.cpp
   - test/segment-tree/SegmentTree-rsq.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
   - test/binary-search-tree/BinaryTrie-set-xor-min.test.cpp
