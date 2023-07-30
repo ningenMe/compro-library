@@ -1,6 +1,6 @@
 /*
  * @title MaximumRectangle - 最大長方形
- * @docs md/optimize/MaximumRectangle.md
+ * @docs md/17-rectangle/MaximumRectangle.md
  */
 long long MaximumRectangle(vector<long long> ar){
 	ar.push_back(0);
