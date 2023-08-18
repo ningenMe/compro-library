@@ -18,7 +18,7 @@ data:
     \ \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_3_C\"\n\n#include\
     \ <vector>\n#include <iostream>\n#include <stack>\nusing namespace std;\n#line\
     \ 1 \"lib/17-rectangle/MaximumRectangle.cpp\"\n/*\n * @title MaximumRectangle\
-    \ - \u6700\u5927\u9577\u65B9\u5F62\n * @docs md/17-rectangle/MaximumRectangle.md\n\
+    \ - \u6700\u5927\u9577\u65B9\u5F62\n * @docs md/rectangle/MaximumRectangle.md\n\
     \ */\nlong long MaximumRectangle(vector<long long> ar){\n\tar.push_back(0);\n\t\
     stack<pair<long long,long long>> st;\n\tlong long res = 0;\n\tfor(long long r\
     \ = 0; r < ar.size(); ++r){\n\t\tlong long vr = ar[r];\n\t\tlong long x = r;\t\
@@ -40,7 +40,7 @@ data:
   isVerificationFile: true
   path: test/rectangle/MaximumRectangle-2.test.cpp
   requiredBy: []
-  timestamp: '2023-07-31 02:39:54+09:00'
+  timestamp: '2023-08-19 07:15:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/rectangle/MaximumRectangle-2.test.cpp

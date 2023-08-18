@@ -169,12 +169,12 @@ data:
   timestamp: '2023-06-03 15:39:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/convex-hull-trick/ConvexHullTrick-max.test.cpp
-  - test/convex-hull-trick/ConvexHullTrick-min.test.cpp
   - test/convex-hull-trick/ConvexHullTrick-no-monotone.test.cpp
+  - test/convex-hull-trick/ConvexHullTrick-min.test.cpp
+  - test/convex-hull-trick/ConvexHullTrick-max.test.cpp
+  - test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTreeSet-get.test.cpp
   - test/binary-search-tree/RandomizedBinarySearchTreeSet-pair.test.cpp
-  - test/binary-search-tree/RandomizedBinarySearchTreeSet-med.test.cpp
 documentation_of: lib/12-binary-search-tree/RandomizedBinarySearchTreeSet.cpp
 layout: document
 redirect_from:

@@ -57,10 +57,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/segment-tree/DualSegmentTree-pcq.test.cpp
+  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
   - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-reverse.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-rsqrafq.test.cpp
   - test/binary-search-tree/LazySplayTreeSequence-reverse.test.cpp
-  - test/binary-search-tree/LazyRandomizedBinarySearchTreeSequence-rsqrafq.test.cpp
 documentation_of: lib/99-operator/monoid-lazy/MonoidRangeFoldSumRangeOperateAffine.cpp
 layout: document
 redirect_from:

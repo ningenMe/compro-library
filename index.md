@@ -173,6 +173,10 @@ data:
       title: LiChaoTree
   - name: lib/17-rectangle
     pages:
+    - icon: ':warning:'
+      path: lib/17-rectangle/IntersectRectangle.cpp
+      title: "IntersectRectangle - \u9577\u65B9\u5F62\u306E\u4EA4\u5DEE\u306E\u30AB\
+        \u30A6\u30F3\u30C8"
     - icon: ':heavy_check_mark:'
       path: lib/17-rectangle/MaximumRectangle.cpp
       title: "MaximumRectangle - \u6700\u5927\u9577\u65B9\u5F62"

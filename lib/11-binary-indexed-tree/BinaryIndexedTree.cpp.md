@@ -64,8 +64,8 @@ data:
   timestamp: '2023-05-30 05:01:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/static-range-query/StaticRangeInversionQuery.test.cpp
   - test/binary-indexed-tree/BinaryIndexedTree-rsqraq.test.cpp
+  - test/static-range-query/StaticRangeInversionQuery.test.cpp
 documentation_of: lib/11-binary-indexed-tree/BinaryIndexedTree.cpp
 layout: document
 redirect_from:
